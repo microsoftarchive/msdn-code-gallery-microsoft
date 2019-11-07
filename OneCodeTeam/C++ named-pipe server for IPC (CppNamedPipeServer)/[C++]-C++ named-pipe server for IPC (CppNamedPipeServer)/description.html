@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C++ named-pipe server for IPC (CppNamedPipeServer)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C++ named-pipe server for IPC (CppNamedPipeServer)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            IPC and RPC, Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Named Pipe, Inter-process Communication
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/19/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppNamedPipeServer-d1778534">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New">&nbsp;</p>
+<h2>CONSOLE APPLICATION : CppNamedPipeServer Project Overview</h2>
+<p style="font-family:Courier New">&nbsp;</p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+Named pipe is a mechanism for one-way or duplex inter-process communication <br>
+between the pipe server and one or more pipe clients in the local machine or <br>
+across the computers in the intranet:<br>
+<br>
+PIPE_ACCESS_INBOUND:<br>
+Client (GENERIC_WRITE) ---&gt; Server (GENERIC_READ)<br>
+<br>
+PIPE_ACCESS_OUTBOUND:<br>
+Client (GENERIC_READ) &lt;--- Server (GENERIC_WRITE)<br>
+<br>
+PIPE_ACCESS_DUPLEX:<br>
+Client (GENERIC_READ or GENERIC_WRITE, or both) &lt;--&gt; <br>
+Server (GENERIC_READ and GENERIC_WRITE)<br>
+<br>
+This code sample demonstrates calling CreateNamedPipe to create a pipe <br>
+named &quot;\\.\pipe\SamplePipe&quot;, which supports duplex connections so that both <br>
+client and server can read from and write to the pipe. The security <br>
+attributes of the pipe are customized to allow Authenticated Users read and <br>
+write access to a pipe, and to allow the Administrators group full access to <br>
+the pipe. When the pipe is connected by a client, the server attempts to read <br>
+the client's message from the pipe by calling ReadFile, and write a response <br>
+by calling WriteFile.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+The following steps walk through a demonstration of the named pipe sample.<br>
+<br>
+Step1. After you successfully build the CppNamedPipeClient and <br>
+CppNamedPipeServer sample projects in Visual Studio 2008, you will get the <br>
+applications: CppNamedPipeClient.exe and CppNamedPipeServer.exe. <br>
+<br>
+Step2. Run CppNamedPipeServer.exe in a command prompt to start up the server <br>
+end of the named pipe. The application will output the following information <br>
+in the command prompt if the pipe is created successfully.<br>
+<br>
+Server:<br>
+&nbsp;The named pipe (\\.\pipe\SamplePipe) is created.<br>
+&nbsp;Waiting for the client's connection...<br>
+<br>
+Step3. Run CppNamedPipeClient.exe in another command prompt to start up the <br>
+client end of the named pipe. The application should output the message below <br>
+in the command prompt when the client successfully connects to the named pipe.<br>
+<br>
+Client:<br>
+&nbsp;The named pipe (\\.\pipe\SamplePipe) is connected.<br>
+<br>
+In the meantime, the server application outputs this message to indicate that <br>
+the pipe is connected by a client.<br>
+<br>
+Server:<br>
+&nbsp;Client is connected.<br>
+<br>
+Step4. The client attempts to write a message to the named pipe. You will see <br>
+the message below in the commond prompt running the client application.<br>
+<br>
+Client:<br>
+&nbsp;Send 56 bytes to server: &quot;Default request from client&quot;<br>
+<br>
+When the server application reads the message from the client, it prints:<br>
+<br>
+Server:<br>
+&nbsp;Receive 56 bytes from client: &quot;Default request from client&quot;<br>
+<br>
+Next, the server writes a response to the pipe.<br>
+<br>
+Server:<br>
+&nbsp;Send 58 bytes to client: &quot;Default response from server&quot;<br>
+<br>
+And the client receives the response:<br>
+<br>
+Client:<br>
+&nbsp;Receive 58 bytes from server: &quot;Default response from server&quot;<br>
+<br>
+The connection is disconnected and the pipe is closed after that.<br>
+<br>
+</p>
+<h3>Sample Relation:</h3>
+<p style="font-family:Courier New">(The relationship between the current sample and the rest samples in
+<br>
+Microsoft All-In-One Code Framework <a href="http://1code.codeplex.com)" >
+http://1code.codeplex.com)</a><br>
+<br>
+CppNamedPipeClient/CSNamedPipeClient/VBNamedPipeClient -&gt; CppNamedPipeServer<br>
+CppNamedPipeServer is the server end of the named pipe. CSNamedPipeClient, <br>
+VBNamedPipeClient and CppNamedPipeClient can be the client ends that connect<br>
+to the named pipe.<br>
+<br>
+CppNamedPipeServer - CSNamedPipeServer - VBNamedPipeServer<br>
+CppNamedPipeServer, CSNamedPipeServer and VBNamedPipeServer are the same <br>
+named pipe server ends written in three different programming languages.<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+1. Create a named pipe server by calling CreateNamedPipe and specifying the <br>
+pipe name, pipe direction, transmission mode, security attributes, etc.<br>
+<br>
+&nbsp; &nbsp;// Create the named pipe.<br>
+&nbsp; &nbsp;hNamedPipe = CreateNamedPipe(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;FULL_PIPE_NAME, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Pipe name.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_ACCESS_DUPLEX, &nbsp; &nbsp; &nbsp; &nbsp; // The pipe is duplex; both server and
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// client processes can read from and
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// write to the pipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_TYPE_MESSAGE | &nbsp; &nbsp; &nbsp; &nbsp; // Message type pipe
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_READMODE_MESSAGE | &nbsp; &nbsp; // Message-read mode
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_WAIT, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Blocking mode is enabled<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_UNLIMITED_INSTANCES, &nbsp; // Max. instances<br>
+&nbsp; &nbsp; &nbsp; &nbsp;BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output buffer size in bytes<br>
+&nbsp; &nbsp; &nbsp; &nbsp;BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Input buffer size in bytes<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NMPWAIT_USE_DEFAULT_WAIT, &nbsp; // Time-out interval<br>
+&nbsp; &nbsp; &nbsp; &nbsp;pSa &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Security attributes<br>
+&nbsp; &nbsp; &nbsp; &nbsp;);<br>
+<br>
+In this code sample, the pipe server support message-based duplex <br>
+communications. The security attributes of the pipe are customized to allow <br>
+Authenticated Users read and write access to a pipe, and to allow the <br>
+Administrators group full access to the pipe.<br>
+<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; FUNCTION: CreatePipeSecurity(PSECURITY_ATTRIBUTES *)<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; PURPOSE: The CreatePipeSecurity function creates and initializes a new
+<br>
+&nbsp; &nbsp;// &nbsp; SECURITY_ATTRIBUTES structure to allow Authenticated Users read and
+<br>
+&nbsp; &nbsp;// &nbsp; write access to a pipe, and to allow the Administrators group full
+<br>
+&nbsp; &nbsp;// &nbsp; access to the pipe.<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; PARAMETERS:<br>
+&nbsp; &nbsp;// &nbsp; * ppSa - output a pointer to a SECURITY_ATTRIBUTES structure that allows
+<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; Authenticated Users read and write access to a pipe, and allows the
+<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; Administrators group full access to the pipe. The structure must be
+<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; freed by calling FreePipeSecurity.<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; RETURN VALUE: Returns TRUE if the function succeeds..<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; EXAMPLE CALL:<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; PSECURITY_ATTRIBUTES pSa = NULL;<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; if (CreatePipeSecurity(&amp;pSa))<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; {<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; // Use the security attributes<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; // ...<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; &nbsp; &nbsp; FreePipeSecurity(pSa);<br>
+&nbsp; &nbsp;// &nbsp; &nbsp; }<br>
+&nbsp; &nbsp;//<br>
+&nbsp; &nbsp;BOOL CreatePipeSecurity(PSECURITY_ATTRIBUTES *ppSa)<br>
+<br>
+2. Wait for the client to connect by calling ConnectNamedPipe.<br>
+<br>
+&nbsp; &nbsp;if (!ConnectNamedPipe(hNamedPipe, NULL))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (ERROR_PIPE_CONNECTED != GetLastError())<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dwError = GetLastError();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;wprintf(L&quot;ConnectNamedPipe failed w/err 0x%08lx\n&quot;, dwError);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;goto Cleanup;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+<br>
+3. Read the client's request from the pipe and write a response by calling <br>
+ReadFile and WriteFile.<br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Receive a request from client.<br>
+&nbsp; &nbsp;// <br>
+<br>
+&nbsp; &nbsp;BOOL fFinishRead = FALSE;<br>
+&nbsp; &nbsp;do<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;wchar_t chRequest[BUFFER_SIZE];<br>
+&nbsp; &nbsp; &nbsp; &nbsp;DWORD cbRequest, cbRead;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbRequest = sizeof(chRequest);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;fFinishRead = ReadFile(<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hNamedPipe, &nbsp; &nbsp; // Handle of the pipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;chRequest, &nbsp; &nbsp; &nbsp;// Buffer to receive data<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cbRequest, &nbsp; &nbsp; &nbsp;// Size of buffer in bytes<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&amp;cbRead, &nbsp; &nbsp; &nbsp; &nbsp;// Number of bytes read<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Not overlapped I/O<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (!fFinishRead &amp;&amp; ERROR_MORE_DATA != GetLastError())<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dwError = GetLastError();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;wprintf(L&quot;ReadFile from pipe failed w/err 0x%08lx\n&quot;, dwError);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;goto Cleanup;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;wprintf(L&quot;Receive %ld bytes from client: \&quot;%s\&quot;\n&quot;, cbRead, chRequest);<br>
+<br>
+&nbsp; &nbsp;} while (!fFinishRead); // Repeat loop if ERROR_MORE_DATA<br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Send a response from server to client.<br>
+&nbsp; &nbsp;// <br>
+<br>
+&nbsp; &nbsp;wchar_t chResponse[] = RESPONSE_MESSAGE;<br>
+&nbsp; &nbsp;DWORD cbResponse, cbWritten;<br>
+&nbsp; &nbsp;cbResponse = sizeof(chResponse);<br>
+<br>
+&nbsp; &nbsp;if (!WriteFile(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hNamedPipe, &nbsp; &nbsp; // Handle of the pipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp;chResponse, &nbsp; &nbsp; // Buffer to write<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbResponse, &nbsp; &nbsp; // Number of bytes to write <br>
+&nbsp; &nbsp; &nbsp; &nbsp;&amp;cbWritten, &nbsp; &nbsp; // Number of bytes written
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NULL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Not overlapped I/O<br>
+&nbsp; &nbsp; &nbsp; &nbsp;))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;dwError = GetLastError();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;wprintf(L&quot;WriteFile to pipe failed w/err 0x%08lx\n&quot;, dwError);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;goto Cleanup;<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;wprintf(L&quot;Send %ld bytes to client: \&quot;%s\&quot;\n&quot;, cbWritten, chResponse);<br>
+<br>
+4. Flush the pipe to allow the client to read the pipe's contents before <br>
+disconnecting. Then disconnect the client's connection.<br>
+<br>
+&nbsp; &nbsp;FlushFileBuffers(hNamedPipe);<br>
+&nbsp; &nbsp;DisconnectNamedPipe(hNamedPipe);<br>
+<br>
+5. Close the server end of the pipe.<br>
+<br>
+&nbsp; &nbsp;CloseHandle(hNamedPipe);<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: Named Pipes<br>
+<a href="http://msdn.microsoft.com/en-us/library/aa365590.aspx" >http://msdn.microsoft.com/en-us/library/aa365590.aspx</a><br>
+<br>
+MSDN: Using Pipes / Multithreaded Pipe Server<br>
+<a href="http://msdn.microsoft.com/en-us/library/aa365588.aspx" >http://msdn.microsoft.com/en-us/library/aa365588.aspx</a><br>
+<br>
+How to create an anonymous pipe that gives access to everyone<br>
+<a href="http://support.microsoft.com/kb/813414" >http://support.microsoft.com/kb/813414</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

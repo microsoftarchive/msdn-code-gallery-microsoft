@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="Microsoft.SDKSamples.Direct3DTutorialLesson1.CPP"
+            Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+            Version="1.0.0.0" />
+
+  
+  
+  <Properties>
+    <DisplayName>Direct3D tutorial lesson 1: basics C++ sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storelogo-sdk.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="Direct3DTutorial.Lesson1.Basics.App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="Direct3DTutorial.App">
+        <VisualElements
+          DisplayName="Direct3D tutorial lesson 1: basics C++ sample" 
+          Logo="squaretile-sdk.png" 
+          SmallLogo="smalltile-windows-sdk.png" 
+          Description="Direct3D tutorial lesson 1: basics C++ sample" 
+          ForegroundText="light" 
+          BackgroundColor="#00b2f0">
+          <DefaultTile ShowName="allLogos" ShortName="D3D tutorial lesson 1 C++" />
+          <SplashScreen Image="splash-windows-sdk.png" BackgroundColor="#00b2f0" />
+        </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities></Capabilities>
+</Package>

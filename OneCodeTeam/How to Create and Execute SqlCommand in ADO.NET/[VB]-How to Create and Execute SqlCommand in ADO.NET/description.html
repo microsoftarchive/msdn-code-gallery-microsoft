@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/3e00d0a6-7844-40b8-8b92-12c0e4eeaed2Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to Create and Execute SqlCommand in ADO.NET</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to Create and Execute SqlCommand in ADO.NET</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, Data Access, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Stored Procedures, sql commond
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/9/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-Create-and-Execute-86922261">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to Create and Execute SqlCommand in ADO.NET</h1>
+<h2>Introduction</h2>
+<p>We can create and execute different types of SqlCommand. In this applilcation, we will demonstrate how to create and execute SqlCommand:</p>
+<p>1. Create different types of SqlCommand;</p>
+<p>2. Execute SqlCommand in different ways;</p>
+<p>3. Display the result.</p>
+<h2>Building the Sample</h2>
+<p>Before you run the sample, you need to finish the following steps:</p>
+<p>Step1. Please choose one way of the following ways to build the database:</p>
+<ul>
+<li>Attach the database file MySchool.mdf under the folder _External_Dependecies to your SQL Server (2008 or later version) database instance.
+</li><li>Run the MySchool.sql script under the folder _External_Dependecies in your SQL Server (2008 or later version) database instance.
+</li></ul>
+<p>Step2. Modify the connection string in the Project Properties-&gt;Settings according-&gt; MySchoolConnectionString to your SQL Server (2008 or later version) database instance name.</p>
+<h2>Running the Sample</h2>
+<p>Press F5 to run the sample.</p>
+<p>In this application, we can get the statistical value , the details of department or update the data.</p>
+<h1><img id="112533" src="description/1.png" alt="" width="643" height="237"></h1>
+<h2>Using the Code</h2>
+<p>1. ExecuteNonQuery method</p>
+<p>If you need modify the data (Add, Delete, Update), you can use the method to complete it.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">public static Int32 ExecuteNonQuery(String connectionString, String commandText, 
+    CommandType commandType, params SqlParameter[] parameters)
+{
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        using (SqlCommand cmd = new SqlCommand(commandText, conn))
+        {
+            cmd.CommandType = commandType;
+            cmd.Parameters.AddRange(parameters);
+            conn.Open();
+            return cmd.ExecuteNonQuery();
+        }
+    }
+}
+</pre>
+<pre class="hidden">Public Shared Function ExecuteNonQuery(ByVal connectionString As String, ByVal commandText As String,
+                                       ByVal commandType As CommandType, ByVal ParamArray parameters() As SqlParameter) As Int32
+    Using conn As New SqlConnection(connectionString)
+        Using cmd As New SqlCommand(commandText, conn)
+            ' There're three command types: StoredProcedure, Text, TableDirect. The TableDirect 
+            ' type is only for OLE DB.  
+            cmd.CommandType = commandType
+            cmd.Parameters.AddRange(parameters)
+            conn.Open()
+            Return cmd.ExecuteNonQuery()
+        End Using
+    End Using
+End Function
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span><span class="cs__keyword">static</span>&nbsp;Int32&nbsp;ExecuteNonQuery(String&nbsp;connectionString,&nbsp;String&nbsp;commandText,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CommandType&nbsp;commandType,&nbsp;<span class="cs__keyword">params</span>&nbsp;SqlParameter[]&nbsp;parameters)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(SqlConnection&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(connectionString))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(SqlCommand&nbsp;cmd&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand(commandText,&nbsp;conn))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.CommandType&nbsp;=&nbsp;commandType;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.Parameters.AddRange(parameters);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;cmd.ExecuteNonQuery();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>2. ExecuteScalar method</p>
+<p>If you only need one value (first column and first row), you can use the method to get the value, such as the statistical value.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">public static Object ExecuteScalar(String connectionString, String commandText,
+    CommandType commandType, params SqlParameter[] parameters)
+{
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        using (SqlCommand cmd = new SqlCommand(commandText, conn))
+        {
+            cmd.CommandType = commandType;
+            cmd.Parameters.AddRange(parameters);
+            conn.Open();
+            return cmd.ExecuteScalar();
+        }
+    }
+}
+</pre>
+<pre class="hidden">Public Shared Function ExecuteScalar(ByVal connectionString As String, ByVal commandText As String,
+                                     ByVal commandType As CommandType, ByVal ParamArray parameters() As SqlParameter) As Object
+    Using conn As New SqlConnection(connectionString)
+        Using cmd As New SqlCommand(commandText, conn)
+            cmd.CommandType = commandType
+            cmd.Parameters.AddRange(parameters)
+            conn.Open()
+            Return cmd.ExecuteScalar()
+        End Using
+    End Using
+End Function
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span><span class="cs__keyword">static</span>&nbsp;Object&nbsp;ExecuteScalar(String&nbsp;connectionString,&nbsp;String&nbsp;commandText,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CommandType&nbsp;commandType,&nbsp;<span class="cs__keyword">params</span>&nbsp;SqlParameter[]&nbsp;parameters)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(SqlConnection&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(connectionString))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(SqlCommand&nbsp;cmd&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand(commandText,&nbsp;conn))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.CommandType&nbsp;=&nbsp;commandType;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.Parameters.AddRange(parameters);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;cmd.ExecuteScalar();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>3. ExecuteReader method</p>
+<p>When you need the details of the data, you can use this method to return the information.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">public static SqlDataReader ExecuteReader(String connectionString, String commandText, 
+    CommandType commandType, params SqlParameter[] parameters)
+{
+    SqlConnection conn = new SqlConnection(connectionString);
+    using (SqlCommand cmd = new SqlCommand(commandText, conn))
+    {
+        cmd.CommandType = commandType;
+        cmd.Parameters.AddRange(parameters);
+        conn.Open();
+        // When using CommandBehavior.CloseConnection, the connection will be closed when the 
+        // IDataReader is closed.
+        SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        return reader;
+    }
+}
+</pre>
+<pre class="hidden">Public Shared Function ExecuteReader(ByVal connectionString As String, ByVal commandText As String,
+                                     ByVal commandType As CommandType, ByVal ParamArray parameters() As SqlParameter) As SqlDataReader
+    Dim conn As New SqlConnection(connectionString)
+    Using cmd As New SqlCommand(commandText, conn)
+        cmd.CommandType = commandType
+        cmd.Parameters.AddRange(parameters)
+        conn.Open()
+        ' When using CommandBehavior.CloseConnection, the connection will be closed when the 
+        ' IDataReader is closed.
+        Dim reader As SqlDataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+        Return reader
+    End Using
+End Function
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span><span class="cs__keyword">static</span>&nbsp;SqlDataReader&nbsp;ExecuteReader(String&nbsp;connectionString,&nbsp;String&nbsp;commandText,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;CommandType&nbsp;commandType,&nbsp;<span class="cs__keyword">params</span>&nbsp;SqlParameter[]&nbsp;parameters)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;SqlConnection&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(connectionString);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(SqlCommand&nbsp;cmd&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand(commandText,&nbsp;conn))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.CommandType&nbsp;=&nbsp;commandType;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.Parameters.AddRange(parameters);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;When&nbsp;using&nbsp;CommandBehavior.CloseConnection,&nbsp;the&nbsp;connection&nbsp;will&nbsp;be&nbsp;closed&nbsp;when&nbsp;the&nbsp;</span><span class="cs__com">//&nbsp;IDataReader&nbsp;is&nbsp;closed.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlDataReader&nbsp;reader&nbsp;=&nbsp;cmd.ExecuteReader(CommandBehavior.CloseConnection);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;reader;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>4. Parameter</p>
+<p>You can add several parameters to the command and set the properties of parameter, such as the value, the type and the direction. If the direction is set as Output, you can get the value of parameter after executing the command.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">// Specify the year of StartDate
+SqlParameter parameterYear = new SqlParameter(&quot;@Year&quot;, SqlDbType.Int);
+parameterYear.Value = year;
+SqlParameter parameterBudget = new SqlParameter(&quot;@BudgetSum&quot;, SqlDbType.Money);
+parameterBudget.Direction = ParameterDirection.Output;
+</pre>
+<pre class="hidden">' Specify the year of StartDate
+Dim parameterYear As New SqlParameter(&quot;@Year&quot;, SqlDbType.Int)
+parameterYear.Value = year
+Dim parameterBudget As New SqlParameter(&quot;@BudgetSum&quot;, SqlDbType.Money)
+parameterBudget.Direction = ParameterDirection.Output
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Specify&nbsp;the&nbsp;year&nbsp;of&nbsp;StartDate</span>&nbsp;
+SqlParameter&nbsp;parameterYear&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlParameter(<span class="cs__string">&quot;@Year&quot;</span>,&nbsp;SqlDbType.Int);&nbsp;
+parameterYear.Value&nbsp;=&nbsp;year;&nbsp;
+SqlParameter&nbsp;parameterBudget&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlParameter(<span class="cs__string">&quot;@BudgetSum&quot;</span>,&nbsp;SqlDbType.Money);&nbsp;
+parameterBudget.Direction&nbsp;=&nbsp;ParameterDirection.Output;&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>5. Command Type.</p>
+<p>There're three command types: StoredProcedure, Text (Default), TableDirect. The TableDirect type is only for OLE DB.&nbsp;</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">using (SqlDataReader reader = SqlHelper.ExecuteReader(connectionString, commandText, 
+               CommandType.StoredProcedure, parameterYear, parameterBudget))
+</pre>
+<pre class="hidden">Using reader As SqlDataReader = SqlHelper.ExecuteReader(connectionString, commandText,
+                                                        CommandType.StoredProcedure,
+                                                        parameterYear, parameterBudget)
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">using</span>&nbsp;(SqlDataReader&nbsp;reader&nbsp;=&nbsp;SqlHelper.ExecuteReader(connectionString,&nbsp;commandText,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CommandType.StoredProcedure,&nbsp;parameterYear,&nbsp;parameterBudget))&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>More Information</h2>
+<p><a href="http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.sqlcommand(VS.110).aspx">SqlCommand Constructor</a></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/fs6bx44a(l=en-us,v=VS.110).aspx">SqlCommand.CommandType Property</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

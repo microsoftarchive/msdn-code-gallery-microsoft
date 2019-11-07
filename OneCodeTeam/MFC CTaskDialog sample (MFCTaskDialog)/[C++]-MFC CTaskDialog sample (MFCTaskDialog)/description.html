@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MFC CTaskDialog sample (MFCTaskDialog)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MFC CTaskDialog sample (MFCTaskDialog)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            MFC
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/MFCTaskDialog-c5c43ac5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>MICROSOFT FOUNDATION CLASS LIBRARY : MFCTaskDialog Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The CTaskDialog class replaces the standard Windows message box and has <br>
+additional functionality such as new controls to gather information from the <br>
+user. This class is in the MFC library in Visual Studio 2010. The CTaskDialog <br>
+is available starting with Windows Vista. Earlier versions of Windows cannot <br>
+display the CTaskDialog object. Use CTaskDialog::IsSupported to determine at <br>
+runtime whether the current user can display the task dialog box. The <br>
+standard Windows message box is still supported in Visual Studio 2010.<br>
+<br>
+This sample demonstrates the usages of CTaskDialog:<br>
+<br>
+1. Basic usages<br>
+2. A relatively complete usuage of most controls on CTaskDialog<br>
+3. Progress bar and marquee progress bar on CTaskDialog<br>
+4. MessageBox usage<br>
+5. Navigation usage<br>
+<br>
+</p>
+<h3>Prerequisite:</h3>
+<p style="font-family:Courier New"><br>
+1. To run the sample, the minimum required operating system is Windows Vista.<br>
+2. To compile the sample, you need Visual Studio 2010.<br>
+3. The CTaskDialog is available only when you build your application by using <br>
+the Unicode library.<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+A. Add #include &quot;afxtaskdialog.h&quot; after the list of includes.<br>
+<br>
+B. Determine at runtime whether the current system can display the task <br>
+dialog box by calling CTaskDialog::IsSupported(). See the <br>
+CMFCTaskDialogApp::InitInstance method in MFCTaskDialog.cpp.<br>
+<br>
+C. Set the content, main instruction, title and footer of TaskDialog.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CString strContent = _T(&quot;This is an important message to the user.&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CString strMainInstruction = _T(&quot;Important!\nPlease read!&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CString strTitle = _T(&quot;Basic Usage 1&quot;);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog dlg(strContent, strMainInstruction, strTitle,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDCBF_YES_BUTTON | TDCBF_NO_BUTTON,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDF_ENABLE_HYPERLINKS | TDF_ALLOW_DIALOG_CANCELLATION);<br>
+<br>
+D. Add command button controls to TaskDialog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// a) Load with code<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.AddCommandControl(IDS_COMMAND1, _T(&quot;First command link option&quot;));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.AddCommandControl(IDS_COMMAND2, _T(&quot;Second command link option&quot;));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [-or-]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// b) Load from string resource<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//dlg.LoadCommandControls(IDS_COMMAND1, IDS_COMMAND2);<br>
+<br>
+IDS_COMMAND1 and IDS_COMMAND2 are string resources added into the String <br>
+Table in Resource View.<br>
+<br>
+E. Add radio button controls to TaskDialog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// a) Load with code<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.AddRadioButton(IDS_RADIO1, _T(&quot;First possible radio&quot;));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.AddRadioButton(IDS_RADIO2, _T(&quot;Second possible radio&quot;));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [-or-]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// b) Load from string resource<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//dlg.LoadRadioButtons(IDS_RADIO1, IDS_RADIO2);<br>
+<br>
+IDS_RADIO1 and IDS_RADIO2 are string resources added into the String Table in <br>
+Resource View.<br>
+<br>
+F. Set icons on TaskDialog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetFooterIcon(TD_INFORMATION_ICON);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetMainIcon(TD_WARNING_ICON);<br>
+<br>
+G. Add an expansion area of TaskDialog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetExpansionArea(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;Supplementary to the user\ntyped over two lines.&quot;),
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;Get some additional information.&quot;),
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;Hide the additional information.&quot;));<br>
+<br>
+H. Add a verification checkbox on TaskDialog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetVerificationCheckboxText(_T(&quot;Remember the user's settings.&quot;));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetVerificationCheckbox(TRUE);<br>
+<br>
+I. Add a progress bar on TaskDialog<br>
+<br>
+CTaskDialog must be created with the TDF_SHOW_PROGRESS_BAR option:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog dlg(strContent, strMainInstruction, strTitle,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDCBF_YES_BUTTON | TDCBF_NO_BUTTON,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDF_ENABLE_HYPERLINKS | TDF_SHOW_PROGRESS_BAR);<br>
+<br>
+Call CTaskDialog::SetProgressBarRange to set the range of the progress bar.<br>
+Call CTaskDialog::SetProgressBarState to set the status (PBST_ERROR or <br>
+PBST_PAUSED or PBST_NORMAL). <br>
+Call CTaskDialog::SetProgressBarPosition to set the current position of the <br>
+progress bar.<br>
+<br>
+J. Add a marquee progress bar on TaskDialog<br>
+<br>
+To add a marquee progress bar on TaskDialog, you simply need to add the <br>
+TDF_SHOW_MARQUEE_PROGRESS_BAR option while creating CTaskDialog object, and <br>
+call CTaskDialog::SetProgressBarMarquee.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog dlg(strContent, strMainInstruction, strTitle,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDCBF_YES_BUTTON | TDCBF_NO_BUTTON,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TDF_ENABLE_HYPERLINKS | TDF_SHOW_MARQUEE_PROGRESS_BAR);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dlg.SetProgressBarMarquee(TRUE , 2);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+M. Navigation usage<br>
+<br>
+One CTaskDialog can call CTaskDialog::NavigateTo to transfer the focus to <br>
+another CTaskDialog.<br>
+<br>
+K. Display TaskDiaog and get the results<br>
+<br>
+You can call CTaskDialog::DoModal() to display the task dialog as a modal <br>
+dialog. The application then waits for the user to close the dialog box.<br>
+<br>
+The CTaskDialog closes when the user selects a common button, a command link <br>
+control, or closes the CTaskDialog. The return value is the identifier that <br>
+indicates how the user closed the dialog box. <br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog::GetSelectedCommandControlID() returns the selected command
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;button control ID. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog::GetSelectedRadioButtonID() returns the selected radio button.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CTaskDialog::GetVerificationCheckboxState() retrieves the state of the
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;verification check box<br>
+<br>
+L. Simplify the creation of TaskDialog<br>
+<br>
+CTaskDialog::ShowDialog is able to creating a simple CTaskDialog object and <br>
+display it in one call.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;INT_PTR nResult = CTaskDialog::ShowDialog(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;Do you like the MFCTaskDialog sample?&quot;), _T(&quot;&quot;),
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;MessageBox Usage&quot;), 0, 0, TDCBF_YES_BUTTON | TDCBF_NO_BUTTON);<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: CTaskDialog Class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/dd293651(VS.100).aspx">http://msdn.microsoft.com/en-us/library/dd293651(VS.100).aspx</a><br>
+<br>
+Walkthrough: Adding a CTaskDialog to an Application<br>
+<a  href="http://msdn.microsoft.com/en-us/library/dd465289(VS.100).aspx">http://msdn.microsoft.com/en-us/library/dd465289(VS.100).aspx</a><br>
+<br>
+CTaskDialog: an alternative to the simple message box!<br>
+<a  href="http://blogs.msdn.com/vcblog/archive/2008/12/04/ctaskdialog-an-alternative-to-the-simple-message-box.aspx">http://blogs.msdn.com/vcblog/archive/2008/12/04/ctaskdialog-an-alternative-to-the-simple-message-box.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/6a244f64-ef00-4481-b6a4-ee49b0a4a506image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

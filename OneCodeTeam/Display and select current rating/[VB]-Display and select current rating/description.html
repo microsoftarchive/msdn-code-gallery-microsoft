@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Display and select current rating</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Display and select current rating</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            AJAX, Rating
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Display-and-select-current-9d666afa">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Ajax Rating control-display the current rating and allow user to select the current rating(CSASPNETRatingControlSelectCurrentValue)</h1>
+<h2>Introduction </h2>
+<p class="MsoNormal">This sample will demonstrate you how to solve the problem that using the Ajax Rating control to select the currently selected option. Because the OnChanged event doesn't trigger resulted in the user cannot select the currently selected
+ items. The sample will load a list of books, when the user clicks the link in one of the records, we can see the rating corresponds to the current record books. When the user clicks on the current rating, the database will use the current rating to insert
+ a new record.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Please follow these steps below.</p>
+<p class="MsoNormal">Step 1:&nbsp;Open the <span style="">CSASPNETRatingControlSelectCurrentValue</span>.sln. Expand the
+<a name="OLE_LINK1"><span style="">CSASPNETRatingControlSelectCurrentValue</span>
+</a>web application and press Ctrl &#43; F5 to show the Default.aspx. </p>
+<p class="MsoNormal"><b style="">[Note]</b> <b style="">You may need to install the AjaxControlToolkit,</b>
+<b style="">You can download it here: <a href="http://ajaxcontroltoolkit.codeplex.com/">
+http://ajaxcontroltoolkit.codeplex.com/</a> </b></p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="568" height="358" align="middle">
+</span></p>
+<p class="MsoNormal">Step 2: Click on a link of the record, then the current rating of Ajax Rating control will change to which item you select. Assumptions to select the third:</p>
+<p class="MsoNormal"><span style=""><img src="description/00b8ea1b-60da-4025-8139-50e19113ef01image.png" alt="" width="450" height="319" align="middle">
+</span></p>
+<p class="MsoNormal">Step 3: Click on the current rating of Ajax Rating control, it will insert a new record to the database and re-bind.<br>
+<span style=""><img src="description/995365c1-9bdf-4152-9bee-71f4b872d5fdimage.png" alt="" width="669" height="399" align="middle">
+</span></p>
+<p class="MsoNormal">Step 4:<span style="">&nbsp;&nbsp; </span>Validation finished.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="">Code Logical: <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal">Step 1. Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2008. Name it as &quot;<span style="">CSASPNETRatingControlSelectCurrentValue</span>&quot;.
+</p>
+<p class="MsoNormal">Step 2.<span style="">&nbsp; </span>Add a DataBase under the App_Data file and rename it to &quot;Books&quot;. Add a table in the database and named it &quot;BookInfo&quot;. Table field is defined as follows<span style="">:
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/908e467b-8be6-48db-9bae-b93fc3b872f0image.png" alt="" width="419" height="179" align="middle">
+</span><br>
+Then we need to add some records in this table.</p>
+<p class="MsoNormal">Step 3.<span style="">&nbsp; </span>Add a GridView Control, a Button Control and an Ajax Rating control in the page then rename the GridView to &quot;gdvBooks&quot;. Write the style sheet file for the Rating Control and then name it &quot;Rate.css&quot;:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+.ratingStar
+{
+    font-size: 0pt;
+    width: 13px;
+    height: 12px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: block;
+    background-repeat: no-repeat;
+}
+.filledRatingStar
+{
+    background-image: url(Images/FilledStar.png);
+}
+.emptyRatingStar
+{
+    background-image: url(Images/EmptyStar.png);
+}
+.savedRatingStar
+{
+    background-image: url(Images/SavedStar.png);
+}
+
+
+
+</pre>
+<pre id="codePreview" class="html">
+.ratingStar
+{
+    font-size: 0pt;
+    width: 13px;
+    height: 12px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: block;
+    background-repeat: no-repeat;
+}
+.filledRatingStar
+{
+    background-image: url(Images/FilledStar.png);
+}
+.emptyRatingStar
+{
+    background-image: url(Images/EmptyStar.png);
+}
+.savedRatingStar
+{
+    background-image: url(Images/SavedStar.png);
+}
+
+
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Write the javascript file for the Rating Control and name it &quot;Rate.js&quot;. The script will be used to trigger button event when click rating Control.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">js</span>
+<pre class="hidden">
+Sys.Extended.UI.RatingBehavior.prototype._onStarClick = function(item) {
+    if (this._readOnly) {
+        return;
+    }
+    this.set_Rating(this._currentRating);
+    __doPostBack('btnSubmit', '');
+
+
+}; 
+
+</pre>
+<pre id="codePreview" class="js">
+Sys.Extended.UI.RatingBehavior.prototype._onStarClick = function(item) {
+    if (this._readOnly) {
+        return;
+    }
+    this.set_Rating(this._currentRating);
+    __doPostBack('btnSubmit', '');
+
+
+}; 
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Step 4.<span style="">&nbsp; </span>Bind data to GridView. The Code will be shown as below:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+        /// Bind data to gdvBooks.
+        /// &lt;/summary&gt;
+        private void BindData()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter(&quot;select * from bookInfo&quot;, conn);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            gdvBooks.DataSource = ds;
+            gdvBooks.DataBind();
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+        /// Bind data to gdvBooks.
+        /// &lt;/summary&gt;
+        private void BindData()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter(&quot;select * from bookInfo&quot;, conn);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            gdvBooks.DataSource = ds;
+            gdvBooks.DataBind();
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Step 5. Paid to control the rate of the currently selected item. The code will be shown as below:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+&lt;asp:GridView ID=&quot;gdvBooks&quot; runat=&quot;server&quot; AutoGenerateColumns=&quot;False&quot; DataKeyNames=&quot;Id&quot;
+           OnRowCommand=&quot;gdvBooks_RowCommand&quot;&gt;
+           &lt;Columns&gt;
+              ...
+               &lt;asp:TemplateField HeaderText=&quot;Rate&quot;&gt;
+                   &lt;ItemTemplate&gt;
+                       &lt;asp:LinkButton ID=&quot;LinkbtnSubmit&quot; runat=&quot;server&quot; CommandName=&quot;RateDetail&quot; CommandArgument='&lt;%# Eval(&quot;Rate&quot;) %&gt;'&gt;RateDetail&lt;/asp:LinkButton&gt;
+                   &lt;/ItemTemplate&gt;
+               &lt;/asp:TemplateField&gt;
+           &lt;/Columns&gt;
+       &lt;/asp:GridView&gt;
+
+</pre>
+<pre id="codePreview" class="html">
+&lt;asp:GridView ID=&quot;gdvBooks&quot; runat=&quot;server&quot; AutoGenerateColumns=&quot;False&quot; DataKeyNames=&quot;Id&quot;
+           OnRowCommand=&quot;gdvBooks_RowCommand&quot;&gt;
+           &lt;Columns&gt;
+              ...
+               &lt;asp:TemplateField HeaderText=&quot;Rate&quot;&gt;
+                   &lt;ItemTemplate&gt;
+                       &lt;asp:LinkButton ID=&quot;LinkbtnSubmit&quot; runat=&quot;server&quot; CommandName=&quot;RateDetail&quot; CommandArgument='&lt;%# Eval(&quot;Rate&quot;) %&gt;'&gt;RateDetail&lt;/asp:LinkButton&gt;
+                   &lt;/ItemTemplate&gt;
+               &lt;/asp:TemplateField&gt;
+           &lt;/Columns&gt;
+       &lt;/asp:GridView&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+        /// Paid to control the rate of the currently selected item.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        protected void gdvBooks_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == &quot;RateDetail&quot;)
+            {
+                LinkButton lb = (LinkButton)e.CommandSource;//Get control according to CommandSource
+
+
+                string s = lb.CommandArgument;
+                Rating1.CurrentRating = Convert.ToInt32(lb.CommandArgument);
+            }
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+        /// Paid to control the rate of the currently selected item.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        protected void gdvBooks_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == &quot;RateDetail&quot;)
+            {
+                LinkButton lb = (LinkButton)e.CommandSource;//Get control according to CommandSource
+
+
+                string s = lb.CommandArgument;
+                Rating1.CurrentRating = Convert.ToInt32(lb.CommandArgument);
+            }
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+<span style="">&nbsp;</span>Step 6. In the Click event of the button, get the value of the selected item and insert a new record to database by using the value, the code will be shown as below:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+//Store the value of the item is selected and used to insert the database record
+            int intRate = 0;
+
+
+            switch (Rating1.CurrentRating)
+            {
+                case 1:
+                    intRate = 1;
+                    break;
+                case 2:
+                    intRate = 2;
+                    break;
+                case 3:
+                    intRate = 3;
+                    break;
+                case 4:
+                    intRate = 4;
+                    break;
+                case 5:
+                    intRate = 5;
+                    break;
+            }
+
+
+            try
+            {
+                //Insert a new record.
+                insertdataintosql(&quot;test1&quot;, &quot;Microsoft&quot;, intRate);
+            }
+            catch (DataException ee)
+            {
+                lbResponse.Text = ee.Message;
+                lbResponse.ForeColor = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.Red.aspx"  title="Auto generated link to System.Drawing.Color.Red">System.Drawing.Color.Red</a>;
+            }
+            finally
+            {
+                //Bind data.
+                BindData();
+            }
+
+</pre>
+<pre id="codePreview" class="csharp">
+//Store the value of the item is selected and used to insert the database record
+            int intRate = 0;
+
+
+            switch (Rating1.CurrentRating)
+            {
+                case 1:
+                    intRate = 1;
+                    break;
+                case 2:
+                    intRate = 2;
+                    break;
+                case 3:
+                    intRate = 3;
+                    break;
+                case 4:
+                    intRate = 4;
+                    break;
+                case 5:
+                    intRate = 5;
+                    break;
+            }
+
+
+            try
+            {
+                //Insert a new record.
+                insertdataintosql(&quot;test1&quot;, &quot;Microsoft&quot;, intRate);
+            }
+            catch (DataException ee)
+            {
+                lbResponse.Text = ee.Message;
+                lbResponse.ForeColor = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Drawing.Color.Red.aspx"  title="Auto generated link to System.Drawing.Color.Red">System.Drawing.Color.Red</a>;
+            }
+            finally
+            {
+                //Bind data.
+                BindData();
+            }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+        /// The function use to insert data to sql.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;name&quot;&gt;name&lt;/param&gt;
+        /// &lt;param name=&quot;Author&quot;&gt;Author&lt;/param&gt;
+        /// &lt;param name=&quot;Rate&quot;&gt;Rate&lt;/param&gt;
+        public void insertdataintosql(string name, string Author, int Rate)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = &quot;insert into bookInfo(name,Author,Rate) values(@name,@Author,@Rate)&quot;;
+            cmd.Parameters.Add(&quot;@name&quot;, SqlDbType.NVarChar).Value = name;
+            cmd.Parameters.Add(&quot;@Author&quot;, SqlDbType.NVarChar).Value = Author;
+            cmd.Parameters.Add(&quot;@Rate&quot;, SqlDbType.Int).Value = Rate;
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+        /// The function use to insert data to sql.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;name&quot;&gt;name&lt;/param&gt;
+        /// &lt;param name=&quot;Author&quot;&gt;Author&lt;/param&gt;
+        /// &lt;param name=&quot;Rate&quot;&gt;Rate&lt;/param&gt;
+        public void insertdataintosql(string name, string Author, int Rate)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = &quot;insert into bookInfo(name,Author,Rate) values(@name,@Author,@Rate)&quot;;
+            cmd.Parameters.Add(&quot;@name&quot;, SqlDbType.NVarChar).Value = name;
+            cmd.Parameters.Add(&quot;@Author&quot;, SqlDbType.NVarChar).Value = Author;
+            cmd.Parameters.Add(&quot;@Rate&quot;, SqlDbType.Int).Value = Rate;
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Step 7. Build the application and you can debug it.</p>
+<h2>More Information</h2>
+<p class="MsoNormal">AjaxControlToolkitSampleSite<br>
+<a href="http://www.asp.net/ajaxLibrary/AjaxControlToolkitSampleSite/Rating/Rating.aspx">http://www.asp.net/ajaxLibrary/AjaxControlToolkitSampleSite/Rating/Rating.aspx</a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

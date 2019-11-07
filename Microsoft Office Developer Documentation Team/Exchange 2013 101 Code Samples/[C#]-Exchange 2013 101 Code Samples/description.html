@@ -1,0 +1,912 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/23919b25-400e-4257-9804-4c2d150150acCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Exchange 2013 101 Code Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Exchange 2013 101 Code Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Exchange Online, Office 365, Microsoft Exchange Server 2007, Microsoft Exchange Server 2010, Microsoft Exchange Server 2013, EWS Managed API
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            EWS
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">12/19/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Exchange-2013-101-Code-3c38582c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">The code samples in the Exchange 2013: 101 code samples package show you how to use the Exchange Web Services (EWS) Managed API to perform specific tasks with mailbox data on an on-premises Exchange server, Exchange Online, or Exchange Online
+ as part of Office 365. The package spans most Exchange feature areas and each code sample within it shows you how to perform a common Exchange development task, including how to:</div>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<div class="section"></div>
+<div class="section">
+<ul>
+</ul>
+</div>
+<ul>
+<li>Create, get, and set properties for email messages, delete email messages, delay sending email messages, attach files to email messages, add signatures to email messages, and embed images in email messages.
+</li><li>Create, delete, copy, move, or empty folders, find folder identifiers, and find folders by their display names.
+</li><li>Access a property by name, identifier, or property set GUID, and create, get, update, or delete custom extended properties.
+</li><li>Set streaming or pull notifications. </li><li>Find contacts by their display names, and create, get, update, or delete contacts that are associated with an email account.
+</li><li>Get or set OOF settings or messages for users. </li><li>Get availability information for users or rooms. </li><li>Get a set of meeting times for prospective meeting attendees, get a list of rooms, respond to meeting invitations, and create, get, update, or delete meetings or appointments.
+</li><li>Get email addresses that are members of distribution or room lists. </li><li>Get user names that are associated with an email address. </li><li>Create, get, update, or delete Inbox rules. </li><li>Create search folders or filters, find conversations, and find contacts. </li><li>Create, get, update, or delete single-occurrence or recurring tasks. </li><li>Get a list of delegates for an account, add or remove delegates from an account, and set delegate access permissions for specific folders.
+</li><li>Create, get, update, or delete user information and configuration details, and add or remove delegates from an email account.
+</li></ul>
+<p>All the samples are in the form of Visual Studio solutions.</p>
+<h1 class="heading">Prerequisites</h1>
+<div class="section"></div>
+<p class="section">The samples require the following:</p>
+<div class="section"></div>
+<div class="section">
+<ul>
+</ul>
+</div>
+<ul>
+<li>A target server that is running a version of Exchange starting with Exchange Server 2007 Service Pack 1 (SP1), including Exchange Online.
+</li><li>The .NET Framework 4. </li><li>The EWS Managed API assembly file, Microsoft.Exchange.WebServices.dll. You can download the assembly from the
+<a href="http://go.microsoft.com/fwlink/?LinkID=255472" >Microsoft Download Center</a>. The samples assume that the assembly is in the default download directory. You will need to verify the path before you run the solution for an individual
+ sample. </li><li>A version of Visual Studio starting with Visual Studio 2010.<br>
+Or<br>
+A text editor to create and edit source code files and a command prompt window to run a .NET Framework command line compiler.
+</li></ul>
+<h1>Key components of the sample</h1>
+<div class="section"></div>
+<p class="section">Each sample typically contains the following files:</p>
+<div class="section"></div>
+<div class="section">
+<ul>
+</ul>
+</div>
+<ul>
+<li>*.sln &mdash; A Visual Studio solution file for the project. </li><li>*.csproj &mdash; One or more Visual Studio project files. </li><li>app.config &mdash; The configuration data for the project. </li><li>*.cs &mdash; The using statements, namespace, class, and functions that showcase a specific feature.
+</li><li>Authentication.csproj &mdash; The Visual Studio project file for the dependent authentication code.
+</li><li>TextFileTraceListener.cs &mdash; The using statements, namespace, class, and code for writing the XML request and response to a text file.
+</li><li>Service.cs &mdash; The using statements, namespace, class, and functions that are necessary for acquiring an
+<strong>ExchangeService</strong> object that is used in the project. </li><li>CertificateCallback.cs &mdash; The using statements, namespace, class, and code for acquiring an X509 certificate.
+</li><li>UserData.cs &mdash; The using statements, namespace, class, and functions for acquiring the user information that is required by the service object.
+</li></ul>
+<p><strong>Security note&nbsp; </strong></p>
+<p class="heading">The certificate callback function in the Authentication project is meant for an on-premises test installation of Exchange that uses the default, self-signed certificate. We include this callback function to make it possible to run the Exchange
+ 101 code samples without having to install a signed certificate. In production, the Exchange server should have a valid, signed certificate. The sample authentication code should not be used on a server that has a signed certificate and it should not be used
+ on a production server. To activate the callback method, follow the instructions in the code comments for the Authentication project.&nbsp;<strong><br>
+</strong></p>
+<h1 class="heading">Configure the sample</h1>
+<div class="section"></div>
+<p class="section">Follow these steps to configure the Exchange 2013: 101 code samples package.</p>
+<div class="section"></div>
+<div class="section">
+<ol>
+</ol>
+</div>
+<ol>
+<li>In Visual Studio, set the startup project by selecting the project in the Solution Explorer and choosing &quot;Set as StartUp Project&quot; from the
+<strong><span class="ui">Project</span> </strong>menu. </li><li>Ensure that the reference path for the Microsoft.Exchange.WebServices.dll file points to the location where the DLL is installed on your local computer.
+</li></ol>
+<h1>Build the samples</h1>
+<div id="sectionSection4" class="section">
+<p>Press F5 to build and deploy the samples.</p>
+</div>
+<h1 class="heading">Run and test the samples</h1>
+<div id="sectionSection5" class="section">
+<p>Press F5 to run the samples.</p>
+</div>
+<h1 class="heading">Related content</h1>
+<div id="sectionSection6" class="section">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/dn467891(v=exchg.150).aspx" >How to: Communicate with EWS by using the EWS Managed API</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/dn528373(v=exchg.150).aspx" >How to: Reference the EWS Managed API assembly</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj900168(v=exchg.150).aspx" >Start using web services in Exchange</a></p>
+</li><li>
+<p><a href="http://code.msdn.microsoft.com/exchange" >All Exchange code samples on MSDN</a></p>
+</li></ul>
+</div>
+<h1 class="heading">Change log</h1>
+<div id="sectionSection7" class="section">
+<div class="caption"></div>
+<div class="tableSection">
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p style="text-align:left">Date</p>
+</th>
+<th>
+<p style="text-align:left">Description</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>December 2013</p>
+</td>
+<td>
+<p>Added 31 samples and clarified the intended use of the Authentication project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>June 2013</p>
+</td>
+<td>
+<p>First release.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps24453-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Authenticate with EWS/description.html">Exchange 2013 Authenticate with EWS</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to discover your EWS end point and authenticate with the service.</div>
+                        </div>
+                        <!--pe24453-->
+                        <!--ps16922-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get a room list programmatically by using the EWS Managed API/description.html">Exchange 2013 Get a room list programmatically by using the EWS Managed API</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to retrieve a collection of distribution lists that contain email addresses for all the room resources in your organization.</div>
+                        </div>
+                        <!--pe16922-->
+                        <!--ps16917-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find folders by their display names programmatically/description.html">Exchange 2013 Find folders by their display names programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to retrieve the unique identifier of a folder by using the folder&#39;s display name.</div>
+                        </div>
+                        <!--pe16917-->
+                        <!--ps16873-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create meetings programmatically/description.html">Exchange 2013 Create meetings programmatically</a></div>
+                            <div>Use the EWS Managed API to create meetings.</div>
+                        </div>
+                        <!--pe16873-->
+                        <!--ps16840-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access calendar items in a recurring series programmatically/description.html">Exchange 2013 Access calendar items in a recurring series programmatically</a></div>
+                            <div>Use the EWS Managed API to access calendar items.</div>
+                        </div>
+                        <!--pe16840-->
+                        <!--ps17125-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get users&#39; Out of Office settings programmatically/description.html">Exchange 2013 Get users&#39; Out of Office settings programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to programmatically retrieve settings information for automatic replies, such as Out of Office (OOF) messages, for an email client.</div>
+                        </div>
+                        <!--pe17125-->
+                        <!--ps16878-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create tasks programmatically on Exchange servers/description.html">Exchange 2013 Create tasks programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a task item.</div>
+                        </div>
+                        <!--pe16878-->
+                        <!--ps17177-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Send SMS messages over an Exchange server and an SMS gateway/description.html">Exchange 2013 Send SMS messages over an Exchange server and an SMS gateway</a></div>
+                            <div>Use the EWS Managed API to send an SMS messages with Exchange server and an SMS gateway.</div>
+                        </div>
+                        <!--pe17177-->
+                        <!--ps17146-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Retrieve a set of meeting times for prospective attendees/description.html">Exchange 2013 Retrieve a set of meeting times for prospective attendees</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to retrieve a set of meeting times for prospective attendees.</div>
+                        </div>
+                        <!--pe17146-->
+                        <!--ps17169-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get attachments on Exchange items programmatically/description.html">Exchange 2013 Get attachments on Exchange items programmatically</a></div>
+                            <div>Use the EWS Managed API to get attachments on items in Exchange server.</div>
+                        </div>
+                        <!--pe17169-->
+                        <!--ps17123-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get user names for an account by using the Name Resolver service/description.html">Exchange 2013 Get user names for an account by using the Name Resolver service</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to search a Contacts folder and Active Directory Domain Services (AD&#160;DS) for potential name matches.</div>
+                        </div>
+                        <!--pe17123-->
+                        <!--ps17180-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Set streaming notifications for applications programmatically/description.html">Exchange 2013 Set streaming notifications for applications programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a streaming subscription.</div>
+                        </div>
+                        <!--pe17180-->
+                        <!--ps16861-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create contacts programmatically on Exchange servers/description.html">Exchange 2013 Create contacts programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a contact and populate it with contact information.</div>
+                        </div>
+                        <!--pe16861-->
+                        <!--ps16971-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Retrieve contact items from the Contacts folder programmatically/description.html">Exchange 2013 Retrieve contact items from the Contacts folder programmatically</a></div>
+                            <div>A Contacts folder in an Exchange mailbox can contain items of more than one message class, such as contact items or distribution list items. This sample shows you how to use the Exchange Web Services (EWS) Managed API to retrieve items of a particular type.</div>
+                        </div>
+                        <!--pe16971-->
+                        <!--ps17188-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update email on Exchange servers programmatically/description.html">Exchange 2013 Update email on Exchange servers programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to update an email message.</div>
+                        </div>
+                        <!--pe17188-->
+                        <!--ps16864-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create draft emails programmatically on Exchange servers/description.html">Exchange 2013 Create draft emails programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a draft email message.</div>
+                        </div>
+                        <!--pe16864-->
+                        <!--ps17181-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Set users&#39; Out of Office settings programmatically/description.html">Exchange 2013 Set users&#39; Out of Office settings programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to programmatically set, and then retrieve settings information for automatic replies, such as Out of Office (OOF) messages, for an email client.</div>
+                        </div>
+                        <!--pe17181-->
+                        <!--ps17182-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Synchronize a mailbox programmatically/description.html">Exchange 2013 Synchronize a mailbox programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to keep a server and local client in synch.</div>
+                        </div>
+                        <!--pe17182-->
+                        <!--ps16921-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get a conference room from a room list programmatically/description.html">Exchange 2013 Get a conference room from a room list programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to get a collection of rooms from a room list, retrieve the collection that matches your search criteria, and expand the selected collection in order to locate a room that meets your specified criteria.</div>
+                        </div>
+                        <!--pe16921-->
+                        <!--ps17122-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get user configuration objects programmatically/description.html">Exchange 2013 Get user configuration objects programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to get a user configuration object and display its values.</div>
+                        </div>
+                        <!--pe17122-->
+                        <!--ps17129-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Modify user configuration objects programmatically/description.html">Exchange 2013 Modify user configuration objects programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to modify a user configuration object.</div>
+                        </div>
+                        <!--pe17129-->
+                        <!--ps16915-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find contacts by their display names programmatically/description.html">Exchange 2013 Find contacts by their display names programmatically</a></div>
+                            <div>A Contacts folder in an Exchange mailbox can contain items of more than one message class, such as contact items or distribution list items. This sample shows how to use the Exchange Web Services (EWS) Managed API to retrieve a contact item using the display name of the contact.</div>
+                        </div>
+                        <!--pe16915-->
+                        <!--ps17179-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Set pull notifications for applications programmatically/description.html">Exchange 2013 Set pull notifications for applications programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a pull subscription.</div>
+                        </div>
+                        <!--pe17179-->
+                        <!--ps17176-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Send delayed emails programmatically on Exchange servers/description.html">Exchange 2013 Send delayed emails programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create an email message and send it at a specified time in the future.</div>
+                        </div>
+                        <!--pe17176-->
+                        <!--ps16846-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Attach files to email messages programmatically/description.html">Exchange 2013 Attach files to email messages programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to send an email message that includes an attachment.</div>
+                        </div>
+                        <!--pe16846-->
+                        <!--ps17132-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Move items programmatically on Exchange servers/description.html">Exchange 2013 Move items programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to move an item.</div>
+                        </div>
+                        <!--pe17132-->
+                        <!--ps17174-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Search for specific items programmatically on Exchange servers/description.html">Exchange 2013 Search for specific items programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to search for items in a folder that fit your search criteria.</div>
+                        </div>
+                        <!--pe17174-->
+                        <!--ps16900-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete contact property groups by using extended properties/description.html">Exchange 2013 Delete contact property groups by using extended properties</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete contact properties that are part of a property group, such as an email address, by using extended properties.</div>
+                        </div>
+                        <!--pe16900-->
+                        <!--ps16867-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create folders programmatically on Exchange servers/description.html">Exchange 2013 Create folders programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a folder.</div>
+                        </div>
+                        <!--pe16867-->
+                        <!--ps16904-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete emails programmatically from Exchange servers/description.html">Exchange 2013 Delete emails programmatically from Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete email messages.</div>
+                        </div>
+                        <!--pe16904-->
+                        <!--ps16868-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create Inbox rules programmatically on Exchange servers/description.html">Exchange 2013 Create Inbox rules programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to create an inbox rule in an Exchange server.</div>
+                        </div>
+                        <!--pe16868-->
+                        <!--ps16913-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Expand distribution lists programmatically on Exchange servers/description.html">Exchange 2013 Expand distribution lists programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to expand the email addresses in a distribution list.</div>
+                        </div>
+                        <!--pe16913-->
+                        <!--ps16918-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find tasks by their subjects programmatically on Exchange servers/description.html">Exchange 2013 Find tasks by their subjects programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to retrieve a task item by using the subject of the task.</div>
+                        </div>
+                        <!--pe16918-->
+                        <!--ps16925-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get an email account password expiration date programmatically/description.html">Exchange 2013 Get an email account password expiration date programmatically</a></div>
+                            <div>Learn how to get the date that an email account password will expire.</div>
+                        </div>
+                        <!--pe16925-->
+                        <!--ps16844-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Add signatures to emails programmatically on Exchange servers/description.html">Exchange 2013 Add signatures to emails programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to add an email signature to an email for use with Exchange server.</div>
+                        </div>
+                        <!--pe16844-->
+                        <!--ps16901-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete contacts programmatically from Exchange servers/description.html">Exchange 2013 Delete contacts programmatically from Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete a contact.</div>
+                        </div>
+                        <!--pe16901-->
+                        <!--ps22278-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get user information programmatically/description.html">Exchange 2013 Get user information programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to display user configuration settings.</div>
+                        </div>
+                        <!--pe22278-->
+                        <!--ps16905-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete folders programmatically from Exchange servers/description.html">Exchange 2013 Delete folders programmatically from Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete a folder.</div>
+                        </div>
+                        <!--pe16905-->
+                        <!--ps16914-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find associated user information programmatically/description.html">Exchange 2013 Find associated user information programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to find associated items.</div>
+                        </div>
+                        <!--pe16914-->
+                        <!--ps16879-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create user configuration objects programmatically/description.html">Exchange 2013 Create user configuration objects programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a user configuration object.</div>
+                        </div>
+                        <!--pe16879-->
+                        <!--ps16972-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update contacts programmatically on Exchange servers/description.html">Exchange 2013 Update contacts programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to update contact properties such as the company name for a contact. </div>
+                        </div>
+                        <!--pe16972-->
+                        <!--ps22185-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access a property by its property tag/description.html">Exchange 2013 Access a property by its property tag</a></div>
+                            <div>Use the EWS Managed API to access a property by its property tag.</div>
+                        </div>
+                        <!--pe22185-->
+                        <!--ps22199-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Move many items between different folders programmatically/description.html">Exchange 2013 Move many items between different folders programmatically</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates and then saves two email messages, and then moves both email messages to a different folder.</div>
+                        </div>
+                        <!--pe22199-->
+                        <!--ps16875-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create recurring tasks programmatically on Exchange servers/description.html">Exchange 2013 Create recurring tasks programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a task item that is recurring.</div>
+                        </div>
+                        <!--pe16875-->
+                        <!--ps17168-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete attachments from Exchange items programmatically/description.html">Exchange 2013 Delete attachments from Exchange items programmatically</a></div>
+                            <div>Use the EWS Managed API to delete attachments on items in Exchange server.</div>
+                        </div>
+                        <!--pe17168-->
+                        <!--ps16909-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete user configuration objects programmatically/description.html">Exchange 2013 Delete user configuration objects programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete a user configuration object.</div>
+                        </div>
+                        <!--pe16909-->
+                        <!--ps22201-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Retrieve all the child folders under the message root folder/description.html">Exchange 2013 Retrieve all the child folders under the message root folder</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, retrieves a list of all the folders under the root message folder, and then outputs each folder&#39;s display name, folder class, and the number of subfolders folders it contains.</div>
+                        </div>
+                        <!--pe22201-->
+                        <!--ps17130-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Move folders programmatically on Exchange servers/description.html">Exchange 2013 Move folders programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to move a folder.</div>
+                        </div>
+                        <!--pe17130-->
+                        <!--ps17126-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get users&#39; status setting programmatically/description.html">Exchange 2013 Get users&#39; status setting programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to get a user&#39;s availability status programmatically.</div>
+                        </div>
+                        <!--pe17126-->
+                        <!--ps22471-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Provision custom X-headers programmatically/description.html">Exchange 2013 Provision custom X-headers programmatically</a></div>
+                            <div>Use the EWS Managed API to provision custom X-headers.</div>
+                        </div>
+                        <!--pe22471-->
+                        <!--ps22187-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access a property by property set GUID and name/description.html">Exchange 2013 Access a property by property set GUID and name</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to access an item’s property by its property set GUID and its property name.</div>
+                        </div>
+                        <!--pe22187-->
+                        <!--ps22188-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Cancel meetings programmatically/description.html">Exchange 2013 Cancel meetings programmatically</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, finds a meeting, and then tries to cancel the meeting if the caller is the meeting organizer.</div>
+                        </div>
+                        <!--pe22188-->
+                        <!--ps17190-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update Inbox rules programmatically on Exchange servers/description.html">Exchange 2013 Update Inbox rules programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to update an inbox rule in an Exchange server.</div>
+                        </div>
+                        <!--pe17190-->
+                        <!--ps17144-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Respond to meeting invitations programmatically/description.html">Exchange 2013 Respond to meeting invitations programmatically</a></div>
+                            <div>Use the EWS Managed API to respond to meeting invites.</div>
+                        </div>
+                        <!--pe17144-->
+                        <!--ps22194-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create search folders programmatically on Exchange servers/description.html">Exchange 2013 Create search folders programmatically on Exchange servers</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, and then creates a search folder.</div>
+                        </div>
+                        <!--pe22194-->
+                        <!--ps17189-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update folder display names programmatically on Exchange servers/description.html">Exchange 2013 Update folder display names programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to update the display name of a folder.</div>
+                        </div>
+                        <!--pe17189-->
+                        <!--ps17128-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Modify items in a recurring series programmatically/description.html">Exchange 2013 Modify items in a recurring series programmatically</a></div>
+                            <div>Use the EWS Managed API to modify items in a recurring series</div>
+                        </div>
+                        <!--pe17128-->
+                        <!--ps16911-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Embed inline images in draft emails programmatically/description.html">Exchange 2013 Embed inline images in draft emails programmatically</a></div>
+                            <div>Use the EWS Managed API to embed inline images for emails that is draft and sent using Exchange server.</div>
+                        </div>
+                        <!--pe16911-->
+                        <!--ps16902-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete custom extended properties from items programmatically/description.html">Exchange 2013 Delete custom extended properties from items programmatically</a></div>
+                            <div>Use the EWS Managed API to delete a custom extended property.</div>
+                        </div>
+                        <!--pe16902-->
+                        <!--ps16872-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create meeting requests on behalf of a principal programmatically/description.html">Exchange 2013 Create meeting requests on behalf of a principal programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a meeting request for a principle principal account.</div>
+                        </div>
+                        <!--pe16872-->
+                        <!--ps22195-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create weekly recurring appointments on Exchange servers/description.html">Exchange 2013 Create weekly recurring appointments on Exchange servers</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, sets properties on the appointment that include the weekly recurrence pattern, and then saves the appointment to the user’s mailbox.</div>
+                        </div>
+                        <!--pe22195-->
+                        <!--ps22189-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Copy many items between different folders programmatically/description.html">Exchange 2013 Copy many items between different folders programmatically</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates and then saves two email messages, and then makes a copy of both of the email messages.</div>
+                        </div>
+                        <!--pe22189-->
+                        <!--ps22183-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access a named property by its name/description.html">Exchange 2013 Access a named property by its name</a></div>
+                            <div>Use the EWS Managed API to access a property by its name</div>
+                        </div>
+                        <!--pe22183-->
+                        <!--ps16897-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete a recurring series programmatically from Exchange servers/description.html">Exchange 2013 Delete a recurring series programmatically from Exchange servers</a></div>
+                            <div>Use the EWS Managed API to delete a recurring series.</div>
+                        </div>
+                        <!--pe16897-->
+                        <!--ps16899-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete appointments programmatically from Exchange servers/description.html">Exchange 2013 Delete appointments programmatically from Exchange servers</a></div>
+                            <div>Use the EWS Managed API to delete appointments.</div>
+                        </div>
+                        <!--pe16899-->
+                        <!--ps16916-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find conversations in mailboxes programmatically/description.html">Exchange 2013 Find conversations in mailboxes programmatically</a></div>
+                            <div>Use the Microsoft Exchange Web Services (EWS) Managed API to find conversations in a mailbox.</div>
+                        </div>
+                        <!--pe16916-->
+                        <!--ps22184-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access a named property by its identifier/description.html">Exchange 2013 Access a named property by its identifier</a></div>
+                            <div>Use the EWS Managed API to access a property by its identifier.</div>
+                        </div>
+                        <!--pe22184-->
+                        <!--ps22190-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create a bitmask search filter/description.html">Exchange 2013 Create a bitmask search filter</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates a bitmask search filter, and then makes a call to EWS to find items that match the search filter criteria.</div>
+                        </div>
+                        <!--pe22190-->
+                        <!--ps16865-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create factory methods that bind applications to an email account/description.html">Exchange 2013 Create factory methods that bind applications to an email account</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to connect to an Exchange server.</div>
+                        </div>
+                        <!--pe16865-->
+                        <!--ps16863-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create custom extended properties on items programmatically/description.html">Exchange 2013 Create custom extended properties on items programmatically</a></div>
+                            <div>Use the EWS Managed API to create a custom extended property.</div>
+                        </div>
+                        <!--pe16863-->
+                        <!--ps16845-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Apply actions to manage conversations in a mailbox/description.html">Exchange 2013 Apply actions to manage conversations in a mailbox</a></div>
+                            <div>Use the Microsoft Exchange Web Services (EWS) Managed API to apply actions to manage conversations in a mailbox.</div>
+                        </div>
+                        <!--pe16845-->
+                        <!--ps17187-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update delegates associated with email accounts programmatically/description.html">Exchange 2013 Update delegates associated with email accounts programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to update delegates associated with an Exchange email account.</div>
+                        </div>
+                        <!--pe17187-->
+                        <!--ps22277-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get user information by using an Exchange Management Shell cmdlet/description.html">Exchange 2013 Get user information by using an Exchange Management Shell cmdlet</a></div>
+                            <div>This sample shows you how to call an Exchange Management Shell cmdlet from managed code.</div>
+                        </div>
+                        <!--pe22277-->
+                        <!--ps17191-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Validate Autodiscover URLs by using validation callbacks/description.html">Exchange 2013 Validate Autodiscover URLs by using validation callbacks</a></div>
+                            <div>This sample shows you how to create a validation method for the Exchange Web Services (EWS) Managed API.</div>
+                        </div>
+                        <!--pe17191-->
+                        <!--ps22197-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Find contacts and contact groups programmatically/description.html">Exchange 2013 Find contacts and contact groups programmatically</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, gets all the contact folders in the mailbox, and then gets all the contacts and contact groups from each contact folder.</div>
+                        </div>
+                        <!--pe22197-->
+                        <!--ps17184-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update a recurring series programmatically on Exchange servers/description.html">Exchange 2013 Update a recurring series programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to update a recurring series.</div>
+                        </div>
+                        <!--pe17184-->
+                        <!--ps16851-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Copy items programmatically on Exchange servers/description.html">Exchange 2013 Copy items programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to copy an item.</div>
+                        </div>
+                        <!--pe16851-->
+                        <!--ps22198-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get all Contacts folders programmatically/description.html">Exchange 2013 Get all Contacts folders programmatically</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, binds to the default Contacts folder, and then returns all the child folders of the default Contacts folder.</div>
+                        </div>
+                        <!--pe22198-->
+                        <!--ps16842-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Access Internet message headers on emails programmatically/description.html">Exchange 2013 Access Internet message headers on emails programmatically</a></div>
+                            <div>Use the EWS Managed API to access Internet message headers for items stored in Exchange server.</div>
+                        </div>
+                        <!--pe16842-->
+                        <!--ps16866-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create folders by impersonating another email account/description.html">Exchange 2013 Create folders by impersonating another email account</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a folder for an email account by using impersonation.</div>
+                        </div>
+                        <!--pe16866-->
+                        <!--ps17167-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create attachments on Exchange items programmatically/description.html">Exchange 2013 Create attachments on Exchange items programmatically</a></div>
+                            <div>Use the EWS Managed API to create attachments on items in Exchange server.</div>
+                        </div>
+                        <!--pe17167-->
+                        <!--ps16850-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Copy folders programmatically on Exchange servers/description.html">Exchange 2013 Copy folders programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to create a copy of a folder.</div>
+                        </div>
+                        <!--pe16850-->
+                        <!--ps16906-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete Inbox rules programmatically from Exchange servers/description.html">Exchange 2013 Delete Inbox rules programmatically from Exchange servers</a></div>
+                            <div>Use the EWS Managed API to delete an inbox rule in an Exchange server.</div>
+                        </div>
+                        <!--pe16906-->
+                        <!--ps16907-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete items programmatically from Exchange servers/description.html">Exchange 2013 Delete items programmatically from Exchange servers</a></div>
+                            <div>Use the EWS Managed API to delete an item.</div>
+                        </div>
+                        <!--pe16907-->
+                        <!--ps22202-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Archive selected items in a folder/description.html">Exchange 2013 Archive selected items in a folder</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates a search filter for items to archive, archives the items, and displays the result.</div>
+                        </div>
+                        <!--pe22202-->
+                        <!--ps22193-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create an existential search filter/description.html">Exchange 2013 Create an existential search filter</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates a search filter, and then makes a call to EWS to get items that match the search filter criteria.</div>
+                        </div>
+                        <!--pe22193-->
+                        <!--ps22191-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create a string containment search folder/description.html">Exchange 2013 Create a string containment search folder</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates a string containment search filter, and then makes a call to EWS to find items that match the search filter criteria.</div>
+                        </div>
+                        <!--pe22191-->
+                        <!--ps22192-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Create an equality search filter/description.html">Exchange 2013 Create an equality search filter</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates an equality search filter, and then makes a call to EWS to find items that match the search filter criteria.</div>
+                        </div>
+                        <!--pe22192-->
+                        <!--ps16908-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete tasks from an account on Exchange servers programmatically/description.html">Exchange 2013 Delete tasks from an account on Exchange servers programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to delete a task item.</div>
+                        </div>
+                        <!--pe16908-->
+                        <!--ps16912-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Empty folders on Exchange servers programmatically/description.html">Exchange 2013 Empty folders on Exchange servers programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to empty a folder.</div>
+                        </div>
+                        <!--pe16912-->
+                        <!--ps16841-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Add delegate users to an email account programmatically/description.html">Exchange 2013 Add delegate users to an email account programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to add delegates to an account.</div>
+                        </div>
+                        <!--pe16841-->
+                        <!--ps17145-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Retrieve a list of delegates associated with an email account/description.html">Exchange 2013 Retrieve a list of delegates associated with an email account</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to get a list of delegates associated with a primary email account.</div>
+                        </div>
+                        <!--pe17145-->
+                        <!--ps17178-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Set permissions on specific folders to restrict delegate access/description.html">Exchange 2013 Set permissions on specific folders to restrict delegate access</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to restrict delegate access to for a delegate on specific folders.</div>
+                        </div>
+                        <!--pe17178-->
+                        <!--ps17127-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Modify existing tasks programmatically on Exchange servers/description.html">Exchange 2013 Modify existing tasks programmatically on Exchange servers</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to update the status of an existing task.</div>
+                        </div>
+                        <!--pe17127-->
+                        <!--ps17186-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Update custom extended properties programmatically/description.html">Exchange 2013 Update custom extended properties programmatically</a></div>
+                            <div>Use the EWS Managed API to update a custom extended property.</div>
+                        </div>
+                        <!--pe17186-->
+                        <!--ps17175-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Send batch emails programmatically on Exchange servers/description.html">Exchange 2013 Send batch emails programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to send batch emails with Exchange server.</div>
+                        </div>
+                        <!--pe17175-->
+                        <!--ps22196-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Delete many items programmatically from Exchange servers/description.html">Exchange 2013 Delete many items programmatically from Exchange servers</a></div>
+                            <div>This sample authenticates an email address and password entered from the console, creates and then saves two email messages to the server, and then deletes both email messages from the server.</div>
+                        </div>
+                        <!--pe22196-->
+                        <!--ps17142-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Play email messages over the phone/description.html">Exchange 2013 Play email messages over the phone</a></div>
+                            <div>Use the EWS Managed API to play an email on the phone with Exchange server.</div>
+                        </div>
+                        <!--pe17142-->
+                        <!--ps16924-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Get Inbox rules programmatically on Exchange servers/description.html">Exchange 2013 Get Inbox rules programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to get an inbox rule in an Exchange server.</div>
+                        </div>
+                        <!--pe16924-->
+                        <!--ps17140-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Perform paged searches programmatically on Exchange servers/description.html">Exchange 2013 Perform paged searches programmatically on Exchange servers</a></div>
+                            <div>Use the EWS Managed API to performed paged searches</div>
+                        </div>
+                        <!--pe17140-->
+                        <!--ps17143-->
+                        <div id="item">
+                                <div><a href="Exchange 2013 Remove delegates associated with email accounts programmatically/description.html">Exchange 2013 Remove delegates associated with email accounts programmatically</a></div>
+                            <div>This sample shows you how to use the Exchange Web Services (EWS) Managed API to remove delegates from an Exchange email account.</div>
+                        </div>
+                        <!--pe17143-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

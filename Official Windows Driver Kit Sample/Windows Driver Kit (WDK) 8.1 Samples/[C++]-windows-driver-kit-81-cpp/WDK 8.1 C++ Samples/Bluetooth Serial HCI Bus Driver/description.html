@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bluetooth Serial HCI Bus Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Bluetooth Serial HCI Bus Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WDM, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Bluetooth
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Bluetooth-Serial-HCI-6d95ac60">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The purpose of this sample is to demonstrate how to implement a basic bus driver to support the new
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff536585">Bluetooth Extensibility transport DDIs</a> over the UART transport. Such a serial bus driver can support a multi-radio device over the UART transport and utilize a common Bluetooth
+ HCI packet for communication. The lower edge of this driver interfaces with a UART controller following the Bluetooth SIG’s UART (H4) transport protocol.
+</p>
+<p><b>Note</b>: This sample driver is generic—i.e. it is not designed for a specific device and allows for a vendor to adopt and enhance it for supporting Bluetooth
+</p>
+<p>This sample driver, as is, may not properly function for a device until all vendor-specific device requirements (e.g. device initialization) have been incorporated
+</p>
+<p>It is recommended to use WDK whose version matches the target Windows build version or newer for the development of the serial bus driver.
+</p>
+<p><b>FILE MANIFEST</b> </p>
+<p><b>WDK header file</b> </p>
+<p>BthXDDI.h – this has the constants, struct, and IOCTL definitions for the Bluetooth extensibility transport. This header file is included in WDK.</p>
+<p><b>Common code section</b> </p>
+<p>driver.c – driver initialization</p>
+<p>driver.h – common header file for driver.c and includes other header files</p>
+<p>Fdo.c – functions for function device object (FDO) and BTHX DDI processing</p>
+<p>io.c – functions that perform IO read pump via UART controller</p>
+<p>Io.h – header for io.c</p>
+<p>pdo.c – PDO (Bluetooth function) enumeration and IOCTL processing</p>
+<p>public.h – header to share with application to support Radio On/Off (“Airplane mode”)</p>
+<p>Note: The goal is to keep the common code section the same, so the vendor will only need to update those code sections in the device specific directory.</p>
+<p><b>Device-specific code section</b> </p>
+<p>Debugdef.h – WPP trace GUID; user should use a new GUID (unique per driver)</p>
+<p>device.c – device specific functions to implement:</p>
+<p>--DeviceInitialize() – to perform UART and Bluetooth device initialization;</p>
+<p>--DeviceEnable() – (optional) to bring serial bus device out of disable/reset state.</p>
+<p>--DevicePowerOn() – (optional) to power on the device.</p>
+<p>--DeviceEnableWakeControl() – (optional) to arm for device wake signal</p>
+<p>--DeviceDisableWakeControl() – (optional) to disarm for device wake signal</p>
+<p>device.h – header file for device.c</p>
+<p>driver.rc – driver version and name</p>
+<p>SerialBusWdk.inx – device specific INF file to install this driver. The vendor will need to add the hardware ID to match the “_HID” for the Serial Bus Device (Bluetooth) in the DSDT.asl file. For example, in SerialBusWDK.inx, the hardware ID is “ACPI\&lt;Vendor&gt;_BTH0”
+ where “&lt;vendor&gt;” could be a 4 digit vendor name</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Bluetooth-Serial-HCI-6d95ac60/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>Starting in the Visual Studio&nbsp;2013 WDK, you can build the sample in two ways: using the Visual Studio Integrated Development Environment (IDE) or from the command line using the Visual Studio Command Prompt window and the Microsoft Build Engine (MSBuild.exe).</p>
+<p class="proch"><b>Building the sample using Visual Studio</b></p>
+<ol>
+<li>Open Visual Studio. From the <b>File</b> menu, select <b>Open Project/Solution</b>. Within your WDK installation, navigate to src\bluetooth\serialhcibus and open the serialhcibus.sln project file.
+</li><li>Right-click the solution in the <b>Solution Explorer</b> and select <b>Configuration Manager</b>.
+</li><li>From the <b>Configuration Manager</b>, select the <b>Active Solution Configuration</b> (for example, Windows&nbsp;8.1 Debug or Windows&nbsp;8.1 Release) and the
+<b>Active Solution Platform</b> (for example, Win32) that correspond to the type of build you are interested in.
+</li><li>From the <b>Build</b> menu, click <b>Build Solution</b> (Ctrl&#43;Shift&#43;B). </li></ol>
+<p>Previous versions of the WDK used the Windows Build utility (Build.exe) and provided separate build environment windows for each of the supported build configurations. Starting in the Visual Studio&nbsp;2013 WDK, you can use the Visual Studio Command Prompt window
+ for all build configurations.</p>
+<p class="proch"><b>Building the sample using the command line (MSBuild)</b></p>
+<ol>
+<li>Open a Visual Studio Command Prompt window. Click <b>Start</b> and search for
+<b>Developer Command Prompt</b>. If your project is under %PROGRAMFILES%, you need to open the command prompt window using elevated permissions (<b>Run as administrator</b>). From this window you can use MsBuild.exe to build any Visual Studio project by specifying
+ the project (.VcxProj) or solutions (.Sln) file. </li><li>Navigate to the project directory and enter the <b>MSbuild</b> command for your target. For example, to perform a clean build of a Visual Studio driver project called SerialBusWdk.vcxproj, navigate to the project directory and enter the following MSBuild
+ command: <b>msbuild /t:clean /t:build .\SerialBusWdk.vcxproj</b>. </li><li>If the build succeeds, you will find the driver (SerialBusWDK.sys) in the binary output directory corresponding to the target platform, for example src\bluetooth\serialhcibus\Package\Windows&nbsp;8.1 Debug.
+</li></ol>
+<h2>Run the sample</h2>
+<p><b>INSTALLATION</b> </p>
+<p>The vendor can adopt this driver to add device specific functions, e.g. vendor-specific device initialization. After this is completed, the following steps can be followed to perform device installation in order to test the driver:</p>
+<p>Copy driver and inf file to a directory on the test system</p>
+<p>Perform “Update Driver” on the devnode corresponding to the hardware ID in the DSDT.asl file for this multifunction serial bus driver</p>
+<p>Point the installation to the directory to find the INF and sys files</p>
+<p>Upon successful installation, you will see “Serial Bus Driver over UART Bus Enumerator&quot; in Device Manager under the Ports device class</p>
+<p>Upon successful installation of the serial bus driver, a PDO will be created with a compat ID of “MS_BTHX_BTHMINI.” This will cause PnP to find the match in bth.inf to perform the installation of the Bluetooth core components with its extensibility transport</p>
+<p><b>Pre-requisite: DSDT.ASL</b> </p>
+<p>A multifunction serial bus device is a peripheral device on a SoC platform. Its configuration is often defined in the DSDT.asl (Differentiated System Description Table) file to reflect its configuration and interconnection with a UART controller and other
+ optional dependent controllers, e.g. I2C, GPIO, etc. for additional control.</p>
+<p>Here is an (incomplete) sample system bus device section of a DSDT.ASL file for a UART controller and a multifunction serial bus device that supports Bluetooth. For details, please reference the document “Minimum WOA ACPI Requirements.docx” from Microsoft.
+</p>
+<pre class="syntax"><code>//
+// UART where a serial bus device is connected to
+//
+
+Device (UAR1)
+{
+    Name (_HID, &quot;ABCD_UART&quot;)      // where “ABCD” is vendor name;
+    // …
+ 
+    Name (_CID, &quot;ACPI\ABCD_UART&quot;)
+    Name (_UID, 6)
+ 
+    Method (_CRS, 0x0, NotSerialized) {
+        Name (RBUF, ResourceTemplate ()
+        {
+                     …
+        })
+        Return (RBUF)
+    }
+}
+ 
+//
+// Multifunction serial bus device to support Bluetooth function
+//
+Device(BTH0) 
+{
+    // ACPI enumerate will generate a hardware ID “ACPI\ABCD_BTH0”
+    Name (_HID, &quot;ABCD_BTH0&quot;) // where “ABCD” is vendor name;  
+        
+    Method(_CRS, 0x0, NotSerialized)
+    {
+        Name (RBUF, ResourceTemplate ()
+        {
+        // GPIO Descriptor 
+        // (optional)
+ 
+        // I2C Serial Bus Descriptor 
+        // (optional)
+ 
+        // UART Serial Bus Descriptor
+        UARTSerialBus (
+      0xC0, // RTS | CTS 
+      LittleEndian,
+      DataBitsEight,
+      StopBitsOne,
+      FlowControlHardware,
+      115200, // Initial Baudrate
+      480, // Rx FIFO size
+      32, // Tx FIFO size
+      ParityTypeNone,
+      &quot;\\_SB.UAR1&quot;, , )
+        })
+        Return (RBUF)             
+    } 
+}</code></pre>
+<p></p>
+<p>RESOURCES</p>
+<p><a href="http://msdn.microsoft.com/en-us/windows/hardware/gg463281.aspx">Bus Driver Development Based on KMDF</a>
+</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

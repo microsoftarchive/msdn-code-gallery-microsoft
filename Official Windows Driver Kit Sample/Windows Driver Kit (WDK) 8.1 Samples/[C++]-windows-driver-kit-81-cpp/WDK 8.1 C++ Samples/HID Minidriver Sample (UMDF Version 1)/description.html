@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>HID Minidriver Sample (UMDF Version 1)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>HID Minidriver Sample (UMDF Version 1)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            UMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            hid
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/WudfVhidmini-Sample-b304f83a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The <i>HID minidriver</i> sample (WudfVhidmini.dll) demonstrates how to write a HID minidriver using User-Mode Driver Framework (UMDF) version 1.
+</p>
+<p>The sample demonstrates how to communicate with an HID minidriver from an HID client using a custom-feature item in order to control certain features of the HID minidriver. This is needed since other conventional modes for communicating with a driver, like
+ custom IOCTL or WMI, do not work with the HID minidriver. The sample also is useful in testing the correctness of a HID report descriptor without using a physical device.
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/WudfVhidmini-Sample-b304f83a/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439579">Creating UMDF-based HID Minidrivers</a>
+</dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff539952">Human Input Devices Design Guide</a>
+</dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff539956">Human Input Devices Reference</a>
+</dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh463977">UMDF HID Minidriver IOCTLs</a>
+</dt></dl>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439579">Creating UMDF-based HID Minidrivers</a> ,
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh463977">UMDF HID Minidriver IOCTLs</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2><a id="building"></a><a id="BUILDING"></a></h2>
+<p>The sample driver can be built using any of the build environments from Windows&nbsp;8.1 WDK.</p>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2><a id="overview"></a><a id="OVERVIEW"></a>Overview of the Driver Stack</h2>
+<p>User-Mode Driver Framework (UMDF) does not support HID minidrivers natively because UMDF does not support certain features required by HID minidrivers, such as handling internal IOCTLs and processing buffers placed at non-standard locations in IOCTLs. However
+ a solution consisting of a WDM driver (also called a shim driver) as function driver and a complete UMDF driver as lower filter driver makes it possible to use UMDF for writing a HID minidriver. The shim driver registers with the HID class (so hidclass.sys
+ owns its dispatch table) and forwards all of the requests to the lower filter driver (a UMDF driver). The lower UMDF filter driver processes all of the requests. Before forwarding the IRP to lower driver, the shim driver also coverts the IOCTL type from internal
+ IOCTL to standard IOCTL, and updates location of buffer so that they are located at standard IRP buffer locations.
+</p>
+<p>The WudfVhidmini sample provides code for both of the drivers. The shim driver code is located in the src\hid\vhidmini\umdf folder (the driver binary is named hidumdf.sys), and the lower filter driver code is located in the src\hid\vhidmini\driver folder
+ (the binary is named wudfvhidmini.dll). The shim driver is a WDM driver and you can reuse it without any modification. Remember to rename the shim driver binary when you reuse it, to avoid a name conflict. Also, note that shim driver is an inbox driver on
+ Windows&nbsp;8.1 and later operating systems (mshidumdf.sys). The INF file for this sample contains a section that enables use of the inbox shim driver on Windows&nbsp;8.1 and later operating systems.</p>
+<p>Details of each IOCTL with respect to processing input and output buffer are given in a separate section towards the end of this document.
+</p>
+<h2><a id="intro"></a><a id="INTRO"></a>Introduction to the WudfVhidmini.dll UMDF HID Minidriver Sample
+</h2>
+<p>WudfVhidmini.dll is a sample HID minidriver. The sample is installed as a root-enumerated driver using the Devcon tool in the WDK. During installation the INF file WudfVhidmini.inf adds a registry entry containing the report descriptor in the device parameters
+ path. The shim driver registers itself as a HID minidriver in the DriverEntry(). The UMDF lower filter, functionally acting as the minidriver, then reports necessary descriptors (HID descriptor, report descriptor, device attributes etc.) to the Hidclass driver
+ through IOCTL interface. With physical HID devices, these descriptors are usually burned into the device’s firmware but with this sample driver these are hard-coded in the driver itself to simulate a HID device. The Hidclass driver then creates one PDO corresponding
+ to one top-level collection declared in the report descriptor. The PnP manager finds a hardware ID match in vhidmini.inf file (supplied with the sample package) and installs a null service as specified in the INF file.
+</p>
+<p>The Hidclass driver finds an input item in one of the collections and therefore starts sending ping-pong IRPs (since the HID minidriver reported the device to be non-Polled) to read input reports using IOCTL_HID_READ_REPORT. The ReadReport() routine in WudfVhidmini.dll
+ handles this request. It queues the read request to a manual queue. It also starts a periodic timer whose job is to retrieve read request from manual queue and complete it with two bytes of data (one byte for the report ID and the other a random character
+ byte). This continues as long as the minidriver receives read requests. </p>
+<p>The sample also implements code to handle IOCTL_HID_GET_FEATURE and IOCTL_HID_SET_FEATURE requests. They are explained below.
+</p>
+<h2><a id="custom_feature"></a><a id="CUSTOM_FEATURE"></a>Communicating with HID minidriver using custom feature item</h2>
+<p>The conventional way of communicating with a driver from a user mode application is to use an IOCTL interface or a WMI interface. These methods do not work for a HID minidriver because the system-supplied Hidclass driver handles these for the HID minidriver
+ and does not allow these requests to reach the minidriver. As a workaround, this sample demonstrates the use of custom feature items to communicate with the HID minidriver.
+</p>
+<p>As explained earlier, the HID minidriver creates a virtual HID device. This virtual HID device corresponds to one collection reported in the report descriptor. This collection has one feature item dedicated for communicating with HID clients. HID clients
+ obtain a handle to this collection (or virtual hid device) and use HidD_SetFeature API (documented in the DDK) to send custom control information to this collection. The HID minidriver receives the custom control information through the internal IOCTL IOCTL_HID_SET_REPORT
+ and switches to appropriate code based on the control code (one-byte control code is defined in a common header file so both the application and the minidriver are aware of it).
+</p>
+<h2><a id="testing"></a><a id="TESTING"></a>Testing report descriptor without using a physical device</h2>
+<p>Update report descriptor in the driver and build and install the virtual HID minidriver. This will cause the minidriver to read the new/modified report descriptor. If the system finds a problem with the descriptor, it will not install the virtual HID minidriver
+ and you will see yellow exclamation mark in the device manager. This method makes it easy to test a report descriptor without using an actual physical device.</p>
+<p>If your report descriptor declares an input item, you must implement code for handling IOCTL_HID_READ_REPORT. When the Hidclass driver finds a collection with an input item, it starts polling the HID minidriver.</p>
+<p>This sample uses features of UMDF version 1.11 and therefore can only be used on operating systems that support UMDF 1.11.</p>
+<h2><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>Contents of sample driver folder
+</h2>
+<p>This sample driver package contains driver and app directories. The following summary describes the directories and key files.</p>
+<p><b>Driver</b> </p>
+<p>This directory contains the source code of the virtual HID minidriver (WudfVhidmini.dll).</p>
+<p><b>App</b> </p>
+<p>This directory contains the source code of a test application (testvHID.exe).</p>
+<p>If you are building a driver package for platforms earlier than Windows&nbsp;8.1, you need to build and package the shim driver from src\hid\vhidmini\umdf folder as well.
+</p>
+<p>This directory contains source code for the shim driver (HidUmdf.sys). </p>
+<h2><a id="installing"></a><a id="INSTALLING"></a>INSTALLING THE SAMPLE </h2>
+<p>To install as a root-enumerated driver, use the command-line utility Devcon.exe available with the WDK in the
+<i>&lt;Wdk folder&gt;</i>\tools\devcon\<i>&lt;arch&gt;</i> folder, or from the following link:</p>
+<p>http://support.microsoft.com/default.aspx?scid=kb;en-us;Q311272 </p>
+<p>Follow these steps to install this sample: </p>
+<ol>
+<li>Copy following files to a local folder.
+<ul>
+<li>Wudfvhidmini.dll (UMDF driver) </li><li>Wudfvhidmini.inf (INF) </li><li>Hidumdf.sys (shim driver built from src\hid\vhidmini\umdf) </li><li>Wudfupdate_01011.dll (UMDF redist) </li></ul>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">You can obtain redistributable framework updates by downloading the
+<b>wdfcoinstaller.msi</b> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>. This package performs a silent install into the directory of your Windows Driver Kit (WDK) installation. You will see no confirmation that the installation has completed. You can verify that the redistributables have been
+ installed on top of the WDK by ensuring there is a redist\wdf directory under the root directory of the WDK, %ProgramFiles(x86)%\Windows Kits\8.0.</p>
+<p></p>
+</li><li>
+<p>Type the following command line. Make sure that devcon.exe is either present in the current folder or is in the command path.</p>
+<p></p>
+<pre class="syntax"><code>C:\&gt;devcon install WudfVhidmini.inf root\wudfvhidmini
+
+</code></pre>
+<p></p>
+</li></ol>
+<p>This will install the WudfVhidmini.dll driver as a root-enumerated driver. Check in the Device Manager to see if the driver is installed correctly. You will see the following entries under “Sample Device” in the Device Manager.
+</p>
+<p>On Windows&nbsp;8.1, you will see the following:</p>
+<dl><dd>
+<p></p>
+<pre class="syntax"><code>&quot;UMDF HID minidriver Sample Device (Wudfvhidmini)&quot;
+“HID-Compliant device”</code></pre>
+<p></p>
+</dd></dl>
+<h2>Run the sample</h2>
+<p>Once the drivers are installed correctly, you can use the provided application to test sending control requests to the HID minidriver.
+</p>
+<p>To run the test application (testvhid.exe) do the following:</p>
+<ol>
+<li>Open a command window and change the folder to go to the temporary folder where you copied the .sys, .dll, .exe and .inf files.
+</li><li>
+<p>Run the following command line:</p>
+<p></p>
+<pre class="syntax"><code>C:\&gt;testvhid</code></pre>
+<p></p>
+</li></ol>
+<p>The application sends several requests to the driver. One of the requests is to set some custom feature attribute information. For this, the test application sends a control code HIDMINI_CONTROL_CODE_SET_ATTRIBUTES using HidD_SetFeature() to set custom attributes
+ information to the minidriver. It then retrieves that information using HidD_GetFeature and displays it in the command window.
+</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

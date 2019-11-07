@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Building efficient Windows Phone apps with JavaScript</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Building efficient Windows Phone apps with JavaScript</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Javascript, HTML5
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Performance
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/31/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Building-efficient-Windows-d6371c41">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">An instructional sample app for Windows Phone 8.1 that demonstrates correct error-handling techniques and app performance management. This is the companion code sample to the
+<a href="http://code.msdn.microsoft.com/windowsapps/Building-efficient-Windows-58ed99e4">
+Building Efficient Windows Store apps with JavaScript</a> code sample. </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small">This sample demonstrates the following:</span></p>
+<ul>
+<li><span style="font-size:small"><strong>Application-level error handling</strong> using the
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh974768.aspx">WinJS.Application.onerror</a> event.
+</span></li><li><span style="font-size:small"><strong>Page-level error handling </strong>using the
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh770585.aspx">WinJS.UI.Pages.PageControl.error</a> handler.
+</span></li><li><span style="font-size:small"><strong>Navigation error handling</strong> using promises and the Tasks pane in Visual Studio 2013.
+</span></li><li><span style="font-size:small"><strong>Dispose pattern in WinJS</strong> to <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn439318.aspx">
+reduce memory leaks</a>.<strong>&nbsp;</strong></span> </li><li><span style="font-size:small"><strong>Scheduler API </strong>that provides <a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn465795.aspx">
+predictable management of background tasks</a>.<strong>&nbsp;</strong></span> </li><li><span style="font-size:small"><strong>Web Workers </strong>as they can be applied within Windows Store apps.<strong>&nbsp;</strong></span>
+</li></ul>
+<p>&nbsp;</p>
+<p><span style="font-size:small">This sample also shows the end results of porting a Windows Runtime app built using JavaScript to Windows Phone. For more information, see &ldquo;<a href="http://msdn.microsoft.com/en-us/library/windows/apps/dn596093.aspx">Migrating
+ Windows Store apps to Windows Phone.</a>&rdquo;</span></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>THIRD PARTY NOTICES </strong></p>
+<p>The software may include third party code that Microsoft, not the third party, licenses to you under this agreement. Notices, if any, for the third party code are included for your information only.</p>
+<p>Provided for Informational Purposes Only</p>
+<p>&nbsp;</p>
+<p>MIT License</p>
+<p>&nbsp;</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="485" valign="top">
+<p>&nbsp;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining</p>
+<p>a copy of this software and associated documentation files (the</p>
+<p>&quot;Software&quot;), to deal in the Software without restriction, including</p>
+<p>without limitation the rights to use, copy, modify, merge, publish,</p>
+<p>distribute, sublicense, and/or sell copies of the Software, and to</p>
+<p>permit persons to whom the Software is furnished to do so, subject to</p>
+<p>the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be</p>
+<p>included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</p>
+<p>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</p>
+<p>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</p>
+<p>NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE</p>
+<p>LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION</p>
+<p>OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION</p>
+<p>WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong><br>
+</strong><span style="font-size:small"><strong>Related Topics</strong></span></p>
+<p><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/magazine/default.aspx">Building More Efficient Windows Store apps using JavaScript</a></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><strong>Build the sample</strong></span></p>
+<ol>
+<li><span style="font-size:small">Start Visual Studio 2013 Preview and select <strong>
+File</strong> &gt; <strong>Open</strong> &gt; <strong>Project/Solution</strong>. </span>
+</li><li><span style="font-size:small">Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio 2013 Preview Solution (.sln) file.
+</span></li><li><span style="font-size:small">Press F7 or use <strong>Build</strong> &gt; <strong>
+Build Solution</strong> to build the sample. </span></li></ol>
+<p><span style="font-size:small"><strong>Run the sample</strong></span></p>
+<p><span style="font-size:small">To run the app and then debug it, press F5 or use
+<strong>Debug</strong> &gt; <strong>Start Debugging</strong>. To run the app without debugging, press Ctrl&#43;F5 or use
+<strong>Debug</strong> &gt; <strong>Start Without Debugging</strong>.&nbsp;</span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

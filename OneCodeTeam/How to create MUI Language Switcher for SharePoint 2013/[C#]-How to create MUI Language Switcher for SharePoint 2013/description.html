@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to create MUI Language Switcher for SharePoint 2013</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to create MUI Language Switcher for SharePoint 2013</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint, SharePoint 2013, SharePoint Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SharePoint, MUI Language Switcher
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<h1><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">How to create MUI Language Switcher for SharePoint 2013 (CSSharePointLangSwitcher)</span></h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The project illustrates how to create <strong>Multilingual User Interface (MUI)</strong> Switcher by using HTTP Module. In the
+<strong>PreRequestHandlerExecute</strong> method of our custom Module, we will check the user's language preferences, then add the languages to the
+<strong>Accept-Language</strong> of request header.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Please follow the steps below.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span>Step 1: Open the CSSharePointLangSwitcher.sln file and then set the &quot;<strong>Site URL</strong>&quot; to your own site.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span>Step 2: <strong>Deploy</strong> the project.</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span>Step 3: View the sample.aspx page on browser.<span>&nbsp; </span>You can see a DropDownList control and a Button control on the page.<span>&nbsp;
+</span></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span><img src="description/image.png" alt="" width="558" height="242" align="middle">
+</span><span>&nbsp;</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span>Select a language from the DropDownList and then click the &quot;<strong>Change Language</strong>&quot; button, the page will be shown as below:
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span><img src="description/b58ce6a5-42af-41e7-bda9-6785d80c5030image.png" alt="" width="549" height="246" align="middle">
+</span><span><br>
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span>Step 4: Validation is completed.</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal"><span>Code Logical: <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></p>
+<p class="MsoNormal"><span>Step 1: Create a C# &quot;<strong>Empty</strong></span><strong>
+</strong><strong><span>SharePoint Project</span></strong><span>&quot; in Visual Studio and name it as &quot;<span class="SpellE">CSSharePointLangSwitcher</span>&quot;.</span></p>
+<p class="MsoNormal"><span>Step 2: Add an </span><strong><span lang="EN">Application Page</span></strong><span lang="EN"> to our project and rename it to Sample.aspx.
+</span></p>
+<p class="MsoNormal"><span lang="EN">The html code of Sample.aspx will be shown as below:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">html</span>
+<pre class="hidden">&lt;%@ Assembly Name=&quot;$SharePoint.Project.AssemblyFullName$&quot; %&gt;
+&lt;%@ Import Namespace=&quot;Microsoft.SharePoint.ApplicationPages&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;SharePoint&quot; Namespace=&quot;Microsoft.SharePoint.WebControls&quot; Assembly=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.SharePoint.aspx"  title="Auto generated link to Microsoft.SharePoint">Microsoft.SharePoint</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;Utilities&quot; Namespace=&quot;Microsoft.SharePoint.Utilities&quot; Assembly=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.SharePoint.aspx"  title="Auto generated link to Microsoft.SharePoint">Microsoft.SharePoint</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;asp&quot; Namespace=&quot;System.Web.UI&quot; Assembly=&quot;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot; %&gt;
+&lt;%@ Import Namespace=&quot;Microsoft.SharePoint&quot; %&gt;
+&lt;%@ Assembly Name=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.Web.CommandUI.aspx"  title="Auto generated link to Microsoft.Web.CommandUI">Microsoft.Web.CommandUI</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Page Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;Sample.aspx.cs&quot; Inherits=&quot;CSSharePointLangSwitcher.Layouts.LangSwitcher.Sample&quot; DynamicMasterPageFile=&quot;~masterurl/default.master&quot; %&gt;
+
+
+&lt;asp:Content ID=&quot;PageHead&quot; ContentPlaceHolderID=&quot;PlaceHolderAdditionalPageHead&quot; runat=&quot;server&quot;&gt;
+
+
+&lt;/asp:Content&gt;
+
+
+
+
+&lt;asp:Content ID=&quot;Main&quot; ContentPlaceHolderID=&quot;PlaceHolderMain&quot; runat=&quot;server&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;asp:DropDownList ID=&quot;ddlLanguages&quot; runat=&quot;server&quot; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataTextField=&quot;DisplayName&quot; DataValueField=&quot;LanguageTag&quot; &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/asp:DropDownList&gt;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:Button runat=&quot;server&quot; ID=&quot;btnSave&quot; Text=&quot;Change Language&quot; OnClick=&quot;btnSave_Click&quot;/&gt;
+&lt;/asp:Content&gt;
+
+
+&lt;asp:Content ID=&quot;PageTitle&quot; ContentPlaceHolderID=&quot;PlaceHolderPageTitle&quot; runat=&quot;server&quot;&gt;
+Application Page
+&lt;/asp:Content&gt;
+
+
+&lt;asp:Content ID=&quot;PageTitleInTitleArea&quot; ContentPlaceHolderID=&quot;PlaceHolderPageTitleInTitleArea&quot; runat=&quot;server&quot; &gt;
+&lt;/asp:Content&gt;
+
+</pre>
+<pre class="html" id="codePreview">&lt;%@ Assembly Name=&quot;$SharePoint.Project.AssemblyFullName$&quot; %&gt;
+&lt;%@ Import Namespace=&quot;Microsoft.SharePoint.ApplicationPages&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;SharePoint&quot; Namespace=&quot;Microsoft.SharePoint.WebControls&quot; Assembly=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.SharePoint.aspx"  title="Auto generated link to Microsoft.SharePoint">Microsoft.SharePoint</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;Utilities&quot; Namespace=&quot;Microsoft.SharePoint.Utilities&quot; Assembly=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.SharePoint.aspx"  title="Auto generated link to Microsoft.SharePoint">Microsoft.SharePoint</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Register Tagprefix=&quot;asp&quot; Namespace=&quot;System.Web.UI&quot; Assembly=&quot;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&quot; %&gt;
+&lt;%@ Import Namespace=&quot;Microsoft.SharePoint&quot; %&gt;
+&lt;%@ Assembly Name=&quot;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/Microsoft.Web.CommandUI.aspx"  title="Auto generated link to Microsoft.Web.CommandUI">Microsoft.Web.CommandUI</a>, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot; %&gt;
+&lt;%@ Page Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;Sample.aspx.cs&quot; Inherits=&quot;CSSharePointLangSwitcher.Layouts.LangSwitcher.Sample&quot; DynamicMasterPageFile=&quot;~masterurl/default.master&quot; %&gt;
+
+
+&lt;asp:Content ID=&quot;PageHead&quot; ContentPlaceHolderID=&quot;PlaceHolderAdditionalPageHead&quot; runat=&quot;server&quot;&gt;
+
+
+&lt;/asp:Content&gt;
+
+
+
+
+&lt;asp:Content ID=&quot;Main&quot; ContentPlaceHolderID=&quot;PlaceHolderMain&quot; runat=&quot;server&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;asp:DropDownList ID=&quot;ddlLanguages&quot; runat=&quot;server&quot; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataTextField=&quot;DisplayName&quot; DataValueField=&quot;LanguageTag&quot; &gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/asp:DropDownList&gt;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;asp:Button runat=&quot;server&quot; ID=&quot;btnSave&quot; Text=&quot;Change Language&quot; OnClick=&quot;btnSave_Click&quot;/&gt;
+&lt;/asp:Content&gt;
+
+
+&lt;asp:Content ID=&quot;PageTitle&quot; ContentPlaceHolderID=&quot;PlaceHolderPageTitle&quot; runat=&quot;server&quot;&gt;
+Application Page
+&lt;/asp:Content&gt;
+
+
+&lt;asp:Content ID=&quot;PageTitleInTitleArea&quot; ContentPlaceHolderID=&quot;PlaceHolderPageTitleInTitleArea&quot; runat=&quot;server&quot; &gt;
+&lt;/asp:Content&gt;
+</pre>
+</div>
+</div>
+<p class="MsoNormal"><span lang="EN">The code-behind of Sample.aspx will be shown as below</span><span lang="ZH-CN" style="font-family:宋体">：</span><span lang="EN" style="font-family:宋体">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public partial class Sample : LayoutsPageBase
+&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The key of current selected language in the cookies.
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;private static string strKeyName = &quot;LangSwitcher_Setting&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!IsPostBack)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Gets the list of installed languages and bind them to DropDownList control.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPLanguageCollection languages = SPLanguageSettings.GetGlobalInstalledLanguages(15);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.DataSource = languages;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.DataBind();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add a item at the top of the DropDownList and and set it selected by default. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddlLanguages.Items.Insert(0, &quot;NotSelected&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.SelectedIndex = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;/// Save current selected language to cookie.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected void btnSave_Click(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (ddlLanguages.SelectedIndex &gt; 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Selected language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strLanguage = ddlLanguages.SelectedValue;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the Cookies.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpCookie acookie = new HttpCookie(strKeyName);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acookie.Value = strLanguage;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acookie.Expires = DateTime.MaxValue;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Cookies.Add(acookie);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Redirect(Request.RawUrl);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp; }
+
+</pre>
+<pre class="csharp" id="codePreview">public partial class Sample : LayoutsPageBase
+&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The key of current selected language in the cookies.
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;private static string strKeyName = &quot;LangSwitcher_Setting&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!IsPostBack)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Gets the list of installed languages and bind them to DropDownList control.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPLanguageCollection languages = SPLanguageSettings.GetGlobalInstalledLanguages(15);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.DataSource = languages;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.DataBind();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add a item at the top of the DropDownList and and set it selected by default. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddlLanguages.Items.Insert(0, &quot;NotSelected&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlLanguages.SelectedIndex = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;/// Save current selected language to cookie.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected void btnSave_Click(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (ddlLanguages.SelectedIndex &gt; 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Selected language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strLanguage = ddlLanguages.SelectedValue;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the Cookies.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpCookie acookie = new HttpCookie(strKeyName);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acookie.Value = strLanguage;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acookie.Expires = DateTime.MaxValue;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Cookies.Add(acookie);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Redirect(Request.RawUrl);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp; }
+</pre>
+</div>
+</div>
+<p class="MsoNormal"><span>Step 3: Add an <span class="SpellE"><strong>HttpModule</strong></span> and name it as &quot;<span class="SpellE"><strong>HTTPSwitcherModule</strong></span>&quot;. Register the custom Event Handler in the
+<strong>Init</strong> event. </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Init(HttpApplication context)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Below is an example of how you can handle Request event and provide 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// custom logging implementation for it
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.PreRequestHandlerExecute &#43;= context_PreRequestHandlerExecute;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+</pre>
+<pre class="csharp" id="codePreview">public void Init(HttpApplication context)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Below is an example of how you can handle Request event and provide 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// custom logging implementation for it
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.PreRequestHandlerExecute &#43;= context_PreRequestHandlerExecute;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+</pre>
+</div>
+</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+The code of the <strong>context_PreRequestHandlerExecute</strong> resembles the following:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// Assuming the selected language is stored in a cookie. Firstly, get the selected
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// language from cookie. Then add the selected language to the request header. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/// Finally, use the selected language for the current culture.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void context_PreRequestHandlerExecute(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get current application.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpApplication httpApp = sender as HttpApplication;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get all HTTP-specific information about current HTTP request.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpContext context = httpApp.Context;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Current language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strLanguage = string.Empty;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The key of current selected language in the cookies.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strKeyName = &quot;LangSwitcher_Setting&quot;;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the current language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (httpApp.Request.Cookies[strKeyName] != null)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strLanguage = httpApp.Request.Cookies[strKeyName].Value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strLanguage = &quot;en-us&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lang = context.Request.Headers[&quot;Accept-Language&quot;];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lang != null)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!lang.Contains(strLanguage))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Request.Headers[&quot;Accept-Language&quot;] = strLanguage &#43; &quot;,&quot; &#43; context.Request.Headers[&quot;Accept-Language&quot;];
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var culture = new <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/System.Globalization.CultureInfo.aspx"  title="Auto generated link to System.Globalization.CultureInfo">System.Globalization.CultureInfo</a>(strLanguage);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Apply the culture.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPUtility.SetThreadCulture(culture, culture);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (Exception ex)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/System.Diagnostics.Debug.WriteLine.aspx"  title="Auto generated link to System.Diagnostics.Debug.WriteLine">System.Diagnostics.Debug.WriteLine</a>(ex.Message);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+</pre>
+<pre class="csharp" id="codePreview">/// &lt;summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// Assuming the selected language is stored in a cookie. Firstly, get the selected
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// language from cookie. Then add the selected language to the request header. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/// Finally, use the selected language for the current culture.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void context_PreRequestHandlerExecute(object sender, EventArgs e)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get current application.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpApplication httpApp = sender as HttpApplication;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get all HTTP-specific information about current HTTP request.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HttpContext context = httpApp.Context;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Current language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strLanguage = string.Empty;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The key of current selected language in the cookies.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string strKeyName = &quot;LangSwitcher_Setting&quot;;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the current language.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (httpApp.Request.Cookies[strKeyName] != null)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strLanguage = httpApp.Request.Cookies[strKeyName].Value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strLanguage = &quot;en-us&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lang = context.Request.Headers[&quot;Accept-Language&quot;];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lang != null)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!lang.Contains(strLanguage))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; context.Request.Headers[&quot;Accept-Language&quot;] = strLanguage &#43; &quot;,&quot; &#43; context.Request.Headers[&quot;Accept-Language&quot;];
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var culture = new <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/System.Globalization.CultureInfo.aspx"  title="Auto generated link to System.Globalization.CultureInfo">System.Globalization.CultureInfo</a>(strLanguage);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Apply the culture.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPUtility.SetThreadCulture(culture, culture);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (Exception ex)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://code.msdn.microsoft.com/How-to-create-MUI-Language-8507ab26/https://msdn.microsoft.com/en-US/library/System.Diagnostics.Debug.WriteLine.aspx"  title="Auto generated link to System.Diagnostics.Debug.WriteLine">System.Diagnostics.Debug.WriteLine</a>(ex.Message);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+</pre>
+</div>
+</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+In this sample, we use <span class="SpellE"><strong>SPWebConfigModification</strong></span> class to add the module to
+<strong>Web.Config </strong>file. You can also achieve it by manually instead.</p>
+<p class="MsoNormal" style="text-autospace:none"><span>Step 4: You can debug and test it.</span></p>
+<h2>More Information</h2>
+<p class="MsoNormal">HttpModule Interface<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.web.ihttpmodule.aspx">http://msdn.microsoft.com/en-us/library/system.web.ihttpmodule.aspx</a></p>
+<p class="MsoNormal">SPWebConfigModification class</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.administration.spwebconfigmodification(v=office.15).aspx">http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.administration.spwebconfigmodification(v=office.15).aspx</a></p>
+<p class="MsoNormal">HttpApplication.PreRequestHandlerExecute Event</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute(v=vs.110).aspx">http://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute(v=vs.110).aspx</a></p>
+<p class="MsoNormal">SPUtility.SetThreadCulture method</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.utilities.sputility.setthreadculture(v=office.15).aspx">http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.utilities.sputility.setthreadculture(v=office.15).aspx</a></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/5da76560-b21c-4380-a832-dbdd11c039d3image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

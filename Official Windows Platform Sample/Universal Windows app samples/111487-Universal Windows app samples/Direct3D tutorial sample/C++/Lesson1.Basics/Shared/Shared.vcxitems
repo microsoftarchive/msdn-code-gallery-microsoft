@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ItemsProjectGuid>{16c577c9-235c-42ee-8463-fdf360f6dda0}</ItemsProjectGuid>
+    <ItemsRootNamespace>Lesson1.Basics</ItemsRootNamespace>
+    <ItemsProjectName>Lesson1.Basics.Shared</ItemsProjectName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Main.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)squareTile-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)storeLogo-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)windowsbig-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)tile-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)smallTile-phone-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)mediumTile-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)splash-phone-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)smalltile-windows-sdk.png" />
+    <Image Include="$(MSBuildThisFileDirectory)splash-windows-sdk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+</Project>

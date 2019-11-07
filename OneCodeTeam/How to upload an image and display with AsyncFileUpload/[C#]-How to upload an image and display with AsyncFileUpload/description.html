@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to upload an image and display with AsyncFileUpload</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to upload an image and display with AsyncFileUpload</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, .NET, Web App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Upload
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/21/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-upload-an-image-and-c3703a2c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<p class="MsoNormal" style="text-align:center"><span class="info-text"><strong><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">How to use
+<span class="SpellE">AsyncFileUpload</span> in ASP.NET to upload and display an image.</span></strong></span><span class="info-text"><strong><span style="line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">
+</span></strong></span></p>
+<p class="MsoNormal"><span class="info-text"><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">&nbsp;</span></span></p>
+<p class="MsoNormal"><span class="info-text"><strong><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">Requirement:
+</span></strong></span><span class="info-text"><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">T</span></span><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">o
+ upload an image and display with <span class="SpellE">AsyncFileUpload</span> in ASP.NET project<span class="info-text">
+</span></span></p>
+<p class="MsoNormal"><strong>Technology</strong>: C#, ASP.NET, Visual Studio 2012, AJAX</p>
+<p class="MsoNormal">The sample demonstrates <span class="info-text"><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">how to use
+<span class="SpellE">AsyncFileUpload</span> in ASP.NET to upload and display an image.
+</span></span></p>
+<p class="MsoNormal"><span class="info-text"><span style="font-size:10.0pt; line-height:106%; font-family:&quot;Segoe UI&quot;,sans-serif; color:black">&nbsp;</span></span></p>
+<p class="MsoNormal" style="line-height:105%"><strong>To Run the sample</strong>:</p>
+<p class="MsoNormalCxSpMiddle" style="margin-left:.25in; line-height:105%">&nbsp;</p>
+<p class="MsoNormal" style="line-height:105%"><strong>Code Used: </strong></p>
+<p class="MsoNormal" style="line-height:105%">Upload and Display code</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<strong></strong><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">protected</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+</span><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">void</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white"> AsyncFileUpload1_<span class="GramE">UploadedComplete(</span></span><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">object</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+ sender, <span class="SpellE">AjaxControlToolkit.<span style="color:#2b91af">AsyncFileUploadEventArgs</span></span> e)
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">{
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">string</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+<span class="SpellE">strPath</span> = <span class="SpellE">MapPath</span>(</span><span style="font-size:9.5pt; font-family:Consolas; color:#a31515; background:white">&quot;~/upload/&quot;</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">)
+ &#43; </span><span class="SpellE"><span style="font-size:9.5pt; font-family:Consolas; color:#2b91af; background:white">Path</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">.GetFileName</span></span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">(<span class="SpellE"><span class="GramE">e.FileName</span></span>);
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">AsyncFileUpload1.SaveAs(<span class="SpellE">strPath</span>);
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white"><span class="SpellE">displayImage.ImageUrl</span> =
+<span class="SpellE">strPath</span>; </span></p>
+<p class="MsoNormal" style="line-height:105%"><span style="font-size:9.5pt; line-height:105%; font-family:Consolas; color:black; background:white">}</span><span style="font-size:9.5pt; line-height:105%; font-family:Consolas; color:black">
+</span></p>
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:12.0pt; line-height:106%">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:12.0pt; line-height:106%">Need to add the following in the client side JavaScript.
+</span></p>
+<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">&lt;</span><span style="font-size:9.5pt; font-family:Consolas; color:maroon; background:white">script</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+</span><span style="font-size:9.5pt; font-family:Consolas; color:red; background:white">type</span><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">=&quot;text/<span class="SpellE">javascript</span>&quot;&gt;</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+</span></p>
+<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white"></span><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">function</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+<span class="SpellE"><span class="GramE">uploadComplete</span></span><span class="GramE">(</span>sender,
+<span class="SpellE">args</span>) { </span></p>
+<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white"></span><span class="SpellE"><span style="font-size:9.5pt; font-family:Consolas; color:blue; background:white">var</span></span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+<span class="SpellE">imageName</span> = <span class="SpellE">args.get_<span class="GramE">fileName</span></span><span class="GramE">(</span>);
+</span></p>
+<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">$get(</span><span style="font-size:9.5pt; font-family:Consolas; color:#a31515; background:white">&quot;<span class="SpellE">displayImage</span>&quot;</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">).<span class="SpellE">src</span>
+ = </span><span class="GramE"><span style="font-size:9.5pt; font-family:Consolas; color:#a31515; background:white">&quot;./</span></span><span style="font-size:9.5pt; font-family:Consolas; color:#a31515; background:white">upload/&quot;</span><span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">
+ &#43; <span class="SpellE">imageName</span>; </span></p>
+<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.5in; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Consolas; color:black; background:white">}
+</span></p>
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white"></span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">&lt;/</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:maroon; background:white">script</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">&gt;</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue">
+</span></p>
+<p class="MsoNormal"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height:105%">Control to Use <span class="SpellE">
+AsyncFileUpload</span>:</p>
+<p class="MsoNormal" style="text-indent:.5in"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">&lt;</span><span class="SpellE"><span class="GramE"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:maroon; background:white">ajaxToolkit</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">:</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:maroon; background:white">AsyncFileUpload</span></span></span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white">
+</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:red; background:white">ID</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">=&quot;AsyncFileUpload1&quot;</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white">
+</span><span class="SpellE"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:red; background:white">runat</span></span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">=&quot;server&quot;</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white">
+</span><span class="SpellE"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:red; background:white">OnClientUploadComplete</span></span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">=&quot;<span class="SpellE">uploadComplete</span>&quot;</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white">
+</span><span class="SpellE"><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:red; background:white">OnUploadedComplete</span></span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">=&quot;AsyncFileUpload1_UploadedComplete&quot;</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:black; background:white">
+</span><span style="font-size:9.5pt; line-height:106%; font-family:Consolas; color:blue; background:white">/&gt;</span><span style="font-size:12.0pt; line-height:106%">
+</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/c538edbc-9c15-4952-90ea-48b37672e730image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Image Include="Images\badgelogo-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\microsoft-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\placeholder-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\smallTile-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\splash-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\squareTile-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\storeLogo-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\tile-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Images\windows-sdk.png">
+      <Filter>images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="light_generic.xaml" />
+    <Page Include="ScenarioInput1.xaml" />
+    <Page Include="ScenarioList.xaml" />
+    <Page Include="ScenarioOutput1.xaml" />
+    <Page Include="SampleTemplateStyles.xaml">
+      <Filter>Sample-Utils</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="CppSamplesUtils.h">
+      <Filter>Sample-Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput1.xaml.h" />
+    <ClInclude Include="ScenarioList.xaml.h" />
+    <ClInclude Include="ScenarioOutput1.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ScenarioInput1.xaml.cpp" />
+    <ClCompile Include="ScenarioList.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput1.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sample-Utils">
+      <UniqueIdentifier>{54f287f8-e4cb-4f47-97d0-4c469de6992e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="images">
+      <UniqueIdentifier>{fd3d9acd-a29f-46e8-aa94-22980320240f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

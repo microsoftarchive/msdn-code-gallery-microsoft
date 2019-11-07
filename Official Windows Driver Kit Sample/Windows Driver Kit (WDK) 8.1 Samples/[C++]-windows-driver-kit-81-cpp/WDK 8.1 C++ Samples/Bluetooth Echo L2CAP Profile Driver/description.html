@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bluetooth Echo L2CAP Profile Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Bluetooth Echo L2CAP Profile Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WDM, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Bluetooth
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Bluetooth-Echo-Sample-6f0a62d6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates developing <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff536598">
+Bluetooth L2CAP profile drivers</a> using <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff536585">
+Bluetooth L2CAP DDIs</a>. The sample includes two drivers. One for a device that acts as an L2CAP server and another for a device that acts as an L2CAP client. The server simply echoes back any data that it receives from client on the same L2CA channel. These
+ drivers can be used with devices that can be installed with bth.inf. Such devices get installed as ‘Generic Bluetooth Radio’. Examples of such devices are Bluetooth USB dongles such as (but not limited to):</p>
+<pre class="syntax"><code>
+Generic Bluetooth Radio=\
+                         BthUsb, USB\Vid_0a12&amp;Pid_0001
+CSR Nanosira=\
+                         BthUsb, USB\Vid_0a12&amp;Pid_0003
+CSR Nanosira WHQL Reference Radio=\
+                         BthUsb, USB\Vid_0a12&amp;Pid_0004
+CSR Nanosira-Multimedia=\
+                         BthUsb, USB\Vid_0a12&amp;Pid_0005
+CSR Nanosira-Multimedia WHQL Reference Radio=\
+                         BthUsb, USB\Vid_0a12&amp;Pid_0006</code></pre>
+Please refer to bth.inf for the complete list of devices. The installation steps below describe how to install echo server and client with such a device. Please note that RFCOMM based profiles must be developed and accessed using user-mode socket APIs. This
+ sample is applicable to Windows® Vista, Windows® 7 and Windows® 8 operating systems.
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Bluetooth-Echo-Sample-6f0a62d6/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>Starting in the WDK, you can build the sample in two ways: using the Visual Studio Integrated Development Environment (IDE) or from the command line using the Visual Studio Command Prompt window and the Microsoft Build Engine (MSBuild.exe).</p>
+<p class="proch"><b>Building the sample using Visual Studio</b></p>
+<ol>
+<li>Open Visual Studio. From the <b>File</b> menu, select <b>Open Project/Solution</b>. Within your WDK installation, navigate to src\bluetooth\bthecho and open the bthecho.sln project file.
+</li><li>Right-click the solution in the <b>Solution Explorer</b> and select <b>Configuration Manager</b>.
+</li><li>From the <b>Configuration Manager</b>, select the <b>Active Solution Configuration</b> (for example, Windows&nbsp;8.1 Debug or Windows&nbsp;8.1 Release) and the
+<b>Active Solution Platform</b> (for example, Win32) that correspond to the type of build you are interested in.
+</li><li>From the <b>Build</b> menu, click <b>Build Solution</b> (Ctrl&#43;Shift&#43;B). </li></ol>
+<p>Previous versions of the WDK used the Windows Build utility (Build.exe) and provided separate build environment windows for each of the supported build configurations. Starting in the WDK, you can use the Visual Studio Command Prompt window for all build
+ configurations.</p>
+<p class="proch"><b>Building the sample using the command line (MSBuild)</b></p>
+<ol>
+<li>Open a Visual Studio Command Prompt window. Click <b>Start</b> and search for
+<b>Developer Command Prompt</b>. If your project is under %PROGRAMFILES%, you need to open the command prompt window using elevated permissions (<b>Run as administrator</b>). From this window you can use MsBuild.exe to build any Visual Studio project by specifying
+ the project (.VcxProj) or solutions (.Sln) file. </li><li>Navigate to each of the respective project directories and enter the appropriate
+<b>MSbuild</b> command for your target. For example, to perform a clean build of a Visual Studio driver project called BthEcho.vcxproj, navigate to the samples\bluetooth\bthecho\bthcli\sys project directory and enter the following MSBuild command:
+<b>msbuild /t:clean /t:build .\BthEchoSampleCli.vcxproj</b>. </li><li>If the build succeeds, you will find the driver (BthEchoSampleCli.sys) in the binary output directory corresponding to the target platform, for example src\bluetooth\bthecho\PackageWindows&nbsp;8.1 Debug.
+</li></ol>
+<h2>Run the sample</h2>
+<p><b>INSTALLATION</b> </p>
+<p><b>Note</b>: Bluetooth echo server device and echo client device must be installed on two different machines, as described below.</p>
+<p><b>Server Installation</b> </p>
+<p>1. Copy KMDF coinstaller (wdfcoinstallerMMmmm.dll, from redist\wdf\ ), BthEchoSampleSrv.Sys, BthEchoSampleSrv.inf and bthsrvinst.exe on a temporary directory on the target machine.</p>
+<p>2. Run bthsrvinst.exe /i to install the echo server device. This enables the Bluetooth Enumerator (BthEnum.sys) to enumerate echo server device and create a PDO for the device (please refer to the device tree below).</p>
+<p>3. Step #2 causes BthEnum.sys to create a PDO. Consequently hardware installation wizard gets launched. Either go through the UI (Device Manager – Update Driver Software in Windows® 7, ‘Found New Hardware’ wizard in Windows® Vista) and point it to the temporary
+ directory where you copied the binaries in step #1, or using devcon.exe from the tools\devcon folder, run the following command from the temporary directory:</p>
+<p></p>
+<pre class="syntax"><code>devcon.exe update BthEchoSampleSrv.inf BTHENUM\{c07508f2-b970-43ca-b5dd-cc4f2391bef4}</code></pre>
+<p></p>
+<p>If devcon.exe fails check the error level using:</p>
+<p></p>
+<pre class="syntax"><code>echo %errorlevel%</code></pre>
+<p></p>
+<p>If errorlevel is 1, you need to reboot the machine for KMDF update to take effect. If errorlevel is 2, please make sure that you have the driver files described in #1 available in the current directory. For more information on installation failure please
+ check setup logs.</p>
+<p>4. Upon successful installation you will see ‘Bluetooth Echo Sample Server’ in Device Manager under Bluetooth devices.</p>
+<p>5. (This steps in needed only on Windows® Vista) Navigate to the system tray, right click on the Bluetooth icon, and select ‘Open Settings’. This launches the ‘Bluetooth Settings’ dialog. On the ‘Options’ tab, check ‘Allow Bluetooth devices to find this
+ Computer’. Note that this will make your computer discoverable to other Bluetooth devices, and should be disabled again when no longer required.
+</p>
+<p><b>Device tree for Echo Server device</b> </p>
+<p>(Drivers for FDOs are shown for each devnode in the tree.)</p>
+<p></p>
+<pre class="syntax"><code>
+ --------------------
+|BthEchoSampleSrv.sys|&lt;----Function driver for PDO ejected by BthEnum.sys
+ --------------------
+          ^
+          |     --------------------
+          |    |Bluetooth Enumerator|
+          -----|    (BthEnum.SYS)   |
+                --------------------
+                          ^
+                          |          (Bth port driver loaded by bthusb.sys)
+                          |     ---------------------       ----------------------
+                          -----|     bthport.SYS     |&lt;---&gt;|      bthusb.SYS      |
+                                ---------------------       ----------------------
+                                                                     ^
+                                                                     |
+                                                                     V
+                                                            ----------------------
+                                                           |       USB Stack      |
+                                                            ----------------------
+                                                                     ^
+                                                                     |
+                                                                     V
+                                                            ----------------------
+                                                          | USB Bluetooth Dongle |
+                                                             ----------------------
+</code></pre>
+<p></p>
+<p><b>Client Installation</b> </p>
+<p>1. <b>Important</b>: This must be done on a separate machine from the one where echo server device was installed.</p>
+<p>2. Copy KMDF coinstaller (wdfcoinstallerMMmmm.dll, from redist\wdf\), BthEchoSampleCli.Sys, BthEchoSampleCli.inf and bthecho.exe on a temporary directory on the target machine.</p>
+<p>3. Run bthprops.cpl from a command line or right click on the Bluetooth icon in the system tray and select ‘Show Devices' to bring up a list of installed Bluetooth devices.</p>
+<p>4. Windows® 7: In the ‘Bluetooth Devices’ window click the ‘Add a device’ button. Windows® Vista: In the ‘Devices’ tab, click Add button.</p>
+<p>5. In the Add a Device wizard select the server machine (the machine where you installed the echo server) as a Bluetooth device. If the server machine does not appear, please check the echo server installation and make sure that you have enabled ‘Allow Bluetooth
+ device to find this computer’ on the server machine as explained above. When the server machine is correctly displayed, select it and pick ‘Next’.</p>
+<p>6. The wizard should default to a numeric compare ceremony for pairing the machines. When this happens, ensure the numbers match on both the client and the server, select ‘Yes’ on both machines to indicate they match, and click ‘Next’ on both machines to
+ complete the pairing.</p>
+<p>7. The ‘Found New Hardware’ wizard will be launched on Windows® Vista. On Windows® 7 and Windows® 8 you will need to go through Device Manager and update driver software for it. Either point the wizard to the temporary directory created in step #2, or use
+ devcon.exe from the tools\devcon folder to install the client device:</p>
+<p></p>
+<pre class="syntax"><code>Devcon.exe update BthEchoSampleCli.inf BTHENUM\{c07508f2-b970-43ca-b5dd-cc4f2391bef4}</code></pre>
+<p></p>
+<p>Check for any error from devcon.exe as described in server installation.</p>
+<p>If the installation is successful, you will see ‘Bluetooth Echo Sample Client’ in Device Manager under Bluetooth devices.</p>
+<p>The device tree for echo client device is similar to the one shown for the echo server device, since both client and server are enumerated by BthEnum.sys (although the installation mechanism and properties of client and server are different).
+</p>
+<p><b>Uninstalling Server</b> </p>
+<p>1. Uninstall the device and delete driver software using the Bluetooth Devices window by running bthprops.cpl, right clicking on the device, and selecting ‘Remove Device’</p>
+<p>2. Run bthsrvinst.exe /u to uninstall the echo server. This would make bthenum.sys stop enumerating the echo server. Without this step ‘Found New Hardware’ wizard will be launched again when you reconnect the device.
+</p>
+<p><b>Uninstalling Client</b> </p>
+<p>1. Uninstall the device and delete driver software using the Bluetooth Devices window by running bthprops.cpl, right clicking on the device, and selecting ‘Remove Device’
+</p>
+<p><b>TESTING</b> </p>
+<p>Run BthEcho.exe on the client machine. You should see client sending data to the server and receiving the same data echoed back. Press Ctrl&#43;c to terminate the application. You will see output similar to below:</p>
+<pre class="syntax"><code>
+D:\bth\wdfcli&gt;BthEcho.exe
+DevicePath: \\?\bthenum#{c07508f2-b970-43ca-b5dd-cc4f2391bef4}_localmfg&amp;000a#7&amp;3
+62d0a3&amp;0&amp;000c55ff727a_c00000001#{fc71b33d-d528-4763-a86c-78777c7bcd7b}
+Opened device successfully
+Written                 26 bytes: WDF Bluetooth Sample Echo
+Reply from server       26 bytes: WDF Bluetooth Sample Echo
+Written                 26 bytes: WDF Bluetooth Sample Echo
+Reply from server       26 bytes: WDF Bluetooth Sample Echo
+Written                 26 bytes: WDF Bluetooth Sample Echo
+Reply from server       26 bytes: WDF Bluetooth Sample Echo
+Written                 26 bytes: WDF Bluetooth Sample Echo
+Reply from server       26 bytes: WDF Bluetooth Sample Echo
+Written                 26 bytes: WDF Bluetooth Sample Echo
+^C
+</code></pre>
+<p>You can launch multiple instances of BthEcho.exe. Each client application would cause echo client device to have an independent connection to the echo server and thereby have an independent echo session. You can also have echo client devices and apps installed
+ on multiple machines and talking to a single echo server.</p>
+<p><b>CODE TOUR</b> </p>
+<p><b>Common code</b> </p>
+<p><b>Connection object</b>: The common code contains implementation of a connection object (in connection.*) that is utilized by both client and the server. Client uses this object to maintain the information about opened connection and the server uses this
+ object to maintain information about the accepted connection. Connection object also supports continuous reader which is utilized by server to read the data sent by client. Connection object is implemented as a WDF user object. Connection details are maintained
+ in BTHECHO_CONNECTION structure. This structure is used as the context for WDF user object. Passive dispose is used to make the connection object cleanup wait for disconnect completion and continuous reader rundown. Please see WDF documentation for WDF user
+ object and passive dispose (see WdfObjectCreate).</p>
+<p><b>Server</b> </p>
+<p><b>Startup</b>: Server registers PSM and L2CA server and published SDP record on startup in BthEchoSrvEvtDeviceSelfManagedIoInit (this callback is invoked by WDF during device start). While registering the L2CA server it passes BthEchoSrvIndicationCallback
+ as the callback for incoming connection notifications.</p>
+<p><b>Server SDP record creation</b>: The sample uses dynamic creation of server SDP record using Bluetooth DDIs. Please note that for your particular device you may be able to use static data for the SDP record.</p>
+<p><b>Incoming connections</b>: Bluetooth stack invokes BthEchoSrvIndicationCallback for the incoming connections from clients. In response server accepts the connection and passes BthEchoSrvConnectionIndicationCallback callback to Bluetooth stack for disconnect
+ notification. It is possible to use the same indication callback for server and connection but the sample uses different callbacks for clarity. Server adds the accepted connection to the connection list it maintains. Please see below for connection rundown
+ details.</p>
+<p><b>Connection rundown</b>: Server maintains a list of all the connections it has accepted. This allows server to properly close down these connections on orderly removal. On surprise removal bthport.sys itself gets removed and takes care of running down
+ the connections, but in case of orderly removal driver has to make sure to rundown the connections.</p>
+<p><b>Connection state machine</b>:</p>
+<pre class="syntax"><code>
+                     ConnectFailed
+                           ^
+                           |
+                           |
+                           | (connection failure)
+Uninitialized   ----&gt; Connecting -------&gt; Connected
+                           | (disconnect)  /  ^
+                           |              /  /
+                           |             /  /
+                           V            V  / (connection complete)
+                     Disconnecting
+                           | (disconnect complete)
+                           |
+                           |
+                           V
+                     Disconnected
+
+</code></pre>
+<p>One transition to note here is that if disconnect is received in the connecting state (i.e. when the connection is not completed) we wait for connection to completed (transition to connected state) and then invoke disconnect.</p>
+<p><b>Important</b>: Such state machine is needed only if Disconnect is initiated by something other than Bluetooth stack (for example device removal in our case). Bluetooth stack itself would not send disconnect before connect completion. If you adapt this
+ sample for your device please evaluate whether your driver would require such state machine. For example, the echo client device does not need such state machine (although we use common connection code for client and the server).</p>
+<p><b>Shutdown</b>: Server removes the SDP record and unregisters L2CAP server and PSM in BthEchoSrvEvtDeviceSelfManagedIoCleanup (this callback is invoked by WDF during device removal). It also disconnects any open connections (see Connection rundown above).</p>
+<p><b>Client</b> </p>
+<p><b>Startup</b>: Client retrieves local and server Bluetooth address in BthEchoSrvEvtDeviceSelfManagedIoInit (this callback is invoked by WDF during device start). Please note that server Bluetooth address would be available regardless of presence of the
+ server. Thus echo client device start doesn’t fail even if echo server is not available.</p>
+<p><b>Connecting to server</b>: Client connects to echo server when application opens a handle to it (BthEchoCliEvtDeviceFileCreate) and closes the connection on file close (BthEchoCliEvtFileClose).</p>
+<p><b>Sending and receiving data from server</b>: When application writes data to the client, client sends this data to server on the connection opened for the given handle. Server would echo back this data. This data is retrieved by the application using a
+ read operation. Echo Sample Client doesn’t do any draining of echoed data on its own. Application read/write are handled using a parallel WDF I/O queue.</p>
+<p><b>Shutdown</b>: Client doesn’t need any specific shutdown code as connection open/close and read/write are done within the context of application’s handle open.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.1.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=DEF5E8F7E708877BD3C08A3782047A60" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=A2B16243798131F749B2726AC060C7D4" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Official Visual Studio 2010 Samples for C# 4.0</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Official Visual Studio 2010 Samples for C# 4.0</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            COM, Office, LINQ, SharePoint, IronPython, OLE DB
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop, Data Binding, Security, LINQ to SQL, LINQ, LINQ to XML, Data Access, threading, Office Ribbon, Generics, LINQ to DataSets, Unsafe Code, Language Samples
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/16/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Visual-Studio-2010-Samples-31b491f3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Visual Studio 2010 Samples for C# 4.0</h1>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel">These are the official samples for Visual Studio 2010 C# 4.0.</span></p>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel"><br>
+The document <a class="externalLink" href="description.html">
+New Features in C# 4.0</a> is a high level description of the additions to the C# language, and the samples are designed to show off the new language features, particularly around the dynamic scenario.<br>
+<br>
+Please submit bugs through <a class="externalLink" href="http://connect.microsoft.com/visualstudio/">
+Microsoft Connect</a>, or provide comments on the Q/A&nbsp; tab.</span></p>
+<h1>Visual Studio 2010 C# Samples</h1>
+<p>We break out the C# samples into two different categories:</p>
+<ul>
+<li>Language Samples </li><li>LINQ Samples </li></ul>
+<h2><a name="language">Language Samples</a></h2>
+<p>The C# 4.0-specific samples are called:</p>
+<ul>
+<li><strong>Named and Optional</strong> </li><li><strong>Office Sample</strong> </li><li><strong>Python Sample</strong> </li><li><strong>Simple Variance</strong><strong>. </strong></li></ul>
+<p>Here is the complete list of language samples:</p>
+<ul>
+<li><strong>Anonymous Delegates</strong>: Demonstrates the use of unnamed delegates to reduce application complexity.
+</li><li><strong>Arrays</strong>: Shows how to use arrays. </li><li><strong>Attributes</strong>: Shows how to create custom attribute classes, use them in code, and query them through reflection.
+</li><li><strong>Collection Classes</strong>: Shows how to make non-generic collection classes that can be used with the foreach statement.
+</li><li><strong>COM Interop Part I</strong>: Shows how to use C# to interoperate with COM objects.
+</li><li><strong>COM Interop Part II</strong>: Shows how to a use a C# server together with a C&#43;&#43; COM client.
+</li><li><strong>Commandline</strong>: Demonstrates simple command-line processing and array indexing.
+</li><li><strong>Condiational Methods</strong>: Demonstrates conditional methods, which provide a powerful mechanism by which calls to methods can be included or omitted depending on whether a symbol is defined.
+</li><li><strong>Delegates</strong>: Shows how delegates are declared, mapped to static and instance methods, and combined into multicast delegates.
+</li><li><strong>Events</strong>: Shows how to declare, invoke, and configure events in C#.
+</li><li><strong>Explicit Interface</strong>: Demonstrates how to explicitly implement interface members and how to access those members from interface instances.
+</li><li><strong>Generics</strong>: Shows how to make generic collection classes that can be used with the foreach statement.
+</li><li><strong>Hello World</strong>: A Hello World application. </li><li><strong>Indexers Part I</strong>: Shows how C# classes can declare indexers to provide array-like access to objects.
+</li><li><strong>Indexers Part II</strong>: Shows how to implement a class that uses indexed properties. Indexed properties enable you to use a class that represents an array-like collection.
+</li><li><strong>Libraries</strong>: Shows how to use compiler options to create a DLL from multiple source files; also, how to use the library in other programs
+</li><li><strong>Named and Optional (C# 4.0)</strong>: Demonstrates Named and Optional parameters, an alternative to method overloads
+</li><li><strong>Nullable</strong>: Demonstrates value types, such as double and bool, that can be set to null
+</li><li><strong>Office Sample (C# 4.0)</strong>: Demonstrates how Dynamic and COM Interop make it easy to call Microsoft Office in C# 4.0
+</li><li><strong>OLEDB</strong>: Demonstrates how to use a Microsoft Access database from C# by creating a dataset and adding tables to it.
+</li><li><strong>Operator Overloading</strong>: Shows how user-defined classes can overload operators
+</li><li><strong>Partial Types</strong>: Demonstrates how classes and structures can be defined in multiple C# source-code files
+</li><li><strong>PInvoke</strong>Shows how to call exported DLL functions from C# </li><li><strong>Properties</strong>: Shows how properties are declared and used; also demonstrates abstract properties
+</li><li><strong>Python Sample (C# 4.0)</strong>: Learn how to call a Python script by using the Dynamic feature in C# 4.0
+</li><li><strong>Security</strong>: Discusses .NET Framework security and shows two ways to modify security permissions in C#: using permission classes and permission attributes
+</li><li><strong>Simple Variance (C# 4.0)</strong>: See how Covariance and Contravariance are supported in generic interfaces and delegates
+</li><li><strong>Structs</strong>: Shows how to use structs in C#. </li><li><strong>Threading</strong>: Demonstrates various thread activities such as creating and executing a thread, synchronizing threads, interacting between threads, and using a thread pool
+</li><li><strong>Unsafe</strong>: Shows how to use unmanaged code (code that uses pointers) in C#
+</li><li><strong>User Conversions</strong>: Shows how to define conversions to and from user-defined types
+</li><li><strong>Versioning</strong>: Demonstrates versioning in C# by using the override and new keywords
+</li><li><strong>XML Documents</strong>: Shows how to document code by using XML </li><li><strong>Yield</strong>: Demonstrates how to use the yield keyword to filter items in a collection
+</li></ul>
+<h2><a name="linq">LinqSamples</a></h2>
+<p>These samples help you learn LINQ quickly. They also act as a reference and guide for those with existing LINQ experience. A few handy utilities are also included. They are available in the
+<strong>LinqSamples</strong> folder.</p>
+<ul>
+<li><strong>DynamicQuery</strong>: Code to create LINQ queries at run time. </li><li><strong>LinqToNorthwind</strong>: A basic example of how to use LINQ To SQL to query a database
+</li><li><strong>LinqToXmlDataBinding</strong>: Bind LINQ to XML code to WPF controls </li><li><strong>ObjectDumper</strong>: A utility for writing the output from a LINQ query to the screen in text mode
+</li><li><strong>PasteXmlAsLinq: </strong>A Visual Studio addin that automatically converts XML to LINQ to XML.
+</li><li><strong>QueryVisualizer</strong>: Allows LINQ to SQL developers to see the SQL for their query, and also to see the results of the query in a grid.
+</li><li><strong>Reflector</strong>: Use LINQ to right queries against the objects in your code using the Reflection APIs
+</li><li><strong>RSS</strong>: This sample acts as a tiny web server that aggregates several RSS feeds
+</li><li><strong>SampleQueries</strong>: This is the most important sample and contains about 500 examples of how to use each of the query operators in LINQ to Objects, LINQ to SQL, LINQ to XML and LINQ to DataSet.
+</li><li><strong>SimpleLambdas</strong>: Several examples of how to write and use lambda expressions
+</li><li><strong>SimpleLinqToObjects:</strong> The hello world of the LINQ samples. This shows you how easy it is to do simple queries of in-memory objects using LINQ to Objects.
+</li><li><strong>SimpleLinqToXml</strong>: Get started using LINQ to XML. </li><li><strong>WebServiceLinqProvider(TerraService)</strong>: A custom LINQ provider and client for the TerraServer-USA Web service.
+</li><li><strong>Whitepapers</strong>: The following papers are stored in this directory in Word format:
+<ul>
+<li>LINQ Project Overview </li><li>LINQ to SQL Overview for C# and VB </li><li>Standard Query Operators </li><li>LINQ to XML Overview </li></ul>
+</li><li><strong>WinFormsDataBinding</strong>: Learn how to display LINQ queries with grids in a Windows form. It includes a one to many query example.
+</li><li><strong>XQuery</strong>: Another simple LINQ to XML sample query. This sample shows the minimal code necessary to write a LINQ to XML query
+</li></ul>
+<h3>LINQ Samples Database Connectivity Issues</h3>
+<p>The default connect string for the samples should work without modification if you have SQL Server Express installed on your development machine. Here is an alternate connect string that you can modify for your own purposes if you are not using SQL Express
+ but have SQL Server available. You will probably need to modify the word test wherever it appears in the sample connect string.</p>
+<pre>string connString = 
+  &quot;server=test;database=northwind;user id=test;password=test&quot;;
+</pre>
+<p>On some SQL Express installations, you may not have the rights to start a user instance. If you get an error message to that effect, try removing the clause &quot;;user instance = true&quot; from the connection string.</p>
+<p>Be sure that the copies of the northwind database that you are accessing are not marked read only. If necessary, browse to the copy of NORTHWIND.MDF you are trying to access, right click on the file, choose properties. Clear the
+<strong>Read-only</strong> attribute.</p>
+<p>On some slow machines, or when using a virtual pc, users have reported that some database applications give errors the first time they run. Try running the sample two or three times.</p>
+<p>The customized copies of the Northwind database included with the samples ship without an LDF (log) file. This is done intentionally, so that the LDF and MDF files do not get out of sync. When you run a sample that uses the database, or attach to the database
+ from the Server Explorer inside Visual Studio, the LDF file will be created automatically. You may have trouble connecting to the MDF file if you are using the SQL Server Management Studio without first creating a log file.</p>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps3633-->
+                        <div id="item">
+                                <div><a href="LINQ - Join Operators/description.html">LINQ - Join Operators</a></div>
+                            <div>This sample shows different uses of Join Operators</div>
+                        </div>
+                        <!--pe3633-->
+                        <!--ps3296-->
+                        <div id="item">
+                                <div><a href="LINQ - Sample Queries/description.html">LINQ - Sample Queries</a></div>
+                            <div>This project contains about 101 samples using LINQ.</div>
+                        </div>
+                        <!--pe3296-->
+                        <!--ps3647-->
+                        <div id="item">
+                                <div><a href="LINQ - Restriction Operators/description.html">LINQ - Restriction Operators</a></div>
+                            <div>This sample shows different uses of Restriction Operators.</div>
+                        </div>
+                        <!--pe3647-->
+                        <!--ps3665-->
+                        <div id="item">
+                                <div><a href="LINQ - Projection Operators/description.html">LINQ - Projection Operators</a></div>
+                            <div>This sample shows different uses of Projection Operators</div>
+                        </div>
+                        <!--pe3665-->
+                        <!--ps3660-->
+                        <div id="item">
+                                <div><a href="LINQ  - Grouping Operators/description.html">LINQ  - Grouping Operators</a></div>
+                            <div>This sample shows different uses of Grouping Operators</div>
+                        </div>
+                        <!--pe3660-->
+                        <!--ps3626-->
+                        <div id="item">
+                                <div><a href="LINQ - Aggregate Operators/description.html">LINQ - Aggregate Operators</a></div>
+                            <div>This sample shows different uses of Aggregate Operators</div>
+                        </div>
+                        <!--pe3626-->
+                        <!--ps3645-->
+                        <div id="item">
+                                <div><a href="LINQ - Query Execution/description.html">LINQ - Query Execution</a></div>
+                            <div>This sample shows different uses of Query Execution</div>
+                        </div>
+                        <!--pe3645-->
+                        <!--ps3639-->
+                        <div id="item">
+                                <div><a href="LINQ - Ordering Operators/description.html">LINQ - Ordering Operators</a></div>
+                            <div>This sample shows different uses of Ordering Operators</div>
+                        </div>
+                        <!--pe3639-->
+                        <!--ps3649-->
+                        <div id="item">
+                                <div><a href="LINQ - Set Operators/description.html">LINQ - Set Operators</a></div>
+                            <div>This sample shows different uses of Set Operators.</div>
+                        </div>
+                        <!--pe3649-->
+                        <!--ps3231-->
+                        <div id="item">
+                                <div><a href="Microsoft ADO.NET Data Services Application/description.html">Microsoft ADO.NET Data Services Application</a></div>
+                            <div>This sample shows a simple ADO.NET Data Service exposing data through the ADO.NET Entity Framework and a WPF application consuming the ADO.NET Data Service. </div>
+                        </div>
+                        <!--pe3231-->
+                        <!--ps3640-->
+                        <div id="item">
+                                <div><a href="LINQ - Partitioning Operators/description.html">LINQ - Partitioning Operators</a></div>
+                            <div>This sample shows different uses of Partitioning Operators</div>
+                        </div>
+                        <!--pe3640-->
+                        <!--ps3628-->
+                        <div id="item">
+                                <div><a href="LINQ - Element Operators/description.html">LINQ - Element Operators</a></div>
+                            <div> This sample shows different uses of Element Operators</div>
+                        </div>
+                        <!--pe3628-->
+                        <!--ps3644-->
+                        <div id="item">
+                                <div><a href="LINQ - Quantifiers/description.html">LINQ - Quantifiers</a></div>
+                            <div>This sample shows different uses of Quantifiers</div>
+                        </div>
+                        <!--pe3644-->
+                        <!--ps3635-->
+                        <div id="item">
+                                <div><a href="LINQ - Miscellaneous Operators/description.html">LINQ - Miscellaneous Operators</a></div>
+                            <div>This sample shows different uses of Miscellaneous Operators</div>
+                        </div>
+                        <!--pe3635-->
+                        <!--ps3627-->
+                        <div id="item">
+                                <div><a href="LINQ - Conversion Operators/description.html">LINQ - Conversion Operators</a></div>
+                            <div>This sample shows different uses of Conversion Operators</div>
+                        </div>
+                        <!--pe3627-->
+                        <!--ps14288-->
+                        <div id="item">
+                                <div><a href="Generics Sample (C#)/description.html">Generics Sample (C#)</a></div>
+                            <div>This sample shows how to create a custom generic list class with a single type parameter, and how to implement IEnumerable&amp;lt;T&amp;gt; to enable foreach iteration over the contents of the list. The sample also shows how client code creates an instance of the class by specifying a ty</div>
+                        </div>
+                        <!--pe14288-->
+                        <!--ps3225-->
+                        <div id="item">
+                                <div><a href="ADO.NET Entity Framework/description.html">ADO.NET Entity Framework</a></div>
+                            <div>This sample shows a WPF application built on top of the Microsoft ADO.NET Entity Framework. The application shows how the Entity Framework can be used in some common design patterns that promote testability and maintainability of code. </div>
+                        </div>
+                        <!--pe3225-->
+                        <!--ps3670-->
+                        <div id="item">
+                                <div><a href="LINQ - Custom Sequence Operators/description.html">LINQ - Custom Sequence Operators</a></div>
+                            <div>This sample shows different uses of Custom Sequence Operators</div>
+                        </div>
+                        <!--pe3670-->
+                        <!--ps14296-->
+                        <div id="item">
+                                <div><a href="OLE DB Sample/description.html">OLE DB Sample</a></div>
+                            <div>This sample demonstrates how to use a Microsoft Access database from C#. It shows how you can create a dataset and add tables to it from a database. The BugTypes.mdb database used in the sample program is a Microsoft Access 2000 .mdb file.
+This sample code is provided to illustra</div>
+                        </div>
+                        <!--pe14296-->
+                        <!--ps3630-->
+                        <div id="item">
+                                <div><a href="LINQ - Generation Operators/description.html">LINQ - Generation Operators</a></div>
+                            <div>This sample shows different uses of Generation Operators</div>
+                        </div>
+                        <!--pe3630-->
+                        <!--ps3672-->
+                        <div id="item">
+                                <div><a href="LINQ to DataSets - Linq Over Typed DataSet/description.html">LINQ to DataSets - Linq Over Typed DataSet</a></div>
+                            <div>This sample shows different uses of Linq Over Typed DataSet</div>
+                        </div>
+                        <!--pe3672-->
+                        <!--ps3299-->
+                        <div id="item">
+                                <div><a href="LINQ - LINQ to XML using XQuery/description.html">LINQ - LINQ to XML using XQuery</a></div>
+                            <div>Another simple LINQ to XML sample query. This sample shows the minimal code necessary to write a LINQ to XML query.</div>
+                        </div>
+                        <!--pe3299-->
+                        <!--ps3634-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Grouping Operator Samples/description.html">LINQ to XML - Grouping Operator Samples</a></div>
+                            <div>These samples show how to group results in a LINQ to XML query.</div>
+                        </div>
+                        <!--pe3634-->
+                        <!--ps3278-->
+                        <div id="item">
+                                <div><a href="LINQ - Using System.Reflection with LINQ Queries/description.html">LINQ - Using System.Reflection with LINQ Queries</a></div>
+                            <div>Use LINQ to right queries against the objects in your code using the Reflection APIs.</div>
+                        </div>
+                        <!--pe3278-->
+                        <!--ps14305-->
+                        <div id="item">
+                                <div><a href="Threading Sample/description.html">Threading Sample</a></div>
+                            <div>This sample demonstrates the following threading techniques. See Threading (C# Programming Guide) for more information.
+Creating, launching, and terminating a thread
+Using a thread pool
+Thread synchronization and interaction
+This sample code is provided to illustrate a concept an</div>
+                        </div>
+                        <!--pe14305-->
+                        <!--ps3297-->
+                        <div id="item">
+                                <div><a href="LINQ - Simple Lambdas/description.html">LINQ - Simple Lambdas</a></div>
+                            <div>Several examples of how to write and use lambda expressions.</div>
+                        </div>
+                        <!--pe3297-->
+                        <!--ps14286-->
+                        <div id="item">
+                                <div><a href="Events Sample/description.html">Events Sample</a></div>
+                            <div>This sample shows how to declare, invoke, and configure events in C#. For additional information, see Events (C# Programming Guide).
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest codin</div>
+                        </div>
+                        <!--pe14286-->
+                        <!--ps14282-->
+                        <div id="item">
+                                <div><a href="COM Interop Part 2 Sample/description.html">COM Interop Part 2 Sample</a></div>
+                            <div>This sample demonstrates using a C# server with a C++ COM client.
+
+	You must have administrator rights to run this program and Visual C++ must be installed to compile this sample.
+This sample code is provided to illustrate a concept and should not be used in applications or Web </div>
+                        </div>
+                        <!--pe14282-->
+                        <!--ps14302-->
+                        <div id="item">
+                                <div><a href="Security Sample/description.html">Security Sample</a></div>
+                            <div>This sample demonstrates how to modify security permissions through
+permission classes and permission attributes. For additional information, see Security
+(C# Programming Guide).
+Security
+  Note
+This sample code is provided to illustrate a concept and should not be
+  used in </div>
+                        </div>
+                        <!--pe14302-->
+                        <!--ps14317-->
+                        <div id="item">
+                                <div><a href="BDCSamples/description.html">BDCSamples</a></div>
+                            <div>Apply to both VB and C# sample projects.These BDC samples connect to Northwind database as external data source. Please read below notes carefully and make sure you have the Northwind database connection before you run the sample project.Prepare Northwind DBIf you already have a </div>
+                        </div>
+                        <!--pe14317-->
+                        <!--ps14279-->
+                        <div id="item">
+                                <div><a href="Attributes Sample/description.html">Attributes Sample</a></div>
+                            <div>This sample demonstrates how to create custom attribute classes, use them in code, and query them through reflection. For additional information on attributes, see Attributes (C# Programming Guide).
+This sample code is provided to illustrate a concept and should not be used in ap</div>
+                        </div>
+                        <!--pe14279-->
+                        <!--ps14272-->
+                        <div id="item">
+                                <div><a href="UI Manager Sample/description.html">UI Manager Sample</a></div>
+                            <div>This sample demonstrates the following concepts:
+Creating a Ribbon customization by implementing the Microsoft.Office.Core.IRibbonExtensibility interface in an add-in.
+Creating a custom task pane by implementing the Microsoft.Office.Core.ICustomTaskPaneConsumer interface in an ad</div>
+                        </div>
+                        <!--pe14272-->
+                        <!--ps14285-->
+                        <div id="item">
+                                <div><a href="Delegates Sample/description.html">Delegates Sample</a></div>
+                            <div>This sample demonstrates the delegate types. It shows how to map delegates to static and instance methods, and how to combine them to create multicast delegates.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may no</div>
+                        </div>
+                        <!--pe14285-->
+                        <!--ps14280-->
+                        <div id="item">
+                                <div><a href="Collection Classes Sample/description.html">Collection Classes Sample</a></div>
+                            <div>This sample shows how to implement a collection class that can be used with the foreach statement. See Collection Classes (C# Programming Guide) for more information.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it m</div>
+                        </div>
+                        <!--pe14280-->
+                        <!--ps3675-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Queries Based on Sequence/description.html">LINQ to XML - Queries Based on Sequence</a></div>
+                            <div>These samples demonstrate how to retrieve a sequence of data based on certain criteria.</div>
+                        </div>
+                        <!--pe3675-->
+                        <!--ps14297-->
+                        <div id="item">
+                                <div><a href="Operator Overloading Sample/description.html">Operator Overloading Sample</a></div>
+                            <div>This sample demonstrates how user-defined classes can overload operators. See C# Operators for more information.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microso</div>
+                        </div>
+                        <!--pe14297-->
+                        <!--ps14301-->
+                        <div id="item">
+                                <div><a href="Visual C# 2010 - IronPython Sample ReadMe/description.html">Visual C# 2010 - IronPython Sample ReadMe</a></div>
+                            <div>This example shows how to integrate Visual C# 2010 and IronPython using the new &#39;dynamic&#39; feature added in C# 4.0
+
+To run the sample, you will need to install IronPython 2.6.1, 
+which is a available as a separate download. It may also work with more recent versions of IronPytho</div>
+                        </div>
+                        <!--pe14301-->
+                        <!--ps3641-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Miscellaneous Samples/description.html">LINQ to XML - Miscellaneous Samples</a></div>
+                            <div>These samples demonstrate various ways of working with XML data.</div>
+                        </div>
+                        <!--pe3641-->
+                        <!--ps14322-->
+                        <div id="item">
+                                <div><a href="WebPart/description.html">WebPart</a></div>
+                            <div>This sample of a Visual WebPart demonstrates how to list all of the site collections on the local SharePoint server. &amp;nbsp;For the selected site collection it displays statistical data for each list within the site collection.To run the sample - Change the Site URL property of th</div>
+                        </div>
+                        <!--pe14322-->
+                        <!--ps14307-->
+                        <div id="item">
+                                <div><a href="User-Defined Conversions Sample/description.html">User-Defined Conversions Sample</a></div>
+                            <div>This sample shows how to define conversions to or from classes or structures, and how such conversions are used. See Conversion Operators (C# Programming Guide) for more information.
+This sample code is provided to illustrate a concept and should not be used in applications or We</div>
+                        </div>
+                        <!--pe14307-->
+                        <!--ps14308-->
+                        <div id="item">
+                                <div><a href="Versioning Sample/description.html">Versioning Sample</a></div>
+                            <div>This sample demonstrates versioning in C# through the use of the override and new keywords. Versioning helps maintain compatibility between base and derived classes as they evolve. For additional information, see Versioning with the Override and New Keywords (C# Programming Guide</div>
+                        </div>
+                        <!--pe14308-->
+                        <!--ps3646-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Sorting Operator Samples/description.html">LINQ to XML - Sorting Operator Samples</a></div>
+                            <div>These samples demonstrate how to sort results using &quot;orderby&quot; in LINQ to XML.</div>
+                        </div>
+                        <!--pe3646-->
+                        <!--ps14292-->
+                        <div id="item">
+                                <div><a href="Libraries Sample/description.html">Libraries Sample</a></div>
+                            <div>This sample shows how to create and use a DLL in C#.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microsoft assumes no liability for incidental or consequential dama</div>
+                        </div>
+                        <!--pe14292-->
+                        <!--ps14266-->
+                        <div id="item">
+                                <div><a href="Data Analysis Sample/description.html">Data Analysis Sample</a></div>
+                            <div>The sample demonstrates the following tasks:
+Reading data from XML files.
+Customizing menus and toolbars.
+Using Excel built-in functions to analyze data.
+Creating pivot tables that are linked to data in XML files.
+Binding XML data to Excel list controls.
+Creating charts.
+Preparin</div>
+                        </div>
+                        <!--pe14266-->
+                        <!--ps14283-->
+                        <div id="item">
+                                <div><a href="Command Line Parameters Sample/description.html">Command Line Parameters Sample</a></div>
+                            <div>This sample shows how the command line can be accessed and two ways of accessing the array of command-line parameters.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. M</div>
+                        </div>
+                        <!--pe14283-->
+                        <!--ps14284-->
+                        <div id="item">
+                                <div><a href="Conditional Methods Sample/description.html">Conditional Methods Sample</a></div>
+                            <div>This sample demonstrates conditional methods, which provide a powerful mechanism by which calls to methods can be included or omitted depending on whether a symbol is defined.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites</div>
+                        </div>
+                        <!--pe14284-->
+                        <!--ps14281-->
+                        <div id="item">
+                                <div><a href="COM Interop Part 1 Sample/description.html">COM Interop Part 1 Sample</a></div>
+                            <div>This sample demonstrates how a C# program can interoperate with an unmanaged COM component.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microsoft assumes no liabili</div>
+                        </div>
+                        <!--pe14281-->
+                        <!--ps14273-->
+                        <div id="item">
+                                <div><a href="Excel Document Protection Techniques Sample/description.html">Excel Document Protection Techniques Sample</a></div>
+                            <div>How to re-create a control after a user deletes it.
+How to write data to a data-bound ListObject control on a protected worksheet.
+How to write data to a NamedRange control on a protected worksheet.
+How to protect a value in a NamedRange control from unauthorized modification</div>
+                        </div>
+                        <!--pe14273-->
+                        <!--ps14274-->
+                        <div id="item">
+                                <div><a href="Outlook Form Region RSS Reader Sample/description.html">Outlook Form Region RSS Reader Sample</a></div>
+                            <div>This sample demonstrates the following concepts:
+Creating separate and adjoining form regions.
+Using managed controls in a form region.
+Accessing an instance of the Microsoft.Office.Interop.Outlook.PostItem class.
+</div>
+                        </div>
+                        <!--pe14274-->
+                        <!--ps14275-->
+                        <div id="item">
+                                <div><a href="UI Manager Sample/description.html">UI Manager Sample</a></div>
+                            <div>This sample demonstrates the following concepts:
+Creating a Ribbon customization by implementing the Microsoft.Office.Core.IRibbonExtensibility interface in an add-in.
+Creating a custom task pane by implementing the Microsoft.Office.Core.ICustomTaskPaneConsumer interface in an ad</div>
+                        </div>
+                        <!--pe14275-->
+                        <!--ps14295-->
+                        <div id="item">
+                                <div><a href="This sample shows how to use the/description.html">This sample shows how to use the</a></div>
+                            <div>This sample shows how to use the C# 4.0 features called COM Interop,
+omitting ref, indexed properties and Named and Optional Parameters to create a C# 
+application that communicates with Microsoft Office. C# developers have traditionally had 
+to write relatively verbose code i</div>
+                        </div>
+                        <!--pe14295-->
+                        <!--ps14299-->
+                        <div id="item">
+                                <div><a href="Platform Invoke Sample/description.html">Platform Invoke Sample</a></div>
+                            <div>This sample demonstrates how to call platform invokes (exported DLL functions) from C#. See Interoperability (C# Programming Guide) for more information.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illust</div>
+                        </div>
+                        <!--pe14299-->
+                        <!--ps14300-->
+                        <div id="item">
+                                <div><a href="Properties Sample/description.html">Properties Sample</a></div>
+                            <div>This sample shows how properties are an integral part of the C# programming language. It demonstrates how properties are declared and used. See Properties (C# Programming Guide) for more information.
+This sample code is provided to illustrate a concept and should not be used in a</div>
+                        </div>
+                        <!--pe14300-->
+                        <!--ps14270-->
+                        <div id="item">
+                                <div><a href="Master Detail Data Sample/description.html">Master Detail Data Sample</a></div>
+                            <div>This sample demonstrates how to:
+Retrieve and use data from an XML file that was extracted from a SQL Server database.
+Display the data using data-bound Excel controls.
+Work with multiple sets of master/detail data.</div>
+                        </div>
+                        <!--pe14270-->
+                        <!--ps14289-->
+                        <div id="item">
+                                <div><a href="Hello World Sample/description.html">Hello World Sample</a></div>
+                            <div>This sample shows several versions of a Hello World program in C#.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microsoft assumes no liability for incidental or cons</div>
+                        </div>
+                        <!--pe14289-->
+                        <!--ps3655-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - XName Samples/description.html">LINQ to XML - XName Samples</a></div>
+                            <div>These samples demonstrate using XNamespace in LINQ to XML to work with XML Namespaces.</div>
+                        </div>
+                        <!--pe3655-->
+                        <!--ps3295-->
+                        <div id="item">
+                                <div><a href="LINQ - RSS Aggregator using LINQ to XML/description.html">LINQ - RSS Aggregator using LINQ to XML</a></div>
+                            <div>This sample acts as a tiny web server that aggregates several RSS feeds.</div>
+                        </div>
+                        <!--pe3295-->
+                        <!--ps3636-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Language Integration Samples/description.html">LINQ to XML - Language Integration Samples</a></div>
+                            <div>These samples show how to integrate C# code with LINQ queries.</div>
+                        </div>
+                        <!--pe3636-->
+                        <!--ps14303-->
+                        <div id="item">
+                                <div><a href="Simple Variance Sample/description.html">Simple Variance Sample</a></div>
+                            <div>The SimpleVariance sample program shows C# 4.0 support for 
+covariance and contravariance when using generic types in delegates and 
+interfaces. In C# 3.0 generic types were invariant. As a result, this sample compiles fine in C# 4.0, while it 
+does not compile in previous ver</div>
+                        </div>
+                        <!--pe14303-->
+                        <!--ps14304-->
+                        <div id="item">
+                                <div><a href="Structs Sample/description.html">Structs Sample</a></div>
+                            <div>This sample presents the syntax and usage of structs. It also covers the important differences between classes and structs. See Objects, Classes and Structs (C# Programming Guide) for more information.
+This sample code is provided to illustrate a concept and should not be used in</div>
+                        </div>
+                        <!--pe14304-->
+                        <!--ps14306-->
+                        <div id="item">
+                                <div><a href="Unsafe Code Sample/description.html">Unsafe Code Sample</a></div>
+                            <div>This sample demonstrates how to use unmanaged code (code using pointers) in C#.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microsoft assumes no liability for incid</div>
+                        </div>
+                        <!--pe14306-->
+                        <!--ps14310-->
+                        <div id="item">
+                                <div><a href="Yield Sample/description.html">Yield Sample</a></div>
+                            <div>This sample shows how to create a list class which implements IEnumerable&amp;lt;int&amp;gt; and the yield keyword to enable foreach iteration over the contents of the list. Two properties are defined, one returning the odd numbers, the other returning the even numbers.
+This sample code </div>
+                        </div>
+                        <!--pe14310-->
+                        <!--ps14320-->
+                        <div id="item">
+                                <div><a href="SequentialWorkflow2007/description.html">SequentialWorkflow2007</a></div>
+                            <div>To enable this sample to run on Microsoft Office SharePoint Server (MOSS) 2007 you must make the following changes to the workflow project: - Change the Debugging Site URL property to &amp;quot;http://localhost/Docs/&amp;quot;, or another valid SharePoint site on your development system.</div>
+                        </div>
+                        <!--pe14320-->
+                        <!--ps14321-->
+                        <div id="item">
+                                <div><a href="SequentialWorkflow2010/description.html">SequentialWorkflow2010</a></div>
+                            <div>This sample will start a workflow once a document is uploaded to the Shared Documents Library. The workflow will make an entry in the task list. The workflow is completed once the user sets the task as 100% complete.To run the sample  - Change the Site URL property of the project</div>
+                        </div>
+                        <!--pe14321-->
+                        <!--ps14309-->
+                        <div id="item">
+                                <div><a href="XML Documentation Sample/description.html">XML Documentation Sample</a></div>
+                            <div>This sample shows how to use XML to document code. See XML Documentation Comments (C# Programming Guide) for additional information.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest codin</div>
+                        </div>
+                        <!--pe14309-->
+                        <!--ps14318-->
+                        <div id="item">
+                                <div><a href="CustomActionProjectItem/description.html">CustomActionProjectItem</a></div>
+                            <div>This is a sample of a Visual Studio 2010 extension for use with the new SharePoint project templates. &amp;nbsp;It takes advantage of the extensibility APIs that are part of the new SharePoint development tools within Visual Studio 2010. &amp;nbsp;The extension is for a SharePoint custom</div>
+                        </div>
+                        <!--pe14318-->
+                        <!--ps14319-->
+                        <div id="item">
+                                <div><a href="ListwithEventReciever/description.html">ListwithEventReciever</a></div>
+                            <div>This sample creates a new SharePoint List(DonationList) and ListInstance(DonationInstance) with an EventReceiver(DonationDeleting) attached. To run the sample  - Change the Site URL property of the project to a valid SharePoint site on your development system (i.e. http://&amp;lt;Mac</div>
+                        </div>
+                        <!--pe14319-->
+                        <!--ps3638-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Load Samples/description.html">LINQ to XML - Load Samples</a></div>
+                            <div>These samples show how to load an XML document and run queries against it.</div>
+                        </div>
+                        <!--pe3638-->
+                        <!--ps3631-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Using Event Listeners on XML Elements/description.html">LINQ to XML - Using Event Listeners on XML Elements</a></div>
+                            <div>These samples show how to attach event listeners to XML elements.</div>
+                        </div>
+                        <!--pe3631-->
+                        <!--ps3629-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Using Data Manipulation Language (DML)/description.html">LINQ to XML - Using Data Manipulation Language (DML)</a></div>
+                            <div>These samples show how to use Data Manipulation Language (DML) using LINQ to XML.</div>
+                        </div>
+                        <!--pe3629-->
+                        <!--ps3625-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Construction Samples/description.html">LINQ to XML - Construction Samples</a></div>
+                            <div>These samples show how to construct XML elements and documents from code using LINQ to XML.</div>
+                        </div>
+                        <!--pe3625-->
+                        <!--ps3659-->
+                        <div id="item">
+                                <div><a href="LINQ to DataSets - Generation Operators/description.html">LINQ to DataSets - Generation Operators</a></div>
+                            <div>This sample shows different uses of Generation Operators</div>
+                        </div>
+                        <!--pe3659-->
+                        <!--ps3663-->
+                        <div id="item">
+                                <div><a href="LINQ to DataSets - Ordering Operators/description.html">LINQ to DataSets - Ordering Operators</a></div>
+                            <div>This sample shows different uses of Ordering Operators</div>
+                        </div>
+                        <!--pe3663-->
+                        <!--ps3653-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Transform Samples/description.html">LINQ to XML - Transform Samples</a></div>
+                            <div>These samples show how to transform XML data into HTML code.</div>
+                        </div>
+                        <!--pe3653-->
+                        <!--ps3654-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Write Samples/description.html">LINQ to XML - Write Samples</a></div>
+                            <div>These samples demonstrate how to use XmlWriter to output XML data.</div>
+                        </div>
+                        <!--pe3654-->
+                        <!--ps3643-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Query Operator Samples/description.html">LINQ to XML - Query Operator Samples</a></div>
+                            <div>These samples demonstrate how to use various query operators on XML data, such as TakeWhile, Any, All, Distinct, Concat, and others.</div>
+                        </div>
+                        <!--pe3643-->
+                        <!--ps14290-->
+                        <div id="item">
+                                <div><a href="Indexers Sample/description.html">Indexers Sample</a></div>
+                            <div>This sample shows how C# classes can declare indexers to provide array-like access to the classes.
+This sample code is provided to illustrate a concept and should not be used in applications or Web sites, as it may not illustrate the safest coding practices. Microsoft assumes no </div>
+                        </div>
+                        <!--pe14290-->
+                        <!--ps14291-->
+                        <div id="item">
+                                <div><a href="Indexers_2 Sample/description.html">Indexers_2 Sample</a></div>
+                            <div>This sample shows how C# classes can declare indexers to represent an array-like collection of different kinds of things. See Properties (C# Programming Guide) for additional information.
+This sample code is provided to illustrate a concept and should not be used in applications </div>
+                        </div>
+                        <!--pe14291-->
+                        <!--ps14287-->
+                        <div id="item">
+                                <div><a href="Explicit Interface Implementation Sample/description.html">Explicit Interface Implementation Sample</a></div>
+                            <div>This sample demonstrates how to explicitly implement interface members and how to access those members from interface instances. For background information, see Interfaces (C# Programming Guide).
+This sample code is provided to illustrate a concept and should not be used in appli</div>
+                        </div>
+                        <!--pe14287-->
+                        <!--ps14293-->
+                        <div id="item">
+                                <div><a href="Named &amp; Optional/description.html">Named &amp; Optional</a></div>
+                            <div>C# 4.0 supports named and optional parameters. This program demonstrates how to 
+            declare a method with named and optional parameters, and how to call the method 
+            while making use of the default values for the parameters, and by explicit 
+            nam</div>
+                        </div>
+                        <!--pe14293-->
+                        <!--ps14294-->
+                        <div id="item">
+                                <div><a href="Nullable Sample/description.html">Nullable Sample</a></div>
+                            <div>This sample demonstrates the use of nullable types. This feature allows value types to have an uninitialized, or empty, state similar to how reference types can be set to null.
+Security Note&#160;&#160;&#160;This sample code is provided to illustrate a concept and should not be used in applicat</div>
+                        </div>
+                        <!--pe14294-->
+                        <!--ps14298-->
+                        <div id="item">
+                                <div><a href="Partial Types Sample/description.html">Partial Types Sample</a></div>
+                            <div>This sample demonstrates the use of partial types, which enable a class or struct to be defined in two or more C# files. This allows multiple programmers to work on different portions of a class in parallel, and for different facets of a complex class to be kept in separate files</div>
+                        </div>
+                        <!--pe14298-->
+                        <!--ps14267-->
+                        <div id="item">
+                                <div><a href="Data-Bound Content Controls Sample/description.html">Data-Bound Content Controls Sample</a></div>
+                            <div>This sample demonstrates the following concepts:
+Binding the following content controls to database fields:
+PlainTextContentControl
+PictureContentControl
+DatePickerContentControl
+Saving data in a data-bound content control to the database (this is also named two-way data binding)</div>
+                        </div>
+                        <!--pe14267-->
+                        <!--ps3671-->
+                        <div id="item">
+                                <div><a href="LINQ to DataSets - DataSet Loading Examples/description.html">LINQ to DataSets - DataSet Loading Examples</a></div>
+                            <div>This sample shows different DataSet Loading Examples</div>
+                        </div>
+                        <!--pe3671-->
+                        <!--ps3676-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Generating an SGML Document/description.html">LINQ to XML - Generating an SGML Document</a></div>
+                            <div>These samples demonstrate how to work with XmlReaderSettings and DtdProcessing to output an SGML document.</div>
+                        </div>
+                        <!--pe3676-->
+                        <!--ps3678-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Queries That Preserve Hierarchy/description.html">LINQ to XML - Queries That Preserve Hierarchy</a></div>
+                            <div>These samples demonstrate how to output data into a new XML file structure while preserving the overall data and hierarchy.</div>
+                        </div>
+                        <!--pe3678-->
+                        <!--ps3679-->
+                        <div id="item">
+                                <div><a href="LINQ to XML - Experiences and Exemplars/description.html">LINQ to XML - Experiences and Exemplars</a></div>
+                            <div>These samples demonstrate some ways to use LINQ to XML to join, filter, order, search, etc.</div>
+                        </div>
+                        <!--pe3679-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

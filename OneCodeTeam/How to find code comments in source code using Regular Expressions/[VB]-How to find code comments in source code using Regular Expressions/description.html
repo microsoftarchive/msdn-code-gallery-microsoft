@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to find code comments in source code using Regular Expressions</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to find code comments in source code using Regular Expressions</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            .NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Regular Expressions, code snippets, code comments
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-find-code-comments-9d1f7a29">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<h1>The project illustrates how <span class="info-text">to find code comments in source code using Regular Expressions
+</span></h1>
+<h2>Introduction</h2>
+<div class="MsoNormal">The project illustrates how <span class="info-text">to find source code comments in source code using Regular Expressions.</span></div>
+<div class="MsoNormal">Lots of developers ask about this in the MSDN forums, so we created the code sample to address the frequently asked programming scenario.</div>
+<div class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span><span>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Regular expression library</div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://www.regexlib.com/Search.aspx?k=vb.net&amp;c=-1&amp;m=-1&amp;ps=20">http://www.regexlib.com/Search.aspx?k=vb.net&amp;c=-1&amp;m=-1&amp;ps=20</a></div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://www.regexlib.com/Search.aspx?k=c%23&amp;c=-1&amp;m=-1&amp;ps=20">http://www.regexlib.com/Search.aspx?k=c%23&amp;c=-1&amp;m=-1&amp;ps=20</a></div>
+<div class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span><span>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>General samples and help regarding regex usage</div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://ostermiller.org/findcomment.html">http://ostermiller.org/findcomment.html</a></div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://www.regular-expressions.info/tutorial.html">http://www.regular-expressions.info/tutorial.html</a></div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://www.regexbuddy.com/use.html">http://www.regexbuddy.com/use.html</a></div>
+<div class="MsoListParagraphCxSpMiddle"><a href="http://stackoverflow.com/questions/5378662/regex-to-find-comment-in-c-sharp-source-file">http://stackoverflow.com/questions/5378662/regex-to-find-comment-in-c-sharp-source-file</a></div>
+<div class="MsoListParagraphCxSpLast">&nbsp;</div>
+<h2>Building the Project</h2>
+<div class="MsoNormal">&nbsp;</div>
+<div class="MsoNormal"><strong><span>&nbsp;</span>Creating a c# console application
+</strong></div>
+<div class="MsoListParagraphCxSpFirst"><span><span>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>In the Visual Studio 2013, create a console application</div>
+<div class="MsoListParagraphCxSpMiddle"><span><span>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Using the regex pattern:</div>
+<div class="MsoListParagraphCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C# (/\*([^*]<span class="GramE">|[</span>\r\n]|(\*&#43;([^*/]|[\r\n])))*\*&#43;/)|(//.*)</div>
+<div class="MsoListParagraphCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VB.NET (/\*([^*]<span class="GramE">|[</span>\r\n]|(\*&#43;([^*/]|[\r\n])))*\*&#43;/)|(//.*)</div>
+<div class="MsoListParagraphCxSpMiddle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C&#43;&#43; (/\*([^*]<span class="GramE">|[</span>\r\n]|(\*&#43;([^*/]|[\r\n])))*\*&#43;/)|(//.*)<span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;">
+</span></div>
+<div class="MsoListParagraphCxSpMiddle"><span><span>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>In this sample, I have tried to read the source code contents from a file.</div>
+<div class="MsoListParagraphCxSpLast"><span><span>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>In nutshell, read a file line by line and find source code comments if any.</div>
+<div class="MsoListParagraph" style="text-align:justify; text-indent:-.25in"><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;; color:black"><span>-<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span></span></span></div>
+<div class="MsoNormal">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span><span>Visual Basic</span><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">cplusplus</span><span class="hidden">vb</span><span class="hidden">csharp</span>
+<pre class="hidden">string pattern(&quot;(/\\*([^*]|[\r\n]|(\\*&#43;([^*/]|[\r\n])))*\\*&#43;/)|(//.*)&quot;);
+	regex r(pattern, regex_constants::egrep);
+	for (sregex_iterator it(str.begin(), str.end(), r), end;
+		it != end;
+		&#43;&#43;it)
+	{
+		cout &lt;&lt; it-&gt;str() &lt;&lt; endl;
+	}</pre>
+<pre class="hidden">Dim file As String = &quot;../../SourceCode.vb&quot;
+        Dim pattern As String = &quot;REM((\t| ).*$|$)|^\'[^\r\n]&#43;$|''[^\r\n]&#43;$&quot;
+
+        ' local variable to get hold of single or multi-line code comments
+        Dim sLine As String = String.Empty
+        Dim mLine As String = String.Empty
+
+        ' Read the file stream
+        Dim stream As New FileStream(file, FileMode.Open, FileAccess.Read)
+        Dim reader As New StreamReader(stream)
+
+        While reader.Peek() &lt;&gt; -1
+            ' Read a line of the stream reader
+            sLine = reader.ReadLine()
+
+            ' Trim the space in the start of the line
+            sLine = If((sLine IsNot Nothing), sLine.Trim(), sLine)
+
+            Dim res = Regex.Matches(sLine, pattern)
+            If res.Count &gt; 0 Then
+                Console.WriteLine(sLine)
+            End If
+        End While</pre>
+<pre class="hidden"> while (reader.Peek() != -1)
+            {
+                // Read a line of the stream reader
+                sLine = reader.ReadLine();
+
+                // Trim the space in the start of the line
+                sLine = (sLine != null) ? sLine.Trim() : sLine;
+
+                if (sLine.StartsWith(@&quot;/*&quot;) &amp;&amp; !sLine.EndsWith(@&quot;*/&quot;))
+                {
+                    mLine = sLine &#43; Environment.NewLine;
+                    continue;
+                }
+                if (mLine.StartsWith(@&quot;/*&quot;))
+                {
+                    if (sLine.EndsWith(@&quot;*/&quot;))
+                    {
+                        mLine &#43;= sLine;
+                    }
+                    else
+                    {
+                        mLine &#43;= sLine &#43; Environment.NewLine;
+                        continue;
+                    }
+                }
+                if (!string.IsNullOrEmpty(mLine))
+                {
+                    var res = Regex.Matches(mLine, pattern);
+                    if(res.Count &gt; 0)
+                        Console.WriteLine(mLine);
+                    mLine = string.Empty;
+                }
+                else
+                {
+                    var res = Regex.Matches(sLine, pattern);
+                    if(res.Count &gt; 0)
+                        Console.WriteLine(sLine);
+                }
+}</pre>
+<div class="preview">
+<pre class="cplusplus"><span class="cpp__datatype">string</span>&nbsp;pattern(<span class="cpp__string">&quot;(/\\*([^*]|[\r\n]|(\\*&#43;([^*/]|[\r\n])))*\\*&#43;/)|(//.*)&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;regex&nbsp;r(pattern,&nbsp;regex_constants::egrep);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cpp__keyword">for</span>&nbsp;(sregex_iterator&nbsp;it(str.begin(),&nbsp;str.end(),&nbsp;r),&nbsp;end;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;!=&nbsp;end;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#43;&#43;it)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;it-&gt;str()&nbsp;&lt;&lt;&nbsp;endl;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<h2>Running the Sample</h2>
+<div class="MsoNormal"><span><span>&nbsp;</span></span>&nbsp;</div>
+<div class="MsoListParagraphCxSpFirst" style="margin-left:.75in"></div>
+<div class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span><span>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Sharing the sample data by its expression matches:</div>
+<div class="MsoListParagraphCxSpMiddle">&nbsp;</div>
+<div class="MsoListParagraphCxSpMiddle"><span><img src="description/image.png" alt="" width="576" height="166" align="middle">
+</span></div>
+<div class="MsoListParagraphCxSpMiddle">&nbsp;</div>
+<div class="MsoListParagraphCxSpLast">&nbsp;</div>
+<div class="MsoNormal"></div>
+<div class="MsoNormal">&nbsp;</div>
+<div style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</div>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/5da76560-b21c-4380-a832-dbdd11c039d3image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

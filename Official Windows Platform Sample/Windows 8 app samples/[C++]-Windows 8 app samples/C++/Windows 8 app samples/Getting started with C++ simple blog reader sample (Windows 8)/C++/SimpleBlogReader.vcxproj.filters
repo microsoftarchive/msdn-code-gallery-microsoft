@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>89e66999-5045-4fe1-8049-8d098b39a1c9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>8b3efcb1-5b44-4cdd-809b-ac515a7d055c</UniqueIdentifier>
+    </Filter>
+    <Page Include="Common\StandardStyles.xaml">
+      <Filter>Common</Filter>
+    </Page>
+    <Image Include="Assets\Logo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Common\BindableBase.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\BooleanToVisibilityConverter.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\BooleanNegationConverter.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\LayoutAwarePage.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\RichTextColumns.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\SuspensionManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DetailPage.xaml.cpp" />
+    <ClCompile Include="ItemsPage.xaml.cpp" />
+    <ClCompile Include="SplitPage.xaml.cpp" />
+    <ClCompile Include="FeedData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="FeedData.h" />
+    <ClInclude Include="DateConverter.h" />
+    <ClInclude Include="Common\BindableBase.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\BooleanToVisibilityConverter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\BooleanNegationConverter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\LayoutAwarePage.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\RichTextColumns.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SuspensionManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DetailPage.xaml.h" />
+    <ClInclude Include="ItemsPage.xaml.h" />
+    <ClInclude Include="SplitPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="ItemsPage.xaml" />
+    <Page Include="DetailPage.xaml" />
+    <Page Include="SplitPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Common\ReadMe.txt">
+      <Filter>Common</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Use the cross-domain library in a tenant-scoped app (REST)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Use the cross-domain library in a tenant-scoped app (REST)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, Javascript, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/20/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Use-the-6b3e4c1e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table id="bottomTable" cellspacing="0" cellpadding="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left"><span id="runningHeaderText">&nbsp;</span></td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><span id="nsrTitle">SharePoint 2013: Use the cross-domain library in a tenant-scoped app (REST)</span></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div id="mainSection">
+<div id="mainBody">
+<div class="summary">
+<p><span class="label">Summary:</span>&nbsp;Learn how to use the cross-domain library in a tenant-scoped app to read the web title of websites in multiple site collections by using the Representational State Transfer (REST) service.</p>
+</div>
+<div class="introduction">
+<p>This sample SharePoint-hosted app demonstrates how to use the cross-domain library in SharePoint to read the title property of websites in multiple site collections. The cross-domain library lets you query data across site collections in the same tenant
+ by using the <span class="keyword">AppContextSite</span> endpoint. The app accepts the URL of two site collections and displays the title property of the root website in a simple page by using the Representational State Transfer (REST) service.</p>
+</div>
+<h1 class="heading">Description of the sample</h1>
+<div class="section" id="sectionSection0">
+<p>The code that uses the cross-domain library is in the CrossDomainExec.js file of the CrossDomainApp project. The ReadTitle.aspx page provides the user interface. Figure 1 shows the ReadTitle page after you install and run the app.</p>
+<div class="caption">Figure 1. Browser window after running the solution</div>
+<br>
+<img id="101488" src="description/CrossDomainTenantScope_result.png" alt="" width="555" height="485"></div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>Microsoft Visual Studio 2012</p>
+</li><li>
+<p>Office Developer Tools for Visual Studio 2012</p>
+</li><li>
+<p>A SharePoint 2013 development environment (app isolation required for on-premises scenarios) with the following:</p>
+<ul>
+<li>
+<p>A developer site</p>
+</li><li>
+<p>An app catalog site</p>
+</li><li>
+<p>Two or more site collections (for testing purposes)</p>
+</li></ul>
+</li></ul>
+<p>For help with the prerequisites, review the following documentation:</p>
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/library/jj163980.aspx#SP15GettingStartedappdev_WhatDoYouNeed" >Set up the development environment</a>.</p>
+</li><li>
+<p><a href="http://office.microsoft.com/en-us/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx#_Toc347303048" >Create an App Catalog site</a> (SharePoint Online
+ environments).</p>
+</li><li>
+<p><a href="http://technet.microsoft.com/library/fp161234.aspx#ConfigureAppGallery" >Configure the App Catalog site for a web application</a> (on-premises environments).</p>
+</li></ul>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<p>The sample contains the following:</p>
+<ul>
+<li>
+<p>CrossDomainApp project</p>
+<ul>
+<li>
+<p>AppManifest.xml file, which contains the tenant permission request required to read across site collections.</p>
+</li><li>
+<p>ReadTitle.aspx file, which declares the user interface of the sample.</p>
+</li><li>
+<p>CrossDomainExec.js file, which uses the cross-domain library.</p>
+</li></ul>
+</li></ul>
+</div>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<div class="subSection">
+<ol>
+<li>
+<p>Update the <strong>SiteUrl</strong> property of the solution with the URL of your SharePoint developer site.</p>
+</li><li>
+<p>In <span class="ui">Solution Explorer</span>, right click the <span class="ui">
+CrossDomainApp</span> project and choose <span class="ui">Deploy</span>. This generates the app package at the following route:</p>
+<p><span class="placeholder">&lt;path_to_CrossDomainApp_project&gt;</span>\bin\<span class="placeholder">&lt;solution_configuration&gt;</span>\app.publish\<span class="placeholder">&lt;version&gt;</span></p>
+</li><li>
+<p>Close the <span class="ui">Do you trust CrossDomainApp?</span> page. You trust the app when you deploy at the tenant scope, in a further step.</p>
+</li><li>
+<p>Add the app to the app catalog, as explained in <a href="http://office.microsoft.com/en-us/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx#_Toc347303049" >
+Add custom apps to the App Catalog site</a>. Use the app package generated in step 2.</p>
+</li><li>
+<p>Deploy the app to one of the websites in the test site collections, as explained in
+<a href="http://office.microsoft.com/en-us/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx#_Toc347303052" >
+Deploy a custom app</a>. You trust the app in this step.</p>
+</li></ol>
+</div>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection4">
+<div class="subSection">
+<ol>
+<li>
+<p>Go to the website where you deployed the app.</p>
+</li><li>
+<p>Provide the URL of the test site collections in the text boxes.</p>
+</li><li>
+<p>Click <span class="ui">Go</span>.</p>
+</li></ol>
+</div>
+<p>The page displays the root websites title of the site collections.</p>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection5">
+<p>For troubleshooting steps, visit the <a href="http://msdn.microsoft.com/library/bc37ff5c-1285-40af-98ae-01286696242d# SP15Accessdatafromremoteapp_Troubleshoot" >
+Troubleshooting the solution</a> table in the cross-domain library documentation.</p>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection6">
+<ul>
+<li>
+<p>First version: October 2013</p>
+</li></ul>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection7">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d" >Setting up a SharePoint 2013 development environment for apps</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/1534a5f4-1d83-45b4-9714-3a1995677d85" >Working with data</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/bc37ff5c-1285-40af-98ae-01286696242d" >How to: Read the host web's title from a remote app using the cross-domain library</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/3d24f916-60b2-4ea9-b182-82e33cad06e8" >Work with the cross-domain library across different Internet Explorer security zones in apps for SharePoint</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/26f2999e-db7f-4fe7-a00f-05b009b1927d" >What you can do in an app for SharePoint</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/bde5647a-fff1-4b51-b67b-2139de79ce4a" >OAuth in SharePoint 2013</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72" >Programming using the SharePoint 2013 REST service</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/0942fdce-3227-496a-8873-399fc1dbb72c" >Design considerations for apps for SharePoint</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/ae96572b-8f06-4fd3-854f-fc312f7f2d88" >Critical aspects of the app for SharePoint architecture and development landscape</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/library/3034f03c-2d5a-46de-9cb8-2c101ff194fa" >Data storage options in apps for SharePoint</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+<p></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

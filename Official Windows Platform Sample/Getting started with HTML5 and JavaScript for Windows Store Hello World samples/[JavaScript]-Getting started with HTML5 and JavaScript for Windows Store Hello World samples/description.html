@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Getting started with HTML5 and JavaScript for Windows Store: Hello World samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Getting started with HTML5 and JavaScript for Windows Store: Hello World samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime, HTML5/JavaScrip<wbr />t
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            User Interface
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Getting-started-with-HTML5-24a0ace2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-family:Times New Roman; font-size:small">&nbsp;<span style="font-size:small">
+</span>
+<p style="margin:0in 0in 10pt; line-height:normal"><span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">This sample provides completed versions of the apps you create by following the
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx"><span style="color:#00749e; text-decoration:none">Create your first Windows Store app using JavaScript</span></a> tutorial series. It walks you through five simple app development
+ scenarios, starting with a basic &ldquo;Hello World&rdquo; app to a full photo viewer app.
+<br style="">
+<br style="">
+</span></p>
+<span style="font-size:small"></span>
+<p style="margin:0in 0in 10pt; line-height:normal"><span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">As you walk through the development of these apps, you&rsquo;ll learn about the basics of JavaScript, HTML5, and Cascading Style
+ Sheets (CSS). You&rsquo;ll learn about the Windows 8.1 app lifecycle, Windows app controls, and layouts.
+</span></p>
+<span style="font-size:small"></span>
+<p style="margin:0in 0in 10pt; line-height:normal"><span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Specifically, this sample includes code for:</span></p>
+<span style="font-size:small"></span>
+<ul style="list-style-type:disc; direction:ltr">
+<li style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-style:normal">
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-style:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh986964"><span style="color:#00749e; text-decoration:none">Part 1: Create a &quot;Hello, world!&quot; app</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Demonstrates how to create a simple &quot;Hello, world&quot; Windows Store app using JavaScript, HTML, and CSS.</span></p>
+</li><li style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt; font-style:normal; font-weight:normal">
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh986966"><span style="color:#00749e; text-decoration:none">Part 2: Manage app lifecycle and state</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Updates the &quot;Hello, world&quot; app to respond to lifecycle events, and save app and session data.</span></p>
+</li><li style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt; font-style:normal; font-weight:normal">
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj663505"><span style="color:#00749e; text-decoration:none">Part 3: PageControl objects and navigation</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Creates a new version of the &quot;Hello, world&quot; app that contains multiple pages.
+</span></p>
+</li><li style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt; font-style:normal; font-weight:normal">
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj841108"><span style="color:#00749e; text-decoration:none">Part 4: Layout and views</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Creates a basic photo viewer that uses Cascading Style Sheets (CSS) layouts and responds to view changes.
+</span></p>
+</li><li style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt; font-style:normal; font-weight:normal">
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj856913"><span style="color:#00749e; text-decoration:none">Part 5: File access and pickers</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">Adds the ability to select and display a photo to the photo viewer you created in
+<a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj841108"><span style="color:#00749e; text-decoration:none">Part 4: Layout and views</span></a>.
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt">For the XAML version, see
+<a href="http://go.microsoft.com/fwlink/p/?linkid=227268"><span style="color:#00749e; text-decoration:none">Getting started with C# and Visual Basic: Hello World and Blog reader samples</span></a>.</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:10pt">
+<strong><span style="color:#3a3e43; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:10.5pt">Related topics</span></strong></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:0pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh986964"><span style="color:#00749e; text-decoration:none">Part 1: Create a &quot;Hello, world!&quot; app</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:0pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/Hh986966"><span style="color:#00749e; text-decoration:none">Part 2: Manage app lifecycle and state</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:0pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj663505"><span style="color:#00749e; text-decoration:none">Part 3: PageControl objects and navigation</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:0pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj841108"><span style="color:#00749e; text-decoration:none">Part 4: Layout and views</span></a>
+</span></p>
+<p style="color:#000000; line-height:normal; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-size:11pt; font-style:normal; font-weight:normal; margin-top:0in; margin-bottom:0pt">
+<span style="color:black; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; font-size:9.5pt"><a href="http://msdn.microsoft.com/en-us/library/windows/apps/jj856913"><span style="color:#00749e; text-decoration:none">Part 5: File access and pickers</span></a>
+</span></p>
+</li></ul>
+<span style="font-size:small"></span></span></h1>
+<p><strong>&nbsp;</strong></p>
+<div id="_mcePaste" class="mcePaste" style="left:-10000px; top:5px; width:1px; height:1px; overflow:hidden">
+<strong>&nbsp;</strong></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

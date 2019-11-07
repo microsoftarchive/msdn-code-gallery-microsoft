@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Group cells in ASP.NET GridView (CSASPNETGroupedGridView)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Group cells in ASP.NET GridView (CSASPNETGroupedGridView)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            jQuery, GridView, Control
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/8/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETGroupedGridView-3aac9b39">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>ASP.NET APPLICATION : CSASPNETGroupedGridView Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The code sample shows how to group cells in GridView with the same value.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+Open the sample project and run tha web application. &nbsp;In Default.aspx, you <br>
+will see two GridViews binding the same data (Product Name, Category, Weight). &nbsp;<br>
+The first GridView shows each row of data as usual. &nbsp;The second GridView <br>
+groups Product Name and Category, and shows the merged cells. <br>
+<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Open your Visual Studio 2000 to create a Visual C# Web application by <br>
+choosing &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Project...&quot;, expand the &quot;Visual C#&quot; tag and
+<br>
+select &quot;Web&quot;, then choose &quot;ASP.NET Web Application&quot;. &nbsp;You can name it as
+<br>
+&quot;CSASPNETGroupedGridView&quot;.<br>
+<br>
+Step2. In Default.aspx, add two GridViews. <br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&lt;table&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;padding:20px&quot;&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;General GridView&lt;/h3&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;asp:GridView ID=&quot;generalGridView&quot; runat=&quot;server&quot; AllowPaging=&quot;True&quot;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OnPageIndexChanged=&quot;generalGridView_PageIndexChanged&quot;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OnPageIndexChanging=&quot;generalGridView_PageIndexChanging&quot;&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;HeaderStyle HorizontalAlign=&quot;Center&quot; VerticalAlign=&quot;Middle&quot; /&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;RowStyle HorizontalAlign=&quot;Center&quot; VerticalAlign=&quot;Middle&quot; /&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/asp:GridView&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;padding:20px&quot;&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Grouped GridView&lt;/h3&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;asp:GridView ID=&quot;groupedGridView&quot; runat=&quot;server&quot; AllowPaging=&quot;True&quot;
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OnPageIndexChanged=&quot;groupedGridView_PageIndexChanged&quot;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OnPageIndexChanging=&quot;groupedGridView_PageIndexChanging&quot;&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;HeaderStyle HorizontalAlign=&quot;Center&quot; VerticalAlign=&quot;Middle&quot; /&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;RowStyle HorizontalAlign=&quot;Center&quot; VerticalAlign=&quot;Middle&quot; /&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/asp:GridView&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tr&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&lt;/table&gt;<br>
+<br>
+Step3. Reference the jQuery library and add the following reusable Javascript <br>
+function for grouping GridView cells. <br>
+<br>
+&nbsp; &nbsp;&lt;script type=&quot;text/javascript&quot; src=&quot;<a  href="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js&quot;&gt;&lt;/script&gt;">http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js&quot;&gt;&lt;/script&gt;</a><br>
+&nbsp; &nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// This js function will automatially combine the GridView cells<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// gridviewId: The id of the gridview.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;function GroupGridViewCells(gridviewId) {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Get the number of the rows<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;var rowNum = $(gridviewId &#43; &quot; tr&quot;).length;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Get the number of the columns;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;var colNum = $(gridviewId &#43; &quot; tr:eq(0)&gt;th&quot;).length;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Get the current cell<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;var cell = null;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Get the previous cell<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;var previouscell = null;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Begin to loop from the second row to the end<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (var col = 0; col &lt; colNum; &#43;&#43;col) {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (var row = 1; row &lt; rowNum; &#43;&#43;row) {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cell = $(gridviewId &#43; &quot; tr:eq(&quot; &#43; row &#43; &quot;)&gt;td:eq(&quot; &#43; col &#43; &quot;)&quot;).first();<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// We haven't the previous row to compare with, so keep this first<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (row == 1) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscell = $(gridviewId &#43; &quot; tr:eq(&quot; &#43; row &#43; &quot;)&gt;td:eq(&quot; &#43; col &#43; &quot;)&quot;).first();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscell.attr(&quot;rowspan&quot;, &quot;1&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// If the current value has the same value as the previous one,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// the previous one's rowspan should be increased by 1, and you should<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// hide the current cell.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (cell.html() == previouscell.html()) {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscell.attr(&quot;rowspan&quot;, parseInt(previouscell.attr(&quot;rowspan&quot;) &#43; 1));<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cell.css(&quot;display&quot;, &quot;none&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// If the current cell's value doesn't equal to the previous one<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// we should restart keep the cell for future comparation.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscell = $(gridviewId &#43; &quot; tr:eq(&quot; &#43; row &#43; &quot;)&gt;td:eq(&quot; &#43; col &#43; &quot;)&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscell.attr(&quot;rowspan&quot;, &quot;1&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;previouscontent = previouscell.html();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+Step4. Call the GroupGridViewCells function to group cells in the second <br>
+GridView control.<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Call the js function like this:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;$(function () {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GroupGridViewCells(&quot;#groupedGridView&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;})<br>
+<br>
+Step5. Switch to the code-behind and the following code to bind the same <br>
+sorted test data to the GridViews.<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;protected void Page_Load(object sender, EventArgs e)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!IsPostBack)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BindSortedTestData(generalGridView);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BindSortedTestData(groupedGridView);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// Bind sorted test data to the given GridView control.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;/summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;param name=&quot;gridView&quot;&gt;the GridView control&lt;/param&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;private void BindSortedTestData(GridView gridView)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const string TestDataViewStateId = &quot;TestData&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DataTable dt = ViewState[TestDataViewStateId] as DataTable;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (dt == null)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt = new DataTable();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt.Columns.Add(&quot;Product Name&quot;, typeof(string));<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt.Columns.Add(&quot;Category&quot;, typeof(int));<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt.Columns.Add(&quot;Weight&quot;, typeof(double));<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Random r = new Random(DateTime.Now.Millisecond);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (int i = 1; i &lt;= 50; i&#43;&#43;)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Adding ProductId, Category, and random price.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt.Rows.Add(<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;Product&quot; &#43; r.Next(1, 5),
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;r.Next(1, 5),
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Math.Round(r.NextDouble() * 100 &#43; 50, 2)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ViewState[TestDataViewStateId] = dt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Sort by ProductName<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dt.DefaultView.Sort = &quot;Product Name,Category&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;gridView.DataSource = dt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;gridView.DataBind();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+<br>
+Reference：<br>
+<br>
+<a  href="http://www.codeproject.com/KB/webforms/MergeGridViewCells.aspx">http://www.codeproject.com/KB/webforms/MergeGridViewCells.aspx</a>
+<br>
+(Containing a server-side solution for grouping cells in GridView)<br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

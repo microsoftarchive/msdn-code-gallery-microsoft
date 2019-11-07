@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=604F970A1229AFA1448F65467C68B6E3" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=8A6F01889C6FBACD9DA9A39A487BBA6A" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Universal Windows app samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Universal Windows app samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows 8.1, Windows Phone 8.1
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Security, User Interface, Data Access, Globalization, Networking, Storage, Audio and video, App model, Devices and sensors, Windows Store app, universal app
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/5/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Universal-Windows-app-cb3248c3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<div class="clsServerSDKContent">
+<p><span>Looking for Windows 10 samples? See <a href="http://microsoft.github.io/windows/">
+<span style="color:#0000ff">Windows on GitHub</span></a>.</span><strong>&nbsp;</strong><em>&nbsp;</em></p>
+<p>This sample pack includes the app code examples developed and updated using one of the universal app templates available in Microsoft Visual Studio. Each solution of a universal app code example is structured so the code example can run on both Windows&nbsp;8.1
+ and Windows Phone 8.1. The sample pack provides a convenient way to download all the samples at once. The samples in this sample pack are available in C#, C&#43;&#43;, and JavaScript.</p>
+<p>&nbsp;</p>
+</div>
+<p>This sample pack includes all the app code examples developed and updated using one of the universal app templates available in Visual Studio. Each solution of a universal app code example is structured so the code example can run on both Windows&nbsp;8.1
+ and Windows Phone 8.1. For more info about how to build apps that target Windows and Windows Phone with Visual Studio, see Build apps that target Windows and Windows Phone 8.1 by using Visual Studio. The sample pack provides a convenient way to download all
+ the samples at once. The samples in this sample pack are available in C#, C&#43;&#43;, and JavaScript. The Windows Platform Samples Gallery contains a variety of code samples that exercise the various new programming models, platforms, features, and components available
+ in Windows&nbsp;8.1 and Windows Phone 8.1. These downloadable samples are provided as compressed ZIP files that contain a Microsoft Visual Studio solution (SLN) file for the sample, along with the source files, assets, resources, and metadata necessary to
+ successfully compile and run the sample.</p>
+<p><strong>Note</strong>&nbsp;&nbsp;These samples require Windows&nbsp;8.1 and Microsoft Visual Studio&nbsp;2013 with Microsoft Visual Studio&nbsp;2013 Update&nbsp;2 or later. They don't compile in Microsoft Visual Studio&nbsp;2012 for Windows&nbsp;8.</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<p>To obtain an evaluation copy of Visual Studio&nbsp;2013, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301697">
+Visual Studio&nbsp;2013</a>. After you install Visual Studio&nbsp;2013, update your installation with Visual Studio&nbsp;2013 Update&nbsp;2 or later.</p>
+<p>For more info about the programming models, platforms, languages, and APIs demonstrated in this sample, please refer to the guidance, tutorials, and reference topics provided in the Windows&nbsp;8.1 and Windows Phone 8.1 documentation available in the Windows
+ Developer Center. This sample is provided as-is in order to indicate or demonstrate the functionality of the programming models and feature APIs for Windows&nbsp;8.1 and Windows Phone 8.1.</p>
+<p>This pack may be very large and take some time to download.</p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1</dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2</dt></td>
+</tr>
+<tr>
+<th>Phone</th>
+<td><dt>Windows Phone 8.1</dt></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps13254-->
+                        <div id="item">
+                                <div><a href="File access sample/description.html">File access sample</a></div>
+                            <div>This sample shows how to create, read, write, copy and delete a file, how to retrieve file properties, and how to track a file or folder so that your app can access it again. This sample uses Windows.Storage and Windows.Storage.AccessCache API.</div>
+                        </div>
+                        <!--pe13254-->
+                        <!--ps23446-->
+                        <div id="item">
+                                <div><a href="Bluetooth Generic Attribute Profile - Heart Rate Service/description.html">Bluetooth Generic Attribute Profile - Heart Rate Service</a></div>
+                            <div>Demonstrates use of the Bluetooth Generic Attribute Profile (Gatt) Windows Runtime API to interact with a Bluetooth Gatt device, which contains a Heart Rate Service.</div>
+                        </div>
+                        <!--pe23446-->
+                        <!--ps13365-->
+                        <div id="item">
+                                <div><a href="StreamSocket sample/description.html">StreamSocket sample</a></div>
+                            <div>This sample shows you how to a use stream (TCP) socket to send and receive data using the StreamSocket and related classes in the Windows.Networking.Sockets namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe13365-->
+                        <!--pe17000-->
+                        <!--ps13268-->
+                        <div id="item">
+                                <div><a href="Geolocation sample/description.html">Geolocation sample</a></div>
+                            <div>The Geolocation sample demonstrates how to use the Windows.Devices.Geolocation namespace to get the geographic location of the user&#39;s device.</div>
+                        </div>
+                        <!--pe13268-->
+                        <!--ps23447-->
+                        <div id="item">
+                                <div><a href="Bluetooth Rfcomm Chat/description.html">Bluetooth Rfcomm Chat</a></div>
+                            <div>Demonstrates how to use the Bluetooth Rfcomm Windows Runtime API to run a chat service on one device and to connect to it from another device.</div>
+                        </div>
+                        <!--pe23447-->
+                        <!--ps15435-->
+                        <div id="item">
+                                <div><a href="HttpClient sample/description.html">HttpClient sample</a></div>
+                            <div>This sample shows you how to upload and download various types of content with an HTTP server using the HttpClient and related classes in Windows.Web.Http namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe15435-->
+                        <!--pe13234-->
+                        <!--pe13297-->
+                        <!--ps13256-->
+                        <div id="item">
+                                <div><a href="File picker sample/description.html">File picker sample</a></div>
+                            <div>This sample shows how to access files and folders by letting the user choose them through the file pickers and how to save a file so that the user can specify the name, file type, and location of a file to save. This sample uses Windows.Storage.Picke...</div>
+                        </div>
+                        <!--pe13256-->
+                        <!--ps13359-->
+                        <div id="item">
+                                <div><a href="Splash screen sample/description.html">Splash screen sample</a></div>
+                            <div>This sample shows how to imitate the splash screen that Windows displays for your app by positioning a similar image correctly when Windows dismisses the splash screen that it displays. This sample uses the SplashScreen class in the Windows.Applicati...</div>
+                        </div>
+                        <!--pe13359-->
+                        <!--ps13206-->
+                        <div id="item">
+                                <div><a href="Background task sample/description.html">Background task sample</a></div>
+                            <div>This sample shows you how to create and register background tasks using the Windows Runtime background task API.</div>
+                        </div>
+                        <!--pe13206-->
+                        <!--pe13293-->
+                        <!--ps15445-->
+                        <div id="item">
+                                <div><a href="Push and periodic notifications client-side sample/description.html">Push and periodic notifications client-side sample</a></div>
+                            <div>This sample shows how a client app can register and listen for push notifications that are sent from a web server. Push notifications can be used to update a badge or a tile, raise a toast notification, or launch a background task. Periodic notificat...</div>
+                        </div>
+                        <!--pe15445-->
+                        <!--pe13242-->
+                        <!--pe15448-->
+                        <!--ps13335-->
+                        <div id="item">
+                                <div><a href="Proximity sample/description.html">Proximity sample</a></div>
+                            <div>This sample demonstrates how to use the PeerFinder, ProximityDevice, and PeerWatcher classes to communicate with nearby devices.</div>
+                        </div>
+                        <!--pe13335-->
+                        <!--ps15464-->
+                        <div id="item">
+                                <div><a href="WebSocket sample/description.html">WebSocket sample</a></div>
+                            <div>This sample shows you how to send and receive date using the WebSocket classes in the Windows.Networking.Sockets namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe15464-->
+                        <!--ps18259-->
+                        <div id="item">
+                                <div><a href="MediaStreamSource streaming sample/description.html">MediaStreamSource streaming sample</a></div>
+                            <div>This sample demonstrates how to use the new MediaStreamSource API to stream a MPEG-Layer&#160;3 (MP3) audio file. The media stream source API are in the Windows.Media.Core namespace.</div>
+                        </div>
+                        <!--pe18259-->
+                        <!--ps13207-->
+                        <div id="item">
+                                <div><a href="Background Transfer sample/description.html">Background Transfer sample</a></div>
+                            <div>This sample shows how to use the Background Transfer API to download and upload files in the background in Windows Runtime apps.</div>
+                        </div>
+                        <!--pe13207-->
+                        <!--ps13204-->
+                        <div id="item">
+                                <div><a href="Association launching sample/description.html">Association launching sample</a></div>
+                            <div>This sample shows you how to launch the user&#39;s default app for file type or a protocol. You can also learn how to enable your app to be the default app for a file type or a protocol.</div>
+                        </div>
+                        <!--pe13204-->
+                        <!--ps13381-->
+                        <div id="item">
+                                <div><a href="Web authentication broker sample/description.html">Web authentication broker sample</a></div>
+                            <div>This sample shows how you can use the WebAuthenticationBroker class to connect to OAuth providers such as Facebook, Flickr, Google, and Twitter.</div>
+                        </div>
+                        <!--pe13381-->
+                        <!--pe15461-->
+                        <!--ps15457-->
+                        <div id="item">
+                                <div><a href="App tiles and badges sample/description.html">App tiles and badges sample</a></div>
+                            <div>This sample shows you how to use an app tile, which is the representation and launch point for your app on the Start screen. The sample also shows you how to use a badge with that tile, which lets app relay status information to the user when the app...</div>
+                        </div>
+                        <!--pe15457-->
+                        <!--ps15446-->
+                        <div id="item">
+                                <div><a href="Raw notifications sample/description.html">Raw notifications sample</a></div>
+                            <div>This sample shows how to use raw notification, which are push notifications with no associated UI that performs a background task for the app. For example, a magazine app can download the latest issue in the background so that it is ready when the us...</div>
+                        </div>
+                        <!--pe15446-->
+                        <!--pe22055-->
+                        <!--ps18265-->
+                        <div id="item">
+                                <div><a href="JavaScript and HTML5 touch game sample/description.html">JavaScript and HTML5 touch game sample</a></div>
+                            <div>This sample shows how to design a basic casual game in HTML5, from end-to-end. The game included in the sample is deliberately simple to minimize distractions from game logic intended to be replaced.</div>
+                        </div>
+                        <!--pe18265-->
+                        <!--ps13190-->
+                        <div id="item">
+                                <div><a href="Accelerometer sensor sample/description.html">Accelerometer sensor sample</a></div>
+                            <div>This sample shows how to use the Accelerometer API.</div>
+                        </div>
+                        <!--pe13190-->
+                        <!--ps13353-->
+                        <div id="item">
+                                <div><a href="Real-time communication sample/description.html">Real-time communication sample</a></div>
+                            <div>This sample demonstrates how to use the low latency feature to enable real-time communication applications.</div>
+                        </div>
+                        <!--pe13353-->
+                        <!--ps15434-->
+                        <div id="item">
+                                <div><a href="Wi-Fi hotspot authentication sample/description.html">Wi-Fi hotspot authentication sample</a></div>
+                            <div>This sample demonstrates how to use the Hotspot Authentication API (Windows.Networking.NetworkOperators) on both Windows and Windows Phone clients.</div>
+                        </div>
+                        <!--pe15434-->
+                        <!--ps15438-->
+                        <div id="item">
+                                <div><a href="Media extensions sample/description.html">Media extensions sample</a></div>
+                            <div>This sample demonstrates how to use media extensions to apply effects to video, decode video, and create media streams using scheme handlers.</div>
+                        </div>
+                        <!--pe15438-->
+                        <!--ps13241-->
+                        <div id="item">
+                                <div><a href="Device enumeration sample/description.html">Device enumeration sample</a></div>
+                            <div>This sample shows how to use the device enumeration API to find available devices and look for device information.</div>
+                        </div>
+                        <!--pe13241-->
+                        <!--ps13235-->
+                        <div id="item">
+                                <div><a href="Reading and writing data sample/description.html">Reading and writing data sample</a></div>
+                            <div>This sample shows how to use the DataReader and DataWriter classes to store and retrieve data.</div>
+                        </div>
+                        <!--pe13235-->
+                        <!--ps13200-->
+                        <div id="item">
+                                <div><a href="Application data sample/description.html">Application data sample</a></div>
+                            <div>This sample shows you how to store and retrieve data that is specific to each user and Windows Runtime app by using the Windows Runtime application data APIs (Windows.Storage.ApplicationData and so on).</div>
+                        </div>
+                        <!--pe13200-->
+                        <!--ps17002-->
+                        <div id="item">
+                                <div><a href="DatagramSocket sample/description.html">DatagramSocket sample</a></div>
+                            <div>This sample shows you how to a use datagram (UDP) socket to send and receive data using the DatagramSocket and related classes in the Windows.Networking.Sockets namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe17002-->
+                        <!--ps13310-->
+                        <div id="item">
+                                <div><a href="Network information sample/description.html">Network information sample</a></div>
+                            <div>This sample shows you how to access network connectivity, cost, and usage information using classes in the Windows.Networking.Connectivity namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe13310-->
+                        <!--ps13343-->
+                        <div id="item">
+                                <div><a href="Secondary tiles sample/description.html">Secondary tiles sample</a></div>
+                            <div>This sample shows how to pin and use a secondary tile, which is a tile that directly accesses a specific, non-default section or experience within an app, such as a saved game or a specific friend in a social networking app.</div>
+                        </div>
+                        <!--pe13343-->
+                        <!--pe15389-->
+                        <!--pe13371-->
+                        <!--ps13273-->
+                        <div id="item">
+                                <div><a href="Gyrometer sensor sample/description.html">Gyrometer sensor sample</a></div>
+                            <div>This sample shows how to use the Windows.Devices.Sensors.Gyrometer API.</div>
+                        </div>
+                        <!--pe13273-->
+                        <!--ps13316-->
+                        <div id="item">
+                                <div><a href="App package information sample/description.html">App package information sample</a></div>
+                            <div>This sample shows you how to get package info by using the Windows Runtime packaging API (Windows.ApplicationModel.Package and Windows.ApplicationModel.PackageId).</div>
+                        </div>
+                        <!--pe13316-->
+                        <!--pe23482-->
+                        <!--ps15447-->
+                        <div id="item">
+                                <div><a href="Scheduled notifications sample/description.html">Scheduled notifications sample</a></div>
+                            <div>This sample shows how to use scheduled and recurring tile updates and toast notifications for an app. This ability enables you to specify a precise time to deliver the notification, even if the app is not running.</div>
+                        </div>
+                        <!--pe15447-->
+                        <!--pe27971-->
+                        <!--ps13223-->
+                        <div id="item">
+                                <div><a href="Compass sensor sample/description.html">Compass sensor sample</a></div>
+                            <div>This sample demonstrates how to use the Windows.Devices.Sensors.Compass API.</div>
+                        </div>
+                        <!--pe13223-->
+                        <!--ps13355-->
+                        <div id="item">
+                                <div><a href="Simple imaging sample/description.html">Simple imaging sample</a></div>
+                            <div>This sample shows some common imaging scenarios for Windows Runtime apps including image properties and editing and saving images. This sample focuses on the Windows.Storage and Windows.Graphics.Imaging namespaces.</div>
+                        </div>
+                        <!--pe13355-->
+                        <!--ps13240-->
+                        <div id="item">
+                                <div><a href="Input Device capabilities sample/description.html">Input Device capabilities sample</a></div>
+                            <div>This sample demonstrates how to detect all connected input devices and query various capabilities and attributes of those devices.</div>
+                        </div>
+                        <!--pe13240-->
+                        <!--ps13226-->
+                        <div id="item">
+                                <div><a href="Contact Picker app sample/description.html">Contact Picker app sample</a></div>
+                            <div>This sample demonstrates how to use methods of the ContactPicker class to select one or more contacts. It also includes a basic implementation of the ContactPicker APIs to demonstrate how to display a list of contacts to the user.</div>
+                        </div>
+                        <!--pe13226-->
+                        <!--ps15398-->
+                        <div id="item">
+                                <div><a href="HTML AppBar control sample/description.html">HTML AppBar control sample</a></div>
+                            <div>This sample demonstrates how to use the app bar to present navigation, commands, and tools to users.</div>
+                        </div>
+                        <!--pe15398-->
+                        <!--ps13237-->
+                        <div id="item">
+                                <div><a href="Date and time formatting sample/description.html">Date and time formatting sample</a></div>
+                            <div>This sample demonstrates how to use the DateTimeFormatter class in the Windows.Globalization.DateTimeFormatting namespace to display dates and times according to the user&#39;s preferences.</div>
+                        </div>
+                        <!--pe13237-->
+                        <!--ps13243-->
+                        <div id="item">
+                                <div><a href="Display orientation sample/description.html">Display orientation sample</a></div>
+                            <div>This sample demonstrates the use of the DisplayInformation class for setting the display orientation in an app.</div>
+                        </div>
+                        <!--pe13243-->
+                        <!--ps13287-->
+                        <div id="item">
+                                <div><a href="LightSensor sample/description.html">LightSensor sample</a></div>
+                            <div>This sample shows how to use the Windows.Devices.Sensors.LightSensor API.</div>
+                        </div>
+                        <!--pe13287-->
+                        <!--ps15442-->
+                        <div id="item">
+                                <div><a href="OrientationSensor sample/description.html">OrientationSensor sample</a></div>
+                            <div>This sample shows how to use the Windows.Devices.Sensors.OrientationSensor API.</div>
+                        </div>
+                        <!--pe15442-->
+                        <!--ps15404-->
+                        <div id="item">
+                                <div><a href="HTML ListView essentials sample/description.html">HTML ListView essentials sample</a></div>
+                            <div>This sample demonstrates the basics of using the WinJS.UI.ListView control on both Windows and Windows Phone 8.1: binding to data, creating an item template, responding to events, selecting items, and retrieving selected items.</div>
+                        </div>
+                        <!--pe15404-->
+                        <!--ps17022-->
+                        <div id="item">
+                                <div><a href="Input Touch keyboard text input sample/description.html">Input Touch keyboard text input sample</a></div>
+                            <div>This sample shows how to enable optimized views on the touch keyboard by using input scopes and input types with controls in the WinJS.UI namespace, and with the TextBox and RichEdit&#160;Extensible Application Markup Language (XAML) controls. Also, this ...</div>
+                        </div>
+                        <!--pe17022-->
+                        <!--ps15413-->
+                        <div id="item">
+                                <div><a href="HTML scrolling, panning and zooming sample/description.html">HTML scrolling, panning and zooming sample</a></div>
+                            <div>This sample demonstrates how to customize the user interaction experience of your Windows Store apps using JavaScript through pan/scroll and zoom app views. (A view is the way in which the content of your app is accessed and manipulated by a user.)</div>
+                        </div>
+                        <!--pe15413-->
+                        <!--ps18260-->
+                        <div id="item">
+                                <div><a href="Windows account authorization sample/description.html">Windows account authorization sample</a></div>
+                            <div>This sample demonstrates how to use the members of the Windows.Security.Authentication.OnlineId namespace to authenticate a user with their Microsoft Account in delegation mode and send acquired tokens to Live Connect APIs using REST protocol.</div>
+                        </div>
+                        <!--pe18260-->
+                        <!--ps13281-->
+                        <div id="item">
+                                <div><a href="Inclinometer sensor sample/description.html">Inclinometer sensor sample</a></div>
+                            <div> This sample shows how to use the Windows.Devices.Sensors.Inclinometer API. Note&#160;&#160;This sample was created using one of the universal app templates available in Visual Studio. It shows how its solution is structured so it can run on both Windows&#160;8.1 a...</div>
+                        </div>
+                        <!--pe13281-->
+                        <!--pe27972-->
+                        <!--ps15454-->
+                        <div id="item">
+                                <div><a href="Syndication sample/description.html">Syndication sample</a></div>
+                            <div>This sample shows you how to retrieve feeds from a web service using classes in the Windows.Web.Syndication namespace in your Windows Runtime app.</div>
+                        </div>
+                        <!--pe15454-->
+                        <!--ps13312-->
+                        <div id="item">
+                                <div><a href="Number formatting and parsing sample/description.html">Number formatting and parsing sample</a></div>
+                            <div>This sample demonstrates how to use the DecimalFormatter, CurrencyFormatter, PercentFormatter and PermilleFormatter classes in the Windows.Globalization.NumberFormatting namespace to display and parse numbers, currencies, and percent values.</div>
+                        </div>
+                        <!--pe13312-->
+                        <!--ps13356-->
+                        <div id="item">
+                                <div><a href="SimpleOrientationSensor sample/description.html">SimpleOrientationSensor sample</a></div>
+                            <div>This sample shows how to use the Windows.Devices.Sensors.SimpleOrientationSensor API.</div>
+                        </div>
+                        <!--pe13356-->
+                        <!--ps17014-->
+                        <div id="item">
+                                <div><a href="Network status background sample/description.html">Network status background sample</a></div>
+                            <div>This sample demonstrates how to determine a change in Internet connection profile by registering a background task handler for Network Status Change event using Internet Present as a condition.</div>
+                        </div>
+                        <!--pe17014-->
+                        <!--ps13215-->
+                        <div id="item">
+                                <div><a href="Calendar details and math sample/description.html">Calendar details and math sample</a></div>
+                            <div>This sample demonstrates how to use the Calendar class in the Windows.Globalization namespace to manipulate and process dates based on a calendar system and the user&#39;s globalization preferences.</div>
+                        </div>
+                        <!--pe13215-->
+                        <!--ps15395-->
+                        <div id="item">
+                                <div><a href="Compression sample/description.html">Compression sample</a></div>
+                            <div>This sample demonstrates how to read structured data from a file and write compressed data to a new file and how to read compressed data and write decompressed data to a new file.</div>
+                        </div>
+                        <!--pe15395-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

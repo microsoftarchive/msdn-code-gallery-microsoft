@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows modal and modeless dialogs in C++ (CppWindowsDialog)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows modal and modeless dialogs in C++ (CppWindowsDialog)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Dialog
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppWindowsDialog-7c8f4b11">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-family:������">WIN32 APPLICATION </span>(<span style="font-family:������">CppWindowsDialog</span>)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The CppWindowsDialog example demonstrates the skeleton of registered and created window, based on a dialog resource defined in a resource script. It<span style="">
+</span>also shows the steps to show a modal or a modeless dialog.<span style="">&nbsp;
+</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="481" height="311" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraph" style=""><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">When you click ��Show Modal Dialog��: A Modal Dialog will pop up. Note that you can��t access the CppWinodwsDialog form unless you close the Modal Dialog.
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/18a263f2-8146-4fb7-81ad-13b96120a756image.png" alt="" width="490" height="335" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraph" style=""><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">When you click ��Show Modeless Dialog��: A Modeless Dialog will pop up. Note that you can access the CppWindowsDialog form again, and you can create the second Modeless Dialog form without having to close the previous one.
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/0f31ecd0-13fc-49c5-b12c-ec3aa8b80c2eimage.png" alt="" width="576" height="384" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal"></p>
+<h2>Using the code</h2>
+<p class="MsoNormal">Step1. Create a Visual C&#43;&#43; / Win32 / Win32 Project named CppWindowsDialog. In the project wizard, specify the application type as Windows application.
+</p>
+<p class="MsoNormal">Step2. In the Resource View, delete the Accelerator and Menu resource as they are not necessary in this simple dialog example.
+</p>
+<p class="MsoNormal">Step3. Rename the default dialog resource IDD_ABOUTBOX as IDD_MAINDIALOG. It serves as the main dialog of the windows application. Open IDD_MAINDIALOG in the designer, and set the following properties accordingly.
+</p>
+<p class="MsoNormal"><span style="background:#D9D9D9"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Caption = CppWindowsDialog </span></p>
+<p class="MsoNormal"><span style="background:#D9D9D9"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Center = True </span></p>
+<p class="MsoNormal"><span style="background:#D9D9D9"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Class Name = CPPWINDOWSDIALOG<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>// The class name of the custom dialog </span></p>
+<p class="MsoNormal"><span style="background:#D9D9D9"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Minimize Box = True </span></p>
+<p class="MsoNormal">Step4. Open the source file CppWindowsDialog.cpp, delete the About callback:
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step5. In _tWinMain, remove the lines: </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+    HACCEL hAccelTable;
+    hAccelTable = LoadAccelerators(hInstance, 
+        MAKEINTRESOURCE(IDC_CPPWINDOWSDIALOG));
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+    HACCEL hAccelTable;
+    hAccelTable = LoadAccelerators(hInstance, 
+        MAKEINTRESOURCE(IDC_CPPWINDOWSDIALOG));
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">and remove the line<span style="">: </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">as we do not use accelerator in this example. </p>
+<p class="MsoNormal">Step6. In MyRegisterClass, set wcex.cbWndExtra = DLGWINDOWEXTRA (See the article
+<a href="http://blogs.msdn.com/oldnewthing/archive/2003/11/13/55662.aspx">http://blogs.msdn.com/oldnewthing/archive/2003/11/13/55662.aspx</a> for the reason). Set wcex.lpszMenuName = 0 as we do not use menus in dialog. Last, Set wcex.hbrBackground = (HBRUSH)(COLOR_BTNFACE&#43;1);
+</p>
+<p class="MsoNormal">Step7. In InitInstance, change the line </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">to </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+hWnd = CreateDialog(hInst, MAKEINTRESOURCE(IDD_MAINDIALOG), 0, 0);
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+hWnd = CreateDialog(hInst, MAKEINTRESOURCE(IDD_MAINDIALOG), 0, 0);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step8. In WndProc, handle windows messages with the help of Message Forwarding<span style="">
+</span>Macros in <span class="SpellE">windowsx.h</span> header. The Message Cracker Wizard created by Hern��n Di
+<span class="SpellE">Pietro</span> helps to generate the prototype of message processing functions.
+<a href="http://www.codeproject.com/KB/winsdk/msgcrackwizard.aspx">http://www.codeproject.com/KB/winsdk/msgcrackwizard.aspx</a><span style="">
+</span></p>
+<p class="MsoNormal">Step9. Create a Modal Dialog Box<span style="">. </span></p>
+<p class="MsoNormal">You create a modal dialog box by using the DialogBox function. You must specify the identifier or name of a dialog box template resource and a pointer to the dialog box procedure. The DialogBox function loads the template, displays the
+ dialog box, and processes all <span class="GramE">user</span> input until the user closes the dialog box.
+</p>
+<p class="MsoNormal">Step10. Create a Modeless Dialog Box<span style="">. </span>
+</p>
+<p class="MsoNormal">You create a modeless dialog box by using the CreateDialog function, specifying the identifier or name of a dialog box template resource and a pointer to the dialog box procedure. CreateDialog loads the template, creates the dialog box,
+ and optionally displays it. Your application is responsible for retrieving and dispatching user input messages to the dialog box procedure.
+</p>
+<p class="MsoNormal">Step11. Enable Visual Style<span style="">. </span></p>
+<p class="MsoNormal">To add a resource manifest that will result in the application being drawn with winxp visual styles, open the project's properties from the 'project' menu by selecting properties. Select 'linker - Manifest File' from the tree control
+ on the left of your project properties dialog; the following string<span style="">
+</span>should be added to the 'Additional Manifest Dependencies' field in the right hand panel:
+</p>
+<p class="MsoNormal"><span class="GramE"><span style="background:#D9D9D9">type</span></span><span style="background:#D9D9D9">='win32'
+</span><span style="background:#D9D9D9"></span></p>
+<p class="MsoNormal"><span class="GramE"><span style="background:#D9D9D9">name</span></span><span style="background:#D9D9D9">='<span class="SpellE">Microsoft.Windows.Common</span>-Controls' version='6.0.0.0'
+</span></p>
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><span style="background:#D9D9D9">processorArchitecture</span></span></span><span style="background:#D9D9D9">='x86'
+</span><span style="background:#D9D9D9"></span></p>
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><span style="background:#D9D9D9">publicKeyToken</span></span></span><span style="background:#D9D9D9">='6595b64144ccf1df' language='*'</span><span style="background:#D9D9D9">
+</span></p>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>More Information</h2>
+<p class="MsoListParagraphCxSpFirst" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms644996.aspx">MSDN: Using Dialog Boxes</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms633574.aspx">MSDN: About Window Classes</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://www.codeproject.com/KB/winsdk/msgcrackwizard.aspx">Message Cracker Wizard for Win32 SDK Developer</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://winapi.foosyerdoos.org.uk/info/user_cntrls.php">Creating Windows and User Controls</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://winapi.foosyerdoos.org.uk/info/common_cntrls.php.">Creating Common Controls</a>
+</p>
+<p class="MsoListParagraphCxSpLast"></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

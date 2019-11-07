@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Get geographical location from visitor IP in ASP.NET (CSASPNETIPtoLocation)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Get geographical location from visitor IP in ASP.NET (CSASPNETIPtoLocation)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            IP Address
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/26/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETIPtoLocation-2f03490c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>CSASPNETIPtoLocation Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+This project illustrates how to get the geographical location from an IP<br>
+address via a db file named &quot;Location.mdf&quot;. You need install Sqlserver <br>
+Express for run the web applicaiton. The code-sample only supports Internet<br>
+Protocol version 4 (IPv4).<br>
+<br>
+Demo the Sample.<br>
+<br>
+Step1: Browse the Default.aspx from the sample project and you can find your <br>
+IP address displayed on the page. If you are running the sample locally, you <br>
+may get &quot;127.0.0.1&quot; (or &quot;::1&quot; if IPv6 is enabled) as your client and the
+<br>
+server is the same machine. When you deploy this demo to a host server, you <br>
+will get your real IP address.<br>
+<br>
+[Note]<br>
+If you get &quot;::1&quot; of client address, it's the IPv6 version of your IP address.
+<br>
+If you want to disable or enable IPv6, please refer to this KB article: <br>
+<a  href="http://support.microsoft.com/kb/929852">http://support.microsoft.com/kb/929852</a><br>
+[/Note]<br>
+<br>
+Step2: Enter an IPv4 address (e.g. 207.46.131.43) in the TextBox and click <br>
+the Submit button. You will get the basic geographical location information, <br>
+including country code and country name for the specified IP address.<br>
+<br>
+</p>
+<h3>Code Logical:</h3>
+<p style="font-family:Courier New"><br>
+Step1: Create a C# ASP.NET Empty Web Application in Visual Studio 2010.<br>
+<br>
+Step2: Add a Default ASP.NET page into the application.<br>
+<br>
+Step3: Add a Label, a TextBox and a Button control to the page. The Label<br>
+is used to show the client IP address. TextBox is for IP address inputting,<br>
+and then user can click the Button to get the location info based on that<br>
+input.<br>
+<br>
+Step4: Write code to get the client IP address.<br>
+<br>
+&nbsp; &nbsp;string ipAddress;<br>
+&nbsp; &nbsp;ipAddress = Request.ServerVariables[&quot;HTTP_X_FORWARDED_FOR&quot;];<br>
+&nbsp; &nbsp;if (string.IsNullOrEmpty(ipAddress))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;ipAddress = Request.ServerVariables[&quot;REMOTE_ADDR&quot;];<br>
+&nbsp; &nbsp;}<br>
+<br>
+Step5: Create a class and name it as &quot;IPConvert&quot;, this class use to convert<br>
+IP address string to an IP number. The code like this:<br>
+<br>
+&nbsp; &nbsp;public static string ConvertToIPRange(string ipAddress)<br>
+&nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; string[] ipArray = ipAddress.Split('.');<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int number = ipArray.Length;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; double ipRange = 0;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (number != 4)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return &quot;error ipAddress&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt; 4; i&#43;&#43;)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int numPosition = int.Parse(ipArray[3 - i].ToString());<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i == 4)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ipRange &#43;= numPosition;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ipRange &#43;= ((numPosition % 256) * (Math.Pow(256, (i))));<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return ipRange.ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; catch (Exception)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return &quot;error&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; }<br>
+<br>
+Step6: Write code to get the location info from the Location.mdf file<br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp;// Get the IP address string and calculate IP number.<br>
+&nbsp; &nbsp;string ipRange = IPConvert.ConvertToIPRange(ipAddress);<br>
+&nbsp; &nbsp;DataTable tabLocation = new DataTable();<br>
+<br>
+&nbsp; &nbsp;// Create a connection to Sqlserver<br>
+&nbsp; &nbsp;using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings[&quot;ConectString&quot;].ToString()))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;string selectCommand = &quot;select * from IPtoLocation where CAST(&quot; &#43; ipRange &#43; &quot; as bigint) between BeginingIP and EndingIP&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;SqlDataAdapter sqlAdapter = new SqlDataAdapter(selectCommand, sqlConnection);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;sqlConnection.Open();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;sqlAdapter.Fill(tabLocation);<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;// Store IP infomation into Location entity class<br>
+&nbsp; &nbsp;if (tabLocation.Rows.Count == 1)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;locationInfo.BeginIP = tabLocation.Rows[0][0].ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;locationInfo.EndIP = tabLocation.Rows[0][1].ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;locationInfo.CountryTwoCode = tabLocation.Rows[0][2].ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;locationInfo.CountryThreeCode = tabLocation.Rows[0][3].ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;locationInfo.CountryName = tabLocation.Rows[0][4].ToString();<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;else<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Response.Write(&quot;&lt;strong&gt;Cannot find the location based on the IP address [&quot; &#43; ipAddress &#43; &quot;].&lt;/strong&gt; &quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;return;<br>
+&nbsp; &nbsp;}<br>
+<br>
+Step7: Write code to display the info on the page.<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+# SQLServer Express<br>
+<a  href="http://msdn.microsoft.com/en-us/library/dd981032.aspx">http://msdn.microsoft.com/en-us/library/dd981032.aspx</a><br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

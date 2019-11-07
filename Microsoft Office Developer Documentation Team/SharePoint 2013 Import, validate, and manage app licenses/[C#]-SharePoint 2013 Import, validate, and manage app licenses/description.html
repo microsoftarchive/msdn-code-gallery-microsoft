@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Import, validate, and manage app licenses</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Import, validate, and manage app licenses</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Javascript, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            sites and content
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/20/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Import-f5f680a6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<table id="bottomTable" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left"><span id="runningHeaderText"></span></td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><span id="nsrTitle">SharePoint 2013: Import, validate, and manage app licenses</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<p></p>
+<div>
+<p>Learn how to import and manage app licenses for apps for SharePoint, and how to retrieve, validate, and communicate licensing states.
+</p>
+</div>
+<div>
+<p>This sample provides tools to help you implement the app license framework in your apps for SharePoint. Using the tools in the sample, you can import test licenses, validate app licenses, and manage license assignment within a SharePoint site.</p>
+<p>The sample demonstrates how to do the following:</p>
+<ul>
+<li>
+<p>Import test licenses.</p>
+</li><li>
+<p>Validate licenses, including test licenses.</p>
+</li></ul>
+<p>This sample also includes helper classes that you can use to implement licensing in your own apps for SharePoint projects. These helper classes assist in retrieving and validating app licenses.</p>
+</div>
+<h1>Prerequisites</h1>
+<div id="sectionSection0" name="collapseableSection">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>An Office 365 Developer Site</p>
+</li><li>
+<p>Visual Studio 2012 and Office Developer Tools for Visual Studio 2012 installed on your developer computer</p>
+</li></ul>
+</div>
+<h1>Key components</h1>
+<div id="sectionSection1" name="collapseableSection">
+<p>The sample presents a user interface (UI) that lets you do the following:</p>
+<ul>
+<li>
+<p><span>Import Test Licenses</span> </p>
+<p>Enables site collection administrators to import test licenses. Use this tool to simulate purchases; you should then manually start your app to verify whether license checks work appropriately.</p>
+</li><li>
+<p><span>Validate License Sample</span> </p>
+<p>An ASP.NET web form example of how to retrieve and validate a license in your own apps, in both production and test modes. The sample retrieves the top-most license, and displays a warning message at the top of the page.</p>
+</li><li>
+<p><span>Manage Existing Licenses</span> </p>
+<p>Provides a shortcut to the SharePoint license management UI. Site collection administrators can view license details, assign seats, and delete licenses.</p>
+</li></ul>
+</div>
+<h1>Configure the sample</h1>
+<div id="sectionSection2" name="collapseableSection">
+<p>To configure the basic data operations sample app, update the <b>SiteUrl</b> property of the solution with the URL of the home page of your Office 365 Developer Site.</p>
+</div>
+<h1>Run and test the sample</h1>
+<div id="sectionSection3" name="collapseableSection">
+<ol>
+<li>
+<p>Press the F5 key to build and deploy the app.</p>
+</li><li>
+<p>Choose <b><span class="ui">Trust It</span></b> on the consent page to grant permissions to the app.</p>
+</li><li>
+<p>Use the app's interface to import, validate, and manage app licenses.</p>
+</li></ol>
+</div>
+<h1>Troubleshooting</h1>
+<div id="sectionSection4" name="collapseableSection">
+<p>The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how you can solve them.</p>
+<b>
+<div class="caption"></div>
+</b>
+<div>
+<table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Problem</p>
+</th>
+<th>
+<p>Solution</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>Visual Studio does not open the browser after you press the F5 key.</p>
+</td>
+<td>
+<p>Set the app for SharePoint project as the startup project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HTTP error 405 <b>Method not allowed</b>.</p>
+</td>
+<td>
+<p>Locate the <span value="applicationhost.config"><b><span class="keyword">applicationhost.config</span></b></span> file in %userprofile%\Documents\IISExpress\config.</p>
+<p>Locate the handler entry for <b>StaticFile</b>, and add the verbs <span value="GET">
+<b><span class="keyword">GET</span></b></span>, <span value="HEAD"><b><span class="keyword">HEAD</span></b></span>,
+<span value="POST"><b><span class="keyword">POST</span></b></span>, <span value="DEBUG">
+<b><span class="keyword">DEBUG</span></b></span>, and <span value="TRACE"><b><span class="keyword">TRACE</span></b></span>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>An attempt to delete a folder does not work.</p>
+</td>
+<td>
+<p>This likely happens because the folder is used internally and cannot be deleted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1>Change log</h1>
+<div id="sectionSection5" name="collapseableSection"><b>
+<div class="caption"></div>
+</b>
+<div>
+<table width="50%" cellspacing="2" cellpadding="5" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Version</p>
+</th>
+<th>
+<p>Date</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>First version</p>
+</td>
+<td>
+<p>June 2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1>Related content</h1>
+<div id="sectionSection6" name="collapseableSection">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/verificationsvc.aspx" >VerificationSvc namespace</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/microsoft.sharepoint.client.utilities.utility.importapplicense.aspx" >Utility.ImportAppLicense method</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/microsoft.sharepoint.client.utilities.utility.getapplicenseinformation.aspx" >Utility.GetAppLicenseInformation method</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/jj163257(v=office.15)" >Licensing apps for Office and SharePoint</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/jj164035.aspx" >How to: Add license checks to your app for SharePoint</a>
+</p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/jj163264.aspx" >Best practices and design patterns for app license checking</a>
+</p>
+</li></ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

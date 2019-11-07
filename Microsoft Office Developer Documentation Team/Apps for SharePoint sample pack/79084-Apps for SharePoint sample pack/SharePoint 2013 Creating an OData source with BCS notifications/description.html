@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Creating an OData source with BCS notifications</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Creating an OData source with BCS notifications</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, SharePoint Server 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Creating-f47c3890">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">This project shows how to use Visual Studio 2012 and SharePoint development tools in Visual Studio 2012 to create an app for SharePoint using Business Connectivity Services (BCS) to expose complex data from an external system.</span></p>
+<p><span style="font-size:small">The main objectives for this sample are:</span></p>
+<ul>
+<li><span style="font-size:small">Create a new ASP.NET web application that will be used to host the OData service.</span>
+</li><li><span style="font-size:small">Add a new data model that is generated by Visual Studio 2012 to retrieve the database information from the Northwind sample database.</span>
+</li><li><span style="font-size:small">Create a data service based on the Northwind data model.</span>
+</li><li><span style="font-size:small">Configure security for the service</span> </li><li><span style="font-size:small">Add service operations to the Northwind service to allow BCS to subscribe and unsubscribe to notifications of changes to the underlying data.</span>
+</li></ul>
+<p><span style="font-size:small">This sample uses the Northwind sample database that is downloadable from
+<a title="Northwind Database Installation" href="http://msdn.microsoft.com/en-us/library/ff851969.aspx">
+http://msdn.microsoft.com/en-us/library/ff851969.aspx</a>.&nbsp;When properly configured, the OData service will then be available for discovery by the Visual Studio 2012 autogeneration tools to create an external content type that can then be used by external
+ lists, Office client applications, and custom client object model calls.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">Visual Studio 2012</span> </li><li><span style="font-size:small">Internet Information Services (IIS)</span> </li><li><span style="font-size:small">SQL Server or MSDE</span> </li><li><span style="font-size:small">Northwind sample data</span> </li></ul>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The NorthwindOData.zip file includes the following:</span></p>
+<ul>
+<li><span style="font-size:small">The Northwind sample database files</span> </li><li><span style="font-size:small">Visual Studio 2012 project files</span> </li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">Follow these steps to configure the sample.</span></p>
+<ol>
+<li><span style="font-size:small">Install the Northwind sample data. Follow the installation instructions found at
+<a href="http://msdn.microsoft.com/en-us/library/ms227484(v=vs.90).aspx">Northwind Database Installation</a></span>.
+</li><li><span style="font-size:small">Extract the SampleBCSApp.zip file to your hard drive.</span>
+</li><li><span style="font-size:small">Start the simulated OData service.&nbsp;This service is hosted by a local instance of IIS.&nbsp; It simply attaches to a port in IIS and provides an OData endpoint that you will use in your app.</span>
+</li><li><span style="font-size:small">Open the Visual Studio project.</span> </li><li><span style="font-size:small">Build and deploy the sample.</span> </li><li><span style="font-size:small">Test the app by creating and modifying records.</span>&nbsp;&nbsp;
+</li></ol>
+<h1>Build the sample</h1>
+<p><span style="font-size:small">Follow these steps to build the sample.</span></p>
+<p><strong><span style="font-size:small">To build the project</span></strong></p>
+<ul>
+<li><span style="font-size:small">Press <strong>F5</strong> to build, run and debug the new project.</span>
+</li></ul>
+<h1>Change log</h1>
+<p><span style="font-size:small">First release.</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163802.aspx" >Using OData sources with BCS in SharePoint 2013</a></span>&nbsp;
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj164024.aspx">External events and alerts</a></span>&nbsp;
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

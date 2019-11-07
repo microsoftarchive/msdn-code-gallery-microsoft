@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Extended WebBrowser control supporting tabs</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Extended WebBrowser control supporting tabs</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Internet Explorer, Internet Explorer Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            WebBrowser
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Extended-WebBrowser-81b650d6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to Create a Tabbed <span class="SpellE">WebBrowser</span> (<span class="SpellE">CSTabbedWebBrowser</span>)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to create a tabbed <span class="SpellE">
+WebBrowser</span>. </p>
+<p class="MsoNormal">The &quot;Open in new Tab&quot; context command is disabled in
+<span class="SpellE">WebBorwser</span> by default, you can add a value *.exe=1 (* means the process name) to the key HKCU\Software\Microsoft\Internet Explorer\Main\<span class="SpellE">FeatureControl</span>\FEATURE_TABBED_BROWSING.
+</p>
+<p class="MsoNormal">This menu will only take effect after the application is restarted. See http://msdn.microsoft.com/en-us/library/<span class="GramE">ms537636(</span>VS.85).aspx
+</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Press F5 to run the sample, the following is the result.</p>
+<p class="MsoNormal">Step1. Type http://1code.codeplex.com/ in the <span class="SpellE">
+<span class="GramE">Url</span></span>, and press Enter. </p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="576" height="370" align="middle">
+</span></p>
+<p class="MsoNormal">Step2. Right click the &quot;Downloads&quot; in the header of the page, and then click &quot;Open in new tab&quot;. This application will open the link in a new tab.
+</p>
+<p class="MsoNormal"><span style=""><img src="description/c06367c8-1054-492b-a590-a3576c4887c0image.png" alt="" width="933" height="436" align="middle">
+</span></p>
+<p class="MsoNormal">If the &quot;Open in new tab&quot; is disabled, check &quot;Enable Tab&quot; and restart the application.
+</p>
+<p class="MsoNormal"><span style=""><img src="description/1750a535-da0d-40cb-8134-54c1d826a185image.png" alt="" width="931" height="414" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+1. Design a class <span class="SpellE">WebBrowserEx</span> that inherits <span class="GramE">
+class <span style="">&nbsp;</span><span class="SpellE"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.WebBrowser.aspx"  title="Auto generated link to System.Windows.Forms.WebBrowser">System.Windows.Forms.WebBrowser</a></span></span>. This class can handle NewWindow3 event.
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">&nbsp;&nbsp; </span>The interface DWebBrowserEvents2 designates an event sink interface that an application must implement to receive event notifications from a
+<span class="SpellE">WebBrowser</span> control or from the Windows Internet Explorer application. The event notifications include NewWindow3 event that will be used in this application.
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+2. Design a class <span class="SpellE">WebBrowserTabPage</span> that inherits the
+<span class="SpellE">the</span> <span class="SpellE"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.TabPage.aspx"  title="Auto generated link to System.Windows.Forms.TabPage">System.Windows.Forms.TabPage</a></span> class and contains a
+<span class="SpellE">WebBrowserEx</span> property. An instance of this class could be
+<span class="GramE">add</span> to a tab control directly. </p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+3. Create a <span class="SpellE">UserControl</span> that contains a <span class="SpellE">
+<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.TabControl.aspx"  title="Auto generated link to System.Windows.Forms.TabControl">System.Windows.Forms.TabControl</a></span> instance. This <span class="SpellE">UserControl</span> supplies the method to create/close the
+<span class="SpellE">WebBrowserTabPage</span> in the <span class="SpellE">TabControl</span>. It also supplies a Property
+<span class="SpellE">IsTabEnabled</span> to get or set whether the &quot;Open in new Tab&quot; context menu in
+<span class="SpellE">WebBrowser</span> is enabled. </p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+4. In the <span class="SpellE">MainForm</span>, it supplies controls to enable/disable tab, create/close the tab, and make the
+<span class="SpellE">WebBrowser</span> <span class="SpellE">GoBack</span>, <span class="SpellE">
+GoForward</span> or Refresh.</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+</p>
+<p class="MsoNormal" style=""><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/aa768283(VS.85).aspx">DWebBrowserEvents2 interface</a>
+</span></p>
+<p class="MsoNormal" style=""><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/ms537636(VS.85).aspx">Tabbed Browsing for Developers</a>
+</span></p>
+<p class="MsoNormal" style=""><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.webbrowser.createsink.aspx"><span class="SpellE">WebBrowser.CreateSink</span> Method</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/adaa87bc-3ace-4da7-8848-07ab8276df38image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

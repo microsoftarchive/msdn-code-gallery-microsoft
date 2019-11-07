@@ -1,0 +1,173 @@
+﻿/* Global Overrides */
+#JelloSizer
+{
+    max-width:none;
+}
+
+/* Action Box Overrides */
+.actionBarWrapper
+{
+    background-color:#fff;
+}
+
+/*  */
+
+body {
+    color: #454545;
+}
+
+a:hover {
+    opacity: .7;
+    filter: alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    -khtml-opacity: 0.7;
+}
+
+h1 {
+    font: 100 3em/1.108 /*48px font size, 54px line height */ 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif !important;
+}
+
+h2 {
+    font: 100 2.979em/1.167 /*36px font size, 42px line height */ 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+    margin-top: -10px /*Aligning to the action box */;
+}
+ 
+h3 {
+    font: 100 1.786em/1.333 /*24px font size, 32px line height */ 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif !important;
+}
+
+#MainContent a, #MainContent a:link,
+#bodyContainer #mainContentContainer a {
+    color: #0050ef;
+}
+
+#bodyContainer #mainContentContainer a:hover {
+    opacity: .7;
+}
+
+#projectPage #Downloads .button, #projectPage #Downloads .button:hover, #projectPage #Downloads .button:focus {
+    background-color: #0050ef !important;
+    color: white !important;
+}
+
+#projectPage #Downloads .button:hover, #projectPage #Downloads .button:focus {
+    opacity: .7;
+}
+
+/* Side Nav */
+#sideNav .ux-actionbox.small {
+    padding: 13px 0 22px 0;
+}
+
+#sideNav .section span.itemCount
+{
+    padding-left:2px;
+}
+
+#sideNav .section span.itemCount, #sideNav .section a, .itemContainer
+{
+    color:#0050ef;
+}
+
+#sideNav .section a:hover
+{
+    text-decoration:none;
+}
+
+/* Directory Content */
+.itemRow > td
+{
+    border:none;
+}
+.itemRow .itemBody
+{
+    font-size:0.9em;
+}
+.itemRow .itemBody .itemTitle
+{
+    font-size:1.1em;
+    padding-bottom:8px;
+}
+
+.itemRow .itemBody > div
+{
+    padding-bottom:4px;
+    padding-top:0px;
+}
+
+.itemRow .itemBody .itemTitle a
+{
+    color:#333;
+}
+
+#Technologies, .itemRow .itemBody a, .itemRow .itemInfo a, #Pager div a
+{
+    color:#0050ef;
+}
+
+.itemRow .itemInfo div:first-child
+{
+    color:#333;
+}
+
+.itemRow .itemInfo , .itemRow .itemInfo a
+{
+    font-size:.80em;
+}
+
+.itemRow .itemInfo div
+{
+    padding-bottom:8px;
+}
+
+/* Rating */
+.Rating .FilledRatingStar
+{
+    background: url(../WindowsPhone/fullStar.png) no-repeat;
+    width: 8px;
+    height: 20px;
+    padding: 0 4px 0 0;
+
+}
+
+.Rating .FilledRatingStarHover
+{
+    background: url(../WindowsPhone/fullStarHover.png) no-repeat;
+    width: 8px;
+    height: 20px;
+    padding: 0 4px 0 0;
+}
+
+.Rating .HalfRatingStar
+{
+    background: url(../WindowsPhone/halfStar.png) no-repeat;
+    width: 8px;
+    height: 20px;
+    padding: 0 4px 0 0;
+}
+
+.Rating .EmptyRatingStar
+{
+    background: url(../WindowsPhone/emptyStar.png) no-repeat;
+    width: 8px;
+    height: 20px;
+    padding: 0 4px 0 0;
+}
+
+#sideNav #contributeSection, #projectPage .sidebar #contributeSection, #contributeSection {
+    margin-top: 60px;
+}
+
+#sideNav #contributeSection > div, .sidebar #contributeSection > div, #contributeSection > div
+{
+    padding: 0 0 2px 0 !important;
+    overflow:auto;
+}
+
+
+
+.sidebar .ux-actionbox.small {
+    background: white;
+    padding: 22px 0 30px;
+}
+

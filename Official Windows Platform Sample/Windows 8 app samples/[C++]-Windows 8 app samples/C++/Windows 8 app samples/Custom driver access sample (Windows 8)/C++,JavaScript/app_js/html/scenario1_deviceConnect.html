@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/css/scenario1_deviceConnect.css" />
+    <script src="/js/deviceList.js"></script>
+    <script src="/js/scenario1_deviceConnect.js"></script>
+</head>
+<body>
+        <div data-win-control="WinJS.Binding.Template" id="deviceConnectDevicesTemplate">
+            <div data-win-bind="innerText: instanceId"></div>
+        </div>    
+    <div data-win-control="SdkSample.ScenarioInput">
+        <p>This scenario shows how to locate a device with a custom projection, and how to create an instance of the custom device class</p>
+        <h2>Select an Fx2 Device:</h2>
+        <button id="device-connect-start">Start Device Watcher</button>
+        <button id="device-connect-stop">Stop Device Watcher</button>
+		<div>
+            <div 
+                data-win-control="WinJS.UI.ListView" 
+                data-win-options="{itemDataSource: DeviceList.fx2Devices.dataSource, 
+                                   itemTemplate: deviceConnectDevicesTemplate,
+                                   layout:{type:WinJS.UI.ListLayout},
+                                   tapBehavior: 'directSelect'}"
+                id="device-connect-devices"
+                style="height: 200px">
+
+            </div>
+		</div>
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+        <div id="device-connect-output"></div>
+    </div>
+</body>
+</html>

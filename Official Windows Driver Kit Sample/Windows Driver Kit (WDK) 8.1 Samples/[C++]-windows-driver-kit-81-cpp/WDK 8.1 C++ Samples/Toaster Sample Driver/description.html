@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/97a00f53-046a-471f-aba4-f9f658bc0e0aCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Toaster Sample Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/2c72fd48-f2db-4c1e-94a8-c4572a238b2eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Toaster Sample Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, UMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            general
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/4/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Toaster-7d256224">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The Toaster collection is an iterative series of samples that demonstrate fundamental aspects of Windows driver development for both Kernel-Mode Driver Framework (KMDF) and User-Mode Driver Framework (UMDF) version 1.
+</p>
+<p>All the samples work with a hypothetical toaster bus, over which toaster devices can be connected to a PC.</p>
+<p>The Toaster sample collection comprises driver projects (.vcxproj files) that are contained in the toaster.sln solution file (in general\toaster\toastdrv).</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. This sample will not build with Microsoft Visual Studio Express&nbsp;2013 for Windows Desktop, because the sample
+ uses Active Template Library (ATL). You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Toaster-7d256224/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff557565">Windows Driver Frameworks</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2><a id="Download_and_extract_the_sample"></a><a id="download_and_extract_the_sample"></a><a id="DOWNLOAD_AND_EXTRACT_THE_SAMPLE"></a>Download and extract the sample</h2>
+<p>Click the download button on this page. Click <b>Save</b>, and then click <b>Open Folder</b>. Right click Toaster.zip, and choose
+<b>Extract All</b>. Specify or browse to a folder for the extracted files. For example, you could extract to c:\Toaster.</p>
+<h2><a id="Open_the_driver_solution_in_Visual_Studio"></a><a id="open_the_driver_solution_in_visual_studio"></a><a id="OPEN_THE_DRIVER_SOLUTION_IN_VISUAL_STUDIO"></a>Open the driver solution in Visual Studio</h2>
+<p>Navigate to the folder that has the extracted sample, and open the <b>C&#43;&#43;</b> folder. Double click the solution file, toaster.sln. In Microsoft Visual Studio, locate Solution Explorer. (If this is not already open, choose
+<b>Solution Explorer</b> from the <b>View</b> menu.) In Solution Explorer, you can see one solution that includes the following 16 projects:</p>
+<table>
+<tbody>
+<tr>
+<th>Parent folder</th>
+<th>Visual Studio project/description</th>
+</tr>
+<tr>
+<td>Classinstaller</td>
+<td>tostrcls</td>
+</tr>
+<tr>
+<td>Coinstaller</td>
+<td>tostrco1</td>
+</tr>
+<tr>
+<td>Exe</td>
+<td>Enum, notify, toast, WmiToast</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Bus</td>
+<td>dynambus, StatBus</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Filter-&gt;Generic</td>
+<td>filter</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Filter-&gt;Sideband</td>
+<td>filter</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Func-&gt;Featured</td>
+<td>wdffeatured</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Func-&gt;Simple</td>
+<td>wdfsimple</td>
+</tr>
+<tr>
+<td>Kmdf-&gt;Toastmon</td>
+<td>wdftoastmon</td>
+</tr>
+<tr>
+<td>Package</td>
+<td>package</td>
+</tr>
+<tr>
+<td>Umdf</td>
+<td>WUDFToaster, WUDFToastMon</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed descriptions and code walkthroughs of each project, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dn569312">
+Sample Toaster Driver Programming Tour</a>. To learn how to build and run the samples, read on.</p>
+<h2><a id="Set_the_configuration_and_platform_in_Visual_Studio"></a><a id="set_the_configuration_and_platform_in_visual_studio"></a><a id="SET_THE_CONFIGURATION_AND_PLATFORM_IN_VISUAL_STUDIO"></a>Set the configuration and platform in Visual Studio</h2>
+<p>In Visual Studio, in Solution Explorer, right click <b>Solution ‘Toaster’ (16 projects)</b>, and choose
+<b>Configuration Manager</b>. Set the configuration and the platform. Make sure that the configuration and platform are the same for both the driver project and the package project. Do not check the
+<b>Deploy</b> boxes. Here are some examples of configuration and platform settings.</p>
+<table>
+<tbody>
+<tr>
+<th>Configuration</th>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Win8.1 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;8.1. The driver will not run on any earlier versions of Windows.</td>
+</tr>
+<tr>
+<td>Win7 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;7 or a later version of Windows.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Build_the_sample_using_Visual_Studio"></a><a id="build_the_sample_using_visual_studio"></a><a id="BUILD_THE_SAMPLE_USING_VISUAL_STUDIO"></a>Build the sample using Visual Studio</h2>
+<p>In Visual Studio, on the <b>Build</b> menu, choose <b>Build Solution</b>.</p>
+<p>For more information about using Visual Studio to build a driver package, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">
+Building a Driver</a>.</p>
+<h3><a id="Locate_the_built_driver_package"></a><a id="locate_the_built_driver_package"></a><a id="LOCATE_THE_BUILT_DRIVER_PACKAGE"></a>Locate the built driver package</h3>
+<p>In File Explorer, navigate to the folder that contains your built driver package. The location of this folder varies depending on what you set for configuration and platform. For example, if your settings are Win7 Debug and x64, the package is in your solution
+ folder under x64\Win7Debug\Package.</p>
+<p>The package contains 6 .sys files, 5 .dll files (including the two Microsoft-supplied WDF co-installers), 2 security catalog (.cat) files, and 8 .inf files.</p>
+<h2>Run the sample</h2>
+<p>The computer where you install the driver is called the <i>target computer</i> or the
+<i>test computer</i>. Typically this is a separate computer from where you develop and build the driver package. The computer where you develop and build the driver is called the
+<i>host computer</i>.</p>
+<p>The process of moving the driver package to the target computer and installing the driver is called
+<i>deploying the driver</i>. You can deploy components of the Toaster Sample automatically or manually. Here, we install the wdfsimple driver on the target computer.</p>
+<h3><a id="Specifying_which_projects_to_deploy"></a><a id="specifying_which_projects_to_deploy"></a><a id="SPECIFYING_WHICH_PROJECTS_TO_DEPLOY"></a>Specifying which projects to deploy</h3>
+<p>Before doing this, you should back up your package.vcxproj file, located in your sample directory, for example C:\Toaster\C&#43;&#43;\Package.</p>
+<ol>
+<li>In the Properties for the package project, navigate to <b>Common Properties &gt; References</b>.
+</li><li>Remove all references except WdfSimple. (Use the <b>Remove Reference</b> button at the bottom.)
+</li></ol>
+<h3><a id="Automatic_deployment__root_enumerated_"></a><a id="automatic_deployment__root_enumerated_"></a><a id="AUTOMATIC_DEPLOYMENT__ROOT_ENUMERATED_"></a>Automatic deployment (root enumerated)</h3>
+<p>Before you automatically deploy a driver, you must provision the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh698272">Configuring a Computer for Driver Deployment, Testing, and Debugging</a>.</p>
+<ol>
+<li>On the host computer, in Visual Studio, in Solution Explorer, right click the
+<b>package</b> project (within the package folder), and choose <b>Properties</b>. Navigate to
+<b>Configuration Properties &gt; Driver Install &gt; Deployment</b>. </li><li>Check <b>Enable deployment</b>, and check <b>Remove previous driver versions before deployment</b>. For
+<b>Target Computer Name</b>, use the drop down to select the name of a target computer that you provisioned previously. Select
+<b>Hardware ID Driver Update</b>, and enter <b>{b85b7c50-6a01-11d2-b841-00c04fad5171}\MsToaster</b> for the hardware ID. (You can find this value in the WdfSimple.inx file.) Click
+<b>Apply</b> and <b>OK</b>. </li><li>Because this solution contains many projects, you may find it easier to remove some of them before you build and deploy a driver package. To do so, right click
+<b>package</b> (lower case), and choose <b>Properties</b>. Navigate to <b>Common Properties-&gt;References</b> and click
+<b>Remove Reference</b> to remove projects you don't want. (You can add them back later by using
+<b>Add New Reference</b>.) Click <b>OK</b>. </li><li>On the <b>Build</b> menu, choose <b>Build Solution</b> or <b>Rebuild Solution</b> (if you removed references).
+</li><li>If you removed references and deployment does not succeed, try deleting the contents of the c:\DriverTest\Drivers folder on the target machine, and then retry deployment.
+</li></ol>
+<h3><a id="Manual_deployment__root_enumerated_"></a><a id="manual_deployment__root_enumerated_"></a><a id="MANUAL_DEPLOYMENT__ROOT_ENUMERATED_"></a>Manual deployment (root enumerated)</h3>
+<p>Before you manually deploy a driver, you must turn on test signing and install a certificate on the target computer. You also need to copy the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff544707">DevCon</a> tool to the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dn265571">Preparing a Computer for Manual Driver Deployment</a>.</p>
+<ol>
+<li>Copy all of the files in your driver package to a folder on the target computer (for example, c:\WdfSimplePackage).
+</li><li>
+<p>On the target computer, open a Command Prompt window as Administrator. Navigate to your driver package folder, and enter the following command:</p>
+<p><b>devcon install WdfSimple.inf {b85b7c50-6a01-11d2-b841-00c04fad5171}\MsToaster</b></p>
+</li></ol>
+<h3><a id="View_the_root_enumerated_driver_in_Device_Manager"></a><a id="view_the_root_enumerated_driver_in_device_manager"></a><a id="VIEW_THE_ROOT_ENUMERATED_DRIVER_IN_DEVICE_MANAGER"></a>View the root enumerated driver in Device Manager</h3>
+<p>On the target computer, in a Command Prompt window, enter <b>devmgmt</b> to open Device Manager. In Device Manager, on the
+<b>View</b> menu, choose <b>Devices by type</b>. In the device tree, locate <b>Microsoft WDF Simple Toaster (No Class Installer)</b>.</p>
+<p>In Device Manager, on the <b>View</b> menu, choose <b>Devices by connection</b>. Locate
+<b>Microsoft WDF Simple Toaster (No Class Installer)</b> as a child of the root node of the device tree.
+</p>
+<h2><a id="Build_the_sample_using_MSBuild"></a><a id="build_the_sample_using_msbuild"></a><a id="BUILD_THE_SAMPLE_USING_MSBUILD"></a>Build the sample using MSBuild</h2>
+<p>As an alternative to building the Toaster sample in Visual Studio, you can build it in a Visual Studio Command Prompt window. In Visual Studio, on the
+<b>Tools</b> menu, choose <b>Visual Studio Command Prompt</b>. In the Visual Studio Command Prompt window, navigate to the folder that has the solution file, Toaster.sln. Use the MSBuild command to build the solution. Here are some examples:</p>
+<p><b>msbuild /p:configuration=”Win7 Debug” /p:platform=”x64” Toaster.sln</b></p>
+<p><b>msbuild /p:configuration=”Win8 Release” /p:platform=”Win32” Toaster.sln</b></p>
+<p>For more information about using MSBuild to build a driver package, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">
+Building a Driver</a>. </p>
+<h2><a id="_______UMDF_Toaster_File_Manifest"></a><a id="_______umdf_toaster_file_manifest"></a><a id="_______UMDF_TOASTER_FILE_MANIFEST"></a>UMDF Toaster File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File </th>
+<th>Description </th>
+</tr>
+<tr>
+<td>
+<p>WUDFToaster.idl </p>
+</td>
+<td>
+<p>Component Interface file </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WUDFToaster.cpp </p>
+</td>
+<td>
+<p>DLL Support code - provides the DLL's entry point as well as the DllGetClassObject export.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WUDFToaster.def </p>
+</td>
+<td>
+<p>This file lists the functions that the driver DLL exports. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>stdafx.h </p>
+</td>
+<td>
+<p>This is the main header file for the sample driver. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>driver.cpp &amp; driver.h </p>
+</td>
+<td>
+<p>Definition and implementation of the IDriverEntry callbacks in CDriver class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>device.cpp &amp; device.h </p>
+</td>
+<td>
+<p>Definition and implementation of various interfaces and their callbacks in CDevice class. Add your PnP and Power interfaces specific for your hardware.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>queue.cpp &amp; queue.h </p>
+</td>
+<td>
+<p>Definition and implementation of the base queue callback class (CQueue). IQueueCallbackDevicekIoControl, IQueueCallbackRead and IQueueCallBackWrite callbacks are implemented to handle I/O control requests.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WUDFToaster.rc </p>
+</td>
+<td>
+<p>This file defines resource information for the WUDF Toaster sample driver. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WUDFToaster.inf </p>
+</td>
+<td>
+<p>Sample INF for installing the sample WUDF Toaster driver under the Toaster class of devices.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WUDFtoaster.ctl, internal.h </p>
+</td>
+<td>
+<p>This file lists the WPP trace control GUID(s) for the sample driver. This file can be used with the tracelog command's -guid flag to enable the collection of these trace events within an established trace session.
+</p>
+<p>These GUIDs must remain in sync with the trace control guids defined in internal.h.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Toastmon_File_Manifest"></a><a id="toastmon_file_manifest"></a><a id="TOASTMON_FILE_MANIFEST"></a>Toastmon File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File </th>
+<th>Description </th>
+</tr>
+<tr>
+<td>
+<p>comsup.cpp &amp; comsup.h</p>
+</td>
+<td>
+<p>Boilerplate COM Support code - specifically base classes which provide implementations for the standard COM interfaces IUnknown and IClassFactory which are used throughout the sample.</p>
+<p>The implementation of IClassFactory is designed to create instances of the CMyDriver class. If you should change the name of your base driver class, you would also need to modify this file.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>dllsup.cpp</p>
+</td>
+<td>
+<p>Boilerplate DLL Support code - provides the DLL's entry point as well as the single required export (DllGetClassObject).
+</p>
+<p>These depend on comsup.cpp to perform the necessary class creation. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>exports.def</p>
+</td>
+<td>
+<p>This file lists the functions that the driver DLL exports. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>makefile</p>
+</td>
+<td>
+<p>This file redirects to the real makefile, which is shared by all the driver components of the Windows Driver Kit.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>internal.h</p>
+</td>
+<td>
+<p>This is the main header file for the ToastMon driver</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>driver.cpp &amp; driver.h</p>
+</td>
+<td>
+<p>Definition and implementation of the driver callback class for the ToastMon sample.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>device.cpp &amp; device.h</p>
+</td>
+<td>
+<p>Definition and implementation of the device callback class for the ToastMon sample. This is mostly boilerplate, but also registers for RemoteInterface Arrival notifications. When a RemoteInterface arrival callback occurs, it calls CreateRemoteInterface and
+ creates a CMyRemoteTarget callback object to handle I/O on that RemoteInterface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>RemoteTarget.cpp &amp; RemoteTarget.h</p>
+</td>
+<td>
+<p>Definition and implementation of the remote target callback class for the ToastMon sample.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>list.h</p>
+</td>
+<td>
+<p>Doubly-linked-list code</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ToastMon.rc</p>
+</td>
+<td>
+<p>This file defines resource information for the ToastMon sample driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>UMDFToastMon.inf</p>
+</td>
+<td>
+<p>Sample INF for installing the Skeleton driver to control a root enumerated device with a hardware ID of UMDFSamples\ToastMon</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

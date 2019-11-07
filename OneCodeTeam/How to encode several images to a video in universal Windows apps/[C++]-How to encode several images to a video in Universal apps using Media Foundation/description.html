@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=EC831D2F780A53CF4C404B53E768954F" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/7c8d4e5e-c101-4aa6-ba3e-5221172d0647Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=DF234F4FF3DA5D35A03D2829D4F99E0D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to encode several images to a video in Universal apps using Media Foundation</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to encode several images to a video in Universal apps using Media Foundation</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            DirectX, Windows, Windows Phone, Windows 8, Audio and video, Windows Store app Development, Windows Phone Development, Windows Desktop App Development, Windows 8.1, Microsoft Media Foundation
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            video, Image
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/29/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-encode-several-to-a-053953d1">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img alt="" src="description/8171.onecodesampletopbanner.png">
+</a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; margin-top:24pt; margin-bottom:0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to encode several images to a video in Universal apps using Media Foundation</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; margin-top:10pt; margin-bottom:0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">This sample demonstrates how to encode several images to a</span><span style="font-size:11pt">n</span><span style="font-size:11pt"> mp4 video using Media Foundation in a C&#43;&#43;/CX component. This is a Universal
+ app which can be built for both Windows 8 and Windows Phone.</span></span> </p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; margin-top:10pt; margin-bottom:0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Running the Sample</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Build the sample in Visual Studio 2013 and then run it. Click the &quot;Create new video&quot; button to create a video file which will be processed. Click the &quot;Open images&quot; button to pick several images which
+ will be shown below the button in a GridView control. Then click the &quot;Encode&quot; button</span><span style="font-size:11pt"> to create a video file which will be processed and
+</span><span style="font-size:11pt">encode the video with the images as frames. The video will play below the GridView in a MediaElement control.</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><img src="description/image.png" alt="" width="575" height="359" align="middle">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; text-align:center; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><img src="description/9ee2e491-949f-4d65-814b-dc362862303dimage.png" alt="" width="395" height="725" align="middle">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; margin-top:10pt; margin-bottom:0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Using the Code</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">We implement the basic capabilities in PictureWriter calss in EncodeImage namespace using Media Foundation.</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">In the code behind MainPage.xaml, we first open images and store the files to List&lt;StorageFile&gt; object.</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"></span><span style=""></span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>C&#43;&#43;</span><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span><span class="hidden">cplusplus</span><span class="hidden">js</span>
+<pre class="hidden">
+private async void ImageBtn_Click(object sender, RoutedEventArgs e)
+  {
+            if (m_images.Count != 0)
+            {
+                m_images.Clear();
+            }
+            if (m_files.Count != 0)
+            {
+                m_files.Clear();
+            }
+   statusText.Text = &quot;&quot;;
+   FileOpenPicker openPicker = new FileOpenPicker();
+   openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+   openPicker.ViewMode = PickerViewMode.Thumbnail;
+   openPicker.FileTypeFilter.Add(&quot;.jpg&quot;);
+            openPicker.FileTypeFilter.Add(&quot;.png&quot;);
+            openPicker.FileTypeFilter.Add(&quot;.bmp&quot;);
+   IReadOnlyList&lt;StorageFile&gt; files = await openPicker.PickMultipleFilesAsync();
+   if (files.Count &gt; 0)
+   {                
+    foreach(StorageFile file in files)
+    {
+     m_files.Add(file);
+     using( IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
+     {
+      BitmapImage bitmapImage = new BitmapImage();
+      await bitmapImage.SetSourceAsync(stream);
+      Image image = new Image();
+      image.Source = bitmapImage;
+      m_images.Add(image);                        
+     }
+     
+    }
+    ImageGV.DataContext = m_images;
+   }
+  }
+</pre>
+<pre class="hidden">
+void CppUniversalAppImageToVideo::MainPage::ImageBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+ statusText-&gt;Text = &quot;&quot;;
+ if (m_images-&gt;Size != 0)
+ {
+  m_images-&gt;Clear();
+ }
+ if (m_files-&gt;Size != 0)
+ {
+  m_files-&gt;Clear();
+ }
+ // Open images.
+ FileOpenPicker^ picker = ref new FileOpenPicker;
+ picker-&gt;SuggestedStartLocation = PickerLocationId::PicturesLibrary;
+ picker-&gt;ViewMode = PickerViewMode::Thumbnail;
+ picker-&gt;FileTypeFilter-&gt;Append(&quot;.jpg&quot;);
+ picker-&gt;FileTypeFilter-&gt;Append(&quot;.png&quot;);
+ picker-&gt;FileTypeFilter-&gt;Append(&quot;.bmp&quot;);
+ create_task(picker-&gt;PickMultipleFilesAsync()).then([=](IVectorView&lt;StorageFile^&gt;^ files){
+  if (files-&gt;Size == 0)
+  {
+   cancel_current_task();
+  }
+  
+  auto images = std::make_shared&lt;Platform::Collections::Vector&lt;Windows::UI::Xaml::Controls::Image^&gt;^&gt;(m_images);
+  for (StorageFile^ file : files)
+  {   
+   create_task(file-&gt;OpenAsync(FileAccessMode::Read)).then([=](Streams::IRandomAccessStream^ stream){
+    
+    auto bitmapImage = ref new BitmapImage();
+    bitmapImage-&gt;SetSource(stream);
+    Image^ xamlImage = ref new Image;
+    xamlImage-&gt;Source = bitmapImage;
+    m_images-&gt;Append(xamlImage);
+   }).then([=](){
+    m_files-&gt;Append(file);
+   }, task_continuation_context::use_arbitrary()).then([=](task&lt;void&gt; t){
+    try
+    {
+     t.get();
+    }
+    catch (InvalidArgumentException^ e)
+    {
+     statusText-&gt;Text = &quot;Some errors occur when openning, please try again&quot;;
+     m_images-&gt;Clear();
+     m_files-&gt;Clear();
+    }
+   });
+  }
+ });
+}
+</pre>
+<pre class="hidden">
+function openImages()
+    {
+        if (items.length != 0)
+        {
+            items.splice(0, items.length);
+        }
+        if (g_imageFiles.length != 0)
+        {
+            g_imageFiles.splice(0, g_imageFiles.length);
+        }
+        var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+        openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
+        openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
+        openPicker.fileTypeFilter.append(&quot;.jpg&quot;);
+        openPicker.fileTypeFilter.append(&quot;.png&quot;);
+        openPicker.fileTypeFilter.append(&quot;.bmp&quot;);
+        openPicker.pickMultipleFilesAsync().then(function (files) {
+            if(files.size &gt; 0)
+            {                
+                files.forEach(function (file) {
+                    g_imageFiles.push(file);
+                    file.openAsync(Windows.Storage.FileAccessMode.read).then(function (stream) {                        
+                        items.push({ picture: URL.createObjectURL(stream) });                        
+                    });
+                });                
+            }
+        });
+    }
+</pre>
+<pre id="codePreview" class="csharp">
+private async void ImageBtn_Click(object sender, RoutedEventArgs e)
+  {
+            if (m_images.Count != 0)
+            {
+                m_images.Clear();
+            }
+            if (m_files.Count != 0)
+            {
+                m_files.Clear();
+            }
+   statusText.Text = &quot;&quot;;
+   FileOpenPicker openPicker = new FileOpenPicker();
+   openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+   openPicker.ViewMode = PickerViewMode.Thumbnail;
+   openPicker.FileTypeFilter.Add(&quot;.jpg&quot;);
+            openPicker.FileTypeFilter.Add(&quot;.png&quot;);
+            openPicker.FileTypeFilter.Add(&quot;.bmp&quot;);
+   IReadOnlyList&lt;StorageFile&gt; files = await openPicker.PickMultipleFilesAsync();
+   if (files.Count &gt; 0)
+   {                
+    foreach(StorageFile file in files)
+    {
+     m_files.Add(file);
+     using( IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
+     {
+      BitmapImage bitmapImage = new BitmapImage();
+      await bitmapImage.SetSourceAsync(stream);
+      Image image = new Image();
+      image.Source = bitmapImage;
+      m_images.Add(image);                        
+     }
+     
+    }
+    ImageGV.DataContext = m_images;
+   }
+  }
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style=""></span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Then we initialize the the PictureWriter object after creating the new video file.</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style=""></span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span><span class="hidden">js</span>
+<pre class="hidden">
+void CppUniversalAppImageToVideo::MainPage::EncodeBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+ if (m_files-&gt;Size == 0)
+ {
+  statusText-&gt;Text = &quot;You must select one image at least.&quot;;
+  return;
+ }
+ // Create the video via file picker.
+ statusText-&gt;Text = &quot;&quot;;
+ FileSavePicker^ picker = ref new FileSavePicker;
+ picker-&gt;SuggestedStartLocation = PickerLocationId::VideosLibrary;
+ auto mp4Extensions = ref new Platform::Collections::Vector&lt;Platform::String^&gt;();
+ mp4Extensions-&gt;Append(&quot;.mp4&quot;);
+ picker-&gt;FileTypeChoices-&gt;Insert(&quot;MP4 file&quot;, mp4Extensions);
+ picker-&gt;DefaultFileExtension = &quot;.mp4&quot;;
+ picker-&gt;SuggestedFileName = &quot;output&quot;;
+ picker-&gt;SuggestedStartLocation = PickerLocationId::VideosLibrary;
+ 
+ create_task( picker-&gt;PickSaveFileAsync())
+ .then([=](StorageFile^ file){
+  if (nullptr == file)
+  {
+   cancel_current_task();
+  }
+  m_videoFile = file;
+  return file-&gt;OpenAsync(FileAccessMode::ReadWrite);
+ }).then([=](Streams::IRandomAccessStream^ stream){  
+  m_picture = ref new PictureWriter(stream, m_videoWidth, m_videoHeight);
+ }).then([this](){
+  // Add frames to the video.  
+  ProcessVideoRing-&gt;IsActive = true;
+  statusText-&gt;Text = &quot;Encoding...&quot;;
+  static int imageWidth, imageHeight, width, height;
+  
+  create_task([=](){
+   for (StorageFile^ file : m_files)
+   {
+    // We set 10 FPS default in the PictureWriter, so we add 10 same frames with each image.
+    for (int i = 0; i &lt; 10; &#43;&#43;i)
+    {
+     create_task(file-&gt;Properties-&gt;GetImagePropertiesAsync()).then([&](FileProperties::ImageProperties^ properties){
+      imageWidth = properties-&gt;Width;
+      imageHeight = properties-&gt;Height;
+      return file-&gt;OpenAsync(FileAccessMode::Read);
+     }).then([=](Streams::IRandomAccessStream^ stream){
+      return BitmapDecoder::CreateAsync(stream);
+     }).then([&](BitmapDecoder^ decoder){
+      float scaleOfWidth = static_cast&lt;float&gt;(m_videoWidth) / imageWidth;
+      float scaleOfHeight = static_cast&lt;float&gt;(m_videoHeight) / imageHeight;
+      float scale = scaleOfHeight &gt; scaleOfWidth ?
+      scaleOfWidth : scaleOfHeight;
+      width = static_cast&lt;int&gt;(imageWidth * scale);
+      height = static_cast&lt;int&gt;(imageHeight * scale);
+      
+      BitmapTransform^ transform = ref new BitmapTransform;
+      transform-&gt;ScaledWidth = width;
+      transform-&gt;ScaledHeight = height;
+      return decoder-&gt;GetPixelDataAsync(BitmapPixelFormat::Bgra8,
+       BitmapAlphaMode::Straight,
+       transform,
+       ExifOrientationMode::RespectExifOrientation,
+       ColorManagementMode::ColorManageToSRgb);
+     }).then([&](PixelDataProvider^ provider){
+      m_picture-&gt;AddFrame(provider-&gt;DetachPixelData(), width, height);
+     }).wait();
+    }    
+   }
+  }).then([=](){
+   m_picture-&gt;Finalize();
+   m_picture = nullptr;   
+  }).then([=](){
+   return m_videoFile-&gt;OpenAsync(FileAccessMode::Read);
+  }).then([=](Streams::IRandomAccessStream^ stream){
+   VideoElement-&gt;SetSource(stream, nullptr);
+   
+   ProcessVideoRing-&gt;IsActive = false;
+   statusText-&gt;Text = &quot;The image files are encoded successfully.&quot;;   
+  });
+ }); 
+}
+</pre>
+<pre class="hidden">
+function encode()
+    {
+        if (g_imageFiles.length == 0)
+        {
+            displayInfo(&quot;You must select one image at least.&quot;);
+            return;
+        }
+        var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+        savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.videosLibrary;
+        savePicker.suggestedFileName = &quot;output&quot;;
+        savePicker.defaultFileExtension = &quot;.mp4&quot;;
+        savePicker.fileTypeChoices.insert(&quot;MP4 file&quot;, [&quot;.mp4&quot;]);
+        var promise = savePicker.pickSaveFileAsync().then(function (videoFile) {
+            if (videoFile) {
+                g_videoFile = videoFile;
+                return videoFile.openAsync(Windows.Storage.FileAccessMode.readWrite);
+            }
+        }).then(function (stream) {
+            if (stream)
+            {
+                g_picture = new EncodeImages.PictureWriter(stream, g_videoWidth, g_videoHeight);
+            }            
+        });
+        var imageWidth, imageHeight;
+        var promiseArray = g_imageFiles.map(function (file) {
+            promise = promise.then(function () {
+                
+                return file.properties.getImagePropertiesAsync().then(function (props) {
+                    if (g_picture) {
+                        imageWidth = props.width;
+                        imageHeight = props.height;
+                        return file.openAsync(Windows.Storage.FileAccessMode.read);
+                    }
+                    
+                }).then(function (stream) {
+                    if (stream)
+                    {
+                        return Windows.Graphics.Imaging.BitmapDecoder.createAsync(stream);
+                    }
+                    
+                }).then(function (decoder) {
+                    if (decoder)
+                    {
+                        // Transform the image size.
+                        var scaleOfWidth = g_videoWidth / imageWidth;
+                        var scaleOfHeight = g_videoHeight / imageHeight;
+                        var scale = scaleOfWidth &gt; scaleOfHeight ? scaleOfHeight : scaleOfWidth;
+                        imageWidth *= scale;
+                        imageHeight *= scale;
+                        var transform = new Windows.Graphics.Imaging.BitmapTransform();
+                        transform.scaledWidth = imageWidth;
+                        transform.scaledHeight = imageHeight;
+                        return decoder.getPixelDataAsync(
+                            Windows.Graphics.Imaging.BitmapPixelFormat.bgra8,
+                            Windows.Graphics.Imaging.BitmapAlphaMode.straight,
+                            transform,
+                            Windows.Graphics.Imaging.ExifOrientationMode.respectExifOrientation,
+                            Windows.Graphics.Imaging.ColorManagementMode.colorManageToSRgb);
+                    }
+                    
+                }).then(function (provider) {
+                    if (provider)
+                    {
+                        var data = provider.detachPixelData();
+                        for (var i = 0; i &lt; 10; &#43;&#43;i) {
+                            g_picture.addFrame(data, imageWidth, imageHeight);
+                        }
+                    }
+                });
+            });
+            return promise;
+            
+        });
+        WinJS.Promise.join(promiseArray).then(function () {
+            if (g_picture)
+            {
+                g_picture.finalize();
+                g_picture = null;
+                displayInfo(&quot;The image files are encoded successfully.&quot;);
+                var myVideo = document.getElementById(&quot;videoElement&quot;);
+                myVideo.src = URL.createObjectURL(g_videoFile);
+            }
+            
+        });        
+    }
+</pre>
+<pre id="codePreview" class="cplusplus">
+void CppUniversalAppImageToVideo::MainPage::EncodeBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+ if (m_files-&gt;Size == 0)
+ {
+  statusText-&gt;Text = &quot;You must select one image at least.&quot;;
+  return;
+ }
+ // Create the video via file picker.
+ statusText-&gt;Text = &quot;&quot;;
+ FileSavePicker^ picker = ref new FileSavePicker;
+ picker-&gt;SuggestedStartLocation = PickerLocationId::VideosLibrary;
+ auto mp4Extensions = ref new Platform::Collections::Vector&lt;Platform::String^&gt;();
+ mp4Extensions-&gt;Append(&quot;.mp4&quot;);
+ picker-&gt;FileTypeChoices-&gt;Insert(&quot;MP4 file&quot;, mp4Extensions);
+ picker-&gt;DefaultFileExtension = &quot;.mp4&quot;;
+ picker-&gt;SuggestedFileName = &quot;output&quot;;
+ picker-&gt;SuggestedStartLocation = PickerLocationId::VideosLibrary;
+ 
+ create_task( picker-&gt;PickSaveFileAsync())
+ .then([=](StorageFile^ file){
+  if (nullptr == file)
+  {
+   cancel_current_task();
+  }
+  m_videoFile = file;
+  return file-&gt;OpenAsync(FileAccessMode::ReadWrite);
+ }).then([=](Streams::IRandomAccessStream^ stream){  
+  m_picture = ref new PictureWriter(stream, m_videoWidth, m_videoHeight);
+ }).then([this](){
+  // Add frames to the video.  
+  ProcessVideoRing-&gt;IsActive = true;
+  statusText-&gt;Text = &quot;Encoding...&quot;;
+  static int imageWidth, imageHeight, width, height;
+  
+  create_task([=](){
+   for (StorageFile^ file : m_files)
+   {
+    // We set 10 FPS default in the PictureWriter, so we add 10 same frames with each image.
+    for (int i = 0; i &lt; 10; &#43;&#43;i)
+    {
+     create_task(file-&gt;Properties-&gt;GetImagePropertiesAsync()).then([&](FileProperties::ImageProperties^ properties){
+      imageWidth = properties-&gt;Width;
+      imageHeight = properties-&gt;Height;
+      return file-&gt;OpenAsync(FileAccessMode::Read);
+     }).then([=](Streams::IRandomAccessStream^ stream){
+      return BitmapDecoder::CreateAsync(stream);
+     }).then([&](BitmapDecoder^ decoder){
+      float scaleOfWidth = static_cast&lt;float&gt;(m_videoWidth) / imageWidth;
+      float scaleOfHeight = static_cast&lt;float&gt;(m_videoHeight) / imageHeight;
+      float scale = scaleOfHeight &gt; scaleOfWidth ?
+      scaleOfWidth : scaleOfHeight;
+      width = static_cast&lt;int&gt;(imageWidth * scale);
+      height = static_cast&lt;int&gt;(imageHeight * scale);
+      
+      BitmapTransform^ transform = ref new BitmapTransform;
+      transform-&gt;ScaledWidth = width;
+      transform-&gt;ScaledHeight = height;
+      return decoder-&gt;GetPixelDataAsync(BitmapPixelFormat::Bgra8,
+       BitmapAlphaMode::Straight,
+       transform,
+       ExifOrientationMode::RespectExifOrientation,
+       ColorManagementMode::ColorManageToSRgb);
+     }).then([&](PixelDataProvider^ provider){
+      m_picture-&gt;AddFrame(provider-&gt;DetachPixelData(), width, height);
+     }).wait();
+    }    
+   }
+  }).then([=](){
+   m_picture-&gt;Finalize();
+   m_picture = nullptr;   
+  }).then([=](){
+   return m_videoFile-&gt;OpenAsync(FileAccessMode::Read);
+  }).then([=](Streams::IRandomAccessStream^ stream){
+   VideoElement-&gt;SetSource(stream, nullptr);
+   
+   ProcessVideoRing-&gt;IsActive = false;
+   statusText-&gt;Text = &quot;The image files are encoded successfully.&quot;;   
+  });
+ }); 
+}
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style=""></span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span> </p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; margin-top:10pt; margin-bottom:0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">More Information</span></span>
+</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:27.6pt; margin-bottom:10pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="http://blogs.msdn.com/b/eternalcoding/archive/2013/03/06/developing-a-winrt-component-to-create-a-video-file-using-media-foundation.aspx" style="text-decoration:none"><span style="color:#0563C1; text-decoration:underline">Developing
+ a WinRT component to create a video file using Media Foundation</span></a><a name="_GoBack"></a></span>
+</p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers’ pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers’ frequently asked programming tasks, and allow
+ developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/1fcd6b99-91a5-42df-b608-c11ae0bcd973image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

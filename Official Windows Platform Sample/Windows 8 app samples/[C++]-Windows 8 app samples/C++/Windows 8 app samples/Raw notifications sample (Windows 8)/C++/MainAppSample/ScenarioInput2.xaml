@@ -1,0 +1,41 @@
+<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF   -->
+<!-- ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO -->
+<!-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A      -->
+<!-- PARTICULAR PURPOSE.                                                 -->
+<!--                                                                     -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved            -->
+
+<Page
+	x:Class="RawNotificationsSampleCPP.ScenarioInput2"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	d:DesignWidth="1366"
+	d:DesignHeight="768">
+
+  <StackPanel>
+    <TextBlock TextWrapping="Wrap" Style="{StaticResource DescriptionTextStyle}">
+      In this scenario, the app will be set up to receive raw notifications from the cloud while it is running and visible.
+      <LineBreak/>
+      <LineBreak/>
+      Your app can use raw notifications to communicate between your app and your app service while your app is running, 
+      even if it is not a lock screen app. This allows your app service to send messages to your running app without 
+      maintaining a persistent connection between the app and the service.
+      <LineBreak/>
+      <LineBreak/>
+      When the user starts your app, it should connect directly to its app service to let the service know that the app 
+      is running and ready to receive the raw notifications. The app service then sends raw notifications to the app. 
+      When your app loses visibility, it should tell your app's cloud service that it is no longer available to receive 
+      raw notifications. Note that raw notifications can be received by any running app as long as it has an active 
+      push notification channel.
+    </TextBlock>
+    <TextBlock TextWrapping="Wrap" Style="{StaticResource H2Style}" Margin="0,10,0,0">
+      Open a channel in Scenario 1, and send a raw notification from your server to the app. The content of
+      the notification will be displayed here.
+    </TextBlock>
+    <Button x:Name="Scenario2AddListener" Content="Add event listener" Margin="0,0,10,0" Click="Scenario2AddListener_Click"/>
+    <Button x:Name="Scenario2RemoveListener" Content="Remove event listener" Margin="0,0,10,0" Click="Scenario2RemoveListener_Click"/>
+  </StackPanel>
+</Page>

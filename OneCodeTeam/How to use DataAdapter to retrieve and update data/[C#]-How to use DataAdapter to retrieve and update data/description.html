@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to use DataAdapter to retrieve and update data</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to use DataAdapter to retrieve and update data</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, Data Access, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Update, DataAdapter
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/16/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-use-DataAdapter-to-5e1dd7ba">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to use DataAdapter to retrieve and update the data (CSDataAdapterOperations)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">We can use DataAdapter to retrieve and update the data, and sometimes the features of DataAdapter make some specific operations easier. In this sample, we will demonstrate how to use DataAdapter to retrieve and update the data:</p>
+<p class="MsoNormal" style="line-height:18.0pt"><span style="color:black">1. Retrieve Data</span><span style="color:black">
+</span></p>
+<p class="MsoNormal">a. Use <span class="MsoHyperlink"><span style=""><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.acceptchangesduringfill%28VS.110%29.aspx">DataAdapter.AcceptChangesDuringFill Property</a></span></span>
+ to clone the data in database.</p>
+<p class="MsoNormal">&nbsp;If the property is set as false, AcceptChanges is not called when filling the table, and the newly added rows are treated as inserted rows. So we can use these rows to insert the new rows into the database.</p>
+<p class="MsoNormal" style="line-height:18.0pt"><span class="GramE"><span style="color:black">b</span></span><span style="color:black">. Use
+<a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.tablemappings(v=vs.110).aspx">
+<span class="SpellE">DataAdapter.TableMappings</span> Property</a> to define the mapping between the source table and DataTable.</span><span style="font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;; color:black">
+</span></p>
+<p class="MsoNormal" style="line-height:18.0pt"><span style="color:black">c. Use
+</span><span style="color:black"><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.fillloadoption%28v=vs.110%29.aspx"><span style="">DataAdapter.FillLoadOption Property</span></a></span><span style="color:black"> to determine how
+ the adapter fills the DataTable from the DbDataReader.</span><span style="color:black">
+</span></p>
+<p class="MsoNormal">When we create a DataTable, we can only writ the data from database to the current version or the original version by setting the property as the LoadOption.Upsert or the LoadOption.PreserveChanges.</p>
+<p class="MsoNormal" style="line-height:18.0pt"><span style="color:black">2. Update table</span><span style="font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;; color:black">
+</span></p>
+<p class="MsoNormal" style="line-height:18.0pt"><span style="color:black">Use </span>
+<span style="color:black"><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dbdataadapter.updatebatchsize.aspx"><span style="">DbDataAdapter.UpdateBatchSize Property</span></a></span><span style="color:black"> to perfom
+</span><span style="color:black"><a href="http://msdn.microsoft.com/en-us/library/aadf8fk2%28VS.110%29.aspx"><span style="">batch operations</span></a></span><span style="color:black">.</span><span style="font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;; color:black">
+</span></p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal">Before you run the sample, you need to finish the following steps:</p>
+<p class="MsoNormal">Step1. Please choose one way of the following ways to build the database:</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-left:63.15pt; text-indent:-.25in">
+<span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Attach the database file <span class="SpellE">MySchool.mdf</span> under the folder _<span class="SpellE">External_Dependecies</span> to your SQL Server 2008 database instance.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:63.15pt; text-indent:-.25in">
+<span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Run the <span class="SpellE">MySchool.sql</span> script under the folder _<span class="SpellE">External_Dependecies</span> in your SQL Server 2008 database instance.</p>
+<p class="MsoNormal">Step2. Modify the connection string in the Project Properties-&gt;Settings according-&gt; MySchoolConnectionString to your SQL Server 2008 database instance name.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Press F5 to run the sample, the following is the result.</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="637" height="362" align="middle">
+</span></p>
+<p class="MsoNormal">First, we retrieve the copy of the two tables from the database.</p>
+<p class="MsoNormal"><span style=""><img src="description/773ab7d4-c097-443b-958f-cc3c58d2373bimage.png" alt="" width="637" height="367" align="middle">
+</span></p>
+<p class="MsoNormal">Second, we change the values in the tables.</p>
+<p class="MsoNormal"><span style=""><img src="description/2de53e8f-00c3-43cd-9747-35fa605eb79eimage.png" alt="" width="637" height="244" align="middle">
+</span></p>
+<p class="MsoNormal">And then roll back the changes of Department table and reset the values of the Course table.</p>
+<p class="MsoNormal"><span style=""><img src="description/3d4ce9a3-c0cd-44af-a65b-037457dff648image.png" alt="" width="502" height="198" align="middle">
+</span></p>
+<p class="MsoNormal">At last, we use Batch update to insert the rows into the database and we can find the new courses in database that are the original course's copiers.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+1. Copy the Data from the database.</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+If set the AcceptChangesDuringFill as the false, AcceptChanges will not be called on a DataRow after it is added to the DataTable during any of the Fill operations. We can find the RowState of the rows in the tables are Added instead of Unchanged.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+private static void CopyData(DataSet dataSet,String connectionString,
+&nbsp;&nbsp;&nbsp; SqlCommand selectCommand,DataTableMapping[] tableMappings)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selectCommand.Connection = connection;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.TableMappings.AddRange(tableMappings);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.AcceptChangesDuringFill = false;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Fill(dataSet);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+private static void CopyData(DataSet dataSet,String connectionString,
+&nbsp;&nbsp;&nbsp; SqlCommand selectCommand,DataTableMapping[] tableMappings)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selectCommand.Connection = connection;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.TableMappings.AddRange(tableMappings);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.AcceptChangesDuringFill = false;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Fill(dataSet);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+2. Roll back the changes.</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+RejectChanges will roll back all changes that have been made to the table since it was loaded, or the last time AcceptChanges was called. If we want to copy all the data from the database, we may lose all the data after call the RejectChanges method. The
+<span class="SpellE">ResetDataTable</span> method can just roll back one or more columns of data.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+private static void ResetDataTable(DataTable table, String connectionString,
+&nbsp;&nbsp;&nbsp; SqlCommand selectCommand)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selectCommand.Connection = connection;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The incoming values for this row will be written to the current version of each 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// column. The original version of each column's data will not be changed.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.FillLoadOption = LoadOption.Upsert;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Fill(table);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+private static void ResetDataTable(DataTable table, String connectionString,
+&nbsp;&nbsp;&nbsp; SqlCommand selectCommand)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selectCommand.Connection = connection;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // The incoming values for this row will be written to the current version of each 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// column. The original version of each column's data will not be changed.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.FillLoadOption = LoadOption.Upsert;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Fill(table);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+3. Use Batch update the table.</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+We set the <span class="SpellE">UpdateBatchSize</span> property to set the number of rows that are processed in each round-trip to the server. Set it to 1 disables batch updates, as rows are sent one at a time.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+private static void BatchInsertUpdate(DataTable table, String connectionString, 
+&nbsp;&nbsp;&nbsp;&nbsp;SqlCommand insertCommand, Int32 batchSize)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insertCommand.Connection = connection;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // When setting UpdateBatchSize to a value other than 1, all the commands 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// associated with the SqlDataAdapter have to have their UpdatedRowSource 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// property set to None or OutputParameters. An exception is thrown otherwise.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insertCommand.UpdatedRowSource = UpdateRowSource.None;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.InsertCommand = insertCommand;
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adapter.UpdateBatchSize = batchSize;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Update(table);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Successfully to update the table.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+private static void BatchInsertUpdate(DataTable table, String connectionString, 
+&nbsp;&nbsp;&nbsp;&nbsp;SqlCommand insertCommand, Int32 batchSize)
+{
+&nbsp;&nbsp;&nbsp; using (SqlConnection connection = new SqlConnection(connectionString))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insertCommand.Connection = connection;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // When setting UpdateBatchSize to a value other than 1, all the commands 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// associated with the SqlDataAdapter have to have their UpdatedRowSource 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// property set to None or OutputParameters. An exception is thrown otherwise.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insertCommand.UpdatedRowSource = UpdateRowSource.None;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.Open();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SqlDataAdapter adapter = new SqlDataAdapter())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.InsertCommand = insertCommand;
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adapter.UpdateBatchSize = batchSize;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; adapter.Update(table);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Successfully to update the table.&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.acceptchangesduringfill(v=vs.110).aspx"><span class="SpellE">DataAdapter.AcceptChangesDuringFill</span> Property</a>
+</span></p>
+<p class="MsoNormal" style=""><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.tablemappings(v=vs.110).aspx"><span class="SpellE">DataAdapter.TableMappings</span> Property</a><span class="MsoHyperlink">
+</span></p>
+<p class="MsoNormal" style=""><a href="http://msdn.microsoft.com/en-us/library/system.data.common.dataadapter.fillloadoption(v=vs.110).aspx"><span class="SpellE">DataAdapter.FillLoadOption</span> Property</a></p>
+<p class="MsoNormal" style=""><a href="http://msdn.microsoft.com/en-us/library/aadf8fk2(v=vs.110).aspx">Performing Batch Operations Using
+<span class="SpellE">DataAdapters</span></a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/6b4cf5bf-9f01-459f-b9ba-42bff79b68c6image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

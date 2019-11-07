@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fixed size large file transfer with asynchrony sockets in NET</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Fixed size large file transfer with asynchrony sockets in NET</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Networking, Windows Desktop App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Socket
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Fixed-size-large-file-dfc3f45d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p class="MsoCommentText" style=""><b style=""><span style="font-size:14.0pt; font-family:&quot;Cambria&quot;,&quot;serif&quot;">How to transfer large size file by using asynchronous Sockets API in .NET</span></b><b><span style="font-size:14.0pt; font-family:&quot;Cambria&quot;,&quot;serif&quot;">
+ (CSSocketTransferFile)</span></b></p>
+<p class="MsoNormal" style="margin-top:10.0pt; line-height:115%"><b><span style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">Introduction
+</span></b></p>
+<p class="MsoNormal" style="margin-top:10.0pt; line-height:115%"><span style="font-size:10.0pt; line-height:115%">​</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The sample demonstrates how to transfer large size</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+ file</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">with asynchronous sockets API in .NET</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">. In a typical .NET application, we
+ can use POST methods to transfer files in </span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">a
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">HTTPRequ</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">e</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">st
+ message, but with request body size limit.</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Instead, .NET Socket API provides us an elegant and asynchronous way to transfer large files between the client and server.</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">In this sample, you will see large data are pushed from server to the clients by using BeginSend, BeginReceive methods of the .NET Socket class.</span><span style="color:#1F497D">
+</span></p>
+<p class="MsoNormal" style="margin-top:10.0pt; line-height:115%"><b><span style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">Running the Sample
+</span></b></p>
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style=""><span style="">1．<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>
+</span></span>Open this sample in Microsoft Visual Studio and build the solution.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style="color:black"><span style="">2．<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span></span><span style="color:black">After you successfully build the sample project in Microsoft Visual Studio, you will get Server.exe under the .\CSSocketTransferFile\Server\bin\Debug folder and Client.exe under the .\CSSocketTransferFile\Client\bin\Debug
+ folder. Server.exe </span>is responsible for <span style="color:black">sending files to the client, while Clien</span><span style="color:black">t</span><span style="color:black">.exe will receive the file transferred from the server.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style=""><span style="">3．<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>
+</span></span>Launch Server.exe, <span style="">specify </span>a valid TCP port in the Port TextBox.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style=""><span style="">4．<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>
+</span></span>Click &quot;Browse…&quot; button to select a file to be used to transfer.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style=""><span style="">5．<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>
+</span></span>Click &quot;StartUp&quot; button to let the server listen to the <span style="">
+specified Port.</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="line-height:12.75pt"><span style=""><img src="description/image.png" alt="" width="327" height="290" align="middle">
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.25in; line-height:12.75pt">
+<span style=""><span style="">6．<span style="font:7.0pt &quot;Times New Roman&quot;"> </span>
+</span></span><span style="">When you click &quot;StartUp&quot; button to start the server, the system will show a Windows Security Alert dialog, please select a network and click the &quot;Allow access&quot; button.</span></p>
+<p class="MsoListParagraphCxSpLast" style="line-height:12.75pt"><span style=""><img src="description/f85289e1-65b0-4b56-b95b-5758f6783abfimage.png" alt="" width="539" height="425" align="middle">
+</span></p>
+<p class="MsoNormalCxSpFirst" style="margin-bottom:10.0pt; line-height:115%"><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.75in; text-indent:-.25in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="">7．<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span></span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Launch multiple clients and specify the IP Address (</span><span lang="EN" style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">this
+ example uses the Ipv4 pro</span><span lang="EN" style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">tocol</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">) and port of the server
+ and then click the &quot;Save To…&quot; button to select a directory used to store the file received from the server.</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/e32c3ac0-08d0-4f67-aef5-9d1ca1032331image.png" alt="" width="601" height="268" align="middle">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.75in; text-indent:-.25in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="">8．<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span></span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Click the Connect button to connect to the specified server.
+</span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/b1757935-3554-4c67-a643-f3954dfc0570image.png" alt="" width="336" height="268" align="middle">
+<img src="description/b3728cbd-b8ca-4594-bc37-d78b5d3a5c4bimage.png" alt="" width="336" height="269" align="middle">
+</span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/2c49876d-f608-479f-adf9-132fc510aceeimage.png" alt="" width="325" height="289" align="middle">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.75in; text-indent:-.25in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="">9．<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span></span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Select the clients you want to send the file on the lbxServer and then click the Send button on the Server form to send the file from the server to clients.
+</span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="">&nbsp;</span><span style="">
+<img src="description/00f2991f-c384-4b35-ad7e-fd9a716df0f2image.png" alt="" width="601" height="269" align="middle">
+</span></span></p>
+<p class="MsoNormalCxSpLast" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/848b5304-f0c0-4c85-8a74-c00196d7a5d7image.png" alt="" width="325" height="289" align="middle">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoListParagraph" style="margin-left:.75in; text-indent:-.25in"><span style=""><span style="">10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><span style="">&nbsp;&nbsp;</span>Send Completely.</p>
+<p class="MsoNormalCxSpFirst" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/a2102f47-f798-4438-86c5-02467773b658image.png" alt="" width="301" height="394" align="middle">
+<img src="description/f5333614-a866-4dad-b1da-b6d39d3a2e50image.png" alt="" width="299" height="397" align="middle">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><img src="description/df3cfb0f-b143-4a9f-9a2e-8847c0942e5aimage.png" alt="" width="326" height="289" align="middle">
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormalCxSpMiddle" style="margin-top:0in; margin-right:0in; margin-bottom:10.0pt; margin-left:.5in; line-height:115%">
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style="margin-top:10.0pt; line-height:115%"><b><span style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">Using the Code
+</span></b></p>
+<p class="MsoCommentText" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">1.
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Asynchronous</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">ly</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> communicate with
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Server </span>
+<span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">by </span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">using BeginConnect method of the Socket object.</span></p>
+<p class="MsoNormal" style=""></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+ /// Start connect to the server.
+ /// &lt;/summary&gt;
+ public static void StartClient()
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; connected = false;
+&nbsp;&nbsp;&nbsp;&nbsp; if (IpAddress == null)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(Properties.Resources.InvalidAddressMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;
+&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; IPEndPoint remoteEP = new IPEndPoint(IpAddress, Port);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Use IPv4 as the network protocol,if you want to support IPV6 protocol, you can update here.
+&nbsp;&nbsp;&nbsp;&nbsp; Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Begin to connect the server.
+&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginConnect(remoteEP, new AsyncCallback(ConnectCallback), clientSocket);
+&nbsp;&nbsp;&nbsp;&nbsp; connectDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; if (connected)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Begin to receive the file after connecting to server successfully.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Receive(clientSocket);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; receiveDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Notify the user whether receive the file completely.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new FileReceiveDoneHandler(Client.FileReceiveDone));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Close the socket.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.Shutdown(SocketShutdown.Both);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.Close();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thread.CurrentThread.Abort();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+ /// Start connect to the server.
+ /// &lt;/summary&gt;
+ public static void StartClient()
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; connected = false;
+&nbsp;&nbsp;&nbsp;&nbsp; if (IpAddress == null)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(Properties.Resources.InvalidAddressMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;
+&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; IPEndPoint remoteEP = new IPEndPoint(IpAddress, Port);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Use IPv4 as the network protocol,if you want to support IPV6 protocol, you can update here.
+&nbsp;&nbsp;&nbsp;&nbsp; Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Begin to connect the server.
+&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginConnect(remoteEP, new AsyncCallback(ConnectCallback), clientSocket);
+&nbsp;&nbsp;&nbsp;&nbsp; connectDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; if (connected)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Begin to receive the file after connecting to server successfully.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Receive(clientSocket);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; receiveDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Notify the user whether receive the file completely.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new FileReceiveDoneHandler(Client.FileReceiveDone));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Close the socket.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.Shutdown(SocketShutdown.Both);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.Close();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thread.CurrentThread.Abort();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoCommentText" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">2.
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Asynchronous</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">ly</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> communicate with
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Server </span>
+<span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">by </span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">using BeginReceive method of the Socket object.
+</span><span style=""></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+ /// Receive the file send by the server.
+ /// &lt;/summary&gt;
+ /// &lt;param name=&quot;clientSocket&quot;&gt;&lt;/param&gt;
+ private static void Receive(Socket clientSocket)
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; StateObject state = new StateObject();
+&nbsp;&nbsp;&nbsp;&nbsp; state.WorkSocket = clientSocket;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; ReceiveFileInfo(clientSocket);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; int progressLen = checked((int)(fileLen / StateObject.BufferSize &#43; 1));
+&nbsp;&nbsp;&nbsp;&nbsp; object[] length = new object[1];
+&nbsp;&nbsp;&nbsp;&nbsp; length[0] = progressLen;
+&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new SetProgressLengthHandler(Client.SetProgressLength), length);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Begin to receive the file from the server.
+&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!clientSocket.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HandleDisconnectException();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+ /// Receive the file send by the server.
+ /// &lt;/summary&gt;
+ /// &lt;param name=&quot;clientSocket&quot;&gt;&lt;/param&gt;
+ private static void Receive(Socket clientSocket)
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; StateObject state = new StateObject();
+&nbsp;&nbsp;&nbsp;&nbsp; state.WorkSocket = clientSocket;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; ReceiveFileInfo(clientSocket);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; int progressLen = checked((int)(fileLen / StateObject.BufferSize &#43; 1));
+&nbsp;&nbsp;&nbsp;&nbsp; object[] length = new object[1];
+&nbsp;&nbsp;&nbsp;&nbsp; length[0] = progressLen;
+&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new SetProgressLengthHandler(Client.SetProgressLength), length);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; // Begin to receive the file from the server.
+&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!clientSocket.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HandleDisconnectException();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">3. For the large size file, we can't get the entire file at once. For this case we can
+</span><span lang="EN" style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">iterativ</span><span lang="EN" style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">ely
+</span><span lang="EN" style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">call</span><span lang="EN" style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">the BeginReceive method in the Callback function of the BeginReceive.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+private static void ReceiveCallback(IAsyncResult ar)
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; StateObject state = (StateObject)ar.AsyncState;
+&nbsp;&nbsp;&nbsp;&nbsp; Socket clientSocket = state.WorkSocket;
+&nbsp;&nbsp;&nbsp;&nbsp; BinaryWriter writer;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; int bytesRead = clientSocket.EndReceive(ar);
+&nbsp;&nbsp;&nbsp; &nbsp;if (bytesRead &gt; 0)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //If the file doesn't exist, create a file with the filename got from server. If the file exists, append to the file.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!File.Exists(fileSavePath))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer = new BinaryWriter(File.Open(fileSavePath, FileMode.Create));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer = new BinaryWriter(File.Open(fileSavePath, FileMode.Append));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Write(state.Buffer, 0, bytesRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Flush();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Close();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Notify the progressBar to change the position.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new ProgressChangeHandler(Client.ProgressChanged));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Recursively receive the rest file.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!clientSocket.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(Properties.Resources.DisconnectMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Signal if all the file received.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; receiveDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+<pre id="codePreview" class="csharp">
+private static void ReceiveCallback(IAsyncResult ar)
+ {
+&nbsp;&nbsp;&nbsp;&nbsp; StateObject state = (StateObject)ar.AsyncState;
+&nbsp;&nbsp;&nbsp;&nbsp; Socket clientSocket = state.WorkSocket;
+&nbsp;&nbsp;&nbsp;&nbsp; BinaryWriter writer;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; int bytesRead = clientSocket.EndReceive(ar);
+&nbsp;&nbsp;&nbsp; &nbsp;if (bytesRead &gt; 0)
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //If the file doesn't exist, create a file with the filename got from server. If the file exists, append to the file.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!File.Exists(fileSavePath))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer = new BinaryWriter(File.Open(fileSavePath, FileMode.Create));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer = new BinaryWriter(File.Open(fileSavePath, FileMode.Append));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Write(state.Buffer, 0, bytesRead);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Flush();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Close();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Notify the progressBar to change the position.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Client.BeginInvoke(new ProgressChangeHandler(Client.ProgressChanged));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Recursively receive the rest file.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clientSocket.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!clientSocket.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(Properties.Resources.DisconnectMsg);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Signal if all the file received.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; receiveDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style="text-autospace:none"><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">4.
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Asynchronous</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">ly</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> communicate with
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Client </span>
+<span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">by </span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">using BeginAccept method of the Socket object.</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span></p>
+<p class="MsoNormal" style="text-autospace:none"><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+/// Server start to listen the client connection.
+/// &lt;/summary&gt;
+public static void StartListening()
+{
+&nbsp;&nbsp;&nbsp; IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Any, port);
+
+
+&nbsp;&nbsp;&nbsp; // Use IPv4 as the network protocol,if you want to support IPV6 protocol, you can update here.
+&nbsp;&nbsp;&nbsp; Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+
+&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listener.Bind(localEndPoint);
+&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; catch (SocketException ex)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(ex.Message);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;
+&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp; listener.Listen(c_clientSockets);
+
+
+&nbsp;&nbsp;&nbsp; //loop listening the client.
+&nbsp;&nbsp;&nbsp; while (true)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allDone.Reset();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listener.BeginAccept(new AsyncCallback(AcceptCallback), listener);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allDone.WaitOne();
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+/// Server start to listen the client connection.
+/// &lt;/summary&gt;
+public static void StartListening()
+{
+&nbsp;&nbsp;&nbsp; IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Any, port);
+
+
+&nbsp;&nbsp;&nbsp; // Use IPv4 as the network protocol,if you want to support IPV6 protocol, you can update here.
+&nbsp;&nbsp;&nbsp; Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+
+&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listener.Bind(localEndPoint);
+&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; catch (SocketException ex)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(ex.Message);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;
+&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp; listener.Listen(c_clientSockets);
+
+
+&nbsp;&nbsp;&nbsp; //loop listening the client.
+&nbsp;&nbsp;&nbsp; while (true)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allDone.Reset();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; listener.BeginAccept(new AsyncCallback(AcceptCallback), listener);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allDone.WaitOne();
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="text-autospace:none"><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style="text-autospace:none"><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style="text-autospace:none"><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="">&nbsp;</span>5.
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Asynchronous</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">ly</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> communicate with
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Client </span>
+<span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">by </span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">using
+</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">BeginSend</span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> method of the Socket object. For the large sized file, we can't read it to the memory at once, so we
+ can </span><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Blocking read file and send to the clients.
+</span></p>
+<p class="MsoNormal" style=""><span style="font-size:9.5pt; font-family:Consolas"></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+// Blocking read file and send to the clients asynchronously.
+using (FileStream stream = new FileStream(FileToSend, FileMode.Open))
+{
+&nbsp;&nbsp;&nbsp; do
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Reset();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stream.Flush();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readBytes = stream.Read(buffer,0,c_bufferSize);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (ClientsToSend.Count == 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (KeyValuePair&lt;Socket,IPEndPoint&gt; kvp in ClientsToSend)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket handler = kvp.Key;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPEndPoint ipEndPoint = kvp.Value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handler.BeginSend(buffer, 0, readBytes, SocketFlags.None, new AsyncCallback(SendCallback), handler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!handler.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closedSockets.Add(handler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal&#43;&#43;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removedItems.Add(ipEndPoint.ToString());
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Signal if all the clients are disconnected.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (signal &gt;= ClientsToSend.Count)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Remove the clients which are disconnected.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RemoveClient(closedSockets);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RemoveClientItem(removedItems);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closedSockets.Clear();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removedItems.Clear();
+&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; while (readBytes &gt; 0);
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+// Blocking read file and send to the clients asynchronously.
+using (FileStream stream = new FileStream(FileToSend, FileMode.Open))
+{
+&nbsp;&nbsp;&nbsp; do
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Reset();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stream.Flush();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readBytes = stream.Read(buffer,0,c_bufferSize);
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (ClientsToSend.Count == 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (KeyValuePair&lt;Socket,IPEndPoint&gt; kvp in ClientsToSend)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket handler = kvp.Key;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPEndPoint ipEndPoint = kvp.Value;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handler.BeginSend(buffer, 0, readBytes, SocketFlags.None, new AsyncCallback(SendCallback), handler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!handler.Connected)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closedSockets.Add(handler);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signal&#43;&#43;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removedItems.Add(ipEndPoint.ToString());
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Signal if all the clients are disconnected.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (signal &gt;= ClientsToSend.Count)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.Set();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendDone.WaitOne();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Remove the clients which are disconnected.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RemoveClient(closedSockets);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RemoveClientItem(removedItems);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; closedSockets.Clear();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removedItems.Clear();
+&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; while (readBytes &gt; 0);
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"></span></p>
+<p class="MsoNormal" style="margin-top:10.0pt; line-height:115%"><b><span style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">More Information
+</span></b></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/system.net.sockets.socket.aspx">Socket</a></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://www.albahari.com/threading">Threading in C#</a></p>
+<p class="MsoNormal" style=""><span style=""></span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/adaa87bc-3ace-4da7-8848-07ab8276df38image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

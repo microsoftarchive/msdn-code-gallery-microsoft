@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Use SharePoint 2013 translation services from Word</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Use SharePoint 2013 translation services from Word</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, Javascript, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint, Office 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Authentication
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/19/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Use-698b9cef">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<table id="bottomTable" cellspacing="0" cellpadding="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left">&nbsp;</td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><span id="nsrTitle">SharePoint 2013: Use SharePoint 2013 translation services from Word</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<div>
+<p>This sample app demonstrates how to use JavaScript and C# in a Word 2013 task pane app to connect to and authenticate a SharePoint Online site by using OAuth. The sample then shows how to use the SharePoint 2013 Translation Services to translate selected
+ portions of a Word document.</p>
+</div>
+<div>
+<p><strong>Last modified: </strong>March 04, 2014</p>
+<p><strong>In this article</strong> <br>
+<a href="#sectionSection0">Description</a> <br>
+<a href="#sectionSection1">Prerequisites</a> <br>
+<a href="#sectionSection2">Key components of the sample</a> <br>
+<a href="#sectionSection3">Configure the sample</a> <br>
+<a href="#sectionSection4">Build the sample</a> <br>
+<a href="#sectionSection5">Run and test the sample</a> <br>
+<a href="#sectionSection6">Troubleshooting</a> <br>
+<a href="#sectionSection7">Change log</a> <br>
+<a href="#sectionSection8">Related content</a></p>
+</div>
+<h1>Description</h1>
+<div id="sectionSection0">
+<p><span>Provided by:</span> <a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=c558e0ed-382f-4008-8002-4634a9167b99" >
+Martin Harwar</a>, <a href="http://point8020.com/Default.aspx" >Point8020</a></p>
+<p>The app for Office includes a task pane app. It also includes a Word document with sample content to be translated, named
+<strong>SampleDocument.docx</strong>.</p>
+<p>The SampleDocument.docx document is set as the <strong><span class="keyword">StartAction</span></strong> property of the app for Office. The document uses some simple text that will be translated. Figure 1 shows how the document and the app will appear
+ after you launch the solution.</p>
+<strong>
+<div class="caption">Figure 1. View of the app on starting the solution</div>
+</strong><br>
+<img src="description/image.png" alt="">
+<p>The sample demonstrates how to use JavaScript to retrieve the selected text from the document. Then, the sample shows how to authenticate against a SharePoint site, and finally how to translate the selected text into a language chosen by the user.</p>
+</div>
+<h1>Prerequisites</h1>
+<div id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>Visual Studio 2012</p>
+</li><li>
+<p>Office Developer Tools for Visual Studio 2012</p>
+</li><li>
+<p>Word 2013</p>
+</li><li>
+<p>Access to an Office 365 Developer Site</p>
+</li></ul>
+</div>
+<h1>Key components of the sample</h1>
+<div id="sectionSection2">
+<p>The sample app contains the following:</p>
+<ul>
+<li>
+<p>The <strong>WD_SharePointTranslation_cs</strong> project, which contains the following:</p>
+<ul>
+<li>
+<p>The WD_SharePointTranslation_cs.xml manifest file.</p>
+</li><li>
+<p>The SampleDocument.docx document, which is prepopulated with some sample text for translation.</p>
+</li></ul>
+</li><li>
+<p>The <strong>WD_SharePointTranslation_csWeb</strong> project, which contains many template files. However, the files that have been developed as part of this sample solution are the following:</p>
+<ul>
+<li>
+<p>OAuth.aspx (located in the Pages folder)</p>
+</li><li>
+<p>TextTranslator.aspx (located in the Pages folder)</p>
+</li><li>
+<p>OAuthHelper.js (located in the Scripts folder)</p>
+</li><li>
+<p>RedirectAccept.js (located in the Scripts folder)</p>
+</li><li>
+<p>WD_SharePointTranslation_cs.js (located in the Scripts folder)</p>
+</li><li>
+<p>TokenCache.cs (located in the root folder)</p>
+</li><li>
+<p>TokenHelper.cs (located in the root folder)</p>
+</li><li>
+<p>Web.config (located in the root folder)</p>
+</li><li>
+<p>Web.debug.config (located in the root folder)</p>
+</li></ul>
+</li></ul>
+<p>All other files are automatically provided by the Visual Studio project template for apps for Office, and they have not been modified in the development of this sample.</p>
+</div>
+<h1>Configure the sample</h1>
+<div id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<p>Ensure that your Office 365 Developer Site has a shared document library with a title of Documents. (You should have one by default, but if you have ever deleted it you will need to re-create it).</p>
+</li><li>
+<p>Browse to the <span>/_layouts/15/appregnew.aspx</span> page your Office 365 site (for example
+<span>https://&lt;YourSiteName&gt;.sharepoint.com/_layouts/15/appregnew.aspx</span>)</p>
+</li><li>
+<p>Click both of the <strong><span class="ui">Generate</span></strong> buttons for
+<strong><span class="ui">App Id</span></strong> and <strong><span class="ui">App Secret</span></strong>, and enter the URL of your site as the
+<strong><span class="ui">App Domain</span></strong>. Then fill in the other text boxes as shown in Figure 2.</p>
+<strong>
+<div class="caption">Figure 2. App registration page</div>
+</strong><br>
+<img src="description/c18845f8-1802-4f89-80e8-9bd890ba4954image.png" alt=""> </li><li>
+<p>Click <strong><span class="ui">Create</span></strong>. Your page will resemble the screen shot in Figure 3, although with different field values.</p>
+<strong>
+<div class="caption">Figure 3. App ID and App Secret needed for your project</div>
+</strong><br>
+<img src="description/2c700a22-73a0-4ab9-887e-34b8445a7818image.png" alt=""> </li><li>
+<p>Leave the page open so that you can refer to the data, and switch back to Visual Studio.</p>
+</li><li>
+<p>Double-click the <strong><span class="ui">WD_SharePointTranslation_cs</span></strong> item as shown in Figure 4, and then add your App Domain value. (Note that Figure 4 shows an App Domain of
+<strong><span class="ui">point80201.sharepoint.com</span></strong>; however, you should use the URL of your Office 365 Developer Site).</p>
+<strong>
+<div class="caption">Figure 4. AppDomain dialog box</div>
+</strong><br>
+<img src="description/5bf875a4-6da5-407a-a0a2-991f813610d6image.png" alt=""> </li><li>
+<p>Edit Web.config and Web.debug.config files so that they contain the <strong><span class="keyword">ClientId</span></strong> and
+<strong><span class="keyword">ClientSecret</span></strong> values that you generated from SharePoint.</p>
+</li><li>
+<p>When you are sure all the values have been configured correctly, save all files in Visual Studio and then close the web browser.</p>
+</li></ol>
+<p>No other configuration is required.</p>
+</div>
+<h1>Build the sample</h1>
+<div id="sectionSection4">
+<p>To build the sample, press CTRL&#43;SHIFT&#43;B.</p>
+</div>
+<h1>Run and test the sample</h1>
+<div id="sectionSection5">
+<p>To run and test the sample, press F5.</p>
+<p>The following images show examples of the workbook at various stages of the process. In Figure 5, the user has selected the desired text in the Word document and selected the Hindi language. The URL to the Office 365 Developer Site has been entered in the
+ text box.</p>
+<strong>
+<div class="caption">Figure 5. Translation data entered and language selected</div>
+</strong><br>
+<img src="description/611f7f7a-a5f9-413e-9aa9-c6e45aa03f84image.png" alt="">
+<p>The original document is named SharePointSourceDocument.docx and has been saved to the library. Additionally, a document with the language code has been created. In this case, the document is called hi_Document.docx because we chose the Hindi language.</p>
+</div>
+<h1>Troubleshooting</h1>
+<div id="sectionSection6">
+<p>Ensure that you have SharePoint Server 2013 configured to host apps (with a Developer Site collection already created), or that you have signed up for an Office 365 Developer Site configured to host apps.</p>
+</div>
+<h1>Change log</h1>
+<div id="sectionSection7">
+<p>First release: January 2013.</p>
+</div>
+<h1>Related content</h1>
+<div id="sectionSection8">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj220082.aspx" >Overview of apps for Office</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp179930.aspx" >Apps for SharePoint overview</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/fp179924.aspx" >Sign up for an Office 365 Developer Site</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp161179.aspx" >How to: Set up an environment for developing apps for SharePoint on Office 365</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp142379.aspx" >How to: Create a basic SharePoint-hosted app</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj163145.aspx" >Machine Translation Services in SharePoint 2013</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

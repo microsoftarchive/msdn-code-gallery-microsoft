@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1c1e217c-1475-400e-91a7-b2be1bd6efa0Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>VSSDK IDE Sample: Running Document Table (RDT) Event Explorer</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>VSSDK IDE Sample: Running Document Table (RDT) Event Explorer</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            VSX, Visual Studio Shell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VSSDK-IDE-Sample-Running-3ee41cbe">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-size:large">Introduction</span></h1>
+<p>This sample demonstrates how to create an explorer that logs Running Document Table (RDT) events. Selecting an event from the grid displays its properties in the Properties Window.</p>
+<h1><br>
+<span style="font-size:large">Goals</span></h1>
+<ul>
+<li>Provides a tool to explore the RDT that follows recommended design patterns </li><li>Exposes properties in the Properties window based on the selected item </li><li>RDT events are captured on a grid </li><li>Logged events are filtered by Tools/Options page options </li><li>The user controls the display via a toolbar </li><li>Tool window and dialog page share a singleton instance of options via automation
+</li></ul>
+<p>This sample has a package (RdtEventExplorerPkg) and a tool window (RDTEventWindowPane). The tool window hosts a UserControl (RdtEventControl). The options (Options) are set by a dialog page (RdtEventOptionsDialog) and filter the RDT events (derived from
+ GenericEvent).</p>
+<p>The explorer window hosts a toolbar and displays all unfiltered RDT events in a grid. Selecting an event in the grid displays its properties in the Properties window.</p>
+<h1><br>
+<span style="font-size:large">To start the sample</span></h1>
+<ol>
+<li>Open the RdtEventExplorer.sln solution. </li><li>Press F5 to build the sample, register it in the experimental instance, and launch Visual Studio from the experimental instance.
+</li></ol>
+<h1><br>
+<span style="font-size:large">To see the sample's functionality:</span></h1>
+<ul>
+<li>On the <strong>View </strong>menu, point to <strong>Other Windows</strong> and then click
+<strong>RdtEventExplorer</strong>. The <strong>Rdt Event Explorer </strong>tool window appears.
+</li><li>On the <strong>Tools </strong>menu, click <strong>Options </strong>and then navigate to the
+<strong>RDT Event Explorer </strong>page. </li><li>Set <strong>OptBeforeFirstDocumentLock </strong>to False, and then click <strong>
+OK</strong>. </li><li>Open a new or existing Visual Studio project. The RDT events show up in the RDT Event Explorer grid. No OptBeforeFirstDocumentLock events appear.
+</li><li>Press F4 to open the <strong>Properties </strong>window. </li><li>Select an event in the grid. The properties of that event appear in the <strong>
+Properties </strong>window. </li><li>On the toolbar in the RDT Event Explorer, click <strong>Clear</strong>. Events are cleared from the grid.
+</li><li>To open a MyC file...
+<ul>
+<li>On the <strong>File </strong>menu, select <strong>Open File</strong>. </li><li>Find the tflow.myc file and click <strong>OK</strong>. You now have an open code window in which you can see a MyC file. All the identifiers are colored as you described on the Language Tokens page of the Language Service Wizard.
+</li></ul>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

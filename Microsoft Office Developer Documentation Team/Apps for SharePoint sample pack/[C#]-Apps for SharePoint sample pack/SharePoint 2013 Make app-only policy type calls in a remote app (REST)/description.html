@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Make app-only policy type calls in a remote app (REST)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Make app-only policy type calls in a remote app (REST)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Authentication, Cloud
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Make-app-28141ce6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">The code that uses the REST API is located in the Home.aspx.cs file of the AppOnlyRESTWeb project. The sample demonstrates how to use app-only policy and how to request an app-only policy access token. It reads and displays
+ OAuth tokens. It also reads data that conforms with the OData protocol from the REST endpoints where the basic SharePoint entities, such as users and site information, are exposed.</span></p>
+<p><span style="font-size:small">This app requests the ability to use the app-only policy by specifying the policy as a property on the
+<strong>AppPermissionRequests</strong> collection in the app manifest. For example:</span></p>
+<p><span style="font-size:small">&lt;AppPermissionRequests AllowAppOnlyPolicy=&quot;true&quot;&gt;</span><br>
+<span style="font-size:small">&nbsp;&nbsp;&nbsp;&nbsp; &hellip;</span><br>
+<span style="font-size:small">&nbsp; &lt;/AppPermissionRequests&gt;</span></p>
+<p><span style="font-size:small">If this app-only policy is not specified in the app manifest file, using the app-only policy is not allowed.</span></p>
+<p style="padding-left:30px"><strong><span style="font-size:small">Note</span></strong><br>
+<span style="font-size:small">For more information about the SharePoint REST APIs, see
+<a href="http://msdn.microsoft.com/en-us/library/d4b5c277-ed50-420c-8a9b-860342284b72">
+Programming using the SharePoint 2013 REST service</a>. For more information about working with JSON, Atom, and OData, see
+<a href="http://www.odata.org/developers/protocols/json-format">OData: JavaScript Object Notation (JSON) Format</a> and
+<a href="http://www.odata.org/developers/protocols/atom-format">OData: AtomPub Format</a>.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">You must know how to create a provider-hosted app for SharePoint. For more information about how to create a provider-hosted app for SharePoint, see
+<a href="http://msdn.microsoft.com/en-us/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b">
+How to: Create a basic provider-hosted app for SharePoint</a>.</span> </li><li><span style="font-size:small">You must understand how an app-only policy type is different from an app and user policy type. For more information about app-only policy, see
+<a href="http://msdn.microsoft.com/en-us/library/124879c7-a746-4c10-96a7-da76ad5327f0">
+App authorization policy types</a>.</span> </li><li><span style="font-size:small">A SharePoint 2013 development environment that is configured for app isolation and OAuth.</span>
+</li><li><span style="font-size:small">Visual Studio 2012 and SharePoint development tools in Visual Studio 2012.</span>
+</li><li><span style="font-size:small">Basic familiarity with REST web services.</span>
+</li></ul>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The sample app contains the following:</span></p>
+<ul>
+<li><span style="font-size:small">The AppOnlyREST project, which contains the AppManifest.xml file.</span>
+</li><li><span style="font-size:small">The AppOnlyRESTWeb project, which contains:</span>
+<ul>
+<li><span style="font-size:small">The Home.aspx file, which contains the HTML and ASP.NET controls for the user interface of the app.</span>
+</li><li><span style="font-size:small">The Home.aspx.cs file, which contains the C# code that uses the client object model (CSOM) to read and write data.</span>
+</li><li><span style="font-size:small">The web.config file.</span> </li></ul>
+</li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">To configure the basic data operations sample app:</span></p>
+<ul>
+<li><span style="font-size:small">Update the <strong>SiteUrl</strong> property of the solution with the URL of the home page of your SharePoint 2013 site.</span>
+</li></ul>
+<h1>Build the sample</h1>
+<p><span style="font-size:small">Press <strong>F5</strong> to build and deploy the app.</span></p>
+<h1>Run and test the sample</h1>
+<ol>
+<li><span style="font-size:small">Press <strong>F5</strong> to build and deploy the app.</span>
+</li><li><span style="font-size:small">On the consent page, choose Trust It to grant permissions to the app.</span>
+</li></ol>
+<h1>Example</h1>
+<p><span style="font-size:small">Figure 1 shows the sample URL you see when you launch the app.</span></p>
+<p><strong><span style="font-size:small">Figure 1. Start page URL of the app after you launch it</span></strong></p>
+<p><span style="font-size:small"><img id="60395" src="description/fig1sm.gif" alt="" width="650" height="19"></span></p>
+<p><span style="font-size:small">Figure 2 shows an example of the kinds of information that this sample app reads and displays.</span></p>
+<p><strong><span style="font-size:small">Figure 2. View of the populated page</span></strong></p>
+<p><span style="font-size:small"><img id="60396" src="description/fig1.gif" alt="" width="260" height="674"></span></p>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how to solve them.</span></p>
+<table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:212px">
+<tbody>
+<tr style="background-color:#a9a9a9">
+<th align="left" scope="col"><strong><span style="font-size:small">Problem </span>
+</strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Solution</span></strong></th>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">Visual Studio does not open the browser after you press the F5 key.</span></td>
+<td><span style="font-size:small">Set the app for SharePoint project as the startup project.</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">HTTP error 405 <strong>Method not allowed</strong>.</span></td>
+<td><span style="font-size:small">Locate the applicationhost.config file in <em>%userprofile%</em>\Documents\IISExpress\config.</span>
+<p><span style="font-size:small">Locate the handler entry for <strong>StaticFile</strong>, and add the verbs
+<strong>GET</strong>, <strong>HEAD</strong>, <strong>POST</strong>, <strong>DEBUG</strong>, and
+<strong>TRACE</strong>.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+<br>
+<span style="font-size:small">&nbsp;</span><br>
+<br>
+<br>
+</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Change log</h1>
+<p><span style="font-size:small">First version: July 16, 2012</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b" href="http://msdn.microsoft.com/en-us/library/3038dd73-41ee-436f-8c78-ef8e6869bf7b">How to: Create a basic provider-hosted app for SharePoint</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4" href="http://msdn.microsoft.com/en-us/library/5f7a8440-3c09-4cf8-83ec-c236bfa2d6c4">App permissions in SharePoint 2013</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/526c8c4a-5cbb-4efc-87d9-23ac73655cf4" href="http://msdn.microsoft.com/en-us/library/526c8c4a-5cbb-4efc-87d9-23ac73655cf4">OAuth authentication and authorization flow for cloud-hosted
+ apps</a></span> </li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/cf2bdd88-4b04-47f6-a876-322f734a6af2" href="http://msdn.microsoft.com/en-us/library/cf2bdd88-4b04-47f6-a876-322f734a6af2">Tips and FAQs: OAuth and remote apps for SharePoint
+ 2013</a></span> </li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/124879c7-a746-4c10-96a7-da76ad5327f0" href="http://msdn.microsoft.com/en-us/library/124879c7-a746-4c10-96a7-da76ad5327f0">App authorization policy types</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/f86e2695-4d7a-4fc5-bc23-689de96c4b06" href="http://msdn.microsoft.com/en-us/library/f86e2695-4d7a-4fc5-bc23-689de96c4b06">SharePoint 2013 development overview</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/d07e0a13-1e74-4128-857a-513dedbfef33" href="http://msdn.microsoft.com/en-us/library/d07e0a13-1e74-4128-857a-513dedbfef33">Get started developing apps for SharePoint</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/1b992485-6efe-4ea4-a18c-221689b0b66f" href="http://msdn.microsoft.com/en-us/library/1b992485-6efe-4ea4-a18c-221689b0b66f">How to: Create a basic SharePoint-hosted app</a></span>
+</li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/bde5647a-fff1-4b51-b67b-2139de79ce4a" href="http://msdn.microsoft.com/en-us/library/bde5647a-fff1-4b51-b67b-2139de79ce4a">Authorization and authentication for apps in SharePoint
+ 2013</a></span> </li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/ae96572b-8f06-4fd3-854f-fc312f7f2d88" href="http://msdn.microsoft.com/en-us/library/ae96572b-8f06-4fd3-854f-fc312f7f2d88">Critical aspects of the app for SharePoint 2013 architecture
+ and development landscape</a></span> </li><li><span style="font-size:small"><a title="http://msdn.microsoft.com/en-us/library/0e9efadb-aaf2-4c0d-afd5-d6cf25c4e7a8" href="http://msdn.microsoft.com/en-us/library/0e9efadb-aaf2-4c0d-afd5-d6cf25c4e7a8">Apps for SharePoint compared with SharePoint solutions</a></span>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

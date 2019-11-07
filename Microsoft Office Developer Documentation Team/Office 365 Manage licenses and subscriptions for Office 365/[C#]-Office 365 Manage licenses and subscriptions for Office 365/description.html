@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Office 365: Manage licenses and subscriptions for Office 365</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Office 365: Manage licenses and subscriptions for Office 365</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office 365
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            User Accounts, Windows PowerShell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Office-365-Manage-licenses-fb2c6413">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header"><span class="label">Summary:</span> This sample demonstrates how to use Windows PowerShell from a C# application to manage licenses for users of Office 365 applications. The sample requires you to have a user administrator account in an
+ Office 365 organization and to install the Microsoft Online Services Sign-In Assistant and the Microsoft Online Services Module for Windows PowerShell.</div>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<p>&nbsp;</p>
+</div>
+<h1 class="heading">Description of the sample</h1>
+<div class="section" id="sectionSection0">
+<p>This is a Visual C# sample application using Windows Presentation Foundation (WPF) to demonstrate how to use Windows PowerShell cmdlets called from managed code to make administrative changes to the license assignments for users in an Office 365 organization.</p>
+</div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>The following are required to be configured or installed on the computer you will use to build and run the sample:</p>
+<ul>
+<li>
+<p>Office 365 Enterprise subscription.</p>
+</li><li>
+<p>User account credentials that have at least User Management administrator privileges in the Office 365 organization.</p>
+</li><li>
+<p>Windows 7 or Windows Server 2008 R2 with Windows PowerShell installed.</p>
+</li><li>
+<p>Visual Studio 2012 including components for Windows Forms applications installed.</p>
+</li><li>
+<p>.NET Framework 3.5.1 installed and enabled in Visual Studio 2012.</p>
+</li><li>
+<p><a href="http://www.microsoft.com/en-in/download/details.aspx?id=28177" >Microsoft Online Services Sign-In Assistant</a> installed.</p>
+</li><li>
+<p><a href="http://go.microsoft.com/fwlink/p/?LinkId=281794" >Microsoft Online Services Module for Windows PowerShell</a> installed and configured as described in the following paragraphs.</p>
+</li></ul>
+<p>To run the sample, you must enable remote control of Office 365 by performing the following steps.</p>
+<h3 class="procedureSubHeading">Enable Office 365 remote control</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>On the desktop, locate the shortcut for the Microsoft Online Services Module for Windows PowerShell.</p>
+</li><li>
+<p>Right-click the shortcut and choose <span class="ui">Run as Administrator</span>.</p>
+</li><li>
+<p>Click <span class="ui">Yes</span> if the <span class="ui">User Account Control</span> dialog box opens.</p>
+</li><li>
+<p>In Windows PowerShell, run the command <span class="ui">Get-ExecutionPolicy</span>.</p>
+</li><li>
+<p>If the command returned <span class="ui">RemoteSigned</span>, your computer is already configured properly to manage Office 365 remotely by using Windows PowerShell.</p>
+</li><li>
+<p>If the command returned is not <span class="ui">RemoteSigned</span> (typically
+<span class="ui">Restricted</span>), run the command <span class="ui">Set-ExecutionPolicy RemoteSigned</span>, and then enter
+<span class="ui">Y</span> when prompted.</p>
+</li><li>
+<p>In Windows PowerShell, run the command <span class="ui">Get-ExecutionPolicy</span> and verify it returns
+<span class="ui">RemoteSigned</span>.</p>
+</li><li>
+<p>Close Windows PowerShell.</p>
+</li></ol>
+</div>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<p>The sample is a Windows Forms application that contains the following:</p>
+<ul>
+<li>
+<p>A main application window that displays a grid listing Office 365 single sign-on domains associated with the organization.</p>
+</li><li>
+<p>A dialog box to enter the administrator logon credentials.</p>
+</li><li>
+<p>A dialog box to assign an application license to a user.</p>
+</li><li>
+<p>A dialog box to remove an application license from a user.</p>
+</li></ul>
+</div>
+<h1 class="heading">Open and build the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Before using the sample, you should visit the Office 365 administration portal and verify the administrator account's privileges. That account must have at least User Management administrator privileges in the organization.</p>
+<ol>
+<li>
+<p>Open Visual Studio 2012.</p>
+</li><li>
+<p>Click <span class="ui">File</span>, point to <span class="ui">Open</span>, and then click
+<span class="ui">Project/Solution</span>.</p>
+</li><li>
+<p>Navigate to the directory into which you extracted the sample files.</p>
+</li><li>
+<p>In the <span class="ui">O365_ManageLicense_cs</span> folder, select <span class="ui">
+O365_ManageLicense_cs.sln</span>, and click <span class="ui">OK</span>.</p>
+</li></ol>
+<p>The sample builds and Solution Explorer opens, as shown in the following figure.</p>
+<img id="76558" src="description/O365PSManageLicenses-001a.png" alt="O365 Manage Licenses in VS2013 solution explorer" width="367" height="295"></div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection4">
+<ol>
+<li>
+<p>In Visual Studio click <span class="ui">Run</span>, or press F5, to build and start debugging the sample.</p>
+</li><li>
+<p>In the <span class="ui">Enter Credentials</span> dialog box, shown in the following figure, enter the user name and password for the administrator account, and click
+<span class="ui">Login</span>.</p>
+<p><img id="76559" src="description/O365PSManageLicenses-002.png" alt="O365 Manage Licenses Enter Credentials dialog" width="323" height="158"></p>
+<p>&nbsp;</p>
+</li><li>
+<p>The main window opens in full-screen mode after you enter the credentials, as shown in the following figure. (License assignments are obscured in the figure.)</p>
+<p><img id="76560" src="description/O365PSManageLicenses-003.png" alt="O365 Manage Licenses main window" width="798" height="356"></p>
+<p>&nbsp;</p>
+</li><li>
+<p>To assign a license to a user, click <span class="ui">Assign License</span>. The
+<span class="ui">Assign License</span> dialog box opens, as shown in the following figure. Select a user and a license to apply, and click
+<span class="ui">Assign License</span>.</p>
+<p><img id="76561" src="description/O365PSManageLicenses-004.png" alt="O365 Managed Licenses Assign license dialog" width="395" height="174"></p>
+<p>&nbsp;</p>
+</li><li>
+<p>To remove a license from a user, click <span class="ui">Remove License</span>. The
+<span class="ui">Remove License</span> dialog box opens, as shown in the following figure. Select a user and a license to remove, and click
+<span class="ui">Remove License.</span></p>
+<p><img id="76562" src="description/O365PSManageLicenses-005.png" alt="O365 Manage Licenses Remove License dialog" width="395" height="174"></p>
+<p>&nbsp;</p>
+</li><li>
+<p>To close the sample, click the <span class="ui">Close</span> button in the upper-right corner of the window.</p>
+</li></ol>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection5">
+<p>The following table lists the common configuration and environment errors that help troubleshoot issues preventing the sample from building or deploying successfully.</p>
+<div class="caption"></div>
+<div class="tableSection">
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Problem</p>
+</th>
+<th>
+<p>Solution</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>The <span class="ui">Login</span> dialog box reports &quot;Unable to authenticate your credentials.&quot;</p>
+</td>
+<td>
+<p>Make sure that your user name is in the format: &lt;<em>username</em>&gt;@&lt;<em>domain</em>&gt; and that your password is correct.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Windows PowerShell or the application reports &quot;The term 'Connect-MsolService' is not recognized as the name of a cmdlet, function, script file, or operable program&hellip;.&quot;</p>
+</td>
+<td>
+<p>Your user account doesn't have permission to run Windows PowerShell, or you have not installed the Microsoft Online Services Module for Windows PowerShell, or the execution policy is not set to
+<span class="ui">RemoteSigned</span> as described in the &quot;Prerequisites&quot; section.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection6">
+<div class="caption"></div>
+<div class="tableSection">
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Version</p>
+</th>
+<th>
+<p>Date</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>First version</p>
+</td>
+<td>
+<p>February 28, 2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection7">
+<p><a href="http://msdn.microsoft.com/en-us/library/dd835506(v=vs.85).aspx" >Windows PowerShell on MSDN</a></p>
+<p><a href="http://onlinehelp.microsoft.com/en-us/office365-enterprises/hh125002.aspx" >Windows PowerShell cmdlets for Office 365</a></p>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

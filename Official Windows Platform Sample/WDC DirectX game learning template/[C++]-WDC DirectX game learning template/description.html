@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/b79636be-b088-48b5-8a8d-c21645d26d2fCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WDC DirectX game learning template</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>WDC DirectX game learning template</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Direct2D, Games, DirectX, Direct3D, DirectWrite, XAudio, XInput
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Games, game apps, game app, DirectX game development for the Windows Store
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/7/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/WDC-DirectX-game-learning-7cf9bdce">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>The Windows Developer Content DirectX game learning template sample extends the basic DirectX app template with features that help you understand DirectX and C&#43;&#43; as a game development environment. Note that the&nbsp;<a href="http://msdn.microsoft.com/library/windows/apps/dn481529.aspx">Getting
+ Started guide</a>&nbsp;has more info on using this template.</p>
+<p>The template adds the following:</p>
+<ul>
+<li>InputManager: Consolidated input from touch, mouse, keyboard, and Xbox controllers.&nbsp;
+</li><li>Virtual analog controls: A basic virtual controller with tracked-touch analog control and digital buttons.&nbsp;
+</li><li>OverlayManager: Add and manage multiple Direct2D overlays for a Direct3D scene.
+</li><li>SoundPlayer: Add rudimentary sound effects and play music as background audio. Updates to Direct3D resource management.
+</li></ul>
+<p>Here's how to get started with the WDC DirectX simple game template:</p>
+<ul>
+<li>Download and extract the ZIP file. Then install by double-clicking on the VSIX.
+</li><li>Verify the installation by launching Microsoft Visual Studio&nbsp;2013. Go to FILE &gt; New &gt; Project and select &quot;DirectX game&quot; from under Templates &gt; Visual C&#43;&#43; in the New Project dialog.<img id="102630" src="description/new_wdc_game_template_project.png" alt="" width="694" height="494">
+</li><li>Create a project, then build and run the solution. Use BUILD &gt; Build Solution and, after the build completes, DEBUG &gt; Start Debugging. Or press F7 to build, then F5 after the build completes.
+</li><li>Test input one of several ways: run the project on a touch-capable device, plug in an Xbox controller, or use the arrow keys and left mouse button.
+</li></ul>
+<p>Here's a brief description of the template components.</p>
+<h1>DirectX device resources</h1>
+<p>The DeviceResources class wraps DirectX device creation. It creates and configures a device and context, a swap chain, render targets, and so on. It also handles screen rotation and device resets. Study this class to learn how DirectX 11 works and how it
+ manages the device; you&rsquo;ll need to revise this code if (for example) you add deferred rendering, or change the swap chain format.</p>
+<p>To use DeviceResources, initialize it and store it in a shared pointer. Send copies of the pointer to rendering classes; they can call methods to get the device, context, drawing buffers, and so on. These classes will create resources on the GPU - register
+ them to get device reset events from DeviceResources so they can reload if needed. The only extension to this class is support for hardware overlays.</p>
+<h1>Multiple input sources</h1>
+<p>InputManager uses Windows APIs to get player input from touch, mouse/keyboard, and Xbox controllers. It processes input from all these sources and returns state for game actions, such as &quot;move&quot; (analog data) and &quot;jump&rdquo; (digital button state). You can
+ modify PLAYER_ACTION_TYPES in InputManager.h to start adding actions for your game, and revise the code as needed to assign buttons and keys to those actions.</p>
+<p>Process user input from InputManager by calling GetPlayersActions during your game loop&rsquo;s update phase. This tells InputManager to resolve input events and return a set of player actions. Main.cpp shows how to get the data; for processing code, see
+ Main and the virtual controller. You should only call GetPlayersActions once per frame; store the data and use that copy for the duration of the frame.</p>
+<h1>Direct2D overlays</h1>
+<p>A sample virtual analog controller is included that recognizes touch input and displays using an overlay. Control areas are defined with touch regions. The regions are defined in Main.cpp and send to both the InputManager and the virtual controller overlay.
+ Examine this code and learn how to add touch regions appropriate to your game.</p>
+<p>The OverlayManager class holds a std::vector of Overlay class objects. It forwards update, render, and resource method calls to each of the included overlays. Create your own overlay by inheriting the Overlay base class provided with the template, then adding
+ your overlay to the vector.</p>
+<h1>Play a sound effect</h1>
+<p>The SoundPlayer class is minimal. It exists to let you experiment with audio right away, and to demonstrate setting up XAudio2 in a Windows Store game. This class is not a full audio engine.</p>
+<p>Main.cpp shows how to set up the SoundPlayer and use it to play media files. Use the PlaySound function by providing a path to the sound effect file; it will play the sound effect, categorizing it for Windows as a game sound effect. Use PlayMusic, again
+ providing a filename, and it will play. Note that music is categorized for Windows as background audio.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

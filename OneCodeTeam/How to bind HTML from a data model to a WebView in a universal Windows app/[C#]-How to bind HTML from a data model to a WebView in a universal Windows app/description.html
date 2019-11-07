@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to bind HTML from a data model to a WebView in a universal Windows app</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to bind HTML from a data model to a WebView in a universal Windows app</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows, Windows 8, Windows Phone 8, Windows Store app Development, Windows Phone Development, Windows 8.1, Windows Phone 8.1
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            WebView, universal app
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Phone, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-bind-HTML-from-a-7a6ff47c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span lang="EN"><span class="TextRun SCX96579621"><span class="NormalTextRun SCX96579621">How to bind HTML from a data model to a&nbsp;</span><span class="SpellingError SCX96579621">WebView</span></span><span class="TextRun SCX96579621">&nbsp;in&nbsp;</span><span class="TextRun SCX96579621">a
+ universal Windows app</span></span></h1>
+<h2><span>Introduction </span></h2>
+<p class="MsoNormal">​It's been said that if you aren't data binding you aren't really using Xaml, and a frequent topic on the forums is how to bind HTML from a data model to a WebView.</p>
+<p class="MsoNormal">The problem: we bind data to properties, but the WebView doesn't have a property to bind to. An app sets the WebView's HTML by calling the NavigateToString method.</p>
+<p class="MsoNormal">The solution: create our own property to bind to.</p>
+<p class="MsoNormal">NOTE: This code sample is based on following blog:</p>
+<p class="MsoNormal"><span lang="EN"><a href="http://blogs.msdn.com/b/wsdevsol/archive/2013/09/26/binding-html-to-a-webview-with-attached-properties.aspx">http://blogs.msdn.com/b/wsdevsol/archive/2013/09/26/binding-html-to-a-webview-with-attached-properties.aspx</a>
+</span></p>
+<h2><span>Running the Sample </span></h2>
+<p class="MsoNormal"><span><span class="TextRun SCX26119909">Build the sample in Visual Studio 201</span><span class="TextRun SCX26119909">3</span><span class="TextRun SCX26119909">, and then run it.</span><span class="EOP SCX26119909">&nbsp;</span></span></p>
+<h2><span>Using the Code </span></h2>
+<p class="MsoNormal"><span lang="EN">Windows.UI.Xaml has the concept of attached properties which let us create a stand-alone property which can &quot;attach&quot; to any object, such as our WebView. We can create an attached property &quot;HTML&quot; that when changed calls
+ NavigateToString. We can then bind it to HTML data in our data model. First create a new class to hold the attached property, then create the attached property inside it.
+</span></p>
+<p class="MsoNormal"><span lang="EN">Visual Studio includes a snippet to help with this: type &quot;propa&quot;&lt;tab&gt;&lt;tab&gt; and the basic skeleton for an attached property will be inserted. Change the return type to &quot;string&quot; and the name to something appropriate.
+ I named my property &quot;HTML&quot;. The snippet will take care of synchronizing your change to the whole property. Set the ownerType in the RegisterAttached call to the name of your class.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">class MyExtensions 
+{ 
+&nbsp;&nbsp;&nbsp;&nbsp;public static string GetHTML(DependencyObject obj) 
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (string)obj.GetValue(HTMLProperty); 
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+
+
+&nbsp;&nbsp;&nbsp; public static void SetHTML(DependencyObject obj, string value) 
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.SetValue(HTMLProperty, value); 
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+
+
+&nbsp;&nbsp;&nbsp; // Using a DependencyProperty as the backing store for HTML.&nbsp; This enables animation, styling, binding, etc... 
+&nbsp;&nbsp;&nbsp;&nbsp;public static readonly DependencyProperty HTMLProperty = 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DependencyProperty.RegisterAttached(&quot;HTML&quot;, typeof(string), typeof(MyExtensions), new PropertyMetadata(0));&nbsp;&nbsp;&nbsp; 
+}
+
+</pre>
+<pre id="codePreview" class="csharp">class MyExtensions 
+{ 
+&nbsp;&nbsp;&nbsp;&nbsp;public static string GetHTML(DependencyObject obj) 
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (string)obj.GetValue(HTMLProperty); 
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+
+
+&nbsp;&nbsp;&nbsp; public static void SetHTML(DependencyObject obj, string value) 
+&nbsp;&nbsp;&nbsp;&nbsp;{ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.SetValue(HTMLProperty, value); 
+&nbsp;&nbsp;&nbsp;&nbsp;} 
+
+
+&nbsp;&nbsp;&nbsp; // Using a DependencyProperty as the backing store for HTML.&nbsp; This enables animation, styling, binding, etc... 
+&nbsp;&nbsp;&nbsp;&nbsp;public static readonly DependencyProperty HTMLProperty = 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DependencyProperty.RegisterAttached(&quot;HTML&quot;, typeof(string), typeof(MyExtensions), new PropertyMetadata(0));&nbsp;&nbsp;&nbsp; 
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">At this point we have a property which can be set to a string, but it isn't connected to the WebView's document. To do that we need to add a change handler to the property's PropertyMetaData:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public static readonly DependencyProperty HTMLProperty = 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DependencyProperty.RegisterAttached(&quot;HTML&quot;, typeof(string), typeof(MyExtensions), new PropertyMetadata(&quot;&quot;,new PropertyChangedCallback(OnHTMLChanged)));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private static void OnHTMLChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebView wv = d as WebView; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (wv != null) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+wv.NavigateToString((string)e.NewValue); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+</pre>
+<pre id="codePreview" class="csharp">public static readonly DependencyProperty HTMLProperty = 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DependencyProperty.RegisterAttached(&quot;HTML&quot;, typeof(string), typeof(MyExtensions), new PropertyMetadata(&quot;&quot;,new PropertyChangedCallback(OnHTMLChanged)));
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private static void OnHTMLChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebView wv = d as WebView; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (wv != null) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+wv.NavigateToString((string)e.NewValue); 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">Now all we need to do is to reference the attached property in our Xaml to bind the WebView to HTML from an &quot;HTMLText&quot; property in our data model:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;WebView local:MyExtensions.HTML=&quot;{Binding HTMLText}&quot;&gt;&lt;/WebView&gt;
+
+</pre>
+<pre id="codePreview" class="xaml">&lt;WebView local:MyExtensions.HTML=&quot;{Binding HTMLText}&quot;&gt;&lt;/WebView&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">The same technique can be used to enable binding RTF into a
+<span class="SpellE">RichEditBox</span> and for other controls which ones sets by method rather than properties.
+</span></p>
+<h2><span>More Information </span></h2>
+<p class="MsoNormal"><span lang="EN">For more on Dependency Properties and Attached Properties see:<br>
+<a title="Dependency properties overview" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh700353.aspx">Dependency properties overview</a><br>
+<a title="Attached properties overview" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh758282.aspx">Attached properties overview<br>
+</a><a title="Custom attached properties" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh965327.aspx">Custom attached properties</a></span><span>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=B84BDA93DB9A27FA6A79ADF8C850FB65" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=E081ED65358ED02E5393FE74C20E5B67" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ASP.NET Menu control demo (CSASPNETMenu)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ASP.NET Menu control demo (CSASPNETMenu)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Menu
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/11/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/CSASPNETMenu-30b04c86">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><a name="OLE_LINK2"></a><a name="OLE_LINK1"><span>ASP.NET Menu Control (</span></a>CSASPNETMenu)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to bind the ASP.NET Menu Control to the Database. All the contents of the Menu control are generated dynamically, if we want to add some new navigation items into the website, we only need to insert some data
+ to the database instead of modifying the source code.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Please follow these demonstration steps below.</p>
+<p class="MsoNormal">Step 1:&nbsp;Open the CSASPNETMenu.sln. Expand the CSASPNETMenu web application and press Ctrl &#43; F5 to show the CSASPNETMenu.aspx.</p>
+<p class="MsoNormal">Step 2: We will see a Menu control on the page, you can click the Menu items and jump to the Test.aspx page.</p>
+<p class="MsoNormal"><span><span>&nbsp;</span> <img src="description/image.png" alt="" width="533" height="372" align="middle">
+</span></p>
+<p class="MsoNormal">Step 3: If you want to change the url string variables to your website��s pages, you need to modify the DataTable object in the code-bebind page (CSASPNETMenu.aspx.cs). Perhaps we need a table in DataBase for managing menu items content
+ and navigator url, you can also create a database file to constitute a DataTable like this sample.<span>&nbsp;
+</span></p>
+<p class="MsoNormal">Step 4: Validation finished.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Code Logical:</p>
+<p class="MsoNormal">Step 1. Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2008. Name it as &quot; CSASPNETMenu &quot;. The project includes two web form pages for demonstrating how to bind Menu control with a DataTable variable.</p>
+<p class="MsoNormal">Step 2. Add two web form pages in the root directory of the application, name them as ��CSASPNETMenu.aspx��, ��Test.aspx��. The CSASPNETMenu page is used to show Menu control and redirect to the Test page by clicking the items of Menu.</p>
+<p class="MsoNormal">Step 3. Drag and Drop a Menu control to the CSASPNETMenu page, you can set the styles of the Menu to make it looks better. Then you can begin to write C# code for generating DataTable variable and bind it to the Menu control, in this
+ sample, we create a GetData() method to generate data.</p>
+<h3>The following code is used to generate a DataTable variable and fill it with some default value:<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></h3>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public DataSet GetData()
+{
+    // In order to test, we use the memory tables as the datasource.
+    DataTable mainTB = new DataTable();
+    DataColumn mainIdCol = new DataColumn(&quot;mainId&quot;);
+    DataColumn mainNameCol = new DataColumn(&quot;mainName&quot;);
+    DataColumn mainUrlCol = new DataColumn(&quot;mainUrl&quot;);
+    mainTB.Columns.Add(mainIdCol);
+    mainTB.Columns.Add(mainNameCol);
+    mainTB.Columns.Add(mainUrlCol);
+
+
+    DataTable childTB = new DataTable();
+    DataColumn childIdCol = new DataColumn(&quot;childId&quot;);
+    DataColumn childNameCol = new DataColumn(&quot;childName&quot;);
+
+
+    // The MainId column of the child table is the foreign key to the main table.
+    DataColumn childMainIdCol = new DataColumn(&quot;MainId&quot;);         
+    DataColumn childUrlCol = new DataColumn(&quot;childUrl&quot;);
+
+
+    childTB.Columns.Add(childIdCol);
+    childTB.Columns.Add(childNameCol);
+    childTB.Columns.Add(childMainIdCol);
+    childTB.Columns.Add(childUrlCol);
+
+
+
+
+    // Insert some test records to the main table.
+    DataRow dr = mainTB.NewRow();
+    dr[0] = &quot;1&quot;;
+    dr[1] = &quot;Home&quot;;
+    dr[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr);
+    DataRow dr1 = mainTB.NewRow();
+    dr1[0] = &quot;2&quot;;
+    dr1[1] = &quot;Articles&quot;;
+    dr1[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr1);
+    DataRow dr2 = mainTB.NewRow();
+    dr2[0] = &quot;3&quot;;
+    dr2[1] = &quot;Help&quot;;
+    dr2[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr2);
+    DataRow dr3 = mainTB.NewRow();
+    dr3[0] = &quot;4&quot;;
+    dr3[1] = &quot;DownLoad&quot;;
+    dr3[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr3);
+
+
+
+
+    // Insert some test records to the child table
+    DataRow dr5 = childTB.NewRow();
+    dr5[0] = &quot;1&quot;;
+    dr5[1] = &quot;ASP.NET&quot;;
+    dr5[2] = &quot;2&quot;;
+    dr5[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr5);
+    DataRow dr6 = childTB.NewRow();
+    dr6[0] = &quot;2&quot;;
+    dr6[1] = &quot;SQL Server&quot;;
+    dr6[2] = &quot;2&quot;;
+    dr6[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr6);
+    DataRow dr7 = childTB.NewRow();
+    dr7[0] = &quot;3&quot;;
+    dr7[1] = &quot;JavaScript&quot;;
+    dr7[2] = &quot;2&quot;;
+    dr7[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr7);
+
+
+    // Use the DataSet to contain that two tables.
+    DataSet ds = new DataSet();          
+    ds.Tables.Add(mainTB);
+    ds.Tables.Add(childTB);
+
+
+    // Build the relation between the main table and the child table.
+    ds.Relations.Add(&quot;Child&quot;, ds.Tables[0].Columns[&quot;mainId&quot;], ds.Tables[1].Columns[&quot;MainId&quot;]);
+   
+
+
+    return ds;
+}  
+
+</pre>
+<pre class="csharp" id="codePreview">public DataSet GetData()
+{
+    // In order to test, we use the memory tables as the datasource.
+    DataTable mainTB = new DataTable();
+    DataColumn mainIdCol = new DataColumn(&quot;mainId&quot;);
+    DataColumn mainNameCol = new DataColumn(&quot;mainName&quot;);
+    DataColumn mainUrlCol = new DataColumn(&quot;mainUrl&quot;);
+    mainTB.Columns.Add(mainIdCol);
+    mainTB.Columns.Add(mainNameCol);
+    mainTB.Columns.Add(mainUrlCol);
+
+
+    DataTable childTB = new DataTable();
+    DataColumn childIdCol = new DataColumn(&quot;childId&quot;);
+    DataColumn childNameCol = new DataColumn(&quot;childName&quot;);
+
+
+    // The MainId column of the child table is the foreign key to the main table.
+    DataColumn childMainIdCol = new DataColumn(&quot;MainId&quot;);         
+    DataColumn childUrlCol = new DataColumn(&quot;childUrl&quot;);
+
+
+    childTB.Columns.Add(childIdCol);
+    childTB.Columns.Add(childNameCol);
+    childTB.Columns.Add(childMainIdCol);
+    childTB.Columns.Add(childUrlCol);
+
+
+
+
+    // Insert some test records to the main table.
+    DataRow dr = mainTB.NewRow();
+    dr[0] = &quot;1&quot;;
+    dr[1] = &quot;Home&quot;;
+    dr[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr);
+    DataRow dr1 = mainTB.NewRow();
+    dr1[0] = &quot;2&quot;;
+    dr1[1] = &quot;Articles&quot;;
+    dr1[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr1);
+    DataRow dr2 = mainTB.NewRow();
+    dr2[0] = &quot;3&quot;;
+    dr2[1] = &quot;Help&quot;;
+    dr2[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr2);
+    DataRow dr3 = mainTB.NewRow();
+    dr3[0] = &quot;4&quot;;
+    dr3[1] = &quot;DownLoad&quot;;
+    dr3[2] = &quot;Test.aspx&quot;;
+    mainTB.Rows.Add(dr3);
+
+
+
+
+    // Insert some test records to the child table
+    DataRow dr5 = childTB.NewRow();
+    dr5[0] = &quot;1&quot;;
+    dr5[1] = &quot;ASP.NET&quot;;
+    dr5[2] = &quot;2&quot;;
+    dr5[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr5);
+    DataRow dr6 = childTB.NewRow();
+    dr6[0] = &quot;2&quot;;
+    dr6[1] = &quot;SQL Server&quot;;
+    dr6[2] = &quot;2&quot;;
+    dr6[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr6);
+    DataRow dr7 = childTB.NewRow();
+    dr7[0] = &quot;3&quot;;
+    dr7[1] = &quot;JavaScript&quot;;
+    dr7[2] = &quot;2&quot;;
+    dr7[3] = &quot;Test.aspx&quot;;
+    childTB.Rows.Add(dr7);
+
+
+    // Use the DataSet to contain that two tables.
+    DataSet ds = new DataSet();          
+    ds.Tables.Add(mainTB);
+    ds.Tables.Add(childTB);
+
+
+    // Build the relation between the main table and the child table.
+    ds.Relations.Add(&quot;Child&quot;, ds.Tables[0].Columns[&quot;mainId&quot;], ds.Tables[1].Columns[&quot;MainId&quot;]);
+   
+
+
+    return ds;
+}  
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Step 4. Then we need to create a GenerateMenuItem method for binding DataTable to the Menu control, and we need only execute this method when CSASPMETMenu page is loaded for the first&nbsp; time.</p>
+<h3>The following code is used to bind DataTable to the Menu control when page is loaded for the first time.</h3>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">protected void Page_Load(object sender, EventArgs e)
+{
+    if (!IsPostBack)
+    {
+        GenerateMenuItem();
+    }
+}
+
+
+public void GenerateMenuItem()
+{
+    // Get the data from database.
+    DataSet ds = GetData();
+
+
+    foreach (DataRow mainRow in ds.Tables[0].Rows)
+    {
+        // Load the records from the main table to the menu control.
+        MenuItem masterItem = new MenuItem(mainRow[&quot;mainName&quot;].ToString());
+        masterItem.NavigateUrl = mainRow[&quot;mainUrl&quot;].ToString();
+        Menu1.Items.Add(masterItem);
+
+
+        foreach (DataRow childRow in mainRow.GetChildRows(&quot;Child&quot;))
+        {
+            // According to the relation of the main table and the child table, load the data from the child table.
+            MenuItem childItem = new MenuItem((string)childRow[&quot;childName&quot;]);
+            childItem.NavigateUrl = childRow[&quot;childUrl&quot;].ToString();
+            masterItem.ChildItems.Add(childItem);
+        }
+    }
+}
+
+</pre>
+<pre class="csharp" id="codePreview">protected void Page_Load(object sender, EventArgs e)
+{
+    if (!IsPostBack)
+    {
+        GenerateMenuItem();
+    }
+}
+
+
+public void GenerateMenuItem()
+{
+    // Get the data from database.
+    DataSet ds = GetData();
+
+
+    foreach (DataRow mainRow in ds.Tables[0].Rows)
+    {
+        // Load the records from the main table to the menu control.
+        MenuItem masterItem = new MenuItem(mainRow[&quot;mainName&quot;].ToString());
+        masterItem.NavigateUrl = mainRow[&quot;mainUrl&quot;].ToString();
+        Menu1.Items.Add(masterItem);
+
+
+        foreach (DataRow childRow in mainRow.GetChildRows(&quot;Child&quot;))
+        {
+            // According to the relation of the main table and the child table, load the data from the child table.
+            MenuItem childItem = new MenuItem((string)childRow[&quot;childName&quot;]);
+            childItem.NavigateUrl = childRow[&quot;childUrl&quot;].ToString();
+            masterItem.ChildItems.Add(childItem);
+        }
+    }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span class="GramE">Step 5.</span> Build the application and you can debug it.</p>
+<p class="MsoNormal">&nbsp;</p>
+<h2>More Information</h2>
+<p class="MsoListParagraph"><span style="font-family:Symbol"><span>��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ecs0x9w5(VS.80).aspx">ASP.NET Menu Control Overview</a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/5f06bec5-8129-41d7-ad8d-08f8b335f1d1image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

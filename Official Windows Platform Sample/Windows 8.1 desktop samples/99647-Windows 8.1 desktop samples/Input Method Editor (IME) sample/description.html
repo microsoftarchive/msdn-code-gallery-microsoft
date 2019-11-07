@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;v=DCE5263ED5A648DE1D49E7B7A5BA8262" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:sprite,1:LinkList,1:SelectLocaleFromPopUp;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=65AE3624E736B57101EBD2B6AEBD2F3F" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Input Method Editor (IME) sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/8475969b-c781-4413-b417-e85ec31f1cd6Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/windowsdesktop/content/windowsdesktop/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/windowsdesktop/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Input Method Editor (IME) sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            input
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/24/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/windowsdesktop/Input-Method-Editor-IME-b1610980">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample shows how to create an Input Method Editor (IME) that works in Windows Store apps and Windows&nbsp;8.1 desktop apps.</p>
+<p>&nbsp;</p>
+<p>The sample IME has the following features:</p>
+<ul>
+<li>Uses the Text Services Framework (TSF) </li><li>Runs in base trust </li><li>Compatible with Windows Store apps </li><li>Compatible with Systray and desktop </li><li>Interacts with touch keyboard </li><li>Integrates with Search contract </li><li>Interacts with light-dismiss </li></ul>
+<p>&nbsp;</p>
+<p>The IME sample uses the following code to obtain the parent window:</p>
+<p><code>pView-&gt;GetWnd(&amp;parentWndHandle);</code></p>
+<p>This implementation works only for Windows Store apps that use the built-in edit controls. This implementation won't work if the app uses the custom edit control from the subset of Text Service Framework (TSF) APIs available in the Windows Runtime. To ensure
+ that the IME gets the proper parent window, so that the owned window is set correctly and works for desktop and Windows Store apps, replace the previous code with the following code:</p>
+<p><code>if (FAILED(pView-&gt;GetWnd(&amp;parentWndHandle)) || (parentWndHandle == nullptr)) { parentWndHandle = GetFocus(); }</code></p>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2013, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301697">
+Visual Studio&nbsp;2013</a>.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><a href="http://go.microsoft.com/fwlink/?LinkId=262401">Guidelines and checklist for IME development</a>
+</dt></dl>
+<h3>Related technologies</h3>
+<a href="http://go.microsoft.com/fwlink/?LinkId=262402">Text Services Framework</a>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<ol>
+<li>
+<p>Start Visual Studio and select <strong>File</strong> &gt; <strong>Open</strong> &gt;
+<strong>Project/Solution</strong>.</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file titled SampleIME.sln.</p>
+</li><li>
+<p>Press F7 (or F6 for Visual Studio&nbsp;2013) or use <strong>Build</strong> &gt;
+<strong>Build Solution</strong> to build the sample.</p>
+</li></ol>
+<h3>Run the sample</h3>
+<p>If you build the IME sample by using Visual Studio&nbsp;2013, create an installation experience for the IME by using a third-party installer that supports Windows&nbsp;8.1, like InstallShield from Flexera Software.</p>
+<p>&nbsp;</p>
+<p>The following steps show how to use InstallShield to create a setup project for your IME DLL.</p>
+<ul>
+<li>Install Visual Studio&nbsp;2013. </li><li>Start Visual Studio&nbsp;2013. </li><li>On the <strong>File</strong> menu, point to <strong>New</strong> and select <strong>
+Project</strong>. The <strong>New Project</strong> dialog opens. </li><li>In the left pane, navigate to <strong>Templates &gt; Other Project Types &gt; Setup and Deployment</strong>, click
+<strong>Enable InstallShield Limited Edition</strong>, and click <strong>OK</strong>. Follow the installation instructions.
+</li><li>Restart Visual Studio&nbsp;2013. </li><li>Open the IME solution (.sln) file. </li><li>Press F6 to build the solution. </li><li>In Solution Explorer, right-click the solution, point to <strong>Add</strong>, and select
+<strong>New Project</strong>. The <strong>Add New Project</strong> dialog opens. </li><li>In the left tree view control, navigate to <strong>Templates &gt; Other Project Types &gt; InstallShield Limited Edition</strong>.
+</li><li>In the center window, click <strong>InstallShield Limited Edition Project</strong>.
+</li><li>In the <strong>Name</strong> text box, type &quot;SetupIME&quot; and click <strong>OK</strong>.
+</li><li>In the <strong>Project Assistant</strong> dialog, click <strong>Application Information</strong>.
+</li><li>Fill in your company name and the other fields. </li><li>Click <strong>Application Files</strong>. </li><li>In the left pane, right-click the <strong>[INSTALLDIR]</strong> folder, and select
+<strong>New Folder</strong>. Name the folder &quot;Plugins&quot;. </li><li>Click <strong>Add Files</strong>. Navigate to SampleIME.dll, which is in the C&#43;&#43;\Debug folder, and add it to the
+<strong>Plugins</strong> folder. Repeat this step for the IME dictionary, which is in the C&#43;&#43;\SampleIME\Dictionary folder.
+</li><li>Right-click the IME DLL and select <strong>Properties</strong>. The <strong>Properties</strong> dialog opens.
+</li><li>In the <strong>Properties</strong> dialog, click the <strong>COM &amp; .NET Settings</strong> tab.
+</li><li>Under <strong>Registration Type</strong>, select <strong>Self-registration</strong> and click
+<strong>OK</strong>. </li><li>Build the solution. The IME DLL is built, and InstallShield creates a setup.exe file that enables users to install your IME on Windows&nbsp;8.1. The setup.exe file is located in the SetupIME\SetupIME\Express\DVD-5\DiskImages\DISK1 folder.
+</li></ul>
+<p>&nbsp;</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

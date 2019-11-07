@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.MediaCapture.JS" Version="1.0.0.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  <Properties>
+    <DisplayName>MediaCapture JS sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>images\storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-US" />
+  </Resources>
+  <Applications>
+    <Application Id="Microsoft.SDKSamples.MediaCapture.JS" StartPage="default.html">
+      <VisualElements DisplayName="MediaCapture JS sample" Logo="images\squareTile-sdk.png" SmallLogo="images\smallTile-sdk.png" Description="MediaCapture JS sample" ForegroundText="light" BackgroundColor="#00b2f0" ToastCapable="false">
+        <DefaultTile ShortName="MC JS" ShowName="allLogos" />
+        <SplashScreen BackgroundColor="#00b2f0" Image="images\splash-sdk.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="musicLibrary" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="videosLibrary" />
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>GrayscaleTransform.dll</Path>
+        <ActivatableClass ActivatableClassId="GrayscaleTransform.GrayscaleEffect" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

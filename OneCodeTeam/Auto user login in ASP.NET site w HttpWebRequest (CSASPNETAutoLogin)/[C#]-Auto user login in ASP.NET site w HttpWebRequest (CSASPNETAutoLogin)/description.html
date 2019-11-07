@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Auto user login in ASP.NET site w/ HttpWebRequest (CSASPNETAutoLogin)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Auto user login in ASP.NET site w/ HttpWebRequest (CSASPNETAutoLogin)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            HttpWebRequest, Auto login
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETAutoLogin-25cfae2b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>CSASPNETAutoLogin Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The project illustrates how to log a user into site using HttpWebRequest Class <br>
+without filling username and password box.<br>
+<br>
+</p>
+<h3>Demo</h3>
+<p style="font-family:Courier New"><br>
+Click the CSASPNETAutoLogin.sln directly and open the CSASPNETAutoLogin website <br>
+to test the page directly.<br>
+<br>
+If you want to have a further test, please follow the demonstration steps <br>
+below.<br>
+<br>
+Step 1: In the Login.aspx page, you fill your username and password,and click<br>
+Login button. the page will prompt that you have login this page, and display your
+<br>
+name and password,it proves that you have login the page successfully, it is <br>
+the normal method that we login the site.<br>
+<br>
+Step 2: In the AutoLogin.aspx page,you also fill your username and password, and<br>
+click the AutoLogin button,the page will display the username and password.<br>
+But in the codebehind, we take the httpwebrequest to submit the current<br>
+usename and password to the login.aspx instead of the current page. it shows<br>
+the same information with the login.aspx page, it proves that we submit the <br>
+current username and password of autologin.aspx page to the login.aspx successfully.<br>
+<br>
+</p>
+<h3>Code Logical:</h3>
+<p style="font-family:Courier New"><br>
+Step 1. we request the login.aspx by using HttpWebRequest get method and<br>
+get the return login page html code. <br>
+<br>
+Step 2. We substring the login page html code to get the __VIEWSTATE,<br>
+__EVENTVALIDATION parameters.<br>
+<br>
+Step 3. We concat the __VIEWSTATE,__EVENTVALIDATION,Username, password and <br>
+loginbutton to the whole string and convert it to byte array.<br>
+<br>
+Step 4. Submit the request data and get the return data and display it.<br>
+<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: HttpWebRequest and HttpWebResponse Class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx</a><br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.httpwebresponse.aspx">http://msdn.microsoft.com/en-us/library/system.net.httpwebresponse.aspx</a><br>
+<br>
+MSDN: <a target="_blank" href="&lt;a http://msdn.microsoft.com/en-us/library/debx8sh9.aspx">
+http://msdn.microsoft.com/en-us/library/debx8sh9.aspx</a>'&gt;<a  href="http://msdn.microsoft.com/en-us/library/debx8sh9.aspx">http://msdn.microsoft.com/en-us/library/debx8sh9.aspx</a><br>
+<a target="_blank" href="&lt;a http://msdn.microsoft.com/en-us/library/debx8sh9.aspx">http://msdn.microsoft.com/en-us/library/debx8sh9.aspx</a>'&gt;<a  href="http://msdn.microsoft.com/en-us/library/debx8sh9.aspx">http://msdn.microsoft.com/en-us/library/debx8sh9.aspx</a><br>
+<br>
+Automatic Login into a website in C#.net<br>
+<a  href="http://forums.asp.net/t/1507150.aspx">http://forums.asp.net/t/1507150.aspx</a><br>
+<br>
+How to use HttpWebRequest to send POST request to another web server<br>
+<a  href="http://www.netomatix.com/httppostdata.aspx">http://www.netomatix.com/httppostdata.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

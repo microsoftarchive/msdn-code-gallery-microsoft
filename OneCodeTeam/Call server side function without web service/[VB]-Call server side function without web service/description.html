@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Call server side function without web service</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Call server side function without web service</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            ASP.NET
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Call-server-side-function-69b95af2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Call server side function without web service (VBASPNETStaticCodeByPageMethod)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal"><span style="">This sample code will demonstrate how to call server side function without web service. ASP.NET Ajax extensions came with full support for script services. But sometimes you don't want to build a web service for a small
+ piece of code or for basic functionality. This is why the PageMethods feature was created. The PageMethods feature enables the using of code-behind page methods on the clientside. The PageMethods can only be added to the page itself so don't try to add them
+ to user controls or custom controls - it won't work.</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style="">Please follow the steps below. </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style="">Step 1: Open the VBASPNETStaticCodeByPageMethod.sln file. </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style="">Step 2: Press &quot;Ctrl&#43;F5&quot; to view Default page in browser.<br>
+<span style=""><img src="description/image.png" alt="" width="559" height="108" align="middle">
+</span></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style="">Type a name and then click the SayHello button you will see as shown below:<br>
+<span style=""><img src="description/f822700a-c140-4251-ba0a-07c0c4ef217bimage.png" alt="" width="514" height="271" align="middle">
+</span><br style="">
+<br style="">
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style=""><br>
+Step 3: Click the getData button and then you will see shown below: </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style=""><img src="description/213307c7-337f-489e-ad2f-db5aa6b71d23image.png" alt="" width="577" height="271" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal">
+<span style=""><br>
+Step 4: Validation is completed.</span></p>
+<p class="MsoNormal"></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;</span>Code Logical: <span style="">
+&nbsp;&nbsp;&nbsp; </span></span></p>
+<p class="MsoNormal"><span style="">Step 1: Create a VB &quot;ASP.NET Web Application&quot; in Visual Studio 2012 or Visual Web Developer and name it as &quot;VBASPNETStaticCodeByPageMethod&quot;.
+</span></p>
+<p class="MsoNormal"><span style="">Step 2: Add a Jscript File to project by followed the steps below:
+<br>
+Right-click at the project file &gt;&gt;Add&gt;&gt;New Item…&gt;&gt;Web&gt;&gt;Jscript File
+</span></p>
+<p class="MsoNormal"><span style="">Have selected the Jscript template, then type script as &quot;name&quot; and then click Add button.<span style="">&nbsp;
+</span>After that, </span><span style="color:#222222">paste this segment code to it.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">js</span>
+<pre class="hidden">
+// Gets the session state value.
+function getSayHello(src) {
+    var name = document.getElementById(src.id).value;
+    PageMethods.sayHello(name,
+        OnSucceeded);
+}
+
+
+// Callback function invoked on successful 
+// completion of the page method.
+function OnSucceeded(result) {   
+       alert(result);
+    
+}
+
+</pre>
+<pre id="codePreview" class="js">
+// Gets the session state value.
+function getSayHello(src) {
+    var name = document.getElementById(src.id).value;
+    PageMethods.sayHello(name,
+        OnSucceeded);
+}
+
+
+// Callback function invoked on successful 
+// completion of the page method.
+function OnSucceeded(result) {   
+       alert(result);
+    
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">Then add script reference of the script.js </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+&lt;asp:ScriptManager ID=&quot;ScriptManager1&quot; runat=&quot;server&quot; EnablePageMethods=&quot;true&quot;&gt;
+      &lt;Scripts&gt;
+          &lt;asp:ScriptReference Path=&quot;script.js&quot; /&gt;
+      &lt;/Scripts&gt;
+  &lt;/asp:ScriptManager&gt;
+
+</pre>
+<pre id="codePreview" class="html">
+&lt;asp:ScriptManager ID=&quot;ScriptManager1&quot; runat=&quot;server&quot; EnablePageMethods=&quot;true&quot;&gt;
+      &lt;Scripts&gt;
+          &lt;asp:ScriptReference Path=&quot;script.js&quot; /&gt;
+      &lt;/Scripts&gt;
+  &lt;/asp:ScriptManager&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">Create a static method at code-behind. </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+&lt;WebMethod()&gt; _
+Public Shared Function sayHello(ByVal name As String) As String
+        Return &quot;Hello,&quot; & name
+    End Function
+
+</pre>
+<pre id="codePreview" class="vb">
+&lt;WebMethod()&gt; _
+Public Shared Function sayHello(ByVal name As String) As String
+        Return &quot;Hello,&quot; & name
+    End Function
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><b style=""><span style="">[Note]</span></b><span style="">
+<span style=""><span style="">&nbsp;</span>We need</span></span><span style=""> to</span><span style=""> add the System.Web.Services.WebMethod at top of the method.<br>
+<span style="">&nbsp;</span>Then add a button at the page as below: </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+&lt;input type=&quot;button&quot; onclick=&quot;getSayHello(&lt;%=tbInput.ClientID %&gt;)&quot; value=&quot;SayHello&quot; /&gt;
+
+</pre>
+<pre id="codePreview" class="html">
+&lt;input type=&quot;button&quot; onclick=&quot;getSayHello(&lt;%=tbInput.ClientID %&gt;)&quot; value=&quot;SayHello&quot; /&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">This is a routine call: the passed parameter of the client side and server side is a string or number, etc..
+</span></p>
+<p class="MsoNormal"><span style="">Step 4: <span style="">PageMethod also have usage that is similar to the Default ModelBinder.<br>
+First, add the following code in code-behind: </span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+&lt;WebMethod()&gt; _
+   Public Shared Function getData(ByVal t As TestUser) As Object
+       Return New With { _
+        Key .Name = t.Name & &quot;-Test&quot;, _
+        Key .Value = t.Phone _
+       }
+   End Function
+
+</pre>
+<pre id="codePreview" class="vb">
+&lt;WebMethod()&gt; _
+   Public Shared Function getData(ByVal t As TestUser) As Object
+       Return New With { _
+        Key .Name = t.Name & &quot;-Test&quot;, _
+        Key .Value = t.Phone _
+       }
+   End Function
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;"></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+Public Class TestUser
+        Public Property Name() As String
+            Get
+                Return m_Name
+            End Get
+            Set(ByVal value As String)
+                m_Name = value
+            End Set
+        End Property
+        Private m_Name As String
+        Public Property BirthDate() As DateTime
+            Get
+                Return m_BirthDate
+            End Get
+            Set(ByVal value As DateTime)
+                m_BirthDate = value
+            End Set
+        End Property
+        Private m_BirthDate As DateTime
+        Public Property Phone() As IList(Of String)
+            Get
+                Return m_Phone
+            End Get
+            Set(ByVal value As IList(Of String))
+                m_Phone = value
+            End Set
+        End Property
+        Private m_Phone As IList(Of String)
+    End Class
+
+</pre>
+<pre id="codePreview" class="vb">
+Public Class TestUser
+        Public Property Name() As String
+            Get
+                Return m_Name
+            End Get
+            Set(ByVal value As String)
+                m_Name = value
+            End Set
+        End Property
+        Private m_Name As String
+        Public Property BirthDate() As DateTime
+            Get
+                Return m_BirthDate
+            End Get
+            Set(ByVal value As DateTime)
+                m_BirthDate = value
+            End Set
+        End Property
+        Private m_BirthDate As DateTime
+        Public Property Phone() As IList(Of String)
+            Get
+                Return m_Phone
+            End Get
+            Set(ByVal value As IList(Of String))
+                m_Phone = value
+            End Set
+        End Property
+        Private m_Phone As IList(Of String)
+    End Class
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">Write a javascript to call PageMethod in aspx.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">js</span>
+<pre class="hidden">
+&lt;script type=&quot;text/javascript&quot;&gt;
+       function getData() {
+           var data = {
+               Name: &quot;TestUser&quot;,
+               BirthDate: new Date(),
+               Phone: [&quot;13612345678&quot;, &quot;02112345&quot;]
+           };
+           PageMethods.getData(data, function(returnValue) {
+               alert(returnValue.Name &#43; &quot;:&quot; &#43; returnValue.Value);
+           });
+       }
+       
+    
+   &lt;/script&gt;
+
+</pre>
+<pre id="codePreview" class="js">
+&lt;script type=&quot;text/javascript&quot;&gt;
+       function getData() {
+           var data = {
+               Name: &quot;TestUser&quot;,
+               BirthDate: new Date(),
+               Phone: [&quot;13612345678&quot;, &quot;02112345&quot;]
+           };
+           PageMethods.getData(data, function(returnValue) {
+               alert(returnValue.Name &#43; &quot;:&quot; &#43; returnValue.Value);
+           });
+       }
+       
+    
+   &lt;/script&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">Then add a button at the page as shown below:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+&lt;input type=&quot;button&quot; onclick=&quot;getData()&quot; value=&quot;getData&quot; /&gt;
+
+</pre>
+<pre id="codePreview" class="html">
+&lt;input type=&quot;button&quot; onclick=&quot;getData()&quot; value=&quot;getData&quot; /&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;; color:red"><br>
+</span><span style="font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#676767"><span style="">&nbsp;</span></span><span style="">Step 5: You can test and debug it.</span></p>
+<h2>More Information<br>
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-weight:normal">Calling Static Methods in an ASP.NET Web Page
+</span></h2>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;</span><a href="http://www.asp.net/Ajax/Documentation/Live/tutorials/ExposingWebServicesToAJAXTutorial.aspx">http://www.asp.net/Ajax/Documentation/Live/tutorials/ExposingWebServicesToAJAXTutorial.aspx</a><br>
+</span><span lang="EN" style="">ASP.NET Ajax PageMethods<br>
+</span><span style=""><a href="http://blogs.microsoft.co.il/blogs/gilf/archive/2008/10/04/asp-net-ajax-pagemethods.aspx">http://blogs.microsoft.co.il/blogs/gilf/archive/2008/10/04/asp-net-ajax-pagemethods.aspx</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

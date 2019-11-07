@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C++ app uses ADO.NET to access database (CppUseADONET)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C++ app uses ADO.NET to access database (CppUseADONET)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop, Data Platform
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppUseADONET-f04f0806">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-family:������">CONSOLE APPLICATION</span> (<span style="font-family:������">CppUseADONET</span>)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The CppUseADONET example demonstrates the Microsoft ADO.NET technology to
+</p>
+<p class="MsoNormal">access databases using Visual C&#43;&#43; in both managed code and unmanaged code.
+</p>
+<p class="MsoNormal">It shows the basic structure of connecting to a data source, issuing SQL
+</p>
+<p class="MsoNormal">commands, using DataSet object and performing the cleanup.<span style="">&nbsp;
+</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="576" height="526" align="middle">
+</span><span style=""></span></p>
+<h2><span style="">Using the code </span></h2>
+<p class="MsoNormal">1. Enable the support of CLR in Project Properties / Configuration
+<span style="">&nbsp;</span>Properties / General / Set Common Language Runtime Support as &quot;Common
+<span style="">&nbsp;&nbsp;&nbsp;</span>Language Runtime Support (/clr)&quot;. </p>
+<p class="MsoNormal">2. Connect to data source.<span style="">&nbsp; </span>(System::Data::SqlClient::SqlConnection-&gt;Open)<span style="">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void CreateConnection()
+{
+    con = gcnew SqlConnection(conStr);
+    con-&gt;Open();
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void CreateConnection()
+{
+    con = gcnew SqlConnection(conStr);
+    con-&gt;Open();
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">3. Build and Execute an ADO.NET Command. </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>(System::Data::SqlCommand-&gt;ExecuteNonQuery) It can be a SQL statement (SELECT/UPDATE/INSERT/DELETE), or a stored procedure call.<span style="">&nbsp;&nbsp;
+</span><span style=""></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void AddRow(wchar_t *lastName, wchar_t *firstName, SAFEARRAY *image)
+    {
+        // 1. Inialize the SqlCommand object.
+        cmd = gcnew SqlCommand();
+
+
+        // 2. Assign the connection to the SqlCommand.
+        cmd-&gt;Connection = con;
+
+
+        // 3. Set the SQL command text.
+        // SQL statement or the name of the stored procedure.
+        cmd-&gt;CommandText = &quot;INSERT INTO Person(LastName, FirstName, &quot; &#43; 
+            &quot;HireDate, EnrollmentDate, Picture) VALUES (@LastName, &quot; &#43; 
+            &quot;@FirstName, @HireDate, @EnrollmentDate, @Picture)&quot;;
+
+
+        // 4. Set the command type.
+        // CommandType::Text for ordinary SQL statements;
+        // CommandType::StoredProcedure for stored procedures.
+        cmd-&gt;CommandType = CommandType::Text;
+
+
+        // 5. Append the parameters.
+        // DBNull::Value for SQL-Nullable fields.
+        cmd-&gt;Parameters-&gt;Add(&quot;@LastName&quot;, SqlDbType::NVarChar, 50)-&gt;Value = 
+            Marshal::PtrToStringUni((IntPtr)lastName);
+        cmd-&gt;Parameters-&gt;Add(&quot;@FirstName&quot;, SqlDbType::NVarChar, 50)-&gt;Value = 
+            Marshal::PtrToStringUni((IntPtr)firstName);
+        cmd-&gt;Parameters-&gt;Add(&quot;@HireDate&quot;, SqlDbType::DateTime)-&gt;Value = 
+            DBNull::Value;
+        cmd-&gt;Parameters-&gt;Add(&quot;@EnrollmentDate&quot;, SqlDbType::DateTime)-&gt;Value
+            = DateTime::Now;
+        if (image == NULL)
+        {
+            cmd-&gt;Parameters-&gt;Add(&quot;@Picture&quot;, SqlDbType::Image)-&gt;Value = 
+                DBNull::Value;
+        }
+        else
+        {
+            // Convert the SAFEARRAY to an array of bytes.
+            int len = image-&gt;rgsabound[0].cElements;
+            array&lt;byte&gt; ^arr = gcnew array&lt;byte&gt;(len);
+            int *pData;
+            SafeArrayAccessData(image, (void **)&pData);
+            Marshal::Copy(IntPtr(pData), arr, 0, len);
+            SafeArrayUnaccessData(image);
+            cmd-&gt;Parameters-&gt;Add(&quot;@Picture&quot;, SqlDbType::Image)-&gt;Value = arr;
+        }
+
+
+        // 6. Execute the command.
+        cmd-&gt;ExecuteNonQuery();
+    }
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void AddRow(wchar_t *lastName, wchar_t *firstName, SAFEARRAY *image)
+    {
+        // 1. Inialize the SqlCommand object.
+        cmd = gcnew SqlCommand();
+
+
+        // 2. Assign the connection to the SqlCommand.
+        cmd-&gt;Connection = con;
+
+
+        // 3. Set the SQL command text.
+        // SQL statement or the name of the stored procedure.
+        cmd-&gt;CommandText = &quot;INSERT INTO Person(LastName, FirstName, &quot; &#43; 
+            &quot;HireDate, EnrollmentDate, Picture) VALUES (@LastName, &quot; &#43; 
+            &quot;@FirstName, @HireDate, @EnrollmentDate, @Picture)&quot;;
+
+
+        // 4. Set the command type.
+        // CommandType::Text for ordinary SQL statements;
+        // CommandType::StoredProcedure for stored procedures.
+        cmd-&gt;CommandType = CommandType::Text;
+
+
+        // 5. Append the parameters.
+        // DBNull::Value for SQL-Nullable fields.
+        cmd-&gt;Parameters-&gt;Add(&quot;@LastName&quot;, SqlDbType::NVarChar, 50)-&gt;Value = 
+            Marshal::PtrToStringUni((IntPtr)lastName);
+        cmd-&gt;Parameters-&gt;Add(&quot;@FirstName&quot;, SqlDbType::NVarChar, 50)-&gt;Value = 
+            Marshal::PtrToStringUni((IntPtr)firstName);
+        cmd-&gt;Parameters-&gt;Add(&quot;@HireDate&quot;, SqlDbType::DateTime)-&gt;Value = 
+            DBNull::Value;
+        cmd-&gt;Parameters-&gt;Add(&quot;@EnrollmentDate&quot;, SqlDbType::DateTime)-&gt;Value
+            = DateTime::Now;
+        if (image == NULL)
+        {
+            cmd-&gt;Parameters-&gt;Add(&quot;@Picture&quot;, SqlDbType::Image)-&gt;Value = 
+                DBNull::Value;
+        }
+        else
+        {
+            // Convert the SAFEARRAY to an array of bytes.
+            int len = image-&gt;rgsabound[0].cElements;
+            array&lt;byte&gt; ^arr = gcnew array&lt;byte&gt;(len);
+            int *pData;
+            SafeArrayAccessData(image, (void **)&pData);
+            Marshal::Copy(IntPtr(pData), arr, 0, len);
+            SafeArrayUnaccessData(image);
+            cmd-&gt;Parameters-&gt;Add(&quot;@Picture&quot;, SqlDbType::Image)-&gt;Value = arr;
+        }
+
+
+        // 6. Execute the command.
+        cmd-&gt;ExecuteNonQuery();
+    }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">4. Use the DataSet Object.<span style="">&nbsp; </span>(System::Data::SqlClient::SqlDataAdapter-&gt;Fill)
+</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>The DataSet, which is an in-memory cache of data retrieved from a data
+<span style="">&nbsp;&nbsp;</span>source, is a major component of the ADO.NET architecture.<span style="">&nbsp;
+</span>The DataSet consists of a collection of DataTable objects that you can relate to each
+<span style="">&nbsp;</span>other with DataRelation objects.<span style=""> </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void FillDataSet(wchar_t *command)
+    {
+        // 1. Inialize the DataSet object.
+        ds = gcnew DataSet();
+
+
+        // 2. Create a SELECT SQL command.
+        String ^ strSelectCmd = Marshal::PtrToStringUni((IntPtr)command);
+        
+        // 3. Inialize the SqlDataAdapter object.
+        // SqlDataAdapter represents a set of data commands and a 
+        // database connection that are used to fill the DataSet and 
+        // update a SQL Server database. 
+        da = gcnew SqlDataAdapter(strSelectCmd, con);
+
+
+        // 4. Fill the DataSet object.
+        // Fill the DataTable in DataSet with the rows selected by the SQL 
+        // command.
+        da-&gt;Fill(ds);
+    }
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void FillDataSet(wchar_t *command)
+    {
+        // 1. Inialize the DataSet object.
+        ds = gcnew DataSet();
+
+
+        // 2. Create a SELECT SQL command.
+        String ^ strSelectCmd = Marshal::PtrToStringUni((IntPtr)command);
+        
+        // 3. Inialize the SqlDataAdapter object.
+        // SqlDataAdapter represents a set of data commands and a 
+        // database connection that are used to fill the DataSet and 
+        // update a SQL Server database. 
+        da = gcnew SqlDataAdapter(strSelectCmd, con);
+
+
+        // 4. Fill the DataSet object.
+        // Fill the DataTable in DataSet with the rows selected by the SQL 
+        // command.
+        da-&gt;Fill(ds);
+    }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">5. Clean up objects before exit.<span style="">&nbsp; </span>
+</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>(System::Data::SqlClient::SqlConnection-&gt;Close)<span style="">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void CloseConnection()
+{
+    con-&gt;Close();
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void CloseConnection()
+{
+    con-&gt;Close();
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information </h2>
+<p class="MsoListParagraphCxSpFirst" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/e80y5yhx.aspx">ADO.NET Introduction</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/9ctka9db.aspx">Data Access Using ADO.NET in C&#43;&#43;</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms235266.aspx">How to: Marshal a VARIANT for ADO.NET</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms235208.aspx">How to: Marshal Unicode Strings for ADO.NET</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/0adb9zxe.aspx">C/C&#43;&#43; Preprocessor Reference (managed, unmanaged)</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/k8d11d4s.aspx">/clr (Comman Language Runtime Compilation)</a>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/system.data.dataset.aspx">MSDN: DataSet</a>
+</p>
+<p class="MsoListParagraphCxSpLast" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter.aspx">MSDN: SqlDataAdapter</a>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

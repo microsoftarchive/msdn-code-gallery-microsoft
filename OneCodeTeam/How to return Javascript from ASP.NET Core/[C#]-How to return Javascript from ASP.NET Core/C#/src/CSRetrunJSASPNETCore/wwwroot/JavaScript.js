@@ -1,0 +1,1 @@
+﻿alert("this message is from JavaScript.js");

@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to run Hello World using Universal Windows Platform</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to run Hello World using Universal Windows Platform</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Universal Windows App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Hello World, UniversalApp
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Phone
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to run Hello World using Universal Windows
+</span><span style="font-weight:bold; font-size:14pt">Platform</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">The sample provided is a Hello World application that targets the Universal Windows Platform (UWP) on Windows 10, written using Extensible Application Markup Language (XAML) with C#. UWP allows you to
+ build applications that run on any Windows 10 device with a single project in Microsoft Visual Studio.
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Building the Sample</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">This sample is for use with Microsoft Visual Studio 2015</span><span> and Windows 10. It won't work correctly with earlier versions. Before you start, make sure you are
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-set-up" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">set up</span></a><span> with Windows 10 and Visual Studio 2015.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span>Start Microsoft Visual Studio 2015 and select 2015</span><span style="font-weight:bold"> File &gt; Open &gt; Project/Solution.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span>Go to the directory to which the sample was unzipped. Then go to the subdirectory named for the sample and double-click the Visual Studio 2015 Solution (.</span><span>sln</span><span>) file.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span>Build the sample. </span><span style="font-weight:bold">Build &gt; Build Solution.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Running the Sample</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt; font-weight:bold"><span style="font-size:11pt; font-weight:bold">Starting the app on a Desktop device</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">In the target device menu on the
+</span><span style="font-weight:bold; color:#333333">Standard</span><span style="color:#333333"> toolbar, make sure that
+</span><span style="font-weight:bold; color:#333333">Local Machine</span><span style="color:#333333"> is selected. (It's the default selection.)</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Click the </span><span style="font-weight:bold; color:#333333">Start Debugging</span><span style="color:#333333"> button on the toolbar. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">From the </span><span style="font-weight:bold; color:#333333">Debug</span><span style="color:#333333"> menu, click
+</span><span style="font-weight:bold; color:#333333">Start Debugging</span><span style="color:#333333">. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Press F5.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">The splash screen disappears, and then your app appears. It looks like this.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;<img id="150357" src="https://i1.code.msdn.s-msft.com/how-to-run-hello-world-bd5d79ec/image/file/150357/1/helloworld-1-cs.png" alt="" width="543" height="399"></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Press the Windows key to open the
+</span><span style="font-weight:bold; color:#333333">Start</span><span style="color:#333333"> menu, then show all apps. Notice that deploying the app locally adds its tile to the
+</span><span style="font-weight:bold; color:#333333">Start</span><span style="color:#333333"> menu. To run the app again (not in debugging mode), tap or click its tile in the
+</span><span style="font-weight:bold; color:#333333">Start</span><span style="color:#333333"> menu.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-weight:bold; color:#333333">To stop debugging</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Click the </span><span style="font-weight:bold; color:#333333">Stop Debugging</span><span style="color:#333333"> button in the toolbar. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">From the </span><span style="font-weight:bold; color:#333333">Debug</span><span style="color:#333333"> menu, click
+</span><span style="font-weight:bold; color:#333333">Stop debugging</span><span style="color:#333333">. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Close the app window.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt; font-weight:bold"><span style="font-size:11pt; font-weight:bold">Start the app on a mobile device emulator</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device
+ emulator. You can choose among emulators for devices with different memory and display configurations.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-weight:bold; color:#333333">Device</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-weight:bold; color:#333333">Emulator WVGA 4 inch 512MB</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-weight:bold; color:#333333">Emulator WVGA 4 inch 1GB</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="color:#333333">etc... (Various emulators in other configurations)</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">It's a good idea to test your app on a device with a small screen and limited memory, so use the
+</span><span style="font-weight:bold; color:#333333">Emulator 10.0.10240.0 WVGA 4 inch 512MB</span><span style="color:#333333"> option.
+</span><span style="font-weight:bold; color:#333333">To start debugging on a mobile device emulator</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">In the target device menu on the
+</span><span style="font-weight:bold; color:#333333">Standard</span><span style="color:#333333"> toolbar, pick
+</span><span style="font-weight:bold; color:#333333">Emulator 10.0.10240.0 WVGA 4 inch 512MB</span><span style="color:#333333">.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Click the </span><span style="font-weight:bold; color:#333333">Start Debugging</span><span style="color:#333333"> button in the toolbar. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">From the </span><span style="font-weight:bold; color:#333333">Debug</span><span style="color:#333333"> menu, click
+</span><span style="font-weight:bold; color:#333333">Start Debugging</span><span style="color:#333333">. OR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Press F5.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Visual Studio starts the selected emulator and then deploys and starts your app. On the mobile device emulator, the app looks like this.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;<img id="150358" src="https://i1.code.msdn.s-msft.com/how-to-run-hello-world-bd5d79ec/image/file/150358/1/helloworld-2-cs-phone.png" alt="" width="242" height="430"></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Using the Code</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:14.6667px"><strong>C#</strong></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">In </span><span style="color:#333333">MainPage.xaml</span><span style="color:#333333"> you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools
+ provided by Visual Studio. </span><span style="color:#333333">MainPage.xaml.cs</span><span style="color:#333333"> is the code-behind page for
+</span><span style="color:#333333">MainPage.xaml</span><span style="color:#333333">. It's where you add your app logic and event handlers.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">Together these two files define a new class called
+</span><span style="color:#c7254e">MainPage</span><span style="color:#333333">, which inherits from
+</span><span style="font-weight:bold; color:#800080">Page</span><span style="color:#333333">, in the
+</span><span style="color:#c7254e">HelloWorld</span><span style="color:#333333"> namespace.</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;Page
+    x:Class=&quot;CSHelloWorldUniversalApp.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:CSHelloWorldUniversalApp&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        
+        &lt;VisualStateManager.VisualStateGroups&gt;
+            &lt;VisualStateGroup&gt;
+                &lt;VisualState x:Name=&quot;wideState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;AdaptiveTrigger MinWindowWidth=&quot;641&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;narrowState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;AdaptiveTrigger MinWindowWidth=&quot;0&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Target=&quot;inputPanel.Orientation&quot; Value=&quot;Vertical&quot;/&gt;
+                        &lt;Setter Target=&quot;inputButton.Margin&quot; Value=&quot;0,4,0,0&quot;/&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+            &lt;/VisualStateGroup&gt;
+        &lt;/VisualStateManager.VisualStateGroups&gt;
+        
+        &lt;StackPanel x:Name=&quot;contentPanel&quot; Margin=&quot;8,32,0,0&quot;&gt;
+            &lt;TextBlock Text=&quot;Hello, world!&quot; Margin=&quot;0,0,0,40&quot;/&gt;
+            &lt;TextBlock Text=&quot;What's your name?&quot;/&gt;
+            &lt;StackPanel x:Name=&quot;inputPanel&quot; Orientation=&quot;Horizontal&quot; Margin=&quot;0,20,0,20&quot;&gt;
+                &lt;TextBox x:Name=&quot;nameInput&quot; Width=&quot;280&quot; HorizontalAlignment=&quot;Left&quot;/&gt;
+                &lt;Button x:Name=&quot;inputButton&quot; Content=&quot;Say 'Hello'&quot; Click=&quot;inputButton_Click&quot;/&gt;
+            &lt;/StackPanel&gt;
+            &lt;TextBlock x:Name=&quot;greetingOutput&quot;/&gt;
+        &lt;/StackPanel&gt;
+        
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</pre>
+<div class="preview">
+<pre class="js">&lt;Page&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;x:Class=<span class="js__string">&quot;CSHelloWorldUniversalApp.MainPage&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:x=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:local=<span class="js__string">&quot;using:CSHelloWorldUniversalApp&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d=<span class="js__string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:mc=<span class="js__string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;mc:Ignorable=<span class="js__string">&quot;d&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;Background=<span class="js__string">&quot;{ThemeResource&nbsp;ApplicationPageBackgroundThemeBrush}&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualStateManager.VisualStateGroups&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualStateGroup&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState&nbsp;x:Name=<span class="js__string">&quot;wideState&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdaptiveTrigger&nbsp;MinWindowWidth=<span class="js__string">&quot;641&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState&nbsp;x:Name=<span class="js__string">&quot;narrowState&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdaptiveTrigger&nbsp;MinWindowWidth=<span class="js__string">&quot;0&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.Setters&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Setter&nbsp;Target=<span class="js__string">&quot;inputPanel.Orientation&quot;</span>&nbsp;Value=<span class="js__string">&quot;Vertical&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Setter&nbsp;Target=<span class="js__string">&quot;inputButton.Margin&quot;</span>&nbsp;Value=<span class="js__string">&quot;0,4,0,0&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.Setters&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualStateGroup&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualStateManager.VisualStateGroups&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;x:Name=<span class="js__string">&quot;contentPanel&quot;</span>&nbsp;Margin=<span class="js__string">&quot;8,32,0,0&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;Text=<span class="js__string">&quot;Hello,&nbsp;world!&quot;</span>&nbsp;Margin=<span class="js__string">&quot;0,0,0,40&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;Text=<span class="js__string">&quot;What's&nbsp;your&nbsp;name?&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;x:Name=<span class="js__string">&quot;inputPanel&quot;</span>&nbsp;Orientation=<span class="js__string">&quot;Horizontal&quot;</span>&nbsp;Margin=<span class="js__string">&quot;0,20,0,20&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBox&nbsp;x:Name=<span class="js__string">&quot;nameInput&quot;</span>&nbsp;Width=<span class="js__string">&quot;280&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Left&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button&nbsp;x:Name=<span class="js__string">&quot;inputButton&quot;</span>&nbsp;Content=<span class="js__string">&quot;Say&nbsp;'Hello'&quot;</span>&nbsp;Click=<span class="js__string">&quot;inputButton_Click&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;x:Name=<span class="js__string">&quot;greetingOutput&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&lt;/Page&gt;&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+        private void inputButton_Click(object sender, RoutedEventArgs e)
+        {
+            greetingOutput.Text = &quot;Hello, &quot; &#43; nameInput.Text &#43; &quot;!&quot;;
+        }
+    }
+</pre>
+<div class="preview">
+<pre class="js">public&nbsp;sealed&nbsp;partial&nbsp;class&nbsp;MainPage&nbsp;:&nbsp;Page&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;MainPage()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">this</span>.InitializeComponent();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;<span class="js__operator">void</span>&nbsp;inputButton_Click(object&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greetingOutput.Text&nbsp;=&nbsp;<span class="js__string">&quot;Hello,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;nameInput.Text&nbsp;&#43;&nbsp;<span class="js__string">&quot;!&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<strong><span style="font-size:11pt"><span style="color:#333333">JavaScript</span></span></strong></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#333333">To modify the start page, replace the existing content in the body elemen. Assign IDs to the
+<strong>input</strong>, the <strong>button</strong>, and the <strong>div</strong>. Default.js contains code for handling your app's life cycle. It's also where you write additional code that provides interactivity for your defaut.html file.</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">html</span>
+<pre class="hidden">&lt;body class=&quot;win-type-body&quot;&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;p&gt;What' s your name?&lt;/p&gt;
+    &lt;input id=&quot;nameInput&quot; type=&quot;text&quot; /&gt;
+    &lt;button id=&quot;helloButton&quot;&gt;Say &quot;Hello&quot;&lt;/button&gt;
+    &lt;div id=&quot;greetingOutput&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+<div class="preview">
+<pre class="html"><span class="html__tag_start">&lt;body</span>&nbsp;<span class="html__attr_name">class</span>=<span class="html__attr_value">&quot;win-type-body&quot;</span><span class="html__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="html__tag_start">&lt;h1</span><span class="html__tag_start">&gt;</span>Hello,&nbsp;world!<span class="html__tag_end">&lt;/h1&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="html__tag_start">&lt;p</span><span class="html__tag_start">&gt;</span>What'&nbsp;s&nbsp;your&nbsp;name?<span class="html__tag_end">&lt;/p&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="html__tag_start">&lt;input</span>&nbsp;<span class="html__attr_name">id</span>=<span class="html__attr_value">&quot;nameInput&quot;</span>&nbsp;<span class="html__attr_name">type</span>=<span class="html__attr_value">&quot;text&quot;</span>&nbsp;<span class="html__tag_start">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="html__tag_start">&lt;button</span>&nbsp;<span class="html__attr_name">id</span>=<span class="html__attr_value">&quot;helloButton&quot;</span><span class="html__tag_start">&gt;</span>Say&nbsp;&quot;Hello&quot;<span class="html__tag_end">&lt;/button&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="html__tag_start">&lt;div</span>&nbsp;<span class="html__attr_name">id</span>=<span class="html__attr_value">&quot;greetingOutput&quot;</span><span class="html__tag_start">&gt;</span><span class="html__tag_end">&lt;/div&gt;</span>&nbsp;
+<span class="html__tag_end">&lt;/body&gt;</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">(function () {
+ &quot;use strict&quot;;
+ var app = WinJS.Application;
+ var activation = Windows.ApplicationModel.Activation;
+ app.onactivated = function (args) {
+  if (args.detail.kind === activation.ActivationKind.launch) {
+   if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
+    // TODO: This application has been newly launched. Initialize your application here.
+   } else {
+    // TODO: This application was suspended and then terminated.
+    // To create a smooth user experience, restore application state here so that it looks like the app never stopped running.
+   }
+   args.setPromise(WinJS.UI.processAll());
+      //retrieve button and register event handler
+   var helloButton = document.getElementById(&quot;helloButton&quot;);
+            helloButton.addEventListener(&quot;click&quot;, buttonClickHandler, false)
+  }
+ };
+ app.oncheckpoint = function (args) {
+  // TODO: This application is about to be suspended. Save any state that needs to persist across suspensions here.
+  // You might use the WinJS.Application.sessionState object, which is automatically saved and restored across suspension.
+  // If you need to complete an asynchronous operation before your application is suspended, call args.setPromise().
+ };
+ function buttonClickHandler(eventInfo) {
+     var userName = document.getElementById(&quot;nameInput&quot;).value;
+     var greetingString = &quot;Hello, &quot; &#43; userName &#43; &quot;!&quot;;
+     document.getElementById(&quot;greetingOutput&quot;).innerText = greetingString;
+ }
+ app.start();
+})();
+</pre>
+<div class="preview">
+<pre class="js">(<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;<span class="js__string">&quot;use&nbsp;strict&quot;</span>;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;app&nbsp;=&nbsp;WinJS.Application;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;activation&nbsp;=&nbsp;Windows.ApplicationModel.Activation;&nbsp;
+&nbsp;app.onactivated&nbsp;=&nbsp;<span class="js__operator">function</span>&nbsp;(args)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(args.detail.kind&nbsp;===&nbsp;activation.ActivationKind.launch)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(args.detail.previousExecutionState&nbsp;!==&nbsp;activation.ApplicationExecutionState.terminated)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;This&nbsp;application&nbsp;has&nbsp;been&nbsp;newly&nbsp;launched.&nbsp;Initialize&nbsp;your&nbsp;application&nbsp;here.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;<span class="js__statement">else</span>&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;This&nbsp;application&nbsp;was&nbsp;suspended&nbsp;and&nbsp;then&nbsp;terminated.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;To&nbsp;create&nbsp;a&nbsp;smooth&nbsp;user&nbsp;experience,&nbsp;restore&nbsp;application&nbsp;state&nbsp;here&nbsp;so&nbsp;that&nbsp;it&nbsp;looks&nbsp;like&nbsp;the&nbsp;app&nbsp;never&nbsp;stopped&nbsp;running.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;args.setPromise(WinJS.UI.processAll());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//retrieve&nbsp;button&nbsp;and&nbsp;register&nbsp;event&nbsp;handler</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;helloButton&nbsp;=&nbsp;document.getElementById(<span class="js__string">&quot;helloButton&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;helloButton.addEventListener(<span class="js__string">&quot;click&quot;</span>,&nbsp;buttonClickHandler,&nbsp;false)&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;app.oncheckpoint&nbsp;=&nbsp;<span class="js__operator">function</span>&nbsp;(args)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;TODO:&nbsp;This&nbsp;application&nbsp;is&nbsp;about&nbsp;to&nbsp;be&nbsp;suspended.&nbsp;Save&nbsp;any&nbsp;state&nbsp;that&nbsp;needs&nbsp;to&nbsp;persist&nbsp;across&nbsp;suspensions&nbsp;here.</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;You&nbsp;might&nbsp;use&nbsp;the&nbsp;WinJS.Application.sessionState&nbsp;object,&nbsp;which&nbsp;is&nbsp;automatically&nbsp;saved&nbsp;and&nbsp;restored&nbsp;across&nbsp;suspension.</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;complete&nbsp;an&nbsp;asynchronous&nbsp;operation&nbsp;before&nbsp;your&nbsp;application&nbsp;is&nbsp;suspended,&nbsp;call&nbsp;args.setPromise().</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;buttonClickHandler(eventInfo)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;userName&nbsp;=&nbsp;document.getElementById(<span class="js__string">&quot;nameInput&quot;</span>).value;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;greetingString&nbsp;=&nbsp;<span class="js__string">&quot;Hello,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;userName&nbsp;&#43;&nbsp;<span class="js__string">&quot;!&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(<span class="js__string">&quot;greetingOutput&quot;</span>).innerText&nbsp;=&nbsp;greetingString;&nbsp;
+&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;app.start();&nbsp;
+<span class="js__brace">}</span>)();&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<strong><span style="font-size:14.6667px">C&#43;&#43;</span></strong></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:14.6667px">In MainPage.xaml you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio. MainPage.xaml.cpp is the code-behind page for MainPage.xaml. It's
+ where you add your app logic and event handlers.</span></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;Page
+    x:Class=&quot;CppHelloWorldUniversalApp.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:CppHelloWorldUniversalApp&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;VisualStateManager.VisualStateGroups&gt;
+            &lt;VisualStateGroup&gt;
+                &lt;VisualState x:Name=&quot;wideState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;AdaptiveTrigger MinWindowWidth=&quot;641&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;narrowState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;AdaptiveTrigger MinWindowWidth=&quot;0&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Target=&quot;contentPanel.Margin&quot; Value=&quot;20,30,0,0&quot;/&gt;
+                        &lt;Setter Target=&quot;inputPanel.Orientation&quot; Value=&quot;Vertical&quot;/&gt;
+                        &lt;Setter Target=&quot;inputButton.Margin&quot; Value=&quot;0,4,0,0&quot;/&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+            &lt;/VisualStateGroup&gt;
+        &lt;/VisualStateManager.VisualStateGroups&gt;
+        &lt;StackPanel x:Name=&quot;contentPanel&quot; Margin=&quot;120,30,0,0&quot;&gt;
+            &lt;TextBlock HorizontalAlignment=&quot;Left&quot; Text=&quot;Hello World&quot; FontSize=&quot;36&quot;/&gt;
+            &lt;TextBlock Text=&quot;What's your name?&quot;/&gt;
+            &lt;StackPanel x:Name=&quot;inputPanel&quot; Orientation=&quot;Horizontal&quot; Margin=&quot;0,20,0,20&quot;&gt;
+                &lt;TextBox x:Name=&quot;nameInput&quot; Width=&quot;300&quot; HorizontalAlignment=&quot;Left&quot;/&gt;
+                &lt;Button x:Name=&quot;inputButton&quot; Content=&quot;Say 'Hello'&quot; Click=&quot;Button_Click&quot;/&gt;
+            &lt;/StackPanel&gt;
+            &lt;TextBlock x:Name=&quot;greetingOutput&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</pre>
+<div class="preview">
+<pre class="js">&lt;Page&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;x:Class=<span class="js__string">&quot;CppHelloWorldUniversalApp.MainPage&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:x=<span class="js__string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:local=<span class="js__string">&quot;using:CppHelloWorldUniversalApp&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d=<span class="js__string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;xmlns:mc=<span class="js__string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;mc:Ignorable=<span class="js__string">&quot;d&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Grid&nbsp;Background=<span class="js__string">&quot;{ThemeResource&nbsp;ApplicationPageBackgroundThemeBrush}&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualStateManager.VisualStateGroups&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualStateGroup&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState&nbsp;x:Name=<span class="js__string">&quot;wideState&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdaptiveTrigger&nbsp;MinWindowWidth=<span class="js__string">&quot;641&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState&nbsp;x:Name=<span class="js__string">&quot;narrowState&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdaptiveTrigger&nbsp;MinWindowWidth=<span class="js__string">&quot;0&quot;</span>&nbsp;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.StateTriggers&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VisualState.Setters&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Setter&nbsp;Target=<span class="js__string">&quot;contentPanel.Margin&quot;</span>&nbsp;Value=<span class="js__string">&quot;20,30,0,0&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Setter&nbsp;Target=<span class="js__string">&quot;inputPanel.Orientation&quot;</span>&nbsp;Value=<span class="js__string">&quot;Vertical&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Setter&nbsp;Target=<span class="js__string">&quot;inputButton.Margin&quot;</span>&nbsp;Value=<span class="js__string">&quot;0,4,0,0&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState.Setters&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualState&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualStateGroup&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VisualStateManager.VisualStateGroups&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;x:Name=<span class="js__string">&quot;contentPanel&quot;</span>&nbsp;Margin=<span class="js__string">&quot;120,30,0,0&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;HorizontalAlignment=<span class="js__string">&quot;Left&quot;</span>&nbsp;Text=<span class="js__string">&quot;Hello&nbsp;World&quot;</span>&nbsp;FontSize=<span class="js__string">&quot;36&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;Text=<span class="js__string">&quot;What's&nbsp;your&nbsp;name?&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;StackPanel&nbsp;x:Name=<span class="js__string">&quot;inputPanel&quot;</span>&nbsp;Orientation=<span class="js__string">&quot;Horizontal&quot;</span>&nbsp;Margin=<span class="js__string">&quot;0,20,0,20&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBox&nbsp;x:Name=<span class="js__string">&quot;nameInput&quot;</span>&nbsp;Width=<span class="js__string">&quot;300&quot;</span>&nbsp;HorizontalAlignment=<span class="js__string">&quot;Left&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button&nbsp;x:Name=<span class="js__string">&quot;inputButton&quot;</span>&nbsp;Content=<span class="js__string">&quot;Say&nbsp;'Hello'&quot;</span>&nbsp;Click=<span class="js__string">&quot;Button_Click&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock&nbsp;x:Name=<span class="js__string">&quot;greetingOutput&quot;</span>/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/StackPanel&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Grid&gt;&nbsp;
+&lt;/Page&gt;&nbsp;</pre>
+</div>
+</div>
+</div>
+</strong>
+<p></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">MainPage::MainPage()
+{
+ InitializeComponent();
+}
+void CppHelloWorldUniversalApp::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+ greetingOutput-&gt;Text = &quot;Hello, &quot; &#43; nameInput-&gt;Text &#43; &quot;!&quot;;
+}
+</pre>
+<div class="preview">
+<pre class="cplusplus">MainPage::MainPage()&nbsp;
+{&nbsp;
+&nbsp;InitializeComponent();&nbsp;
+}&nbsp;
+<span class="cpp__keyword">void</span>&nbsp;CppHelloWorldUniversalApp::MainPage::Button_Click(Platform::Object^&nbsp;sender,&nbsp;Windows::UI::Xaml::RoutedEventArgs^&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;greetingOutput-&gt;Text&nbsp;=&nbsp;<span class="cpp__string">&quot;Hello,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;nameInput-&gt;Text&nbsp;&#43;&nbsp;<span class="cpp__string">&quot;!&quot;</span>;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">More Information</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">What's new for developers in Windows 10:
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://developer.microsoft.com/en-us/windows/getstarted/whats-new-windows-10</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span>What's a Universal Windows Platform (UWP) app:
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/en-us/windows/uwp/get-started/whats-a-uwp" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/en-us/windows/uwp/get-started/whats-a-uwp</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Create a &quot;Hello, world&quot; app:
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal</span></a></span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+<div class="mcePaste" id="_mcePaste" style="left:-10000px; top:3200px; width:1px; height:1px; overflow:hidden">
+<h3>C#</h3>
+<p class="MsoNormal"><span style="color:#333333">In MainPage.xaml you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio. MainPage.xaml.cs is the code-behind page for MainPage.xaml.
+ It's where you add your app logic and event handlers.</span></p>
+<p class="MsoNormal"><span style="color:#333333">Together these two files define a new class called
+</span><span style="color:#c7254e">MainPage</span><span style="color:#333333">, which inherits from
+</span><strong><span style="color:purple">Page</span></strong><span style="color:#333333">, in the
+</span><span style="color:#c7254e">HelloWorld</span><span style="color:#333333"> namespace.</span></p>
+<h3>JavaScript</h3>
+<span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,sans-serif; color:#333333">To modify the start page, replace the existing content in the
+</span><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,sans-serif"><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/library/windows/apps/hh453011"><span style="color:purple">body</span></a><span style="color:#333333"> element with a first-level heading
+ that says &quot;Hello, world!&quot;, some text that asks the user's name, an </span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/library/windows/apps/hh453271"><span style="color:purple">input</span></a><span style="color:#333333"> element to accept the user's name, a
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/library/windows/apps/hh453017"><span style="color:purple">button</span></a><span style="color:#333333">, and a
+</span><a href="https://code.msdn.microsoft.com/How-to-run-Hello-World-bd5d79ec/https://msdn.microsoft.com/library/windows/apps/hh453133"><span style="color:purple">div</span></a><span style="color:#333333"> element. Assign IDs to the
+<strong>input</strong>, the <strong>button</strong>, and the <strong>div</strong>. Default.js contains code for handling your app's life cycle. It's also where you write additional code that provides interactivity for your default.html file.</span></span></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

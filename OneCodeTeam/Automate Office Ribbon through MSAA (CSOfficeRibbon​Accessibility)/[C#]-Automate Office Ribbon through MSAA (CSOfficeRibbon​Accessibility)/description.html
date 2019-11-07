@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Automate Office Ribbon through MSAA (CSOfficeRibbon​Accessibility)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Automate Office Ribbon through MSAA (CSOfficeRibbon​Accessibility)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            VSTO, Ribbon, Accessibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/25/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSOfficeRibbonAccessibility-cd7fe67f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    ========================================================================<br>
+&nbsp; &nbsp;VSTO APPLICATION : CSOfficeRibbonAccessibility Project Overview<br>
+========================================================================<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Summary:<br>
+<br>
+This example illustrates how to pinvoke the Microsoft Active Accessibilty <br>
+(MSAA) API to automate Office Ribbon controls. The code calls the following <br>
+APIs,<br>
+<br>
+&nbsp; &nbsp;AccessibleObjectFromWindow, <br>
+&nbsp; &nbsp;AccessibleChildren,<br>
+&nbsp; &nbsp;GetRoleText,<br>
+&nbsp; &nbsp;GetStateText,<br>
+<br>
+to display the whole structure of the Office ribbon, including tabs, groups,<br>
+and controls. It also shows how to nagivate to a tab and execute button <br>
+function programmatically.<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Prerequisties:<br>
+<br>
+*Visual Studio 2010 and Office 2010<br>
+or <br>
+*Visual Studio 2008 and Office 2007<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Demo:<br>
+<br>
+1. Compile the VSTO project using Visual Studio 2008 or 2010.<br>
+<br>
+2. Open your Office Word 2007 or 2010. You should see a group named <br>
+&quot;CSOfficeRibbonAccessibility&quot; in the Add-Ins ribbon tab. In the group, there <br>
+is a button &quot;Show Ribbon Information&quot;.<br>
+<br>
+3. Click the &quot;Show Ribbon Information&quot; button. You will see a windows form <br>
+with the title &quot;Ribbon Information&quot;.<br>
+<br>
+4. In the &quot;Tabs&quot; list box, you can see all visible tabs. Clicking any of them <br>
+make the office navigate to that tab.<br>
+<br>
+6. By click the button &quot;List child groups&quot;, the form will list all groups in <br>
+the currently selected tab in the &quot;Groups&quot; list box.<br>
+<br>
+7. Select a group and click the button &quot;List child controls&quot;. The form will <br>
+list all controls in the currently selected group in the &quot;Controls&quot; list box. <br>
+<br>
+8. Select a control, and click the button &quot;Execute selected control&quot;. the form<br>
+will invoke the selected control's function.<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Implementation:<br>
+<br>
+A. Creating the project<br>
+<br>
+Step1. Create a VSTO Word 2010 AddIn using Visual Studio 2010. Right click the <br>
+project, and click Add-&gt;New Item. In the popup dialog, choose Office tab, &nbsp;<br>
+select the Ribbon (Visual Designer) at the right panel and click OK. In the <br>
+Ribbon designer, drag a button to the Add-ins Tab. Double click the button to <br>
+generate a ribbon control click event handler.<br>
+<br>
+Step2. Right click the project, and click Add-&gt;New Item. In the popup dialog, <br>
+choose the Windows Form tab, and add a Form named RibbonInfoForm. In the <br>
+Form designer, drag labels, listboxs, and buttons as the sample shows.<br>
+<br>
+Step3. In the event handler created in step 1, we add code to show the <br>
+RibbonInfoForm form.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RibbonInfoForm form = new RibbonInfoForm();<br>
+&nbsp; &nbsp;form.Show();<br>
+<br>
+----------------<br>
+<br>
+B. Using the Microsoft Active Accessibility API<br>
+<br>
+Microsoft Active Accessibility (MSAA) is an API for user interface <br>
+accessibility. The Accessibility interface offers a hierarchy of objects <br>
+subordinate to the main window of the Office 2007/2010 applications. You can <br>
+use the API to automate Office ribbon controls. <br>
+<br>
+NativeMethods.cs declares the P/Invoke signatures for MSAA APIs:<br>
+&nbsp; &nbsp;AccessibleChildren<br>
+&nbsp; &nbsp;AccessibleObjectFromWindow<br>
+&nbsp; &nbsp;GetRoleText<br>
+&nbsp; &nbsp;GetStateText<br>
+<br>
+MSAAHelper.cs provides helper functions that invoke the native MSAA APIs:<br>
+&nbsp; &nbsp;GetAccessibleChildren<br>
+&nbsp; &nbsp;GetAccessibleObjectListByRole<br>
+&nbsp; &nbsp;GetAccessibleObjectFromHandle<br>
+&nbsp; &nbsp;GetAccessibleObjectByNameAndRole<br>
+&nbsp; &nbsp;GetRoleText<br>
+&nbsp; &nbsp;GetStateText<br>
+<br>
+In RibbonInfoForm.cs, the form lists all accessible ribbon tab, group and <br>
+control objects, and execute their default actions. The sample basically does <br>
+the following logic:<br>
+<br>
+&nbsp;1. Find the top window of the Office application, and get its IAccessible <br>
+&nbsp; &nbsp; interface. <br>
+&nbsp;2. Get the IAccessibile interface for the ribbon object.<br>
+&nbsp;3. Recurse through the IAccessibility tree and find the tabs, groups and <br>
+&nbsp; &nbsp; controls. We use the accessible name and role to identify the tabs,
+<br>
+&nbsp; &nbsp; groups and controls. You can use the Inspect tool in the Windows SDK to
+<br>
+&nbsp; &nbsp; inspet the accessible name and role of the Office ribbon.<br>
+&nbsp; &nbsp; http://msdn.microsoft.com/en-us/library/dd318521.aspx<br>
+&nbsp;4. Execute the default action (in case of ribbon tabs the default action is
+<br>
+&nbsp; &nbsp; switch, for buttons it’s click and for the dropdowns it’s drop).<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+References:<br>
+<br>
+How to switch ribbon tab programmatically... looks simple?<br>
+http://blogs.msdn.com/b/pranavwagh/archive/2008/01/21/how-to-switch-ribbon-tab-programmatically-looks-simple.aspx<br>
+<br>
+Microsoft Active Accessibility<br>
+http://msdn.microsoft.com/en-us/library/ms697707.aspx<br>
+<br>
+Accessing the Ribbon with VBA<br>
+http://www.wordarticles.com/Shorts/RibbonVBA/RibbonVBADemo.htm<br>
+<br>
+UI Automation using Microsoft Active Accessibility(MSAA)<br>
+http://www.codeproject.com/KB/winsdk/MSAA_UI_Automation.aspx<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+
+</div>
+
+
+    </div>
+</body>
+</html>

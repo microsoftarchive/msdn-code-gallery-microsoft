@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=46D0EADCABBE3E18DF970254C2C182AB" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=D4D084DF03A9CB234D78334671AC996E" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Auto redirect to login page when Session is expired</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Auto redirect to login page when Session is expired</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Session
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/20/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Auto-redirect-to-login-e1782b2f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="description/onecodesampletopbanner1.html" alt="">
+</a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><a name="OLE_LINK1"></a><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">Auto redirect to login page when Session is expired</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Introduction
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+The project illustrates how to develop an asp.net code-sample that will be&nbsp;redirect to login page when page Session is expired or time out automatically.&nbsp;It will ask the user to extend the Session at one minutes beforeexpiring. If the user does not
+ has any actions, the web page will be redirectedto login page automatically, and also note that it need to work in one ormore browser's tabs.&nbsp;</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Running the sample</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+Please follow these demonstration steps below.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 1:</strong> Open the CSASPNETAutoRedirectLoginPage.sln.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 2: </strong>Expand the CSASPNETAutoRedirectLoginPage web application and press Ctrl &#43; F5 to show the LoginPage.aspx page.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 3:</strong> You will see login page and input the user name and pass word, and then click the login button to redirect the user page.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 4: </strong>Now you can open more user pages or refresh the user page for persisting user's activity.&nbsp;</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 5: </strong>When you stop operating the pages and wait for 1 minute, the all web pages of code-sample will be redirected the login page automatically. For easy testing, the code-sample set the session's timeout to 1 minute.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<strong>Step 6: </strong>Validation finished.</p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<strong>Step 1: </strong>Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2010 or Visual Web Developer 2010. Name it as &quot;CSASPNETAutoRedirectLoginPage&quot;.</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<strong>Step 2:&nbsp; </strong>Add a web form named &quot;LoginUser.aspx&quot; for user login in website, and this page can prevent users who want to skip the login step by visit specified pages.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">protected void Page_Load(object sender, EventArgs e)
+{
+    // Prevent the users who try to skip the login step by visit specified page.
+    if (!Page.IsPostBack)
+    {
+        Session.Abandon();
+    }
+    if (Request.QueryString[&quot;info&quot;] != null)
+    {
+        string message = Request.QueryString[&quot;info&quot;].ToString();
+        if (message == &quot;0&quot;)
+        {
+            Response.Write(&quot;you need login first to visit user page.&quot;);
+        }
+    }
+}
+
+/// &lt;summary&gt;
+/// User login method.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+protected void btnLogin_Click(object sender, EventArgs e)
+{
+    string username = tbUserName.Text.Trim();
+    if (tbUserName.Text.Trim() == &quot;username&quot; &amp;&amp; tbPassword.Text.Trim() == &quot;password&quot;)
+    {
+        Session[&quot;username&quot;] = username;
+        Response.Redirect(&quot;UserPage1.aspx&quot;);
+    }
+    else
+    {
+        Response.Write(&quot;User name or pass word error.&quot;);
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">protected</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Page_Load(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Prevent&nbsp;the&nbsp;users&nbsp;who&nbsp;try&nbsp;to&nbsp;skip&nbsp;the&nbsp;login&nbsp;step&nbsp;by&nbsp;visit&nbsp;specified&nbsp;page.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(!Page.IsPostBack)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session.Abandon();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(Request.QueryString[<span class="cs__string">&quot;info&quot;</span>]&nbsp;!=&nbsp;<span class="cs__keyword">null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;message&nbsp;=&nbsp;Request.QueryString[<span class="cs__string">&quot;info&quot;</span>].ToString();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(message&nbsp;==&nbsp;<span class="cs__string">&quot;0&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(<span class="cs__string">&quot;you&nbsp;need&nbsp;login&nbsp;first&nbsp;to&nbsp;visit&nbsp;user&nbsp;page.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+&nbsp;
+<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;User&nbsp;login&nbsp;method.</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;sender&quot;&gt;&lt;/param&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;e&quot;&gt;&lt;/param&gt;</span>&nbsp;
+<span class="cs__keyword">protected</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;btnLogin_Click(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;username&nbsp;=&nbsp;tbUserName.Text.Trim();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(tbUserName.Text.Trim()&nbsp;==&nbsp;<span class="cs__string">&quot;username&quot;</span>&nbsp;&amp;&amp;&nbsp;tbPassword.Text.Trim()&nbsp;==&nbsp;<span class="cs__string">&quot;password&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session[<span class="cs__string">&quot;username&quot;</span>]&nbsp;=&nbsp;username;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Redirect(<span class="cs__string">&quot;UserPage1.aspx&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(<span class="cs__string">&quot;User&nbsp;name&nbsp;or&nbsp;pass&nbsp;word&nbsp;error.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<strong>Step 3:</strong> Add two user pages and named them as &quot;UserPage1.aspx&quot;, &quot;UserPage2.aspx&quot;. These two user pages are use to observe the web application and redirect the login page automatically. You can also open multiple tabs or windows in your browser.&nbsp;<br>
+<strong>Step 4: </strong>Add a user control on the root dictionary and drag and drop it in the every user page for redirecting to the login page when session is expired or time out. The user control's JavaScript code and C# code will be like this:</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">&lt;script type=&quot;text/javascript&quot;&gt;
+    var timeRefresh;
+var timeInterval;
+var currentTime;
+var expressTime;
+
+expressTime = &quot;&lt;%=ExpressDate %&gt;&quot;;
+currentTime = &quot;&lt;%=LoginDate %&gt;&quot;;
+setCookie(&quot;express&quot;, expressTime);
+timeRefresh = setInterval(&quot;Refresh()&quot;, 1000);
+
+// Refresh this page to check session is expire or timeout.
+function Refresh() {
+    var current = getCookie(&quot;express&quot;);
+    var date = current.split(&quot; &quot;)[0];
+    var time = current.split(&quot; &quot;)[1];
+    var scriptDate = new Date();
+    var year = scriptDate.getFullYear();
+    var month = scriptDate.getMonth() &#43; 1;
+    var day = scriptDate.getDate();
+    var hour = scriptDate.getHours();
+    var min = scriptDate.getMinutes();
+    var second = scriptDate.getSeconds();
+    if (Date.UTC(year, month, day, hour, min, second) &gt;=
+        Date.UTC(date.split(&quot;-&quot;)[0], date.split(&quot;-&quot;)[1], date.split(&quot;-&quot;)[2],
+        time.split(&quot;:&quot;)[0], time.split(&quot;:&quot;)[1], time.split(&quot;:&quot;)[2])) {
+        clearInterval(timeRefresh);
+        Redirect();
+    }
+}
+
+function Redirect() {
+    window.location.replace(&quot;LoginPage.aspx&quot;);
+}
+
+// Retrieve cookie by name.
+function getCookie(name) {
+    var arg = name &#43; &quot;=&quot;;
+    var aLen = arg.length;
+    var cLen = document.cookie.length;
+    var i = 0;
+    while (i &lt; cLen) {
+        var j = i &#43; aLen;
+        if (document.cookie.substring(i, j) == arg) {
+            return getCookieVal(j);
+        }
+        i = document.cookie.indexOf(&quot; &quot;, i) &#43; 1;
+        if (i == 0) break;
+    }
+    return;
+}
+
+function getCookieVal(offset) {
+    var endStr = document.cookie.indexOf(&quot;;&quot;, offSet);
+    if (endStr == -1) {
+        endStr = document.cookie.length;
+    }
+    return unescape(document.cookie.substring(offSet, endStr));
+}
+
+// Assign values to cookie variable.
+function setCookie(name, value) {
+    document.cookie = name &#43; &quot;=&quot; &#43; escape(value);
+}
+&lt;/script&gt;</pre>
+<div class="preview">
+<pre class="js">&lt;script&nbsp;type=<span class="js__string">&quot;text/javascript&quot;</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;timeRefresh;&nbsp;
+<span class="js__statement">var</span>&nbsp;timeInterval;&nbsp;
+<span class="js__statement">var</span>&nbsp;currentTime;&nbsp;
+<span class="js__statement">var</span>&nbsp;expressTime;&nbsp;
+&nbsp;
+expressTime&nbsp;=&nbsp;<span class="js__string">&quot;&lt;%=ExpressDate&nbsp;%&gt;&quot;</span>;&nbsp;
+currentTime&nbsp;=&nbsp;<span class="js__string">&quot;&lt;%=LoginDate&nbsp;%&gt;&quot;</span>;&nbsp;
+setCookie(<span class="js__string">&quot;express&quot;</span>,&nbsp;expressTime);&nbsp;
+timeRefresh&nbsp;=&nbsp;setInterval(<span class="js__string">&quot;Refresh()&quot;</span>,&nbsp;<span class="js__num">1000</span>);&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Refresh&nbsp;this&nbsp;page&nbsp;to&nbsp;check&nbsp;session&nbsp;is&nbsp;expire&nbsp;or&nbsp;timeout.</span>&nbsp;
+<span class="js__operator">function</span>&nbsp;Refresh()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;current&nbsp;=&nbsp;getCookie(<span class="js__string">&quot;express&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;date&nbsp;=&nbsp;current.split(<span class="js__string">&quot;&nbsp;&quot;</span>)[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;time&nbsp;=&nbsp;current.split(<span class="js__string">&quot;&nbsp;&quot;</span>)[<span class="js__num">1</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;scriptDate&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__object">Date</span>();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;year&nbsp;=&nbsp;scriptDate.getFullYear();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;month&nbsp;=&nbsp;scriptDate.getMonth()&nbsp;&#43;&nbsp;<span class="js__num">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;day&nbsp;=&nbsp;scriptDate.getDate();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;hour&nbsp;=&nbsp;scriptDate.getHours();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;min&nbsp;=&nbsp;scriptDate.getMinutes();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;second&nbsp;=&nbsp;scriptDate.getSeconds();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(<span class="js__object">Date</span>.UTC(year,&nbsp;month,&nbsp;day,&nbsp;hour,&nbsp;min,&nbsp;second)&nbsp;&gt;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__object">Date</span>.UTC(date.split(<span class="js__string">&quot;-&quot;</span>)[<span class="js__num">0</span>],&nbsp;date.split(<span class="js__string">&quot;-&quot;</span>)[<span class="js__num">1</span>],&nbsp;date.split(<span class="js__string">&quot;-&quot;</span>)[<span class="js__num">2</span>],&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.split(<span class="js__string">&quot;:&quot;</span>)[<span class="js__num">0</span>],&nbsp;time.split(<span class="js__string">&quot;:&quot;</span>)[<span class="js__num">1</span>],&nbsp;time.split(<span class="js__string">&quot;:&quot;</span>)[<span class="js__num">2</span>]))&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearInterval(timeRefresh);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Redirect();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;Redirect()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;window.location.replace(<span class="js__string">&quot;LoginPage.aspx&quot;</span>);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Retrieve&nbsp;cookie&nbsp;by&nbsp;name.</span>&nbsp;
+<span class="js__operator">function</span>&nbsp;getCookie(name)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;arg&nbsp;=&nbsp;name&nbsp;&#43;&nbsp;<span class="js__string">&quot;=&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;aLen&nbsp;=&nbsp;arg.length;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;cLen&nbsp;=&nbsp;document.cookie.length;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;i&nbsp;=&nbsp;<span class="js__num">0</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">while</span>&nbsp;(i&nbsp;&lt;&nbsp;cLen)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;j&nbsp;=&nbsp;i&nbsp;&#43;&nbsp;aLen;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(document.cookie.substring(i,&nbsp;j)&nbsp;==&nbsp;arg)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;getCookieVal(j);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;document.cookie.indexOf(<span class="js__string">&quot;&nbsp;&quot;</span>,&nbsp;i)&nbsp;&#43;&nbsp;<span class="js__num">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(i&nbsp;==&nbsp;<span class="js__num">0</span>)&nbsp;<span class="js__statement">break</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>;&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;getCookieVal(offset)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;endStr&nbsp;=&nbsp;document.cookie.indexOf(<span class="js__string">&quot;;&quot;</span>,&nbsp;offSet);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(endStr&nbsp;==&nbsp;-<span class="js__num">1</span>)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endStr&nbsp;=&nbsp;document.cookie.length;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;unescape(document.cookie.substring(offSet,&nbsp;endStr));&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__sl_comment">//&nbsp;Assign&nbsp;values&nbsp;to&nbsp;cookie&nbsp;variable.</span>&nbsp;
+<span class="js__operator">function</span>&nbsp;setCookie(name,&nbsp;value)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;document.cookie&nbsp;=&nbsp;name&nbsp;&#43;&nbsp;<span class="js__string">&quot;=&quot;</span>&nbsp;&#43;&nbsp;escape(value);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&lt;/script&gt;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public string loginDate;
+public string expressDate;
+protected void Page_Load(object sender, EventArgs e)
+{
+    // Check session is expire or timeout.
+    if (Session[&quot;username&quot;] == null)
+    {
+        Response.Redirect(&quot;LoginPage.aspx?info=0&quot;);
+    }
+
+    // Get user login time or last activity time.
+    DateTime date = DateTime.Now;
+    loginDate = date.ToString(&quot;u&quot;, DateTimeFormatInfo.InvariantInfo).Replace(&quot;Z&quot;, &quot;&quot;);
+    int sessionTimeout = Session.Timeout;
+    DateTime dateExpress = date.AddMinutes(sessionTimeout);
+    expressDate = dateExpress.ToString(&quot;u&quot;, DateTimeFormatInfo.InvariantInfo).Replace(&quot;Z&quot;, &quot;&quot;);
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;loginDate;&nbsp;
+<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;expressDate;&nbsp;
+<span class="cs__keyword">protected</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Page_Load(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Check&nbsp;session&nbsp;is&nbsp;expire&nbsp;or&nbsp;timeout.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(Session[<span class="cs__string">&quot;username&quot;</span>]&nbsp;==&nbsp;<span class="cs__keyword">null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Redirect(<span class="cs__string">&quot;LoginPage.aspx?info=0&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Get&nbsp;user&nbsp;login&nbsp;time&nbsp;or&nbsp;last&nbsp;activity&nbsp;time.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;DateTime&nbsp;date&nbsp;=&nbsp;DateTime.Now;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;loginDate&nbsp;=&nbsp;date.ToString(<span class="cs__string">&quot;u&quot;</span>,&nbsp;DateTimeFormatInfo.InvariantInfo).Replace(<span class="cs__string">&quot;Z&quot;</span>,&nbsp;<span class="cs__string">&quot;&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">int</span>&nbsp;sessionTimeout&nbsp;=&nbsp;Session.Timeout;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;DateTime&nbsp;dateExpress&nbsp;=&nbsp;date.AddMinutes(sessionTimeout);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;expressDate&nbsp;=&nbsp;dateExpress.ToString(<span class="cs__string">&quot;u&quot;</span>,&nbsp;DateTimeFormatInfo.InvariantInfo).Replace(<span class="cs__string">&quot;Z&quot;</span>,&nbsp;<span class="cs__string">&quot;&quot;</span>);&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<strong>Step 5: </strong>Build the application and you can debug it.</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+&nbsp;</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt; font-weight:bold">More information</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<a href="http://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx">MSDN: ASP.NET User Controls</a></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<a href="http://msdn.microsoft.com/en-us/library/system.web.httpcookie.aspx">MSDN: HttpCookie Class</a></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

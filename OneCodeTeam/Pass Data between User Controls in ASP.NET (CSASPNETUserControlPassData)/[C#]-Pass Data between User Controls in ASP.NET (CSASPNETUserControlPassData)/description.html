@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Pass Data between User Controls in ASP.NET (CSASPNETUserControlPassData)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Pass Data between User Controls in ASP.NET (CSASPNETUserControlPassData)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            User Control
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/11/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETUserControlPassData-870745a0">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    ========================================================================<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CSASPNETUserControlPassData Overview<br>
+========================================================================<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Use:<br>
+<br>
+This project illustrates how to pass data from one user control to another.<br>
+A user control can contain other controls like TextBoxes or Labels, These <br>
+control are declared as protected members, We cannot get the use control from<br>
+another one directly.<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Demo the Sample. <br>
+<br>
+Please follow these demonstration steps below.<br>
+<br>
+Step 1: Open the CSASPNETUserControlPassData.sln.<br>
+<br>
+Step 2: Expand the CSASPNETUserControlPassData web application and press <br>
+&nbsp; &nbsp; &nbsp; &nbsp;Ctrl &#43; F5 to show the Default.aspx.<br>
+<br>
+Step 3: You can find two messages on Default page. The messages be outputted by <br>
+&nbsp; &nbsp; &nbsp; &nbsp;UserControl2 user control, UserControl2 can retrieve the data that come from UserControl1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user control.<br>
+<br>
+Step 4: Validation finished.<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Code Logical:<br>
+<br>
+Step 1. Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2010 or<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Visual Web Developer 2010. Name it as &quot;CSASPNETUserControlPassData&quot;.<br>
+<br>
+Step 2. Add one web form in the root directory, name it as &quot;Default.aspx&quot;. This<br>
+&nbsp; &nbsp; &nbsp; &nbsp;page is use to show user controls.<br>
+<br>
+Step 3. Add a folder named &quot;UserControl&quot; with two user controls, &quot;UserControl1.ascx&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&quot;UserControl2.ascx&quot;.<br>
+<br>
+Step 4. The UserControl1 user control provide public property as shown below:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;[code]<br>
+&nbsp; &nbsp; &nbsp; &nbsp;private string strCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;protected void Page_Load(object sender, EventArgs e)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!IsPostBack)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;strCallee = &quot;I come from UserControl1.&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbPublicVariable.Text = strCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// UserControl1 message.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;/summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;public string StrCallee<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;get<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return strCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;set<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;strCallee = value;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[/code]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Step 5 &nbsp;The UserControl2 user control is use to output private messages and the data of
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;UserControl1 user control.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;[code]<br>
+&nbsp; &nbsp;public partial class UserControl2 : <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Web.UI.UserControl.aspx"  title="Auto generated link to System.Web.UI.UserControl">System.Web.UI.UserControl</a><br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;private string strCaller = &quot;I come from UserControl2.&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;private UserControl1 userControl1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;protected void Page_Load(object sender, EventArgs e)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!Page.IsPostBack)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output UserControl2 user control message.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbPublicVariable2.Text = strCaller;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Find UserControl1 user control.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Control control = Page.FindControl(&quot;UserControl1ID&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;userControl1= (UserControl1)control;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (userControl1 != null)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output UserControl1 user control message.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Label lbUserControl1 = userControl1.FindControl(&quot;lbPublicVariable&quot;) as Label;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (lbUserControl1 != null)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbUserControl1.Text = userControl1.StrCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tbModifyUserControl1.Text = userControl1.StrCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// UserControl2 message.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;/// &lt;/summary&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;public string StrCaller<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;get<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return strCaller;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;set<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;strCaller = value;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;protected void btnSubmit_Click(object sender, EventArgs e)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!tbModifyUserControl1.Text.Trim().Equals(string.Empty))<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Control control = Session[&quot;UserControl1&quot;] as Control;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;userControl1 = control as UserControl1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (userControl1 != null)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Set UserControl1 user control message.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbFormatMessage.Text = string.Format(&quot;forward message: {0} &quot;, userControl1.StrCallee);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;userControl1.StrCallee = tbModifyUserControl1.Text;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Session[&quot;UserControl1&quot;] = userControl1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;UserControl1 pageUserControl1 = Page.FindControl(&quot;UserControl1ID&quot;) as UserControl1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Label lbUserControl1 = pageUserControl1.FindControl(&quot;lbPublicVariable&quot;) as Label;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbUserControl1.Text = tbModifyUserControl1.Text;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;control = Page.FindControl(&quot;UserControl1ID&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;userControl1 = (UserControl1)control;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;userControl1.StrCallee = tbModifyUserControl1.Text.Trim();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Label lbUserControl1 = userControl1.FindControl(&quot;lbPublicVariable&quot;) as Label;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbUserControl1.Text = userControl1.StrCallee;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Session[&quot;UserControl1&quot;] = userControl1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbMessage.Text = &quot;The message can not be null.&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;[/code]<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <br>
+Step 6. You need drag and drop the user controls in default page.<br>
+<br>
+Step 7. Build the application and you can debug it.<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+References:<br>
+<br>
+MSDN: ASP.NET User Controls Overview<br>
+http://msdn.microsoft.com/en-us/library/fb3w5b53.aspx<br>
+<br>
+MSDN: Page.FindControl Method (String)<br>
+http://msdn.microsoft.com/en-us/library/31hxzsdw.aspx<br>
+<br>
+MSDN: Page.LoadControl Method <br>
+http://msdn.microsoft.com/en-us/library/system.web.ui.page.loadcontrol.aspx<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+
+</div>
+
+
+    </div>
+</body>
+</html>

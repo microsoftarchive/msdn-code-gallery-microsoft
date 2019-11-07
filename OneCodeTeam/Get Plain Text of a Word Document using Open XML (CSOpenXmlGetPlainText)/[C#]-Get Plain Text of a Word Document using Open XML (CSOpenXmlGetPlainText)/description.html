@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Get Plain Text of a Word Document using Open XML (CSOpenXmlGetPlainText)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Get Plain Text of a Word Document using Open XML (CSOpenXmlGetPlainText)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Word, Open XML
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">12/3/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSOpenXmlGetPlainText-554918c3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="">How to g</span>et Plain Text of a Word Document using Open XML (CSOpenXmlGetPlainText)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">This sample demonstrates how to <span id="ms-rterangepaste-start">
+</span>extract the plain text from word document and export it to text files. </span>
+</p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">The sample also can keep the basic style of the document, like white space and new line. Customers don't need to install Office Software and also can read the plain text of a word document.
+</span></p>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Before building the sample , please make sure you have installed <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5124">
+Open XML SDK 2.0 for Microsoft Office</a>&lt;o:p&gt;.&lt;/o:p&gt;</span></p>
+<p class="MsoNormal" style="margin-bottom:7.5pt; line-height:normal"><span style="font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;; color:black"></span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">The following steps walk through a demonstration of Getting plain text of a word document.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step1. Open </span>CSOpenXmlGetPlainText<span style="">.sln and then click F5 to run this project. You will see the following form:
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><img src="description/image.png" alt="" width="507" height="398" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step2. Click &quot;Open&quot; button to choose an existing word document
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step3. Click &quot;Get Plain Text&quot; button to extract plain text from a word document and display the text in
+<b style="">RichTextBox</b> Control. </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><img src="description/3cbf59b5-b624-4aee-ab81-33b752da1175image.png" alt="" width="502" height="397" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step4. Click &quot;Save as Text&quot; button to export the text in RichTextBox to a text file, if the process success, users can get successful message box.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><img src="description/c76a1865-8f02-4feb-9ee4-303979454cd0image.png" alt="" width="449" height="148" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<h2>Using the Code<span style=""> </span></h2>
+<p class="MsoNormal"><span style="">Step1. Create Windows Form project. On the File Menu, choose New, Project, in the templates pane, select Windows Forms Application and enter the name of the project.
+</span></p>
+<p class="MsoNormal"><span style="">Step2. Add the Open xml reference to the project. To reference the Open XML, right click the project file and click the &quot;Add Reference…&quot; button. In the Add Reference dialog, navigate to the .Net tab, find DocumentFormat.OpenXml
+ and click OK. </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step3. Create <b style="">GetWordPlainText </b>class to read word document using Open XML. Import the Open XML namespace in this class.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+
+
+</pre>
+<pre id="codePreview" class="csharp">
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:新宋体; color:green"></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step4. Create ReadWordDocument method to read plain text of a word document
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+       /// &lt;summary&gt;
+       ///  Read Word Document
+       /// &lt;/summary&gt;
+       /// &lt;returns&gt;Plain Text in document &lt;/returns&gt;
+       public string ReadWordDocument()
+       {
+           StringBuilder sb = new StringBuilder();
+           OpenXmlElement element = package.MainDocumentPart.Document.Body;
+           if (element == null)
+           {
+               return string.Empty;
+           }
+
+
+           sb.Append(GetPlainText(element));
+           return sb.ToString();
+       }
+
+
+       /// &lt;summary&gt;
+       ///  Read Plain Text in all XmlElements of word document
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;element&quot;&gt;XmlElement in document&lt;/param&gt;
+       /// &lt;returns&gt;Plain Text in XmlElement&lt;/returns&gt;
+       public string GetPlainText(OpenXmlElement element)
+       {
+           StringBuilder PlainTextInWord = new StringBuilder();
+           foreach (OpenXmlElement section in element.Elements())
+           {             
+               switch (section.LocalName)
+               {
+                   // Text
+                   case &quot;t&quot;: 
+                       PlainTextInWord.Append(section.InnerText);
+                      break;
+
+
+                   case &quot;cr&quot;:                          // Carriage return
+                   case &quot;br&quot;:                          // Page break
+                      PlainTextInWord.Append(Environment.NewLine);
+                      break;
+
+
+                   // Tab
+                   case &quot;tab&quot;:
+                      PlainTextInWord.Append(&quot;\t&quot;);
+                      break;
+
+
+                   // Paragraph
+                   case &quot;p&quot;:
+                       PlainTextInWord.Append(GetPlainText(section));
+                       PlainTextInWord.AppendLine(Environment.NewLine);
+                       break;
+
+
+                   default:
+                       PlainTextInWord.Append(GetPlainText(section));
+                       break;
+               }
+           }
+
+
+           return PlainTextInWord.ToString();
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">
+       /// &lt;summary&gt;
+       ///  Read Word Document
+       /// &lt;/summary&gt;
+       /// &lt;returns&gt;Plain Text in document &lt;/returns&gt;
+       public string ReadWordDocument()
+       {
+           StringBuilder sb = new StringBuilder();
+           OpenXmlElement element = package.MainDocumentPart.Document.Body;
+           if (element == null)
+           {
+               return string.Empty;
+           }
+
+
+           sb.Append(GetPlainText(element));
+           return sb.ToString();
+       }
+
+
+       /// &lt;summary&gt;
+       ///  Read Plain Text in all XmlElements of word document
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;element&quot;&gt;XmlElement in document&lt;/param&gt;
+       /// &lt;returns&gt;Plain Text in XmlElement&lt;/returns&gt;
+       public string GetPlainText(OpenXmlElement element)
+       {
+           StringBuilder PlainTextInWord = new StringBuilder();
+           foreach (OpenXmlElement section in element.Elements())
+           {             
+               switch (section.LocalName)
+               {
+                   // Text
+                   case &quot;t&quot;: 
+                       PlainTextInWord.Append(section.InnerText);
+                      break;
+
+
+                   case &quot;cr&quot;:                          // Carriage return
+                   case &quot;br&quot;:                          // Page break
+                      PlainTextInWord.Append(Environment.NewLine);
+                      break;
+
+
+                   // Tab
+                   case &quot;tab&quot;:
+                      PlainTextInWord.Append(&quot;\t&quot;);
+                      break;
+
+
+                   // Paragraph
+                   case &quot;p&quot;:
+                       PlainTextInWord.Append(GetPlainText(section));
+                       PlainTextInWord.AppendLine(Environment.NewLine);
+                       break;
+
+
+                   default:
+                       PlainTextInWord.Append(GetPlainText(section));
+                       break;
+               }
+           }
+
+
+           return PlainTextInWord.ToString();
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:新宋体; color:green"></span></p>
+<p class="MsoNormal" style=""><span style="">Step5. Click &quot;Open&quot; button to choose an existing word document
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+      /// &lt;summary&gt;
+      ///  Handle the btnOpen Click event to load an Word file.
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnOpen_Click(object sender, EventArgs e)
+      {
+          SelectWordFile(); 
+      }
+
+
+      /// &lt;summary&gt;
+      /// Show an OpenFileDialog to select a Word document.
+      /// &lt;/summary&gt;
+      /// &lt;returns&gt;
+      /// The file name.
+      /// &lt;/returns&gt;
+      private string SelectWordFile()
+      {
+          string fileName = null;
+          using (OpenFileDialog dialog = new OpenFileDialog())
+          {
+              dialog.Filter = &quot;Word document (*.docx)|*.docx&quot;;
+              dialog.InitialDirectory = Environment.CurrentDirectory;
+
+
+              // Retore the directory before closing
+              dialog.RestoreDirectory = true;
+              if (dialog.ShowDialog()== DialogResult.OK)
+              {
+                  fileName = dialog.FileName;
+                  tbxFile.Text = dialog.FileName;
+                  rtbText.Clear();
+              }
+          }
+
+
+          return fileName;
+      }
+
+</pre>
+<pre id="codePreview" class="csharp">
+      /// &lt;summary&gt;
+      ///  Handle the btnOpen Click event to load an Word file.
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnOpen_Click(object sender, EventArgs e)
+      {
+          SelectWordFile(); 
+      }
+
+
+      /// &lt;summary&gt;
+      /// Show an OpenFileDialog to select a Word document.
+      /// &lt;/summary&gt;
+      /// &lt;returns&gt;
+      /// The file name.
+      /// &lt;/returns&gt;
+      private string SelectWordFile()
+      {
+          string fileName = null;
+          using (OpenFileDialog dialog = new OpenFileDialog())
+          {
+              dialog.Filter = &quot;Word document (*.docx)|*.docx&quot;;
+              dialog.InitialDirectory = Environment.CurrentDirectory;
+
+
+              // Retore the directory before closing
+              dialog.RestoreDirectory = true;
+              if (dialog.ShowDialog()== DialogResult.OK)
+              {
+                  fileName = dialog.FileName;
+                  tbxFile.Text = dialog.FileName;
+                  rtbText.Clear();
+              }
+          }
+
+
+          return fileName;
+      }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style=""></span></p>
+<p class="MsoNormal" style=""><span style="">Step6. Click &quot;Get Plain text&quot; to call ReadWordDocument in GetWordPlainText class
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+       /// &lt;summary&gt;
+       /// Get Plain Text from Word file
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnGetPlainText_Click(object sender, EventArgs e)
+       {
+           try
+           {
+               getWordPlainText = new GetWordPlainText(tbxFile.Text);
+               this.rtbText.Clear();
+               this.rtbText.Text = getWordPlainText.ReadWordDocument();
+
+
+               // After read text in word document successfully&iuml;&frac14;&#338;make &quot;save as text&quot; button to be enabled.
+               this.btnSaveas.Enabled = true;
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show(ex.Message, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           finally
+           {
+               if (getWordPlainText != null)
+               {
+                   getWordPlainText.Dispose();
+               }
+           }
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">
+       /// &lt;summary&gt;
+       /// Get Plain Text from Word file
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnGetPlainText_Click(object sender, EventArgs e)
+       {
+           try
+           {
+               getWordPlainText = new GetWordPlainText(tbxFile.Text);
+               this.rtbText.Clear();
+               this.rtbText.Text = getWordPlainText.ReadWordDocument();
+
+
+               // After read text in word document successfully&iuml;&frac14;&#338;make &quot;save as text&quot; button to be enabled.
+               this.btnSaveas.Enabled = true;
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show(ex.Message, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           finally
+           {
+               if (getWordPlainText != null)
+               {
+                   getWordPlainText.Dispose();
+               }
+           }
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style=""></span></p>
+<p class="MsoNormal" style=""><span style="">Step7. Click &quot;Save as Text&quot; to save the text to text file.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+      /// &lt;summary&gt;
+      ///  Save the text to text file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnSaveas_Click(object sender, EventArgs e)
+      {
+          using (SaveFileDialog savefileDialog = new SaveFileDialog())
+          {
+              savefileDialog.Filter = &quot;txt document(*.txt)|*.txt&quot;;
+
+
+              // default file name extension
+              savefileDialog.DefaultExt = &quot;.txt&quot;;
+
+
+              // Retore the directory before closing
+              savefileDialog.RestoreDirectory = true;
+              if (savefileDialog.ShowDialog() == DialogResult.OK)
+              {
+                  string filename = savefileDialog.FileName;
+                  rtbText.SaveFile(filename, RichTextBoxStreamType.PlainText);
+                  MessageBox.Show(&quot;Save Text file successfully, the file path is&iuml;&frac14;&#353; &quot; &#43; filename);
+              }
+          }
+      }
+
+</pre>
+<pre id="codePreview" class="csharp">
+      /// &lt;summary&gt;
+      ///  Save the text to text file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnSaveas_Click(object sender, EventArgs e)
+      {
+          using (SaveFileDialog savefileDialog = new SaveFileDialog())
+          {
+              savefileDialog.Filter = &quot;txt document(*.txt)|*.txt&quot;;
+
+
+              // default file name extension
+              savefileDialog.DefaultExt = &quot;.txt&quot;;
+
+
+              // Retore the directory before closing
+              savefileDialog.RestoreDirectory = true;
+              if (savefileDialog.ShowDialog() == DialogResult.OK)
+              {
+                  string filename = savefileDialog.FileName;
+                  rtbText.SaveFile(filename, RichTextBoxStreamType.PlainText);
+                  MessageBox.Show(&quot;Save Text file successfully, the file path is&iuml;&frac14;&#353; &quot; &#43; filename);
+              }
+          }
+      }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style=""><span style=""></span></p>
+<p class="MsoNormal" style=""><span style=""><a href="http://msdn.microsoft.com/en-us/library/bb448854.aspx" >Open XML SDK 2.0</a></span><span style="">
+</span></p>
+<p class="MsoNormal" style=""><span style=""><a href="http://msdn.microsoft.com/en-us/library/cc850833.aspx">Word Processing</a>
+</span></p>
+<p class="MsoNormal" style=""><span style=""><a href="http://msdn.microsoft.com/en-us/office/bb265236">Open XML Developer Center</a>
+</span></p>
+<p class="MsoNormal" style=""><span style=""></span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

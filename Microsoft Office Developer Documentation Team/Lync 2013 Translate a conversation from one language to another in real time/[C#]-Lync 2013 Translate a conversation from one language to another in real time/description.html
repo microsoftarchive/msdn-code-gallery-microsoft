@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Lync 2013: Translate a conversation from one language to another in real time</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Lync 2013: Translate a conversation from one language to another in real time</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Microsoft Lync 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Translation
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/15/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Lync-2013-Translate-a-a849e513">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">The ConversationTranslator Lync SDK sample uses the
+<strong>Conversation</strong> namespace from the Lync Model API to intercept instant messages and provide translation by using Bing Web Services.</span></p>
+<p><span style="font-size:small">Features:</span><br>
+<span style="font-size:small">&bull;&nbsp;Uses a sample architecture that registers and handles asynchronous Lync 2010 SDK events in Silverlight.</span><br>
+<span style="font-size:small">&bull;&nbsp;Registers for two <strong>Conversation</strong> related events:
+<strong>ParticipantAdded</strong> and <strong>InstantMessageReceived</strong>.</span><br>
+<span style="font-size:small">&bull;&nbsp;Uses the Bing Translator service.</span></p>
+<p><span style="font-size:small">Uses the following classes, events, and namespaces:</span></p>
+<ul>
+<li><span style="font-size:small"><strong>Conversation</strong> class</span> </li><li><span style="font-size:small"><strong>ConversationService </strong>class</span>
+</li><li><span style="font-size:small"><strong>MessageError </strong>event</span> </li><li><span style="font-size:small"><strong>MessageReceived </strong>event</span> </li><li><span style="font-size:small"><strong>MessageSent </strong>event</span> </li><li><span style="font-size:small"><strong>ContactInformationType </strong>class</span>
+</li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Collections.ObjectModel.aspx"  title="Auto generated link to System.Collections.ObjectModel">System.Collections.ObjectModel</a> namespace</span>
+</li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Diagnostics.aspx"  title="Auto generated link to System.Diagnostics">System.Diagnostics</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.EventHandler.aspx"  title="Auto generated link to System.EventHandler">System.EventHandler</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.ServiceModel.aspx"  title="Auto generated link to System.ServiceModel">System.ServiceModel</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.ServiceModel.Channels.aspx"  title="Auto generated link to System.ServiceModel.Channels">System.ServiceModel.Channels</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.ComponentModel.aspx"  title="Auto generated link to System.ComponentModel">System.ComponentModel</a> namespace</span> </li><li><span style="font-size:small">http://api.microsofttranslator.com/V2 namespace</span>
+</li><li><span style="font-size:small">http://schemas.datacontract.org/2004/07/Microsoft.MT.Web.Service.V2</span>
+</li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Runtime.Serialization.aspx"  title="Auto generated link to System.Runtime.Serialization">System.Runtime.Serialization</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Controls.aspx"  title="Auto generated link to System.Windows.Controls">System.Windows.Controls</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Documents.aspx"  title="Auto generated link to System.Windows.Documents">System.Windows.Documents</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Input.aspx"  title="Auto generated link to System.Windows.Input">System.Windows.Input</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Media.aspx"  title="Auto generated link to System.Windows.Media">System.Windows.Media</a> namespace</span> </li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Media.Animation.aspx"  title="Auto generated link to System.Windows.Media.Animation">System.Windows.Media.Animation</a> namespace</span>
+</li><li><span style="font-size:small"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Shapes.aspx"  title="Auto generated link to System.Windows.Shapes">System.Windows.Shapes</a> namespace</span> </li></ul>
+<p><span style="font-size:small">The Lync SDK includes three development models:</span></p>
+<ul>
+<li><span style="font-size:small">Lync Controls</span> </li><li><span style="font-size:small">Lync API</span> </li><li><span style="font-size:small">OCOM Unmanaged COM API</span> </li></ul>
+<p><span style="font-size:small">You can drag and drop Microsoft Lync Controls into existing business applications to add Lync functions and user interface. Each Lync Control provides a specific feature like search, presence, instant messaging (IM) calls, and
+ audio calls. The appearance of each control replicates the Lync UI for that feature. Use a single control or multiple controls. The programming style is primarily XAML text, but you can also use C# in the code-behind file to access the Lync API and .NET Framework.</span></p>
+<p><span style="font-size:small">Use the Lync API to start and automate the Lync UI in your business application, or add Lync functionality to new or existing .NET Framework applications and suppress the Lync UI. Lync SDK UI Automation automates the Lync UI,
+ and Lync Controls add separate pieces of Lync functionality and UI as XAML controls.</span></p>
+<p><span style="font-size:small">Use the Lync 2010 API Reference to learn about the unmanaged Office Communicator Object Model API (OCOM). The OCOM API contains a subset of the types that are in the Lync API. You cannot start or carry on conversations with
+ OCOM, but you can access a contact list and get contact presence. </span></p>
+<p><span style="font-size:small">It is not recommended that you use this API, but if you are a C&#43;&#43; developer and you need to add contact and presence features to your application, then this API can work for you.</span></p>
+<h1>Prerequisites</h1>
+<ul>
+<li><span style="font-size:small">Microsoft Visual Studio 2010</span> </li><li><span style="font-size:small">Microsoft Silverlight 4 SDK</span> </li><li><span style="font-size:small">Microsoft Lync 2010 SDK and later versions of Lync SDK.</span>
+</li><li><span style="font-size:small">Microsoft Lync 2010 client and later versions of the Lync client.</span>
+</li><li><span style="font-size:small">Requires Internet access for the translation content service from Bing Translation.</span>
+</li></ul>
+<h1>Build the sample</h1>
+<p><span style="font-size:small"><strong>Note</strong>: Ignore the Visual Studio warning about Web Services without Web Projects. The ConversationTranslator project uses an external Web Service.</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small">Microsoft Silverlight 4 SDK download: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=7F7119BF-5B56-4ACF-B489-9D717AFDB11A&amp;amp;displaylang=k&amp;displaylang=en">
+http://www.microsoft.com/downloads/details.aspx?FamilyID=7F7119BF-5B56-4ACF-B489-9D717AFDB11A&amp;amp;amp;displaylang=k&amp;displaylang=en</a></span>
+</li><li><span style="font-size:small">Lync 2010 SDK download: <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18898">
+http://www.microsoft.com/en-us/download/details.aspx?id=18898</a></span> </li><li><span style="font-size:small">Lync 2010 API Reference: <a href="http://gallery.technet.microsoft.com/Lync-2010-API-Reference-48d2c5c9">
+http://gallery.technet.microsoft.com/Lync-2010-API-Reference-48d2c5c9</a> </span>
+</li><li><span style="font-size:small">Office 365 Developer Hub: <a href="http://msdn.microsoft.com/en-us/office/hh506337.aspx">
+http://msdn.microsoft.com/en-us/office/hh506337.aspx</a> </span></li><li><span style="font-size:small">Lync Developer Center: <a href="http://msdn.microsoft.com/en-us/lync/gg132942.aspx">
+http://msdn.microsoft.com/en-us/lync/gg132942.aspx</a> </span></li><li><span style="font-size:small">Office Developer Center: <a href="http://msdn.microsoft.com/en-us/office/aa905340.aspx">
+http://msdn.microsoft.com/en-us/office/aa905340.aspx</a> </span></li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

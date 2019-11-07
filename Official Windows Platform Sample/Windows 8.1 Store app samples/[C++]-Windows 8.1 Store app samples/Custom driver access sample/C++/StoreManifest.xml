@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StoreManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="StoreManifest.xsd" xmlns="http://schemas.microsoft.com/appx/2010/StoreManifest">
+  <ProductFeatures>
+    <DeviceCompanionApplication>
+      <ExperienceIds>
+        <!-- The Experience ID below matches the Experience ID found in the device metadata for the Fx2 device. 
+             This informs the AppStore, upon submission, about the link between this app and the device metadata
+             for the device.
+             
+             When using this sample with another device, be sure to update the experience ID -->
+        <ExperienceId>63a861db-39c2-477a-bc37-579a3c741cb6</ExperienceId>
+      </ExperienceIds>
+    </DeviceCompanionApplication>
+  </ProductFeatures>
+</StoreManifest>

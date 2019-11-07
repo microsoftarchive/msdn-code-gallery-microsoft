@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=71AE1851B6C794DEF5BD9BC8F835D0EE" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/47c63455-7231-44b0-b4ee-e4560979780cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C91CC0BBB362C4840AF9553071016400" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Gyrometer sensor sample (Windows 8)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/dc4f56b3-224a-4dd7-a435-210da682eb66Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Gyrometer sensor sample (Windows 8)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Devices and sensors
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/Gyrometer-sensor-sample-2a88c0ce">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample shows how to use the Windows.Devices.Sensors.Gyrometer API. </p>
+<p>This sample allows the user to view the angular velocity along the X-, Y-, and Z-axis for a 3-axis gyrometer. You can choose one of two scenarios:
+</p>
+<ul>
+<li>Gyrometer data events </li><li>Current gyrometer reading </li></ul>
+<p></p>
+<p><b>Gyrometer Data Events </b></p>
+<p>When you click the <b>Enable</b> button for the <b>Gyrometer data events</b> option, the app begins streaming gyrometer readings in real time.</p>
+<p><b>Current Gyrometer Reading </b></p>
+<p>When you click the <b>Get</b> button for the <b>Current gyrometer reading</b> option, the app retrieves the most recent gyrometer reading.</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241655">
+Windows&nbsp;8</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2012, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241656">
+Visual Studio&nbsp;2012</a>.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=241981">Windows.Devices.Sensors namespace</a>
+</dt></dl>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<h3><a id="Building_the_C___version_of_the_sample"></a><a id="building_the_c___version_of_the_sample"></a><a id="BUILDING_THE_C___VERSION_OF_THE_SAMPLE"></a>Building the C&#43;&#43; version of the sample</h3>
+<ol>
+<li>Start Visual Studio&nbsp;2012 and select <b>File &gt; Open &gt; Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file.
+</li><li>Press F7 or use <b>Build &gt; Build Solution</b> to build the sample. </li></ol>
+<h3><a id="Building_the_C__version_of_the_sample"></a><a id="building_the_c__version_of_the_sample"></a><a id="BUILDING_THE_C__VERSION_OF_THE_SAMPLE"></a>Building the C# version of the sample</h3>
+<ol>
+<li>Start Visual Studio&nbsp;2012 and select <b>File &gt; Open &gt; Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Solution (.sln) file.
+</li><li>Press F7 or use <b>Build &gt; Build Solution</b> to build the sample. </li></ol>
+<h3><a id="Building_the_JavaScript_version_of_the_sample"></a><a id="building_the_javascript_version_of_the_sample"></a><a id="BUILDING_THE_JAVASCRIPT_VERSION_OF_THE_SAMPLE"></a>Building the JavaScript version of the sample</h3>
+<ol>
+<li>Start Visual Studio&nbsp;2012 and select <b>File &gt; Open &gt; Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Solution (.sln) file.
+</li><li>Press F7 or use <b>Build &gt; Build Solution</b> to build the sample. </li></ol>
+<h3>Run the sample</h3>
+<h3><a id="Running_the_C___and_C__versions_of_the_sample"></a><a id="running_the_c___and_c__versions_of_the_sample"></a><a id="RUNNING_THE_C___AND_C__VERSIONS_OF_THE_SAMPLE"></a>Running the C&#43;&#43; and C# versions of the sample</h3>
+<p>To run this sample after building it, go to the installation folder for this sample with Windows Explorer and run the executable from the &lt;install_root&gt;\bin\Debug folder. Alternatively, press F5 (run with debugging enabled) or Ctrl&#43;F5 (run without
+ debugging enabled) from Visual Studio Express&nbsp;2012 for Windows&nbsp;8. (Or select the corresponding options from the
+<b>Debug</b> menu.)</p>
+<h3><a id="Running_the_JavaScript_version_of_the_sample"></a><a id="running_the_javascript_version_of_the_sample"></a><a id="RUNNING_THE_JAVASCRIPT_VERSION_OF_THE_SAMPLE"></a>Running the JavaScript version of the sample</h3>
+<p>To run this sample after building it, go to the installation folder for this sample with Windows Explorer and open the default.html file. Alternatively, press F5 (run with debugging enabled) or Ctrl&#43;F5 (run without debugging enabled) from Visual Studio Express&nbsp;2012
+ for Windows&nbsp;8. (Or select the corresponding options from the <b>Debug</b> menu.)</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

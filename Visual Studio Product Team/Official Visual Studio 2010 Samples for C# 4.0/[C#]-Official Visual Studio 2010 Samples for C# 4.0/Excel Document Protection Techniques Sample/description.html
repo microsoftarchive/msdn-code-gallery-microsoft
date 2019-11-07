@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Excel Document Protection Techniques Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Excel Document Protection Techniques Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Excel
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Security, Excel Protection, Offie Automation
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/31/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Excel-Document-Protection-96d5034f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<table id="topTable" width="100%">
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<p><span class="style1">&nbsp;</span></p>
+<div class="introduction">
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left"><strong>Note:</strong></th>
+</tr>
+<tr>
+<td>
+<p>This sample runs in Microsoft Office Excel 2007 and higher.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This sample demonstrates various techniques you can use to protect structural components of a worksheet. These techniques can help to prevent users from accidentally deleting controls or otherwise changing important parts of your solution document.</p>
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left"><strong>Security Note:</strong></th>
+</tr>
+<tr>
+<td>
+<p>This sample code is intended to illustrate a concept, and it shows only the code that is relevant to that concept. It may not meet the security requirements for a specific environment, and it should not be used exactly as shown. We recommend that you add
+ security and error-handling code to make your projects more secure and robust. Microsoft provides this sample code &quot;AS IS&quot; with no warranties.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For information about installing the sample project on your computer, see How to: Install and Use Sample Files Found in Help.</p>
+</div>
+<h3 class="procedureSubHeading">To run this sample</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>Press F5.</p>
+</li><li>
+<p>Follow the instructions on Sheet1 and Sheet2.</p>
+</li></ol>
+</div>
+<h1 class="heading"><span>Demonstrates</span></h1>
+<div class="section" id="demonstratesSection">
+<ul>
+<li>
+<p>How to re-create a control after a user deletes it.</p>
+</li><li>
+<p>How to write data to a data-bound <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Tools.Excel.ListObject.aspx"  title="Auto generated link to Microsoft.Office.Tools.Excel.ListObject">Microsoft.Office.Tools.Excel.ListObject</a> control on a protected worksheet.</p>
+</li><li>
+<p>How to write data to a <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Tools.Excel.NamedRange.aspx"  title="Auto generated link to Microsoft.Office.Tools.Excel.NamedRange">Microsoft.Office.Tools.Excel.NamedRange</a> control on a protected worksheet.</p>
+</li><li>
+<p>How to protect a value in a <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Tools.Excel.NamedRange.aspx"  title="Auto generated link to Microsoft.Office.Tools.Excel.NamedRange">Microsoft.Office.Tools.Excel.NamedRange</a> control from unauthorized modifications.</p>
+</li><li>
+<p>How to protect a <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Forms.Control.aspx"  title="Auto generated link to System.Windows.Forms.Control">System.Windows.Forms.Control</a> so that it cannot be modified or deleted by the user, but can be accessed by your code.</p>
+</li></ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

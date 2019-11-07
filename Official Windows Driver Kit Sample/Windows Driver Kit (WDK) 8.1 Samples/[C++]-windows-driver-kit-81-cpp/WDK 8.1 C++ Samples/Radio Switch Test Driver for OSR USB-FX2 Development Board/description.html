@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Radio Switch Test Driver for OSR USB-FX2 Development Board</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Radio Switch Test Driver for OSR USB-FX2 Development Board</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Radio-Switch-Test-Driver-0eb8f876">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates how to structure a HID driver for radio switches for the OSR USB-FX2 Development Board.
+</p>
+<p>Starting with Windows&nbsp;8.1, the hardware switch or button to control wireless transmission and the global software switch (Airplane mode switch) in the Radio Management User Interface must be synchronized. To ensure the hardware and software switches that
+ control radio transmission are synchronized, the hardware switch or button must have a HID-compliant driver.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Radio-Switch-Test-Driver-0eb8f876/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>None supported </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a sample driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2>Run the sample</h2>
+<h2><a id="Installation"></a><a id="installation"></a><a id="INSTALLATION"></a>Installation</h2>
+<p>To install the driver, you must:</p>
+<ol>
+<li>
+<p>Build the driver using Visual Studio and copy the following installation files to a folder on your hard drive:</p>
+<ul>
+<li><i>RadioSwitchHidUsbFx2.inf</i> </li><li><i>RadioSwitchHidUsbFx2.sys</i> </li></ul>
+</li><li>
+<p>Plug in the device and do the following, depending on the operating system that you are using:
+</p>
+<ol>
+<li>Launch <b>Device Manager</b> by executing command devmgmt.msc in a command window, or from
+<b>Hardware and Sound</b> program group in <b>Control Panel</b>. </li><li>Select <b>OSR USB-FX2</b> device from <b>Other Devices</b> category and click
+<b>Update Driver Software…</b> from right-click menu. </li><li>Select <b>Browse</b> my computer for software and provide the location of the driver files.
+</li><li>Select <b>Install this driver software anyway</b> when the <b>Windows Security</b> dialog box appears.
+</li><li>After the driver is installed, you should see the device in <b>Device Manager</b> under &quot;Human Interface Devices&quot;.
+</li></ol>
+</li></ol>
+<h2><a id="Switch_Pack_Mapping"></a><a id="switch_pack_mapping"></a><a id="SWITCH_PACK_MAPPING"></a>Switch Pack Mapping</h2>
+<h3><a id="Switch_Mapping"></a><a id="switch_mapping"></a><a id="SWITCH_MAPPING"></a>Switch Mapping</h3>
+<table>
+<tbody>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+<tr>
+<td>
+<p>Mode</p>
+<p>Select</p>
+<p>Bit 3</p>
+</td>
+<td>
+<p>Mode </p>
+<p>Select</p>
+<p>Bit 2</p>
+</td>
+<td>
+<p>Mode</p>
+<p>Select</p>
+<p>Bit 1</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>Radio</p>
+<p>Switch</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Testing"></a><a id="testing"></a><a id="TESTING"></a>Testing</h2>
+<h3><a id="Testing_Modes"></a><a id="testing_modes"></a><a id="TESTING_MODES"></a>Testing Modes</h3>
+<p>The driver supports five modes representing the valid combinations of HID descriptors that we have defined for the USB forum. Modes are selected using switches 1, 2, and 3 on the switch pack.</p>
+<h3><a id="Switch_Mapping"></a><a id="switch_mapping"></a><a id="SWITCH_MAPPING"></a>Switch Mapping</h3>
+<table>
+<tbody>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>Mode</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Mode 1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Mode 1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>Mode 2</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Mode 3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Mode 4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Mode 5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>Mode 1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Mode 1</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="Mode_1_Radio_Push_Button"></a><a id="mode_1_radio_push_button"></a><a id="MODE_1_RADIO_PUSH_BUTTON"></a>Mode 1 Radio Push Button</h3>
+<p>In this mode the radio switch (switch 8 on the switch pack) represents a momentary push button. A HID report is generated when the switch transitions to the On state (switch down).</p>
+<h3><a id="Mode_2_Radio_Push_Button___LED"></a><a id="mode_2_radio_push_button___led"></a><a id="MODE_2_RADIO_PUSH_BUTTON___LED"></a>Mode 2 Radio Push Button &amp; LED</h3>
+<p>In this mode the radio switch (switch 8 on the switch pack) represents a momentary push button. A HID report is generated when the switch transitions to the On state (switch down). In addition, the LED array will reflect the state of the Radio LED: either
+ all on or all off (note that the top 2 LEDs never illuminate as these are not wired in).</p>
+<h3><a id="Mode_3_Radio_Slider_Switch"></a><a id="mode_3_radio_slider_switch"></a><a id="MODE_3_RADIO_SLIDER_SWITCH"></a>Mode 3 Radio Slider Switch</h3>
+<p>In this mode the radio switch (switch 8 on the switch pack) represents a momentary push button. A HID report is generated when the switch transitions to the On state (switch down).</p>
+<h3><a id="Mode_4_Radio_Slider_Switch___LED"></a><a id="mode_4_radio_slider_switch___led"></a><a id="MODE_4_RADIO_SLIDER_SWITCH___LED"></a>Mode 4 Radio Slider Switch &amp; LED</h3>
+<p>In this mode the radio switch (switch 8 on the switch pack) represents an A-B slider switch. A HID report is generated in both cases: when the switch transitions to the On state (switch down) and to the Off state (switch up). In addition the LED array will
+ reflect the state of the Radio LED: either all on or all off (note that the top 2 LEDs never illuminate as these are not wired in).</p>
+<h3><a id="Mode_5_LED_only"></a><a id="mode_5_led_only"></a><a id="MODE_5_LED_ONLY"></a>Mode 5 LED only</h3>
+<p>In this mode the radio switch (switch 8 on the switch pack) is ignored. The LED array will reflect the state of the Radio LED: either all on or all off (note that the top 2 LEDs never illuminate as these are not wired in).</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

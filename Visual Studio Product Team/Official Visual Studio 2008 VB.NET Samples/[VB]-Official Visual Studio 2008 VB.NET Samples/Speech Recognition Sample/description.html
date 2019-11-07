@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/4f0db316-e33e-4e5c-b975-0f6de635f8e4Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Speech Recognition Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Speech Recognition Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Tablet PC
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Speech recognition
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/30/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Speech-Recognition-Sample-ada0f69e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Speech Recognition Sample</h1>
+<div id="mainSection">
+<div id="mainBody">
+<div class="saveHistory" id="allHistory">
+<p>&nbsp;</p>
+</div>
+<div class="introduction">
+<p>&nbsp;</p>
+<h3 class="procedureSubHeading">To get samples and instructions for installing them</h3>
+<div class="subSection">
+<ul>
+<li>
+<p>Do one or more of the following:</p>
+<ul>
+<li>
+<p>On the <span class="ui">Help</span> menu, click <span class="ui">Samples</span>.</p>
+<p>The Readme displays information about samples.</p>
+</li><li>
+<p>Visit the Visual Studio 2008 Samples Web site. The most recent versions of samples are available there.</p>
+</li><li>
+<p>Locate samples on the computer on which Visual Studio is installed. By default, samples and a Readme file are installed in
+<span class="placeholder">drive</span>:\Program Files\Microsoft Visual Studio 9.0\Samples\<span class="placeholder">lcid</span>. For Express editions of Visual Studio, all samples are located online.</p>
+</li></ul>
+</li></ul>
+<p>For more information, see .</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="alert">
+<table width="100%">
+</table>
+</div>
+<p>&nbsp;</p>
+</div>
+<h3 class="procedureSubHeading">To view the sample documentation</h3>
+<div class="subSection">
+<ol>
+<li>
+<p>In <span class="ui">Solution Explorer</span>, double-click the <span class="ui">
+Documentation</span> folder.</p>
+</li><li>
+<p>If you are using Visual Basic Express Edition, right-click <span class="ui">
+ReadMe.htm</span> in the <span class="ui">Documentation</span> folder and then click
+<span class="ui">View in Browser</span>.&nbsp;If you are using another version of Visual Basic, double-click
+<span class="ui">ReadMe.htm</span> in the <span class="ui">Documentation</span> folder.</p>
+</li></ol>
+</div>
+<h1 class="heading"><span>Demonstrates</span></h1>
+<div class="section" id="demonstratesSection">
+<p>This sample demonstrates the capabilities of the Speech API (SAPI), which is included with Microsoft Windows XP Tablet PC Edition 2005. SAPI is a rich and similar enough to the handwriting recognition APIs that it can be easily learned by developers programming
+ for Windows XP Tablet PC Edition 2005. For more information about handwriting recognition, see .</p>
+<p>You must create an interop wrapper for the SAPI DLL. You can do this by adding a reference, clicking the
+<span class="ui">COM</span> tab, and then selecting <span class="ui">Microsoft Speech Object Library</span>. After you do this and the
+<span class="keyword">SpeechLib</span> namespace is imported, developing for SAPI is similar to developing for handwriting recognition by using the Tablet PC Platform SDK. A recognizer is created (in this case, an in-process
+<span class="keyword">SpInProcRecognizer</span>) and generates a context (of type
+<span class="keyword">SpInProcRecoContext</span>) that is associated with the specific type of recognition. Events associated with the recognition process include the
+<span class="keyword">Hypothesis</span>, <span class="keyword">Recognition</span>, and
+<span class="keyword">EndStream</span> events. A large number of <span class="keyword">
+Hypothesis</span> events will be generated, although only one <span class="keyword">
+Recognition</span> and <span class="keyword">EndStream</span> event will be associated with a particular recognition attempt.</p>
+<p>The sample provides a standard file dialog box to open a user-supplied .wav file. The sample application attempts to recognize the speech in this file, and the results are added to a
+<span class="keyword">RichTextEdit</span> box. The technique for iterating over alternative possibilities is also shown, although that output is directed to the Debug console.</p>
+<div class="seeAlsoNoToggleSection" id="sectionSection0">
+<div class="subsection">
+<h4 class="subHeading">This sample requires that the following be installed:</h4>
+<div class="subsection">
+<ul>
+<li>
+<p>Visual Studio</p>
+</li><li>
+<p>Windows XP Tablet PC Edition 2005</p>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="footerLine"></div>
+<a name="feedback"></a><span id="fb" class="feedbackcss">&nbsp;</span></div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

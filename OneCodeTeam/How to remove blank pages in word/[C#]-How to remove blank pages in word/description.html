@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/fd0873a3-9a67-441e-9769-e22026a86740Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to remove blank pages in word</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to remove blank pages in word</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Word, Remove blank pages
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-remove-blank-pages-e200755d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to Remove blank pages in Word document (<span style="">VB</span>WordRemoveBlankPage)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to remove blank pages in Word document automatically. Customers should choose a word document firstly, then click &quot;Remove Blank Page&quot; button to remove blank pages in word document.</p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal">Before you run the sample, you should make sure Microsoft Office 2010 installed on your computer.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Step1. Open &quot;VBWordRemoveBlankPage<span style="">.sln</span>&quot; file to open the project and press F5 to run the project. The form resembles the following:</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="453" height="166" align="middle">
+</span></p>
+<p class="MsoNormal">Step2. Click &quot;Select&quot; button to choose a word document with blank pages from your file system. When you click &quot;Select&quot; button, there is an open file dialog to let you choose word document. After you choose an existing
+ word document and click ok button in the open file dialog, you can see the path of word document that you selected show in textbox control.</p>
+<p class="MsoNormal"><span style=""><img src="description/fed5a9ff-0fe0-4b1d-a862-e8a85fc0b8eaimage.png" alt="" width="450" height="163" align="middle">
+</span></p>
+<p class="MsoNormal">Step3. Click &quot;Remove Blank Page&quot; button to remove blank pages in word document.
+<span style="">If the operation is successfully, you will receive the following form:
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/9dd59312-a812-4661-a97d-3d3259dec2e6image.png" alt="" width="507" height="174" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal"></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Step1. Create Windows Forms application from the template in Visual Studio.</p>
+<p class="MsoNormal">Step2. Add Microsoft.Office.Interop<span style="">.Word.dll assemble and add the
+</span>Microsoft.Office.Interop<span style="">.Word namespace</span> into codes.</p>
+<p class="MsoNormal">Step3. Coding the click event of &quot;Select&quot; button.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+''' &lt;summary&gt;
+    ''' Open word document
+    ''' &lt;/summary&gt;
+    ''' &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+    ''' &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+    Private Sub btnOpenWord_Click(sender As Object, e As EventArgs) Handles btnOpenWord.Click
+        Using openfileDialog As New OpenFileDialog()
+            openfileDialog.Filter = &quot;Word document(*.doc,*.docx)|*.doc;*.docx&quot;
+            If openfileDialog.ShowDialog() = DialogResult.OK Then
+                txbWordPath.Text = openfileDialog.FileName
+                wordPath = openfileDialog.FileName
+            End If
+        End Using
+    End Sub
+
+</pre>
+<pre id="codePreview" class="vb">
+''' &lt;summary&gt;
+    ''' Open word document
+    ''' &lt;/summary&gt;
+    ''' &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+    ''' &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+    Private Sub btnOpenWord_Click(sender As Object, e As EventArgs) Handles btnOpenWord.Click
+        Using openfileDialog As New OpenFileDialog()
+            openfileDialog.Filter = &quot;Word document(*.doc,*.docx)|*.doc;*.docx&quot;
+            If openfileDialog.ShowDialog() = DialogResult.OK Then
+                txbWordPath.Text = openfileDialog.FileName
+                wordPath = openfileDialog.FileName
+            End If
+        End Using
+    End Sub
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<p class="MsoNormal">Step4. Coding the click event of &quot;Remove Blank Page&quot; button.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+''' &lt;summary&gt;
+   ''' Click event of Remove Blank Page button
+   ''' &lt;/summary&gt;
+   ''' &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+   ''' &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+   Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+       If Not File.Exists(txbWordPath.Text) Then
+           MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.[Error])
+           Return
+       End If
+
+
+       ' Remove blank Page in word document
+       If RemoveBlankPage() = True Then
+           MessageBox.Show(&quot;Remove blank page successfully!&quot;)
+       End If
+   End Sub
+
+
+   ''' &lt;summary&gt;
+   ''' Remove Blank Page in Word document
+   ''' &lt;/summary&gt;
+   Private Function RemoveBlankPage() As Boolean
+       Dim wordapp As Word.Application = Nothing
+       Dim doc As Word.Document = Nothing
+       Dim paragraphs As Word.Paragraphs = Nothing
+       Try
+           ' Start Word APllication and set it be invisible
+           wordapp = New Word.Application()
+           wordapp.Visible = False
+           doc = wordapp.Documents.Open(wordPath)
+           paragraphs = doc.Paragraphs
+           For Each paragraph As Word.Paragraph In paragraphs
+               If paragraph.Range.Text.Trim() = String.Empty Then
+                   paragraph.Range.[Select]()
+                   wordapp.Selection.Delete()
+               End If
+           Next
+
+
+           ' Save the document and close document
+           doc.Save()
+           DirectCast(doc, Word._Document).Close()
+
+
+           ' Quit the word application
+
+
+           DirectCast(wordapp, Word._Application).Quit()
+       Catch ex As Exception
+           MessageBox.Show(&quot;Exception Occur, error message is: &quot; & ex.Message)
+           Return False
+       Finally
+           ' Clean up the unmanaged Word COM resources by explicitly
+           ' call Marshal.FinalReleaseComObject on all accessor objects
+           If paragraphs IsNot Nothing Then
+               Marshal.FinalReleaseComObject(paragraphs)
+               paragraphs = Nothing
+           End If
+           If doc IsNot Nothing Then
+               Marshal.FinalReleaseComObject(doc)
+               doc = Nothing
+           End If
+           If wordapp IsNot Nothing Then
+               Marshal.FinalReleaseComObject(wordapp)
+               wordapp = Nothing
+           End If
+       End Try
+
+
+       Return True
+   End Function
+
+</pre>
+<pre id="codePreview" class="vb">
+''' &lt;summary&gt;
+   ''' Click event of Remove Blank Page button
+   ''' &lt;/summary&gt;
+   ''' &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+   ''' &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+   Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
+       If Not File.Exists(txbWordPath.Text) Then
+           MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.[Error])
+           Return
+       End If
+
+
+       ' Remove blank Page in word document
+       If RemoveBlankPage() = True Then
+           MessageBox.Show(&quot;Remove blank page successfully!&quot;)
+       End If
+   End Sub
+
+
+   ''' &lt;summary&gt;
+   ''' Remove Blank Page in Word document
+   ''' &lt;/summary&gt;
+   Private Function RemoveBlankPage() As Boolean
+       Dim wordapp As Word.Application = Nothing
+       Dim doc As Word.Document = Nothing
+       Dim paragraphs As Word.Paragraphs = Nothing
+       Try
+           ' Start Word APllication and set it be invisible
+           wordapp = New Word.Application()
+           wordapp.Visible = False
+           doc = wordapp.Documents.Open(wordPath)
+           paragraphs = doc.Paragraphs
+           For Each paragraph As Word.Paragraph In paragraphs
+               If paragraph.Range.Text.Trim() = String.Empty Then
+                   paragraph.Range.[Select]()
+                   wordapp.Selection.Delete()
+               End If
+           Next
+
+
+           ' Save the document and close document
+           doc.Save()
+           DirectCast(doc, Word._Document).Close()
+
+
+           ' Quit the word application
+
+
+           DirectCast(wordapp, Word._Application).Quit()
+       Catch ex As Exception
+           MessageBox.Show(&quot;Exception Occur, error message is: &quot; & ex.Message)
+           Return False
+       Finally
+           ' Clean up the unmanaged Word COM resources by explicitly
+           ' call Marshal.FinalReleaseComObject on all accessor objects
+           If paragraphs IsNot Nothing Then
+               Marshal.FinalReleaseComObject(paragraphs)
+               paragraphs = Nothing
+           End If
+           If doc IsNot Nothing Then
+               Marshal.FinalReleaseComObject(doc)
+               doc = Nothing
+           End If
+           If wordapp IsNot Nothing Then
+               Marshal.FinalReleaseComObject(wordapp)
+               wordapp = Nothing
+           End If
+       End Try
+
+
+       Return True
+   End Function
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information</h2>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;</span>Office Dev Center
+</span></p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/office/aa905340">http://msdn.microsoft.com/en-us/office/aa905340</a>
+</p>
+<p class="MsoNormal">Word Object Model Overview</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/kw65a0we(v=VS.80).aspx">http://msdn.microsoft.com/en-us/library/kw65a0we(v=VS.80).aspx</a>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/8ceaf4b9-39f1-47dc-ae5e-ffbff5b81e5fimage.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

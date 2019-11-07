@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  targetNamespace="urn:flickr"
+                  xmlns:x="urn:flickr">
+
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="urn:flickr">
+
+      <xsd:element name="FlickrRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="method" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xsd:element name="api_key" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xsd:element name="api_sig" type="xsd:string" minOccurs="1" maxOccurs="1" nillable="false" />
+            <xsd:element name="frob" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      
+      <xsd:element name="FlickrResponse"  type="xsd:string">
+      </xsd:element>
+
+      <xsd:element name="FlickrFault"  type="xsd:string">
+      </xsd:element>
+
+    </xsd:schema>
+  </wsdl:types>
+
+
+  <wsdl:message name="FlickrRequestMessage">
+    <wsdl:part name="parameters" element="x:FlickrRequest"/>
+  </wsdl:message>
+  <wsdl:message name="FlickrResponseMessage">
+    <wsdl:part name="parameters" element="x:FlickrResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlickrFaultMessage">
+    <wsdl:part name="parameters" element="x:FlickrFault" />
+  </wsdl:message>
+  
+  <wsdl:portType name="FlickrFrobRequestPort">
+    <wsdl:operation name="flickr.auth.getFrob">
+      <wsdl:input message="x:FlickrRequestMessage" />
+      <wsdl:output message="x:FlickrResponseMessage" />
+      <wsdl:fault name="Fault" message="x:FlickrFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:portType name="FlickrTokenRequestPort">
+    <wsdl:operation name="flickr.auth.getToken">
+      <wsdl:input message="x:FlickrRequestMessage" />
+      <wsdl:output message="x:FlickrResponseMessage" />
+      <wsdl:fault name="Fault" message="x:FlickrFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="FlickrFrobRequestPortBinding" type="x:FlickrFrobRequestPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="flickr.auth.getFrob">
+      <soap:operation soapAction="flickr" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="urn:flickr"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="urn:flickr"/>
+      </wsdl:output>
+      <wsdl:fault name="Fault">
+        <soap:fault name="Fault" use="literal" namespace="urn:flickr"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:binding name="FlickrTokenRequestPortBinding" type="x:FlickrTokenRequestPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="flickr.auth.getToken">
+      <soap:operation soapAction="flickr" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal" namespace="urn:flickr"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="urn:flickr"/>
+      </wsdl:output>
+      <wsdl:fault name="Fault">
+        <soap:fault name="Fault" use="literal" namespace="urn:flickr"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="FlickrFrobRequestPortService">
+    <wsdl:port name="FlickrFrobRequestPort" binding="x:FlickrFrobRequestPortBinding">
+      <soap:address location="http://api.flickr.com/services/rest/"/>
+    </wsdl:port>
+  </wsdl:service>
+
+  <wsdl:service name="FlickrTokenRequestPortService">
+    <wsdl:port name="FlickrTokenRequestPort" binding="x:FlickrTokenRequestPortBinding">
+      <soap:address location="http://api.flickr.com/services/rest/"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

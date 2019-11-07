@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/bfb4b7f8-142c-4880-b2e0-5268b6906b1dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>101 LINQ Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>101 LINQ Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Restriction Operators, Aggregate Operators, Conversion Operators, Element Operators, Generation Operators, Grouping Operators, Join Operators, Miscellaneous Operators, Ordering Operators, Partitioning Operators, Projection Operators, Quantifiers, Query Execution, Set Operators, Custom Sequence Operators
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/26/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div class="RoundedBox">
+<div class="boxheader">
+<div class="RoundedBox">
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td align="left" valign="middle" style="background-color:#c0c0c0"><span style="color:#ffffff; font-size:x-large">&nbsp;101 LINQ SAMPLES</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="BostonPostCard"></div>
+</div>
+<div class="boxheader"><span style="font-size:medium; background-color:#ffffff; color:#333333">Learn how to use LINQ in your applications with these code samples, covering the entire range of LINQ functionality and demonstrating LINQ with SQL, DataSets, and
+ XML.</span></div>
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td width="50px" align="left" valign="middle"><a href="http://archive.msdn.microsoft.com/vb2008samples/Release/ProjectReleases.aspx?ReleaseId=1426"><img title="101 Samples for Visual Basic 2005" src="http://i.msdn.microsoft.com/dd183105.download_45(en-us,MSDN.10).jpg" alt="101 Samples for Visual Basic 2005" align="left"></a></td>
+<td align="left" valign="middle"><span style="font-size:medium"><strong><a href="description.html">Browse all 101 LINQ Samples</a>&nbsp;</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+<table class="multicol">
+<tbody>
+<tr>
+<td class="innercol" valign="top">
+<div class="maincolumn">
+<div class="BostonPostCard"></div>
+<table class="multicol" border="0" cellpadding="10">
+<tbody>
+<tr>
+<td class="innercol" valign="top">
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Restriction Operators" href="../LINQ - Restriction Operators/description.html">Restriction Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a title="This sample uses where to find all elements of an array less than 5." href="../LINQ - Restriction Operators/description.html" >Where - Simple 1</a>
+</li><li><a title="This sample uses where to find all products that are out of stock." href="../LINQ - Restriction Operators/description.html" >Where - Simple 2</a>
+</li><li><a title="This sample uses where to find all products that are in stock and cost more than 3.00 per unit." href="../LINQ - Restriction Operators/description.html" >Where - Simple 3</a>
+</li><li><a title="This sample uses where to find all customers in Washington and then uses the resulting sequence to drill down into their orders." href="../LINQ - Restriction Operators/description.html" >Where
+ - Drilldown</a> </li><li><a title="This sample demonstrates an indexed Where clause that returns digits whose name is shorter than their value." href="../LINQ - Restriction Operators/description.html" >Where - Indexed</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Projection Operators" href="../LINQ - Projection Operators/description.html">Projection Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Projection Operators/description.html" >Select - Simple 1</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Simple 2</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Transformation</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Anonymous Types 1</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Anonymous Types 2</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Anonymous Types 3</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Indexed</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >Select - Filtered</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - Compound from 1</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - Compound from 2</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - Compound from 3</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - from Assignment</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - Multiple from</a>
+</li><li><a href="../LINQ - Projection Operators/description.html" >SelectMany - Indexed</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Partitioning Operators" href="../LINQ - Partitioning Operators/description.html">Partitioning Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Partitioning Operators/description.html" >Take - Simple</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >Take - Nested</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >Skip - Simple</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >Skip - Nested</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >TakeWhile - Simple</a>
+</li><li><a title="New Link" href="../LINQ - Partitioning Operators/description.html" >TakeWhile - Indexed</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >SkipWhile - Simple</a>
+</li><li><a href="../LINQ - Partitioning Operators/description.html" >SkipWhile - Indexed</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Ordering Operators" href="../LINQ - Ordering Operators/description.html">Ordering Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Ordering Operators/description.html" >OrderBy - Simple 1</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderBy - Simple 2</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderBy - Simple 3</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderBy - Comparer</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderByDescending - Simple 1</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderByDescending - Simple 2</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >OrderByDescending - Comparer</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >ThenBy - Simple</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >ThenBy - Comparer</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >ThenByDescending - Simple</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >ThenByDescending - Comparer</a>
+</li><li><a href="../LINQ - Ordering Operators/description.html" >Reverse</a>
+</li></ul>
+</td>
+<td class="innercol" valign="top">
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Grouping Operators" href="../LINQ  - Grouping Operators/description.html">Grouping Operators</a></span></h2>
+<ul>
+<li><a title="This sample uses group by to partition a list of numbers by their remainder when divided by 5." href="../LINQ  - Grouping Operators/description.html" >GroupBy - Simple 1</a>
+</li><li><a title="http://code.msdn.microsoft.com/LINQ-to-DataSets-Grouping-c62703ea" href="../LINQ  - Grouping Operators/description.html" >GroupBy - Simple 2</a>
+</li><li><a title="http://code.msdn.microsoft.com/LINQ-to-DataSets-Grouping-c62703ea" href="../LINQ  - Grouping Operators/description.html" >GroupBy - Simple 3</a>
+</li><li><a title="This sample uses group by to partition a list of each customer's orders, first by year, and then by month." href="../LINQ  - Grouping Operators/description.html" >GroupBy - Nested</a>
+</li><li><a title="This sample uses GroupBy to partition trimmed elements of an array using a custom comparer that matches words that are anagrams of each other." href="../LINQ  - Grouping Operators/description.html" >GroupBy
+ - Comparer</a> </li><li><a title="This sample uses GroupBy to partition trimmed elements of an array using a custom comparer that matches words that are anagrams of each other, and then converts the results to uppercase." href="../LINQ  - Grouping Operators/description.html" >GroupBy
+ - Comparer, Mapped</a> </li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Set Operators" href="../LINQ - Set Operators/description.html">Set Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a title="This sample uses Distinct to remove duplicate elements in a sequence of factors of 300." href="../LINQ - Set Operators/description.html" >Distinct - 1</a>
+</li><li><a title="This sample uses Distinct to find the unique Category names." href="../LINQ - Set Operators/description.html" >Distinct - 2</a>
+</li><li><a title="This sample uses Union to create one sequence that contains the unique values from both arrays." href="../LINQ - Set Operators/description.html" >Union - 1</a>
+</li><li><a title="This sample uses Union to create one sequence that contains the unique first letter from both product and customer names." href="../LINQ - Set Operators/description.html" >Union - 2</a>
+</li><li><a title="This sample uses Intersect to create one sequence that contains the common values shared by both arrays." href="../LINQ - Set Operators/description.html" >Intersect - 1</a>
+</li><li><a title="This sample uses Intersect to create one sequence that contains the common first letter from both product and customer names." href="../LINQ - Set Operators/description.html" >Intersect -
+ 2</a> </li><li><a title="This sample uses Except to create a sequence that contains the values from numbersAthat are not also in numbersB." href="../LINQ - Set Operators/description.html" >Except - 1</a>
+</li><li><a title="This sample uses Except to create one sequence that contains the first letters of product names that are not also first letters of customer names." href="../LINQ - Set Operators/description.html" >Except
+ - 2</a> </li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Conversion Operators" href="../LINQ - Conversion Operators/description.html">Conversion Operators</a></span></h2>
+<ul>
+<li><a title="This sample uses ToArray to immediately evaluate a sequence into an array." href="../LINQ - Conversion Operators/description.html" >ToArray</a>
+</li><li><a title="This sample uses ToList to immediately evaluate a sequence into a List&lt;T&gt;." href="../LINQ - Conversion Operators/description.html" >ToList</a>
+</li><li><a title="This sample uses ToDictionary to immediately evaluate a sequence and a related key expression into a dictionary." href="../LINQ - Conversion Operators/description.html" >ToDictionary</a>
+</li><li><a title="This sample uses OfType to return only the elements of the array that are of type double." href="../LINQ - Conversion Operators/description.html" >OfType</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Element Operators" href="../LINQ - Element Operators/description.html">Element Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Element Operators/description.html" >First - Simple</a>
+</li><li><a href="../LINQ - Element Operators/description.html" >First - Condition</a>
+</li><li><a href="../LINQ - Element Operators/description.html" >FirstOrDefault - Simple</a>
+</li><li><a href="../LINQ - Element Operators/description.html" >FirstOrDefault - Condition</a>
+</li><li><a href="../LINQ - Element Operators/description.html" >ElementAt</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Generation Operators" href="../LINQ - Generation Operators/description.html">Generation Operators</a></span></h2>
+<ul>
+<li><a title="This sample uses Range to generate a sequence of numbers from 100 to 149 that is used to find which numbers in that range are odd and even." href="../LINQ - Generation Operators/description.html" >Range</a>
+</li><li><a title="This sample uses Repeat to generate a sequence that contains the number 7 ten times." href="../LINQ - Generation Operators/description.html" >Repeat</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Quantifiers" href="../LINQ - Quantifiers/description.html">Quantifiers</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Quantifiers/description.html" >Any - Simple</a>
+</li><li><a href="../LINQ - Quantifiers/description.html" >Any - Grouped</a>
+</li><li><a href="../LINQ - Quantifiers/description.html" >All - Simple</a>
+</li><li><a href="../LINQ - Quantifiers/description.html" >All - Grouped</a>
+</li></ul>
+</td>
+<td valign="top">
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Aggregate Operators " href="../LINQ - Aggregate Operators/description.html">Aggregate Operators</a></span></h2>
+<ul>
+<li><a title="This sample uses Count to get the number of unique factors of 300." href="../LINQ - Aggregate Operators/description.html" >Count - Simple</a>
+</li><li><a title="This sample uses Count to get the number of odd ints in the array." href="../LINQ - Aggregate Operators/description.html" >Count - Conditional</a>
+</li><li><a title="This sample uses Count to return a list of customers and how many orders each has." href="../LINQ - Aggregate Operators/description.html" >Count - Nested</a>
+</li><li><a title="This sample uses Count to return a list of categories and how many products each has." href="../LINQ - Aggregate Operators/description.html" >Count - Grouped</a>
+</li><li><a title="This sample uses Sum to get the total of the numbers in an array." href="../LINQ - Aggregate Operators/description.html" >Sum - Simple</a>
+</li><li><a title="This sample uses Sum to get the total number of characters of all words in the array." href="../LINQ - Aggregate Operators/description.html" >Sum - Projection</a>
+</li><li><a title="This sample uses Sum to get the total units in stock for each product category." href="../LINQ - Aggregate Operators/description.html" >Sum - Grouped</a>
+</li><li><a title="This sample uses Min to get the lowest number in an array." href="../LINQ - Aggregate Operators/description.html" >Min - Simple</a>
+</li><li><a title="This sample uses Min to get the length of the shortest word in an array." href="../LINQ - Aggregate Operators/description.html" >Min - Projection</a>
+</li><li><a title="This sample uses Min to get the cheapest price among each category's products." href="../LINQ - Aggregate Operators/description.html" >Min - Grouped</a>
+</li><li><a title="This sample uses Min to get the products with the cheapest price in each category." href="../LINQ - Aggregate Operators/description.html" >Min - Elements</a>
+</li><li><a title="This sample uses Max to get the highest number in an array." href="../LINQ - Aggregate Operators/description.html" >Max - Simple</a>
+</li><li><a title="This sample uses Max to get the length of the longest word in an array." href="../LINQ - Aggregate Operators/description.html" >Max - Projection</a>
+</li><li><a title="This sample uses Max to get the most expensive price among each category's products." href="../LINQ - Aggregate Operators/description.html" >Max - Grouped</a>
+</li><li><a title="This sample uses Max to get the products with the most expensive price in each category." href="../LINQ - Aggregate Operators/description.html" >Max - Elements</a>
+</li><li><a title="This sample uses Average to get the average of all numbers in an array." href="../LINQ - Aggregate Operators/description.html" >Average - Simple</a>
+</li><li><a title="This sample uses Average to get the average length of the words in the array." href="../LINQ - Aggregate Operators/description.html" >Average - Projection</a>
+</li><li><a title="This sample uses Average to get the average price of each category's products." href="../LINQ - Aggregate Operators/description.html" >Average - Grouped</a>
+</li><li><a title="This sample uses Aggregate to create a running product on the array that calculates the total product of all elements." href="../LINQ - Aggregate Operators/description.html" >Aggregate
+ - Simple</a> </li><li><a title="This sample uses Aggregate to create a running account balance that subtracts each withdrawal from the initial balance of 100, as long as the balance never drops below 0." href="../LINQ - Aggregate Operators/description.html" >Aggregate
+ - Seed</a> </li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Miscellaneous Operators" href="../LINQ - Miscellaneous Operators/description.html">Miscellaneous Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a href="../LINQ - Miscellaneous Operators/description.html" >Concat - 1</a>
+</li><li><a href="../LINQ - Miscellaneous Operators/description.html" >Concat - 2</a>
+</li><li><a href="../LINQ - Miscellaneous Operators/description.html" >EqualAll - 1</a>
+</li><li><a href="../LINQ - Miscellaneous Operators/description.html" >EqualAll - 2</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Custom Sequence Operators" href="../LINQ - Custom Sequence Operators/description.html">Custom Sequence Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a title="This sample calculates the dot product of two integer vectors." href="../LINQ - Custom Sequence Operators/description.html" >Combine</a>
+</li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Query Execution" href="../LINQ - Query Execution/description.html">Query Execution</a></span></h2>
+<ul class="bulletedlist">
+<li><a title="The following sample shows how query execution is deferred until the query is enumerated at a foreach statement." href="../LINQ - Query Execution/description.html" >Deferred Execution</a>
+</li><li><a title="The following sample shows how queries can be executed immediately with operators such as ToList()." href="../LINQ - Query Execution/description.html" >Immediate Execution</a>
+</li><li><a title="The following sample shows how, because of deferred execution, queries can be used again after data changes and will then operate on the new data." href="../LINQ - Query Execution/description.html" >Query
+ Reuse</a> </li></ul>
+<h2><span style="text-decoration:underline"><a title="This sample shows different uses of Join Operators" href="../LINQ - Join Operators/description.html">Join Operators</a></span></h2>
+<ul class="bulletedlist">
+<li><a title="New Link" href="../LINQ - Join Operators/description.html" >Cross Join</a>
+</li><li><a title="New Link" href="../LINQ - Join Operators/description.html" >Group Join</a>
+</li><li><a title="New Link" href="../LINQ - Join Operators/description.html" >Cross Join with Group Join</a>
+</li><li><a title="New Link" href="../LINQ - Join Operators/description.html" >Left Outer Join</a>
+</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps3647-->
+                        <div id="item">
+                                <div><a href="LINQ - Restriction Operators/description.html">LINQ - Restriction Operators</a></div>
+                            <div>This sample shows different uses of Restriction Operators.</div>
+                        </div>
+                        <!--pe3647-->
+                        <!--ps3633-->
+                        <div id="item">
+                                <div><a href="LINQ - Join Operators/description.html">LINQ - Join Operators</a></div>
+                            <div>This sample shows different uses of Join Operators</div>
+                        </div>
+                        <!--pe3633-->
+                        <!--ps3665-->
+                        <div id="item">
+                                <div><a href="LINQ - Projection Operators/description.html">LINQ - Projection Operators</a></div>
+                            <div>This sample shows different uses of Projection Operators</div>
+                        </div>
+                        <!--pe3665-->
+                        <!--ps3660-->
+                        <div id="item">
+                                <div><a href="LINQ  - Grouping Operators/description.html">LINQ  - Grouping Operators</a></div>
+                            <div>This sample shows different uses of Grouping Operators</div>
+                        </div>
+                        <!--pe3660-->
+                        <!--ps3626-->
+                        <div id="item">
+                                <div><a href="LINQ - Aggregate Operators/description.html">LINQ - Aggregate Operators</a></div>
+                            <div>This sample shows different uses of Aggregate Operators</div>
+                        </div>
+                        <!--pe3626-->
+                        <!--ps3639-->
+                        <div id="item">
+                                <div><a href="LINQ - Ordering Operators/description.html">LINQ - Ordering Operators</a></div>
+                            <div>This sample shows different uses of Ordering Operators</div>
+                        </div>
+                        <!--pe3639-->
+                        <!--ps3649-->
+                        <div id="item">
+                                <div><a href="LINQ - Set Operators/description.html">LINQ - Set Operators</a></div>
+                            <div>This sample shows different uses of Set Operators.</div>
+                        </div>
+                        <!--pe3649-->
+                        <!--ps3645-->
+                        <div id="item">
+                                <div><a href="LINQ - Query Execution/description.html">LINQ - Query Execution</a></div>
+                            <div>This sample shows different uses of Query Execution</div>
+                        </div>
+                        <!--pe3645-->
+                        <!--ps3640-->
+                        <div id="item">
+                                <div><a href="LINQ - Partitioning Operators/description.html">LINQ - Partitioning Operators</a></div>
+                            <div>This sample shows different uses of Partitioning Operators</div>
+                        </div>
+                        <!--pe3640-->
+                        <!--ps3628-->
+                        <div id="item">
+                                <div><a href="LINQ - Element Operators/description.html">LINQ - Element Operators</a></div>
+                            <div> This sample shows different uses of Element Operators</div>
+                        </div>
+                        <!--pe3628-->
+                        <!--ps3644-->
+                        <div id="item">
+                                <div><a href="LINQ - Quantifiers/description.html">LINQ - Quantifiers</a></div>
+                            <div>This sample shows different uses of Quantifiers</div>
+                        </div>
+                        <!--pe3644-->
+                        <!--ps3627-->
+                        <div id="item">
+                                <div><a href="LINQ - Conversion Operators/description.html">LINQ - Conversion Operators</a></div>
+                            <div>This sample shows different uses of Conversion Operators</div>
+                        </div>
+                        <!--pe3627-->
+                        <!--ps3635-->
+                        <div id="item">
+                                <div><a href="LINQ - Miscellaneous Operators/description.html">LINQ - Miscellaneous Operators</a></div>
+                            <div>This sample shows different uses of Miscellaneous Operators</div>
+                        </div>
+                        <!--pe3635-->
+                        <!--ps3670-->
+                        <div id="item">
+                                <div><a href="LINQ - Custom Sequence Operators/description.html">LINQ - Custom Sequence Operators</a></div>
+                            <div>This sample shows different uses of Custom Sequence Operators</div>
+                        </div>
+                        <!--pe3670-->
+                        <!--ps3630-->
+                        <div id="item">
+                                <div><a href="LINQ - Generation Operators/description.html">LINQ - Generation Operators</a></div>
+                            <div>This sample shows different uses of Generation Operators</div>
+                        </div>
+                        <!--pe3630-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

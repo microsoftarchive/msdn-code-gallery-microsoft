@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Search and Highlight in TextBlock (CSWPFSearchAndHighlightTextBlockControl)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Search and Highlight in TextBlock (CSWPFSearchAndHighlightTextBlockControl)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WPF
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, TextBlock
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">12/28/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSWPFSearchAndHighlightText-3b5e207a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Search and Highlight Keywords in TextBlock</h1>
+<h2>Summary</h2>
+<p>The WPF code sample demonstrates how to search and highlight keywords in a TextBlock control.</p>
+<p><img src="description/CSWPFSearchAndHighlightTextBlockControl.png" alt="" width="522" height="354"></p>
+<p>The sample includes a custom user control &quot;SearchableTextControl&quot; and its search method is used to demonstrate how to highlight keywords using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Windows.Documents.Run.aspx"  title="Auto generated link to System.Windows.Documents.Run">System.Windows.Documents.Run</a> and System.Windows.Documents.Incline.</p>
+<h2><span>Demo</span></h2>
+<p>Step1. Build this project in VS2010.</p>
+<p>Step2. Run CSWPFSearchAndHighlightTextBlockControl.exe.</p>
+<p>Step3. Input the source string after the &quot;Source Text&quot; TextBlock.</p>
+<p>Step4. Type the keyword which you want to search in the source string after the &quot;Search&quot; TextBlock.</p>
+<p>Step5. You can change the Background/Foreground colors by selecting the specific color&nbsp;in drop-list of combobox.</p>
+<p><span style="font-size:medium; font-weight:bold">Code Logic</span></p>
+<p>Step 1. Create a Visual C# WPF Application in Visual Studio 2010 and name it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;CSWPFSearchAndHighlightTextBlockControl&quot;.</p>
+<p>Step 2. Create a class &quot;SearchableTextControl&quot;. Make sure it inherits from the &quot;Control&quot; class.</p>
+<p>Step 3. The &quot;SearchableTextControl&quot; class uses DependencyProperty.Register to implement a render event bound to custom user control such as:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">		/// &lt;summary&gt;
+		/// SearchText sandbox which is used to get or set the value from a dependency property,
+		/// if it gets a value,it should be forced to bind to a string type.
+		/// &lt;/summary&gt;
+		public string SearchText
+		{
+		  get { return (string)GetValue(SearchTextProperty); }
+		  set { SetValue(SearchTextProperty, value); }
+		}
+
+		/// &lt;summary&gt;
+		/// Real implementation about SearchTextProperty which registers a dependency property with 
+		/// the specified property name, property type, owner type, and property metadata. 
+		/// &lt;/summary&gt;
+		public static readonly DependencyProperty SearchTextProperty =
+			DependencyProperty.Register(&quot;SearchText&quot;, typeof(string), typeof(SearchableTextControl), 
+			new UIPropertyMetadata(string.Empty,
+			  UpdateControlCallBack));
+
+		/// &lt;summary&gt;
+		/// Create a call back function which is used to invalidate the rendering of the element, 
+		/// and force a complete new layout pass.
+		/// One such advanced scenario is if you are creating a PropertyChangedCallback for a 
+		/// dependency property that is not  on a Freezable or FrameworkElement derived class that 
+		/// still influences the layout when it changes.
+		/// &lt;/summary&gt;
+		private static void UpdateControlCallBack(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			SearchableTextControl obj = d as SearchableTextControl;
+			obj.InvalidateVisual();
+		}</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;SearchText&nbsp;sandbox&nbsp;which&nbsp;is&nbsp;used&nbsp;to&nbsp;get&nbsp;or&nbsp;set&nbsp;the&nbsp;value&nbsp;from&nbsp;a&nbsp;dependency&nbsp;property,</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;if&nbsp;it&nbsp;gets&nbsp;a&nbsp;value,it&nbsp;should&nbsp;be&nbsp;forced&nbsp;to&nbsp;bind&nbsp;to&nbsp;a&nbsp;string&nbsp;type.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;SearchText&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">get</span>&nbsp;{&nbsp;<span class="cs__keyword">return</span>&nbsp;(<span class="cs__keyword">string</span>)GetValue(SearchTextProperty);&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">set</span>&nbsp;{&nbsp;SetValue(SearchTextProperty,&nbsp;<span class="cs__keyword">value</span>);&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Real&nbsp;implementation&nbsp;about&nbsp;SearchTextProperty&nbsp;which&nbsp;registers&nbsp;a&nbsp;dependency&nbsp;property&nbsp;with&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;the&nbsp;specified&nbsp;property&nbsp;name,&nbsp;property&nbsp;type,&nbsp;owner&nbsp;type,&nbsp;and&nbsp;property&nbsp;metadata.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">readonly</span>&nbsp;DependencyProperty&nbsp;SearchTextProperty&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DependencyProperty.Register(<span class="cs__string">&quot;SearchText&quot;</span>,&nbsp;<span class="cs__keyword">typeof</span>(<span class="cs__keyword">string</span>),&nbsp;<span class="cs__keyword">typeof</span>(SearchableTextControl),&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">new</span>&nbsp;UIPropertyMetadata(<span class="cs__keyword">string</span>.Empty,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UpdateControlCallBack));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Create&nbsp;a&nbsp;call&nbsp;back&nbsp;function&nbsp;which&nbsp;is&nbsp;used&nbsp;to&nbsp;invalidate&nbsp;the&nbsp;rendering&nbsp;of&nbsp;the&nbsp;element,&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;and&nbsp;force&nbsp;a&nbsp;complete&nbsp;new&nbsp;layout&nbsp;pass.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;One&nbsp;such&nbsp;advanced&nbsp;scenario&nbsp;is&nbsp;if&nbsp;you&nbsp;are&nbsp;creating&nbsp;a&nbsp;PropertyChangedCallback&nbsp;for&nbsp;a&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;dependency&nbsp;property&nbsp;that&nbsp;is&nbsp;not&nbsp;&nbsp;on&nbsp;a&nbsp;Freezable&nbsp;or&nbsp;FrameworkElement&nbsp;derived&nbsp;class&nbsp;that&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;still&nbsp;influences&nbsp;the&nbsp;layout&nbsp;when&nbsp;it&nbsp;changes.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;UpdateControlCallBack(DependencyObject&nbsp;d,&nbsp;DependencyPropertyChangedEventArgs&nbsp;e)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SearchableTextControl&nbsp;obj&nbsp;=&nbsp;d&nbsp;<span class="cs__keyword">as</span>&nbsp;SearchableTextControl;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.InvalidateVisual();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<p><span>Step 4. In SearchableTextControl class, there is a override method &quot;OnRender&quot;, this method uses&nbsp;String.IndexOf and String.Substring methods to match the target string, and we associate&nbsp;those methods with TextBlock.Inlines.Add method in this
+ sample. And in order to implement&nbsp;the behavior which looks like capture of regular expression with several times.</span></p>
+<p><span>Step 5. The method &quot;GenerateRun&quot; which in class SearchableTextControl is used to alternate the&nbsp;colors of all matched strings. And it add some features by adding the FontStyle property and&nbsp;the FontWeight property.<br>
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private Run GenerateRun(string searchedString, bool isHighlight)
+		{
+		   if (!string.IsNullOrEmpty(searchedString))
+            {
+                Run run = new Run(searchedString)
+                {
+                    Background = isHighlight ? this.HighlightBackground : this.Background,
+                    Foreground = isHighlight ? this.HighlightForeground : this.Foreground,
+
+                    // Set the source text with the style which is Italic.
+                    FontStyle = isHighlight ? FontStyles.Italic : FontStyles.Normal,
+
+                    // Set the source text with the style which is Bold.
+                    FontWeight = isHighlight ? FontWeights.Bold : FontWeights.Normal,
+                };
+                return run;
+            }
+		  return null;
+		}</pre>
+<div class="preview">
+<pre class="js">private&nbsp;Run&nbsp;GenerateRun(string&nbsp;searchedString,&nbsp;bool&nbsp;isHighlight)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>&nbsp;(!string.IsNullOrEmpty(searchedString))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Run&nbsp;run&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;Run(searchedString)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Background&nbsp;=&nbsp;isHighlight&nbsp;?&nbsp;<span class="js__operator">this</span>.HighlightBackground&nbsp;:&nbsp;<span class="js__operator">this</span>.Background,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foreground&nbsp;=&nbsp;isHighlight&nbsp;?&nbsp;<span class="js__operator">this</span>.HighlightForeground&nbsp;:&nbsp;<span class="js__operator">this</span>.Foreground,&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Set&nbsp;the&nbsp;source&nbsp;text&nbsp;with&nbsp;the&nbsp;style&nbsp;which&nbsp;is&nbsp;Italic.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FontStyle&nbsp;=&nbsp;isHighlight&nbsp;?&nbsp;FontStyles.Italic&nbsp;:&nbsp;FontStyles.Normal,&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;Set&nbsp;the&nbsp;source&nbsp;text&nbsp;with&nbsp;the&nbsp;style&nbsp;which&nbsp;is&nbsp;Bold.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FontWeight&nbsp;=&nbsp;isHighlight&nbsp;?&nbsp;FontWeights.Bold&nbsp;:&nbsp;FontWeights.Normal,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;run;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;null;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h2>References</h2>
+<p>Run Class <br>
+<a href="http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&amp;l=EN-US&amp;k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.WINDOWS.DOCUMENTS.RUN.aspx"  title="Auto generated link to SYSTEM.WINDOWS.DOCUMENTS.RUN">SYSTEM.WINDOWS.DOCUMENTS.RUN</a>);k(RUN);k(DevLang-CSHARP)&rd=true">http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&amp;l=EN-US&amp;k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.WINDOWS.DOCUMENTS.RUN.aspx"  title="Auto generated link to SYSTEM.WINDOWS.DOCUMENTS.RUN">SYSTEM.WINDOWS.DOCUMENTS.RUN</a>);k(RUN);k(DevLang-CSHARP)&amp;rd=true</a></p>
+<p>DependencyProperty.OverrideMetadata Method<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.dependencyproperty.overridemetadata.aspx">http://msdn.microsoft.com/en-us/library/system.windows.dependencyproperty.overridemetadata.aspx</a></p>
+<p>DependencyProperty.Register Method <br>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.dependencyproperty.register.aspx">http://msdn.microsoft.com/en-us/library/system.windows.dependencyproperty.register.aspx</a></p>
+<p>FrameworkTemplate.FindName Method <br>
+<a href="http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&amp;l=EN-US&amp;k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME.aspx"  title="Auto generated link to SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME">SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME</a>);k(TargetFrameworkMoniker-%22.NETFRAMEWORK%2cVERSION%3dV4.0%22);k(DevLang-CSHARP)&rd=true">http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&amp;l=EN-US&amp;k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME.aspx"  title="Auto generated link to SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME">SYSTEM.WINDOWS.FRAMEWORKTEMPLATE.FINDNAME</a>);k(TargetFrameworkMoniker-%22.NETFRAMEWORK%2cVERSION%3dV4.0%22);k(DevLang-CSHARP)&amp;rd=true</a></p>
+<p>UIElement.InvalidateVisual Method <br>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.uielement.invalidatevisual.aspx">http://msdn.microsoft.com/en-us/library/system.windows.uielement.invalidatevisual.aspx</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png" alt=""></a></div>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

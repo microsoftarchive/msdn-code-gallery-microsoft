@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C# app P/Invokes a native DLL (CSPInvokeDll)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C# app P/Invokes a native DLL (CSPInvokeDll)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            .NET Framework
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop, P/Invoke
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">8/22/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSPInvokeDll-b05779d0">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2><span style="font-size:14.0pt; line-height:115%">CONSOLE APPLICATION </span><span style="font-size:14.0pt; line-height:115%">(</span><span style="font-size:14.0pt; line-height:115%">CSPInvokeDll</span><span style="font-size:14.0pt; line-height:115%">)
+</span></h2>
+<h2>Introduction</h2>
+<p class="MsoNormal">Platform Invocation Services (P/Invoke) in .NET allows managed code to call unmanaged functions that are implemented and exported in unmanaged DLLs. This VC# code sample demonstrates using P/Invoke to call the functions exported by the
+ native DLLs: CppDynamicLinkLibrary.dll, user32.dll and msvcrt.dll.<span style="">
+</span></p>
+<h2>Running the Sample</h2>
+<h2><span style=""><img src="description/image.png" alt="" width="576" height="377" align="middle">
+</span><span style=""></span></h2>
+<h2>Using the Code<span style=""> </span></h2>
+<h3>A. P/Invoke functions exposed from a native C&#43;&#43; DLL module. </h3>
+<p class="MsoNormal">Step1. Declare the methods as having an implementation from a DLL export.
+</p>
+<p class="MsoNormal">First, declare the method with the <span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;; color:blue">
+static</span> and <span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;; color:blue">
+extern</span> C# keywords. Next, attach the DllImport attribute to the method. The DllImport attribute allows us to specify the name of the DLL that contains the method. The general practice is to name the C# method the same as the exported method, but we can<span style="">
+</span>also use a different name for the C# method. Specify custom marshaling information for the method's parameters and return value, which will override the .NET Framework default marshaling.
+</p>
+<p class="MsoNormal">For example, </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+[DllImport(&quot;CppDynamicLinkLibrary.dll&quot;, CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
+internal static extern int GetStringLength1(string str);
+
+</pre>
+<pre id="codePreview" class="csharp">
+[DllImport(&quot;CppDynamicLinkLibrary.dll&quot;, CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
+internal static extern int GetStringLength1(string str);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">These tools can help your write the correct P/Invoke declartions.
+</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Dumpbin: View the export table of a DLL </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>PInvoke.NET: PInvoke.net is primarily a wiki, allowing developers to find,
+<span style="">e</span>dit and add PInvoke* signatures, user-defined types, and any other info
+<span style="">r</span>elated to calling Win32 and other unmanaged APIs from managed code such
+<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>as C# or VB.NET.<span style="">&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>PInvoke Interop Assistant: It is a toolkit that helps developers to <span style="">
+e</span>fficiently convert from C to managed P/Invoke signatures or verse visa. </p>
+<p class="MsoNormal">Step2. Call the methods through the PInvoke signatures. For example:
+</p>
+<h3>B. P/Invoke C&#43;&#43; classes exposed from a native C&#43;&#43; DLL module. </h3>
+<p class="MsoNormal">There is no easy way to call the classes in a native C&#43;&#43; DLL module through P/Invoke.
+<a href="http://go.microsoft.com/?linkid=9729423.">Visual C&#43;&#43; Team Blog</a> introduced a solution, but it is complicated<span style="">.
+</span></p>
+<p class="MsoNormal">The recommended way of calling native C&#43;&#43; class from .NET are:
+</p>
+<p class="MsoNormal"><span style="">&nbsp; </span>1) use a C&#43;&#43;/CLI class library to wrap the native C&#43;&#43; module, and your .NET
+<span style="">&nbsp;</span>code class the C&#43;&#43;/CLI wrapper class to indirectly access the native C&#43;&#43;
+<span style="">&nbsp;</span>class. </p>
+<p class="MsoNormal"><span style="">&nbsp; </span>2) convert the native C&#43;&#43; module to be a COM server and expose the native
+<span style="">&nbsp;</span>C&#43;&#43; class through a COM interface. Then, the .NET code can access the
+<span style="">&nbsp;</span>class through .NET-COM interop. </p>
+<h3>C. Unload the native DLL module. </h3>
+<p class="MsoNormal">You can unload the DLL by first calling GetModuleHandle to get the handle of the module and then calling FreeLibrary to unload it.
+<span style=""></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+[DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
+static extern IntPtr GetModuleHandle(string moduleName);
+[DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
+[return: MarshalAs(UnmanagedType.Bool)]
+static extern bool FreeLibrary(IntPtr hModule);
+// Unload the DLL by calling GetModuleHandle and FreeLibrary. 
+if (!FreeLibrary(GetModuleHandle(moduleName)))
+{
+    Console.WriteLine(&quot;FreeLibrary failed w/err {0}&quot;, 
+    Marshal.GetLastWin32Error());
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+[DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
+static extern IntPtr GetModuleHandle(string moduleName);
+[DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Auto, SetLastError = true)]
+[return: MarshalAs(UnmanagedType.Bool)]
+static extern bool FreeLibrary(IntPtr hModule);
+// Unload the DLL by calling GetModuleHandle and FreeLibrary. 
+if (!FreeLibrary(GetModuleHandle(moduleName)))
+{
+    Console.WriteLine(&quot;FreeLibrary failed w/err {0}&quot;, 
+    Marshal.GetLastWin32Error());
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>More Information</h2>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:0cm; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:NSimSun"></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm; margin-bottom:.0001pt; text-indent:5.0pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://msdn.microsoft.com/en-us/library/aa288468.aspx">MSDN: Platform Invoke Tutorial</a>
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm; margin-bottom:.0001pt; text-indent:5.0pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://msdn.microsoft.com/en-us/library/aa719104.aspx">MSDN: Using P/Invoke to Call Unmanaged APIs from Your Managed Classes</a>
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm; margin-bottom:.0001pt; text-indent:5.0pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://msdn.microsoft.com/en-us/magazine/cc164123.aspx">MSDN: Calling Win32 DLLs in C# with P/Invoke</a>
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm; margin-bottom:.0001pt; text-indent:5.0pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://www.pinvoke.net/">PInvoke.NET</a>
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm; margin-bottom:.0001pt; text-indent:5.0pt; line-height:normal; text-autospace:none">
+<span style="font-size:9.5pt; font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://www.codeplex.com/clrinterop">PInvoke Interop Assistant</a>
+</span></p>
+<p class="MsoListParagraphCxSpLast"></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

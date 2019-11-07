@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.UiaCoreWindowProvider.CPP"
+          Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+          Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>UiaCoreWindowProviderSample C++ sample</DisplayName>
+    <Description>Microsoft.UiaCoreWindowProviderSample</Description>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="Microsoft.UiaCoreWindowProviderSample"
+                 Executable="UiaCoreWindowProvider.exe"
+                 EntryPoint="MainPage">
+      <VisualElements DisplayName="UiaCoreWindowProviderSample C++ sample" BackgroundColor="#00b2f0" Logo="squareTile-sdk.png" SmallLogo="smallTile-sdk.png" ForegroundText="light" Description="UiaCoreWindowProviderSample C++ sample">
+        <DefaultTile ShortName="UiaCoreWnd C++" ShowName="allLogos"/>
+        <SplashScreen Image="splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

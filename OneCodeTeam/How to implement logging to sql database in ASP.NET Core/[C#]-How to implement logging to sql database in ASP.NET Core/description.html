@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=875F4807220CE6912BAB87167976178B" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=10B55093DA08CEEF26023F25F71F9E5B" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to implement logging to sql database in ASP.NET Core</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to implement logging to sql database in ASP.NET Core</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, .NET, Logging, Web App Development, ASP.NET Core, Entity Framework Core 1.0
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SQL Server, Logging, Database, ASP.NET Core, EntityFramework<wbr />Core, LoggerProvider
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/28/2017</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-implement-logging-4cbcfc64">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="description/onecodesampletopbanner1.html" alt="">
+</a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">H</span><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">ow to implement logging to sql database in ASP.NET Core</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">Introduction
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>This sample demonstrates how to </span><span>implement logging to sql database in ASP.NET Core</span><span>.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><br>
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:large"><strong>Sample prerequisites</strong></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><span>&bull;&nbsp;</span>Install Visual Studio and .NET Core</span><br>
+</span></p>
+<ul>
+<li><span style="font-size:small">.NET Core 1.0 or later version(s). [<a href="https://code.msdn.microsoft.com/How-to-implement-logging-4cbcfc64/https://go.microsoft.com/fwlink/?LinkID=827546">.NET Core &#43; Visual Studio tooling</a>]</span>
+</li><li><span style="font-size:small">Microsoft Visual Studio 2015 update3 or above. [<a href="https://code.msdn.microsoft.com/How-to-implement-logging-4cbcfc64/https://www.microsoft.com/en-sg/download/details.aspx?id=48146">Visual Studio 2015 installer</a>]</span>
+</li></ul>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Restore all the NuGet packages in the project</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Create a database with sql scripts below:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">CREATE DATABASE CustomLoggerDB 
+GO 
+USE CustomLoggerDB
+GO 
+CREATE TABLE EventLog( 
+    [ID] int identity primary key, 
+    [EventID] int, 
+	[LogLevel] nvarchar(50),
+	[Message] nvarchar(4000),
+	[CreatedTime] datetime2
+)
+GO
+CREATE TABLE Student( 
+    ID int identity primary key, 
+    Name nvarchar(50), 
+    Age int 
+) 
+GO
+INSERT INTO Student VALUES('Bear',18) 
+INSERT INTO Student VALUES('Frank',20)
+GO</pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">DATABASE</span>&nbsp;<span class="sql__id">CustomLoggerDB</span>&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;
+<span class="sql__keyword">USE</span>&nbsp;<span class="sql__id">CustomLoggerDB</span>&nbsp;
+<span class="sql__id">GO</span>&nbsp;&nbsp;
+<span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">EventLog</span>(&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">ID</span>]&nbsp;<span class="sql__keyword">int</span>&nbsp;<span class="sql__id">identity</span>&nbsp;<span class="sql__keyword">primary</span>&nbsp;<span class="sql__keyword">key</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">EventID</span>]&nbsp;<span class="sql__keyword">int</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">LogLevel</span>]&nbsp;<span class="sql__keyword">nvarchar</span>(<span class="sql__number">50</span>),&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">Message</span>]&nbsp;<span class="sql__keyword">nvarchar</span>(<span class="sql__number">4000</span>),&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[<span class="sql__id">CreatedTime</span>]&nbsp;<span class="sql__id">datetime2</span>&nbsp;
+)&nbsp;
+<span class="sql__id">GO</span>&nbsp;
+<span class="sql__keyword">CREATE</span>&nbsp;<span class="sql__keyword">TABLE</span>&nbsp;<span class="sql__id">Student</span>(&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">ID</span>&nbsp;<span class="sql__keyword">int</span>&nbsp;<span class="sql__id">identity</span>&nbsp;<span class="sql__keyword">primary</span>&nbsp;<span class="sql__keyword">key</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__keyword">Name</span>&nbsp;<span class="sql__keyword">nvarchar</span>(<span class="sql__number">50</span>),&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sql__id">Age</span>&nbsp;<span class="sql__keyword">int</span>&nbsp;&nbsp;
+)&nbsp;&nbsp;
+<span class="sql__id">GO</span>&nbsp;
+<span class="sql__keyword">INSERT</span>&nbsp;<span class="sql__keyword">INTO</span>&nbsp;<span class="sql__id">Student</span>&nbsp;<span class="sql__keyword">VALUES</span>(<span class="sql__string">'Bear'</span>,<span class="sql__number">18</span>)&nbsp;&nbsp;
+<span class="sql__keyword">INSERT</span>&nbsp;<span class="sql__keyword">INTO</span>&nbsp;<span class="sql__id">Student</span>&nbsp;<span class="sql__keyword">VALUES</span>(<span class="sql__string">'Frank'</span>,<span class="sql__number">20</span>)&nbsp;
+<span class="sql__id">GO</span></pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Running the sample</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Before you run the sample, please update the connection string in the appsettings.json first.</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">&quot;ConnectionStrings&quot;: {
+  &quot;LoggerDatabase&quot;: &quot;Server=.;Database=CustomLoggerDB;Trusted_Connection=True;&quot;
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__string">&quot;ConnectionStrings&quot;</span>:&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;<span class="js__string">&quot;LoggerDatabase&quot;</span>:&nbsp;<span class="js__string">&quot;Server=.;Database=CustomLoggerDB;Trusted_Connection=True;&quot;</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<p style="font-size:10.0pt; direction:ltr; unicode-bidi:normal; margin:0pt"><span style="font-size:12pt"><span style="font-size:10pt">&nbsp;</span><span style="font-size:10pt">D</span><span style="font-size:10pt">o one of the following</span><span style="font-size:10pt">
+ to start debugging</span><span style="font-size:10pt">:</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Click the Start Debugging button on the toolbar.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Click Start Debugging in the Debug menu.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Press F5.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><img src="description/image.png" alt="" width="465" height="391" align="middle"></span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><br>
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Click &quot;Frank&quot;, then update the name to &quot;Frank1&quot;.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><img src="description/4fd1378c-d078-4328-8744-c0f92e6acc83image.png" alt="" width="553" height="527" align="middle">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Go to sql server client, and run script:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">mysql</span>
+<pre class="hidden">SELECT * FROM EventLog</pre>
+<div class="preview">
+<pre class="mysql"><span class="sql__keyword">SELECT</span>&nbsp;*&nbsp;<span class="sql__keyword">FROM</span>&nbsp;<span class="sql__id">EventLog</span></pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>You will see that the log data has been inserted into the table.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span><img src="description/414fef1f-1e34-4ea3-bdce-43e43d44eeb8image.png" alt="" width="605" height="370" align="middle">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Add logger provider in the configure method:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">loggerFactory.AddContext(LogLevel.Information);</pre>
+<div class="preview">
+<pre class="csharp">loggerFactory.AddContext(LogLevel.Information);</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Add DBContext in the services:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">CustomLoggerDBContext.ConnectionString = Configuration.GetConnectionString(&quot;LoggerDatabase&quot;);
+services.AddDbContext&lt;CustomLoggerDBContext&gt;();
+</pre>
+<div class="preview">
+<pre class="csharp">CustomLoggerDBContext.ConnectionString&nbsp;=&nbsp;Configuration.GetConnectionString(<span class="cs__string">&quot;LoggerDatabase&quot;</span>);&nbsp;
+services.AddDbContext&lt;CustomLoggerDBContext&gt;();&nbsp;</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>LoggerProvider</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public class DBLoggerProvider : ILoggerProvider
+{
+    private readonly Func&lt;string, LogLevel, bool&gt; _filter;
+    private string _connectionString;
+    public DBLoggerProvider(Func&lt;string, LogLevel, bool&gt; filter,string connectionStr)
+    {
+        _filter = filter;
+        _connectionString = connectionStr;
+    }
+    public ILogger CreateLogger(string categoryName)
+    {
+        return new DBLogger(categoryName, _filter, _connectionString);
+    }
+    public void Dispose()
+    {
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;DBLoggerProvider&nbsp;:&nbsp;ILoggerProvider&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">readonly</span>&nbsp;Func&lt;<span class="cs__keyword">string</span>,&nbsp;LogLevel,&nbsp;<span class="cs__keyword">bool</span>&gt;&nbsp;_filter;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;_connectionString;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;DBLoggerProvider(Func&lt;<span class="cs__keyword">string</span>,&nbsp;LogLevel,&nbsp;<span class="cs__keyword">bool</span>&gt;&nbsp;filter,<span class="cs__keyword">string</span>&nbsp;connectionStr)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_filter&nbsp;=&nbsp;filter;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_connectionString&nbsp;=&nbsp;connectionStr;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;ILogger&nbsp;CreateLogger(<span class="cs__keyword">string</span>&nbsp;categoryName)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__keyword">new</span>&nbsp;DBLogger(categoryName,&nbsp;_filter,&nbsp;_connectionString);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>DBLogger:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public class DBLogger : ILogger
+{
+    private string _categoryName;
+    private Func&lt;string, LogLevel, bool&gt; _filter;
+    private SqlHelper _helper;
+    private int MessageMaxLength = 4000;
+    public DBLogger(string categoryName, Func&lt;string, LogLevel, bool&gt; filter,string connectionString)
+    {
+        _categoryName = categoryName;
+        _filter = filter;
+        _helper = new SqlHelper(connectionString);
+    }
+    public void Log&lt;TState&gt;(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func&lt;TState, Exception, string&gt; formatter)
+    {
+        if (!IsEnabled(logLevel))
+        {
+            return;
+        }
+        if (formatter == null)
+        {
+            throw new ArgumentNullException(nameof(formatter));
+        }
+        var message = formatter(state, exception);
+        if (string.IsNullOrEmpty(message))
+        {
+            return;
+        }
+        if (exception != null)
+        {
+            message &#43;= &quot;\n&quot; &#43; exception.ToString();
+        }
+        message = message.Length &gt; MessageMaxLength ? message.Substring(0, MessageMaxLength) : message;
+        EventLog eventLog = new EventLog
+        {
+            Message = message,
+            EventId = eventId.Id,
+            LogLevel = logLevel.ToString(),
+            CreatedTime = DateTime.UtcNow
+        };
+        _helper.InsertLog(eventLog);
+    }
+    public bool IsEnabled(LogLevel logLevel)
+    {
+        return (_filter == null || _filter(_categoryName, logLevel));
+    }
+    public IDisposable BeginScope&lt;TState&gt;(TState state)
+    {
+        return null;
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;DBLogger&nbsp;:&nbsp;ILogger&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">string</span>&nbsp;_categoryName;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;Func&lt;<span class="cs__keyword">string</span>,&nbsp;LogLevel,&nbsp;<span class="cs__keyword">bool</span>&gt;&nbsp;_filter;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;SqlHelper&nbsp;_helper;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;MessageMaxLength&nbsp;=&nbsp;<span class="cs__number">4000</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;DBLogger(<span class="cs__keyword">string</span>&nbsp;categoryName,&nbsp;Func&lt;<span class="cs__keyword">string</span>,&nbsp;LogLevel,&nbsp;<span class="cs__keyword">bool</span>&gt;&nbsp;filter,<span class="cs__keyword">string</span>&nbsp;connectionString)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_categoryName&nbsp;=&nbsp;categoryName;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_filter&nbsp;=&nbsp;filter;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_helper&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlHelper(connectionString);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Log&lt;TState&gt;(LogLevel&nbsp;logLevel,&nbsp;EventId&nbsp;eventId,&nbsp;TState&nbsp;state,&nbsp;Exception&nbsp;exception,&nbsp;Func&lt;TState,&nbsp;Exception,&nbsp;<span class="cs__keyword">string</span>&gt;&nbsp;formatter)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(!IsEnabled(logLevel))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(formatter&nbsp;==&nbsp;<span class="cs__keyword">null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>&nbsp;<span class="cs__keyword">new</span>&nbsp;ArgumentNullException(nameof(formatter));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;message&nbsp;=&nbsp;formatter(state,&nbsp;exception);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(<span class="cs__keyword">string</span>.IsNullOrEmpty(message))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(exception&nbsp;!=&nbsp;<span class="cs__keyword">null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message&nbsp;&#43;=&nbsp;<span class="cs__string">&quot;\n&quot;</span>&nbsp;&#43;&nbsp;exception.ToString();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message&nbsp;=&nbsp;message.Length&nbsp;&gt;&nbsp;MessageMaxLength&nbsp;?&nbsp;message.Substring(<span class="cs__number">0</span>,&nbsp;MessageMaxLength)&nbsp;:&nbsp;message;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EventLog&nbsp;eventLog&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;EventLog&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message&nbsp;=&nbsp;message,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EventId&nbsp;=&nbsp;eventId.Id,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LogLevel&nbsp;=&nbsp;logLevel.ToString(),&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreatedTime&nbsp;=&nbsp;DateTime.UtcNow&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_helper.InsertLog(eventLog);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">bool</span>&nbsp;IsEnabled(LogLevel&nbsp;logLevel)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;(_filter&nbsp;==&nbsp;<span class="cs__keyword">null</span>&nbsp;||&nbsp;_filter(_categoryName,&nbsp;logLevel));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;IDisposable&nbsp;BeginScope&lt;TState&gt;(TState&nbsp;state)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;<span class="cs__keyword">null</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>Student Controller:</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private CustomLoggerDBContext _context;
+private readonly ILogger&lt;StudentController&gt; _logger;
+
+public StudentController( ILogger&lt;StudentController&gt; logger, CustomLoggerDBContext context)
+{
+    _context = context;
+    _logger = logger;
+}
+
+public IActionResult Index()
+{
+    var StudentList = _context.Student.ToList();
+    _logger.LogInformation((int)LoggingEvents.GENERATE_ITEMS, &quot;Show student list.&quot;);
+    return View(StudentList);
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;CustomLoggerDBContext&nbsp;_context;&nbsp;
+<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">readonly</span>&nbsp;ILogger&lt;StudentController&gt;&nbsp;_logger;&nbsp;
+&nbsp;
+<span class="cs__keyword">public</span>&nbsp;StudentController(&nbsp;ILogger&lt;StudentController&gt;&nbsp;logger,&nbsp;CustomLoggerDBContext&nbsp;context)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;_context&nbsp;=&nbsp;context;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;_logger&nbsp;=&nbsp;logger;&nbsp;
+}&nbsp;
+&nbsp;
+<span class="cs__keyword">public</span>&nbsp;IActionResult&nbsp;Index()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;StudentList&nbsp;=&nbsp;_context.Student.ToList();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;_logger.LogInformation((<span class="cs__keyword">int</span>)LoggingEvents.GENERATE_ITEMS,&nbsp;<span class="cs__string">&quot;Show&nbsp;student&nbsp;list.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;View(StudentList);&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">More information</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><a href="https://code.msdn.microsoft.com/How-to-implement-logging-4cbcfc64/https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging"><span style="color:#0563c1; text-decoration:underline">Logging in ASP.NET Core</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><a href="https://code.msdn.microsoft.com/How-to-implement-logging-4cbcfc64/https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">EntityFramework in ASP.NET Core</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><a name="_GoBack"></a></span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/984aab41-e129-4699-8a90-bf555b2ba320image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

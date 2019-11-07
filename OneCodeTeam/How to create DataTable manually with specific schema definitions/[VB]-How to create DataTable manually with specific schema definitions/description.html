@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=23E9A5CBC52062E31AE45157B970504B" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=779C1C1BECDB79910DE087040C45EE9E" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to create DataTable manually with specific schema definitions</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to create DataTable manually with specific schema definitions</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, Data Access, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Create DataTable, schema definition
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/17/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-create-DataTable-25f6c390">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to Create DataTable Manually with Specific Schema Definitions (CSDataTableCreateManually)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">Sometimes we may need to create the DataTable manually and some specific schema definitions, such as Foreign Key constraints, expression columns and so on.</p>
+<p class="MsoNormal">In this sample, we will demonstrate how to create the DataTable manually with specific schema definitions:</p>
+<p class="MsoNormal">1. Create multiple DataTable and define the initial columns.</p>
+<p class="MsoNormal">2. Create the constraints on the tables.</p>
+<p class="MsoNormal">3. Insert the values and show the tables.</p>
+<p class="MsoNormal">4. Create the expression columns and show the tables.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Press F5 to run the sample, the following is the result.</p>
+<p class="MsoNormal"><span><img src="description/image.png" alt="" width="645" height="87" align="middle">
+</span></p>
+<p class="MsoNormal">First, create OrderTable and OrderDetailTable, and then define the initial columns.</p>
+<p class="MsoNormal">Second, create the relation and constraint on the tables. If inserting a row in OrderDetailTable with the wrong OrderId, we will get the error message.</p>
+<h2><span><img src="description/d1fb62b8-4298-496f-9549-9a062891051cimage.png" alt="" width="644" height="375" align="middle">
+</span></h2>
+<p class="MsoNormal">Third, insert the rows into the tables and show the tables. The initial Order table has two columns, OrderId and OrderDate.</p>
+<p class="MsoNormal"><span><img src="description/64696d5e-3016-4ea3-a9ab-774b2e556741image.png" alt="" width="637" height="124" align="middle">
+</span></p>
+<p class="MsoNormal">At last, create the expression columns and show the result. Now the Order table has five columns, and the new three column are the expression columns.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+1. Create tables and define columns.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+a. Define one column once.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataTable orderTable = new DataTable(&quot;Order&quot;);
+
+
+DataColumn colId = new DataColumn(&quot;OrderId&quot;, typeof(String));
+orderTable.Columns.Add(colId);
+
+
+DataColumn colDate = new DataColumn(&quot;OrderDate&quot;, typeof(DateTime));
+orderTable.Columns.Add(colDate);
+
+</pre>
+<pre id="codePreview" class="csharp">DataTable orderTable = new DataTable(&quot;Order&quot;);
+
+
+DataColumn colId = new DataColumn(&quot;OrderId&quot;, typeof(String));
+orderTable.Columns.Add(colId);
+
+
+DataColumn colDate = new DataColumn(&quot;OrderDate&quot;, typeof(DateTime));
+orderTable.Columns.Add(colDate);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+b. Define all columns once.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataTable orderDetailTable = new DataTable(&quot;OrderDetail&quot;);
+
+
+DataColumn[] cols ={
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;OrderDetailId&quot;,typeof(Int32)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataColumn(&quot;OrderId&quot;,typeof(String)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;Product&quot;,typeof(String)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;UnitPrice&quot;,typeof(Decimal)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;OrderQty&quot;,typeof(Int32)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataColumn(&quot;LineTotal&quot;,typeof(Decimal),&quot;UnitPrice*OrderQty&quot;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };
+orderDetailTable.Columns.AddRange(cols);
+
+</pre>
+<pre id="codePreview" class="csharp">DataTable orderDetailTable = new DataTable(&quot;OrderDetail&quot;);
+
+
+DataColumn[] cols ={
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;OrderDetailId&quot;,typeof(Int32)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataColumn(&quot;OrderId&quot;,typeof(String)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;Product&quot;,typeof(String)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;UnitPrice&quot;,typeof(Decimal)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new DataColumn(&quot;OrderQty&quot;,typeof(Int32)),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new DataColumn(&quot;LineTotal&quot;,typeof(Decimal),&quot;UnitPrice*OrderQty&quot;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };
+orderDetailTable.Columns.AddRange(cols);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+2. Create the relation and constraint on the tables.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+Create the foreign key relation and constraint between the Order table and OrderDetail table.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">salesSet.Relations.Add(&quot;OrderOrderDetail&quot;,
+&nbsp;&nbsp;&nbsp; orderTable.Columns[&quot;OrderId&quot;], orderDetailTable.Columns[&quot;OrderId&quot;], true);
+
+</pre>
+<pre id="codePreview" class="csharp">salesSet.Relations.Add(&quot;OrderOrderDetail&quot;,
+&nbsp;&nbsp;&nbsp; orderTable.Columns[&quot;OrderId&quot;], orderDetailTable.Columns[&quot;OrderId&quot;], true);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+3. Insert the rows into the table.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+a. Insert one row once.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataRow row1 = orderTable.NewRow();
+row1[&quot;OrderId&quot;] = &quot;O0001&quot;;
+row1[&quot;OrderDate&quot;] = new DateTime(2013, 3, 1);
+orderTable.Rows.Add(row1);
+
+
+DataRow row2 = orderTable.NewRow();
+row2[&quot;OrderId&quot;] = &quot;O0002&quot;;
+row2[&quot;OrderDate&quot;] = new DateTime(2013, 3, 12);
+orderTable.Rows.Add(row2);
+
+
+DataRow row3 = orderTable.NewRow();
+row3[&quot;OrderId&quot;] = &quot;O0003&quot;;
+row3[&quot;OrderDate&quot;] = new DateTime(2013, 3, 20);
+orderTable.Rows.Add(row3);
+
+</pre>
+<pre id="codePreview" class="csharp">DataRow row1 = orderTable.NewRow();
+row1[&quot;OrderId&quot;] = &quot;O0001&quot;;
+row1[&quot;OrderDate&quot;] = new DateTime(2013, 3, 1);
+orderTable.Rows.Add(row1);
+
+
+DataRow row2 = orderTable.NewRow();
+row2[&quot;OrderId&quot;] = &quot;O0002&quot;;
+row2[&quot;OrderDate&quot;] = new DateTime(2013, 3, 12);
+orderTable.Rows.Add(row2);
+
+
+DataRow row3 = orderTable.NewRow();
+row3[&quot;OrderId&quot;] = &quot;O0003&quot;;
+row3[&quot;OrderDate&quot;] = new DateTime(2013, 3, 20);
+orderTable.Rows.Add(row3);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+b. Insert all rows once.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">Object[] rows = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{1,&quot;O0001&quot;,&quot;Mountain Bike&quot;,1419.5,36},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{2,&quot;O0001&quot;,&quot;Road Bike&quot;,1233.6,16},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{3,&quot;O0001&quot;,&quot;Touring Bike&quot;,1653.3,32},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{4,&quot;O0002&quot;,&quot;Mountain Bike&quot;,1419.5,24},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{5,&quot;O0002&quot;,&quot;Road Bike&quot;,1233.6,12},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{6,&quot;O0003&quot;,&quot;Mountain Bike&quot;,1419.5,48},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{7,&quot;O0003&quot;,&quot;Touring Bike&quot;,1653.3,8},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+
+
+foreach (Object[] row in rows)
+{
+&nbsp;&nbsp;&nbsp; orderDetailTable.Rows.Add(row);
+}
+
+</pre>
+<pre id="codePreview" class="csharp">Object[] rows = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{1,&quot;O0001&quot;,&quot;Mountain Bike&quot;,1419.5,36},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{2,&quot;O0001&quot;,&quot;Road Bike&quot;,1233.6,16},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{3,&quot;O0001&quot;,&quot;Touring Bike&quot;,1653.3,32},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{4,&quot;O0002&quot;,&quot;Mountain Bike&quot;,1419.5,24},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{5,&quot;O0002&quot;,&quot;Road Bike&quot;,1233.6,12},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{6,&quot;O0003&quot;,&quot;Mountain Bike&quot;,1419.5,48},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Object[]{7,&quot;O0003&quot;,&quot;Touring Bike&quot;,1653.3,8},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+
+
+foreach (Object[] row in rows)
+{
+&nbsp;&nbsp;&nbsp; orderDetailTable.Rows.Add(row);
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+4. Create the expression columns.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+a. Use the Aggregate-Sum on the child table column to get the result.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataColumn colSub = new DataColumn(&quot;SubTotal&quot;, typeof(Decimal), &quot;Sum(Child.LineTotal)&quot;);
+orderTable.Columns.Add(colSub);
+
+</pre>
+<pre id="codePreview" class="csharp">DataColumn colSub = new DataColumn(&quot;SubTotal&quot;, typeof(Decimal), &quot;Sum(Child.LineTotal)&quot;);
+orderTable.Columns.Add(colSub);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+b. Compute the tax by referencing the SubTotal expression column.<span style="font-size:9.5pt; font-family:Consolas; color:green">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataColumn colTax = new DataColumn(&quot;Tax&quot;, typeof(Decimal), &quot;SubTotal*0.1&quot;);
+orderTable.Columns.Add(colTax);
+
+</pre>
+<pre id="codePreview" class="csharp">DataColumn colTax = new DataColumn(&quot;Tax&quot;, typeof(Decimal), &quot;SubTotal*0.1&quot;);
+orderTable.Columns.Add(colTax);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+c. If the OrderId is 'Total', compute the due on all orders; or compute the due on this order.<span style="font-size:9.5pt; font-family:Consolas; color:green">
+</span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">DataColumn colTotal = new DataColumn(&quot;TotalDue&quot;, typeof(Decimal), 
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;IIF(OrderId='Total',Sum(SubTotal)&#43;Sum(Tax),SubTotal&#43;Tax)&quot;);
+orderTable.Columns.Add(colTotal);
+
+
+DataRow row = orderTable.NewRow();
+row[&quot;OrderId&quot;] = &quot;Total&quot;;
+orderTable.Rows.Add(row);
+
+</pre>
+<pre id="codePreview" class="csharp">DataColumn colTotal = new DataColumn(&quot;TotalDue&quot;, typeof(Decimal), 
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;IIF(OrderId='Total',Sum(SubTotal)&#43;Sum(Tax),SubTotal&#43;Tax)&quot;);
+orderTable.Columns.Add(colTotal);
+
+
+DataRow row = orderTable.NewRow();
+row[&quot;OrderId&quot;] = &quot;Total&quot;;
+orderTable.Rows.Add(row);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information</h2>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/system.data.datacolumn.expression(v=vs.110).aspx"><span class="SpellE">DataColumn.Expression</span> Property
+</a></span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/hfx3s9wd(v=vs.110).aspx">Adding Columns to a
+<span class="SpellE">DataTable</span> (ADO.NET) </a></span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/6zd7cwzh(v=vs.110).aspx">Creating a
+<span class="SpellE">DataTable</span> (ADO.NET) </a></span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/zwxk25bd(v=vs.110).aspx">Creating Expression Columns (ADO.NET)</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/41b5be20-786c-49d4-a070-953bce382fe9image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

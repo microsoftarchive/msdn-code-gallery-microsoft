@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>XML syntax highlighting in RichTextBox (CSRichTextBoxSyntaxHighlighting)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>XML syntax highlighting in RichTextBox (CSRichTextBoxSyntaxHighlighting)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Forms
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Syntax Highlight
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSRichTextBoxSyntaxHighligh-0054bd27">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>Windows APPLICATION: CSRichTextBoxSyntaxHighlighting Overview </h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New">The sample demonstrates how to format XML and highlight the elements in
+<br>
+RichTextBoxControl.<br>
+<br>
+RichTextBoxControl can process RTF(Rich Text Format) file, which is a proprietary<br>
+document file format with published specification developed by Microsoft Corporation.<br>
+<br>
+A simple RTF file is like <br>
+<br>
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe2052<br>
+{\fonttbl{\f0\fnil Courier New;}}<br>
+{\colortbl ;\red0\green0\blue255;\red139\green0\blue0;\red255\green0\blue0;\red0\green0\blue0;}<br>
+\viewkind4\uc1\pard\cf1\f0\fs24 <br>
+&lt;?\cf2 xml \cf3 version\cf1 =\cf0 &quot;\cf1 1.0\cf0 &quot; \cf3 encoding\cf1 =\cf0 &quot;\cf1 utf-8\cf0 &quot;\cf1 ?&gt;\par<br>
+&lt;\cf2 html\cf1 &gt;\par<br>
+&nbsp; &nbsp;&lt;\cf2 head\cf1 &gt;\par<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&lt;\cf2 title\cf1 &gt;\par<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\cf4 My home page\par<br>
+&nbsp; &nbsp; &nbsp; &nbsp;\cf1 &lt;/\cf2 title\cf1 &gt;\par<br>
+&nbsp; &nbsp;&lt;/\cf2 head\cf1 &gt;\par<br>
+&nbsp; &nbsp;&lt;\cf2 body \cf3 bgcolor\cf1 =\cf0 &quot;\cf1 000000\cf0 &quot; \cf3 text\cf1 =\cf0 &quot;\cf1 ff0000\cf0 &quot; \cf1 &gt;\par<br>
+&nbsp; &nbsp; &nbsp; &nbsp;\cf4 Hello World!\par<br>
+&nbsp; &nbsp;\cf1 &lt;/\cf2 body\cf1 &gt;\par<br>
+&lt;/\cf2 html\cf1 &gt;\par<br>
+}<br>
+<br>
+It contains 2 parts:Header and Content.The colortbl in header includes all the color
+<br>
+definitions used in the file. \cfN means the Foreground color and \par means a new
+<br>
+paragraph.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Build this project in VS2010. <br>
+<br>
+Step2. Run CSRichTextBoxSyntaxHighlighting .exe.<br>
+<br>
+Step3. Paste following Xml script to the RichTextBox in the UI.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My home page&lt;/title&gt;&lt;/head&gt;&lt;body bgcolor=&quot;000000&quot; text=&quot;ff0000&quot;&gt;Hello World!&lt;/body&gt;&lt;/html&gt;<br>
+<br>
+<br>
+Step4. Click the &quot;Process&quot; button, then the text in the RichTextBox will be changed to
+<br>
+&nbsp; &nbsp; &nbsp; following XML with colors.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;html&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My home page<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/title&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body bgcolor=&quot;000000&quot; text=&quot;ff0000&quot; &gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello World!<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;/html&gt;<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+1. Design a class XMLViewerSettings that defines the colors used in the XmlViewer, and
+<br>
+&nbsp; some constants that specify the color order in the RTF.<br>
+<br>
+2. Design a class XMLViewer that inherits System.Windows.Forms.RichTextBox. It is used
+<br>
+&nbsp; to display an Xml in a specified format. <br>
+&nbsp; <br>
+&nbsp; RichTextBox uses the Rtf format to show the test. The XMLViewer will convert the Xml<br>
+&nbsp; to Rtf with some formats specified in the XMLViewerSettings, and then set the Rtf
+<br>
+&nbsp; property to the value.<br>
+&nbsp; &nbsp; &nbsp; <br>
+3. The CharacterEncoder class supplies a static(Shared) method to encode some <br>
+&nbsp; special characters in Xml and Rtf, such as '&lt;', '&gt;', '&quot;', '&', ''', '\',<br>
+&nbsp; '{' and '}' .<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+RichTextBox Class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.richtextbox.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.richtextbox.aspx</a><br>
+<br>
+Rich Text Format (RTF) Specification, version 1.6<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa140277(office.10).aspx">http://msdn.microsoft.com/en-us/library/aa140277(office.10).aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

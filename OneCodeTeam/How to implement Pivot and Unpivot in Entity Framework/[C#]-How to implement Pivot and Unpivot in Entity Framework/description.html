@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to implement Pivot and Unpivot in Entity Framework</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to implement Pivot and Unpivot in Entity Framework</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            pivot, Unpivot
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/16/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSEFPivotOperation-cbdd79db">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Implement the Pivot and Unpivot Operation in Entity Framework (CSEFPivotOperation)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">This sample demonstrates how to implement the Pivot and Unpivot operation in Entity Framework.</p>
+<p class="MsoNormal">In this sample, we use two classes to store the data from the database by EF, and then display the data in Pivot/Unpivot format.</p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal">Before you run the sample, you need to finish the following steps:</p>
+<p class="MsoNormal">Step1. Attach the database file MySchool.mdf under the folder _External_Dependecies to your SQL Server 2008 database instance.</p>
+<p class="MsoNormal">Step2. Modify the connection string in the App.config file according to your SQL Server 2008 database instance name.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Press F5 to run the sample, the following is the result.</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="639" height="352" align="middle">
+</span></p>
+<p class="MsoNormal">1.<span style="">&nbsp; </span>We get the Pivot data by EF, and then translate the result into a Pivot table that uses the names of courses as the columns.</p>
+<p class="MsoNormal">2.<span style="">&nbsp; </span>We get the person data by EF, and then unpivot the data into the UnpivotRow list.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+1. Implement the Pivot operation in Entity Framework</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>a. PivotRow Class</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>We use the PivotRow class to store the Pivot result.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+public class PivotRow&lt;TypeId,TypeAttr,TypeValue&gt;
+{
+&nbsp;&nbsp;&nbsp; public TypeId ObjectId { get; set; }
+&nbsp;&nbsp;&nbsp; public IEnumerable&lt;TypeAttr&gt; Attributes { get; set; }
+&nbsp;&nbsp; &nbsp;public IEnumerable&lt;TypeValue&gt; Values { get; set; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+public class PivotRow&lt;TypeId,TypeAttr,TypeValue&gt;
+{
+&nbsp;&nbsp;&nbsp; public TypeId ObjectId { get; set; }
+&nbsp;&nbsp;&nbsp; public IEnumerable&lt;TypeAttr&gt; Attributes { get; set; }
+&nbsp;&nbsp; &nbsp;public IEnumerable&lt;TypeValue&gt; Values { get; set; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>We translate the Pivot data into a Pivot table that uses the names of attributes as the columns.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+public static DataTable GetPivotTable(List&lt;TypeAttr&gt; attributeNames,
+ &nbsp;&nbsp;&nbsp;List&lt;PivotRow&lt;TypeId, TypeAttr, TypeValue&gt;&gt; source)
+{
+&nbsp;&nbsp;&nbsp; DataTable dt = new DataTable();
+
+
+&nbsp;&nbsp;&nbsp; DataColumn dc = new DataColumn(&quot;ID&quot;, typeof(TypeId));
+&nbsp;&nbsp;&nbsp; dt.Columns.Add(dc);
+
+
+&nbsp;&nbsp;&nbsp; // Creat the new DataColumn for each attribute
+&nbsp;&nbsp;&nbsp; attributeNames.ForEach(name =&gt; { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc=new DataColumn(name.ToString(),typeof(TypeValue));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dt.Columns.Add(dc);
+&nbsp;&nbsp;&nbsp; });
+
+
+&nbsp;&nbsp;&nbsp; // Insert the data into the Pivot table
+&nbsp;&nbsp;&nbsp; foreach (PivotRow&lt;TypeId, TypeAttr, TypeValue&gt; row in source)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataRow dr = dt.NewRow();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dr[&quot;ID&quot;] = row.ObjectId;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;TypeAttr&gt; attributes = row.Attributes.ToList();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;TypeValue&gt; values = row.Values.ToList();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the value basing the attribute names.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; values.Count; i&#43;&#43;)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dr[attributes[i].ToString()] = values[i];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dt.Rows.Add(dr);
+&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp; return dt;
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+public static DataTable GetPivotTable(List&lt;TypeAttr&gt; attributeNames,
+ &nbsp;&nbsp;&nbsp;List&lt;PivotRow&lt;TypeId, TypeAttr, TypeValue&gt;&gt; source)
+{
+&nbsp;&nbsp;&nbsp; DataTable dt = new DataTable();
+
+
+&nbsp;&nbsp;&nbsp; DataColumn dc = new DataColumn(&quot;ID&quot;, typeof(TypeId));
+&nbsp;&nbsp;&nbsp; dt.Columns.Add(dc);
+
+
+&nbsp;&nbsp;&nbsp; // Creat the new DataColumn for each attribute
+&nbsp;&nbsp;&nbsp; attributeNames.ForEach(name =&gt; { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dc=new DataColumn(name.ToString(),typeof(TypeValue));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dt.Columns.Add(dc);
+&nbsp;&nbsp;&nbsp; });
+
+
+&nbsp;&nbsp;&nbsp; // Insert the data into the Pivot table
+&nbsp;&nbsp;&nbsp; foreach (PivotRow&lt;TypeId, TypeAttr, TypeValue&gt; row in source)
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataRow dr = dt.NewRow();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dr[&quot;ID&quot;] = row.ObjectId;
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;TypeAttr&gt; attributes = row.Attributes.ToList();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;TypeValue&gt; values = row.Values.ToList();
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the value basing the attribute names.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; values.Count; i&#43;&#43;)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dr[attributes[i].ToString()] = values[i];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dt.Rows.Add(dr);
+&nbsp;&nbsp;&nbsp; }
+
+
+&nbsp;&nbsp;&nbsp; return dt;
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>b. Get the Pivot result</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>Get the Pivot data by EF, and store the data into the PivotRow list.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+studentGrade = (from sg in school.StudentGrades
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group sg by sg.StudentID into sgGroup
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select new PivotRow&lt;Person, String, Decimal&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjectId = sgGroup.Select(g =&gt; g.Person).FirstOrDefault(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attributes = sgGroup.Select(g =&gt; g.Course.Title),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Values = sgGroup.Select(g =&gt; g.Grade)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; ).ToList();
+
+</pre>
+<pre id="codePreview" class="csharp">
+studentGrade = (from sg in school.StudentGrades
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group sg by sg.StudentID into sgGroup
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select new PivotRow&lt;Person, String, Decimal&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjectId = sgGroup.Select(g =&gt; g.Person).FirstOrDefault(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attributes = sgGroup.Select(g =&gt; g.Course.Title),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Values = sgGroup.Select(g =&gt; g.Grade)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; ).ToList();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>Get the list of attributes. In this sample, we use the names of the courses as the attributes.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+courses = school.Courses.Select(c =&gt; c.Title).ToList();
+
+</pre>
+<pre id="codePreview" class="csharp">
+courses = school.Courses.Select(c =&gt; c.Title).ToList();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">2. Implement the Unpivot operation in Entity Framework.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>a. UnpivotRow class</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>We use the UnpivotRow class to store the Unpivot result.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+public class UnpivotRow&lt;TypeId,TypeAttr,TypeValue&gt;
+{
+&nbsp;&nbsp;&nbsp; public TypeId ObjectId { get; set; }
+&nbsp;&nbsp;&nbsp; public TypeAttr Attribute { get; set; }
+&nbsp;&nbsp;&nbsp; public TypeValue Value { get; set; }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+public class UnpivotRow&lt;TypeId,TypeAttr,TypeValue&gt;
+{
+&nbsp;&nbsp;&nbsp; public TypeId ObjectId { get; set; }
+&nbsp;&nbsp;&nbsp; public TypeAttr Attribute { get; set; }
+&nbsp;&nbsp;&nbsp; public TypeValue Value { get; set; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>b. Get the Unpivot result</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>First, we set the function list of attributes.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+Dictionary&lt;String, Func&lt;Person, DateTime?&gt;&gt; attrFuncList = new Dictionary&lt;string, Func&lt;Person, DateTime?&gt;&gt;();
+attrFuncList[&quot;HireDate&quot;] = p =&gt; p.HireDate;
+attrFuncList[&quot;EnrollmentDate&quot;] = p =&gt; p.EnrollmentDate;
+
+</pre>
+<pre id="codePreview" class="csharp">
+Dictionary&lt;String, Func&lt;Person, DateTime?&gt;&gt; attrFuncList = new Dictionary&lt;string, Func&lt;Person, DateTime?&gt;&gt;();
+attrFuncList[&quot;HireDate&quot;] = p =&gt; p.HireDate;
+attrFuncList[&quot;EnrollmentDate&quot;] = p =&gt; p.EnrollmentDate;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>Then, we get the data by EF.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+var persons = (from person in school.People
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select person).ToList();
+
+</pre>
+<pre id="codePreview" class="csharp">
+var persons = (from person in school.People
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select person).ToList();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>At last, we get the Pivot result by LinqToObject.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+foreach (String key in attrFuncList.Keys)
+{
+&nbsp;&nbsp;&nbsp; String k = key;
+&nbsp;&nbsp;&nbsp; IEnumerable&lt;UnpivotRow&lt;String, String, DateTime&gt;&gt; query =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (from person in persons
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where attrFuncList[k](person) != null
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select new UnpivotRow&lt;String, String, DateTime&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjectId = person.FirstName &#43; &quot; &quot; &#43; person.LastName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attribute = k,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the value of a certain attribute.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value = (DateTime)attrFuncList[k](person)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });
+
+
+ &nbsp;&nbsp;&nbsp;// Concat the results.
+&nbsp;&nbsp;&nbsp; result = result == null ? query : result.Concat(query);
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+foreach (String key in attrFuncList.Keys)
+{
+&nbsp;&nbsp;&nbsp; String k = key;
+&nbsp;&nbsp;&nbsp; IEnumerable&lt;UnpivotRow&lt;String, String, DateTime&gt;&gt; query =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (from person in persons
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where attrFuncList[k](person) != null
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select new UnpivotRow&lt;String, String, DateTime&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObjectId = person.FirstName &#43; &quot; &quot; &#43; person.LastName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attribute = k,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the value of a certain attribute.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value = (DateTime)attrFuncList[k](person)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });
+
+
+ &nbsp;&nbsp;&nbsp;// Concat the results.
+&nbsp;&nbsp;&nbsp; result = result == null ? query : result.Concat(query);
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information</h2>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/bwabdf9z(v=vs.110).aspx">List&lt;T&gt;.ForEach Method</a><span class="MsoHyperlink">
+</span></p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/b05d59ty(v=vs.110).aspx">PropertyInfo.GetValue Method (Object, Object[])</a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

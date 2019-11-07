@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SpbAccelerometer Sample Driver (UMDF Version 1)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SpbAccelerometer Sample Driver (UMDF Version 1)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            UMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SPB
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/SpbAccelerometer-b0eeac64">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The SpbAccelerometer sample shows how to write a UMDF driver to control a peripheral device that is connected to a
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450903">simple peripheral bus</a> (SPB). In this sample, the peripheral device is a sensor (an accelerometer) and the SPB is an I<sup>2</sup>C bus. The SpbAccelerometer sample driver uses Windows
+ features that are available starting with Windows&nbsp;8.</p>
+<p>The SpbAccelerometer sample driver is written for a sensor device that is permanently connected to the I<sup>2</sup>C bus. This sensor is not a Plug and Play device. Instead, the ACPI system firmware for the hardware platform describes the sensor device's
+ bus connection. The Plug and Play manager obtains the bus connection information from the ACPI driver, creates a
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh698216">connection ID</a> to represent the bus connection, and passes the connection ID to the sample driver as a hardware resource. The sample driver uses the connection ID to open a logical
+ connection to the sensor device, and obtains a handle to the connection. The driver specifies this handle as the target for I/O requests that it sends to the device.</p>
+<p>To communicate with the sensor class extension, the SpbAccelerometer sample driver calls the methods in the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff545503"><b>ISensorClassExtension</b></a> interface, and implements the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff545566"><b>ISensorDriver</b></a> interface. These interfaces enable applications to use the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dd318953">Sensor API</a> and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dd464636">Location API</a> to communicate with the sample driver. Additionally, the sample driver implements an interrupt service routine (ISR) using passive-level interrupts that connects to
+ the <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh406467">
+GPIO interrupt</a> from the sensor device.</p>
+<p>The SpbAcclerometer sample driver can send <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550794">
+<b>IRP_MJ_READ</b></a> and <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550819">
+<b>IRP_MJ_WRITE</b></a> requests to the sensor device. In addition, the driver can send
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450915"><b>IOCTL_SPB_<i>XXX</i></b></a> requests, which are defined in the Spb.h header file and supported by the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh406203">SPB framework extension (SpbCx)</a>. SpbCx is available starting with Windows&nbsp;8.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. This sample will not build with Microsoft Visual Studio Express&nbsp;2013 for Windows Desktop, because
+ the sample uses Active Template Library (ATL). You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/SpbAccelerometer-b0eeac64/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2>Run the sample</h2>
+<p>To install the sample driver, follow these steps:</p>
+<ol>
+<li>Ensure that the driver builds without errors. </li><li>Copy the DLL and INF files to a separate folder. </li><li>Enter the command &quot;<code>devcon.exe update SpbAccelerometer.inf ACPI\&lt;HWID&gt;</code>&quot; to install the driver on an existing device node. This node must declare I<sup>2</sup>C and GPIO resources in firmware. You can find the devcon.exe program in the
+ tools\devcon folder where you installed the WDK. </li></ol>
+<h2><a id="File_manifest"></a><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>File manifest</h2>
+<p>The following source files are in the src\SPB\SpbAccelerometer folder and are used to build the SpbAccelerometer.sys and SpbAccelerometer.inf files.</p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<p>AccelerometerDevice.h, AccelerometerDevice.cpp</p>
+</td>
+<td>
+<p>Device-level methods to configure sensor, set properties, and query data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Adxl345.h</p>
+</td>
+<td>
+<p>Device's register set definition and defines</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ClientManager.h, ClientManager.cpp</p>
+</td>
+<td>
+<p>Implements the driver's client tracking logic, including arbitration of settable properties.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Device.h, Device.cpp</p>
+</td>
+<td>
+<p>WDF PnP event callbacks and helper methods</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DllMain.cpp</p>
+</td>
+<td>
+<p>Driver's entry point and exported functions for providing COM support</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Driver.h, Driver.cpp</p>
+</td>
+<td>
+<p>WDF driver entry event callbacks and helper methods</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Internal.h</p>
+</td>
+<td>
+<p>Common includes</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>makefile.inc</p>
+</td>
+<td>
+<p>Defines custom build actions. Includes the conversion of the .INX file into a .INF file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Queue.h, Queue.cpp</p>
+</td>
+<td>
+<p>Implementation of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff556852">
+<b>IQueueCallbackDeviceIoControl</b></a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ReportManager.h, ReportManager.cpp</p>
+</td>
+<td>
+<p>Maintains the driver's report interval.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Request.idl</p>
+</td>
+<td>
+<p>Defines the request interface for communicating with the sensor device.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SensorDdi.h, SensorDdi.cpp</p>
+</td>
+<td>
+<p>Implementation of the sensor driver callback interface, <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff545566">
+<b>ISensorDriver</b></a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SensorDevice.idl</p>
+</td>
+<td>
+<p>Defines the interface between the sensor DDI and the sensor device implementations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sources</p>
+</td>
+<td>
+<p>Lists source files and build options</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sources.dep</p>
+</td>
+<td>
+<p>Defines build dependencies</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.asl</p>
+</td>
+<td>
+<p>Sample ASL file for a peripheral device node. It declares I<sup>2</sup>C and GPIO interrupt resources. Note that each macro specifies an ACPI path to describe direct dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.ctl</p>
+</td>
+<td>
+<p>Declaration of driver's tracing GUID</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.def</p>
+</td>
+<td>
+<p>Declaration of exported functions for providing COM support</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.idl</p>
+</td>
+<td>
+<p>Driver's library interface file</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.inx</p>
+</td>
+<td>
+<p>Describes the installation of the driver. The build process converts this into a .INF.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbAccelerometer.rc</p>
+</td>
+<td>
+<p>Resource file</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SpbRequest.h, SpbRequest.cpp</p>
+</td>
+<td>
+<p>Implementation of register-based device accesses via SPB.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Trace.h</p>
+</td>
+<td>
+<p>Sets up WPP tracing.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

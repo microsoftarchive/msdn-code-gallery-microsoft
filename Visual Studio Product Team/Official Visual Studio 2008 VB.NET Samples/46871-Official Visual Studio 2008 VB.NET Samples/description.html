@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/56ca8eff-3846-44d5-93cf-e53633af8140Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Official Visual Studio 2008 VB.NET Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Official Visual Studio 2008 VB.NET Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            COM, http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+, Office, WMI, LINQ, Windows Forms, XML, ClickOnce, Tablet PC
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Data Binding, Send Email, Serialization, Data Access, Images, Printing, COM Interop, Deployment, Drawing, Language Features
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/16/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span class="externalLink">Visual Basic 2008 Samples</span></h1>
+<p>These samples demonstrate many of the new features available with Visual Basic 2008 and the .NET Framework 3.5 including hundreds Language Integrated Query (LINQ) samples.</p>
+<p><br>
+The following is the list of all samples:</p>
+<ul>
+<li><strong>Application Samples</strong>
+<ul>
+<li>AppEvents </li><li>ClickOnce </li><li>ConsoleApps </li><li>Environment </li><li>Excel </li><li>Game </li><li>Logging </li><li>Multithread </li><li>MyResources </li><li>PowerPoint </li><li>PrintformSample </li><li>SendMail </li><li>TCPRemoting </li><li>ThreadUIUpdate </li><li>UpgradeSample </li><li>UserInfo </li><li>VBLanguage </li><li>WebServiceClient </li></ul>
+</li><li><strong>Data Samples</strong>
+<ul>
+<li>CreateDB </li><li>CustomDataControls </li><li>DataComboBox </li><li>DataSearch </li><li>DataValidation </li><li>LocalData </li><li>ObjectBinding </li><li>OCS </li><li>Serialization </li><li>StoredProcedures </li><li>XML </li></ul>
+</li><li><strong>Language Samples</strong>
+<ul>
+<li>APICalls </li><li>arrays </li><li>CustomExceptions </li><li>DateTime </li><li>FileSystem </li><li>Generics </li><li><strong>LINQ Samples</strong>
+<ul>
+<li>DynamicQuery </li><li>ExpressionTreeVisualizer </li><li>LinqToNorthwind </li><li>LinqToXMLDatabinding </li><li>LinqToXMLIntro </li><li>ObjectDumper </li><li>Reflector </li><li>Rss Aggregator </li><li>SampleQueries </li><li>SimpleLambdas </li><li>VB Provider </li><li>WinFormsDataBinding </li><li>XQuery </li></ul>
+</li><li>StringFormatting </li><li>Strings </li><li>TryCatch </li><li>VBLanguage </li><li>VBOOP </li><li>XMLComments </li></ul>
+</li><li><strong>Server Component Samples</strong>
+<ul>
+<li>COMPort </li><li>EventLog </li><li>MessageQueue </li><li>PerfCounters </li><li>ProcessClass </li><li>ProcessViewer </li><li>ServiceManager </li><li>WMI </li></ul>
+</li><li><strong>Tablet Samples</strong>
+<ul>
+<li>BackOfPenErase </li><li>ContextEnabledForm </li><li>DrawingAttributes </li><li>EnablingGestures </li><li>InkEnabledTextBox </li><li>PowerAware </li><li>SimpleTextRecognition </li><li>SpeechRecognition </li></ul>
+</li><li><strong>WCF Samples</strong>
+<ul>
+<li>Chat </li><li>Predictor </li><li>WindowsForms </li></ul>
+</li><li><strong>Winform Samples</strong>
+<ul>
+<li>Clipboard </li><li>CommonDialogs </li><li>DragDrop </li><li>DrawUserControl </li><li>DynamicControls </li><li>ExplorerApp </li><li>http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDIAnimation </li><li>http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDIBrushes </li><li>http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDIImages </li><li>http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDIPens </li><li>http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDIText </li><li>HelpSample </li><li>InheritForm </li><li>ListBoxComboBox </li><li>Menus </li><li>NotifyIcon </li><li>Printing </li><li>RegExpressions </li><li>simplebrowser </li><li>StatusStrip </li><li>TopLevelForms </li><li>ValidateText </li></ul>
+</li></ul>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps14171-->
+                        <div id="item">
+                                <div><a href="Database Creation Sample/description.html">Database Creation Sample</a></div>
+                            <div>The application leads you through the steps in creating and populating the database:</div>
+                        </div>
+                        <!--pe14171-->
+                        <!--ps14221-->
+                        <div id="item">
+                                <div><a href="Excel Sample/description.html">Excel Sample</a></div>
+                            <div>This sample consists of a solution named ExcelAuto.sln that contains two projects. ExcelAuto.vbproj is an interactive Windows-based application for automating Excel and setting up a scheduled task. ExcelAutoTask is a console application that contains Excel automation code that is</div>
+                        </div>
+                        <!--pe14221-->
+                        <!--ps14154-->
+                        <div id="item">
+                                <div><a href="ListBox and ComboBox Sample/description.html">ListBox and ComboBox Sample</a></div>
+                            <div>The tabbed pages of the tab control demonstrate different techniques: Add Items. Bind to DataTable, Bind to Array, Combobox</div>
+                        </div>
+                        <!--pe14154-->
+                        <!--ps14215-->
+                        <div id="item">
+                                <div><a href="COM Port Sample/description.html">COM Port Sample</a></div>
+                            <div>How to determine which COM ports are available.
+How to use a COM port to communicate with a modem.
+How to use Win32 API calls to control communication with the COM port.
+
+</div>
+                        </div>
+                        <!--pe14215-->
+                        <!--ps14244-->
+                        <div id="item">
+                                <div><a href="DataRepeater Control Sample/description.html">DataRepeater Control Sample</a></div>
+                            <div>This sample uses multiple DataRepeater controls to present weather forecast data 
+        in a format similar to what you might find on the MSN Weather Web site.</div>
+                        </div>
+                        <!--pe14244-->
+                        <!--ps14245-->
+                        <div id="item">
+                                <div><a href="Consuming a Web Service Sample/description.html">Consuming a Web Service Sample</a></div>
+                            <div>A TabControl provides five different examples of Web service consumption.</div>
+                        </div>
+                        <!--pe14245-->
+                        <!--ps14174-->
+                        <div id="item">
+                                <div><a href="Data Search Sample/description.html">Data Search Sample</a></div>
+                            <div>Most of this form was created using the designer tools in Visual Basic. The following is a summary of how you could create this form from scratch.</div>
+                        </div>
+                        <!--pe14174-->
+                        <!--ps14155-->
+                        <div id="item">
+                                <div><a href="Menus Sample/description.html">Menus Sample</a></div>
+                            <div>This sample allows you to test the MenuStrip control in a simple Windows application. The sample demonstrates several menu-strip features: controls, menu events, menu properties, handling multiple events, assigning event handlers to menu events, adding and removing objects from t</div>
+                        </div>
+                        <!--pe14155-->
+                        <!--ps14147-->
+                        <div id="item">
+                                <div><a href="Animation Sample/description.html">Animation Sample</a></div>
+                            <div>This sample uses a Timer object to control the animation changes and RadioButton controls to select the animation object. Three animation styles are shown:</div>
+                        </div>
+                        <!--pe14147-->
+                        <!--ps14157-->
+                        <div id="item">
+                                <div><a href="Printing Sample/description.html">Printing Sample</a></div>
+                            <div>The sample prints some paragraphs of text to demonstrate print preview, print setup, and page setup.</div>
+                        </div>
+                        <!--pe14157-->
+                        <!--ps14138-->
+                        <div id="item">
+                                <div><a href="WCF Chat Sample/description.html">WCF Chat Sample</a></div>
+                            <div>The Chat sample is not a client and service application. It is a true peer-to-peer application, in which each instance acts as a peer of other instances. Each instance can send messages to other instances and receive messages from other instances by using the IChat duplex contrac</div>
+                        </div>
+                        <!--pe14138-->
+                        <!--ps14146-->
+                        <div id="item">
+                                <div><a href="Explorer-Style Application Sample/description.html">Explorer-Style Application Sample</a></div>
+                            <div>This sample contains two forms with an Explorer-like interface: a directory scanner and an Explorer-style viewer. The files that support the two forms are contained in separate folders of the project.</div>
+                        </div>
+                        <!--pe14146-->
+                        <!--ps14257-->
+                        <div id="item">
+                                <div><a href="Sample Queries (Visual Basic)/description.html">Sample Queries (Visual Basic)</a></div>
+                            <div>The Sample Queries application is your introduction to Language-Integrated Query (LINQ). It provides many examples of query operations for LINQ to Objects, LINQ to SQL, LINQ to XML and LINQ to DataSet. The application displays a tree view of the available samples.</div>
+                        </div>
+                        <!--pe14257-->
+                        <!--ps14235-->
+                        <div id="item">
+                                <div><a href="Send Mail Sample/description.html">Send Mail Sample</a></div>
+                            <div>This application has a single form with controls similar to the Microsoft Outlook e-mail client. When the form loads, it checks to make sure that the user has the SMTP Service installed and that it is running.</div>
+                        </div>
+                        <!--pe14235-->
+                        <!--ps14222-->
+                        <div id="item">
+                                <div><a href="File System Sample/description.html">File System Sample</a></div>
+                            <div>This sample provides an interface for running the file-system methods of the My.Computer.FileSystem Object. A TreeView control on one side lets you pick the type of methods that you want to run. When a method is selected, a custom control appears on the form that enables you to i</div>
+                        </div>
+                        <!--pe14222-->
+                        <!--ps14223-->
+                        <div id="item">
+                                <div><a href="Game Sample/description.html">Game Sample</a></div>
+                            <div>This sample demonstrates features that are implemented in most applications:</div>
+                        </div>
+                        <!--pe14223-->
+                        <!--ps14170-->
+                        <div id="item">
+                                <div><a href="Speech Recognition Sample/description.html">Speech Recognition Sample</a></div>
+                            <div>This sample demonstrates the capabilities of the Speech API (SAPI), which is included with Microsoft Windows XP Tablet PC Edition 2005. SAPI is a rich and similar enough to the handwriting recognition APIs that it can be easily learned by developers programming for Windows XP Tab</div>
+                        </div>
+                        <!--pe14170-->
+                        <!--ps14231-->
+                        <div id="item">
+                                <div><a href="PrintForm Sample/description.html">PrintForm Sample</a></div>
+                            <div>This sample uses a PrintForm 
+        component to demonstrate how to print an image of a graphical form. The 
+        PrintAction property is used to display the print output in a 
+        PrintPreviewControl dialog box. You can change this property value to 
+        PrintTo</div>
+                        </div>
+                        <!--pe14231-->
+                        <!--ps14179-->
+                        <div id="item">
+                                <div><a href="Stored Procedure Sample/description.html">Stored Procedure Sample</a></div>
+                            <div>The following tasks are demonstrated: Create an new database, execute a stored procedure</div>
+                        </div>
+                        <!--pe14179-->
+                        <!--ps14159-->
+                        <div id="item">
+                                <div><a href="Web Browser Sample/description.html">Web Browser Sample</a></div>
+                            <div>Navigation. A is used for Back, Forward, Refresh, Home, and Go options.</div>
+                        </div>
+                        <!--pe14159-->
+                        <!--ps14230-->
+                        <div id="item">
+                                <div><a href="PowerPoint Sample/description.html">PowerPoint Sample</a></div>
+                            <div>The sample consists of a solution named PowerPointAuto.sln that contains a single project: PowerPointAuto.vbproj. This project is a Windows-based application that has a single form that remotely controls PowerPoint.</div>
+                        </div>
+                        <!--pe14230-->
+                        <!--ps14254-->
+                        <div id="item">
+                                <div><a href="Object Dumper Sample (Visual Basic)/description.html">Object Dumper Sample (Visual Basic)</a></div>
+                            <div>This is a library that is used by some of the other LINQ samples.</div>
+                        </div>
+                        <!--pe14254-->
+                        <!--ps14162-->
+                        <div id="item">
+                                <div><a href="Text Validation Sample/description.html">Text Validation Sample</a></div>
+                            <div>This sample shows how you can create a set of special-purpose text boxes that are designed for a specific type of input. This sample includes text boxes for e-mail addresses, IP addresses, and phone numbers.</div>
+                        </div>
+                        <!--pe14162-->
+                        <!--ps14175-->
+                        <div id="item">
+                                <div><a href="Data Validation Sample/description.html">Data Validation Sample</a></div>
+                            <div>This sample demonstrates the data validation features available in the Visual Studio designers. Two arbitrary and fictitious rules are used to validate the data. Code is added using the Dataset Designer. Double-clicking a column name creates the event for the column change. Doubl</div>
+                        </div>
+                        <!--pe14175-->
+                        <!--ps14218-->
+                        <div id="item">
+                                <div><a href="DateTime and TimeSpan Sample/description.html">DateTime and TimeSpan Sample</a></div>
+                            <div>The form contains one tab control with several tabbed pages. Each tabbed page demonstrates a group of DateTime or TimeSpan members. Within each tab, controls enable you to specify the input parameters for the various methods and properties.</div>
+                        </div>
+                        <!--pe14218-->
+                        <!--ps14172-->
+                        <div id="item">
+                                <div><a href="Custom Data Controls Sample/description.html">Custom Data Controls Sample</a></div>
+                            <div>The sample solution includes two projects. One is a Windows Control Library project named MyCompanyControls. The second is a Windows Application project named CustomDataControls.</div>
+                        </div>
+                        <!--pe14172-->
+                        <!--ps14173-->
+                        <div id="item">
+                                <div><a href="ComboBox Databinding Sample/description.html">ComboBox Databinding Sample</a></div>
+                            <div>The code demonstrates how to bind six different types of data sources to a ComboBox control.</div>
+                        </div>
+                        <!--pe14173-->
+                        <!--ps14141-->
+                        <div id="item">
+                                <div><a href="Clipboard Sample/description.html">Clipboard Sample</a></div>
+                            <div>The main form&#39;s menu commands control the two primary tasks in using the Clipboard—copying to it and retrieving from it. Six data types are copied and pasted by using the My.Computer.Clipboard Object:</div>
+                        </div>
+                        <!--pe14141-->
+                        <!--ps14176-->
+                        <div id="item">
+                                <div><a href="Local Data Sample/description.html">Local Data Sample</a></div>
+                            <div>Visual Studio includes the Data Sources window, through which you can set up bindings not only to server-based data, but also to local data, Web services, and business objects. Dragging a table to a form creates a data-bound form, handling most of the steps that you had to comple</div>
+                        </div>
+                        <!--pe14176-->
+                        <!--ps14163-->
+                        <div id="item">
+                                <div><a href="Pen Eraser Sample/description.html">Pen Eraser Sample</a></div>
+                            <div>Most digitizer styluses used with Microsoft Windows XP Tablet PC Edition 2005 have an &quot;eraser&quot; on one end. While there is no eraser API in the Tablet PC Platform SDK, there is an easy way to detect whether the stylus is inverted. The recommended event for reading this value is th</div>
+                        </div>
+                        <!--pe14163-->
+                        <!--ps14149-->
+                        <div id="item">
+                                <div><a href="http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Images Sample/description.html">http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Images Sample</a></div>
+                            <div>The following ideas are demonstrated in this sample:</div>
+                        </div>
+                        <!--pe14149-->
+                        <!--ps14143-->
+                        <div id="item">
+                                <div><a href="Drag-and-Drop Sample/description.html">Drag-and-Drop Sample</a></div>
+                            <div>This sample has three examples of drag-and-drop.
+- TextBox: Demonstrates how to prevent a drop on a control.
+- TreeView: Demonstrates how to move nodes from one control to another.
+- PictureBox: Demonstrates how to copy images.</div>
+                        </div>
+                        <!--pe14143-->
+                        <!--ps14169-->
+                        <div id="item">
+                                <div><a href="Simple Text Recognition Sample/description.html">Simple Text Recognition Sample</a></div>
+                            <div>The Microsoft Tablet PC Platform SDK provides text recognition capabilities in the Microsoft.Ink namespace. Text recognition is performed by RecognizerContext, which are produced by an instance of type Recognizer. Multiple recognizers might (and probably will) be installed on a s</div>
+                        </div>
+                        <!--pe14169-->
+                        <!--ps14214-->
+                        <div id="item">
+                                <div><a href="ClickOnce Sample/description.html">ClickOnce Sample</a></div>
+                            <div>The ClickOnce feature can be used to programmatically handle several installation and maintenance tasks. This includes the following:</div>
+                        </div>
+                        <!--pe14214-->
+                        <!--ps14250-->
+                        <div id="item">
+                                <div><a href="Dynamic Query Sample (Visual Basic)/description.html">Dynamic Query Sample (Visual Basic)</a></div>
+                            <div>This sample demonstrates a technique for composing LINQ statements dynamically at run time. For more information, see the Dynamic Expressions.html&#160;file in the DynamicQuery sample directory.</div>
+                        </div>
+                        <!--pe14250-->
+                        <!--ps14260-->
+                        <div id="item">
+                                <div><a href="XQuery Sample (Visual Basic)/description.html">XQuery Sample (Visual Basic)</a></div>
+                            <div>This sample demonstrates the code that is required to write a LINQ to XML query. A directory named data is included in this sample. The XML file that is queried is included in that directory.</div>
+                        </div>
+                        <!--pe14260-->
+                        <!--ps14158-->
+                        <div id="item">
+                                <div><a href="Regular Expressions Sample/description.html">Regular Expressions Sample</a></div>
+                            <div>This sample application shows how to use regular expressions.The tab pages demonstrate: Basic Parsing Techniques, Screen-Scraping, Testing</div>
+                        </div>
+                        <!--pe14158-->
+                        <!--ps14139-->
+                        <div id="item">
+                                <div><a href="Consuming ASMX and WCF Services Sample/description.html">Consuming ASMX and WCF Services Sample</a></div>
+                            <div>This sample contains two samples, PredictorASMX.sln and Predictor.sln, which demonstrate two different types of services in Visual Basic. Both samples use service to return answers to questions asked by the client application. For best results, open both solutions in separate ins</div>
+                        </div>
+                        <!--pe14139-->
+                        <!--ps14152-->
+                        <div id="item">
+                                <div><a href="Help Files Sample/description.html">Help Files Sample</a></div>
+                            <div>Each tabbed page of the TabControl displays a different type of help:</div>
+                        </div>
+                        <!--pe14152-->
+                        <!--ps14216-->
+                        <div id="item">
+                                <div><a href="Console Application Sample/description.html">Console Application Sample</a></div>
+                            <div>The project includes an XML file as an embedded resource. The XML file contains the Products table of the Northwind database. The application loads an untyped dataset from the XML file. When the console application is run, it accepts input from the user that is either a product I</div>
+                        </div>
+                        <!--pe14216-->
+                        <!--ps14226-->
+                        <div id="item">
+                                <div><a href="Logging Sample/description.html">Logging Sample</a></div>
+                            <div>Visual Basic offers two different logging mechanisms. My.Application.Log provides access to the operating system event logs and also allows you to write messages to text files. The component provides access to the operating system event logs. The component allows you to add and d</div>
+                        </div>
+                        <!--pe14226-->
+                        <!--ps14243-->
+                        <div id="item">
+                                <div><a href="Object-Oriented Programming Sample/description.html">Object-Oriented Programming Sample</a></div>
+                            <div>The project includes several class definitions. Customer is the base class, and contains only three properties. Four other classes are derived from the Customer class. Each inherits the properties of Customer, but adds another category of class member.</div>
+                        </div>
+                        <!--pe14243-->
+                        <!--ps14228-->
+                        <div id="item">
+                                <div><a href="Resources and Settings Sample/description.html">Resources and Settings Sample</a></div>
+                            <div>A setting is used to keep track of the number of times the application has been run. Each time the application runs, the setting is examined, and one of several available desktop images is selected based on that number. Consequently, every time that you run the application, you s</div>
+                        </div>
+                        <!--pe14228-->
+                        <!--ps14255-->
+                        <div id="item">
+                                <div><a href="Reflector Sample (Visual Basic)/description.html">Reflector Sample (Visual Basic)</a></div>
+                            <div>The sample shows how to use methods from the System.Reflection namespace to run queries over types from System.Xml.Linq.dll. The by-product is an HTML document outlining the public APIs for the assembly.</div>
+                        </div>
+                        <!--pe14255-->
+                        <!--ps14229-->
+                        <div id="item">
+                                <div><a href="Performance Counters Sample/description.html">Performance Counters Sample</a></div>
+                            <div>Tasks demonstrated include the following: Listing categories, Listing counters, Retrieving data, Custom counters.</div>
+                        </div>
+                        <!--pe14229-->
+                        <!--ps14237-->
+                        <div id="item">
+                                <div><a href="String Formatting Sample/description.html">String Formatting Sample</a></div>
+                            <div>The formatting options demonstrated include the following:</div>
+                        </div>
+                        <!--pe14237-->
+                        <!--ps14220-->
+                        <div id="item">
+                                <div><a href="Event Log Sample/description.html">Event Log Sample</a></div>
+                            <div>The main form, Form1, contains three Button controls to read, write, and create or delete event logs. Each opens a new form that collects information specific to the operation.</div>
+                        </div>
+                        <!--pe14220-->
+                        <!--ps14212-->
+                        <div id="item">
+                                <div><a href="API Call Sample/description.html">API Call Sample</a></div>
+                            <div>The class Win32API is defined in a separate file, Win32API.vb. Each API declaration, using the Declare Statement, is available as a Shared member of the Win32API class. Shared members can be called directly using the class name. It is not necessary to create an instance of the cl</div>
+                        </div>
+                        <!--pe14212-->
+                        <!--ps14253-->
+                        <div id="item">
+                                <div><a href="Introduction to LINQ to XML Sample (Visual Basic)/description.html">Introduction to LINQ to XML Sample (Visual Basic)</a></div>
+                            <div>The sample is a short introduction to System.Xml.Linq. It takes your familiarity with the XML DOM API as a starting point. The goal is to illustrate how to construct a predefined XML document by using LINQ to XML. Two different approaches are demonstrated.</div>
+                        </div>
+                        <!--pe14253-->
+                        <!--ps14161-->
+                        <div id="item">
+                                <div><a href="Top-Level Forms Sample/description.html">Top-Level Forms Sample</a></div>
+                            <div>Many document-based applications support multiple windows, one per open document, which are displayed in the taskbar. The ALT+TAB key combination can be used to switch between the documents, but without the overhead incurred by loading each document in a separate process. This sa</div>
+                        </div>
+                        <!--pe14161-->
+                        <!--ps14177-->
+                        <div id="item">
+                                <div><a href="Object Binding Sample/description.html">Object Binding Sample</a></div>
+                            <div>The sample solution contains two projects. The CustomerLibrary project defines several business classes, including Customers, Orders, and CustomerManager. The CustomerManager class creates instances of these classes. Those instances are displayed in the client project.</div>
+                        </div>
+                        <!--pe14177-->
+                        <!--ps14217-->
+                        <div id="item">
+                                <div><a href="Custom Exceptions Sample/description.html">Custom Exceptions Sample</a></div>
+                            <div>This sample contains two projects: a Windows Forms client and a class library.</div>
+                        </div>
+                        <!--pe14217-->
+                        <!--ps14241-->
+                        <div id="item">
+                                <div><a href="User Information Sample/description.html">User Information Sample</a></div>
+                            <div>This sample demonstrates these tasks:
+- How to access the current Windows User Name
+- How My.User can be configured to use developer-defined authorization and authentication mechanisms, respectively. 
+- How to control the behavior of the program using authentication mode</div>
+                        </div>
+                        <!--pe14241-->
+                        <!--ps14156-->
+                        <div id="item">
+                                <div><a href="NotifyIcon Sample/description.html">NotifyIcon Sample</a></div>
+                            <div>This application uses the NotifyIcon control and its associated ContextMenu to access and display system data:</div>
+                        </div>
+                        <!--pe14156-->
+                        <!--ps14140-->
+                        <div id="item">
+                                <div><a href="WCF Windows Forms Sample/description.html">WCF Windows Forms Sample</a></div>
+                            <div>The contract is defined by the IWeatherService interface, which exposes an operation named GetWeatherData. This operation accepts an array of cities and returns an array of WeatherData objects that represent the high and low forecasted temperature for a city.</div>
+                        </div>
+                        <!--pe14140-->
+                        <!--ps14142-->
+                        <div id="item">
+                                <div><a href="Dialog Components Sample/description.html">Dialog Components Sample</a></div>
+                            <div>This sample demonstrates the OpenFileDialog, SaveFileDialog, ColorDialog, and FontDialog components. The sample form contains a TabControl control with two pages. The first tab page uses the four components to open a file, save a file, and set the font and color of the text. The </div>
+                        </div>
+                        <!--pe14142-->
+                        <!--ps14232-->
+                        <div id="item">
+                                <div><a href="PrintformSample/description.html">PrintformSample</a></div>
+                            <div>This sample illustrates the use of printform controls. To run the sample press F5 and then print preview to view functionality</div>
+                        </div>
+                        <!--pe14232-->
+                        <!--ps14256-->
+                        <div id="item">
+                                <div><a href="RSS Sample (Visual Basic)/description.html">RSS Sample (Visual Basic)</a></div>
+                            <div>This sample acts as a small Web server that aggregates several RSS feeds. An Internet connection is required. On Windows Vista, you may have to run this program as Administrator.</div>
+                        </div>
+                        <!--pe14256-->
+                        <!--ps14258-->
+                        <div id="item">
+                                <div><a href="Simple Lambdas Sample (Visual Basic)/description.html">Simple Lambdas Sample (Visual Basic)</a></div>
+                            <div>This sample provides a brief introduction to the use of lambda expressions.</div>
+                        </div>
+                        <!--pe14258-->
+                        <!--ps14227-->
+                        <div id="item">
+                                <div><a href="Multithreading Sample/description.html">Multithreading Sample</a></div>
+                            <div>This sample runs a time-consuming task on a separate thread, launched by a button click:</div>
+                        </div>
+                        <!--pe14227-->
+                        <!--ps14225-->
+                        <div id="item">
+                                <div><a href="Line and Shape Controls Sample/description.html">Line and Shape Controls Sample</a></div>
+                            <div>This sample consists of a main form that is used to start four different 
+        applications:</div>
+                        </div>
+                        <!--pe14225-->
+                        <!--ps14165-->
+                        <div id="item">
+                                <div><a href="Drawing Attributes Sample/description.html">Drawing Attributes Sample</a></div>
+                            <div>The Microsoft Tablet PC Platform SDK provides complete control over the visual style of drawn ink. Attributes include the obvious, such as the color and height and width of the pen tip, and the less obvious, such as transparency, raster operations, pressure sensitivity, and pen-t</div>
+                        </div>
+                        <!--pe14165-->
+                        <!--ps14145-->
+                        <div id="item">
+                                <div><a href="Dynamic Control Creation Sample/description.html">Dynamic Control Creation Sample</a></div>
+                            <div>Several options for adding controls to forms are demonstrated. Controls are added to the main form by declaring a new instance of a control and adding the reference to the form&#39;s Control..::.ControlCollection collection. A more a complicated scenario demonstrates creating an inst</div>
+                        </div>
+                        <!--pe14145-->
+                        <!--ps14167-->
+                        <div id="item">
+                                <div><a href="Ink-Enabled Text Box Sample/description.html">Ink-Enabled Text Box Sample</a></div>
+                            <div>Microsoft Windows XP Tablet PC Edition 2005 provides the Pen Input Panel (PIP). The PIP automatically enables text input in the form of freeform handwriting, individual characters, or characters from an on-screen QWERTY keyboard. This is the simplest and often the best solution f</div>
+                        </div>
+                        <!--pe14167-->
+                        <!--ps14224-->
+                        <div id="item">
+                                <div><a href="Generics Sample/description.html">Generics Sample</a></div>
+                            <div>This sample illustrates the following concepts:
+- Use of the , , , , and collections from the namespace.
+- A method for sorting the contents of the collection for each collection type.
+- Adding and removing items from the data structures.</div>
+                        </div>
+                        <!--pe14224-->
+                        <!--ps14236-->
+                        <div id="item">
+                                <div><a href="Service Manager Sample/description.html">Service Manager Sample</a></div>
+                            <div>Windows Services are long-running programs that perform their tasks without user interaction. This sample uses the ServiceController class from the System.ServiceProcess namespace. This class enables you retrieve a list of the running services through a shared method, GetServices</div>
+                        </div>
+                        <!--pe14236-->
+                        <!--ps14219-->
+                        <div id="item">
+                                <div><a href="System and Environment Information Sample/description.html">System and Environment Information Sample</a></div>
+                            <div>The main form contains one TabControl with several tab pages. Each tab page calls a different group of Environment or SystemInformation members:</div>
+                        </div>
+                        <!--pe14219-->
+                        <!--ps14213-->
+                        <div id="item">
+                                <div><a href="Array Sample/description.html">Array Sample</a></div>
+                            <div>The Customer class implements the IComparable interface, which is required for Sort and BinarySearch functionality. Customer objects can be sorted by either the Name or Id property. Changing the Array of option from Strings to Objects enables the Field to use for Sorts control th</div>
+                        </div>
+                        <!--pe14213-->
+                        <!--ps14166-->
+                        <div id="item">
+                                <div><a href="Enabling Gestures Sample/description.html">Enabling Gestures Sample</a></div>
+                            <div>Windows XP Tablet PC Edition 2005 provides system-level recognition of various traced gestures, ranging from basic geometric shapes (squares, circles, triangles, and so on) to proofreading symbols such as curlicues and chevrons. You can use the SetGestureStatus method of the InkO</div>
+                        </div>
+                        <!--pe14166-->
+                        <!--ps14150-->
+                        <div id="item">
+                                <div><a href="http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Pen Sample/description.html">http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Pen Sample</a></div>
+                            <div>To get samples and instructions for installing them, see the following:</div>
+                        </div>
+                        <!--pe14150-->
+                        <!--ps14164-->
+                        <div id="item">
+                                <div><a href="Context-Enabled Form Sample/description.html">Context-Enabled Form Sample</a></div>
+                            <div>One of the most powerful uses of Microsoft Windows XP Tablet PC Edition 2005 is for form-related activities. In most cases, you can do this without coding. The Context Tagging Tool provided with the Tablet PC Platform SDK enables you to specify field masks for use with any form-b</div>
+                        </div>
+                        <!--pe14164-->
+                        <!--ps14144-->
+                        <div id="item">
+                                <div><a href="Custom Drawing User Control Sample/description.html">Custom Drawing User Control Sample</a></div>
+                            <div>This sample demonstrates how to create custom-drawn user controls, use them on a form, have the control respond to events, and define properties for use in the designer. The controls that are created are score-keeping controls. One is a digital scoreboard which displays a number </div>
+                        </div>
+                        <!--pe14144-->
+                        <!--ps14180-->
+                        <div id="item">
+                                <div><a href="XMLDocument Class Sample/description.html">XMLDocument Class Sample</a></div>
+                            <div>The sample demonstrates how to use the XMLDocument class</div>
+                        </div>
+                        <!--pe14180-->
+                        <!--ps14238-->
+                        <div id="item">
+                                <div><a href="String Methods Sample/description.html">String Methods Sample</a></div>
+                            <div>The main form contains a TabControl with three tab pages that demonstrate String member methods, String shared methods, and StringWriter methods. Each tab page enables the user to enter string values and then execute String methods by clicking buttons. The underlying design conta</div>
+                        </div>
+                        <!--pe14238-->
+                        <!--ps14246-->
+                        <div id="item">
+                                <div><a href="WMI Sample/description.html">WMI Sample</a></div>
+                            <div>The two tabbed pages of the TabControl demonstrate two types of WMI tasks:</div>
+                        </div>
+                        <!--pe14246-->
+                        <!--ps14240-->
+                        <div id="item">
+                                <div><a href="Exception-Handling Sample/description.html">Exception-Handling Sample</a></div>
+                            <div>Five variations on opening a file are demonstrated in the code. There are five command buttons to test. Each one tries to open the file specified in the text box labeled Text File To Open. Each button, except the one labeled No Error Handling, uses various degrees of error handli</div>
+                        </div>
+                        <!--pe14240-->
+                        <!--ps14239-->
+                        <div id="item">
+                                <div><a href="Threaded User Interface Update Sample/description.html">Threaded User Interface Update Sample</a></div>
+                            <div>The user interface cannot be updated from a procedure running on a thread that is not the user interface thread. This sample shows how to update the user interface when data is supplied from a different thread.</div>
+                        </div>
+                        <!--pe14239-->
+                        <!--ps14160-->
+                        <div id="item">
+                                <div><a href="StatusStrip Control Sample/description.html">StatusStrip Control Sample</a></div>
+                            <div>Several types of data are displayed: Text, Keyboard status, Date, Progress</div>
+                        </div>
+                        <!--pe14160-->
+                        <!--ps14168-->
+                        <div id="item">
+                                <div><a href="Power Aware Sample/description.html">Power Aware Sample</a></div>
+                            <div>One of the keys to a highly mobile smart client is that it be aware of its power status. Because certain graphical, file, and network operations can be battery-intensive, a smart client application should be able to change its behavior to allow for various power situations if pos</div>
+                        </div>
+                        <!--pe14168-->
+                        <!--ps14153-->
+                        <div id="item">
+                                <div><a href="Visual Inheritance Sample/description.html">Visual Inheritance Sample</a></div>
+                            <div>A form is a class like any other class in the .NET Framework, except that it has the capability to display visual user interface elements. To use this type of inheritance, simply create a class that derives from a class that, in turn, derives from System.Windows.Forms..::.Form.</div>
+                        </div>
+                        <!--pe14153-->
+                        <!--ps14233-->
+                        <div id="item">
+                                <div><a href="Process Control Sample/description.html">Process Control Sample</a></div>
+                            <div>The Process class is used to perform the following tasks:</div>
+                        </div>
+                        <!--pe14233-->
+                        <!--ps14234-->
+                        <div id="item">
+                                <div><a href="Managing Processes Sample/description.html">Managing Processes Sample</a></div>
+                            <div>The processes on the current computer are displayed in a ListView control by calling the GetProcesses method. When a process is selected, details about that process are shown in another ListView control. The process details are retrieved using the Process instance representing th</div>
+                        </div>
+                        <!--pe14234-->
+                        <!--ps14151-->
+                        <div id="item">
+                                <div><a href="http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Text Sample/description.html">http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Text Sample</a></div>
+                            <div>While some effects can be implemented by setting the properties of the Brush and Pen classes, other effects require some code:</div>
+                        </div>
+                        <!--pe14151-->
+                        <!--ps14178-->
+                        <div id="item">
+                                <div><a href="Serialization Sample/description.html">Serialization Sample</a></div>
+                            <div>This application contains two classes, one with standard serialization and one with custom serialization. The user interface includes buttons to serialize and deserialize the two classes. The class with standard serialization can be serialized to either a SOAP file or a binary fi</div>
+                        </div>
+                        <!--pe14178-->
+                        <!--ps14148-->
+                        <div id="item">
+                                <div><a href="http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Brushes Sample/description.html">http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/http://code.msdn.microsoft.com/Official-Visual-Studio-f48134ec/GDI+ Brushes Sample</a></div>
+                            <div>The user can select from a number of different parameters that influence how the brush is displayed. After each parameter selection, user-selected shapes are redrawn in a picture box demonstrating the new brush. Some more advanced objects such as PathGradientBrush and LinearGradi</div>
+                        </div>
+                        <!--pe14148-->
+                        <!--ps14252-->
+                        <div id="item">
+                                <div><a href="LINQ to XML Data Binding Sample (Visual Basic)/description.html">LINQ to XML Data Binding Sample (Visual Basic)</a></div>
+                            <div>The LINQ to XML Data Binding sample demonstrates how to bind data in WPF by using LINQ to XML. The example enables you to stream videos from Soapbox on MSN Videos and lets you keep a list of your favorties&#160;(MyFavorties). The interface has two tabs, Soapbox on MSN Video and Edit M</div>
+                        </div>
+                        <!--pe14252-->
+                        <!--ps14259-->
+                        <div id="item">
+                                <div><a href="LINQ to TerraServer Provider Sample/description.html">LINQ to TerraServer Provider Sample</a></div>
+                            <div>This sample is a custom LINQ provider for the TerraServer-USA Web service. It also contains a sample client application that uses the custom LINQ provider to query the Web service for geographical data.</div>
+                        </div>
+                        <!--pe14259-->
+                        <!--ps14251-->
+                        <div id="item">
+                                <div><a href="Expression Tree Visualizer Sample (Visual Basic)/description.html">Expression Tree Visualizer Sample (Visual Basic)</a></div>
+                            <div>The Expression Tree Visualizer can be used in a debug environment to visualize expressions.</div>
+                        </div>
+                        <!--pe14251-->
+                        <!--ps14242-->
+                        <div id="item">
+                                <div><a href="Visual Basic 2005 Language Features Sample/description.html">Visual Basic 2005 Language Features Sample</a></div>
+                            <div>This sample demonstrates these language features: Operator overloading, Generics, Using statement, TryCast and IsNot statements.</div>
+                        </div>
+                        <!--pe14242-->
+                        <!--ps14247-->
+                        <div id="item">
+                                <div><a href="XML Comments Sample/description.html">XML Comments Sample</a></div>
+                            <div>This sample demonstrates creating XML comments, viewing them in the editor, and accessing them programmatically.</div>
+                        </div>
+                        <!--pe14247-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

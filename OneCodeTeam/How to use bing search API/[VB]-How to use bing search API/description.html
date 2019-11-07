@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=1B9152C29A0457AFEC33526CDFADF105" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=D636919224FCD4EE55642CE3BF1E3856" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to use bing search API</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to use bing search API</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, Microsoft Azure
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Azure Market Place
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/11/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-use-bing-search-API-4c8b287e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span lang="EN-US">How to use </span><span lang="EN-US">Azure market place</span><span lang="EN-US">
+</span><span lang="EN-US">Bing search API</span><span lang="EN-US"> (</span><span lang="EN-US">CSAzureMarketPlaceBingSearch</span><span lang="EN-US">)</span></h1>
+<h2><span lang="EN-US">Introduction </span></h2>
+<p class="Normal"><span lang="EN-US">Bing search now is available in Azure market place.
+</span></p>
+<p style="margin-bottom:12.0pt"><span lang="EN-US" style="font-size:11.0pt; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; color:black">The Bing Search API offers multiple source types (or types of search results). You can request a single source type or multiple source
+ types with each query. For instance, you can request web, images, news, and video results for a single search query.<br>
+The Bing Search API returns results for the following source types: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="123" style="width:91.9pt; padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><strong><span lang="EN-US" style="font-size:9.0pt; font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333">Source Type</span></strong><span lang="EN-US" style="font-size:9.0pt; font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333">
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><strong><span lang="EN-US" style="font-size:9.0pt; font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333">Description</span></strong><span lang="EN-US" style="font-size:9.0pt; font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333">
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Web</span><span lang="EN-US" style="font-size:9.0pt; font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333">
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Web search results
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Images
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Image search results
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">News
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">News search results
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Videos
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Video search results
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Related Search
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Related search suggestions based on the query entered
+</span></p>
+</td>
+</tr>
+<tr>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Spelling Suggestions
+</span></p>
+</td>
+<td style="padding:.75pt .75pt .75pt .75pt">
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">Spelling suggestions based on the query entered
+</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="Normal"><span lang="EN-US">&nbsp;</span></p>
+<p class="Normal"><span lang="EN-US">This sample is based on windows Azure market place developer's requirement. It shows how to use each source type list above in your code project.</span></p>
+<p class="Normal">See Universal Windows Platform version <strong><a href="https://code.msdn.microsoft.com/How-to-use-bing-search-API-4c8b287e/https://code.msdn.microsoft.com/How-to-use-Bing-Search-API-80aebbd4">here</a></strong>.</p>
+<p class="Normal"><span lang="EN-US"><br>
+</span></p>
+<h2><span lang="EN-US">Building the Sample </span></h2>
+<p class="MsoNormal"><span lang="EN-US" style="color:black">You need to get your market place account key first.
+</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black">First go to the <a href="https://code.msdn.microsoft.com/How-to-use-bing-search-API-4c8b287e/https://datamarket.azure.com/">
+Azure market place website</a> and sign in with your live id. </span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black">Second open <a href="https://code.msdn.microsoft.com/How-to-use-bing-search-API-4c8b287e/https://code.msdn.microsoft.com/How-to-use-bing-search-API-4c8b287e/https://datamarket.azure.com/dataset/bing/search">
+Bing search API</a>, and choose the suitable subscription you prefer. </span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black">Get the account key and open your project, in default.aspx.cs file, find the variable &quot;AccountKey&quot; and replace the value with your account key.
+</span></p>
+<h2><span lang="EN-US">Running the Sample</span></h2>
+<p class="MsoNormal"><span lang="EN-US">Input &quot;xbox&quot; in the text box, and click every button to check the result.
+</span></p>
+<h2><span lang="EN-US">Using the Code</span></h2>
+<p class="MsoNormal"><span lang="EN-US">Step 1: </span><span lang="EN-US">Create an empty web form application</span><span lang="EN-US">.</span></p>
+<p class="MsoNormal"><span lang="EN-US">Step 2:</span><span lang="EN-US"> Create a text box.
+</span></p>
+<p class="MsoNormal"><span lang="EN-US">Step 3: Create 7 buttons with code: </span>
+</p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US">Step 4: Build and run the application. </span>
+</p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<h2><span lang="EN-US">More Information</span><span lang="EN-US"> </span></h2>
+<p class="MsoNormal"><span lang="EN-US" style="font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333"><a href="http://datamarket.azure.com/dataset/bing/search">Bing Search API</a></span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/08aaa011-be92-49ca-a5a0-b9eef08f292aimage.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Mix remote web applications with SharePoint components in apps</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Mix remote web applications with SharePoint components in apps</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Mix-remote-ead77c56">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">This sample hybrid app shows how to include a remote ASP.NET web application and classic SharePoint components in the same app for SharePoint.</span></p>
+<p><span style="font-size:small">It also shows how to use the SharePoint REST APIs to perform Read operations on SharePoint lists and list items, and how to retrieve only selected fields from the list. The app displays all of the items in a custom list that
+ the app deploys to the app web.</span></p>
+<p><span style="font-size:small">The default.aspx page of the app appears after you launch the app and choose the
+<strong>Get the Cast</strong> button.</span></p>
+<p><strong><span style="font-size:small">Figure 1. default.aspx page in the app</span></strong></p>
+<p><img id="61254" src="description/fig1.jpg" alt="" width="614" height="416">&nbsp;</p>
+<p><span style="font-size:small">The sample demonstrates how to read data using the OData protocol from REST endpoints. Additionally, it demonstrates how to parse Atom-formatted XML returned from these endpoints by using the classes of the
+<strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Xml.Linq.aspx"  title="Auto generated link to System.Xml.Linq">System.Xml.Linq</a> </strong>namespace. (Other samples of apps for SharePoint show how to do this by using the classes of the
+<strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Xml.aspx"  title="Auto generated link to System.Xml">System.Xml</a> </strong>namespace.)</span></p>
+<p><span style="font-size:small">For more information about the SharePoint REST APIs, see the topic
+<strong>Programming using the SharePoint 2013 Preview REST service </strong>in the SharePoint 2013 Preview developer documentation. For more information about working with Atom and OData, see
+<a href="http://www.odata.org/developers/protocols/atom-format">OData: AtomPub Format</a>.</span></p>
+<h1>Prerequisites</h1>
+<ul>
+<li><span style="font-size:small">A&nbsp;SharePoint 2013 development environment that is configured for app isolation and OAuth.</span>
+</li><li><span style="font-size:small">Visual Studio 2012 and SharePoint development tools in Visual Studio 2012.</span>
+</li></ul>
+<h1>Important contents</h1>
+<ul>
+<li><span style="font-size:small">TheaterCompany project, which contains the AppManifest.xml file, the feature.xml file, and various XML files that define the SharePoint components.</span>
+</li><li><span style="font-size:small">TheaterCompanyWeb project.</span>
+<ul>
+<li><span style="font-size:small">Default.aspx file, which contains the HTML and ASP.NET controls for the user interface of the app.</span>
+</li><li><span style="font-size:small">Default.aspx.cs file, which contains the C# code that uses the REST APIs to read data.</span>
+</li><li><span style="font-size:small">Web.config, web.debug.config, and web.release,config files. (The web.config file that is packaged with the app is a merger of web.config and either web.debug.config or web.release,config.)</span>
+</li></ul>
+</li></ul>
+<h1>Configuration instructions</h1>
+<ul>
+<li><span style="font-size:small">Open the TheaterCompany.sln file in Visual Studio.
+</span></li><li><span style="font-size:small">In <strong>Properties</strong> pane of Visual Studio, change the
+<strong>Site URL </strong>property of the app for SharePoint project in Visual Studio to the absolute URL of your SharePoint 2013 Preview developer test site. For example, &quot;<a href="http://MyDevServer/sites/MyTestSite">http://MyDevServer/sites/MyTestSite</a>&quot;.</span>
+</li></ul>
+<h1>Build instructions</h1>
+<p><span style="font-size:small">&bull;&nbsp;Choose the top solution node <strong>
+TheaterCompany</strong> in <strong>Solution Explorer</strong>. On the menu bar, choose
+<strong>Build</strong>, <strong>Build Solution</strong>.</span></p>
+<h1>Deploying and testing the sample</h1>
+<ul>
+<li><span style="font-size:small">Choose the F5 key. The web application, <strong>
+TheaterCompanyWeb</strong>, is deployed to IIS Express at the URL specified in the SSL URL property of the project. The
+<strong>TheaterCompany</strong> app is installed to your test SharePoint website. (The remote app does not try to interact with the host web, and the app principal automatically has permissions to the app web, so you are not prompted to grant permissions.)
+ The <strong>Site Contents </strong>page of your target SharePoint website opens, and you can see the new app listed there.</span>
+</li><li><span style="font-size:small">Choose the <strong>Theater Company </strong>app, and the remote web application opens to its default page. Depending on your browser, there may or may not be a background with the classic comedy and tragedy masks as shown in
+ Figure 1. If the browser cannot open the background file, a sea green background is seen. Choose the
+<strong>Get the Cast </strong>button. A grid that is partially populated with data should open, as shown in Figure 1.&nbsp;</span>
+</li></ul>
+<h1>Change log</h1>
+<p><span style="font-size:small">First release.</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://www.odata.org/">Open Data Protocol</a></span>
+</li><li><span style="font-size:small"><a href="http://www.odata.org/developers/protocols/atom-format">OData: AtomPub Format</a></span>
+</li><li><span style="font-size:small">SharePoint 2013 Preview SDK topics:</span>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/fp179936.aspx">How to: Create a cloud-hosted app that includes a custom SharePoint list and content type</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/fp142385(v=office.15)">Programming using the SharePoint 2013 Preview REST service</a></span>
+</li></ul>
+</li></ul>
+<h1>Contact info</h1>
+<p><span style="font-size:small"><a href="http://code.msdn.microsoft.com/SharePoint-2013-Mix-remote-ead77c56/mailto:DocThis@microsoft.com">DocThis@microsoft.com</a></span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

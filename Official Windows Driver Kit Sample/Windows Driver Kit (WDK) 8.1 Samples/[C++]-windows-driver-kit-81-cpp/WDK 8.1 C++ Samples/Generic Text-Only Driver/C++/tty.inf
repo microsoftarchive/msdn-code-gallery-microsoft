@@ -1,0 +1,118 @@
+
+; OEMDLL.INF
+;
+; INF file for OEM DLL Customization samples
+;
+; Copyright 1999-2003 Microsoft Corporation
+
+
+[Version]
+Signature="$Windows NT$"
+Provider=%MS%
+LayoutFile=ntprint.inf
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+DriverVer=10/08/2000
+
+;
+; Manufacturer section.
+;
+; This section lists all of the manufacturers 
+; that we will display in the Dialog box
+;
+[Manufacturer]
+"Generic"=Generic, NTx86, NTamd64, NTia64
+
+;
+; Model sections. 
+; 
+; Each section here corresponds with an entry listed in the
+; [Manufacturer] section, above. The models will be displayed in the order
+; that they appear in the INF file.
+;
+
+[Generic]
+"Generic / Text Only"          = TTY.GPD
+
+[Generic.NTx86]
+"Generic / Text Only"          = TTY.GPD
+
+[Generic.NTamd64]
+"Generic / Text Only"          = TTY.GPD
+
+[Generic.NTia64]
+"Generic / Text Only"          = TTY.GPD
+
+;
+; Installer Sections
+;
+; These sections control file installation, and reference all files that
+; need to be copied. The section name will be assumed to be the driver
+; file, unless there is an explicit DriverFile section listed.
+;
+
+
+[TTY.GPD]
+CopyFiles=@TTY.GPD,@TTY.INI,@TTYUI.HLP,@TTYRES.DLL,OEMUNI,OEMUI
+DataSection=UNIDRV_DATA
+DataFile=TTY.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+
+
+
+; Copy Sections
+;
+
+
+[OEMUNI]
+TTY.DLL
+
+
+[OEMUI]
+TTYUI.DLL
+
+[SourceDisksNames]
+1   = %Disk%,,,""
+
+;  Location of source files not in Layout.inf.
+
+[SourceDisksFiles]
+tty.gpd       = 1
+tty.ini       = 1
+ttyui.hlp     = 1
+
+[SourceDisksFiles.X86]
+TTY.DLL     = 1,x86
+TTYUI.DLL   = 1,x86
+TTYRES.dll  = 1,x86
+
+[SourceDisksFiles.amd64]
+TTY.DLL     = 1,amd64
+TTYUI.DLL   = 1,amd64
+TTYRES.dll  = 1,amd64
+
+[SourceDisksFiles.IA64]
+TTY.DLL     = 1,ia64
+TTYUI.DLL   = 1,ia64
+TTYRES.dll  = 1,ia64
+
+;
+; Call SetupSetDirectoryId with 66000 to set the target directory at runtime
+; (depending on which environment drivers are getting installed)
+;
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+;
+; Localizable Strings
+;
+[Strings]
+MS   = "Microsoft"
+Disk = "OEM Driver Install Disk"
+
+
+
+

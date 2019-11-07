@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to compare cells in excel and highlight the cells that are different</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to compare cells in excel and highlight the cells that are different</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Highlight, compare cells
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-compare-cells-in-9b0c1f1f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to compare cells in Excel and highlight the cells that are different (CSExcelCompareCells)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to compare cells in different columns of the same sheet in an excel file and compare cells in different sheets of the excel file.</p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal">Before you run the sample, you should make sure Microsoft Office 2010 installed on your computer.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Step1. Open <span style="">&quot;</span>CSExcelCompareCells.sln&quot; to open the project and then press F5 on the keyboard to run the sample. The form resembles the following:</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="576" height="188" align="middle">
+</span></p>
+<p class="MsoNormal">Step2.<span style="">&nbsp; </span>Click &quot;Select&quot; button to choose an existing excel file which need to compare cells. Then you should input valid source column and target column. At last, you can click &quot;Compare Columns&quot;
+ to compare cells in different columns of the same sheet<span style="">.</span> If the manipulation is successful, you will receive &quot;Compare Columns successfully, Please check in the excel file&quot; message.</p>
+<p class="MsoNormal"><span style=""><img src="description/10fc5d7e-2f10-4b51-bdf0-059e6a215e07image.png" alt="" width="576" height="272" align="middle">
+</span></p>
+<p class="MsoNormal">Step3. If you want to compare cells in different sheets of the excel file, you should input valid source sheet and target sheet, then Click &quot;Compare Sheets&quot; button to compare cells in different sheets. You also can receive the
+ &quot;Compare Sheets successfully, Please check in the excel file&quot; message when the manipulation is successful.</p>
+<p class="MsoNormal"><span style=""><img src="description/305212fe-5712-4e36-848b-3d16f9f0659eimage.png" alt="" width="576" height="299" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Step1. Create Windows Forms Application from template of Visual Studio.</p>
+<p class="MsoNormal">Step2. Add &quot;Microsoft.Office.Interop.Excel.dll&quot; reference to your project</p>
+<p class="MsoNormal">Step3. Add a helper class to the project and named it as &quot;CompareHelper.cs&quot;. Then code the two functions by using the following code snippets:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+      /// Compare Cells in different columns in the same sheet of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sourceCol&quot;&gt;Source Column&lt;/param&gt;
+      /// &lt;param name=&quot;targetCol&quot;&gt;Taget Column&lt;/param&gt;
+      /// &lt;param name=&quot;excelFile&quot;&gt;The Path of Excel File&lt;/param&gt;
+      public void CompareColumns(string sourceCol, string targetCol, string excelFile)
+      {
+          try
+          {
+              // Create an instance of Microsoft Excel and make it invisible
+              excelApp = new Excel.Application();
+              excelApp.Visible = false;
+             
+              // open a Workbook and get the active Worksheet
+              excelWorkbook = excelApp.Workbooks.Open(excelFile);
+              excelWorkSheet1 = excelWorkbook.ActiveSheet;
+
+
+              // maximum Row
+              lastLine = excelWorkSheet1.UsedRange.Rows.Count;
+              for (int row = 1; row &lt;= lastLine; row&#43;&#43;)
+              {
+                  // Compare cell value
+                  if (excelWorkSheet1.Range[sourceCol &#43; row.ToString()].Value != excelWorkSheet1.Range[targetCol &#43; row.ToString()].Value)
+                  {
+                      excelWorkSheet1.Range[sourceCol &#43; row.ToString()].Interior.Color = 255;
+                      excelWorkSheet1.Range[targetCol &#43; row.ToString()].Interior.Color = 5296274;
+                  }
+              }
+
+
+              // Save WorkBook and close
+              excelWorkbook.Save();
+              excelWorkbook.Close();
+
+
+              // Quit Excel Application
+              excelApp.Quit();
+          }
+          catch
+          {
+              throw ;
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different sheets of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sourceSheetNum&quot;&gt;Source Sheet Number&lt;/param&gt;
+      /// &lt;param name=&quot;targetSheetNum&quot;&gt;Target Sheet Number&lt;/param&gt;
+      /// &lt;param name=&quot;excelFile&quot;&gt;Path of Excel File&lt;/param&gt;
+      public void CompareSheets(int sourceSheetNum,int targetSheetNum,string excelFile)
+      {
+          try
+          {
+              // Create an instance of Microsoft Excel and make it invisible
+              excelApp = new Excel.Application();
+              excelApp.Visible = false;
+              excelWorkbook = excelApp.Workbooks.Open(excelFile);
+              excelWorkSheet1 = excelWorkbook.Sheets[sourceSheetNum];
+              excelWorkSheet2 = excelWorkbook.Sheets[targetSheetNum];
+              lastLine = Math.Max(
+                  excelWorkSheet1.UsedRange.Rows.Count,
+                  excelWorkSheet2.UsedRange.Rows.Count);
+              for (int row = 1; row &lt;= lastLine; row&#43;&#43;)
+              {
+                  // maximum column 
+                  int lastCol = Math.Max(
+                      excelWorkSheet1.UsedRange.Columns.Count,
+                      excelWorkSheet2.UsedRange.Columns.Count);
+                  for (int column = 1; column &lt;= lastCol; column&#43;&#43;)
+                  {
+                      if (excelWorkSheet1.Cells[row, column].Value != excelWorkSheet2.Cells[row, column].Value)
+                      {
+                          ((Excel.Range)excelWorkSheet1.Cells[row, column]).Interior.Color = 255;
+                          ((Excel.Range)excelWorkSheet2.Cells[row, column]).Interior.Color = 5296274;
+                      }
+                  }
+              }
+
+
+              // Save WorkBook and close
+              excelWorkbook.Save();
+              excelWorkbook.Close();
+
+
+              // Quit Excel Application
+              excelApp.Quit();
+          }
+          catch
+          {
+              throw;
+          }
+      }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+      /// Compare Cells in different columns in the same sheet of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sourceCol&quot;&gt;Source Column&lt;/param&gt;
+      /// &lt;param name=&quot;targetCol&quot;&gt;Taget Column&lt;/param&gt;
+      /// &lt;param name=&quot;excelFile&quot;&gt;The Path of Excel File&lt;/param&gt;
+      public void CompareColumns(string sourceCol, string targetCol, string excelFile)
+      {
+          try
+          {
+              // Create an instance of Microsoft Excel and make it invisible
+              excelApp = new Excel.Application();
+              excelApp.Visible = false;
+             
+              // open a Workbook and get the active Worksheet
+              excelWorkbook = excelApp.Workbooks.Open(excelFile);
+              excelWorkSheet1 = excelWorkbook.ActiveSheet;
+
+
+              // maximum Row
+              lastLine = excelWorkSheet1.UsedRange.Rows.Count;
+              for (int row = 1; row &lt;= lastLine; row&#43;&#43;)
+              {
+                  // Compare cell value
+                  if (excelWorkSheet1.Range[sourceCol &#43; row.ToString()].Value != excelWorkSheet1.Range[targetCol &#43; row.ToString()].Value)
+                  {
+                      excelWorkSheet1.Range[sourceCol &#43; row.ToString()].Interior.Color = 255;
+                      excelWorkSheet1.Range[targetCol &#43; row.ToString()].Interior.Color = 5296274;
+                  }
+              }
+
+
+              // Save WorkBook and close
+              excelWorkbook.Save();
+              excelWorkbook.Close();
+
+
+              // Quit Excel Application
+              excelApp.Quit();
+          }
+          catch
+          {
+              throw ;
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different sheets of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sourceSheetNum&quot;&gt;Source Sheet Number&lt;/param&gt;
+      /// &lt;param name=&quot;targetSheetNum&quot;&gt;Target Sheet Number&lt;/param&gt;
+      /// &lt;param name=&quot;excelFile&quot;&gt;Path of Excel File&lt;/param&gt;
+      public void CompareSheets(int sourceSheetNum,int targetSheetNum,string excelFile)
+      {
+          try
+          {
+              // Create an instance of Microsoft Excel and make it invisible
+              excelApp = new Excel.Application();
+              excelApp.Visible = false;
+              excelWorkbook = excelApp.Workbooks.Open(excelFile);
+              excelWorkSheet1 = excelWorkbook.Sheets[sourceSheetNum];
+              excelWorkSheet2 = excelWorkbook.Sheets[targetSheetNum];
+              lastLine = Math.Max(
+                  excelWorkSheet1.UsedRange.Rows.Count,
+                  excelWorkSheet2.UsedRange.Rows.Count);
+              for (int row = 1; row &lt;= lastLine; row&#43;&#43;)
+              {
+                  // maximum column 
+                  int lastCol = Math.Max(
+                      excelWorkSheet1.UsedRange.Columns.Count,
+                      excelWorkSheet2.UsedRange.Columns.Count);
+                  for (int column = 1; column &lt;= lastCol; column&#43;&#43;)
+                  {
+                      if (excelWorkSheet1.Cells[row, column].Value != excelWorkSheet2.Cells[row, column].Value)
+                      {
+                          ((Excel.Range)excelWorkSheet1.Cells[row, column]).Interior.Color = 255;
+                          ((Excel.Range)excelWorkSheet2.Cells[row, column]).Interior.Color = 5296274;
+                      }
+                  }
+              }
+
+
+              // Save WorkBook and close
+              excelWorkbook.Save();
+              excelWorkbook.Close();
+
+
+              // Quit Excel Application
+              excelApp.Quit();
+          }
+          catch
+          {
+              throw;
+          }
+      }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step4. Design UI of main Form and then code the event handle by using the following code snippets:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+      /// Select Excel File
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnSelect_Click(object sender, EventArgs e)
+      {
+          using (OpenFileDialog openFileDialog = new OpenFileDialog())
+          {
+              openFileDialog.Filter = &quot;Excel Files(*.xls;*.xlsx)|*.xls;*.xlsx&quot;;
+              openFileDialog.Title = &quot;Select an excel file&quot;;
+              if (openFileDialog.ShowDialog() == DialogResult.OK)
+              {
+                  txbExcelPath.Text = openFileDialog.FileName;
+              }
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different columns in the same sheet of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnCompareCol_Click(object sender, EventArgs e)
+      {
+          if (!File.Exists(txbExcelPath.Text))
+          {
+              MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              return;
+          }
+
+
+          Regex reg = new Regex(&quot;^[A-Z]&#43;$&quot;);
+          if (txbSourceCol.Text != string.Empty && txbTargetCol.Text != string.Empty)
+          {
+              if (reg.IsMatch(txbSourceCol.Text.ToUpper()) && reg.IsMatch(txbTargetCol.Text.ToUpper()))
+              {
+                  try
+                  {
+                      new CompareHelper().CompareColumns(
+                          txbSourceCol.Text,
+                          txbTargetCol.Text,
+                          txbExcelPath.Text);
+
+
+                      // Clean up the unmanaged Excel COM resources by explicitly
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers();
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers(); 
+                      MessageBox.Show(&quot;Compare Columns successfully,Please check in the excel file&quot;);
+                  }
+                  catch(Exception ex)
+                  {
+                      MessageBox.Show(&quot;Exception occur, the Exception Message is: &quot; &#43; ex.Message);
+                      return;
+                  }
+              }
+              else
+              {
+                  MessageBox.Show(&quot;Source Column and Target Column must be letter&quot;);
+                  return;
+              }
+          }
+          else
+          {
+              MessageBox.Show(&quot;Please input Source Column and Target Column&quot;);
+              return;
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different sheets of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnCompareSheet_Click(object sender, EventArgs e)
+      {
+          if (!File.Exists(txbExcelPath.Text))
+          {
+              MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              return;
+          }
+
+
+          Regex reg = new Regex(&quot;^[0-9]*$&quot;);
+          if (txbSourceSheet.Text != string.Empty && txbTargetSheet.Text != string.Empty)
+          {
+              if (reg.IsMatch(txbSourceSheet.Text.ToUpper()) && reg.IsMatch(txbTargetSheet.Text.ToUpper()))
+              {
+                  try
+                  {
+                      new CompareHelper().CompareSheets(
+                          int.Parse(txbSourceSheet.Text),
+                          int.Parse(txbTargetSheet.Text),
+                          txbExcelPath.Text);
+
+
+                      // Clean up the unmanaged Excel COM resources by explicitly
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers();
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers(); 
+                      MessageBox.Show(&quot;Compare sheets successfully,Please check in the excel file&quot;);
+                  }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(&quot;Exception occur, the Exception Message is: &quot; &#43; ex.Message);
+                      return;
+                  }
+              }
+              else
+              {
+                  MessageBox.Show(&quot;Source Sheet and Target Sheet must be Number&quot;);
+                  return;
+              }
+          }
+          else
+          {
+              MessageBox.Show(&quot;Please input Source Sheet and Target Sheet&quot;);
+              return;
+          }
+      }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+      /// Select Excel File
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnSelect_Click(object sender, EventArgs e)
+      {
+          using (OpenFileDialog openFileDialog = new OpenFileDialog())
+          {
+              openFileDialog.Filter = &quot;Excel Files(*.xls;*.xlsx)|*.xls;*.xlsx&quot;;
+              openFileDialog.Title = &quot;Select an excel file&quot;;
+              if (openFileDialog.ShowDialog() == DialogResult.OK)
+              {
+                  txbExcelPath.Text = openFileDialog.FileName;
+              }
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different columns in the same sheet of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnCompareCol_Click(object sender, EventArgs e)
+      {
+          if (!File.Exists(txbExcelPath.Text))
+          {
+              MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              return;
+          }
+
+
+          Regex reg = new Regex(&quot;^[A-Z]&#43;$&quot;);
+          if (txbSourceCol.Text != string.Empty && txbTargetCol.Text != string.Empty)
+          {
+              if (reg.IsMatch(txbSourceCol.Text.ToUpper()) && reg.IsMatch(txbTargetCol.Text.ToUpper()))
+              {
+                  try
+                  {
+                      new CompareHelper().CompareColumns(
+                          txbSourceCol.Text,
+                          txbTargetCol.Text,
+                          txbExcelPath.Text);
+
+
+                      // Clean up the unmanaged Excel COM resources by explicitly
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers();
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers(); 
+                      MessageBox.Show(&quot;Compare Columns successfully,Please check in the excel file&quot;);
+                  }
+                  catch(Exception ex)
+                  {
+                      MessageBox.Show(&quot;Exception occur, the Exception Message is: &quot; &#43; ex.Message);
+                      return;
+                  }
+              }
+              else
+              {
+                  MessageBox.Show(&quot;Source Column and Target Column must be letter&quot;);
+                  return;
+              }
+          }
+          else
+          {
+              MessageBox.Show(&quot;Please input Source Column and Target Column&quot;);
+              return;
+          }
+      }
+
+
+      /// &lt;summary&gt;
+      /// Compare Cells in different sheets of an excel file
+      /// &lt;/summary&gt;
+      /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+      /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+      private void btnCompareSheet_Click(object sender, EventArgs e)
+      {
+          if (!File.Exists(txbExcelPath.Text))
+          {
+              MessageBox.Show(&quot;Please Select valid path of word document!&quot;, &quot;Error&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              return;
+          }
+
+
+          Regex reg = new Regex(&quot;^[0-9]*$&quot;);
+          if (txbSourceSheet.Text != string.Empty && txbTargetSheet.Text != string.Empty)
+          {
+              if (reg.IsMatch(txbSourceSheet.Text.ToUpper()) && reg.IsMatch(txbTargetSheet.Text.ToUpper()))
+              {
+                  try
+                  {
+                      new CompareHelper().CompareSheets(
+                          int.Parse(txbSourceSheet.Text),
+                          int.Parse(txbTargetSheet.Text),
+                          txbExcelPath.Text);
+
+
+                      // Clean up the unmanaged Excel COM resources by explicitly
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers();
+                      GC.Collect();
+                      GC.WaitForPendingFinalizers(); 
+                      MessageBox.Show(&quot;Compare sheets successfully,Please check in the excel file&quot;);
+                  }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(&quot;Exception occur, the Exception Message is: &quot; &#43; ex.Message);
+                      return;
+                  }
+              }
+              else
+              {
+                  MessageBox.Show(&quot;Source Sheet and Target Sheet must be Number&quot;);
+                  return;
+              }
+          }
+          else
+          {
+              MessageBox.Show(&quot;Please input Source Sheet and Target Sheet&quot;);
+              return;
+          }
+      }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<h2>More Information</h2>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;</span>Office Dev Center
+</span></p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/office/aa905340">http://msdn.microsoft.com/en-us/office/aa905340</a>
+</p>
+<p class="MsoNormal"><span style="">&nbsp;</span>Excel Object Model Overview</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/wss56bz7(v=vs.100).aspx">http://msdn.microsoft.com/en-us/library/wss56bz7(v=vs.100).aspx</a>
+</p>
+<p class="MsoNormal">Regex Class</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex.aspx">http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex.aspx</a>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/adaa87bc-3ace-4da7-8848-07ab8276df38image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

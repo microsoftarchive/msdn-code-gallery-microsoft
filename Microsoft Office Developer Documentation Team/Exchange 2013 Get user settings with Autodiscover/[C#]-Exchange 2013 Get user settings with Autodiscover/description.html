@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Exchange 2013: Get user settings with Autodiscover</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Exchange 2013: Get user settings with Autodiscover</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Exchange Server 2010, Exchange Online, Office 365, Exchange Server 2007 SP1, Exchange Server 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Configuration, autodiscover
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/22/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Exchange-2013-Get-user-7e22c86e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<table id="bottomTable" cellspacing="0" cellpadding="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left"><span id="runningHeaderText">&nbsp;</span></td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><span id="nsrTitle">Exchange 2013: Get user settings with Autodiscover readme</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<div>
+<p>This sample shows you how to implement an Autodiscover client by using the SOAP Autodiscover and POX Autodiscover services.</p>
+</div>
+<h2>Description of the Exchange 2013: Get user settings with Autodiscover sample</h2>
+<div id="sectionSection0">
+<p>This sample authenticates an email address and password entered from the console, performs a service connection point (SCP) lookup to locate Autodiscover endpoints, then sends Autodiscover requests to retrieve user settings.</p>
+</div>
+<h2>Prerequisites</h2>
+<div id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>A target server that is running a version of Exchange starting with Exchange Server 2007 Service Pack 1 (SP1), including Exchange Online.
+</li><li>The .NET Framework 4.5. </li><li>Visual Studio 2012 with the Visual Web Developer and C# components and an open Visual Studio 2012 solution.
+</li></ul>
+<p>Or</p>
+<ul>
+<li>A text editor to create and edit source code files and a command prompt window to run a .NET Framework command line compiler.
+</li></ul>
+</div>
+<h2>Key components of the sample</h2>
+<div id="sectionSection2">
+<p>This sample contains the following files:</p>
+<ul>
+<li>AutodiscoverSample.sln &mdash; The Visual Studio 2012 solution file for the AutodiscoverSample project.
+</li><li>AutodiscoverSample.csproj &mdash; The Visual Studio 2012 project file for the Autodiscover sample.
+</li><li>App.config &mdash; Contains configuration data for the AutodiscoverSample project.
+</li><li>AssemblyInfo.cs &mdash; Contains basic information about the sample application.
+</li><li>AutodiscoverRequest.cs &mdash; Contains the using statements, namespace, class, and functions to implement an Autodiscover request.
+</li><li>AutodiscoverUrlList.cs &mdash; Contains the using statements, namespace, class, and functions to implement an ordered list of Autodiscover endpoint URLs.
+</li><li>CommandLineArgs.cs &mdash; Contains the using statements, namespace, class, and functions to parse the command line arguments.
+</li><li>POXXmlStrings.cs &mdash; Contains constant strings representing XML namespaces and element names used in POX requests and responses.
+</li><li>Program.cs &mdash; Contains the using statements, namespace, class, and code to implement the sample program.
+</li><li>SOAPXmlStrings.cs &mdash; Contains constant strings representing XML namespaces and element names used in SOAP requests and responses.
+</li><li>Tracing.cs &mdash; Contains the using statements, namespace, class, and functions to output to a file and the console.
+</li></ul>
+<ul>
+</ul>
+</div>
+<h2>Configure the sample</h2>
+<div id="sectionSection3">
+<p>Follow these steps to configure the Exchange 2013: Get user settings with Autodiscover sample. Specify command line parameters to be used when running the sample in the Visual Studio 2012 environment.</p>
+<p>&nbsp;</p>
+<ol>
+<li>In Visual Studio, choose <strong><span class="ui">AutodiscoverSample Properties&hellip;</span></strong> from the
+<strong><span class="ui">Project</span></strong> menu. </li><li>Select <strong><span class="ui">Debug</span></strong>. </li><li>Enter parameters in the <strong><span class="ui">Command line arguments</span></strong> text box.
+</li></ol>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left"><strong>Note</strong> </th>
+</tr>
+<tr>
+<td>
+<p>For a list of parameters, see &quot;Run and test the sample&quot;.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Build the sample</h2>
+<div id="sectionSection4">
+<p>Press or select <strong><span class="ui">F6</span></strong> to build and deploy the sample.</p>
+</div>
+<h2>Run and test the sample</h2>
+<div id="sectionSection5">
+<p>The sample uses the command line arguments listed in the following table.</p>
+<strong>
+<div class="caption"></div>
+</strong>
+<div>
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p>Argument</p>
+</th>
+<th>
+<p>Description</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>emailAddress</p>
+</td>
+<td>
+<p>Required. The email address to send to the Autodiscover server.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-skipSOAP</p>
+</td>
+<td>
+<p>Optional. If present, the application will not send SOAP Autodiscover requests. Instead, it will only send POX Autodiscover requests.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-auth authEmailAddress</p>
+</td>
+<td>
+<p>Optional. If present, the authEmailAddress argument will be used to authenticate the connection instead of the emailAddress argument.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Press or select <strong><span class="ui">F5</span></strong> to run the sample.</p>
+</div>
+<h2>Related content</h2>
+<div id="sectionSection6">
+<p><a href="http://msdn.microsoft.com/en-us/library/exchange/jj900169(v=exchg.150).aspx" >Autodiscover for Exchange 2013</a></p>
+<p><a href="http://msdn.microsoft.com/library/b24228a8-5127-4bac-aef0-9c9e8843c9ff" >How to: Find Autodisover endpoints by using SCP lookup</a></p>
+<p><a href="http://msdn.microsoft.com/library/e5939ec2-1100-4174-8a88-5a6e09b60b23" >Handling Autodiscover error messages</a></p>
+</div>
+<h2>Change log</h2>
+<div id="sectionSection7"><strong>
+<div class="caption"></div>
+</strong>
+<div>
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<td>
+<p>Date</p>
+</td>
+<td>
+<p>Description</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>May 19, 2014</p>
+</td>
+<td>
+<p>Corrected bug in TryAutodiscoverUrl function that failed to return null when the specified URL has already been tried.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>October 4, 2013</p>
+</td>
+<td>
+<p>First release.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

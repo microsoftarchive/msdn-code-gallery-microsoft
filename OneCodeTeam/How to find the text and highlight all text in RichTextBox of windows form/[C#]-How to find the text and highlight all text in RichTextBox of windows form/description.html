@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/3e00d0a6-7844-40b8-8b92-12c0e4eeaed2Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to find the text and highlight all text in RichTextBox of windows form</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to find the text and highlight all text in RichTextBox of windows form</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Forms
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            RichTextBox, hightlight
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/22/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-find-the-text-and-e92b8d78">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p class="MsoNormal"><span style="">The sample demonstrates how to find and highlight all matched text in RichTextBox of Windows Form.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Users can input text that they want to search in search combobox, and then they also can select find options and highlight color, if the searched text exists in richtextbox, the searched text will be highlighted with the selected color; and if
+ the searched text can't be found in the text of richtextbox control, a prompt message will be shown.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">We can run the sample according to the following steps: </span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step1. Open &quot;CSWinFormSearchAndHighlightText.sln&quot; and then click Ctrl&#43;F5 to run the project. You can see the following form:
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><img src="description/image.png" alt="" width="461" height="357" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step2. Input text in Search combobox and click &quot;panelColor&quot; to choose the highlight color, when click &quot;panelColor&quot; control, a popup form will be shown and you can choose color from the popup form:
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><img src="description/3042214f-ceae-4507-afa2-6f2418cac241image.png" alt="" width="230" height="324" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step3. After choose the highlight color and click &quot;OK&quot; button, then click &quot;SearchAndHightlight&quot; button, if the searched text exists in richtextbox control, the text will be highlighted with selected color, and if the text
+ doesn't exist, a prompt message: &quot;Can't find the &quot;XXXX&quot; in RichTextBox control&quot; will be shown.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step1. Create Windows Form project via Visual Studio and named it as &quot;CSWinFormSearchAndHighlightText&quot;
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step2. Add Component Class into the project and named the class as &quot;CustomRichTextBox&quot;.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+/// &lt;summary&gt;
+    ///  Custom RichTextBox control
+    /// &lt;/summary&gt;
+    public partial class CustomRichTextBox :RichTextBox
+    {
+        public CustomRichTextBox():base()
+        {
+            InitializeComponent();
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Search and Highlight all text in RichTextBox Control 
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;findWhat&quot;&gt;Find What&lt;/param&gt;
+        /// &lt;param name=&quot;highlightColor&quot;&gt;Highlight Color&lt;/param&gt;
+        /// &lt;param name=&quot;ismatchCase&quot;&gt;Is Match Case&lt;/param&gt;
+        /// &lt;param name=&quot;ismatchWholeWord&quot;&gt;Is Match Whole Word&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public bool Highlight(string findWhat, Color highlightColor, bool ismatchCase, bool ismatchWholeWord)
+        {
+            // Clear all highlights before searching text again
+            ClearHighlight();
+
+
+            int startSearch = 0;
+            //int searchLength = findWhat.Length;
+            RichTextBoxFinds findoptions = default(RichTextBoxFinds);
+
+
+            // Setup the search options.
+            if (ismatchCase && ismatchWholeWord)
+            {
+                findoptions = RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord;
+            }
+            else if (ismatchCase)
+            {
+                findoptions = RichTextBoxFinds.MatchCase;
+            }
+            else if (ismatchWholeWord)
+            {
+                findoptions = RichTextBoxFinds.WholeWord;
+            }
+            else
+            {
+                findoptions = RichTextBoxFinds.None;
+            }
+
+
+            // detect whether search text exists in richtextbox
+            bool isfind = false;
+            int index = -1;
+
+
+            // Search text in RichTextBox and highlight them with color.
+            while ((index = this.Find(findWhat, startSearch, findoptions)) &gt; -1)
+            {
+                isfind = true;
+
+
+                this.SelectionBackColor = highlightColor;
+                
+                // Continue after the one we searched
+                startSearch = index&#43;1;
+            }
+
+
+            // If the text exist in RichTextBox control, then return true, otherwise, return false
+            return isfind;
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Clear all Highlights 
+        /// &lt;/summary&gt;
+        private void ClearHighlight()
+        {
+            this.SelectAll();
+            this.SelectionBackColor = Color.White;
+        }
+    }
+
+</pre>
+<pre id="codePreview" class="csharp">
+/// &lt;summary&gt;
+    ///  Custom RichTextBox control
+    /// &lt;/summary&gt;
+    public partial class CustomRichTextBox :RichTextBox
+    {
+        public CustomRichTextBox():base()
+        {
+            InitializeComponent();
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Search and Highlight all text in RichTextBox Control 
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;findWhat&quot;&gt;Find What&lt;/param&gt;
+        /// &lt;param name=&quot;highlightColor&quot;&gt;Highlight Color&lt;/param&gt;
+        /// &lt;param name=&quot;ismatchCase&quot;&gt;Is Match Case&lt;/param&gt;
+        /// &lt;param name=&quot;ismatchWholeWord&quot;&gt;Is Match Whole Word&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public bool Highlight(string findWhat, Color highlightColor, bool ismatchCase, bool ismatchWholeWord)
+        {
+            // Clear all highlights before searching text again
+            ClearHighlight();
+
+
+            int startSearch = 0;
+            //int searchLength = findWhat.Length;
+            RichTextBoxFinds findoptions = default(RichTextBoxFinds);
+
+
+            // Setup the search options.
+            if (ismatchCase && ismatchWholeWord)
+            {
+                findoptions = RichTextBoxFinds.MatchCase | RichTextBoxFinds.WholeWord;
+            }
+            else if (ismatchCase)
+            {
+                findoptions = RichTextBoxFinds.MatchCase;
+            }
+            else if (ismatchWholeWord)
+            {
+                findoptions = RichTextBoxFinds.WholeWord;
+            }
+            else
+            {
+                findoptions = RichTextBoxFinds.None;
+            }
+
+
+            // detect whether search text exists in richtextbox
+            bool isfind = false;
+            int index = -1;
+
+
+            // Search text in RichTextBox and highlight them with color.
+            while ((index = this.Find(findWhat, startSearch, findoptions)) &gt; -1)
+            {
+                isfind = true;
+
+
+                this.SelectionBackColor = highlightColor;
+                
+                // Continue after the one we searched
+                startSearch = index&#43;1;
+            }
+
+
+            // If the text exist in RichTextBox control, then return true, otherwise, return false
+            return isfind;
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Clear all Highlights 
+        /// &lt;/summary&gt;
+        private void ClearHighlight()
+        {
+            this.SelectAll();
+            this.SelectionBackColor = Color.White;
+        }
+    }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""></span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="">Step3. Design UI of the main form and implement behind code according to the following codes.
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><a href="http://msdn.microsoft.com/en-us/library/3134f2f7.aspx">RichTextBox.Find Method</a>
+</span></p>
+<p class="MsoNormal" style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style=""><a href="http://msdn.microsoft.com/en-us/library/f3fk1e1k(v=vs.90).aspx">ColorDialog Class</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/9bec79fa-4212-4fe8-8262-33ad08c61bb3image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

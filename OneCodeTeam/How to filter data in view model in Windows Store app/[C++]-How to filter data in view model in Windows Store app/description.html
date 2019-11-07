@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to filter data in view model in Windows Store app</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to filter data in view model in Windows Store app</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows, Windows 8, Windows 8.1
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Filter data
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/21/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-filter-data-in-view-acbd98f2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<h1>How to filter data in your View Model in Windows Store app (CSWindowsStoreAppFlightDataFilter)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal"><span lang="EN">Have you ever written an application, or been in the process of writing one, in which a large amount of data is being displayed on screen?&nbsp; At some point you realize that you want the users to be able to filter the
+ data, but you are not sure of the best way to do it.&nbsp;&nbsp;For our sample application, we will use flight information as the sample data, and add a filter on the price of the flight. The methodology demonstrated in this sample can be applied to a larger
+ application in which you have multiple filter criteria, and live data from a real time or static data source.
+</span></p>
+<p class="MsoNormal"><span lang="EN">Please note: This sample is based on following blog:<span>&nbsp;&nbsp;
+</span></span></p>
+<p class="MsoNormal"><span lang="EN"><a href="http://blogs.msdn.com/b/wsdevsol/archive/2013/11/14/filtering-data-in-your-view-model.aspx">http://blogs.msdn.com/b/wsdevsol/archive/2013/11/14/filtering-data-in-your-view-model.aspx</a></span></p>
+<p class="MsoNormal"><span lang="EN"><a href="http://blogs.msdn.com/b/wsdevsol/archive/2013/11/14/filtering-data-in-your-view-model.aspx"></a></span><strong>For UWP version, see&nbsp;<a href="https://code.msdn.microsoft.com/How-to-filter-data-in-view-acbd98f2/https://code.msdn.microsoft.com/How-to-filter-data-in-view-4d83dd03">https://code.msdn.microsoft.com/How-to-filter-data-in-view-acbd98f2/https://code.msdn.microsoft.com/How-to-filter-data-in-view-4d83dd03</a>.</strong></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span>Build the sample in Visual Studio 2013, and then run it. The app looks like this:
+</span></p>
+<p class="MsoNormal"><span><img src="description/image.png" alt="" width="576" height="359" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">ItemsPage.xaml is the Main View of the application that displays all of the flight information and MainViewModel.cs is the ViewModel that exposes properties and methods which the
+<span class="SpellE">ItemsPage.xaml</span> is bound to.<span>&nbsp; </span>The flight information will be displayed in a GridView whose ItemsSource property will be bound to the
+<span lang="EN">FilteredFlights </span>property of the MainViewModel.</p>
+<p class="MsoNormal">The following steps will show you how to expose a <span class="SpellE">
+FilteredFlights</span> property in <span class="SpellE">MainViewModel</span>, bind it to the
+<span class="SpellE">GridView</span>, add a control to filter on price, and finally add a function that keeps the FilteredFlights property up to date based on the current price filter.</p>
+<p class="MsoNormal"><span lang="EN">Step1. Create a Filtered Data Property </span>
+</p>
+<p class="MsoNormal"><span lang="EN">MainViewModel has a Flights property which is an ObservableCollection of FlightDataItem.&nbsp; This property is initialized with all of the flights in the data source, which is FlightData.json.&nbsp; To support filtering
+ we will add a Property called FilteredFlights to our view model.&nbsp; To do this, open the
+<span class="SpellE">MainViewModel.cs</span> file and add the following code after the Flights property:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private ObservableCollection&lt;FlightDataItem&gt; _filteredFlights;
+  
+ public ObservableCollection&lt;FlightDataItem&gt; FilteredFlights
+ {
+     get { return _filteredFlights; }
+     set { _filteredFlights = value; NotifyPropertyChanged(&quot;FilteredFlights&quot;); }
+ }
+
+</pre>
+<pre class="csharp" id="codePreview">private ObservableCollection&lt;FlightDataItem&gt; _filteredFlights;
+  
+ public ObservableCollection&lt;FlightDataItem&gt; FilteredFlights
+ {
+     get { return _filteredFlights; }
+     set { _filteredFlights = value; NotifyPropertyChanged(&quot;FilteredFlights&quot;); }
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">In the MainViewModel constructor add the following line of code to initialize the FilteredFlights to contain all of the flights:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">FilteredFlights = Flights;
+
+</pre>
+<pre class="csharp" id="codePreview">FilteredFlights = Flights;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">Step 2. Bind the GridView to the Filtered Data Property
+</span></p>
+<p class="MsoNormal"><span lang="EN">Now that there is a FilteredFlights property in our
+<span class="SpellE">MainViewModel</span>, we will bind it to our GridView.<span>&nbsp;
+</span>Open the ItemsPage.xaml file in XAML view and modify the ItemsSource property of the GridView to bind to FilteredFlights:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">&lt;GridView
+        x:Name=&quot;itemGridView&quot;
+        AutomationProperties.AutomationId=&quot;ItemsGridView&quot;
+        AutomationProperties.Name=&quot;Items&quot;
+        TabIndex=&quot;1&quot;
+        ItemsSource=&quot;{Binding FilteredFlights}&quot;
+        SelectionMode=&quot;None&quot;
+        IsSwipeEnabled=&quot;false&quot;
+        IsItemClickEnabled=&quot;True&quot; Grid.Column=&quot;1&quot; Margin=&quot;20,20,0,0&quot;&gt;
+
+</pre>
+<pre class="csharp" id="codePreview">&lt;GridView
+        x:Name=&quot;itemGridView&quot;
+        AutomationProperties.AutomationId=&quot;ItemsGridView&quot;
+        AutomationProperties.Name=&quot;Items&quot;
+        TabIndex=&quot;1&quot;
+        ItemsSource=&quot;{Binding FilteredFlights}&quot;
+        SelectionMode=&quot;None&quot;
+        IsSwipeEnabled=&quot;false&quot;
+        IsItemClickEnabled=&quot;True&quot; Grid.Column=&quot;1&quot; Margin=&quot;20,20,0,0&quot;&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN">The plumbing is now in place for us to add some more functionality to the view so we can filter the data.
+</span></p>
+<p class="MsoNormal"><span lang="EN">Step 3. Add a control to filter the data </span>
+</p>
+<p class="MsoNormal"><span lang="EN">Continuing in the ItemsPage.xaml file we will modify the layout so it can host a slider control for our price filter.<span>&nbsp;
+</span>For starters we will give our main layout Grid two columns by adding column definitions:
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;!--
+    This grid acts as a root panel for the page that defines two rows:
+    * Row 0 contains the back button and page title
+    * Row 1 contains the rest of the page layout
+--&gt;
+&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;344*&quot;/&gt;
+        &lt;ColumnDefinition Width=&quot;1023*&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+
+</pre>
+<pre class="xaml" id="codePreview">&lt;!--
+    This grid acts as a root panel for the page that defines two rows:
+    * Row 0 contains the back button and page title
+    * Row 1 contains the rest of the page layout
+--&gt;
+&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;344*&quot;/&gt;
+        &lt;ColumnDefinition Width=&quot;1023*&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">Add the layout element and controls for our price filter after the GridView.<span>&nbsp;
+</span>Please note that the Value property of the Slider control is bound to the SelectedPrice property which we have not yet added to our view model.
+<span>&nbsp;</span>We will do this in the next section.<span>&nbsp; </span>Also note that the binding Mode is TwoWay.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XAML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xaml</span>
+<pre class="hidden">&lt;StackPanel Grid.Row=&quot;1&quot;&gt;
+    &lt;TextBlock Text=&quot;Price Filter&quot; FontSize=&quot;48&quot; Margin=&quot;10&quot; /&gt;
+    &lt;Slider Height=&quot;50&quot; Margin=&quot;10&quot; Minimum=&quot;100.00&quot; Maximum=&quot;2265.00&quot; Value=&quot;{Binding Path=SelectedPrice, Mode=TwoWay}&quot; /&gt;
+&lt;/StackPanel&gt;
+
+</pre>
+<pre class="xaml" id="codePreview">&lt;StackPanel Grid.Row=&quot;1&quot;&gt;
+    &lt;TextBlock Text=&quot;Price Filter&quot; FontSize=&quot;48&quot; Margin=&quot;10&quot; /&gt;
+    &lt;Slider Height=&quot;50&quot; Margin=&quot;10&quot; Minimum=&quot;100.00&quot; Maximum=&quot;2265.00&quot; Value=&quot;{Binding Path=SelectedPrice, Mode=TwoWay}&quot; /&gt;
+&lt;/StackPanel&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">This concludes the changes needed in the view for filtering our data.<span>&nbsp;
+</span>If you run the application now, the slider will move, but the data will not yet change.<span>&nbsp;
+</span>We will add the code to do this in the final section of this article. </span>
+</p>
+<p class="MsoNormal"><span lang="EN">Step 4. Bringing it all together in the MainViewModel
+</span></p>
+<p class="MsoNormal"><span lang="EN">In our final section we will add a function named RefreshFilteredData to filter our data, and the SelectedPrice property to our MainViewModel.cs file.<span>&nbsp;
+</span>The RefreshFilteredData function selects all items from the Flights collection whose price is less than the SelectedPrice.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void RefreshFilteredData()
+ {
+     var fr = from fobjs in Flights
+             where fobjs.Price &lt; SelectedPrice
+             select fobjs;
+  
+     // This will limit the amount of view refreshes
+     if (FilteredFlights.Count == fr.Count())
+         return;
+  
+     FilteredFlights = new ObservableCollection&lt;FlightDataItem&gt;(fr);
+ }
+
+</pre>
+<pre class="csharp" id="codePreview">private void RefreshFilteredData()
+ {
+     var fr = from fobjs in Flights
+             where fobjs.Price &lt; SelectedPrice
+             select fobjs;
+  
+     // This will limit the amount of view refreshes
+     if (FilteredFlights.Count == fr.Count())
+         return;
+  
+     FilteredFlights = new ObservableCollection&lt;FlightDataItem&gt;(fr);
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">The following code is the definition of our SelectedPrice property.<span>&nbsp;
+</span>When this property changes, which will be the case when the price slider moves because of our TwoWay binding, it will call the RefreshFilteredData function to update the FilteredFlights property of the MainViewModel.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private double _selectedPrice;
+  
+ public double SelectedPrice
+ {
+     get { return _selectedPrice; }
+     set { _selectedPrice = value; NotifyPropertyChanged(&quot;SelectedPrice&quot;); RefreshFilteredData(); }
+ }
+
+</pre>
+<pre class="csharp" id="codePreview">private double _selectedPrice;
+  
+ public double SelectedPrice
+ {
+     get { return _selectedPrice; }
+     set { _selectedPrice = value; NotifyPropertyChanged(&quot;SelectedPrice&quot;); RefreshFilteredData(); }
+ }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">Lastly, we need to initialize the SelectedPrice property by adding the following to the end of the LoadFlightData() function
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">SelectedPrice = maxPrice;
+
+</pre>
+<pre class="csharp" id="codePreview">SelectedPrice = maxPrice;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN">This concludes the work needed to update our MainViewModel to support the data filtering. At this point in time if you run the application and move the Slider control to the left, you should see the Flight data filtered
+ to only show prices in the selected price range.<span>&nbsp; </span></span></p>
+<p class="MsoNormal"><span lang="EN">&nbsp;</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/c538edbc-9c15-4952-90ea-48b37672e730image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

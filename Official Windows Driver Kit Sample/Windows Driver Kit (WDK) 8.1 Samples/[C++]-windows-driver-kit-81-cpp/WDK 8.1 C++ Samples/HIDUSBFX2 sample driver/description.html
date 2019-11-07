@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>HIDUSBFX2 sample driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>HIDUSBFX2 sample driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            hid
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/HIDUSBFX2-fc6dee05">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The HIDUSBFX2 sample driver (hidusbfx2.sys) demonstrates how to map a non-HID USB device to a HID device.
+</p>
+<p>The sample also demonstrates how to write a HID minidriver using Windows Driver Frameworks (WDF). The minidriver is written for the
+<a href="http://www.osronline.com/hardware/OSRFX2_32.pdf">OSR USB-FX2 Learning Kit</a>. Although the device is not HID-compliant, the sample exposes it as a HID device.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/HIDUSBFX2-fc6dee05/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff539952">Human Input Devices Design Guide</a>
+</dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff539956">Human Input Devices Reference</a>
+</dt></dl>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff540774">Creating Framework-based HID Minidrivers</a> ,
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439579">Creating UMDF-based HID Minidrivers</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2><a id="_______Theory_of_Operation"></a><a id="_______theory_of_operation"></a><a id="_______THEORY_OF_OPERATION"></a>Theory of Operation</h2>
+<p>A HID USB device provides a HID descriptor (through an interface descriptor) that identifies the device as HID-compliant and enables the system-supplied HID minidriver (<b>hidusb.sys</b>) and the HID class driver to load, parse the HID descriptor, and enumerate
+ child HID device stacks. The system provides strong support for HID devices, so you do not typically have to write a HID minidriver. However, there are cases in which you might need to write your own HID minidriver (for example, if it is difficult to make
+ desired changes to HID-compliant device firmware or if you need to make a non-HID compliant device into a HID device without updating the firmware).
+</p>
+<p><b>Overview of the Device</b> </p>
+<p>You can view the specification for the device in the <a href="http://go.microsoft.com/fwlink/p/?linkid=64091">
+Using the OSR USB FX-2 Learning Kit</a> document.</p>
+<p>The device is loosely based on the development board that is supplied with the Cypress EZ-USB FX2 Development Kit (CY3681) and contains one interface and three endpoints (Interrupt IN, Bulk Out, and Bulk IN). The firmware supports vendor commands to query
+ or set the LED bar graph display and 7-segment LED display, and to query toggle switch states.</p>
+<p>The interrupt endpoint sends an 8-bit value that represents the state of the switches. This value is sent on startup, resume from suspend, and whenever the switch pack setting changes. The firmware does not de-bounce the switch pack. One switch change can
+ cause multiple bytes to be sent. The bits are in the reverse order of the labels on the pack (for example, bit 0x80 is labeled 1 on the pack).
+</p>
+<p>Bulk endpoints are configured for loopback. </p>
+<p><b>Overview of the Driver Stack</b> </p>
+<p>Kernel-Mode Driver Framework (KMDF) does not support HID minidrivers natively because the HID architecture requires that the HID class driver (<b>hidclass.sys</b>) own the driver dispatch table for HID minidrivers. This requirement conflicts with the KMDF
+ requirement that it own the driver dispatch table in order to handle Plug and Play (PnP), power, and I/O requests correctly.
+</p>
+<p>You can resolve this ownership conflict by using a driver stack that consists of a minimal WDM driver as a function driver and a complete KMDF driver as a lower filter driver. The function driver registers with the HID class (so<b>hidclass.sys</b> owns its
+ dispatch table) and forwards all of the requests to the lower filter driver. The lower filter driver (KMDF owns the dispatch table) processes all of the requests.</p>
+<p>The minimal function driver code is located in the src\hid\hidusbfx2\hidkmdf directory (the driver binary is named
+<b>hidkmdf.sys</b>), and the lower filter driver code is located in the src\hid\hidusbfx2\sys folder (the binary is named
+<b>hidusbfx2.sys</b>). The function driver is a minimal WDM driver and you can reuse it without any modification. Remember to rename the driver binary when you reuse it, to avoid a name conflict. You need to modify the KMDF filter driver according to your device's
+ requirements.</p>
+<p><b>Mapping a Non-HID USB Device to HID</b> </p>
+<p>When the HIDclass driver queries the minidriver, the minidriver returns a hard-coded report descriptor that enables the HID class driver to create child devices as described by the report descriptor. The report descriptor has three top-level application
+ collections: </p>
+<ul>
+<li>
+<p>Consumer control </p>
+</li><li>
+<p>System control </p>
+</li><li>
+<p>Vendor-defined</p>
+</li></ul>
+<p>The HID class driver creates a driver stack for each top-level collection. The operating system opens the consumer control and system control collections. These collections have input buttons and obtain data from the interrupt endpoint of the USB device.
+ The vendor-defined collection exposes a feature button to control the 7-segment display and bar graph display. Any client application can open the vendor-defined collection to send feature requests.</p>
+<p><b>Switch Pack Mapping</b> </p>
+<p>The switch pack on the USB device is mapped as hot keys that are commonly found on modern keyboards. This mapping is possible by exposing the switch pack as two system-supported collections: consumer control and system control. The consumer control collection
+ provides a mapping for some application-launch and application-action keys, as shown in the following table. The system control collection provides a mapping for the power sleep function.</p>
+<table>
+<tbody>
+<tr>
+<th>Switch</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+<tr>
+<th>Mapping</th>
+<th>Sleep</th>
+<th>Calculator</th>
+<th>Mail</th>
+<th>Favorites</th>
+<th>Refresh</th>
+<th>Forward</th>
+<th>Back</th>
+<th>Browser</th>
+</tr>
+</tbody>
+</table>
+<p><b>Segment Display and Bar Graph</b> </p>
+<p>The segment display and bar graph are mapped as HID feature controls that you can manipulate by using the
+<b>HidD_SetFeature</b> function from a user-mode application. The feature controls are mapped as vendor-defined usage page 0xff00. The SEVEN_SEGMENT_REPORT_ID and BARGRAPH_REPORT_ID usages are listed in the following tables. You can also use
+<b>Hidclient.exe</b>, an application that is available in the Windows Driver Kit (WDK), to manipulate the segment display and bar graph. For more information about this mapping, see the following two tables.</p>
+<p><b>Segment Display Mapping</b> </p>
+<table>
+<tbody>
+<tr>
+<th>Usage ID</th>
+<th>0xD7</th>
+<th>0x06</th>
+<th>0xB3</th>
+<th>0xA7</th>
+<th>0x66</th>
+<th>0xE5</th>
+<th>0xF4</th>
+<th>0x07</th>
+<th>0xF7</th>
+<th>0x67</th>
+</tr>
+<tr>
+<th>Mapping</th>
+<th>Display 0</th>
+<th>Display 1</th>
+<th>Display 2</th>
+<th>Display 3</th>
+<th>Display 4</th>
+<th>Display 5</th>
+<th>Display 6</th>
+<th>Display 7</th>
+<th>Display 8</th>
+<th>Display 9</th>
+</tr>
+</tbody>
+</table>
+<p><b>Bar Graph Mapping</b> </p>
+<p>Note that you can OR these values to light multiple LEDs.</p>
+<table>
+<tbody>
+<tr>
+<th>Usage ID</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x04</th>
+<th>0x08</th>
+<th>0x10</th>
+<th>0x20</th>
+<th>0x40</th>
+<th>0x80</th>
+<th>0xFF</th>
+<th>0x00</th>
+</tr>
+<tr>
+<th>Mapping</th>
+<th>LED 1 ON</th>
+<th>LED 2ON</th>
+<th>LED 3ON</th>
+<th>LED 4ON</th>
+<th>LED 5ON</th>
+<th>LED 6ON</th>
+<th>LED 7ON</th>
+<th>LED 8ON</th>
+<th>All LEDS ON</th>
+<th>All LEDS OFF</th>
+</tr>
+</tbody>
+</table>
+<p><b>Support for Selective Suspend</b> </p>
+<p>The HID class driver provides support for selective suspend. The minidriver participates in this feature by handling HID class IOCTLs appropriately. To enable the selective suspend feature for your device, you need to add a &quot;SelectiveSuspend&quot; = 1 value in
+ the registry in the device hardware key through the INF file. For an example, see the<b>hidusbfx2.inf</b> file.</p>
+<h2><a id="_______Installing_the_sample"></a><a id="_______installing_the_sample"></a><a id="_______INSTALLING_THE_SAMPLE"></a>Installing the sample</h2>
+<p>If you adapt this driver for your device, update the INF file to match the hardware ID (VID, PID) and the device description text to match your test board/device.
+</p>
+<p>To start installing the sample, you must:</p>
+<ol>
+<li>
+<p>Build the driver and copy the following files to a folder on your hard drive: </p>
+<ul>
+<li><b>hidusbfx2.inf</b> </li><li><b>hidusbfx2.sys</b> </li><li><b>Hidkmdf.sys</b> </li><li>The WDF coinstaller from the <i>&lt;WDK ROOT&gt;\redist\wdf\&lt;platform&gt;</i> directory.
+</li></ul>
+<p class="note"><b>Note</b>&nbsp;&nbsp; </p>
+<p class="note">You can obtain redistributable framework updates by downloading the
+<b>wdfcoinstaller.msi</b> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>. This package performs a silent install into the directory of your WDK installation. You will see no confirmation that the installation has completed. You can verify that the redistributables have been installed on top of
+ the WDK by ensuring there is a redist\wdf directory under the root directory of the WDK, %ProgramFiles(x86)%\Windows Kits\8.0.</p>
+<p></p>
+</li><li>Plug in the device and follow these steps, depending on the operating system that you are using.
+<ul>
+<li>On Windows&nbsp;7 and later operating systems:
+<ol>
+<li>Launch Device Manager by executing command devmgmt.msc in a command window, or from the
+<b>Hardware and Sound</b> program group in <b>Control Panel</b>. </li><li>Select <b>OSR USB-FX2 device</b> from <b>Other Devices</b> category and select
+<b>Update Driver Software...</b> from the right-click menu. </li><li>Select <b>Browse my computer for software</b> and provide the location of the driver files.
+</li><li>Select <b>Install this driver software anyway</b> when the Windows Security dialog box appears.
+</li><li>After the driver is installed, you should see the device in Device Manager under Human Interface Devices.
+</li></ol>
+</li><li>On Windows&nbsp;Vista and Windows Server&nbsp;2008:
+<ol>
+<li>In the <b>Found New Hardware</b> dialog box, select <b>Locate and install driver software (recommended)</b>.
+</li><li>Select <b>Don't search online</b>. </li><li>Select <b>I don't have the disc. Show me other options</b>. </li><li>Select <b>Browse my computer for driver software (advanced)</b>. </li><li>Enter the location of the driver files, and select <b>Install this driver software anyway</b> when the
+<b>Windows Security</b> dialog box appears. After the driver is installed, you'll see the device in Device Manager under Human Interface Devices.
+</li></ol>
+</li></ul>
+</li></ol>
+<h2><a id="_______Testing"></a><a id="_______testing"></a><a id="_______TESTING"></a>Testing</h2>
+<p><b>Testing Switches</b> </p>
+<ul>
+<li>
+<p>To open a Web browser, toggle switch number 8 on the device board to the On position (toggle down).
+</p>
+</li><li>
+<p>To start the calculator application, toggle switch number 2 on the device board to the On position (toggle down).</p>
+</li></ul>
+<p><b>Testing Bar Graph and 7-Segment Display</b> </p>
+<ol>
+<li>
+<p>Start the <b>hidclient.exe</b> GUI application from the WDK. The application source code is located in the
+<i>src\hid\hclient</i> directory, and you build it by using the appropriate build environment.
+</p>
+</li><li>
+<p>From the <b>HID Device to examine</b> menu, select the device that contains &quot;UsagePage 0ff00, Usage 01&quot; as a substring.
+</p>
+</li><li>
+<p>Click <b>Modify Features</b>. The <b>Feature Data</b> dialog box opens. </p>
+</li><li>
+<p>Click <b>Modify Features</b>. The <b>Modify features</b> dialog box opens. </p>
+</li><li>
+<p>In the input box, type <b>7</b> and click <b>Send to Device</b>. You'll see number 7 appear in the 7-segment display.
+</p>
+</li><li>
+<p>Type any number from 1-8, and you'll see the respective number displayed in the 7-segment display.</p>
+</li><li>
+<p>Type any number from (and including) 9-17, and you will see one of the LEDs on the bar graph turn on. For mapping information, see the previous table.</p>
+</li></ol>
+<p><b>Report Descriptor</b> </p>
+<div class="code"><span>
+<table>
+<tbody>
+<tr>
+<th></th>
+</tr>
+<tr>
+<td>
+<pre>  // Consumer control collection
+ 
+   0x05,0x0C,  // USAGE_PAGE (Consumer Page)
+ 
+   0x09,0x01,  // USAGE (Consumer Control Usage 0x01)
+ 
+   0xA1,0x01,  // COLLECTION (Application)
+ 
+   0x85,0x01,  //  REPORT_ID 
+ 
+   0x0A, 0x23, 0x02,  //  USAGE (Usage Browser)
+ 
+   0x0A, 0x24, 0x02,  //  USAGE (Usage AC Back)
+ 
+   0x0A, 0x25, 0x02,  //  USAGE (Usage AC Forward)
+ 
+   0x0A, 0x27, 0x02,  //  USAGE (Usage AC Refresh)
+ 
+   0x0A, 0x2A, 0x02,  //  USAGE (Usage AC BookMarks)
+ 
+   0x0A, 0x8A, 0x01,  //  USAGE (Usage AL Mail)
+ 
+   0x0A, 0x92, 0x01,  //  USAGE (Usage AL Calculator )
+ 
+   0x15, 0x00,  //  LOGICAL_MINIMUM(0)
+ 
+   0x25, 0x01,  //  LOGICAL_MAXIMUM(1)  
+ 
+   0x75, 0x01,  //  REPORT_SIZE 
+ 
+   0x95, 0x07,  //  REPORT_COUNT 
+ 
+   0x81, 0x02,  //  INPUT (Data, Variable,Abs)
+ 
+   0x75, 0x01,  //  REPORT_SIZE 
+ 
+   0x95, 0x01,  //  REPORT_COUNT
+ 
+   0x81, 0x07,  //  INPUT (const)
+ 
+   0xC0,  // END_COLLECTION
+ 
+   // system control collection
+ 
+   0x05, 0x01,  // Usage Page (Generic Desktop)
+ 
+   0x09, 0x80,  // Usage (System Control)
+ 
+   0xA1, 0x01,  // Collection (Application)
+ 
+   0x85, 0x02,  //  Report ID 
+ 
+   0x95, 0x07,  //  Report Count 
+ 
+   0x81, 0x07,  //  Input (Constant)  
+ 
+   0x09, 0x82,  //  Usage (System Sleep)
+ 
+   0x95, 0x01,  //  Report Count (2)
+ 
+   0x81, 0x06,  //  Input (Data, Variable, Relative, Preferred)
+ 
+   0xC0,  // End Collection
+ 
+   // Feature collection
+ 
+   0x06,0x00, 0xFF,  // USAGE_PAGE (Vender Defined Usage Page)
+ 
+   0x09,0x01,  // USAGE (Vendor Usage 0x01)
+ 
+   0xA1,0x01,  // COLLECTION (Application)
+ 
+   0x85,0x03,  // Report ID 
+ 
+   0x19,0x01,  //  USAGE MINIMUM 
+ 
+   0x29,0x20,  //  USAGE MAXIMUM 
+ 
+   0x15,0x00,  //  LOGICAL_MINIMUM(1)
+ 
+   0x26,0xff, 0x00,  //  LOGICAL_MAXIMUM(255)
+ 
+   0x75,0x08,  //  REPORT_SIZE 
+ 
+   0x95,0x01,  //  REPORT_COUNT 
+ 
+   0xB1,0x00,  //  Feature (Data,Ary,Abs)
+ 
+   0xC0  // END_COLLECTION </pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<h2><a id="_______Code_Tour"></a><a id="_______code_tour"></a><a id="_______CODE_TOUR"></a>Code Tour</h2>
+<p>This section includes a file manifest of all the files in the src\hid\hidusbfx2 directory.</p>
+<p><b>File Manifest</b> </p>
+<p>src\hid\hidusbfx2\hidkmdf </p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<p>hidkmdf.c </p>
+</td>
+<td>
+<p>Contains code for driver entry and dispatch</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sources</p>
+</td>
+<td>
+<p>WDK sources file</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile </p>
+</td>
+<td>
+<p>WDK build environment makefile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>hidkmdf.rc</p>
+</td>
+<td>
+<p>Resource file for the driver</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>src\hid\hidusbfx2\sys </p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<p>Driver.c </p>
+</td>
+<td>
+<p>Contains code for driver entry and dispatch functions</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>hid.c</p>
+</td>
+<td>
+<p>Contains code for handling HID IOCTLS</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>usb.c </p>
+</td>
+<td>
+<p>Contains code for communicating with USB stack</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Trace.h </p>
+</td>
+<td>
+<p>Contains trace-related definitions</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Hidusbfx2.h </p>
+</td>
+<td>
+<p>Contains type definitions and function declarations</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Hidusbfx2.rc </p>
+</td>
+<td>
+<p>Resource file for the driver</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Hidusbfx2.inx </p>
+</td>
+<td>
+<p>INX file for the driver</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sources</p>
+</td>
+<td>
+<p>WDK sources file</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile </p>
+</td>
+<td>
+<p>WDK build environment make file</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile.inc </p>
+</td>
+<td>
+<p>A makefile that defines custom build actions, including the conversion of the .INX file into a .INF file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=6A843E98DB5AEC74CF385ACE5E94CB36" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=7B1318331AB587926159A23CD37DE62D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to convert excel file to xml format</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to convert excel file to xml format</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Excel, XML, Convert
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/12/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-convert-excel-file-7a9bb404">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to Convert excel file to xml format (CSOpenXmlExcelToXml)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to convert excel file to xml format using Open XML SDK.</p>
+<h2 class="MsoNormal">Video</h2>
+<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-convert-an-Excel-file-to-XML-format" ><img id="136308" src="https://i1.code.msdn.s-msft.com/how-to-convert-excel-file-7a9bb404/image/file/136308/1/how%20to%20convert%20an%20excel%20file%20to%20xml%20format%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal">Before building the sample, please make sure you have installed
+<a href="http://www.microsoft.com/en-us/download/details.aspx?id=5124">Open XML SDK 2.0 for Microsoft Office</a>.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Step 1. Open &quot;CSOpenXmlExcelToXml.sln&quot; and click Ctrl&#43;F5 to run this project. You will see the following form:</p>
+<p class="MsoNormal"><span><img src="description/image.png" alt="" width="399" height="298" align="middle">
+</span></p>
+<p class="MsoNormal">Step 2. <span>You can click &quot;Browser&quot; button to select an existing excel file and then click
+</span><span>&quot;</span><span>Convert</span><span>&quot; </span><span>button to convert the excel document to xml format string. If this operation is successful, the xml string will show in textbox control on form. At this moment, the &quot;Save as&quot; button will be enabled.
+</span></p>
+<p class="MsoNormal"><span><img src="description/53c30a82-fd1d-46aa-8a98-705a3583055aimage.png" alt="" width="406" height="331" align="middle">
+</span></p>
+<p class="MsoNormal">Step 3. Click &quot;Save as&quot; button to save xml string as xml file on client. When click &quot;Save as&quot; button, there is &quot;Saveas&quot; dialog pops up as below:</p>
+<p class="MsoNormal"><span><img src="description/b3376473-d8b6-424c-b867-8144d7aba6dfimage.png" alt="" width="576" height="222" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Step 1. Create &quot;WinForm Application&quot; project via Visual Studio.</p>
+<p class="MsoNormal">Step 2. <span>After you have installed the Open XML SDK 2.0, add the Open xml reference to the project. To reference the Open XML, right click the project file and click the &quot;Add Reference&quot; button. In the Add Reference dialog, navigate
+ to the .Net tab, find DocumentFormat.OpenXml and WindowsBase, click Ok button. </span>
+</p>
+<p class="MsoNormal"><span>Step 3. Create ConvertExcelToXml class to convert excel file using Open XML API.
+</span></p>
+<p class="MsoNormal"><span>Step 4. Import Open XML namespace into the class. </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+
+</pre>
+<pre id="codePreview" class="csharp">using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step 5. Read the data in excel to DataTable object.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+       ///  Read Data from selected excel file into DataTable
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;filename&quot;&gt;Excel File Path&lt;/param&gt;
+       /// &lt;returns&gt;&lt;/returns&gt;
+       private DataTable ReadExcelFile(string filename)
+       {
+           // Initialize an instance of DataTable
+           DataTable dt = new DataTable();
+
+
+           try
+           {
+               // Use SpreadSheetDocument class of Open XML SDK to open excel file
+               using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filename, false))
+               {
+                   // Get Workbook Part of Spread Sheet Document
+                   WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+
+
+                   // Get all sheets in spread sheet document 
+                   IEnumerable&lt;Sheet&gt; sheetcollection = spreadsheetDocument.WorkbookPart.Workbook.GetFirstChild&lt;Sheets&gt;().Elements&lt;Sheet&gt;();
+
+
+                   // Get relationship Id
+                   string relationshipId = sheetcollection.First().Id.Value;
+
+
+                   // Get sheet1 Part of Spread Sheet Document
+                   WorksheetPart worksheetPart = (WorksheetPart)spreadsheetDocument.WorkbookPart.GetPartById(relationshipId);
+
+
+                   // Get Data in Excel file
+                   SheetData sheetData = worksheetPart.Worksheet.Elements&lt;SheetData&gt;().First();
+                   IEnumerable&lt;Row&gt; rowcollection = sheetData.Descendants&lt;Row&gt;();
+
+
+                   if (rowcollection.Count() == 0)
+                   {
+                       return dt;
+                   }
+
+
+                   // Add columns
+                   foreach (Cell cell in rowcollection.ElementAt(0))
+                   {
+                       dt.Columns.Add(GetValueOfCell(spreadsheetDocument, cell));
+                   }
+
+
+                   // Add rows into DataTable
+                   foreach (Row row in rowcollection)
+                   {
+                       DataRow temprow = dt.NewRow();
+                       int columnIndex = 0;
+                       foreach (Cell cell in row.Descendants&lt;Cell&gt;())
+                       {
+                           // Get Cell Column Index
+                           int cellColumnIndex = GetColumnIndex(GetColumnName(cell.CellReference));
+
+
+                           if (columnIndex &lt; cellColumnIndex)
+                           {
+                               do
+                               {
+                                   temprow[columnIndex] = string.Empty;
+                                   columnIndex&#43;&#43;;
+                               }
+
+
+                               while (columnIndex &lt; cellColumnIndex);
+                           }
+
+
+                           temprow[columnIndex] = GetValueOfCell(spreadsheetDocument, cell);
+                           columnIndex&#43;&#43;;
+                       }
+
+
+                       // Add the row to DataTable
+                       // the rows include header row
+                       dt.Rows.Add(temprow);
+                   }
+               }
+
+
+               // Here remove header row
+               dt.Rows.RemoveAt(0);
+               return dt;
+           }
+           catch (IOException ex)
+           {
+               throw new IOException(ex.Message);
+           }
+       }
+
+
+       /// &lt;summary&gt;
+       ///  Get Value of Cell 
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;spreadsheetdocument&quot;&gt;SpreadSheet Document Object&lt;/param&gt;
+       /// &lt;param name=&quot;cell&quot;&gt;Cell Object&lt;/param&gt;
+       /// &lt;returns&gt;The Value in Cell&lt;/returns&gt;
+       private static string GetValueOfCell(SpreadsheetDocument spreadsheetdocument, Cell cell)
+       {
+           // Get value in Cell
+           SharedStringTablePart sharedString = spreadsheetdocument.WorkbookPart.SharedStringTablePart;
+           if (cell.CellValue == null)
+           {
+               return string.Empty;
+           }
+
+
+           string cellValue = cell.CellValue.InnerText;
+           
+           // The condition that the Cell DataType is SharedString
+           if (cell.DataType != null &amp;&amp; cell.DataType.Value == CellValues.SharedString)
+           {
+               return sharedString.SharedStringTable.ChildElements[int.Parse(cellValue)].InnerText;
+           }
+           else
+           {
+               return cellValue;
+           }
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+       ///  Read Data from selected excel file into DataTable
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;filename&quot;&gt;Excel File Path&lt;/param&gt;
+       /// &lt;returns&gt;&lt;/returns&gt;
+       private DataTable ReadExcelFile(string filename)
+       {
+           // Initialize an instance of DataTable
+           DataTable dt = new DataTable();
+
+
+           try
+           {
+               // Use SpreadSheetDocument class of Open XML SDK to open excel file
+               using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(filename, false))
+               {
+                   // Get Workbook Part of Spread Sheet Document
+                   WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+
+
+                   // Get all sheets in spread sheet document 
+                   IEnumerable&lt;Sheet&gt; sheetcollection = spreadsheetDocument.WorkbookPart.Workbook.GetFirstChild&lt;Sheets&gt;().Elements&lt;Sheet&gt;();
+
+
+                   // Get relationship Id
+                   string relationshipId = sheetcollection.First().Id.Value;
+
+
+                   // Get sheet1 Part of Spread Sheet Document
+                   WorksheetPart worksheetPart = (WorksheetPart)spreadsheetDocument.WorkbookPart.GetPartById(relationshipId);
+
+
+                   // Get Data in Excel file
+                   SheetData sheetData = worksheetPart.Worksheet.Elements&lt;SheetData&gt;().First();
+                   IEnumerable&lt;Row&gt; rowcollection = sheetData.Descendants&lt;Row&gt;();
+
+
+                   if (rowcollection.Count() == 0)
+                   {
+                       return dt;
+                   }
+
+
+                   // Add columns
+                   foreach (Cell cell in rowcollection.ElementAt(0))
+                   {
+                       dt.Columns.Add(GetValueOfCell(spreadsheetDocument, cell));
+                   }
+
+
+                   // Add rows into DataTable
+                   foreach (Row row in rowcollection)
+                   {
+                       DataRow temprow = dt.NewRow();
+                       int columnIndex = 0;
+                       foreach (Cell cell in row.Descendants&lt;Cell&gt;())
+                       {
+                           // Get Cell Column Index
+                           int cellColumnIndex = GetColumnIndex(GetColumnName(cell.CellReference));
+
+
+                           if (columnIndex &lt; cellColumnIndex)
+                           {
+                               do
+                               {
+                                   temprow[columnIndex] = string.Empty;
+                                   columnIndex&#43;&#43;;
+                               }
+
+
+                               while (columnIndex &lt; cellColumnIndex);
+                           }
+
+
+                           temprow[columnIndex] = GetValueOfCell(spreadsheetDocument, cell);
+                           columnIndex&#43;&#43;;
+                       }
+
+
+                       // Add the row to DataTable
+                       // the rows include header row
+                       dt.Rows.Add(temprow);
+                   }
+               }
+
+
+               // Here remove header row
+               dt.Rows.RemoveAt(0);
+               return dt;
+           }
+           catch (IOException ex)
+           {
+               throw new IOException(ex.Message);
+           }
+       }
+
+
+       /// &lt;summary&gt;
+       ///  Get Value of Cell 
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;spreadsheetdocument&quot;&gt;SpreadSheet Document Object&lt;/param&gt;
+       /// &lt;param name=&quot;cell&quot;&gt;Cell Object&lt;/param&gt;
+       /// &lt;returns&gt;The Value in Cell&lt;/returns&gt;
+       private static string GetValueOfCell(SpreadsheetDocument spreadsheetdocument, Cell cell)
+       {
+           // Get value in Cell
+           SharedStringTablePart sharedString = spreadsheetdocument.WorkbookPart.SharedStringTablePart;
+           if (cell.CellValue == null)
+           {
+               return string.Empty;
+           }
+
+
+           string cellValue = cell.CellValue.InnerText;
+           
+           // The condition that the Cell DataType is SharedString
+           if (cell.DataType != null &amp;&amp; cell.DataType.Value == CellValues.SharedString)
+           {
+               return sharedString.SharedStringTable.ChildElements[int.Parse(cellValue)].InnerText;
+           }
+           else
+           {
+               return cellValue;
+           }
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Step 6. Get Xml format string from DataTable object.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+        /// Convert DataTable to Xml format
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Excel File Path&lt;/param&gt;
+        /// &lt;returns&gt;Xml format string&lt;/returns&gt;
+        public string GetXML(string filename)
+        {
+  using (DataSet ds = new DataSet())
+  {
+      ds.Tables.Add(this.ReadExcelFile(filename));
+      return ds.GetXml();
+  }
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+        /// Convert DataTable to Xml format
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;filename&quot;&gt;Excel File Path&lt;/param&gt;
+        /// &lt;returns&gt;Xml format string&lt;/returns&gt;
+        public string GetXML(string filename)
+        {
+  using (DataSet ds = new DataSet())
+  {
+      ds.Tables.Add(this.ReadExcelFile(filename));
+      return ds.GetXml();
+  }
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step 7. Click &quot;Browse&quot; button to choose the existing excel file on client and then click convert button to convert the data in excel to xml format string and show the string in textbox control.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+        ///  Open an dialog to let users select Excel file
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            // Initializes a OpenFileDialog instance 
+            using (OpenFileDialog openfileDialog = new OpenFileDialog())
+            {
+                openfileDialog.RestoreDirectory = true;
+                openfileDialog.Filter = &quot;Excel files(*.xlsx;*.xls)|*.xlsx;*.xls&quot;;
+
+
+                if (openfileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txbExcelName.Text = openfileDialog.FileName;
+                }
+            }
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Convert Excel file to Xml format and view in Listbox control
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            txbXmlView.Clear();
+            string excelfileName = txbExcelName.Text;
+
+
+            if (string.IsNullOrEmpty(excelfileName) || !File.Exists(excelfileName))
+            {
+                MessageBox.Show(&quot;The Excel file is invalid! Please select a valid file.&quot;);
+                return;
+            }
+
+
+            try
+            {
+                string xmlFormatstring = new ConvertExcelToXml().GetXML(excelfileName);
+                if (string.IsNullOrEmpty(xmlFormatstring))
+                {
+                    MessageBox.Show(&quot;The content of Excel file is Empty!&quot;);
+                    return;
+                }
+
+
+                txbXmlView.Text = xmlFormatstring;
+
+
+                // If txbXmlView has text, set btnSaveAs button to be enable
+                btnSaveAs.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;There is error occurs! The error message is: &quot; &#43;ex.Message);
+            }
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+        ///  Open an dialog to let users select Excel file
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            // Initializes a OpenFileDialog instance 
+            using (OpenFileDialog openfileDialog = new OpenFileDialog())
+            {
+                openfileDialog.RestoreDirectory = true;
+                openfileDialog.Filter = &quot;Excel files(*.xlsx;*.xls)|*.xlsx;*.xls&quot;;
+
+
+                if (openfileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txbExcelName.Text = openfileDialog.FileName;
+                }
+            }
+        }
+
+
+        /// &lt;summary&gt;
+        ///  Convert Excel file to Xml format and view in Listbox control
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            txbXmlView.Clear();
+            string excelfileName = txbExcelName.Text;
+
+
+            if (string.IsNullOrEmpty(excelfileName) || !File.Exists(excelfileName))
+            {
+                MessageBox.Show(&quot;The Excel file is invalid! Please select a valid file.&quot;);
+                return;
+            }
+
+
+            try
+            {
+                string xmlFormatstring = new ConvertExcelToXml().GetXML(excelfileName);
+                if (string.IsNullOrEmpty(xmlFormatstring))
+                {
+                    MessageBox.Show(&quot;The content of Excel file is Empty!&quot;);
+                    return;
+                }
+
+
+                txbXmlView.Text = xmlFormatstring;
+
+
+                // If txbXmlView has text, set btnSaveAs button to be enable
+                btnSaveAs.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(&quot;There is error occurs! The error message is: &quot; &#43;ex.Message);
+            }
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step 8. Click &quot;Save as&quot; button to save xml string in textbox control as xml file on client.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+       ///  Save the XMl format string as Xml file
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnSaveAs_Click(object sender, EventArgs e)
+       {
+           // Initiializes a SaveFileDialog instance 
+           using (SaveFileDialog savefiledialog = new SaveFileDialog())
+           {
+               savefiledialog.RestoreDirectory = true;
+               savefiledialog.DefaultExt = &quot;xml&quot;;
+               savefiledialog.Filter = &quot;All Files(*.xml)|*.xml&quot;;
+               if (savefiledialog.ShowDialog() == DialogResult.OK)
+               {
+                   Stream filestream = savefiledialog.OpenFile();
+                   StreamWriter streamwriter = new StreamWriter(filestream);
+                   streamwriter.Write(&quot;&lt;?xml version='1.0'?&gt;&quot; &#43;
+                       Environment.NewLine &#43; txbXmlView.Text);
+                   streamwriter.Close();
+               }
+           }
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+       ///  Save the XMl format string as Xml file
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnSaveAs_Click(object sender, EventArgs e)
+       {
+           // Initiializes a SaveFileDialog instance 
+           using (SaveFileDialog savefiledialog = new SaveFileDialog())
+           {
+               savefiledialog.RestoreDirectory = true;
+               savefiledialog.DefaultExt = &quot;xml&quot;;
+               savefiledialog.Filter = &quot;All Files(*.xml)|*.xml&quot;;
+               if (savefiledialog.ShowDialog() == DialogResult.OK)
+               {
+                   Stream filestream = savefiledialog.OpenFile();
+                   StreamWriter streamwriter = new StreamWriter(filestream);
+                   streamwriter.Write(&quot;&lt;?xml version='1.0'?&gt;&quot; &#43;
+                       Environment.NewLine &#43; txbXmlView.Text);
+                   streamwriter.Close();
+               }
+           }
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information</h2>
+<p class="MsoNormal"><span><a href="http://msdn.microsoft.com/en-us/library/documentformat.openxml.spreadsheet(v=office.14).aspx">Spreadsheet Namespace</a>
+</span></p>
+<p class="MsoNormal"><span><a href="http://msdn.microsoft.com/en-us/office/bb265236.aspx">Open XML for Office Developers</a>
+</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/24c21ea2-6424-40ed-a2d8-a9535ded9c97image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

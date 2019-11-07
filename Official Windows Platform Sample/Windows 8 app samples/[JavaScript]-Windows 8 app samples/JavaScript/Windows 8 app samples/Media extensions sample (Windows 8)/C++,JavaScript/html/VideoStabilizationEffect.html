@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/js/VideoStabilizationEffect.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <p>
+            A media effect allows an application to process uncompressed audio and video streams
+            before it reaches the rendering engine. The below example demonstrates how to add
+            the inbox Video Stabilization effect to a video stream for playback.</p>
+        <button id="videoStabilizationStart" class="action">
+            Start Video</button>
+        <button id="videoStabilizationStop" class="action secondary" >
+            Stop Video</button>
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+        <div id="statusMessage"></div>
+        <p>
+            The video will be playing into two windows, one will have the stabilization effect
+            added the other will not to allow for A/B comparison.</p>
+        <video id="videoStabilizationNormal" width="320" height="256">
+        </video>
+        <video id="videoStabilizationStabilized" width="320" height="256">
+        </video>
+    </div>
+</body>
+</html>

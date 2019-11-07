@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Implement paging in a mobile app for SharePoint</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Implement paging in a mobile app for SharePoint</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Mobile, sites and content
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Implement-43cafaa1">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p id="header">This sample app demonstrates how to enable a user to page through list data from a SharePoint 2013 site using a Windows Phone app.</p>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<h1 class="heading">Description</h1>
+<div class="section" id="sectionSection0">
+<p><span class="label">Provided by:</span></p>
+</div>
+<div class="section" id="sectionSection0">
+<p><a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=c558e0ed-382f-4008-8002-4634a9167b99" >Martin Harwar</a>,
+<a href="http://point8020.com/Default.aspx" >Point8020</a></p>
+<p>The solution is based on the Windows Phone SharePoint List Application template provided by Visual Studio 2010 Express for Windows Phone with the SharePoint 2013 SDK for Windows Phone 7.1 installed. The solution enables the user to page through list data
+ from SharePoint 2013 in a Windows Phone app. Figure 1 shows the completed solution.</p>
+<p>The sample also demonstrates how to use Collaborative Application Markup Language (CAML) queries to sort and segment the list data, and how to build paged views for the results of those CAML queries.</p>
+<p class="caption"><strong>Figure 1. Custom list definition</strong></p>
+<br>
+<img id="76812" src="description/3b-1.png" alt="Figure 1" width="190" height="354"></div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<div>Visual Studio 2010 Express for Windows Phone.</div>
+</li><li>
+<div>SharePoint 2013 SDK for Windows Phone 7.1</div>
+</li><li>
+<div>Excel 2013</div>
+</li><li>
+<div>Access to either an Office 365 Developer Site (recommended) or SharePoint Server 2013 configured to support forms-based authentication.</div>
+</li></ul>
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+<tr>
+<td>
+<div>At the time of development, it was not possible to develop this type of solution by using Visual Studio 2012, nor for Windows Phone 8.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<p>The sample app contains the following:</p>
+<ul>
+<li>
+<div>The <strong>Populations.xlsx</strong> workbook that you will use to create the list in SharePoint.</div>
+</li><li>
+<div>The <strong>App.xaml.cs</strong> file that you will use to edit as per the &quot;Configure the sample&quot; section.</div>
+</li><li>
+<div>The <strong>ListDataProvider.cs</strong> file that is used to define CAML queries that represent the paged views. You do not need to edit this file, but you should review the CAML queries to help you understand how the solution is implemented. The key
+ part of this implementation is the <span><span class="keyword">CamlQueryBuilderClass</span></span> near the end of the file.</div>
+</li></ul>
+<p>All other files are automatically provided by the Windows Phone SharePoint List Application template, and they have not been modified in the development of this sample app.</p>
+</div>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<div>Browse to the SharePoint 2013 site where you want to create the list.</div>
+</li><li>
+<div>In the left pane, click <span class="ui">Site Contents</span>.</div>
+</li><li>
+<div>Click <span class="ui">add an app</span>.</div>
+</li><li>
+<div>Browse through apps until you locate the <span class="ui">Import Spreadsheet</span> app; click that item.</div>
+</li><li>
+<div>In the <span class="ui">Name</span> textbox, type <span class="input">Populations</span>.</div>
+</li><li>
+<div>Click <span class="ui">Browse</span>, and then locate the Populations.xlsx workbook that is provided with this solution.</div>
+</li><li>
+<div>Click <span class="ui">Import</span>.</div>
+</li><li>
+<div>In the <span class="ui">Range Type</span> drop-down list, click <span class="ui">
+Table Range</span>.</div>
+</li><li>
+<div>In the <span class="ui">Select Range</span> drop-down list, click <span class="ui">
+Sheet1!Table1</span>.</div>
+</li><li>
+<div>Click <span class="ui">Import</span>. A new list named Populations is created based on the data in the workbook.</div>
+</li><li>
+<div>Open the <span class="ui">SP_MobilePaging_cs.sln</span> file in Visual Studio 2010 Express for Windows Phone.</div>
+</li><li>
+<div>Open the <span class="ui">App.xaml.cs</span> file and locate the line that reads
+<span class="code">private const string YourSharePointUrl = &quot;&quot;;</span>.</div>
+</li><li>
+<div>Insert the URL to the SharePoint site where you created the Population list, and then save your changes.</div>
+</li></ol>
+<p>No other configuration is required.</p>
+</div>
+<h1 class="heading">Build the sample</h1>
+<div class="section" id="sectionSection4">
+<p>To build the sample, press CTRL&#43;SHIFT&#43;B.</p>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection5">
+<p>Press F5 to run and test the sample. The following images show examples of the application as rendered in the Windows Phone Emulator. Figure 2 shows the sign-in page.</p>
+<p class="caption"><strong>Figure 2. The sign-in screen on launch</strong></p>
+<p><img id="76813" src="description/3b-2.png" alt="Figure 2" width="190" height="354"></p>
+<p>Figure 3 shows that all list items are shown by default.</p>
+<p class="caption"><strong>Figure 3. All list items in the default view</strong></p>
+<p><img id="76814" src="description/3b-3.png" alt="Figure 3" width="190" height="354"></p>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection6">
+<p>Ensure that you have SharePoint Server 2013 (RTM) configured to support forms-based authentication, or that you have signed up for an Office 365 Developer Site. Also, ensure that you are using Visual Studio 2010 Express for Windows Phone and SharePoint 2013
+ SDK for Windows Phone 7.1.</p>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection7">
+<p>First release: January 2013.</p>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection8">
+<ul>
+<li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163228.aspx" >Build mobile apps for SharePoint 2013</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163786.aspx" >Overview of Windows Phone SharePoint 2013 application templates in Visual Studio</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163209.aspx" >Architecture of the Windows Phone SharePoint List Application template</a></div>
+</li><li>
+<div><a href="http://www.microsoft.com/en-us/download/details.aspx?id=27570" >Windows Phone SDK 7.1</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163943.aspx" >How to: Set up an environment for developing mobile apps for SharePoint</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179924.aspx" >Sign up for an Office 365 Developer Site</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/ms457529.aspx" >Authentication, authorization, and security in SharePoint 2013</a></div>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

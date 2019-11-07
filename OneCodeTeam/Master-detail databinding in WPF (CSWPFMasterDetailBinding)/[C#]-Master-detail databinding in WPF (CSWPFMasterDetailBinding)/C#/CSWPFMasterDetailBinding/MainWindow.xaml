@@ -1,0 +1,48 @@
+﻿<Window x:Class="CSWPFMasterDetailBinding.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CSWPFMasterDetailBinding.Data"
+    Title="WPF Master/Detail Binding Demo" Height="410" Width="657">
+    <Window.Resources>
+        <!-- Data Source For Binding-->
+        <local:CustomerList x:Key="CustomerList"/>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23" />
+            <RowDefinition Height="166*" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="188*" />
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0">Customer List:</Label>
+        <Label Grid.Row="2">Orders List:</Label>
+        
+        <!-- This ListView displays the all the customer information -->
+        <ListView Grid.Row="1" Name="listViewCustomers" 
+                  ItemsSource="{Binding Source={StaticResource CustomerList}, Path=Customers}"
+                  SelectedIndex="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="50"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        
+        <!-- This ListView displayd the corresponding order information for the selected customer in the customers ListView -->
+        <!-- Put attention to the ItemSource property, its the key point of this kind of master/detail data binding -->
+        <ListView Grid.Row="3" Name="listViewOrders"
+                  ItemsSource="{Binding ElementName=listViewCustomers, Path=SelectedItem.Orders}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="50"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="auto"/>
+                    <GridViewColumn Header="ShipCity" DisplayMemberBinding="{Binding ShipCity}" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

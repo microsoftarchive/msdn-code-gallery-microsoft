@@ -1,0 +1,8 @@
+EXPORTS
+    DllMain
+    EnumPrintProcessorDatatypesW
+    OpenPrintProcessor
+    PrintDocumentOnPrintProcessor
+    ControlPrintProcessor
+    ClosePrintProcessor
+    GetPrintProcessorCapabilities

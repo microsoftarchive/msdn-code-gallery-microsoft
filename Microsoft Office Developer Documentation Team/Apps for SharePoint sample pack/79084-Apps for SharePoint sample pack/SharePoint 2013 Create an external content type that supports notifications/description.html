@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Create an external content type that supports notifications</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Create an external content type that supports notifications</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, REST, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Create-an-f23e0c1b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p id="header">Demonstrates how to create an external content type that supports notifications in SharePoint 2013.</p>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<h1 class="heading">Description</h1>
+<div class="section" id="sectionSection0">
+<p><span class="label">Provided by:</span></p>
+</div>
+<div class="section" id="sectionSection0">
+<p><a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=be34f5b5-a1d1-47e1-971d-cfdda319992c" >Scot Hillier</a>,
+<a href="http://www.criticalpathtraining.com" >Critical Path Training</a></p>
+<p>This sample includes a SQL Server database that contains customer data to display in an external content type and a table to manage notification subscriptions. The external content type that accompanies the sample implements the Subscribe and Unsubscribe
+ stereotypes to support notifications. The sample also includes a custom event receiver that assigns a task in a task list when a new item is added to the database. Figure 1 illustrates the sample architecture.</p>
+<p class="caption"><strong>Figure 1. Architecture of the sample</strong></p>
+<br>
+<img id="76753" src="description/readmeImage.png" alt="Architecture of the sample" width="728" height="473">
+<p>The sample uses a simple database (MiniCRM) with a table full of customer information as the basis for an external content type. The external content type is used to create an external list in SharePoint 2013. The external content type implements the Subscribe
+ and Unsubscribe stereotypes, which are used to store notification endpoints in the same database where the customer data is located. The sample also includes a simple Windows application for adding new customers to the database. The Windows application simulates
+ the line-of-business (LOB) system associated with the customer data. When a new customer is added, the Windows application calls all the subscribed endpoints that are stored in the database. A custom event receiver fires in response to the notification and
+ assigns a new task in a task list.</p>
+</div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<div>A SharePoint 2013 development environment</div>
+</li><li>
+<div>Visual Studio 2012 and Office Developer Tools for Visual Studio 2012</div>
+</li><li>
+<div>Basic familiarity with Business Connectivity Services (BCS)</div>
+</li></ul>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<ul>
+<li>
+<div><strong>MiniCRM.bak</strong> is the backup of the database used in the sample.</div>
+</li><li>
+<div><strong>ExternalListEvents.csproj</strong> is the project that contains the following:</div>
+<ul>
+<li>
+<div>The custom event receiver for the external list</div>
+</li><li>
+<div>The &quot;Activities&quot; list, which is a Task list that is updated by the custom event receiver.</div>
+</li><li>
+<div>A feature receiver that binds the custom event receiver to the external list</div>
+</li></ul>
+</li><li>
+<div><strong>ExternalApplication.csproj</strong> is the project that contains the Windows application.</div>
+</li><li>
+<div><strong>MiniCRMModel.xml</strong> is the BDC Metadata Model for the Customers external list.</div>
+</li></ul>
+</div>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Follow these steps to configure the sample app:</p>
+<div class="subSection">
+<ol>
+<li>
+<div>Restore the <span class="ui">MiniCRM.bak</span> file into SQL Server to create the database &quot;MiniCRM.&quot; Examine the
+<span class="ui">Subscriptions</span> table and ensure that it is empty.</div>
+</li><li>
+<div>Import the <span class="ui">MiniCRMModel.xml</span> file into the BDC Service application. Examine the associated external system definition, and adjust the settings for your environment.</div>
+</li><li>
+<div>Create an external list in SharePoint 2013 based on the Customer external content type that is contained in the BDC Metadata Model.</div>
+</li><li>
+<div>Open the solution <span class="ui">ExternalListEvents.sln</span> in Visual Studio 2012.</div>
+<div class="subSection">
+<ol>
+<li>
+<div>In the <span class="ui">ExternalListEvents</span> project, Feature1.EventReceiver.cs, update the URLs to refer to your environment.</div>
+</li><li>
+<div>Update the project deployment URL to refer to the SharePoint site where you made the external list.</div>
+</li><li>
+<div>In the <span class="ui">ExternalApplication</span> project, in the App.Config file, update the URL to refer to your environment.</div>
+</li></ol>
+</div>
+</li></ol>
+</div>
+</div>
+<h1 class="heading">Build the sample</h1>
+<div class="section" id="sectionSection4">
+<p>Build and deploy the <span class="ui">ExternalListEvents</span> project.</p>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection5">
+<ol>
+<li>
+<div>Run the <span class="ui">ExternalApplication</span> project.</div>
+</li><li>
+<div>Add a new customer.</div>
+</li><li>
+<div>Examine the Activities list for a new task assignment resulting from adding the new customer.</div>
+</li></ol>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection6">
+<ul>
+<li>
+<div>If the app fails to install, make sure that you have properly updated the URLs in the Feature Receiver.</div>
+</li><li>
+<div>If the app fails at run time, make sure that the Subscriptions table in the database contains valid REST endpoints. Make sure that the App.Config file is properly updated for you environment. Make sure all of the settings for the external content type
+ are correct in the BDC Service application.</div>
+</li></ul>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection7">
+<p>First release: January 2013</p>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection8">
+<ul>
+<li>
+<div><a href="http://msdn.microsoft.com/en-us/library/ee554869.aspx" >Start: Set up the development environment for SharePoint 2013</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163139(v=office.15).aspx" >External content types in SharePoint 2013</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/sharepoint/ff521587.aspx" >SharePoint Foundation REST Interface</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp142385.aspx" >Programming using the SharePoint 2013 REST service</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/jj163782.aspx" >Business Connectivity Services</a></div>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

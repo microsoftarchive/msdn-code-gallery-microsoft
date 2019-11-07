@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Win8.1 Debug|Win32">
+      <Configuration>Win8.1 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8.1 Release|Win32">
+      <Configuration>Win8.1 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Debug|Win32">
+      <Configuration>Win8 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Release|Win32">
+      <Configuration>Win8 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Debug|Win32">
+      <Configuration>Win7 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Release|Win32">
+      <Configuration>Win7 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8.1 Debug|x64">
+      <Configuration>Win8.1 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8.1 Release|x64">
+      <Configuration>Win8.1 Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Debug|x64">
+      <Configuration>Win8 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Release|x64">
+      <Configuration>Win8 Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Debug|x64">
+      <Configuration>Win7 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Release|x64">
+      <Configuration>Win7 Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="PropertySheets">
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Utility</ConfigurationType>
+    <DriverType>Package</DriverType>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <Configuration>Win8.1 Debug</Configuration>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EB12BA2E-D107-45F0-B41B-B7D119914BEF}</ProjectGuid>
+    <SampleGuid>{0341D291-A8CB-4C4D-A488-8AD3B3446878}</SampleGuid>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|Win32'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|x64'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup>
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <EnableDeployment>False</EnableDeployment>
+    <ImportToStore>False</ImportToStore>
+    <InstallMode>None</InstallMode>
+    <HardwareIdString />
+    <CommandLine />
+    <ScriptPath />
+    <DeployFiles />
+    <ScriptName />
+    <ScriptDeviceQuery>%PathToInf%</ScriptDeviceQuery>
+    <EnableVerifier>False</EnableVerifier>
+    <AllDrivers>False</AllDrivers>
+    <VerifyProjectOutput>True</VerifyProjectOutput>
+    <VerifyDrivers />
+    <VerifyFlags>133563</VerifyFlags>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!--Inf Include="DriverInf.inv" /-->
+    <FilesToPackage Include="@(Inf->'%(CopyOutput)')" Condition="'@(Inf)'!=''" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ac3\vadac3.vcxproj">
+      <Project>{0365B8CF-2088-4669-90EB-447B445ACFF9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\drmmult\vaddrmm.vcxproj">
+      <Project>{DFAC8DF0-EBCC-4388-A941-025E80D20F3D}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\drmsimp\vaddrms.vcxproj">
+      <Project>{43A05FA7-78FA-4037-BD43-9EF533394710}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ds2dhw\vad2dhw.vcxproj">
+      <Project>{1336F9BB-8E87-4B52-A790-4DDB4D23FE93}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\dynamic\vaddyn.vcxproj">
+      <Project>{B40A94C9-459E-4B50-A0BE-8AB427137A6F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\micarray\vadarray.vcxproj">
+      <Project>{71BF158B-6B49-4D13-8289-B9429BD76BE6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\multstr\vadmulti.vcxproj">
+      <Project>{C901DED7-FAC8-4711-B97D-9E9136D88DBC}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\pcmex\vadpcmex.vcxproj">
+      <Project>{1C51F481-428A-4640-BD8B-25225C42C72E}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\simple\vadsimpl.vcxproj">
+      <Project>{0FECE682-8A78-40B5-B989-CEC08D938728}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

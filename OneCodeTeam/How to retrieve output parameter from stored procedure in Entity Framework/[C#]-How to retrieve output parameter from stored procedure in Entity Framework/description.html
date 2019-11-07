@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/fd0873a3-9a67-441e-9769-e22026a86740Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to retrieve output parameter from stored procedure in Entity Framework</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to retrieve output parameter from stored procedure in Entity Framework</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, Data Access, Entity Framework, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Entity Framework
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-retrieve-output-e85526ba">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="">How to get output parameter in stored procedure from Entity Framework</span> (<span style="">CSEFOutputParameter</span>)</h1>
+<h2>Introduction<span style=""> </span></h2>
+<p class="MsoNormal"><span style="">This sample demonstrates how to use ObjectParameter instance to get the value of output parameter in Entity Framework.
+</span></p>
+<h2>Building the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="margin-bottom:0in; margin-bottom:.0001pt; text-indent:-.25in; line-height:12.75pt">
+<span style="color:black"><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="color:black">Start Visual Studio 2012 and select File &gt; Open &gt; Project/Solution.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0in; margin-bottom:.0001pt; text-indent:-.25in; line-height:12.75pt">
+<span style="color:black"><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="color:black">Go to the directory in which you download the sample. Go to the directory named for<span style="">&nbsp;&nbsp;
+</span>the sample, and double-click the Microsoft Visual Studio Solution (.<span class="SpellE">sln</span>) file.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Attach the database file <span class="SpellE">
+EFDemoDB.mdf</span> under the folder _<span class="SpellE">External_Dependencies</span> to your SQL Server 2008R2 database instance.<b>
+</b></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Modify the connection string in the <span class="SpellE">
+App.config</span> according to your SQL Server 2008R2 database instance name.<b> </b>
+</span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in; line-height:12.75pt">
+<span style="color:black"><span style="">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="color:black">Press F7 or use Build &gt; Build Solution to build the sample.
+</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Right click the solution and built it. </span>
+</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Press F5 to run the project, a console window will appear.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""><img src="description/image.png" alt="" width="676" height="144" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Follow the prompt to input person information.
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Stored Procedure</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>SQL</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">mysql</span>
+<pre class="hidden">
+ALTER PROCEDURE [dbo].[InsertPerson]   
+@Name varchar(50),   
+@Description varchar(200),     
+@ID int OUT   
+AS   
+INSERT INTO Person(Name,Description) VALUES(@Name,@Description)   
+SET @ID = SCOPE_IDENTITY()
+
+</pre>
+<pre id="codePreview" class="mysql">
+ALTER PROCEDURE [dbo].[InsertPerson]   
+@Name varchar(50),   
+@Description varchar(200),     
+@ID int OUT   
+AS   
+INSERT INTO Person(Name,Description) VALUES(@Name,@Description)   
+SET @ID = SCOPE_IDENTITY()
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"></p>
+<p class="MsoNormal"><span style="">The code below demonstrates how to get the value of output parameter.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+// Create a ObjectParameter instance to retrieve output parameter from stored procedure
+                   ObjectParameter Output = new ObjectParameter(&quot;ID&quot;, typeof(Int32));
+                   context.InsertPerson(Name, Description, Output);
+
+
+                   Console.Write(&quot;ID: {0}&quot;, Output.Value);
+
+</pre>
+<pre id="codePreview" class="csharp">
+// Create a ObjectParameter instance to retrieve output parameter from stored procedure
+                   ObjectParameter Output = new ObjectParameter(&quot;ID&quot;, typeof(Int32));
+                   context.InsertPerson(Name, Description, Output);
+
+
+                   Console.Write(&quot;ID: {0}&quot;, Output.Value);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>More Information</h2>
+<p class="MsoNormal"><span class="SpellE"><span style="">ObjectParameter</span></span><span style=""> Class
+</span></p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/system.data.objects.objectparameter.aspx">http://msdn.microsoft.com/en-us/library/system.data.objects.objectparameter.aspx</a></p>
+<p class="MsoNormal"><span style="">Stored Procedures in the Entity Framework </span>
+</p>
+<p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/data/gg699321.aspx">http://msdn.microsoft.com/en-us/data/gg699321.aspx</a></p>
+<p class="MsoNormal"><span style=""></span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/8ceaf4b9-39f1-47dc-ae5e-ffbff5b81e5fimage.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

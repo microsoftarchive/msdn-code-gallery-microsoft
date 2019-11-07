@@ -1,0 +1,1029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/4f0db316-e33e-4e5c-b975-0f6de635f8e4Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>LINQ - Ordering Operators</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>LINQ - Ordering Operators</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Ordering Operators
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/11/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td align="left" valign="middle" style="background-color:#c0c0c0"><span style="color:#ffffff; font-size:x-large">&nbsp;Part of the 101 LINQ SAMPLES</span></td>
+</tr>
+</tbody>
+</table>
+<div class="RoundedBox">
+<div class="boxheader">
+<div class="BostonPostCard"></div>
+</div>
+<div class="boxheader"><span style="font-size:medium; background-color:#ffffff; color:#333333">Learn how to use LINQ in your applications with these code samples, covering the entire range of LINQ functionality and demonstrating LINQ with SQL, DataSets, and
+ XML.</span></div>
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td width="50px" align="left" valign="middle"><a href="http://archive.msdn.microsoft.com/vb2008samples/Release/ProjectReleases.aspx?ReleaseId=1426"><img title="101 Samples for Visual Basic 2005" src="http://i.msdn.microsoft.com/dd183105.download_45(en-us,MSDN.10).jpg" alt="101 Samples for Visual Basic 2005" align="left"></a></td>
+<td align="left" valign="middle"><span style="font-size:medium"><strong><a href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b/viewsamplepack">Browse all 101 LINQ Samples</a>&nbsp;</strong></span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="Introduction">Introduction</h1>
+<p>This sample shows different uses of Ordering Operators:</p>
+<ul class="bulletedlist">
+<li><a href="#OrderBySimple1">OrderBy - Simple 1</a> </li><li><a href="#OrderBySimple2">OrderBy - Simple 2</a> </li><li><a href="#OrderBySimple3">OrderBy - Simple 3</a> </li><li><a href="#OrderBycomparer">OrderBy - Comparer</a> </li><li><a href="#OrderByDescendingSimple1">OrderByDescending - Simple 1</a> </li><li><a href="#OrderByDescendingSimple2">OrderByDescending - Simple 2</a> </li><li><a href="#OrderByDescendingComparer">OrderByDescending - Comparer</a> </li><li><a href="#thenBySimple">ThenBy - Simple</a> </li><li><a href="#thenByComparer">ThenBy - Comparer</a> </li><li><a href="#thenByDescendingSimple">ThenByDescending - Simple</a> </li><li><a href="#ThenByDescendingComparer">ThenByDescending - Comparer</a> </li><li><a href="#reverse">Reverse</a> </li></ul>
+<p>&nbsp;</p>
+<h1><span>Building the Sample</span></h1>
+<ol>
+<li>Open the Program.cs </li><li>Comment or uncomment the desired samples </li><li>Press Ctrl &#43; F5 </li></ol>
+<h1>Description</h1>
+<h2 id="OrderBySimple1">OrderBy - Simple 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses orderby to sort a list of words alphabetically.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq28()
+{
+    string[] words = { &quot;cherry&quot;, &quot;apple&quot;, &quot;blueberry&quot; };
+ 
+    var sortedWords =
+        from w in words
+        orderby w
+        select w;
+ 
+    Console.WriteLine(&quot;The sorted list of words:&quot;);
+    foreach (var w in sortedWords)
+    {
+        Console.WriteLine(w);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq28()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;cherry&quot;</span>,&nbsp;<span class="js__string">&quot;apple&quot;</span>,&nbsp;<span class="js__string">&quot;blueberry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;w&nbsp;<span class="js__operator">in</span>&nbsp;words&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;w&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;w;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;The&nbsp;sorted&nbsp;list&nbsp;of&nbsp;words:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;w&nbsp;<span class="js__operator">in</span>&nbsp;sortedWords)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(w);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">The sorted list of words:<br>
+apple<br>
+blueberry<br>
+cherry</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderBySimple2">OrderBy - Simple 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses orderby to sort a list of words by length.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq29()
+{
+    string[] words = { &quot;cherry&quot;, &quot;apple&quot;, &quot;blueberry&quot; };
+ 
+    var sortedWords =
+        from w in words
+        orderby w.Length
+        select w;
+ 
+    Console.WriteLine(&quot;The sorted list of words (by length):&quot;);
+    foreach (var w in sortedWords)
+    {
+        Console.WriteLine(w);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq29()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;cherry&quot;</span>,&nbsp;<span class="js__string">&quot;apple&quot;</span>,&nbsp;<span class="js__string">&quot;blueberry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;w&nbsp;<span class="js__operator">in</span>&nbsp;words&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;w.Length&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;w;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;The&nbsp;sorted&nbsp;list&nbsp;of&nbsp;words&nbsp;(by&nbsp;length):&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;w&nbsp;<span class="js__operator">in</span>&nbsp;sortedWords)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(w);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">The sorted list of words (by length):<br>
+apple<br>
+cherry<br>
+blueberry</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderBySimple3">OrderBy - Simple 3</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses orderby to sort a list of products by name.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq30()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var sortedProducts =
+        from p in products
+        orderby p.ProductName
+        select p;
+ 
+    ObjectDumper.Write(sortedProducts);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq30()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedProducts&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;p.ProductName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedProducts);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">ProductID=17 ProductName=Alice Mutton Category=Meat/Poultry UnitPrice=39.0000 UnitsInStock=0<br>
+ProductID=3 ProductName=Aniseed Syrup Category=Condiments UnitPrice=10.0000 UnitsInStock=13<br>
+ProductID=40 ProductName=Boston Crab Meat Category=Seafood UnitPrice=18.4000 UnitsInStock=123<br>
+ProductID=60 ProductName=Camembert Pierrot Category=Dairy Products UnitPrice=34.0000 UnitsInStock=19<br>
+ProductID=18 ProductName=Carnarvon Tigers Category=Seafood UnitPrice=62.5000 UnitsInStock=42<br>
+ProductID=1 ProductName=Chai Category=Beverages UnitPrice=18.0000 UnitsInStock=39<br>
+ProductID=2 ProductName=Chang Category=Beverages UnitPrice=19.0000 UnitsInStock=17<br>
+ProductID=39 ProductName=Chartreuse verte Category=Beverages UnitPrice=18.0000 UnitsInStock=69<br>
+ProductID=4 ProductName=Chef Anton's Cajun Seasoning Category=Condiments UnitPrice=22.0000 UnitsInStock=53<br>
+ProductID=5 ProductName=Chef Anton's Gumbo Mix Category=Condiments UnitPrice=21.3500 UnitsInStock=0<br>
+ProductID=48 ProductName=Chocolade Category=Confections UnitPrice=12.7500 UnitsInStock=15<br>
+ProductID=38 ProductName=C&Atilde;&acute;te de Blaye Category=Beverages UnitPrice=263.5000 UnitsInStock=17<br>
+ProductID=58 ProductName=Escargots de Bourgogne Category=Seafood UnitPrice=13.2500 UnitsInStock=62<br>
+ProductID=52 ProductName=Filo Mix Category=Grains/Cereals UnitPrice=7.0000 UnitsInStock=38<br>
+ProductID=71 ProductName=Flotemysost Category=Dairy Products UnitPrice=21.5000 UnitsInStock=26<br>
+ProductID=33 ProductName=Geitost Category=Dairy Products UnitPrice=2.5000 UnitsInStock=112<br>
+ProductID=15 ProductName=Genen Shouyu Category=Condiments UnitPrice=15.5000 UnitsInStock=39<br>
+ProductID=56 ProductName=Gnocchi di nonna Alice Category=Grains/Cereals UnitPrice=38.0000 UnitsInStock=21<br>
+ProductID=31 ProductName=Gorgonzola Telino Category=Dairy Products UnitPrice=12.5000 UnitsInStock=0<br>
+ProductID=6 ProductName=Grandma's Boysenberry Spread Category=Condiments UnitPrice=25.0000 UnitsInStock=120<br>
+ProductID=37 ProductName=Gravad lax Category=Seafood UnitPrice=26.0000 UnitsInStock=11<br>
+ProductID=24 ProductName=Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica Category=Beverages UnitPrice=4.5000 UnitsInStock=20<br>
+ProductID=69 ProductName=Gudbrandsdalsost Category=Dairy Products UnitPrice=36.0000 UnitsInStock=26<br>
+ProductID=44 ProductName=Gula Malacca Category=Condiments UnitPrice=19.4500 UnitsInStock=27<br>
+ProductID=26 ProductName=Gumb&Atilde;&curren;r Gummib&Atilde;&curren;rchen Category=Confections UnitPrice=31.2300 UnitsInStock=15<br>
+ProductID=22 ProductName=Gustaf's Kn&Atilde;&curren;ckebr&Atilde;&para;d Category=Grains/Cereals UnitPrice=21.0000 UnitsInStock=104<br>
+ProductID=10 ProductName=Ikura Category=Seafood UnitPrice=31.0000 UnitsInStock=31<br>
+ProductID=36 ProductName=Inlagd Sill Category=Seafood UnitPrice=19.0000 UnitsInStock=112<br>
+ProductID=43 ProductName=Ipoh Coffee Category=Beverages UnitPrice=46.0000 UnitsInStock=17<br>
+ProductID=41 ProductName=Jack's New England Clam Chowder Category=Seafood UnitPrice=9.6500 UnitsInStock=85<br>
+ProductID=13 ProductName=Konbu Category=Seafood UnitPrice=6.0000 UnitsInStock=24<br>
+ProductID=76 ProductName=Lakkalik&Atilde;&para;&Atilde;&para;ri Category=Beverages UnitPrice=18.0000 UnitsInStock=57<br>
+ProductID=67 ProductName=Laughing Lumberjack Lager Category=Beverages UnitPrice=14.0000 UnitsInStock=52<br>
+ProductID=74 ProductName=Longlife Tofu Category=Produce UnitPrice=10.0000 UnitsInStock=4<br>
+ProductID=65 ProductName=Louisiana Fiery Hot Pepper Sauce Category=Condiments UnitPrice=21.0500 UnitsInStock=76<br>
+ProductID=66 ProductName=Louisiana Hot Spiced Okra Category=Condiments UnitPrice=17.0000 UnitsInStock=4<br>
+ProductID=51 ProductName=Manjimup Dried Apples Category=Produce UnitPrice=53.0000 UnitsInStock=20<br>
+ProductID=32 ProductName=Mascarpone Fabioli Category=Dairy Products UnitPrice=32.0000 UnitsInStock=9<br>
+ProductID=49 ProductName=Maxilaku Category=Confections UnitPrice=20.0000 UnitsInStock=10<br>
+ProductID=9 ProductName=Mishi Kobe Niku Category=Meat/Poultry UnitPrice=97.0000 UnitsInStock=29<br>
+ProductID=72 ProductName=Mozzarella di Giovanni Category=Dairy Products UnitPrice=34.8000 UnitsInStock=14<br>
+ProductID=30 ProductName=Nord-Ost Matjeshering Category=Seafood UnitPrice=25.8900 UnitsInStock=10<br>
+ProductID=8 ProductName=Northwoods Cranberry Sauce Category=Condiments UnitPrice=40.0000 UnitsInStock=6<br>
+ProductID=25 ProductName=NuNuCa Nu&Atilde;&Yuml;-Nougat-Creme Category=Confections UnitPrice=14.0000 UnitsInStock=76<br>
+ProductID=77 ProductName=Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e Category=Condiments UnitPrice=13.0000 UnitsInStock=32<br>
+ProductID=70 ProductName=Outback Lager Category=Beverages UnitPrice=15.0000 UnitsInStock=15<br>
+ProductID=55 ProductName=P&Atilde;&cent;t&Atilde;&copy; chinois Category=Meat/Poultry UnitPrice=24.0000 UnitsInStock=115<br>
+ProductID=16 ProductName=Pavlova Category=Confections UnitPrice=17.4500 UnitsInStock=29<br>
+ProductID=53 ProductName=Perth Pasties Category=Meat/Poultry UnitPrice=32.8000 UnitsInStock=0<br>
+ProductID=11 ProductName=Queso Cabrales Category=Dairy Products UnitPrice=21.0000 UnitsInStock=22<br>
+ProductID=12 ProductName=Queso Manchego La Pastora Category=Dairy Products UnitPrice=38.0000 UnitsInStock=86<br>
+ProductID=59 ProductName=Raclette Courdavault Category=Dairy Products UnitPrice=55.0000 UnitsInStock=79<br>
+ProductID=57 ProductName=Ravioli Angelo Category=Grains/Cereals UnitPrice=19.5000 UnitsInStock=36<br>
+ProductID=75 ProductName=Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier Category=Beverages UnitPrice=7.7500 UnitsInStock=125<br>
+ProductID=73 ProductName=R&Atilde;&para;d Kaviar Category=Seafood UnitPrice=15.0000 UnitsInStock=101<br>
+ProductID=45 ProductName=Rogede sild Category=Seafood UnitPrice=9.5000 UnitsInStock=5<br>
+ProductID=28 ProductName=R&Atilde;&para;ssle Sauerkraut Category=Produce UnitPrice=45.6000 UnitsInStock=26<br>
+ProductID=34 ProductName=Sasquatch Ale Category=Beverages UnitPrice=14.0000 UnitsInStock=111<br>
+ProductID=27 ProductName=Schoggi Schokolade Category=Confections UnitPrice=43.9000 UnitsInStock=49<br>
+ProductID=68 ProductName=Scottish Longbreads Category=Confections UnitPrice=12.5000 UnitsInStock=6<br>
+ProductID=42 ProductName=Singaporean Hokkien Fried Mee Category=Grains/Cereals UnitPrice=14.0000 UnitsInStock=26<br>
+ProductID=20 ProductName=Sir Rodney's Marmalade Category=Confections UnitPrice=81.0000 UnitsInStock=40<br>
+ProductID=21 ProductName=Sir Rodney's Scones Category=Confections UnitPrice=10.0000 UnitsInStock=3<br>
+ProductID=61 ProductName=Sirop d'&Atilde;&copy;rable Category=Condiments UnitPrice=28.5000 UnitsInStock=113<br>
+ProductID=46 ProductName=Spegesild Category=Seafood UnitPrice=12.0000 UnitsInStock=95<br>
+ProductID=35 ProductName=Steeleye Stout Category=Beverages UnitPrice=18.0000 UnitsInStock=20<br>
+ProductID=62 ProductName=Tarte au sucre Category=Confections UnitPrice=49.3000 UnitsInStock=17<br>
+ProductID=19 ProductName=Teatime Chocolate Biscuits Category=Confections UnitPrice=9.2000 UnitsInStock=25<br>
+ProductID=29 ProductName=Th&Atilde;&frac14;ringer Rostbratwurst Category=Meat/Poultry UnitPrice=123.7900 UnitsInStock=0<br>
+ProductID=14 ProductName=Tofu Category=Produce UnitPrice=23.2500 UnitsInStock=35<br>
+ProductID=54 ProductName=Tourti&Atilde;&uml;re Category=Meat/Poultry UnitPrice=7.4500 UnitsInStock=21<br>
+ProductID=23 ProductName=Tunnbr&Atilde;&para;d Category=Grains/Cereals UnitPrice=9.0000 UnitsInStock=61<br>
+ProductID=7 ProductName=Uncle Bob's Organic Dried Pears Category=Produce UnitPrice=30.0000 UnitsInStock=15<br>
+ProductID=50 ProductName=Valkoinen suklaa Category=Confections UnitPrice=16.2500 UnitsInStock=65<br>
+ProductID=63 ProductName=Vegie-spread Category=Condiments UnitPrice=43.9000 UnitsInStock=24<br>
+ProductID=64 ProductName=Wimmers gute Semmelkn&Atilde;&para;del Category=Grains/Cereals UnitPrice=33.2500 UnitsInStock=22<br>
+ProductID=47 ProductName=Zaanse koeken Category=Confections UnitPrice=9.5000 UnitsInStock=36</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderByComparer">OrderBy - Comparer</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses an OrderBy clause with a custom comparer to do a case-insensitive sort of the words in an array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq31()
+{
+    string[] words = { &quot;aPPLE&quot;, &quot;AbAcUs&quot;, &quot;bRaNcH&quot;, &quot;BlUeBeRrY&quot;, &quot;ClOvEr&quot;, &quot;cHeRry&quot; };
+ 
+    var sortedWords = words.OrderBy(a =&gt; a, new CaseInsensitiveComparer());
+ 
+    ObjectDumper.Write(sortedWords);
+}
+ 
+public class CaseInsensitiveComparer : IComparer&lt;string&gt;
+{
+    public int Compare(string x, string y)
+    {
+        return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq31()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;aPPLE&quot;</span>,&nbsp;<span class="js__string">&quot;AbAcUs&quot;</span>,&nbsp;<span class="js__string">&quot;bRaNcH&quot;</span>,&nbsp;<span class="js__string">&quot;BlUeBeRrY&quot;</span>,&nbsp;<span class="js__string">&quot;ClOvEr&quot;</span>,&nbsp;<span class="js__string">&quot;cHeRry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;words.OrderBy(a&nbsp;=&gt;&nbsp;a,&nbsp;<span class="js__operator">new</span>&nbsp;CaseInsensitiveComparer());&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedWords);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;
+public&nbsp;class&nbsp;CaseInsensitiveComparer&nbsp;:&nbsp;IComparer&lt;string&gt;&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;Compare(string&nbsp;x,&nbsp;string&nbsp;y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;string.Compare(x,&nbsp;y,&nbsp;StringComparison.OrdinalIgnoreCase);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">AbAcUs<br>
+aPPLE<br>
+BlUeBeRrY<br>
+bRaNcH<br>
+cHeRry<br>
+ClOvEr</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderByDescendingSimple1">OrderByDescending - Simple 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses orderby and descending to sort a list of doubles from highest to lowest.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq32()
+{
+    double[] doubles = { 1.7, 2.3, 1.9, 4.1, 2.9 };
+ 
+    var sortedDoubles =
+        from d in doubles
+        orderby d descending
+        select d;
+ 
+    Console.WriteLine(&quot;The doubles from highest to lowest:&quot;);
+    foreach (var d in sortedDoubles)
+    {
+        Console.WriteLine(d);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq32()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;double[]&nbsp;doubles&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">1.7</span>,&nbsp;<span class="js__num">2.3</span>,&nbsp;<span class="js__num">1.9</span>,&nbsp;<span class="js__num">4.1</span>,&nbsp;<span class="js__num">2.9</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedDoubles&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;d&nbsp;<span class="js__operator">in</span>&nbsp;doubles&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;d&nbsp;descending&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;d;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;The&nbsp;doubles&nbsp;from&nbsp;highest&nbsp;to&nbsp;lowest:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;d&nbsp;<span class="js__operator">in</span>&nbsp;sortedDoubles)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(d);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong>Result</strong></div>
+<p style="padding-left:30px">The doubles from highest to lowest:<br>
+4.1<br>
+2.9<br>
+2.3<br>
+1.9<br>
+1.7</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderByDescendingSimple2">OrderByDescending - Simple 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses orderby to sort a list of products by units in stock from highest to lowest.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq33()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var sortedProducts =
+        from p in products
+        orderby p.UnitsInStock descending
+        select p;
+ 
+    ObjectDumper.Write(sortedProducts);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq33()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedProducts&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;p.UnitsInStock&nbsp;descending&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedProducts);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">ProductID=75 ProductName=Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier Category=Beverages UnitPrice=7.7500 UnitsInStock=125<br>
+ProductID=40 ProductName=Boston Crab Meat Category=Seafood UnitPrice=18.4000 UnitsInStock=123<br>
+ProductID=6 ProductName=Grandma's Boysenberry Spread Category=Condiments UnitPrice=25.0000 UnitsInStock=120<br>
+ProductID=55 ProductName=P&Atilde;&cent;t&Atilde;&copy; chinois Category=Meat/Poultry UnitPrice=24.0000 UnitsInStock=115<br>
+ProductID=61 ProductName=Sirop d'&Atilde;&copy;rable Category=Condiments UnitPrice=28.5000 UnitsInStock=113<br>
+ProductID=33 ProductName=Geitost Category=Dairy Products UnitPrice=2.5000 UnitsInStock=112<br>
+ProductID=36 ProductName=Inlagd Sill Category=Seafood UnitPrice=19.0000 UnitsInStock=112<br>
+ProductID=34 ProductName=Sasquatch Ale Category=Beverages UnitPrice=14.0000 UnitsInStock=111<br>
+ProductID=22 ProductName=Gustaf's Kn&Atilde;&curren;ckebr&Atilde;&para;d Category=Grains/Cereals UnitPrice=21.0000 UnitsInStock=104<br>
+ProductID=73 ProductName=R&Atilde;&para;d Kaviar Category=Seafood UnitPrice=15.0000 UnitsInStock=101<br>
+ProductID=46 ProductName=Spegesild Category=Seafood UnitPrice=12.0000 UnitsInStock=95<br>
+ProductID=12 ProductName=Queso Manchego La Pastora Category=Dairy Products UnitPrice=38.0000 UnitsInStock=86<br>
+ProductID=41 ProductName=Jack's New England Clam Chowder Category=Seafood UnitPrice=9.6500 UnitsInStock=85<br>
+ProductID=59 ProductName=Raclette Courdavault Category=Dairy Products UnitPrice=55.0000 UnitsInStock=79<br>
+ProductID=25 ProductName=NuNuCa Nu&Atilde;&Yuml;-Nougat-Creme Category=Confections UnitPrice=14.0000 UnitsInStock=76<br>
+ProductID=65 ProductName=Louisiana Fiery Hot Pepper Sauce Category=Condiments UnitPrice=21.0500 UnitsInStock=76<br>
+ProductID=39 ProductName=Chartreuse verte Category=Beverages UnitPrice=18.0000 UnitsInStock=69<br>
+ProductID=50 ProductName=Valkoinen suklaa Category=Confections UnitPrice=16.2500 UnitsInStock=65<br>
+ProductID=58 ProductName=Escargots de Bourgogne Category=Seafood UnitPrice=13.2500 UnitsInStock=62<br>
+ProductID=23 ProductName=Tunnbr&Atilde;&para;d Category=Grains/Cereals UnitPrice=9.0000 UnitsInStock=61<br>
+ProductID=76 ProductName=Lakkalik&Atilde;&para;&Atilde;&para;ri Category=Beverages UnitPrice=18.0000 UnitsInStock=57<br>
+ProductID=4 ProductName=Chef Anton's Cajun Seasoning Category=Condiments UnitPrice=22.0000 UnitsInStock=53<br>
+ProductID=67 ProductName=Laughing Lumberjack Lager Category=Beverages UnitPrice=14.0000 UnitsInStock=52<br>
+ProductID=27 ProductName=Schoggi Schokolade Category=Confections UnitPrice=43.9000 UnitsInStock=49<br>
+ProductID=18 ProductName=Carnarvon Tigers Category=Seafood UnitPrice=62.5000 UnitsInStock=42<br>
+ProductID=20 ProductName=Sir Rodney's Marmalade Category=Confections UnitPrice=81.0000 UnitsInStock=40<br>
+ProductID=1 ProductName=Chai Category=Beverages UnitPrice=18.0000 UnitsInStock=39<br>
+ProductID=15 ProductName=Genen Shouyu Category=Condiments UnitPrice=15.5000 UnitsInStock=39<br>
+ProductID=52 ProductName=Filo Mix Category=Grains/Cereals UnitPrice=7.0000 UnitsInStock=38<br>
+ProductID=47 ProductName=Zaanse koeken Category=Confections UnitPrice=9.5000 UnitsInStock=36<br>
+ProductID=57 ProductName=Ravioli Angelo Category=Grains/Cereals UnitPrice=19.5000 UnitsInStock=36<br>
+ProductID=14 ProductName=Tofu Category=Produce UnitPrice=23.2500 UnitsInStock=35<br>
+ProductID=77 ProductName=Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e Category=Condiments UnitPrice=13.0000 UnitsInStock=32<br>
+ProductID=10 ProductName=Ikura Category=Seafood UnitPrice=31.0000 UnitsInStock=31<br>
+ProductID=9 ProductName=Mishi Kobe Niku Category=Meat/Poultry UnitPrice=97.0000 UnitsInStock=29<br>
+ProductID=16 ProductName=Pavlova Category=Confections UnitPrice=17.4500 UnitsInStock=29<br>
+ProductID=44 ProductName=Gula Malacca Category=Condiments UnitPrice=19.4500 UnitsInStock=27<br>
+ProductID=28 ProductName=R&Atilde;&para;ssle Sauerkraut Category=Produce UnitPrice=45.6000 UnitsInStock=26<br>
+ProductID=42 ProductName=Singaporean Hokkien Fried Mee Category=Grains/Cereals UnitPrice=14.0000 UnitsInStock=26<br>
+ProductID=69 ProductName=Gudbrandsdalsost Category=Dairy Products UnitPrice=36.0000 UnitsInStock=26<br>
+ProductID=71 ProductName=Flotemysost Category=Dairy Products UnitPrice=21.5000 UnitsInStock=26<br>
+ProductID=19 ProductName=Teatime Chocolate Biscuits Category=Confections UnitPrice=9.2000 UnitsInStock=25<br>
+ProductID=13 ProductName=Konbu Category=Seafood UnitPrice=6.0000 UnitsInStock=24<br>
+ProductID=63 ProductName=Vegie-spread Category=Condiments UnitPrice=43.9000 UnitsInStock=24<br>
+ProductID=11 ProductName=Queso Cabrales Category=Dairy Products UnitPrice=21.0000 UnitsInStock=22<br>
+ProductID=64 ProductName=Wimmers gute Semmelkn&Atilde;&para;del Category=Grains/Cereals UnitPrice=33.2500 UnitsInStock=22<br>
+ProductID=54 ProductName=Tourti&Atilde;&uml;re Category=Meat/Poultry UnitPrice=7.4500 UnitsInStock=21<br>
+ProductID=56 ProductName=Gnocchi di nonna Alice Category=Grains/Cereals UnitPrice=38.0000 UnitsInStock=21<br>
+ProductID=24 ProductName=Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica Category=Beverages UnitPrice=4.5000 UnitsInStock=20<br>
+ProductID=35 ProductName=Steeleye Stout Category=Beverages UnitPrice=18.0000 UnitsInStock=20<br>
+ProductID=51 ProductName=Manjimup Dried Apples Category=Produce UnitPrice=53.0000 UnitsInStock=20<br>
+ProductID=60 ProductName=Camembert Pierrot Category=Dairy Products UnitPrice=34.0000 UnitsInStock=19<br>
+ProductID=2 ProductName=Chang Category=Beverages UnitPrice=19.0000 UnitsInStock=17<br>
+ProductID=38 ProductName=C&Atilde;&acute;te de Blaye Category=Beverages UnitPrice=263.5000 UnitsInStock=17<br>
+ProductID=43 ProductName=Ipoh Coffee Category=Beverages UnitPrice=46.0000 UnitsInStock=17<br>
+ProductID=62 ProductName=Tarte au sucre Category=Confections UnitPrice=49.3000 UnitsInStock=17<br>
+ProductID=7 ProductName=Uncle Bob's Organic Dried Pears Category=Produce UnitPrice=30.0000 UnitsInStock=15<br>
+ProductID=26 ProductName=Gumb&Atilde;&curren;r Gummib&Atilde;&curren;rchen Category=Confections UnitPrice=31.2300 UnitsInStock=15<br>
+ProductID=48 ProductName=Chocolade Category=Confections UnitPrice=12.7500 UnitsInStock=15<br>
+ProductID=70 ProductName=Outback Lager Category=Beverages UnitPrice=15.0000 UnitsInStock=15<br>
+ProductID=72 ProductName=Mozzarella di Giovanni Category=Dairy Products UnitPrice=34.8000 UnitsInStock=14<br>
+ProductID=3 ProductName=Aniseed Syrup Category=Condiments UnitPrice=10.0000 UnitsInStock=13<br>
+ProductID=37 ProductName=Gravad lax Category=Seafood UnitPrice=26.0000 UnitsInStock=11<br>
+ProductID=30 ProductName=Nord-Ost Matjeshering Category=Seafood UnitPrice=25.8900 UnitsInStock=10<br>
+ProductID=49 ProductName=Maxilaku Category=Confections UnitPrice=20.0000 UnitsInStock=10<br>
+ProductID=32 ProductName=Mascarpone Fabioli Category=Dairy Products UnitPrice=32.0000 UnitsInStock=9<br>
+ProductID=8 ProductName=Northwoods Cranberry Sauce Category=Condiments UnitPrice=40.0000 UnitsInStock=6<br>
+ProductID=68 ProductName=Scottish Longbreads Category=Confections UnitPrice=12.5000 UnitsInStock=6<br>
+ProductID=45 ProductName=Rogede sild Category=Seafood UnitPrice=9.5000 UnitsInStock=5<br>
+ProductID=66 ProductName=Louisiana Hot Spiced Okra Category=Condiments UnitPrice=17.0000 UnitsInStock=4<br>
+ProductID=74 ProductName=Longlife Tofu Category=Produce UnitPrice=10.0000 UnitsInStock=4<br>
+ProductID=21 ProductName=Sir Rodney's Scones Category=Confections UnitPrice=10.0000 UnitsInStock=3<br>
+ProductID=5 ProductName=Chef Anton's Gumbo Mix Category=Condiments UnitPrice=21.3500 UnitsInStock=0<br>
+ProductID=17 ProductName=Alice Mutton Category=Meat/Poultry UnitPrice=39.0000 UnitsInStock=0<br>
+ProductID=29 ProductName=Th&Atilde;&frac14;ringer Rostbratwurst Category=Meat/Poultry UnitPrice=123.7900 UnitsInStock=0<br>
+ProductID=31 ProductName=Gorgonzola Telino Category=Dairy Products UnitPrice=12.5000 UnitsInStock=0<br>
+ProductID=53 ProductName=Perth Pasties Category=Meat/Poultry UnitPrice=32.8000 UnitsInStock=0</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="OrderByDescendingComparer">OrderByDescending - Comparer</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses an OrderBy clause with a custom comparer to do a case-insensitive descending sort of the words in an array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq34()
+{
+    string[] words = { &quot;aPPLE&quot;, &quot;AbAcUs&quot;, &quot;bRaNcH&quot;, &quot;BlUeBeRrY&quot;, &quot;ClOvEr&quot;, &quot;cHeRry&quot; };
+ 
+    var sortedWords = words.OrderByDescending(a =&gt; a, new CaseInsensitiveComparer());
+ 
+    ObjectDumper.Write(sortedWords);
+}
+ 
+public class CaseInsensitiveComparer : IComparer&lt;string&gt;
+{
+    public int Compare(string x, string y)
+    {
+        return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq34()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;aPPLE&quot;</span>,&nbsp;<span class="js__string">&quot;AbAcUs&quot;</span>,&nbsp;<span class="js__string">&quot;bRaNcH&quot;</span>,&nbsp;<span class="js__string">&quot;BlUeBeRrY&quot;</span>,&nbsp;<span class="js__string">&quot;ClOvEr&quot;</span>,&nbsp;<span class="js__string">&quot;cHeRry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;words.OrderByDescending(a&nbsp;=&gt;&nbsp;a,&nbsp;<span class="js__operator">new</span>&nbsp;CaseInsensitiveComparer());&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedWords);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;
+public&nbsp;class&nbsp;CaseInsensitiveComparer&nbsp;:&nbsp;IComparer&lt;string&gt;&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;Compare(string&nbsp;x,&nbsp;string&nbsp;y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;string.Compare(x,&nbsp;y,&nbsp;StringComparison.OrdinalIgnoreCase);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">ClOvEr<br>
+cHeRry<br>
+bRaNcH<br>
+BlUeBeRrY<br>
+aPPLE<br>
+AbAcUs</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="ThenBySimple">ThenBy - Simple</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses a compound orderby to sort a list of digits, first by length of their name, and then alphabetically by the name itself.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq35()
+{
+    string[] digits = { &quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot; };
+ 
+    var sortedDigits =
+        from d in digits
+        orderby d.Length, d
+        select d;
+ 
+    Console.WriteLine(&quot;Sorted digits:&quot;);
+    foreach (var d in sortedDigits)
+    {
+        Console.WriteLine(d);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq35()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;digits&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;zero&quot;</span>,&nbsp;<span class="js__string">&quot;one&quot;</span>,&nbsp;<span class="js__string">&quot;two&quot;</span>,&nbsp;<span class="js__string">&quot;three&quot;</span>,&nbsp;<span class="js__string">&quot;four&quot;</span>,&nbsp;<span class="js__string">&quot;five&quot;</span>,&nbsp;<span class="js__string">&quot;six&quot;</span>,&nbsp;<span class="js__string">&quot;seven&quot;</span>,&nbsp;<span class="js__string">&quot;eight&quot;</span>,&nbsp;<span class="js__string">&quot;nine&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedDigits&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;d&nbsp;<span class="js__operator">in</span>&nbsp;digits&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;d.Length,&nbsp;d&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;d;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Sorted&nbsp;digits:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;d&nbsp;<span class="js__operator">in</span>&nbsp;sortedDigits)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(d);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">Sorted digits:<br>
+one<br>
+six<br>
+two<br>
+five<br>
+four<br>
+nine<br>
+zero<br>
+eight<br>
+seven<br>
+three</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="ThenByComparer">ThenBy - Comparer</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses an OrderBy and a ThenBy clause with a custom comparer to sort first by word length and then by a case-insensitive sort of the words in an array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq36()
+{
+    string[] words = { &quot;aPPLE&quot;, &quot;AbAcUs&quot;, &quot;bRaNcH&quot;, &quot;BlUeBeRrY&quot;, &quot;ClOvEr&quot;, &quot;cHeRry&quot; };
+ 
+    var sortedWords =
+        words.OrderBy(a =&gt; a.Length)
+             .ThenBy(a =&gt; a, new CaseInsensitiveComparer());
+ 
+    ObjectDumper.Write(sortedWords);
+}
+ 
+public class CaseInsensitiveComparer : IComparer&lt;string&gt;
+{
+    public int Compare(string x, string y)
+    {
+        return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq36()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;aPPLE&quot;</span>,&nbsp;<span class="js__string">&quot;AbAcUs&quot;</span>,&nbsp;<span class="js__string">&quot;bRaNcH&quot;</span>,&nbsp;<span class="js__string">&quot;BlUeBeRrY&quot;</span>,&nbsp;<span class="js__string">&quot;ClOvEr&quot;</span>,&nbsp;<span class="js__string">&quot;cHeRry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;words.OrderBy(a&nbsp;=&gt;&nbsp;a.Length)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ThenBy(a&nbsp;=&gt;&nbsp;a,&nbsp;<span class="js__operator">new</span>&nbsp;CaseInsensitiveComparer());&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedWords);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;
+public&nbsp;class&nbsp;CaseInsensitiveComparer&nbsp;:&nbsp;IComparer&lt;string&gt;&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;Compare(string&nbsp;x,&nbsp;string&nbsp;y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;string.Compare(x,&nbsp;y,&nbsp;StringComparison.OrdinalIgnoreCase);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">aPPLE<br>
+AbAcUs<br>
+bRaNcH<br>
+cHeRry<br>
+ClOvEr<br>
+BlUeBeRrY</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="ThenByDescendingSimple">ThenByDescending - Simple</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses a compound orderby to sort a list of products, first by category, and then by unit price, from highest to lowest.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq37()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var sortedProducts =
+        from p in products
+        orderby p.Category, p.UnitPrice descending
+        select p;
+ 
+    ObjectDumper.Write(sortedProducts);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq37()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedProducts&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderby&nbsp;p.Category,&nbsp;p.UnitPrice&nbsp;descending&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedProducts);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">ProductID=38 ProductName=C&Atilde;&acute;te de Blaye Category=Beverages UnitPrice=263.5000 UnitsInStock=17<br>
+ProductID=43 ProductName=Ipoh Coffee Category=Beverages UnitPrice=46.0000 UnitsInStock=17<br>
+ProductID=2 ProductName=Chang Category=Beverages UnitPrice=19.0000 UnitsInStock=17<br>
+ProductID=1 ProductName=Chai Category=Beverages UnitPrice=18.0000 UnitsInStock=39<br>
+ProductID=35 ProductName=Steeleye Stout Category=Beverages UnitPrice=18.0000 UnitsInStock=20<br>
+ProductID=39 ProductName=Chartreuse verte Category=Beverages UnitPrice=18.0000 UnitsInStock=69<br>
+ProductID=76 ProductName=Lakkalik&Atilde;&para;&Atilde;&para;ri Category=Beverages UnitPrice=18.0000 UnitsInStock=57<br>
+ProductID=70 ProductName=Outback Lager Category=Beverages UnitPrice=15.0000 UnitsInStock=15<br>
+ProductID=34 ProductName=Sasquatch Ale Category=Beverages UnitPrice=14.0000 UnitsInStock=111<br>
+ProductID=67 ProductName=Laughing Lumberjack Lager Category=Beverages UnitPrice=14.0000 UnitsInStock=52<br>
+ProductID=75 ProductName=Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier Category=Beverages UnitPrice=7.7500 UnitsInStock=125<br>
+ProductID=24 ProductName=Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica Category=Beverages UnitPrice=4.5000 UnitsInStock=20<br>
+ProductID=63 ProductName=Vegie-spread Category=Condiments UnitPrice=43.9000 UnitsInStock=24<br>
+ProductID=8 ProductName=Northwoods Cranberry Sauce Category=Condiments UnitPrice=40.0000 UnitsInStock=6<br>
+ProductID=61 ProductName=Sirop d'&Atilde;&copy;rable Category=Condiments UnitPrice=28.5000 UnitsInStock=113<br>
+ProductID=6 ProductName=Grandma's Boysenberry Spread Category=Condiments UnitPrice=25.0000 UnitsInStock=120<br>
+ProductID=4 ProductName=Chef Anton's Cajun Seasoning Category=Condiments UnitPrice=22.0000 UnitsInStock=53<br>
+ProductID=5 ProductName=Chef Anton's Gumbo Mix Category=Condiments UnitPrice=21.3500 UnitsInStock=0<br>
+ProductID=65 ProductName=Louisiana Fiery Hot Pepper Sauce Category=Condiments UnitPrice=21.0500 UnitsInStock=76<br>
+ProductID=44 ProductName=Gula Malacca Category=Condiments UnitPrice=19.4500 UnitsInStock=27<br>
+ProductID=66 ProductName=Louisiana Hot Spiced Okra Category=Condiments UnitPrice=17.0000 UnitsInStock=4<br>
+ProductID=15 ProductName=Genen Shouyu Category=Condiments UnitPrice=15.5000 UnitsInStock=39<br>
+ProductID=77 ProductName=Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e Category=Condiments UnitPrice=13.0000 UnitsInStock=32<br>
+ProductID=3 ProductName=Aniseed Syrup Category=Condiments UnitPrice=10.0000 UnitsInStock=13<br>
+ProductID=20 ProductName=Sir Rodney's Marmalade Category=Confections UnitPrice=81.0000 UnitsInStock=40<br>
+ProductID=62 ProductName=Tarte au sucre Category=Confections UnitPrice=49.3000 UnitsInStock=17<br>
+ProductID=27 ProductName=Schoggi Schokolade Category=Confections UnitPrice=43.9000 UnitsInStock=49<br>
+ProductID=26 ProductName=Gumb&Atilde;&curren;r Gummib&Atilde;&curren;rchen Category=Confections UnitPrice=31.2300 UnitsInStock=15<br>
+ProductID=49 ProductName=Maxilaku Category=Confections UnitPrice=20.0000 UnitsInStock=10<br>
+ProductID=16 ProductName=Pavlova Category=Confections UnitPrice=17.4500 UnitsInStock=29<br>
+ProductID=50 ProductName=Valkoinen suklaa Category=Confections UnitPrice=16.2500 UnitsInStock=65<br>
+ProductID=25 ProductName=NuNuCa Nu&Atilde;&Yuml;-Nougat-Creme Category=Confections UnitPrice=14.0000 UnitsInStock=76<br>
+ProductID=48 ProductName=Chocolade Category=Confections UnitPrice=12.7500 UnitsInStock=15<br>
+ProductID=68 ProductName=Scottish Longbreads Category=Confections UnitPrice=12.5000 UnitsInStock=6<br>
+ProductID=21 ProductName=Sir Rodney's Scones Category=Confections UnitPrice=10.0000 UnitsInStock=3<br>
+ProductID=47 ProductName=Zaanse koeken Category=Confections UnitPrice=9.5000 UnitsInStock=36<br>
+ProductID=19 ProductName=Teatime Chocolate Biscuits Category=Confections UnitPrice=9.2000 UnitsInStock=25<br>
+ProductID=59 ProductName=Raclette Courdavault Category=Dairy Products UnitPrice=55.0000 UnitsInStock=79<br>
+ProductID=12 ProductName=Queso Manchego La Pastora Category=Dairy Products UnitPrice=38.0000 UnitsInStock=86<br>
+ProductID=69 ProductName=Gudbrandsdalsost Category=Dairy Products UnitPrice=36.0000 UnitsInStock=26<br>
+ProductID=72 ProductName=Mozzarella di Giovanni Category=Dairy Products UnitPrice=34.8000 UnitsInStock=14<br>
+ProductID=60 ProductName=Camembert Pierrot Category=Dairy Products UnitPrice=34.0000 UnitsInStock=19<br>
+ProductID=32 ProductName=Mascarpone Fabioli Category=Dairy Products UnitPrice=32.0000 UnitsInStock=9<br>
+ProductID=71 ProductName=Flotemysost Category=Dairy Products UnitPrice=21.5000 UnitsInStock=26<br>
+ProductID=11 ProductName=Queso Cabrales Category=Dairy Products UnitPrice=21.0000 UnitsInStock=22<br>
+ProductID=31 ProductName=Gorgonzola Telino Category=Dairy Products UnitPrice=12.5000 UnitsInStock=0<br>
+ProductID=33 ProductName=Geitost Category=Dairy Products UnitPrice=2.5000 UnitsInStock=112<br>
+ProductID=56 ProductName=Gnocchi di nonna Alice Category=Grains/Cereals UnitPrice=38.0000 UnitsInStock=21<br>
+ProductID=64 ProductName=Wimmers gute Semmelkn&Atilde;&para;del Category=Grains/Cereals UnitPrice=33.2500 UnitsInStock=22<br>
+ProductID=22 ProductName=Gustaf's Kn&Atilde;&curren;ckebr&Atilde;&para;d Category=Grains/Cereals UnitPrice=21.0000 UnitsInStock=104<br>
+ProductID=57 ProductName=Ravioli Angelo Category=Grains/Cereals UnitPrice=19.5000 UnitsInStock=36<br>
+ProductID=42 ProductName=Singaporean Hokkien Fried Mee Category=Grains/Cereals UnitPrice=14.0000 UnitsInStock=26<br>
+ProductID=23 ProductName=Tunnbr&Atilde;&para;d Category=Grains/Cereals UnitPrice=9.0000 UnitsInStock=61<br>
+ProductID=52 ProductName=Filo Mix Category=Grains/Cereals UnitPrice=7.0000 UnitsInStock=38<br>
+ProductID=29 ProductName=Th&Atilde;&frac14;ringer Rostbratwurst Category=Meat/Poultry UnitPrice=123.7900 UnitsInStock=0<br>
+ProductID=9 ProductName=Mishi Kobe Niku Category=Meat/Poultry UnitPrice=97.0000 UnitsInStock=29<br>
+ProductID=17 ProductName=Alice Mutton Category=Meat/Poultry UnitPrice=39.0000 UnitsInStock=0<br>
+ProductID=53 ProductName=Perth Pasties Category=Meat/Poultry UnitPrice=32.8000 UnitsInStock=0<br>
+ProductID=55 ProductName=P&Atilde;&cent;t&Atilde;&copy; chinois Category=Meat/Poultry UnitPrice=24.0000 UnitsInStock=115<br>
+ProductID=54 ProductName=Tourti&Atilde;&uml;re Category=Meat/Poultry UnitPrice=7.4500 UnitsInStock=21<br>
+ProductID=51 ProductName=Manjimup Dried Apples Category=Produce UnitPrice=53.0000 UnitsInStock=20<br>
+ProductID=28 ProductName=R&Atilde;&para;ssle Sauerkraut Category=Produce UnitPrice=45.6000 UnitsInStock=26<br>
+ProductID=7 ProductName=Uncle Bob's Organic Dried Pears Category=Produce UnitPrice=30.0000 UnitsInStock=15<br>
+ProductID=14 ProductName=Tofu Category=Produce UnitPrice=23.2500 UnitsInStock=35<br>
+ProductID=74 ProductName=Longlife Tofu Category=Produce UnitPrice=10.0000 UnitsInStock=4<br>
+ProductID=18 ProductName=Carnarvon Tigers Category=Seafood UnitPrice=62.5000 UnitsInStock=42<br>
+ProductID=10 ProductName=Ikura Category=Seafood UnitPrice=31.0000 UnitsInStock=31<br>
+ProductID=37 ProductName=Gravad lax Category=Seafood UnitPrice=26.0000 UnitsInStock=11<br>
+ProductID=30 ProductName=Nord-Ost Matjeshering Category=Seafood UnitPrice=25.8900 UnitsInStock=10<br>
+ProductID=36 ProductName=Inlagd Sill Category=Seafood UnitPrice=19.0000 UnitsInStock=112<br>
+ProductID=40 ProductName=Boston Crab Meat Category=Seafood UnitPrice=18.4000 UnitsInStock=123<br>
+ProductID=73 ProductName=R&Atilde;&para;d Kaviar Category=Seafood UnitPrice=15.0000 UnitsInStock=101<br>
+ProductID=58 ProductName=Escargots de Bourgogne Category=Seafood UnitPrice=13.2500 UnitsInStock=62<br>
+ProductID=46 ProductName=Spegesild Category=Seafood UnitPrice=12.0000 UnitsInStock=95<br>
+ProductID=41 ProductName=Jack's New England Clam Chowder Category=Seafood UnitPrice=9.6500 UnitsInStock=85<br>
+ProductID=45 ProductName=Rogede sild Category=Seafood UnitPrice=9.5000 UnitsInStock=5<br>
+ProductID=13 ProductName=Konbu Category=Seafood UnitPrice=6.0000 UnitsInStock=24</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="ThenByDescendingComparer">ThenByDescending - Comparer</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses an OrderBy and a ThenBy clause with a custom comparer to sort first by word length and then by a case-insensitive descending sort of the words in an array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq38()
+{
+    string[] words = { &quot;aPPLE&quot;, &quot;AbAcUs&quot;, &quot;bRaNcH&quot;, &quot;BlUeBeRrY&quot;, &quot;ClOvEr&quot;, &quot;cHeRry&quot; };
+ 
+    var sortedWords =
+        words.OrderBy(a =&gt; a.Length)
+             .ThenByDescending(a =&gt; a, new CaseInsensitiveComparer());
+ 
+    ObjectDumper.Write(sortedWords);
+}
+ 
+public class CaseInsensitiveComparer : IComparer&lt;string&gt;
+{
+    public int Compare(string x, string y)
+    {
+        return string.Compare(x, y, StringComparison.OrdinalIgnoreCase);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq38()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;aPPLE&quot;</span>,&nbsp;<span class="js__string">&quot;AbAcUs&quot;</span>,&nbsp;<span class="js__string">&quot;bRaNcH&quot;</span>,&nbsp;<span class="js__string">&quot;BlUeBeRrY&quot;</span>,&nbsp;<span class="js__string">&quot;ClOvEr&quot;</span>,&nbsp;<span class="js__string">&quot;cHeRry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;sortedWords&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;words.OrderBy(a&nbsp;=&gt;&nbsp;a.Length)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ThenByDescending(a&nbsp;=&gt;&nbsp;a,&nbsp;<span class="js__operator">new</span>&nbsp;CaseInsensitiveComparer());&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(sortedWords);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;
+public&nbsp;class&nbsp;CaseInsensitiveComparer&nbsp;:&nbsp;IComparer&lt;string&gt;&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;int&nbsp;Compare(string&nbsp;x,&nbsp;string&nbsp;y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">return</span>&nbsp;string.Compare(x,&nbsp;y,&nbsp;StringComparison.OrdinalIgnoreCase);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><strong>Result</strong></div>
+<p style="padding-left:30px">aPPLE<br>
+ClOvEr<br>
+cHeRry<br>
+bRaNcH<br>
+AbAcUs<br>
+BlUeBeRrY</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="Reverse">Reverse</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Reverse to create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq39()
+{
+    string[] digits = { &quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot; };
+ 
+    var reversedIDigits = (
+        from d in digits
+        where d[1] == 'i'
+        select d)
+        .Reverse();
+ 
+    Console.WriteLine(&quot;A backwards list of the digits with a second character of 'i':&quot;);
+    foreach (var d in reversedIDigits)
+    {
+        Console.WriteLine(d);
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Linq39()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>[]&nbsp;digits&nbsp;=&nbsp;{&nbsp;<span class="cs__string">&quot;zero&quot;</span>,&nbsp;<span class="cs__string">&quot;one&quot;</span>,&nbsp;<span class="cs__string">&quot;two&quot;</span>,&nbsp;<span class="cs__string">&quot;three&quot;</span>,&nbsp;<span class="cs__string">&quot;four&quot;</span>,&nbsp;<span class="cs__string">&quot;five&quot;</span>,&nbsp;<span class="cs__string">&quot;six&quot;</span>,&nbsp;<span class="cs__string">&quot;seven&quot;</span>,&nbsp;<span class="cs__string">&quot;eight&quot;</span>,&nbsp;<span class="cs__string">&quot;nine&quot;</span>&nbsp;};&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;reversedIDigits&nbsp;=&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;d&nbsp;<span class="cs__keyword">in</span>&nbsp;digits&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;d[<span class="cs__number">1</span>]&nbsp;==&nbsp;<span class="cs__string">'i'</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;d)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Reverse();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;A&nbsp;backwards&nbsp;list&nbsp;of&nbsp;the&nbsp;digits&nbsp;with&nbsp;a&nbsp;second&nbsp;character&nbsp;of&nbsp;'i':&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;d&nbsp;<span class="cs__keyword">in</span>&nbsp;reversedIDigits)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(d);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<h3>Result</h3>
+<p style="padding-left:30px">A backwards list of the digits with a second character of 'i':<br>
+nine<br>
+eight<br>
+six<br>
+five</p>
+<p>&nbsp;</p>
+<p><span style="font-size:20px; font-weight:bold">Source Code Files</span></p>
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/sourcecode?fileId=23914&amp;pathId=1978010539">Program.cs</a>
+</li></ul>
+<h1><strong>101 LINQ Samples</strong></h1>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Restriction-Operators-b15d29ca">Restriction Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-to-DataSets-09787825">Projection Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Partitioning-Operators-c68aaccc">Partitioning Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../SQL-Ordering-Operators-050af19e">Ordering Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-to-DataSets-Grouping-c62703ea">Grouping Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Set-Operators-374f34fe">Set Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Conversion-Operators-e4e59714">Conversion Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Element-Operators-0f3f12ce">Element Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Element-Operators-0f3f12ce">Generation Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Quantifiers-f00e7e3e">Quantifiers</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Aggregate-Operators-c51b3869">Aggregate Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Miscellaneous-6b72bb2a">Miscellaneous Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-to-DataSets-Custom-41738490">Custom Sequence Operators</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Query-Execution-ce0d3b95">Query Execution</a> </li><li><a href="http://code.msdn.microsoft.com/SQL-Ordering-Operators-050af19e/../LINQ-Join-Operators-dabef4e9">Join Operators</a> </li></ul>
+<h1>More Information</h1>
+<p>For more information. see:</p>
+<ul>
+<li>Ordering guarantees in SQL Server... - <a href="http://blogs.msdn.com/b/sqltips/archive/2005/07/20/441053.aspx" >
+http://blogs.msdn.com/b/sqltips/archive/2005/07/20/441053.aspx</a> </li></ul>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

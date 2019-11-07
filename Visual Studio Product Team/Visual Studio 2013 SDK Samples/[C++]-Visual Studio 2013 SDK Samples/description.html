@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/23919b25-400e-4257-9804-4c2d150150acCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Visual Studio 2013 SDK Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Visual Studio 2013 SDK Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Extensibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/30/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VIsual-Studio-2013-SDK-728822a7">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Visual Studio 2013 SDK Samples</h1>
+<p>Visual Studio 2013 is an integrated development environment (IDE) that allows you to develop a wide variety of software applications quickly and easily. The Visual Studio SDK provides a framework that you can use to extend the functionality of Visual Studio
+ 2013.</p>
+<p>To get started first you will need to download and installed Visual Studio 2013 and the Visual Studio 2013 SDK. &nbsp;</p>
+<ol>
+<li><a href="http://www.visualstudio.com/downloads/download-visual-studio-vs">Visual Studio 2013</a>
+</li><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=40758">Visual Studio 2013 SDK</a>
+</li></ol>
+<p>&nbsp;The Visual Studio 2013 SDK will help you extend all aspects of the Visual Studio IDE.&nbsp; These samples will help provide examples on how to extend the following areas of Visual Studio:</p>
+<ul>
+<li>Adding menus and commands into the Menu system </li><li>Creating new Tool Windows </li><li>Extending the built in code editor </li><li>Creating new project and item templates </li><li>Creating and distributing custom controls </li><li>Adding new options in the Tools options dialog </li><li>Working with existing assests in project systems </li><li>Extending MSBuild </li><li>Creating new project systems </li><li>Managed, native and custom Debugger integration </li></ul>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--pe28959-->
+                        <!--pe28981-->
+                        <!--pe28964-->
+                        <!--pe28961-->
+                        <!--pe28986-->
+                        <!--ps28970-->
+                        <div id="item">
+                                <div><a href="Reference Package - VS 2013/description.html">Reference Package - VS 2013</a></div>
+                            <div>
+This sample shows how to create a Visual Studio package and how to add an  entry into the Help About dialog. 
+Reference Package
+&#160;
+Introduction:
+This sample will show you how to create a Visual Studio 2013 Package and add  an entry into the Visual Studio Help dialog.There is</div>
+                        </div>
+                        <!--pe28970-->
+                        <!--pe28972-->
+                        <!--ps28971-->
+                        <div id="item">
+                                <div><a href="Reference Service - VS 2013/description.html">Reference Service - VS 2013</a></div>
+                            <div>
+This sample shows how to be a Visual Studio service provider and how to  consume Visual Studio services.
+Introduction:
+There are three samples associated with this project, one for each  programming language.C++The sample contains  three main classes. A service provider packa</div>
+                        </div>
+                        <!--pe28971-->
+                        <!--pe28987-->
+                        <!--pe28980-->
+                        <!--pe28977-->
+                        <!--pe28969-->
+                        <!--pe28962-->
+                        <!--pe28979-->
+                        <!--pe28960-->
+                        <!--pe28978-->
+                        <!--pe28963-->
+                        <!--pe28966-->
+                        <!--pe28985-->
+                        <!--pe28976-->
+                        <!--pe28973-->
+                        <!--pe28983-->
+                        <!--pe28967-->
+                        <!--pe28965-->
+                        <!--pe28968-->
+                        <!--pe28975-->
+                        <!--pe28974-->
+                        <!--pe28984-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

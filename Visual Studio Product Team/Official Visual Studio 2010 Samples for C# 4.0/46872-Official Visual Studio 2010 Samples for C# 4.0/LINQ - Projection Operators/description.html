@@ -1,0 +1,1785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>LINQ - Projection Operators</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>LINQ - Projection Operators</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            LINQ to DataSets, Projection Operators
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/11/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td align="left" valign="middle" style="background-color:#c0c0c0"><span style="color:#ffffff; font-size:x-large">&nbsp;Part of the 101 LINQ SAMPLES</span></td>
+</tr>
+</tbody>
+</table>
+<div class="RoundedBox">
+<div class="boxheader">
+<div class="BostonPostCard"></div>
+</div>
+<div class="boxheader"><span style="font-size:medium; background-color:#ffffff; color:#333333">Learn how to use LINQ in your applications with these code samples, covering the entire range of LINQ functionality and demonstrating LINQ with SQL, DataSets, and
+ XML.</span></div>
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td width="50px" align="left" valign="middle"><a href="http://archive.msdn.microsoft.com/vb2008samples/Release/ProjectReleases.aspx?ReleaseId=1426"><img title="101 Samples for Visual Basic 2005" src="http://i.msdn.microsoft.com/dd183105.download_45(en-us,MSDN.10).jpg" alt="101 Samples for Visual Basic 2005" align="left"></a></td>
+<td align="left" valign="middle"><span style="font-size:medium"><strong><a href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b/viewsamplepack">Browse all 101 LINQ Samples</a>&nbsp;</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+<h1 id="Introduction">Introduction</h1>
+<p>This sample shows different uses of Projection Operators:</p>
+<ul class="bulletedlist">
+<li><a href="#SelectSimple1">Select - Simple 1</a> </li><li><a href="#SelectSimple2">Select - Simple 2</a> </li><li><a href="#SelectTransformation">Select - Transformation</a> </li><li><a href="#SelectAnonymousTypes1">Select - Anonymous Types 1</a> </li><li><a href="#SelectAnonymousTypes2">Select - Anonymous Types 2</a> </li><li><a href="#SelectAnonymousTypes3">Select - Anonymous Types 3</a> </li><li><a href="#SelectIndexed">Select - Indexed</a> </li><li><a href="#SelectFiltered">Select - Filtered</a> </li><li><a href="#SelectManyCompoundfrom1">SelectMany - Compound from 1</a> </li><li><a href="#SelectManyCompoundfrom2">SelectMany - Compound from 2</a> </li><li><a href="#SelectManyCompoundfrom3">SelectMany - Compound from 3</a> </li><li><a href="#SelectManyfromAssignment">SelectMany - from Assignment</a> </li><li><a href="#SelectManyMultiplefrom">SelectMany - Multiple from</a> </li><li><a href="#SelectManyIndexed">SelectMany - Indexed</a> </li></ul>
+<h1><span>Building the Sample</span></h1>
+<ol>
+<li>Open the Program.cs </li><li>Comment or uncomment the desired samples </li><li>Press Ctrl &#43; F5 </li></ol>
+<h1>Description</h1>
+<div class="fullwidth">
+<div class="BostonPostCard">
+<h2 id="SelectSimple1">Select - Simple 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to produce a sequence of ints one higher than those in an existing array of ints.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq6()
+{
+    int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+ 
+    var numsPlusOne =
+        from n in numbers
+        select n &#43; 1;
+ 
+    Console.WriteLine(&quot;Numbers &#43; 1:&quot;);
+    foreach (var i in numsPlusOne)
+    {
+        Console.WriteLine(i);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq6()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbers&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">9</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">0</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;numsPlusOne&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;numbers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;n&nbsp;&#43;&nbsp;<span class="js__num">1</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Numbers&nbsp;&#43;&nbsp;1:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;i&nbsp;<span class="js__operator">in</span>&nbsp;numsPlusOne)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(i);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong>Result</strong></div>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">Numbers &#43; 1:<br>
+6<br>
+5<br>
+2<br>
+4<br>
+10<br>
+9<br>
+7<br>
+8<br>
+3<br>
+1</p>
+<h2 id="SelectSimple2">Select - Simple 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to return a sequence of just the names of a list of products.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq7()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var productNames =
+        from p in products
+        select p.ProductName;
+ 
+    Console.WriteLine(&quot;Product Names:&quot;);
+    foreach (var productName in productNames)
+    {
+        Console.WriteLine(productName);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq7()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productNames&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p.ProductName;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Product&nbsp;Names:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;productName&nbsp;<span class="js__operator">in</span>&nbsp;productNames)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(productName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3 class="endscriptcode">Result</h3>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">Product Names:<br>
+Chai<br>
+Chang<br>
+Aniseed Syrup<br>
+Chef Anton's Cajun Seasoning<br>
+Chef Anton's Gumbo Mix<br>
+Grandma's Boysenberry Spread<br>
+Uncle Bob's Organic Dried Pears<br>
+Northwoods Cranberry Sauce<br>
+Mishi Kobe Niku<br>
+Ikura<br>
+Queso Cabrales<br>
+Queso Manchego La Pastora<br>
+Konbu<br>
+Tofu<br>
+Genen Shouyu<br>
+Pavlova<br>
+Alice Mutton<br>
+Carnarvon Tigers<br>
+Teatime Chocolate Biscuits<br>
+Sir Rodney's Marmalade<br>
+Sir Rodney's Scones<br>
+Gustaf's Kn&Atilde;&curren;ckebr&Atilde;&para;d<br>
+Tunnbr&Atilde;&para;d<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica<br>
+NuNuCa Nu&Atilde;&Yuml;-Nougat-Creme<br>
+Gumb&Atilde;&curren;r Gummib&Atilde;&curren;rchen<br>
+Schoggi Schokolade<br>
+R&Atilde;&para;ssle Sauerkraut<br>
+Th&Atilde;&frac14;ringer Rostbratwurst<br>
+Nord-Ost Matjeshering<br>
+Gorgonzola Telino<br>
+Mascarpone Fabioli<br>
+Geitost<br>
+Sasquatch Ale<br>
+Steeleye Stout<br>
+Inlagd Sill<br>
+Gravad lax<br>
+C&Atilde;&acute;te de Blaye<br>
+Chartreuse verte<br>
+Boston Crab Meat<br>
+Jack's New England Clam Chowder<br>
+Singaporean Hokkien Fried Mee<br>
+Ipoh Coffee<br>
+Gula Malacca<br>
+Rogede sild<br>
+Spegesild<br>
+Zaanse koeken<br>
+Chocolade<br>
+Maxilaku<br>
+Valkoinen suklaa<br>
+Manjimup Dried Apples<br>
+Filo Mix<br>
+Perth Pasties<br>
+Tourti&Atilde;&uml;re<br>
+P&Atilde;&cent;t&Atilde;&copy; chinois<br>
+Gnocchi di nonna Alice<br>
+Ravioli Angelo<br>
+Escargots de Bourgogne<br>
+Raclette Courdavault<br>
+Camembert Pierrot<br>
+Sirop d'&Atilde;&copy;rable<br>
+Tarte au sucre<br>
+Vegie-spread<br>
+Wimmers gute Semmelkn&Atilde;&para;del<br>
+Louisiana Fiery Hot Pepper Sauce<br>
+Louisiana Hot Spiced Okra<br>
+Laughing Lumberjack Lager<br>
+Scottish Longbreads<br>
+Gudbrandsdalsost<br>
+Outback Lager<br>
+Flotemysost<br>
+Mozzarella di Giovanni<br>
+R&Atilde;&para;d Kaviar<br>
+Longlife Tofu<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e</p>
+<h2 id="SelectTransformation">Select - Transformation</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to produce a sequence of strings representing the text version of a sequence of ints.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq8()
+{
+    int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+    string[] strings = { &quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot; };
+ 
+    var textNums =
+        from n in numbers
+        select strings[n];
+ 
+    Console.WriteLine(&quot;Number strings:&quot;);
+    foreach (var s in textNums)
+    {
+        Console.WriteLine(s);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq8()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbers&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">9</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">0</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;strings&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;zero&quot;</span>,&nbsp;<span class="js__string">&quot;one&quot;</span>,&nbsp;<span class="js__string">&quot;two&quot;</span>,&nbsp;<span class="js__string">&quot;three&quot;</span>,&nbsp;<span class="js__string">&quot;four&quot;</span>,&nbsp;<span class="js__string">&quot;five&quot;</span>,&nbsp;<span class="js__string">&quot;six&quot;</span>,&nbsp;<span class="js__string">&quot;seven&quot;</span>,&nbsp;<span class="js__string">&quot;eight&quot;</span>,&nbsp;<span class="js__string">&quot;nine&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;textNums&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;numbers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;strings[n];&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Number&nbsp;strings:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;s&nbsp;<span class="js__operator">in</span>&nbsp;textNums)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(s);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">Number strings:<br>
+five<br>
+four<br>
+one<br>
+three<br>
+nine<br>
+eight<br>
+six<br>
+seven<br>
+two<br>
+zero</p>
+<h2 id="SelectAnonymousTypes1">Select - Anonymous Types 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to produce a sequence of the uppercase and lowercase versions of each word in the original array.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq9()
+{
+    string[] words = { &quot;aPPLE&quot;, &quot;BlUeBeRrY&quot;, &quot;cHeRry&quot; };
+ 
+    var upperLowerWords =
+        from w in words
+        select new { Upper = w.ToUpper(), Lower = w.ToLower() };
+ 
+    foreach (var ul in upperLowerWords)
+    {
+        Console.WriteLine(&quot;Uppercase: {0}, Lowercase: {1}&quot;, ul.Upper, ul.Lower);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq9()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;words&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;aPPLE&quot;</span>,&nbsp;<span class="js__string">&quot;BlUeBeRrY&quot;</span>,&nbsp;<span class="js__string">&quot;cHeRry&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;upperLowerWords&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;w&nbsp;<span class="js__operator">in</span>&nbsp;words&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;Upper&nbsp;=&nbsp;w.ToUpper(),&nbsp;Lower&nbsp;=&nbsp;w.ToLower()&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;ul&nbsp;<span class="js__operator">in</span>&nbsp;upperLowerWords)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Uppercase:&nbsp;{0},&nbsp;Lowercase:&nbsp;{1}&quot;</span>,&nbsp;ul.Upper,&nbsp;ul.Lower);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Uppercase: APPLE, Lowercase: apple<br>
+Uppercase: BLUEBERRY, Lowercase: blueberry<br>
+Uppercase: CHERRY, Lowercase: cherry</p>
+<h2 id="SelectAnonymousTypes2">Select - Anonymous Types 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to produce a sequence containing text representations of digits and whether their length is even or odd.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq10()
+{
+    int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+    string[] strings = { &quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot; };
+ 
+    var digitOddEvens =
+        from n in numbers
+        select new { Digit = strings[n], Even = (n % 2 == 0) };
+ 
+    foreach (var d in digitOddEvens)
+    {
+        Console.WriteLine(&quot;The digit {0} is {1}.&quot;, d.Digit, d.Even ? &quot;even&quot; : &quot;odd&quot;);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq10()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbers&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">9</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">0</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;strings&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;zero&quot;</span>,&nbsp;<span class="js__string">&quot;one&quot;</span>,&nbsp;<span class="js__string">&quot;two&quot;</span>,&nbsp;<span class="js__string">&quot;three&quot;</span>,&nbsp;<span class="js__string">&quot;four&quot;</span>,&nbsp;<span class="js__string">&quot;five&quot;</span>,&nbsp;<span class="js__string">&quot;six&quot;</span>,&nbsp;<span class="js__string">&quot;seven&quot;</span>,&nbsp;<span class="js__string">&quot;eight&quot;</span>,&nbsp;<span class="js__string">&quot;nine&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;digitOddEvens&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;numbers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;Digit&nbsp;=&nbsp;strings[n],&nbsp;Even&nbsp;=&nbsp;(n&nbsp;%&nbsp;<span class="js__num">2</span>&nbsp;==&nbsp;<span class="js__num">0</span>)&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;d&nbsp;<span class="js__operator">in</span>&nbsp;digitOddEvens)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;The&nbsp;digit&nbsp;{0}&nbsp;is&nbsp;{1}.&quot;</span>,&nbsp;d.Digit,&nbsp;d.Even&nbsp;?&nbsp;<span class="js__string">&quot;even&quot;</span>&nbsp;:&nbsp;<span class="js__string">&quot;odd&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">The digit five is odd.<br>
+The digit four is even.<br>
+The digit one is odd.<br>
+The digit three is odd.<br>
+The digit nine is odd.<br>
+The digit eight is even.<br>
+The digit six is even.<br>
+The digit seven is odd.<br>
+The digit two is even.<br>
+The digit zero is even.</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="SelectAnonymousTypes3">Select - Anonymous Types 3</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses select to produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq11()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var productInfos =
+        from p in products
+        select new { p.ProductName, p.Category, Price = p.UnitPrice };
+ 
+    Console.WriteLine(&quot;Product Info:&quot;);
+    foreach (var productInfo in productInfos)
+    {
+        Console.WriteLine(&quot;{0} is in the category {1} and costs {2} per unit.&quot;, productInfo.ProductName, productInfo.Category, productInfo.Price);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq11()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productInfos&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;p.ProductName,&nbsp;p.Category,&nbsp;Price&nbsp;=&nbsp;p.UnitPrice&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Product&nbsp;Info:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;productInfo&nbsp;<span class="js__operator">in</span>&nbsp;productInfos)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;{0}&nbsp;is&nbsp;in&nbsp;the&nbsp;category&nbsp;{1}&nbsp;and&nbsp;costs&nbsp;{2}&nbsp;per&nbsp;unit.&quot;</span>,&nbsp;productInfo.ProductName,&nbsp;productInfo.Category,&nbsp;productInfo.Price);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Product Info:<br>
+Chai is in the category Beverages and costs 18.0000 per unit.<br>
+Chang is in the category Beverages and costs 19.0000 per unit.<br>
+Aniseed Syrup is in the category Condiments and costs 10.0000 per unit.<br>
+Chef Anton's Cajun Seasoning is in the category Condiments and costs 22.0000 per unit.<br>
+Chef Anton's Gumbo Mix is in the category Condiments and costs 21.3500 per unit.<br>
+Grandma's Boysenberry Spread is in the category Condiments and costs 25.0000 per unit.<br>
+Uncle Bob's Organic Dried Pears is in the category Produce and costs 30.0000 per unit.<br>
+Northwoods Cranberry Sauce is in the category Condiments and costs 40.0000 per unit.<br>
+Mishi Kobe Niku is in the category Meat/Poultry and costs 97.0000 per unit.<br>
+Ikura is in the category Seafood and costs 31.0000 per unit.<br>
+Queso Cabrales is in the category Dairy Products and costs 21.0000 per unit.<br>
+Queso Manchego La Pastora is in the category Dairy Products and costs 38.0000 per unit.<br>
+Konbu is in the category Seafood and costs 6.0000 per unit.<br>
+Tofu is in the category Produce and costs 23.2500 per unit.<br>
+Genen Shouyu is in the category Condiments and costs 15.5000 per unit.<br>
+Pavlova is in the category Confections and costs 17.4500 per unit.<br>
+Alice Mutton is in the category Meat/Poultry and costs 39.0000 per unit.<br>
+Carnarvon Tigers is in the category Seafood and costs 62.5000 per unit.<br>
+Teatime Chocolate Biscuits is in the category Confections and costs 9.2000 per unit.<br>
+Sir Rodney's Marmalade is in the category Confections and costs 81.0000 per unit.<br>
+Sir Rodney's Scones is in the category Confections and costs 10.0000 per unit.<br>
+Gustaf's Kn&Atilde;&curren;ckebr&Atilde;&para;d is in the category Grains/Cereals and costs 21.0000 per unit.<br>
+Tunnbr&Atilde;&para;d is in the category Grains/Cereals and costs 9.0000 per unit.<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica is in the category Beverages and costs 4.5000 per unit.<br>
+NuNuCa Nu&Atilde;&Yuml;-Nougat-Creme is in the category Confections and costs 14.0000 per unit.<br>
+Gumb&Atilde;&curren;r Gummib&Atilde;&curren;rchen is in the category Confections and costs 31.2300 per unit.<br>
+Schoggi Schokolade is in the category Confections and costs 43.9000 per unit.<br>
+R&Atilde;&para;ssle Sauerkraut is in the category Produce and costs 45.6000 per unit.<br>
+Th&Atilde;&frac14;ringer Rostbratwurst is in the category Meat/Poultry and costs 123.7900 per unit.<br>
+Nord-Ost Matjeshering is in the category Seafood and costs 25.8900 per unit.<br>
+Gorgonzola Telino is in the category Dairy Products and costs 12.5000 per unit.<br>
+Mascarpone Fabioli is in the category Dairy Products and costs 32.0000 per unit.<br>
+Geitost is in the category Dairy Products and costs 2.5000 per unit.<br>
+Sasquatch Ale is in the category Beverages and costs 14.0000 per unit.<br>
+Steeleye Stout is in the category Beverages and costs 18.0000 per unit.<br>
+Inlagd Sill is in the category Seafood and costs 19.0000 per unit.<br>
+Gravad lax is in the category Seafood and costs 26.0000 per unit.<br>
+C&Atilde;&acute;te de Blaye is in the category Beverages and costs 263.5000 per unit.<br>
+Chartreuse verte is in the category Beverages and costs 18.0000 per unit.<br>
+Boston Crab Meat is in the category Seafood and costs 18.4000 per unit.<br>
+Jack's New England Clam Chowder is in the category Seafood and costs 9.6500 per unit.<br>
+Singaporean Hokkien Fried Mee is in the category Grains/Cereals and costs 14.0000 per unit.<br>
+Ipoh Coffee is in the category Beverages and costs 46.0000 per unit.<br>
+Gula Malacca is in the category Condiments and costs 19.4500 per unit.<br>
+Rogede sild is in the category Seafood and costs 9.5000 per unit.<br>
+Spegesild is in the category Seafood and costs 12.0000 per unit.<br>
+Zaanse koeken is in the category Confections and costs 9.5000 per unit.<br>
+Chocolade is in the category Confections and costs 12.7500 per unit.<br>
+Maxilaku is in the category Confections and costs 20.0000 per unit.<br>
+Valkoinen suklaa is in the category Confections and costs 16.2500 per unit.<br>
+Manjimup Dried Apples is in the category Produce and costs 53.0000 per unit.<br>
+Filo Mix is in the category Grains/Cereals and costs 7.0000 per unit.<br>
+Perth Pasties is in the category Meat/Poultry and costs 32.8000 per unit.<br>
+Tourti&Atilde;&uml;re is in the category Meat/Poultry and costs 7.4500 per unit.<br>
+P&Atilde;&cent;t&Atilde;&copy; chinois is in the category Meat/Poultry and costs 24.0000 per unit.<br>
+Gnocchi di nonna Alice is in the category Grains/Cereals and costs 38.0000 per unit.<br>
+Ravioli Angelo is in the category Grains/Cereals and costs 19.5000 per unit.<br>
+Escargots de Bourgogne is in the category Seafood and costs 13.2500 per unit.<br>
+Raclette Courdavault is in the category Dairy Products and costs 55.0000 per unit.<br>
+Camembert Pierrot is in the category Dairy Products and costs 34.0000 per unit.<br>
+Sirop d'&Atilde;&copy;rable is in the category Condiments and costs 28.5000 per unit.<br>
+Tarte au sucre is in the category Confections and costs 49.3000 per unit.<br>
+Vegie-spread is in the category Condiments and costs 43.9000 per unit.<br>
+Wimmers gute Semmelkn&Atilde;&para;del is in the category Grains/Cereals and costs 33.2500 per unit.<br>
+Louisiana Fiery Hot Pepper Sauce is in the category Condiments and costs 21.0500 per unit.<br>
+Louisiana Hot Spiced Okra is in the category Condiments and costs 17.0000 per unit.<br>
+Laughing Lumberjack Lager is in the category Beverages and costs 14.0000 per unit.<br>
+Scottish Longbreads is in the category Confections and costs 12.5000 per unit.<br>
+Gudbrandsdalsost is in the category Dairy Products and costs 36.0000 per unit.<br>
+Outback Lager is in the category Beverages and costs 15.0000 per unit.<br>
+Flotemysost is in the category Dairy Products and costs 21.5000 per unit.<br>
+Mozzarella di Giovanni is in the category Dairy Products and costs 34.8000 per unit.<br>
+R&Atilde;&para;d Kaviar is in the category Seafood and costs 15.0000 per unit.<br>
+Longlife Tofu is in the category Produce and costs 10.0000 per unit.<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier is in the category Beverages and costs 7.7500 per unit.<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri is in the category Beverages and costs 18.0000 per unit.<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e is in the category Condiments and costs 13.0000 per unit.</p>
+<h2 id="SelectIndexed">Select - Indexed</h2>
+<p>This sample uses an indexed Select clause to determine if the value of ints in an array match their position in the array.</p>
+<p><span style="font-size:10px; font-weight:normal">&nbsp;(<a href="#Introduction" >back to top</a>)</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq12()
+{
+    int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+ 
+    var numsInPlace = numbers.Select((num, index) =&gt; new { Num = num, InPlace = (num == index) });
+ 
+    Console.WriteLine(&quot;Number: In-place?&quot;);
+    foreach (var n in numsInPlace)
+    {
+        Console.WriteLine(&quot;{0}: {1}&quot;, n.Num, n.InPlace);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq12()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbers&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">9</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">0</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;numsInPlace&nbsp;=&nbsp;numbers.Select((num,&nbsp;index)&nbsp;=&gt;&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;Num&nbsp;=&nbsp;num,&nbsp;InPlace&nbsp;=&nbsp;(num&nbsp;==&nbsp;index)&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Number:&nbsp;In-place?&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;numsInPlace)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;{0}:&nbsp;{1}&quot;</span>,&nbsp;n.Num,&nbsp;n.InPlace);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></p>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">Number: In-place?<br>
+5: False<br>
+4: False<br>
+1: False<br>
+3: True<br>
+9: False<br>
+8: False<br>
+6: True<br>
+7: True<br>
+2: False<br>
+0: False</p>
+<h2 id="SelectFiltered">Select - Filtered</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample combines select and where to make a simple query that returns the text form of each digit less than 5.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq13()
+{
+    int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+    string[] digits = { &quot;zero&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;, &quot;seven&quot;, &quot;eight&quot;, &quot;nine&quot; };
+ 
+    var lowNums =
+        from n in numbers
+        where n &lt; 5
+        select digits[n];
+ 
+    Console.WriteLine(&quot;Numbers &lt; 5:&quot;);
+    foreach (var num in lowNums)
+    {
+        Console.WriteLine(num);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq13()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbers&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">9</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">0</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;digits&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__string">&quot;zero&quot;</span>,&nbsp;<span class="js__string">&quot;one&quot;</span>,&nbsp;<span class="js__string">&quot;two&quot;</span>,&nbsp;<span class="js__string">&quot;three&quot;</span>,&nbsp;<span class="js__string">&quot;four&quot;</span>,&nbsp;<span class="js__string">&quot;five&quot;</span>,&nbsp;<span class="js__string">&quot;six&quot;</span>,&nbsp;<span class="js__string">&quot;seven&quot;</span>,&nbsp;<span class="js__string">&quot;eight&quot;</span>,&nbsp;<span class="js__string">&quot;nine&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;lowNums&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;numbers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;n&nbsp;&lt;&nbsp;<span class="js__num">5</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;digits[n];&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Numbers&nbsp;&lt;&nbsp;5:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;num&nbsp;<span class="js__operator">in</span>&nbsp;lowNums)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(num);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Numbers &lt; 5:<br>
+four<br>
+one<br>
+three<br>
+two<br>
+zero</p>
+<h2 id="SelectManyCompoundfrom1">SelectMany - Compound from 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses a compound from clause to make a query that returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq14()
+{
+    int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+    int[] numbersB = { 1, 3, 5, 7, 8 };
+ 
+    var pairs =
+        from a in numbersA
+        from b in numbersB
+        where a &lt; b
+        select new { a, b };
+ 
+    Console.WriteLine(&quot;Pairs where a &lt; b:&quot;);
+    foreach (var pair in pairs)
+    {
+        Console.WriteLine(&quot;{0} is less than {1}&quot;, pair.a, pair.b);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq14()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersA&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">0</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">9</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersB&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">8</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;pairs&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;a&nbsp;<span class="js__operator">in</span>&nbsp;numbersA&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;b&nbsp;<span class="js__operator">in</span>&nbsp;numbersB&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;a&nbsp;&lt;&nbsp;b&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;a,&nbsp;b&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Pairs&nbsp;where&nbsp;a&nbsp;&lt;&nbsp;b:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;pair&nbsp;<span class="js__operator">in</span>&nbsp;pairs)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;{0}&nbsp;is&nbsp;less&nbsp;than&nbsp;{1}&quot;</span>,&nbsp;pair.a,&nbsp;pair.b);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Pairs where a &lt; b:<br>
+0 is less than 1<br>
+0 is less than 3<br>
+0 is less than 5<br>
+0 is less than 7<br>
+0 is less than 8<br>
+2 is less than 3<br>
+2 is less than 5<br>
+2 is less than 7<br>
+2 is less than 8<br>
+4 is less than 5<br>
+4 is less than 7<br>
+4 is less than 8<br>
+5 is less than 7<br>
+5 is less than 8<br>
+6 is less than 7<br>
+6 is less than 8</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="SelectManyCompoundfrom2">SelectMany - Compound from 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses a compound from clause to select all orders where the order total is less than 500.00.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq15()
+{
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var orders =
+        from c in customers
+        from o in c.Orders
+        where o.Total &lt; 500.00M
+        select new { c.CustomerID, o.OrderID, o.Total };
+ 
+    ObjectDumper.Write(orders);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq15()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;orders&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;o&nbsp;<span class="js__operator">in</span>&nbsp;c.Orders&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;o.Total&nbsp;&lt;&nbsp;<span class="js__num">500</span>.00M&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;c.CustomerID,&nbsp;o.OrderID,&nbsp;o.Total&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(orders);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="CodeHighlighter"></div>
+<div class="BostonPostCard">
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">CustomerID=ALFKI OrderID=10702 Total=330.00<br>
+CustomerID=ALFKI OrderID=10952 Total=471.20<br>
+CustomerID=ANATR OrderID=10308 Total=88.80<br>
+CustomerID=ANATR OrderID=10625 Total=479.75<br>
+CustomerID=ANATR OrderID=10759 Total=320.00<br>
+CustomerID=ANTON OrderID=10365 Total=403.20<br>
+CustomerID=ANTON OrderID=10682 Total=375.50<br>
+CustomerID=AROUT OrderID=10355 Total=480.00<br>
+CustomerID=AROUT OrderID=10453 Total=407.70<br>
+CustomerID=AROUT OrderID=10741 Total=228.00<br>
+CustomerID=AROUT OrderID=10743 Total=319.20<br>
+CustomerID=AROUT OrderID=10793 Total=191.10<br>
+CustomerID=AROUT OrderID=10864 Total=282.00<br>
+CustomerID=AROUT OrderID=10920 Total=390.00<br>
+CustomerID=AROUT OrderID=11016 Total=491.50<br>
+CustomerID=BERGS OrderID=10445 Total=174.90<br>
+CustomerID=BERGS OrderID=10689 Total=472.50<br>
+CustomerID=BERGS OrderID=10778 Total=96.50<br>
+CustomerID=BLAUS OrderID=10501 Total=149.00<br>
+CustomerID=BLAUS OrderID=10509 Total=136.80<br>
+CustomerID=BLAUS OrderID=10582 Total=330.00<br>
+CustomerID=BLAUS OrderID=10614 Total=464.00<br>
+CustomerID=BLONP OrderID=10628 Total=450.00<br>
+CustomerID=BOLID OrderID=10970 Total=224.00<br>
+CustomerID=BONAP OrderID=10331 Total=88.50<br>
+CustomerID=BONAP OrderID=10730 Total=484.26<br>
+CustomerID=BONAP OrderID=10732 Total=360.00<br>
+CustomerID=BONAP OrderID=10940 Total=360.00<br>
+CustomerID=BSBEV OrderID=10289 Total=479.40<br>
+CustomerID=BSBEV OrderID=10484 Total=386.20<br>
+CustomerID=BSBEV OrderID=10538 Total=139.80<br>
+CustomerID=BSBEV OrderID=10539 Total=355.50<br>
+CustomerID=BSBEV OrderID=10578 Total=477.00<br>
+CustomerID=BSBEV OrderID=10599 Total=493.00<br>
+CustomerID=BSBEV OrderID=10947 Total=220.00<br>
+CustomerID=CACTU OrderID=10521 Total=225.50<br>
+CustomerID=CACTU OrderID=10782 Total=12.50<br>
+CustomerID=CACTU OrderID=10819 Total=477.00<br>
+CustomerID=CACTU OrderID=10881 Total=150.00<br>
+CustomerID=CACTU OrderID=11054 Total=305.00<br>
+CustomerID=CENTC OrderID=10259 Total=100.80<br>
+CustomerID=COMMI OrderID=10466 Total=216.00<br>
+CustomerID=COMMI OrderID=10969 Total=108.00<br>
+CustomerID=COMMI OrderID=11042 Total=405.75<br>
+CustomerID=CONSH OrderID=10462 Total=156.00<br>
+CustomerID=DRACD OrderID=10363 Total=447.20<br>
+CustomerID=DRACD OrderID=10391 Total=86.40<br>
+CustomerID=DRACD OrderID=10797 Total=420.00<br>
+CustomerID=DRACD OrderID=11067 Total=86.85<br>
+CustomerID=DUMON OrderID=10311 Total=268.80<br>
+CustomerID=DUMON OrderID=10609 Total=424.00<br>
+CustomerID=DUMON OrderID=10683 Total=63.00<br>
+CustomerID=ERNSH OrderID=10771 Total=344.00<br>
+CustomerID=FAMIA OrderID=10386 Total=166.00<br>
+CustomerID=FAMIA OrderID=10414 Total=224.83<br>
+CustomerID=FAMIA OrderID=10581 Total=310.00<br>
+CustomerID=FAMIA OrderID=10725 Total=287.80<br>
+CustomerID=FOLKO OrderID=10378 Total=103.20<br>
+CustomerID=FOLKO OrderID=10434 Total=321.12<br>
+CustomerID=FOLKO OrderID=10460 Total=176.10<br>
+CustomerID=FOLKO OrderID=10824 Total=250.80<br>
+CustomerID=FOLKO OrderID=10955 Total=74.40<br>
+CustomerID=FOLKO OrderID=10980 Total=248.00<br>
+CustomerID=FRANS OrderID=10422 Total=49.80<br>
+CustomerID=FRANS OrderID=10710 Total=93.50<br>
+CustomerID=FRANS OrderID=10753 Total=88.00<br>
+CustomerID=FRANS OrderID=10807 Total=18.40<br>
+CustomerID=FRANS OrderID=11060 Total=266.00<br>
+CustomerID=FURIB OrderID=10352 Total=136.30<br>
+CustomerID=FURIB OrderID=10491 Total=259.50<br>
+CustomerID=FURIB OrderID=10604 Total=230.85<br>
+CustomerID=FURIB OrderID=10963 Total=57.80<br>
+CustomerID=GALED OrderID=10366 Total=136.00<br>
+CustomerID=GALED OrderID=10426 Total=338.20<br>
+CustomerID=GALED OrderID=10568 Total=155.00<br>
+CustomerID=GALED OrderID=10887 Total=70.00<br>
+CustomerID=GALED OrderID=10928 Total=137.50<br>
+CustomerID=GODOS OrderID=10874 Total=310.00<br>
+CustomerID=GODOS OrderID=11037 Total=60.00<br>
+CustomerID=GOURL OrderID=10652 Total=318.84<br>
+CustomerID=GOURL OrderID=10777 Total=224.00<br>
+CustomerID=GOURL OrderID=10959 Total=131.75<br>
+CustomerID=GOURL OrderID=11049 Total=273.60<br>
+CustomerID=GREAL OrderID=10528 Total=392.20<br>
+CustomerID=GREAL OrderID=10589 Total=72.00<br>
+CustomerID=GREAL OrderID=10936 Total=456.00<br>
+CustomerID=GREAL OrderID=11006 Total=329.68<br>
+CustomerID=GREAL OrderID=11040 Total=200.00<br>
+CustomerID=GROSR OrderID=10785 Total=387.50<br>
+CustomerID=HANAR OrderID=10770 Total=236.25<br>
+CustomerID=HANAR OrderID=10925 Total=475.15<br>
+CustomerID=HILAA OrderID=10476 Total=180.48<br>
+CustomerID=HILAA OrderID=10613 Total=353.20<br>
+CustomerID=HILAA OrderID=10705 Total=378.00<br>
+CustomerID=HILAA OrderID=10863 Total=441.15<br>
+CustomerID=HILAA OrderID=10960 Total=265.35<br>
+CustomerID=HUNGC OrderID=10375 Total=338.00<br>
+CustomerID=HUNGC OrderID=10394 Total=442.00<br>
+CustomerID=HUNGC OrderID=10415 Total=102.40<br>
+CustomerID=HUNGC OrderID=10600 Total=479.80<br>
+CustomerID=ISLAT OrderID=10318 Total=240.40<br>
+CustomerID=ISLAT OrderID=10321 Total=144.00<br>
+CustomerID=ISLAT OrderID=10473 Total=230.40<br>
+CustomerID=ISLAT OrderID=10674 Total=45.00<br>
+CustomerID=ISLAT OrderID=10798 Total=446.60<br>
+CustomerID=KOENE OrderID=10323 Total=164.40<br>
+CustomerID=KOENE OrderID=10506 Total=415.80<br>
+CustomerID=KOENE OrderID=10542 Total=469.11<br>
+CustomerID=LACOR OrderID=10972 Total=251.50<br>
+CustomerID=LACOR OrderID=10973 Total=291.55<br>
+CustomerID=LAMAI OrderID=10358 Total=429.40<br>
+CustomerID=LAMAI OrderID=10371 Total=72.96<br>
+CustomerID=LAMAI OrderID=10425 Total=360.00<br>
+CustomerID=LAMAI OrderID=10454 Total=331.20<br>
+CustomerID=LAMAI OrderID=10610 Total=299.25<br>
+CustomerID=LAMAI OrderID=10631 Total=55.80<br>
+CustomerID=LAMAI OrderID=10832 Total=475.11<br>
+CustomerID=LAMAI OrderID=11051 Total=36.00<br>
+CustomerID=LAUGB OrderID=10495 Total=278.00<br>
+CustomerID=LAUGB OrderID=10620 Total=57.50<br>
+CustomerID=LAUGB OrderID=10810 Total=187.00<br>
+CustomerID=LAZYK OrderID=10482 Total=147.00<br>
+CustomerID=LAZYK OrderID=10545 Total=210.00<br>
+CustomerID=LEHMS OrderID=10279 Total=351.00<br>
+CustomerID=LEHMS OrderID=10534 Total=465.70<br>
+CustomerID=LEHMS OrderID=10891 Total=368.93<br>
+CustomerID=LETSS OrderID=10579 Total=317.75<br>
+CustomerID=LILAS OrderID=10381 Total=112.00<br>
+CustomerID=LILAS OrderID=10899 Total=122.40<br>
+CustomerID=LILAS OrderID=11065 Total=189.42<br>
+CustomerID=LILAS OrderID=11071 Total=484.50<br>
+CustomerID=LINOD OrderID=10405 Total=400.00<br>
+CustomerID=LINOD OrderID=10840 Total=211.20<br>
+CustomerID=LINOD OrderID=11014 Total=243.18<br>
+CustomerID=LONEP OrderID=10307 Total=424.00<br>
+CustomerID=LONEP OrderID=10317 Total=288.00<br>
+CustomerID=LONEP OrderID=10544 Total=417.20<br>
+CustomerID=LONEP OrderID=10662 Total=125.00<br>
+CustomerID=LONEP OrderID=10867 Total=98.40<br>
+CustomerID=LONEP OrderID=10883 Total=36.00<br>
+CustomerID=MAGAA OrderID=10275 Total=291.84<br>
+CustomerID=MAGAA OrderID=10467 Total=235.20<br>
+CustomerID=MAGAA OrderID=10754 Total=55.20<br>
+CustomerID=MAGAA OrderID=10950 Total=110.00<br>
+CustomerID=MAISD OrderID=11004 Total=295.38<br>
+CustomerID=MEREP OrderID=10376 Total=399.00<br>
+CustomerID=MEREP OrderID=10505 Total=147.90<br>
+CustomerID=MORGK OrderID=10699 Total=114.00<br>
+CustomerID=MORGK OrderID=10945 Total=245.00<br>
+CustomerID=NORTS OrderID=10517 Total=352.00<br>
+CustomerID=NORTS OrderID=10752 Total=252.00<br>
+CustomerID=NORTS OrderID=11057 Total=45.00<br>
+CustomerID=OCEAN OrderID=10409 Total=319.20<br>
+CustomerID=OCEAN OrderID=10531 Total=110.00<br>
+CustomerID=OCEAN OrderID=10898 Total=30.00<br>
+CustomerID=OTTIK OrderID=10508 Total=240.00<br>
+CustomerID=PERIC OrderID=10322 Total=112.00<br>
+CustomerID=PERIC OrderID=11073 Total=300.00<br>
+CustomerID=PICCO OrderID=10489 Total=439.20<br>
+CustomerID=PRINI OrderID=10336 Total=285.12<br>
+CustomerID=QUEDE OrderID=10261 Total=448.00<br>
+CustomerID=QUEDE OrderID=10291 Total=497.52<br>
+CustomerID=QUEDE OrderID=10794 Total=314.76<br>
+CustomerID=QUICK OrderID=10313 Total=182.40<br>
+CustomerID=RANCH OrderID=10448 Total=443.40<br>
+CustomerID=RANCH OrderID=11019 Total=76.00<br>
+CustomerID=REGGC OrderID=10288 Total=80.10<br>
+CustomerID=REGGC OrderID=10428 Total=192.00<br>
+CustomerID=REGGC OrderID=10562 Total=488.70<br>
+CustomerID=REGGC OrderID=10586 Total=23.80<br>
+CustomerID=REGGC OrderID=10655 Total=154.40<br>
+CustomerID=REGGC OrderID=11062 Total=406.40<br>
+CustomerID=RICAR OrderID=10299 Total=349.50<br>
+CustomerID=RICAR OrderID=10648 Total=372.38<br>
+CustomerID=RICSU OrderID=10951 Total=458.76<br>
+CustomerID=RICSU OrderID=11075 Total=498.10<br>
+CustomerID=ROMEY OrderID=10281 Total=86.50<br>
+CustomerID=ROMEY OrderID=10282 Total=155.40<br>
+CustomerID=ROMEY OrderID=10306 Total=498.50<br>
+CustomerID=ROMEY OrderID=10917 Total=365.89<br>
+CustomerID=ROMEY OrderID=11013 Total=361.00<br>
+CustomerID=SANTG OrderID=10520 Total=200.00<br>
+CustomerID=SAVEA OrderID=10815 Total=40.00<br>
+CustomerID=SIMOB OrderID=10341 Total=352.60<br>
+CustomerID=SIMOB OrderID=11074 Total=232.08<br>
+CustomerID=SPECD OrderID=10738 Total=52.35<br>
+CustomerID=SPECD OrderID=10907 Total=108.50<br>
+CustomerID=SPECD OrderID=11043 Total=210.00<br>
+CustomerID=SPLIR OrderID=10271 Total=48.00<br>
+CustomerID=SPLIR OrderID=10349 Total=141.60<br>
+CustomerID=SPLIR OrderID=10432 Total=485.00<br>
+CustomerID=SPLIR OrderID=10974 Total=439.00<br>
+CustomerID=SUPRD OrderID=10767 Total=28.00<br>
+CustomerID=THEBI OrderID=10310 Total=336.00<br>
+CustomerID=THEBI OrderID=10708 Total=180.40<br>
+CustomerID=THEBI OrderID=10992 Total=69.60<br>
+CustomerID=THECR OrderID=10775 Total=228.00<br>
+CustomerID=THECR OrderID=11003 Total=326.00<br>
+CustomerID=TOMSP OrderID=10438 Total=454.00<br>
+CustomerID=TOMSP OrderID=10446 Total=246.24<br>
+CustomerID=TOMSP OrderID=10548 Total=240.10<br>
+CustomerID=TORTU OrderID=10276 Total=420.00<br>
+CustomerID=TORTU OrderID=11069 Total=360.00<br>
+CustomerID=TRADH OrderID=10496 Total=190.00<br>
+CustomerID=TRAIH OrderID=10822 Total=237.90<br>
+CustomerID=VAFFE OrderID=10602 Total=48.75<br>
+CustomerID=VICTE OrderID=10334 Total=144.80<br>
+CustomerID=VICTE OrderID=10450 Total=425.12<br>
+CustomerID=VICTE OrderID=10478 Total=471.20<br>
+CustomerID=VICTE OrderID=10806 Total=439.60<br>
+CustomerID=VICTE OrderID=10843 Total=159.00<br>
+CustomerID=VINET OrderID=10295 Total=121.60<br>
+CustomerID=VINET OrderID=10737 Total=139.80<br>
+CustomerID=VINET OrderID=10739 Total=240.00<br>
+CustomerID=WANDK OrderID=10348 Total=363.60<br>
+CustomerID=WANDK OrderID=10651 Total=397.80<br>
+CustomerID=WARTH OrderID=10266 Total=346.56<br>
+CustomerID=WARTH OrderID=10412 Total=334.80<br>
+CustomerID=WARTH OrderID=10437 Total=393.00<br>
+CustomerID=WARTH OrderID=11025 Total=270.00<br>
+CustomerID=WELLI OrderID=10585 Total=142.50<br>
+CustomerID=WELLI OrderID=10809 Total=140.00<br>
+CustomerID=WELLI OrderID=10900 Total=33.75<br>
+CustomerID=WELLI OrderID=10905 Total=342.00<br>
+CustomerID=WHITC OrderID=10723 Total=468.45<br>
+CustomerID=WILMK OrderID=10248 Total=440.00<br>
+CustomerID=WILMK OrderID=10615 Total=120.00<br>
+CustomerID=WILMK OrderID=10673 Total=412.35<br>
+CustomerID=WILMK OrderID=10873 Total=336.80<br>
+CustomerID=WILMK OrderID=10910 Total=452.90<br>
+CustomerID=WOLZA OrderID=10374 Total=459.00<br>
+CustomerID=WOLZA OrderID=10792 Total=399.85<br>
+CustomerID=WOLZA OrderID=10870 Total=160.00<br>
+CustomerID=WOLZA OrderID=10906 Total=427.50</p>
+<h2 id="SelectManyCompoundfrom3">SelectMany - Compound from 3</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses a compound from clause to select all orders where the order was made in 1998 or later.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq16()
+{
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var orders =
+        from c in customers
+        from o in c.Orders
+        where o.OrderDate &gt;= new DateTime(1998, 1, 1)
+        select new { c.CustomerID, o.OrderID, o.OrderDate };
+ 
+    ObjectDumper.Write(orders);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq16()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;orders&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;o&nbsp;<span class="js__operator">in</span>&nbsp;c.Orders&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;o.OrderDate&nbsp;&gt;=&nbsp;<span class="js__operator">new</span>&nbsp;DateTime(<span class="js__num">1998</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;c.CustomerID,&nbsp;o.OrderID,&nbsp;o.OrderDate&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(orders);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3 class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></h3>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">CustomerID=ALFKI OrderID=10835 OrderDate=1/15/1998<br>
+CustomerID=ALFKI OrderID=10952 OrderDate=3/16/1998<br>
+CustomerID=ALFKI OrderID=11011 OrderDate=4/9/1998<br>
+CustomerID=ANATR OrderID=10926 OrderDate=3/4/1998<br>
+CustomerID=ANTON OrderID=10856 OrderDate=1/28/1998<br>
+CustomerID=AROUT OrderID=10864 OrderDate=2/2/1998<br>
+CustomerID=AROUT OrderID=10920 OrderDate=3/3/1998<br>
+CustomerID=AROUT OrderID=10953 OrderDate=3/16/1998<br>
+CustomerID=AROUT OrderID=11016 OrderDate=4/10/1998<br>
+CustomerID=BERGS OrderID=10837 OrderDate=1/16/1998<br>
+CustomerID=BERGS OrderID=10857 OrderDate=1/28/1998<br>
+CustomerID=BERGS OrderID=10866 OrderDate=2/3/1998<br>
+CustomerID=BERGS OrderID=10875 OrderDate=2/6/1998<br>
+CustomerID=BERGS OrderID=10924 OrderDate=3/4/1998<br>
+CustomerID=BLAUS OrderID=10853 OrderDate=1/27/1998<br>
+CustomerID=BLAUS OrderID=10956 OrderDate=3/17/1998<br>
+CustomerID=BLAUS OrderID=11058 OrderDate=4/29/1998<br>
+CustomerID=BLONP OrderID=10826 OrderDate=1/12/1998<br>
+CustomerID=BOLID OrderID=10970 OrderDate=3/24/1998<br>
+CustomerID=BONAP OrderID=10827 OrderDate=1/12/1998<br>
+CustomerID=BONAP OrderID=10871 OrderDate=2/5/1998<br>
+CustomerID=BONAP OrderID=10876 OrderDate=2/9/1998<br>
+CustomerID=BONAP OrderID=10932 OrderDate=3/6/1998<br>
+CustomerID=BONAP OrderID=10940 OrderDate=3/11/1998<br>
+CustomerID=BONAP OrderID=11076 OrderDate=5/6/1998<br>
+CustomerID=BOTTM OrderID=10918 OrderDate=3/2/1998<br>
+CustomerID=BOTTM OrderID=10944 OrderDate=3/12/1998<br>
+CustomerID=BOTTM OrderID=10949 OrderDate=3/13/1998<br>
+CustomerID=BOTTM OrderID=10975 OrderDate=3/25/1998<br>
+CustomerID=BOTTM OrderID=10982 OrderDate=3/27/1998<br>
+CustomerID=BOTTM OrderID=11027 OrderDate=4/16/1998<br>
+CustomerID=BOTTM OrderID=11045 OrderDate=4/23/1998<br>
+CustomerID=BOTTM OrderID=11048 OrderDate=4/24/1998<br>
+CustomerID=BSBEV OrderID=10943 OrderDate=3/11/1998<br>
+CustomerID=BSBEV OrderID=10947 OrderDate=3/13/1998<br>
+CustomerID=BSBEV OrderID=11023 OrderDate=4/14/1998<br>
+CustomerID=CACTU OrderID=10819 OrderDate=1/7/1998<br>
+CustomerID=CACTU OrderID=10881 OrderDate=2/11/1998<br>
+CustomerID=CACTU OrderID=10937 OrderDate=3/10/1998<br>
+CustomerID=CACTU OrderID=11054 OrderDate=4/28/1998<br>
+CustomerID=CHOPS OrderID=10966 OrderDate=3/20/1998<br>
+CustomerID=CHOPS OrderID=11029 OrderDate=4/16/1998<br>
+CustomerID=CHOPS OrderID=11041 OrderDate=4/22/1998<br>
+CustomerID=COMMI OrderID=10969 OrderDate=3/23/1998<br>
+CustomerID=COMMI OrderID=11042 OrderDate=4/22/1998<br>
+CustomerID=CONSH OrderID=10848 OrderDate=1/23/1998<br>
+CustomerID=DRACD OrderID=10825 OrderDate=1/9/1998<br>
+CustomerID=DRACD OrderID=11036 OrderDate=4/20/1998<br>
+CustomerID=DRACD OrderID=11067 OrderDate=5/4/1998<br>
+CustomerID=DUMON OrderID=10890 OrderDate=2/16/1998<br>
+CustomerID=EASTC OrderID=10987 OrderDate=3/31/1998<br>
+CustomerID=EASTC OrderID=11024 OrderDate=4/15/1998<br>
+CustomerID=EASTC OrderID=11047 OrderDate=4/24/1998<br>
+CustomerID=EASTC OrderID=11056 OrderDate=4/28/1998<br>
+CustomerID=ERNSH OrderID=10836 OrderDate=1/16/1998<br>
+CustomerID=ERNSH OrderID=10854 OrderDate=1/27/1998<br>
+CustomerID=ERNSH OrderID=10895 OrderDate=2/18/1998<br>
+CustomerID=ERNSH OrderID=10968 OrderDate=3/23/1998<br>
+CustomerID=ERNSH OrderID=10979 OrderDate=3/26/1998<br>
+CustomerID=ERNSH OrderID=10990 OrderDate=4/1/1998<br>
+CustomerID=ERNSH OrderID=11008 OrderDate=4/8/1998<br>
+CustomerID=ERNSH OrderID=11017 OrderDate=4/13/1998<br>
+CustomerID=ERNSH OrderID=11072 OrderDate=5/5/1998<br>
+CustomerID=FOLKO OrderID=10824 OrderDate=1/9/1998<br>
+CustomerID=FOLKO OrderID=10880 OrderDate=2/10/1998<br>
+CustomerID=FOLKO OrderID=10902 OrderDate=2/23/1998<br>
+CustomerID=FOLKO OrderID=10955 OrderDate=3/17/1998<br>
+CustomerID=FOLKO OrderID=10977 OrderDate=3/26/1998<br>
+CustomerID=FOLKO OrderID=10980 OrderDate=3/27/1998<br>
+CustomerID=FOLKO OrderID=10993 OrderDate=4/1/1998<br>
+CustomerID=FOLKO OrderID=11001 OrderDate=4/6/1998<br>
+CustomerID=FOLKO OrderID=11050 OrderDate=4/27/1998<br>
+CustomerID=FRANK OrderID=10859 OrderDate=1/29/1998<br>
+CustomerID=FRANK OrderID=10929 OrderDate=3/5/1998<br>
+CustomerID=FRANK OrderID=11012 OrderDate=4/9/1998<br>
+CustomerID=FRANR OrderID=10860 OrderDate=1/29/1998<br>
+CustomerID=FRANR OrderID=10971 OrderDate=3/24/1998<br>
+CustomerID=FRANS OrderID=11026 OrderDate=4/15/1998<br>
+CustomerID=FRANS OrderID=11060 OrderDate=4/30/1998<br>
+CustomerID=FURIB OrderID=10963 OrderDate=3/19/1998<br>
+CustomerID=GALED OrderID=10887 OrderDate=2/13/1998<br>
+CustomerID=GALED OrderID=10928 OrderDate=3/5/1998<br>
+CustomerID=GODOS OrderID=10872 OrderDate=2/5/1998<br>
+CustomerID=GODOS OrderID=10874 OrderDate=2/6/1998<br>
+CustomerID=GODOS OrderID=10888 OrderDate=2/16/1998<br>
+CustomerID=GODOS OrderID=10911 OrderDate=2/26/1998<br>
+CustomerID=GODOS OrderID=10948 OrderDate=3/13/1998<br>
+CustomerID=GODOS OrderID=11009 OrderDate=4/8/1998<br>
+CustomerID=GODOS OrderID=11037 OrderDate=4/21/1998<br>
+CustomerID=GOURL OrderID=10959 OrderDate=3/18/1998<br>
+CustomerID=GOURL OrderID=11049 OrderDate=4/24/1998<br>
+CustomerID=GREAL OrderID=10816 OrderDate=1/6/1998<br>
+CustomerID=GREAL OrderID=10936 OrderDate=3/9/1998<br>
+CustomerID=GREAL OrderID=11006 OrderDate=4/7/1998<br>
+CustomerID=GREAL OrderID=11040 OrderDate=4/22/1998<br>
+CustomerID=GREAL OrderID=11061 OrderDate=4/30/1998<br>
+CustomerID=HANAR OrderID=10886 OrderDate=2/13/1998<br>
+CustomerID=HANAR OrderID=10903 OrderDate=2/24/1998<br>
+CustomerID=HANAR OrderID=10922 OrderDate=3/3/1998<br>
+CustomerID=HANAR OrderID=10925 OrderDate=3/4/1998<br>
+CustomerID=HANAR OrderID=10981 OrderDate=3/27/1998<br>
+CustomerID=HANAR OrderID=11022 OrderDate=4/14/1998<br>
+CustomerID=HANAR OrderID=11052 OrderDate=4/27/1998<br>
+CustomerID=HILAA OrderID=10863 OrderDate=2/2/1998<br>
+CustomerID=HILAA OrderID=10901 OrderDate=2/23/1998<br>
+CustomerID=HILAA OrderID=10957 OrderDate=3/18/1998<br>
+CustomerID=HILAA OrderID=10960 OrderDate=3/19/1998<br>
+CustomerID=HILAA OrderID=10976 OrderDate=3/25/1998<br>
+CustomerID=HILAA OrderID=11055 OrderDate=4/28/1998<br>
+CustomerID=HUNGO OrderID=10897 OrderDate=2/19/1998<br>
+CustomerID=HUNGO OrderID=10912 OrderDate=2/26/1998<br>
+CustomerID=HUNGO OrderID=10985 OrderDate=3/30/1998<br>
+CustomerID=HUNGO OrderID=11063 OrderDate=4/30/1998<br>
+CustomerID=ISLAT OrderID=10829 OrderDate=1/13/1998<br>
+CustomerID=ISLAT OrderID=10933 OrderDate=3/6/1998<br>
+CustomerID=KOENE OrderID=10817 OrderDate=1/6/1998<br>
+CustomerID=KOENE OrderID=10849 OrderDate=1/23/1998<br>
+CustomerID=KOENE OrderID=10893 OrderDate=2/18/1998<br>
+CustomerID=KOENE OrderID=11028 OrderDate=4/16/1998<br>
+CustomerID=LACOR OrderID=10858 OrderDate=1/29/1998<br>
+CustomerID=LACOR OrderID=10927 OrderDate=3/5/1998<br>
+CustomerID=LACOR OrderID=10972 OrderDate=3/24/1998<br>
+CustomerID=LACOR OrderID=10973 OrderDate=3/24/1998<br>
+CustomerID=LAMAI OrderID=10832 OrderDate=1/14/1998<br>
+CustomerID=LAMAI OrderID=10923 OrderDate=3/3/1998<br>
+CustomerID=LAMAI OrderID=11051 OrderDate=4/27/1998<br>
+CustomerID=LAUGB OrderID=10810 OrderDate=1/1/1998<br>
+CustomerID=LEHMS OrderID=10862 OrderDate=1/30/1998<br>
+CustomerID=LEHMS OrderID=10891 OrderDate=2/17/1998<br>
+CustomerID=LEHMS OrderID=10934 OrderDate=3/9/1998<br>
+CustomerID=LEHMS OrderID=11070 OrderDate=5/5/1998<br>
+CustomerID=LETSS OrderID=10884 OrderDate=2/12/1998<br>
+CustomerID=LILAS OrderID=10823 OrderDate=1/9/1998<br>
+CustomerID=LILAS OrderID=10899 OrderDate=2/20/1998<br>
+CustomerID=LILAS OrderID=10997 OrderDate=4/3/1998<br>
+CustomerID=LILAS OrderID=11065 OrderDate=5/1/1998<br>
+CustomerID=LILAS OrderID=11071 OrderDate=5/5/1998<br>
+CustomerID=LINOD OrderID=10811 OrderDate=1/2/1998<br>
+CustomerID=LINOD OrderID=10838 OrderDate=1/19/1998<br>
+CustomerID=LINOD OrderID=10840 OrderDate=1/19/1998<br>
+CustomerID=LINOD OrderID=10919 OrderDate=3/2/1998<br>
+CustomerID=LINOD OrderID=10954 OrderDate=3/17/1998<br>
+CustomerID=LINOD OrderID=11014 OrderDate=4/10/1998<br>
+CustomerID=LINOD OrderID=11039 OrderDate=4/21/1998<br>
+CustomerID=LONEP OrderID=10867 OrderDate=2/3/1998<br>
+CustomerID=LONEP OrderID=10883 OrderDate=2/12/1998<br>
+CustomerID=LONEP OrderID=11018 OrderDate=4/13/1998<br>
+CustomerID=MAGAA OrderID=10818 OrderDate=1/7/1998<br>
+CustomerID=MAGAA OrderID=10939 OrderDate=3/10/1998<br>
+CustomerID=MAGAA OrderID=10950 OrderDate=3/16/1998<br>
+CustomerID=MAISD OrderID=10892 OrderDate=2/17/1998<br>
+CustomerID=MAISD OrderID=10896 OrderDate=2/19/1998<br>
+CustomerID=MAISD OrderID=10978 OrderDate=3/26/1998<br>
+CustomerID=MAISD OrderID=11004 OrderDate=4/7/1998<br>
+CustomerID=MORGK OrderID=10945 OrderDate=3/12/1998<br>
+CustomerID=NORTS OrderID=11057 OrderDate=4/29/1998<br>
+CustomerID=OCEAN OrderID=10898 OrderDate=2/20/1998<br>
+CustomerID=OCEAN OrderID=10958 OrderDate=3/18/1998<br>
+CustomerID=OCEAN OrderID=10986 OrderDate=3/30/1998<br>
+CustomerID=OLDWO OrderID=10855 OrderDate=1/27/1998<br>
+CustomerID=OLDWO OrderID=10965 OrderDate=3/20/1998<br>
+CustomerID=OLDWO OrderID=11034 OrderDate=4/20/1998<br>
+CustomerID=OTTIK OrderID=10833 OrderDate=1/15/1998<br>
+CustomerID=OTTIK OrderID=10999 OrderDate=4/3/1998<br>
+CustomerID=OTTIK OrderID=11020 OrderDate=4/14/1998<br>
+CustomerID=PERIC OrderID=10995 OrderDate=4/2/1998<br>
+CustomerID=PERIC OrderID=11073 OrderDate=5/5/1998<br>
+CustomerID=PICCO OrderID=10844 OrderDate=1/21/1998<br>
+CustomerID=PICCO OrderID=11053 OrderDate=4/27/1998<br>
+CustomerID=PRINI OrderID=10808 OrderDate=1/1/1998<br>
+CustomerID=PRINI OrderID=11007 OrderDate=4/8/1998<br>
+CustomerID=QUEDE OrderID=10989 OrderDate=3/31/1998<br>
+CustomerID=QUEEN OrderID=10868 OrderDate=2/4/1998<br>
+CustomerID=QUEEN OrderID=10913 OrderDate=2/26/1998<br>
+CustomerID=QUEEN OrderID=10914 OrderDate=2/27/1998<br>
+CustomerID=QUEEN OrderID=10961 OrderDate=3/19/1998<br>
+CustomerID=QUEEN OrderID=11068 OrderDate=5/4/1998<br>
+CustomerID=QUICK OrderID=10845 OrderDate=1/21/1998<br>
+CustomerID=QUICK OrderID=10865 OrderDate=2/2/1998<br>
+CustomerID=QUICK OrderID=10878 OrderDate=2/10/1998<br>
+CustomerID=QUICK OrderID=10938 OrderDate=3/10/1998<br>
+CustomerID=QUICK OrderID=10962 OrderDate=3/19/1998<br>
+CustomerID=QUICK OrderID=10991 OrderDate=4/1/1998<br>
+CustomerID=QUICK OrderID=10996 OrderDate=4/2/1998<br>
+CustomerID=QUICK OrderID=11021 OrderDate=4/14/1998<br>
+CustomerID=RANCH OrderID=10828 OrderDate=1/13/1998<br>
+CustomerID=RANCH OrderID=10916 OrderDate=2/27/1998<br>
+CustomerID=RANCH OrderID=11019 OrderDate=4/13/1998<br>
+CustomerID=RATTC OrderID=10820 OrderDate=1/7/1998<br>
+CustomerID=RATTC OrderID=10852 OrderDate=1/26/1998<br>
+CustomerID=RATTC OrderID=10889 OrderDate=2/16/1998<br>
+CustomerID=RATTC OrderID=10988 OrderDate=3/31/1998<br>
+CustomerID=RATTC OrderID=11000 OrderDate=4/6/1998<br>
+CustomerID=RATTC OrderID=11077 OrderDate=5/6/1998<br>
+CustomerID=REGGC OrderID=10812 OrderDate=1/2/1998<br>
+CustomerID=REGGC OrderID=10908 OrderDate=2/26/1998<br>
+CustomerID=REGGC OrderID=10942 OrderDate=3/11/1998<br>
+CustomerID=REGGC OrderID=11010 OrderDate=4/9/1998<br>
+CustomerID=REGGC OrderID=11062 OrderDate=4/30/1998<br>
+CustomerID=RICAR OrderID=10813 OrderDate=1/5/1998<br>
+CustomerID=RICAR OrderID=10851 OrderDate=1/26/1998<br>
+CustomerID=RICAR OrderID=10877 OrderDate=2/9/1998<br>
+CustomerID=RICAR OrderID=11059 OrderDate=4/29/1998<br>
+CustomerID=RICSU OrderID=10931 OrderDate=3/6/1998<br>
+CustomerID=RICSU OrderID=10951 OrderDate=3/16/1998<br>
+CustomerID=RICSU OrderID=11033 OrderDate=4/17/1998<br>
+CustomerID=RICSU OrderID=11075 OrderDate=5/6/1998<br>
+CustomerID=ROMEY OrderID=10917 OrderDate=3/2/1998<br>
+CustomerID=ROMEY OrderID=11013 OrderDate=4/9/1998<br>
+CustomerID=SANTG OrderID=10831 OrderDate=1/14/1998<br>
+CustomerID=SANTG OrderID=10909 OrderDate=2/26/1998<br>
+CustomerID=SANTG OrderID=11015 OrderDate=4/10/1998<br>
+CustomerID=SAVEA OrderID=10815 OrderDate=1/5/1998<br>
+CustomerID=SAVEA OrderID=10847 OrderDate=1/22/1998<br>
+CustomerID=SAVEA OrderID=10882 OrderDate=2/11/1998<br>
+CustomerID=SAVEA OrderID=10894 OrderDate=2/18/1998<br>
+CustomerID=SAVEA OrderID=10941 OrderDate=3/11/1998<br>
+CustomerID=SAVEA OrderID=10983 OrderDate=3/27/1998<br>
+CustomerID=SAVEA OrderID=10984 OrderDate=3/30/1998<br>
+CustomerID=SAVEA OrderID=11002 OrderDate=4/6/1998<br>
+CustomerID=SAVEA OrderID=11030 OrderDate=4/17/1998<br>
+CustomerID=SAVEA OrderID=11031 OrderDate=4/17/1998<br>
+CustomerID=SAVEA OrderID=11064 OrderDate=5/1/1998<br>
+CustomerID=SEVES OrderID=10869 OrderDate=2/4/1998<br>
+CustomerID=SIMOB OrderID=11074 OrderDate=5/6/1998<br>
+CustomerID=SPECD OrderID=10907 OrderDate=2/25/1998<br>
+CustomerID=SPECD OrderID=10964 OrderDate=3/20/1998<br>
+CustomerID=SPECD OrderID=11043 OrderDate=4/22/1998<br>
+CustomerID=SPLIR OrderID=10821 OrderDate=1/8/1998<br>
+CustomerID=SPLIR OrderID=10974 OrderDate=3/25/1998<br>
+CustomerID=SUPRD OrderID=10841 OrderDate=1/20/1998<br>
+CustomerID=SUPRD OrderID=10846 OrderDate=1/22/1998<br>
+CustomerID=SUPRD OrderID=10885 OrderDate=2/12/1998<br>
+CustomerID=SUPRD OrderID=10930 OrderDate=3/6/1998<br>
+CustomerID=SUPRD OrderID=11035 OrderDate=4/20/1998<br>
+CustomerID=SUPRD OrderID=11038 OrderDate=4/21/1998<br>
+CustomerID=THEBI OrderID=10992 OrderDate=4/1/1998<br>
+CustomerID=THECR OrderID=11003 OrderDate=4/6/1998<br>
+CustomerID=TOMSP OrderID=10967 OrderDate=3/23/1998<br>
+CustomerID=TORTU OrderID=10842 OrderDate=1/20/1998<br>
+CustomerID=TORTU OrderID=10915 OrderDate=2/27/1998<br>
+CustomerID=TORTU OrderID=11069 OrderDate=5/4/1998<br>
+CustomerID=TRADH OrderID=10830 OrderDate=1/13/1998<br>
+CustomerID=TRADH OrderID=10834 OrderDate=1/15/1998<br>
+CustomerID=TRADH OrderID=10839 OrderDate=1/19/1998<br>
+CustomerID=TRAIH OrderID=10822 OrderDate=1/8/1998<br>
+CustomerID=VAFFE OrderID=10921 OrderDate=3/3/1998<br>
+CustomerID=VAFFE OrderID=10946 OrderDate=3/12/1998<br>
+CustomerID=VAFFE OrderID=10994 OrderDate=4/2/1998<br>
+CustomerID=VICTE OrderID=10814 OrderDate=1/5/1998<br>
+CustomerID=VICTE OrderID=10843 OrderDate=1/21/1998<br>
+CustomerID=VICTE OrderID=10850 OrderDate=1/23/1998<br>
+CustomerID=WANDK OrderID=11046 OrderDate=4/23/1998<br>
+CustomerID=WARTH OrderID=11025 OrderDate=4/15/1998<br>
+CustomerID=WELLI OrderID=10809 OrderDate=1/1/1998<br>
+CustomerID=WELLI OrderID=10900 OrderDate=2/20/1998<br>
+CustomerID=WELLI OrderID=10905 OrderDate=2/24/1998<br>
+CustomerID=WELLI OrderID=10935 OrderDate=3/9/1998<br>
+CustomerID=WHITC OrderID=10861 OrderDate=1/30/1998<br>
+CustomerID=WHITC OrderID=10904 OrderDate=2/24/1998<br>
+CustomerID=WHITC OrderID=11032 OrderDate=4/17/1998<br>
+CustomerID=WHITC OrderID=11066 OrderDate=5/1/1998<br>
+CustomerID=WILMK OrderID=10873 OrderDate=2/6/1998<br>
+CustomerID=WILMK OrderID=10879 OrderDate=2/10/1998<br>
+CustomerID=WILMK OrderID=10910 OrderDate=2/26/1998<br>
+CustomerID=WILMK OrderID=11005 OrderDate=4/7/1998<br>
+CustomerID=WOLZA OrderID=10870 OrderDate=2/4/1998<br>
+CustomerID=WOLZA OrderID=10906 OrderDate=2/25/1998<br>
+CustomerID=WOLZA OrderID=10998 OrderDate=4/3/1998<br>
+CustomerID=WOLZA OrderID=11044 OrderDate=4/23/1998</p>
+<h2 id="SelectManyFromAssignment">SelectMany - from Assignment</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses a compound from clause to select all orders where the order total is greater than 2000.00 and uses from assignment to avoid requesting the total twice.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq17()
+{
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var orders =
+        from c in customers
+        from o in c.Orders
+        where o.Total &gt;= 2000.0M
+        select new { c.CustomerID, o.OrderID, o.Total };
+ 
+    ObjectDumper.Write(orders);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq17()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;orders&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;o&nbsp;<span class="js__operator">in</span>&nbsp;c.Orders&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;o.Total&nbsp;&gt;=&nbsp;<span class="js__num">2000</span>.0M&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;c.CustomerID,&nbsp;o.OrderID,&nbsp;o.Total&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(orders);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">CustomerID=ANTON OrderID=10573 Total=2082.00<br>
+CustomerID=AROUT OrderID=10558 Total=2142.90<br>
+CustomerID=AROUT OrderID=10953 Total=4441.25<br>
+CustomerID=BERGS OrderID=10384 Total=2222.40<br>
+CustomerID=BERGS OrderID=10524 Total=3192.65<br>
+CustomerID=BERGS OrderID=10672 Total=3815.25<br>
+CustomerID=BERGS OrderID=10857 Total=2048.21<br>
+CustomerID=BLONP OrderID=10360 Total=7390.20<br>
+CustomerID=BOLID OrderID=10801 Total=3026.85<br>
+CustomerID=BONAP OrderID=10340 Total=2436.18<br>
+CustomerID=BONAP OrderID=10511 Total=2550.00<br>
+CustomerID=BOTTM OrderID=10742 Total=3118.00<br>
+CustomerID=BOTTM OrderID=10949 Total=4422.00<br>
+CustomerID=CHOPS OrderID=10519 Total=2314.20<br>
+CustomerID=CHOPS OrderID=10746 Total=2311.70<br>
+CustomerID=COMMI OrderID=10290 Total=2169.00<br>
+CustomerID=EASTC OrderID=10400 Total=3063.00<br>
+CustomerID=EASTC OrderID=10987 Total=2772.00<br>
+CustomerID=EASTC OrderID=11056 Total=3740.00<br>
+CustomerID=ERNSH OrderID=10351 Total=5398.72<br>
+CustomerID=ERNSH OrderID=10382 Total=2900.00<br>
+CustomerID=ERNSH OrderID=10390 Total=2090.88<br>
+CustomerID=ERNSH OrderID=10402 Total=2713.50<br>
+CustomerID=ERNSH OrderID=10430 Total=4899.20<br>
+CustomerID=ERNSH OrderID=10514 Total=8623.45<br>
+CustomerID=ERNSH OrderID=10595 Total=4725.00<br>
+CustomerID=ERNSH OrderID=10633 Total=5510.59<br>
+CustomerID=ERNSH OrderID=10698 Total=3436.44<br>
+CustomerID=ERNSH OrderID=10764 Total=2286.00<br>
+CustomerID=ERNSH OrderID=10773 Total=2030.40<br>
+CustomerID=ERNSH OrderID=10776 Total=6635.28<br>
+CustomerID=ERNSH OrderID=10795 Total=2158.00<br>
+CustomerID=ERNSH OrderID=10836 Total=4705.50<br>
+CustomerID=ERNSH OrderID=10854 Total=2966.50<br>
+CustomerID=ERNSH OrderID=10895 Total=6379.40<br>
+CustomerID=ERNSH OrderID=10979 Total=4813.50<br>
+CustomerID=ERNSH OrderID=10990 Total=4288.85<br>
+CustomerID=ERNSH OrderID=11008 Total=4680.90<br>
+CustomerID=ERNSH OrderID=11017 Total=6750.00<br>
+CustomerID=ERNSH OrderID=11072 Total=5218.00<br>
+CustomerID=FOLIG OrderID=10634 Total=4985.50<br>
+CustomerID=FOLIG OrderID=10789 Total=3687.00<br>
+CustomerID=FOLKO OrderID=10533 Total=2222.20<br>
+CustomerID=FOLKO OrderID=10561 Total=2844.50<br>
+CustomerID=FOLKO OrderID=10703 Total=2545.00<br>
+CustomerID=FOLKO OrderID=10762 Total=4337.00<br>
+CustomerID=FOLKO OrderID=10977 Total=2233.00<br>
+CustomerID=FOLKO OrderID=10993 Total=4895.44<br>
+CustomerID=FOLKO OrderID=11001 Total=2769.00<br>
+CustomerID=FRANK OrderID=10267 Total=3536.60<br>
+CustomerID=FRANK OrderID=10337 Total=2467.00<br>
+CustomerID=FRANK OrderID=10670 Total=2301.75<br>
+CustomerID=FRANK OrderID=11012 Total=2825.30<br>
+CustomerID=GODOS OrderID=10629 Total=2775.05<br>
+CustomerID=GODOS OrderID=10872 Total=2058.46<br>
+CustomerID=GODOS OrderID=10948 Total=2362.25<br>
+CustomerID=GOURL OrderID=10709 Total=3424.00<br>
+CustomerID=GREAL OrderID=10616 Total=4807.00<br>
+CustomerID=GREAL OrderID=10816 Total=8446.45<br>
+CustomerID=HANAR OrderID=10886 Total=3127.50<br>
+CustomerID=HANAR OrderID=10981 Total=15810.00<br>
+CustomerID=HILAA OrderID=10395 Total=2122.92<br>
+CustomerID=HILAA OrderID=10490 Total=3163.20<br>
+CustomerID=HILAA OrderID=10601 Total=2285.00<br>
+CustomerID=HILAA OrderID=10641 Total=2054.00<br>
+CustomerID=HILAA OrderID=10796 Total=2341.36<br>
+CustomerID=HUNGO OrderID=10298 Total=2645.00<br>
+CustomerID=HUNGO OrderID=10335 Total=2036.16<br>
+CustomerID=HUNGO OrderID=10503 Total=2048.50<br>
+CustomerID=HUNGO OrderID=10516 Total=2381.05<br>
+CustomerID=HUNGO OrderID=10567 Total=2519.00<br>
+CustomerID=HUNGO OrderID=10687 Total=4960.90<br>
+CustomerID=HUNGO OrderID=10701 Total=2864.50<br>
+CustomerID=HUNGO OrderID=10897 Total=10835.24<br>
+CustomerID=HUNGO OrderID=10912 Total=6200.55<br>
+CustomerID=HUNGO OrderID=10985 Total=2023.38<br>
+CustomerID=KOENE OrderID=10718 Total=3463.00<br>
+CustomerID=KOENE OrderID=10817 Total=10952.84<br>
+CustomerID=KOENE OrderID=10893 Total=5502.11<br>
+CustomerID=KOENE OrderID=11028 Total=2160.00<br>
+CustomerID=LAMAI OrderID=10413 Total=2123.20<br>
+CustomerID=LAMAI OrderID=10787 Total=2622.76<br>
+CustomerID=LEHMS OrderID=10522 Total=2318.24<br>
+CustomerID=LEHMS OrderID=10772 Total=3603.22<br>
+CustomerID=LILAS OrderID=10823 Total=2826.00<br>
+CustomerID=LINOD OrderID=10638 Total=2720.05<br>
+CustomerID=LINOD OrderID=11039 Total=3090.00<br>
+CustomerID=MAISD OrderID=10760 Total=2917.00<br>
+CustomerID=MAISD OrderID=10892 Total=2090.00<br>
+CustomerID=MEREP OrderID=10339 Total=3354.00<br>
+CustomerID=MEREP OrderID=10424 Total=9194.56<br>
+CustomerID=MEREP OrderID=10570 Total=2465.25<br>
+CustomerID=MEREP OrderID=10605 Total=4109.70<br>
+CustomerID=MEREP OrderID=10618 Total=2697.50<br>
+CustomerID=MORGK OrderID=10575 Total=2147.40<br>
+CustomerID=OCEAN OrderID=10986 Total=2220.00<br>
+CustomerID=OLDWO OrderID=10305 Total=3741.30<br>
+CustomerID=OLDWO OrderID=10855 Total=2227.89<br>
+CustomerID=OTTIK OrderID=10766 Total=2310.00<br>
+CustomerID=PICCO OrderID=10353 Total=8593.28<br>
+CustomerID=PICCO OrderID=10530 Total=4180.00<br>
+CustomerID=PICCO OrderID=11053 Total=3055.00<br>
+CustomerID=PRINI OrderID=11007 Total=2633.90<br>
+CustomerID=QUEEN OrderID=10372 Total=9210.90<br>
+CustomerID=QUEEN OrderID=10637 Total=2761.94<br>
+CustomerID=QUEEN OrderID=11068 Total=2027.08<br>
+CustomerID=QUICK OrderID=10273 Total=2037.28<br>
+CustomerID=QUICK OrderID=10286 Total=3016.00<br>
+CustomerID=QUICK OrderID=10345 Total=2924.80<br>
+CustomerID=QUICK OrderID=10361 Total=2046.24<br>
+CustomerID=QUICK OrderID=10451 Total=3849.66<br>
+CustomerID=QUICK OrderID=10515 Total=9921.30<br>
+CustomerID=QUICK OrderID=10540 Total=10191.70<br>
+CustomerID=QUICK OrderID=10549 Total=3554.28<br>
+CustomerID=QUICK OrderID=10588 Total=3120.00<br>
+CustomerID=QUICK OrderID=10658 Total=4464.60<br>
+CustomerID=QUICK OrderID=10691 Total=10164.80<br>
+CustomerID=QUICK OrderID=10694 Total=4825.00<br>
+CustomerID=QUICK OrderID=10745 Total=4529.80<br>
+CustomerID=QUICK OrderID=10845 Total=3812.70<br>
+CustomerID=QUICK OrderID=10865 Total=16387.50<br>
+CustomerID=QUICK OrderID=10938 Total=2731.88<br>
+CustomerID=QUICK OrderID=10962 Total=3584.00<br>
+CustomerID=QUICK OrderID=10991 Total=2296.00<br>
+CustomerID=QUICK OrderID=11021 Total=6306.24<br>
+CustomerID=RATTC OrderID=10314 Total=2094.30<br>
+CustomerID=RATTC OrderID=10316 Total=2835.00<br>
+CustomerID=RATTC OrderID=10401 Total=3868.60<br>
+CustomerID=RATTC OrderID=10479 Total=10495.60<br>
+CustomerID=RATTC OrderID=10598 Total=2388.50<br>
+CustomerID=RATTC OrderID=10852 Total=2984.00<br>
+CustomerID=RATTC OrderID=10889 Total=11380.00<br>
+CustomerID=RATTC OrderID=10988 Total=3574.80<br>
+CustomerID=RICAR OrderID=10851 Total=2603.00<br>
+CustomerID=RICSU OrderID=10255 Total=2490.50<br>
+CustomerID=RICSU OrderID=10419 Total=2097.60<br>
+CustomerID=RICSU OrderID=10666 Total=4666.94<br>
+CustomerID=RICSU OrderID=11033 Total=3232.80<br>
+CustomerID=SANTG OrderID=10831 Total=2684.40<br>
+CustomerID=SAVEA OrderID=10324 Total=5275.72<br>
+CustomerID=SAVEA OrderID=10393 Total=2556.95<br>
+CustomerID=SAVEA OrderID=10398 Total=2505.60<br>
+CustomerID=SAVEA OrderID=10440 Total=4924.14<br>
+CustomerID=SAVEA OrderID=10452 Total=2018.50<br>
+CustomerID=SAVEA OrderID=10510 Total=4707.54<br>
+CustomerID=SAVEA OrderID=10555 Total=2944.40<br>
+CustomerID=SAVEA OrderID=10607 Total=6475.40<br>
+CustomerID=SAVEA OrderID=10612 Total=6375.00<br>
+CustomerID=SAVEA OrderID=10657 Total=4371.60<br>
+CustomerID=SAVEA OrderID=10678 Total=5256.50<br>
+CustomerID=SAVEA OrderID=10711 Total=4451.70<br>
+CustomerID=SAVEA OrderID=10713 Total=2827.90<br>
+CustomerID=SAVEA OrderID=10714 Total=2205.75<br>
+CustomerID=SAVEA OrderID=10748 Total=2196.00<br>
+CustomerID=SAVEA OrderID=10757 Total=3082.00<br>
+CustomerID=SAVEA OrderID=10847 Total=4931.92<br>
+CustomerID=SAVEA OrderID=10894 Total=2753.10<br>
+CustomerID=SAVEA OrderID=10941 Total=4011.75<br>
+CustomerID=SAVEA OrderID=11030 Total=12615.05<br>
+CustomerID=SAVEA OrderID=11031 Total=2393.50<br>
+CustomerID=SAVEA OrderID=11064 Total=4330.40<br>
+CustomerID=SEVES OrderID=10359 Total=3471.68<br>
+CustomerID=SEVES OrderID=10523 Total=2444.31<br>
+CustomerID=SEVES OrderID=10804 Total=2278.40<br>
+CustomerID=SIMOB OrderID=10417 Total=11188.40<br>
+CustomerID=SIMOB OrderID=10802 Total=2942.81<br>
+CustomerID=SPECD OrderID=10964 Total=2052.50<br>
+CustomerID=SPLIR OrderID=10329 Total=4578.43<br>
+CustomerID=SPLIR OrderID=10369 Total=2390.40<br>
+CustomerID=SUPRD OrderID=10252 Total=3597.90<br>
+CustomerID=SUPRD OrderID=10302 Total=2708.80<br>
+CustomerID=SUPRD OrderID=10458 Total=3891.00<br>
+CustomerID=SUPRD OrderID=10841 Total=4581.00<br>
+CustomerID=SUPRD OrderID=10930 Total=2255.50<br>
+CustomerID=THEBI OrderID=10805 Total=2775.00<br>
+CustomerID=TORTU OrderID=10518 Total=4150.05<br>
+CustomerID=VAFFE OrderID=10465 Total=2518.00<br>
+CustomerID=VAFFE OrderID=10688 Total=3160.60<br>
+CustomerID=VICTE OrderID=10546 Total=2812.00<br>
+CustomerID=WARTH OrderID=10455 Total=2684.00<br>
+CustomerID=WARTH OrderID=10583 Total=2237.50<br>
+CustomerID=WHITC OrderID=10344 Total=2296.00<br>
+CustomerID=WHITC OrderID=10693 Total=2071.20<br>
+CustomerID=WHITC OrderID=10861 Total=3523.40<br>
+CustomerID=WHITC OrderID=11032 Total=8902.50</p>
+<h2 id="SelectManyMultiplefrom">SelectMany - Multiple from</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses multiple from clauses so that filtering on customers can be done before selecting their orders. This makes the query more efficient by not selecting and then discarding orders for customers outside of Washington.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq18()
+{
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    DateTime cutoffDate = new DateTime(1997, 1, 1);
+ 
+    var orders =
+        from c in customers
+        where c.Region == &quot;WA&quot;
+        from o in c.Orders
+        where o.OrderDate &gt;= cutoffDate
+        select new { c.CustomerID, o.OrderID };
+ 
+    ObjectDumper.Write(orders);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq18()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;DateTime&nbsp;cutoffDate&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;DateTime(<span class="js__num">1997</span>,&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">1</span>);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;orders&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;c.Region&nbsp;==&nbsp;<span class="js__string">&quot;WA&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;o&nbsp;<span class="js__operator">in</span>&nbsp;c.Orders&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;o.OrderDate&nbsp;&gt;=&nbsp;cutoffDate&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;c.CustomerID,&nbsp;o.OrderID&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(orders);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></p>
+</div>
+<div class="BostonPostCard">
+<p style="padding-left:30px">CustomerID=LAZYK OrderID=10482<br>
+CustomerID=LAZYK OrderID=10545<br>
+CustomerID=TRAIH OrderID=10574<br>
+CustomerID=TRAIH OrderID=10577<br>
+CustomerID=TRAIH OrderID=10822<br>
+CustomerID=WHITC OrderID=10469<br>
+CustomerID=WHITC OrderID=10483<br>
+CustomerID=WHITC OrderID=10504<br>
+CustomerID=WHITC OrderID=10596<br>
+CustomerID=WHITC OrderID=10693<br>
+CustomerID=WHITC OrderID=10696<br>
+CustomerID=WHITC OrderID=10723<br>
+CustomerID=WHITC OrderID=10740<br>
+CustomerID=WHITC OrderID=10861<br>
+CustomerID=WHITC OrderID=10904<br>
+CustomerID=WHITC OrderID=11032<br>
+CustomerID=WHITC OrderID=11066</p>
+<h2 id="SelectManyIndexed">SelectMany - Indexed</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction" >back to top</a>)</span></p>
+<p>This sample uses an indexed SelectMany clause to select all orders, while referring to customers by the order in which they are returned from the query.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq19()
+{
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var customerOrders =
+        customers.SelectMany(
+            (cust, custIndex) =&gt;
+            cust.Orders.Select(o =&gt; &quot;Customer #&quot; &#43; (custIndex &#43; 1) &#43;
+                                    &quot; has an order with OrderID &quot; &#43; o.OrderID));
+ 
+    ObjectDumper.Write(customerOrders);
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq19()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;customerOrders&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;customers.SelectMany(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cust,&nbsp;custIndex)&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cust.Orders.Select(o&nbsp;=&gt;&nbsp;<span class="js__string">&quot;Customer&nbsp;#&quot;</span>&nbsp;&#43;&nbsp;(custIndex&nbsp;&#43;&nbsp;<span class="js__num">1</span>)&nbsp;&#43;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;&nbsp;has&nbsp;an&nbsp;order&nbsp;with&nbsp;OrderID&nbsp;&quot;</span>&nbsp;&#43;&nbsp;o.OrderID));&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectDumper.Write(customerOrders);&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Customer #1 has an order with OrderID 10643<br>
+Customer #1 has an order with OrderID 10692<br>
+Customer #1 has an order with OrderID 10702<br>
+Customer #1 has an order with OrderID 10835<br>
+Customer #1 has an order with OrderID 10952<br>
+Customer #1 has an order with OrderID 11011<br>
+Customer #2 has an order with OrderID 10308<br>
+Customer #2 has an order with OrderID 10625<br>
+Customer #2 has an order with OrderID 10759<br>
+Customer #2 has an order with OrderID 10926<br>
+<br>
+<span style="font-size:small">...</span><br>
+Customer #90 has an order with OrderID 10248<br>
+Customer #90 has an order with OrderID 10615<br>
+Customer #90 has an order with OrderID 10673<br>
+Customer #90 has an order with OrderID 10695<br>
+Customer #90 has an order with OrderID 10873<br>
+Customer #90 has an order with OrderID 10879<br>
+Customer #90 has an order with OrderID 10910<br>
+Customer #90 has an order with OrderID 11005<br>
+Customer #91 has an order with OrderID 10374<br>
+Customer #91 has an order with OrderID 10611<br>
+Customer #91 has an order with OrderID 10792<br>
+Customer #91 has an order with OrderID 10870<br>
+Customer #91 has an order with OrderID 10906<br>
+Customer #91 has an order with OrderID 10998<br>
+Customer #91 has an order with OrderID 11044</p>
+<div></div>
+</div>
+<p>&nbsp;</p>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/sourcecode?fileId=24013&amp;pathId=1120923387">Program.cs</a>
+</li></ul>
+<h1><strong>101 LINQ Samples</strong></h1>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Restriction-Operators-b15d29ca">Restriction Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-to-DataSets-09787825">Projection Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Partitioning-Operators-c68aaccc">Partitioning Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../SQL-Ordering-Operators-050af19e">Ordering Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-to-DataSets-Grouping-c62703ea">Grouping Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Set-Operators-374f34fe">Set Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Conversion-Operators-e4e59714">Conversion Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Element-Operators-0f3f12ce">Element Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Element-Operators-0f3f12ce">Generation Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Quantifiers-f00e7e3e">Quantifiers</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Aggregate-Operators-c51b3869">Aggregate Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Miscellaneous-6b72bb2a">Miscellaneous Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-to-DataSets-Custom-41738490">Custom Sequence Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Query-Execution-ce0d3b95">Query Execution</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-to-DataSets-09787825/../LINQ-Join-Operators-dabef4e9">Join Operators</a> </li></ul>
+<h1>More Information</h1>
+<p>For more information, see:</p>
+<ul>
+<li>Projection - <a href="http://blogs.msdn.com/b/ericwhite/archive/2008/04/22/projection.aspx" >
+http://blogs.msdn.com/b/ericwhite/archive/2008/04/22/projection.aspx</a> </li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

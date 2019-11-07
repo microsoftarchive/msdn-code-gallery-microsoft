@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/3e00d0a6-7844-40b8-8b92-12c0e4eeaed2Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to cross domain with JSONP, jQuery and RESTful WCF service provider</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to cross domain with JSONP, jQuery and RESTful WCF service provider</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, Networking, .NET Development, Windows Desktop App Development, Windows Communication Framework (WCF)
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            jQuery, Javascript, JSONP, Cross Domain, REST WCF
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-cross-domain-with-8174e773">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to cross domain with JSONP, jQuery and RESTful WCF Service provider in JavaScript (JSCrossDomainWithJSONP)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal"><span style="">This article and the attached code sample demonstrate how to use jQuery or original JavaScript to cross domain. JSONP is a convention used to invoke cross-domain scripts by generating script tags in the current script.
+ The result is returned in a specified callback function.</span> <span style="">JSONP is based on the idea that tags such as &lt;script src=&quot;http://...&quot; &gt; can evaluate scripts from any domain and the script retrieved by those tags is evaluated
+ within a scope in which other functions may already be defined. You can find the answers for all the following questions in the code sample:
+</span></p>
+<p class="MsoListBulletCxSpFirst" style=""><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">How to use $.getJSON to read a JSONP request?
+</span></p>
+<p class="MsoListBulletCxSpLast" style=""><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">How to use original JavaScript to read a JSONP request?
+</span></p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal"><span style="">To build this sample </span></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:5.0pt"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Open JSCrossDomainWithJSONP.sln solution file in Visual Studio 2010
+</span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:5.0pt"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Build<span style="">&nbsp; </span>entire solution </span>
+</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style=""><br>
+After opening the sample project in Visual Studio 2010, you will find two projects:
+<b style="">JSCrossDomainASPNETClient</b> and <b style="">JSCrossDomainWCFProvider</b>. Build entire solution and follow below steps:
+</span></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:5.0pt"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Right click <b style="">JSCrossDomainWCFProvider
+</b>project in the<b style=""> </b>Solution Explorer </span></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:5.0pt"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Select &quot;Debug&quot; item </span></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:5.0pt"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Click &quot;Start new instance&quot; </span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:5.0pt"><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Click &quot;Agent.aspx&quot; in the<span style="">&nbsp;
+</span>&quot;Directory Listing&quot; of IE </span></p>
+<p class="MsoNormal"><span style="">You will get the JSON data from WCF Service:
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="765" height="166" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal"><span style="">The Agent.aspx is an agent page to accept user's request and then sent it to WCF Service to get data. Now we can open the client
+<b style="">Default.htm</b> page (like: <a href="http://localhost:50505/Default.htm">
+http://localhost:50505/Default.htm</a>) as below: </span></p>
+<p class="MsoNormal"><span style=""><img src="description/7cb3040d-ee4f-46e6-85bb-fcbf84f2484cimage.png" alt="" width="763" height="410" align="middle">
+</span><span style=""></span></p>
+<p class="MsoNormal"><span style="">&quot;<b style="">Get Data By jQuery</b>&quot; button sends the request with jQuery method ($getJSON) and &quot;<b style="">Get Data By Original JavaScript</b>&quot; button with original JavaScript. For More information,
+ please refer to below code.<br>
+OK, let's click &quot;Get Data By jQuery&quot; to request the data through Agent.aspx.
+</span></p>
+<p class="MsoListBullet" style=""><span style=""><img src="description/b6358030-6e0b-4f48-9e94-b4854fafcde1image.png" alt="" width="765" height="432" align="middle">
+</span><span style=""></span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal"><span style="">The code sample provides the following reusable functions for using jQuery or original JavaScript to read a JSONP request.</span>
+<span style=""></span></p>
+<p class="MsoNormal"><b style=""><span style="">How to use $.getJSON to read a JSONP request?
+</span></b></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">js</span>
+<pre class="hidden">
+var url = &quot;http://localhost:50500/Agent.aspx?callBack=&quot;;
+
+
+//Get data by using $.getJSON
+function getAllUsersByJQuery(event) {
+&nbsp;&nbsp;&nbsp; event && event.preventDefault();
+
+
+&nbsp;&nbsp;&nbsp; $.getJSON(url &#43; &quot;?&quot;, jsonpCallBack);
+}
+
+
+//Call back function
+function jsonpCallBack(users) {
+&nbsp;&nbsp;&nbsp; data = users
+&nbsp;&nbsp;&nbsp; pageCount = data.length % pageNum == 0 ? data.length / pageNum : parseInt(data.length / pageNum) &#43; 1;
+
+
+&nbsp;&nbsp;&nbsp; $(&quot;#datacount&quot;).text(data.length);
+&nbsp;&nbsp;&nbsp; $(&quot;#pagecount&quot;).text(pageCount);
+&nbsp;&nbsp;&nbsp; $(&quot;#pageindex&quot;).text(pageIndex);
+&nbsp;&nbsp;&nbsp; $(&quot;#error&quot;).empty();
+&nbsp;&nbsp;&nbsp; fillView();
+}
+
+</pre>
+<pre id="codePreview" class="js">
+var url = &quot;http://localhost:50500/Agent.aspx?callBack=&quot;;
+
+
+//Get data by using $.getJSON
+function getAllUsersByJQuery(event) {
+&nbsp;&nbsp;&nbsp; event && event.preventDefault();
+
+
+&nbsp;&nbsp;&nbsp; $.getJSON(url &#43; &quot;?&quot;, jsonpCallBack);
+}
+
+
+//Call back function
+function jsonpCallBack(users) {
+&nbsp;&nbsp;&nbsp; data = users
+&nbsp;&nbsp;&nbsp; pageCount = data.length % pageNum == 0 ? data.length / pageNum : parseInt(data.length / pageNum) &#43; 1;
+
+
+&nbsp;&nbsp;&nbsp; $(&quot;#datacount&quot;).text(data.length);
+&nbsp;&nbsp;&nbsp; $(&quot;#pagecount&quot;).text(pageCount);
+&nbsp;&nbsp;&nbsp; $(&quot;#pageindex&quot;).text(pageIndex);
+&nbsp;&nbsp;&nbsp; $(&quot;#error&quot;).empty();
+&nbsp;&nbsp;&nbsp; fillView();
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<p class="MsoNormal"><b style=""><span style="">How to use original JavaScript to read a JSONP request?
+</span></b></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">js</span>
+<pre class="hidden">
+var url = &quot;http://localhost:50500/Agent.aspx?callBack=&quot;;
+
+
+//Get data by using original JavaScript with &quot;createElement&quot;
+function getAllUsersByOriginalJS(event) {
+&nbsp;&nbsp;&nbsp; event && event.preventDefault();
+
+
+&nbsp;&nbsp;&nbsp; var jsonpScript = document.createElement(&quot;script&quot;);
+&nbsp;&nbsp;&nbsp; jsonpScript.type = &quot;text/javascript&quot;;
+&nbsp;&nbsp;&nbsp; jsonpScript.src = url &#43; &quot;jsonpCallBack&quot;;
+&nbsp;&nbsp;&nbsp; document.head.appendChild(jsonpScript);
+}
+
+
+//Call back function
+function jsonpCallBack(users) {
+&nbsp;&nbsp;&nbsp; data = users
+&nbsp;&nbsp;&nbsp; pageCount = data.length % pageNum == 0 ? data.length / pageNum : parseInt(data.length / pageNum) &#43; 1;
+
+
+&nbsp;&nbsp;&nbsp; $(&quot;#datacount&quot;).text(data.length);
+&nbsp;&nbsp;&nbsp; $(&quot;#pagecount&quot;).text(pageCount);
+&nbsp;&nbsp;&nbsp; $(&quot;#pageindex&quot;).text(pageIndex);
+&nbsp;&nbsp;&nbsp; $(&quot;#error&quot;).empty();
+&nbsp;&nbsp;&nbsp; fillView();
+}
+
+</pre>
+<pre id="codePreview" class="js">
+var url = &quot;http://localhost:50500/Agent.aspx?callBack=&quot;;
+
+
+//Get data by using original JavaScript with &quot;createElement&quot;
+function getAllUsersByOriginalJS(event) {
+&nbsp;&nbsp;&nbsp; event && event.preventDefault();
+
+
+&nbsp;&nbsp;&nbsp; var jsonpScript = document.createElement(&quot;script&quot;);
+&nbsp;&nbsp;&nbsp; jsonpScript.type = &quot;text/javascript&quot;;
+&nbsp;&nbsp;&nbsp; jsonpScript.src = url &#43; &quot;jsonpCallBack&quot;;
+&nbsp;&nbsp;&nbsp; document.head.appendChild(jsonpScript);
+}
+
+
+//Call back function
+function jsonpCallBack(users) {
+&nbsp;&nbsp;&nbsp; data = users
+&nbsp;&nbsp;&nbsp; pageCount = data.length % pageNum == 0 ? data.length / pageNum : parseInt(data.length / pageNum) &#43; 1;
+
+
+&nbsp;&nbsp;&nbsp; $(&quot;#datacount&quot;).text(data.length);
+&nbsp;&nbsp;&nbsp; $(&quot;#pagecount&quot;).text(pageCount);
+&nbsp;&nbsp;&nbsp; $(&quot;#pageindex&quot;).text(pageIndex);
+&nbsp;&nbsp;&nbsp; $(&quot;#error&quot;).empty();
+&nbsp;&nbsp;&nbsp; fillView();
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>More Information</h2>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/a20d39fc-847b-4f6c-a5ee-5b3dad80666dimage.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

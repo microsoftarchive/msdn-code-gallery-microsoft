@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Create an app to access a public OData source</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Create an app to access a public OData source</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            REST, Javascript, SharePoint Server 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Create-an-33c2b211">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small"><strong>Provided by</strong>:&nbsp;&nbsp; <a href="http://www.shillier.com/default.aspx">
+Scot Hillier</a>, <a href="http://www.criticalpathtraining.com/Pages/default.aspx">
+Critical Path Training</a></span></p>
+<p><span style="font-size:small">This sample demonstrates how to create an external content type contained within an app for SharePoint, and then surface that data using an external list. The OData source that is used for this sample is the public Northwind
+ OData source located at <a href="http://services.odata.org/Northwind/Northwind.svc">
+http://services.odata.org/Northwind/Northwind.svc</a>. This OData source is used to create an external list named
+<strong>Customers</strong> in the app. Data from the external list is then displayed on the home page of the app by using the RESTful API to query the list. The following image shows the data that will be displayed on the home page of the app.</span></p>
+<p><strong><span style="font-size:small">Figure 1. Data displayed on the home page of the app</span></strong></p>
+<p><span style="font-size:small"><img id="60263" src="description/fig1.jpg" alt="" width="332" height="389"></span></p>
+<p><span style="font-size:small">The Visual Studio 2012 solution contained in this sample download consists of the following:&nbsp;</span></p>
+<ul>
+<li><span style="font-size:small">BCS Module (containing the BDC Metadata Model and External List definition)</span>
+</li><li><span style="font-size:small">Pages Module (containing the app home page)</span>
+</li><li><span style="font-size:small">Scripts Module (containing the JavaScript and jQuery code for querying the External List).</span>
+</li></ul>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">SharePoint 2013 development environment that is configured for app isolation</span>
+</li><li><span style="font-size:small">Visual Studio 2012</span> </li><li><span style="font-size:small">SharePoint development tools in Visual Studio 2012</span>
+</li></ul>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The following are included in the sample project:</span></p>
+<ul>
+<li><span style="font-size:small">A Visual Studio 2012 solution named <strong>AppLevelECT</strong>, which contains all the required artifacts.</span>
+</li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">Follow these steps to configure the sample.</span></p>
+<ol>
+<li><span style="font-size:small">In Visual Studio, select the AppLevelECT project (which is contained in the .zip file that you downloaded from the MSDN Samples Gallery), and change the Site URL property to reference a SharePoint 2013 Preview site where you
+ will deploy the app.</span> </li><li><span style="font-size:small">In Visual Studio, open the AppLevelODataModel.xml file for editing.</span>
+</li><li><span style="font-size:small">Replace all instances of the text &ldquo;contoso\Domain Users&rdquo; with the name of a group from the target domain. The group used will be granted rights to use the BDC Metadata Model in the App.</span>
+</li></ol>
+<h1>Build the sample</h1>
+<p><span style="font-size:small">Press <strong>F5</strong> to build and deploy the app.</span></p>
+<h1>Run and test the sample</h1>
+<p><span style="font-size:small">To run and test the sample:</span></p>
+<ul>
+<li><span style="font-size:small">Press <strong>F5</strong> to build and deploy the app for SharePoint.</span>
+</li></ul>
+<p><span style="font-size:small">Data from the external data list will appear on the home page of the app.</span></p>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">If the app fails to install, ensure that the group referenced in the BDC Metadata Model is correct.</span></p>
+<h1>Change log</h1>
+<p><span style="font-size:small">First release.</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/64b7d032-4b83-4e9e-bc08-f0a161af5457" >Business Connectivity Services in SharePoint 2013</a></span>
+<span style="font-size:small"></span>&nbsp; </li><li><span style="font-size:small"><a title="http://www.odata.org/" href="http://www.odata.org/" >Open Data Protocol</a></span>
+</li><li><span style="font-size:small"><a title="http://www.odata.org/developers/protocols/json-format" href="http://www.odata.org/developers/protocols/json-format" >OData: JavaScript Object Notation (JSON) Format</a></span>
+</li><li><span style="font-size:small"><a title="http://www.odata.org/developers/protocols/atom-format" href="http://www.odata.org/developers/protocols/atom-format" >OData: AtomPub Format</a></span>
+</li></ul>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

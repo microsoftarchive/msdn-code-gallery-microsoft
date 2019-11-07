@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>NDIS Connection-less Protocol Driver Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>NDIS Connection-less Protocol Driver Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WDM, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/NDIS-Connection-less-4a7644e0">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates a connection-less NDIS 6.0 protocol. The driver supports sending and receiving raw Ethernet frames using
+<code>ReadFile</code>/<code>WriteFile</code> calls from user-mode. It only receives frames with a specific EtherType field. As an NDIS protocol, it illustrates how to establish and tear down bindings to Ethernet adapters, i.e. those that export medium type
+<b>NdisMedium802_3</b>. It shows how to set a packet filter, send and receive data, and handle plug-and-play events.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/NDIS-Connection-less-4a7644e0/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2>Run the sample</h2>
+<h2><a id="INSTALLATION"></a><a id="installation"></a>INSTALLATION</h2>
+<p>The driver is installed using the INF file ndisprot.inf, which is provided in the driver directory. In Network Connections UI, select an adapter and open
+<b>Properties.</b></p>
+<p>Click <b>Install</b>, then <b>Protocol</b>, then <b>Add</b>, and then <b>Have disk</b>. Then point to the location of the .inf and driver.</p>
+<p>Select <b>Sample NDIS Protocol Driver</b> and click <b>OK</b>. After installing the protocol, copy over the test application prottest.exe to a convenient location. Please note that the driver service has been set to manual start in the INF file. As a result,
+ it doesn't get loaded automatically when you install.</p>
+<h2><a id="Usage"></a><a id="usage"></a><a id="USAGE"></a>Usage</h2>
+<p>To start the driver, type <b>Net start ndisprot</b>.</p>
+<p>To stop the driver, type <b>Net stop ndisprot</b>.</p>
+<p>To test the driver, run <b>prottest</b>. For help on usage, run <b>prottest -?</b></p>
+<p><b>usage: PROTTEST [options] &lt;devicename&gt;</b> </p>
+<p><b>options:</b> </p>
+<p>
+<table>
+<tbody>
+<tr>
+<td>-e</td>
+<td>Enumerate devices</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>Read</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>Write (default)</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>&lt;length&gt;: length of each packet (default: 100)</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>&lt;count&gt;: number of packets (defaults to infinity)</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>&lt;MAC address&gt; (defaults to local MAC)</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>Prottest exercises the IOCTLs supported by NDISPROT, and sends and/or receives data on the selected device. In order to use prottest, the user must have administrative privilege. Users should pass down a big enough buffer in order to receive the entire received
+ data. If the length of the buffer passed down is smaller than the length of the received data, NDISPROT will only copy part of the data and discard the rest when the given buffer is full.</p>
+<p>Use the <b>–e</b> option to enumerate all devices to which NDISPROT is bound:</p>
+<p><b>C:\prot&gt;prottest -n 2 \DEVICE\{9273DA7D-5275-4B9A-AC56-68A49D121F1F}</b>
+</p>
+<p><b>DoWriteProc: finished sending 2 packets of 100 bytes each</b> </p>
+<p><b>DoReadProc finished: read 2 packets</b> </p>
+<p class="note"><b>Note</b>&nbsp;&nbsp; </p>
+<p class="note">With a checked version of ndisprot.sys, you can control the volume of debug information generated by changing the variable
+<code>ndisprotDebugLevel</code>. Refer to debug.h for more information. </p>
+<p></p>
+<p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff566821">
+NDIS Protocol Drivers</a> in the network devices design guide.</p>
+<h2><a id="File_Manifest"></a><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>prottest.c </td>
+<td>User-mode test application</td>
+</tr>
+<tr>
+<td>debug.c </td>
+<td>Routines to aid debugging</td>
+</tr>
+<tr>
+<td>debug.h </td>
+<td>Debug macro definitions</td>
+</tr>
+<tr>
+<td>macros.h </td>
+<td>Spinlock, event, referencing macros</td>
+</tr>
+<tr>
+<td>ndisbind.c </td>
+<td>NDIS protocol entry points to handle binding/unbinding from adapters</td>
+</tr>
+<tr>
+<td>ndisprot.h </td>
+<td>Data structure definitions</td>
+</tr>
+<tr>
+<td>ndisprot.inf </td>
+<td>INF file for installing NDISPROT</td>
+</tr>
+<tr>
+<td>ntdisp.c </td>
+<td>NT Entry points and dispatch routines for NDISPROT</td>
+</tr>
+<tr>
+<td>protuser.h </td>
+<td>IOCTL and associated structure definitions</td>
+</tr>
+<tr>
+<td>recv.c </td>
+<td>NDIS protocol entry points for receiving data, and IRP_MJ_READ processing</td>
+</tr>
+<tr>
+<td>send.c </td>
+<td>NDIS protocol routines for sending data, and IRP_MJ_WRITE processing</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

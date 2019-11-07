@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to add a hint text to a WPF Textbox</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to add a hint text to a WPF Textbox</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WPF, .NET Framework, Windows Desktop App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            TextBox, hint text
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-add-a-hint-text-to-ad928cd2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+</h1>
+<h1>The project illustrates how to add a hint text to a WPF Textbox</h1>
+<h2>Introduction</h2>
+<p>The project illustrates how to add hint text to a WPF textbox, which will act as a formal note for the control.</p>
+<p>Lots of developers ask about this in the MSDN forums, so we created the code sample to address the frequently asked programming scenario.</p>
+<p>1. Textbox Hints?</p>
+<p><a href="http://social.msdn.microsoft.com/Forums/en-US/e6c6fea0-faba-440a-9e21-2e7baee52df0/textbox-hints?forum=wpf">http://social.msdn.microsoft.com/Forums/en-US/e6c6fea0-faba-440a-9e21-2e7baee52df0/textbox-hints?forum=wpf</a></p>
+<p>&nbsp;</p>
+<p>2. Textbox display hint info</p>
+<p><a href="http://social.msdn.microsoft.com/Forums/en-US/37abab21-ac9f-4aa2-a073-0e363576ad5d/textbox-display-hint-info?forum=silverlightcontrols">http://social.msdn.microsoft.com/Forums/en-US/37abab21-ac9f-4aa2-a073-0e363576ad5d/textbox-display-hint-info?forum=silverlightcontrols</a></p>
+<p>&nbsp;</p>
+<p>3. How can I add a hint text to WPF textbox?</p>
+<p><a href="http://stackoverflow.com/questions/7425618/how-can-i-add-a-hint-text-to-wpf-textbox?lq=1">http://stackoverflow.com/questions/7425618/how-can-i-add-a-hint-text-to-wpf-textbox?lq=1</a></p>
+<p>&nbsp;</p>
+<h2>Building the Project</h2>
+<p><strong>Creating a WPF Application (CSAddHintText2Textbox)</strong></p>
+<ol>
+<li>In the Visual Studio 2012, create a WPF Application </li><li>Implement a converter class that implements IMultiValueConverter </li></ol>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public object Convert(object[] values, Type targetType, object parameter, <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-add-a-hint-text-to-ad928cd2/https://msdn.microsoft.com/en-US/library/System.Globalization.CultureInfo.aspx"  title="Auto generated link to System.Globalization.CultureInfo">System.Globalization.CultureInfo</a> culture)
+
+        {
+
+            // Test for non-null
+
+            if (values[0] is bool &amp;&amp; values[1] is bool)
+
+            {
+
+                bool hasText = !(bool)values[0];
+
+                bool hasFocus = (bool)values[1];
+
+ 
+
+                if (hasFocus || hasText)
+
+                    return Visibility.Collapsed;
+
+            }
+
+ 
+
+            return Visibility.Visible;
+
+         }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">object</span>&nbsp;Convert(<span class="cs__keyword">object</span>[]&nbsp;values,&nbsp;Type&nbsp;targetType,&nbsp;<span class="cs__keyword">object</span>&nbsp;parameter,&nbsp;System.Globalization.CultureInfo&nbsp;culture)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Test&nbsp;for&nbsp;non-null</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(values[<span class="cs__number">0</span>]&nbsp;<span class="cs__keyword">is</span>&nbsp;<span class="cs__keyword">bool</span>&nbsp;&amp;&amp;&nbsp;values[<span class="cs__number">1</span>]&nbsp;<span class="cs__keyword">is</span>&nbsp;<span class="cs__keyword">bool</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">bool</span>&nbsp;hasText&nbsp;=&nbsp;!(<span class="cs__keyword">bool</span>)values[<span class="cs__number">0</span>];&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">bool</span>&nbsp;hasFocus&nbsp;=&nbsp;(<span class="cs__keyword">bool</span>)values[<span class="cs__number">1</span>];&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(hasFocus&nbsp;||&nbsp;hasText)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;Visibility.Collapsed;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;Visibility.Visible;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>3. &nbsp;The XAML file will ensure the UI operations</p>
+<pre><div class="scriptcode"><div class="pluginEditHolder" pluginCommand="mceScriptCode"><div class="title"><span>XAML</span></div><div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div><span class="hidden">xaml</span><pre class="hidden">&lt;Window.Resources&gt;
+
+        &lt;SolidColorBrush x:Key=&quot;brushWatermarkBackground&quot; Color=&quot;White&quot; /&gt;
+
+        &lt;SolidColorBrush x:Key=&quot;brushWatermarkForeground&quot; Color=&quot;LightSteelBlue&quot; /&gt;
+
+        &lt;SolidColorBrush x:Key=&quot;brushWatermarkBorder&quot; Color=&quot;Indigo&quot; /&gt;
+
+ 
+
+        &lt;BooleanToVisibilityConverter x:Key=&quot;BooleanToVisibilityConverter&quot; /&gt;
+
+        &lt;local:TextInputToVisibilityConverter x:Key=&quot;TextInputToVisibilityConverter&quot; /&gt;
+
+ 
+
+        &lt;Style x:Key=&quot;EntryFieldStyle&quot; TargetType=&quot;Grid&quot;&gt;
+
+            &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Stretch&quot; /&gt;
+
+            &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;20,0&quot;/&gt;
+
+        &lt;/Style&gt;
+
+    &lt;/Window.Resources&gt;
+
+&lt;Grid Grid.Row=&quot;0&quot; Background=&quot;{StaticResource brushWatermarkBackground}&quot; Style=&quot;{StaticResource EntryFieldStyle}&quot; &gt;
+
+            &lt;TextBlock Margin=&quot;5,2&quot; Text=&quot;This prompt dissappears as you type...&quot; Foreground=&quot;{StaticResource brushWatermarkForeground}&quot;
+
+                       Visibility=&quot;{Binding ElementName=txtUserEntry, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}&quot; /&gt;
+
+            &lt;TextBox Name=&quot;txtUserEntry&quot; Background=&quot;Transparent&quot; BorderBrush=&quot;{StaticResource brushWatermarkBorder}&quot; /&gt;
+
+        &lt;/Grid&gt;
+
+ 
+
+        &lt;Grid Grid.Row=&quot;1&quot; Background=&quot;{StaticResource brushWatermarkBackground}&quot; Style=&quot;{StaticResource EntryFieldStyle}&quot; &gt;
+
+            &lt;TextBlock Margin=&quot;5,2&quot; Text=&quot;This dissappears as the control gets focus...&quot; Foreground=&quot;{StaticResource brushWatermarkForeground}&quot; &gt;
+
+                &lt;TextBlock.Visibility&gt;
+
+                    &lt;MultiBinding Converter=&quot;{StaticResource TextInputToVisibilityConverter}&quot;&gt;
+
+                        &lt;Binding ElementName=&quot;txtUserEntry2&quot; Path=&quot;Text.IsEmpty&quot; /&gt;
+
+                        &lt;Binding ElementName=&quot;txtUserEntry2&quot; Path=&quot;IsFocused&quot; /&gt;
+
+                    &lt;/MultiBinding&gt;
+
+                &lt;/TextBlock.Visibility&gt;
+
+            &lt;/TextBlock&gt;
+
+            &lt;TextBox Name=&quot;txtUserEntry2&quot; Background=&quot;Transparent&quot; BorderBrush=&quot;{StaticResource brushWatermarkBorder}&quot; /&gt;
+
+        &lt;/Grid&gt;</pre>
+<div class="preview">
+<pre class="xaml"><span class="xaml__tag_start">&lt;Window</span>.Resources<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;SolidColorBrush</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;brushWatermarkBackground&quot;</span>&nbsp;<span class="xaml__attr_name">Color</span>=<span class="xaml__attr_value">&quot;White&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;SolidColorBrush</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;brushWatermarkForeground&quot;</span>&nbsp;<span class="xaml__attr_name">Color</span>=<span class="xaml__attr_value">&quot;LightSteelBlue&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;SolidColorBrush</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;brushWatermarkBorder&quot;</span>&nbsp;<span class="xaml__attr_name">Color</span>=<span class="xaml__attr_value">&quot;Indigo&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;BooleanToVisibilityConverter</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;BooleanToVisibilityConverter&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;local</span>:TextInputToVisibilityConverter&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;TextInputToVisibilityConverter&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Style</span>&nbsp;x:<span class="xaml__attr_name">Key</span>=<span class="xaml__attr_value">&quot;EntryFieldStyle&quot;</span>&nbsp;<span class="xaml__attr_name">TargetType</span>=<span class="xaml__attr_value">&quot;Grid&quot;</span><span class="xaml__tag_start">&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="css__element">Setter</span>&nbsp;<span class="css__element">Property</span>=&quot;<span class="css__element">HorizontalAlignment</span>&quot;&nbsp;<span class="css__element">Value</span>=&quot;<span class="css__element">Stretch</span>&quot;&nbsp;/&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="css__element">Setter</span>&nbsp;<span class="css__element">Property</span>=&quot;<span class="css__element">VerticalAlignment</span>&quot;&nbsp;<span class="css__element">Value</span>=&quot;<span class="css__element">Center</span>&quot;&nbsp;/&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="css__element">Setter</span>&nbsp;<span class="css__element">Property</span>=&quot;<span class="css__element">Margin</span>&quot;&nbsp;<span class="css__element">Value</span>=&quot;<span class="css__element">20</span>,<span class="css__element">0</span>&quot;/&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/Style&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Window.Resources&gt;&nbsp;
+&nbsp;
+<span class="xaml__tag_start">&lt;Grid</span>&nbsp;Grid.<span class="xaml__attr_name">Row</span>=<span class="xaml__attr_value">&quot;0&quot;</span>&nbsp;<span class="xaml__attr_name">Background</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkBackground}&quot;</span>&nbsp;<span class="xaml__attr_name">Style</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;EntryFieldStyle}&quot;</span>&nbsp;<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;5,2&quot;</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;This&nbsp;prompt&nbsp;dissappears&nbsp;as&nbsp;you&nbsp;type...&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkForeground}&quot;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__attr_name">Visibility</span>=<span class="xaml__attr_value">&quot;{Binding&nbsp;ElementName=txtUserEntry,&nbsp;Path=Text.IsEmpty,&nbsp;Converter={StaticResource&nbsp;BooleanToVisibilityConverter}}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBox</span>&nbsp;<span class="xaml__attr_name">Name</span>=<span class="xaml__attr_value">&quot;txtUserEntry&quot;</span>&nbsp;<span class="xaml__attr_name">Background</span>=<span class="xaml__attr_value">&quot;Transparent&quot;</span>&nbsp;<span class="xaml__attr_name">BorderBrush</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkBorder}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/Grid&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Grid</span>&nbsp;Grid.<span class="xaml__attr_name">Row</span>=<span class="xaml__attr_value">&quot;1&quot;</span>&nbsp;<span class="xaml__attr_name">Background</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkBackground}&quot;</span>&nbsp;<span class="xaml__attr_name">Style</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;EntryFieldStyle}&quot;</span>&nbsp;<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>&nbsp;<span class="xaml__attr_name">Margin</span>=<span class="xaml__attr_value">&quot;5,2&quot;</span>&nbsp;<span class="xaml__attr_name">Text</span>=<span class="xaml__attr_value">&quot;This&nbsp;dissappears&nbsp;as&nbsp;the&nbsp;control&nbsp;gets&nbsp;focus...&quot;</span>&nbsp;<span class="xaml__attr_name">Foreground</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkForeground}&quot;</span>&nbsp;<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBlock</span>.Visibility<span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;MultiBinding</span>&nbsp;<span class="xaml__attr_name">Converter</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;TextInputToVisibilityConverter}&quot;</span><span class="xaml__tag_start">&gt;&nbsp;
+</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Binding</span>&nbsp;<span class="xaml__attr_name">ElementName</span>=<span class="xaml__attr_value">&quot;txtUserEntry2&quot;</span>&nbsp;<span class="xaml__attr_name">Path</span>=<span class="xaml__attr_value">&quot;Text.IsEmpty&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;Binding</span>&nbsp;<span class="xaml__attr_name">ElementName</span>=<span class="xaml__attr_value">&quot;txtUserEntry2&quot;</span>&nbsp;<span class="xaml__attr_name">Path</span>=<span class="xaml__attr_value">&quot;IsFocused&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/MultiBinding&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TextBlock.Visibility&gt;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/TextBlock&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_start">&lt;TextBox</span>&nbsp;<span class="xaml__attr_name">Name</span>=<span class="xaml__attr_value">&quot;txtUserEntry2&quot;</span>&nbsp;<span class="xaml__attr_name">Background</span>=<span class="xaml__attr_value">&quot;Transparent&quot;</span>&nbsp;<span class="xaml__attr_name">BorderBrush</span>=<span class="xaml__attr_value">&quot;{StaticResource&nbsp;brushWatermarkBorder}&quot;</span>&nbsp;<span class="xaml__tag_start">/&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xaml__tag_end">&lt;/Grid&gt;</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</pre>
+<h2>Running the Sample</h2>
+<p><span style="font-size:10px">1. This sample has two text boxes</span></p>
+<p><span style="font-size:10px"><span style="white-space:pre">&nbsp;</span>a.&nbsp;The hint will disappear on typing in the 1</span><sup>st</sup><span style="font-size:10px"> textbox</span></p>
+<p><span style="font-size:10px"><span style="white-space:pre">&nbsp;</span>b.&nbsp;The hint will disappear on selection of the 2</span><sup>nd</sup><span style="font-size:10px"> textbox</span></p>
+<p><span style="font-size:10px">2. Sharing the sample data by its operations:</span></p>
+<ol>
+</ol>
+<p>&nbsp;<img id="132002" src="description/image001.png" alt="" width="527" height="346"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

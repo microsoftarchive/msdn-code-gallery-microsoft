@@ -1,0 +1,380 @@
+; Plotter.inf for DDK
+;
+; List of supported printers, manufacturers
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%MS%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+
+;
+; Manufacturer section.
+;
+; This section lists all of the manufacturers
+; that we will display in the Dialog box
+;
+[Manufacturer]
+%HP%=HP, NTx86, NTamd64, NTia64
+
+;
+; Model sections.
+;
+; Each section here corresponds with an entry listed in the
+; [Manufacturer] section, above. The models will be displayed in the order
+; that they appear in the INF file.
+;
+
+[HP]
+"Hewlett-Packard HP-GL/2 Plotter"                      = HPGL2PEN.PCD, HPHewlett-Packard_HP7319,Hewlett-Packard_HP-GL/2_Plotter
+"HP 7550 Plus"                                         = HP7550PL.PCD, HPHP_7550_Plus04A9,HP_7550_Plus
+"HP DesignJet 200 (C3180A)"                            = HP20022.PCD, HPHP_DesignJet_200_(0417,HP_DesignJet_200_(C3180A)
+"HP DesignJet 200 (C3181A)"                            = HP20036.PCD, HPHP_DesignJet_200_(C446,HP_DesignJet_200_(C3181A)
+"HP DesignJet 220 (D/A1)"                              = HP22024.PCD, HPHP_DesignJet_220_(D7E6,HP_DesignJet_220_(D/A1)
+"HP DesignJet 220 (E/A0)"                              = HP22036.PCD, HPHP_DesignJet_220_(85DA,HP_DesignJet_220_(E/A0)
+"HP DesignJet 230 (D/A1)"                              = HP23024.PCD, HPHP_DesignJet_230_(45EB,HP_DesignJet_230_(D/A1)
+"HP DesignJet 230 (E/A0)"                              = HP23036.PCD, HPHP_DesignJet_230_(77D6,HP_DesignJet_230_(E/A0)
+"HP DesignJet 250C (D/A1)"                             = HP25024.PCD, HPHP_DesignJet_250C_441B,HP_DesignJet_250C_(D/A1)
+"HP DesignJet 250C (E/A0)"                             = HP25036.PCD, HPHP_DesignJet_250C_1627,HP_DesignJet_250C_(E/A0)
+"HP DesignJet 330 (D/A1)"                              = HP33024.PCD, HPHP_DesignJet_330_(80BA,HP_DesignJet_330_(D/A1)
+"HP DesignJet 330 (E/A0)"                              = HP33036.PCD, HPHP_DesignJet_330_(B285,HP_DesignJet_330_(E/A0)
+"HP DesignJet 350C (D/A1)"                             = HP35024.PCD, HPHP_DesignJet_350C_BA1F,HP_DesignJet_350C_(D/A1)
+"HP DesignJet 350C (E/A0)"                             = HP35036.PCD, HPHP_DesignJet_350C_EA23,HP_DesignJet_350C_(E/A0)
+"HP DesignJet 600 (C2847A)"                            = HP60022.PCD, HPHP_DesignJet_600_(8A89,HP_DesignJet_600_(C2847A)
+"HP DesignJet 600 (C2848A)"                            = HP60036.PCD, HPHP_DesignJet_600_(89B9,HP_DesignJet_600_(C2848A)
+"HP DesignJet 650C (C2858A)"                           = HP650C22.PCD, HPHP_DesignJet_650C_BACD,HP_DesignJet_650C_(C2858A)
+"HP DesignJet 650C (C2858B)"                           = HP650C22.PCD, HPHP_DesignJet_650C_4ACD,HP_DesignJet_650C_(C2858B)
+"HP DesignJet 650C (C2859A)"                           = HP650C36.PCD, HPHP_DesignJet_650C_7A9C,HP_DesignJet_650C_(C2859A)
+"HP DesignJet 650C (C2859B)"                           = HP650C36.PCD, HPHP_DesignJet_650C_8A9C,HP_DesignJet_650C_(C2859B)
+"HP DesignJet 750C (D/A1) Color"                       = HP75024.PCD, HPHP_DesignJet_750C_C9A0,HP_DesignJet_750C_(D/A1)_Color
+"HP DesignJet 750C (E/A0) Color"                       = HP75036.PCD, HPHP_DesignJet_750C_F965,HP_DesignJet_750C_(E/A0)_Color
+"HP DesignJet 750C (D/A1) Mono"                        = HP750M24.PCD, HPHP_DesignJet_750C_296D,HP_DesignJet_750C_(D/A1)_Mono
+"HP DesignJet 750C (E/A0) Mono"                        = HP750M36.PCD, HPHP_DesignJet_750C_2C2C,HP_DesignJet_750C_(E/A0)_Mono
+"HP DesignJet 755CM"                                   = HP755CM.PCD, HPHP_DesignJet_755CM3DC5,HP_DesignJet_755CM
+"HP DesignJet 755CM 600 dpi Mono"                      = HP755CMM.PCD, HPHP_DesignJet_755CM59A7,HP_DesignJet_755CM_600_dpi_Mono
+"HP DesignJet (C3180A)"                                = HPDESIGN.PCD, HPHP_DesignJet_(C3180624,HP_DesignJet_(C3180A)
+"HP DraftMaster RX/MX"                                 = HPDMRXMX.PCD, HPHP_DraftMaster_RX/AC09,HP_DraftMaster_RX/MX
+"HP DraftMaster SX"                                    = HPDMSX.PCD, HPHP_DraftMaster_SXC3CE,HP_DraftMaster_SX
+"HP DraftPro Plus (C3170A)"                            = HPDPP22.PCD, HPHP_DraftPro_Plus_(4F58,HP_DraftPro_Plus_(C3170A)
+"HP DraftPro Plus (C3171A)"                            = HPDPP36.PCD, HPHP_DraftPro_Plus_(8F09,HP_DraftPro_Plus_(C3171A)
+
+[HP.NTx86]
+"Hewlett-Packard HP-GL/2 Plotter"                      = HPGL2PEN.PCD, HPHewlett-Packard_HP7319,Hewlett-Packard_HP-GL/2_Plotter
+"HP 7550 Plus"                                         = HP7550PL.PCD, HPHP_7550_Plus04A9,HP_7550_Plus
+"HP DesignJet 200 (C3180A)"                            = HP20022.PCD, HPHP_DesignJet_200_(0417,HP_DesignJet_200_(C3180A)
+"HP DesignJet 200 (C3181A)"                            = HP20036.PCD, HPHP_DesignJet_200_(C446,HP_DesignJet_200_(C3181A)
+"HP DesignJet 220 (D/A1)"                              = HP22024.PCD, HPHP_DesignJet_220_(D7E6,HP_DesignJet_220_(D/A1)
+"HP DesignJet 220 (E/A0)"                              = HP22036.PCD, HPHP_DesignJet_220_(85DA,HP_DesignJet_220_(E/A0)
+"HP DesignJet 230 (D/A1)"                              = HP23024.PCD, HPHP_DesignJet_230_(45EB,HP_DesignJet_230_(D/A1)
+"HP DesignJet 230 (E/A0)"                              = HP23036.PCD, HPHP_DesignJet_230_(77D6,HP_DesignJet_230_(E/A0)
+"HP DesignJet 250C (D/A1)"                             = HP25024.PCD, HPHP_DesignJet_250C_441B,HP_DesignJet_250C_(D/A1)
+"HP DesignJet 250C (E/A0)"                             = HP25036.PCD, HPHP_DesignJet_250C_1627,HP_DesignJet_250C_(E/A0)
+"HP DesignJet 330 (D/A1)"                              = HP33024.PCD, HPHP_DesignJet_330_(80BA,HP_DesignJet_330_(D/A1)
+"HP DesignJet 330 (E/A0)"                              = HP33036.PCD, HPHP_DesignJet_330_(B285,HP_DesignJet_330_(E/A0)
+"HP DesignJet 350C (D/A1)"                             = HP35024.PCD, HPHP_DesignJet_350C_BA1F,HP_DesignJet_350C_(D/A1)
+"HP DesignJet 350C (E/A0)"                             = HP35036.PCD, HPHP_DesignJet_350C_EA23,HP_DesignJet_350C_(E/A0)
+"HP DesignJet 600 (C2847A)"                            = HP60022.PCD, HPHP_DesignJet_600_(8A89,HP_DesignJet_600_(C2847A)
+"HP DesignJet 600 (C2848A)"                            = HP60036.PCD, HPHP_DesignJet_600_(89B9,HP_DesignJet_600_(C2848A)
+"HP DesignJet 650C (C2858A)"                           = HP650C22.PCD, HPHP_DesignJet_650C_BACD,HP_DesignJet_650C_(C2858A)
+"HP DesignJet 650C (C2858B)"                           = HP650C22.PCD, HPHP_DesignJet_650C_4ACD,HP_DesignJet_650C_(C2858B)
+"HP DesignJet 650C (C2859A)"                           = HP650C36.PCD, HPHP_DesignJet_650C_7A9C,HP_DesignJet_650C_(C2859A)
+"HP DesignJet 650C (C2859B)"                           = HP650C36.PCD, HPHP_DesignJet_650C_8A9C,HP_DesignJet_650C_(C2859B)
+"HP DesignJet 750C (D/A1) Color"                       = HP75024.PCD, HPHP_DesignJet_750C_C9A0,HP_DesignJet_750C_(D/A1)_Color
+"HP DesignJet 750C (E/A0) Color"                       = HP75036.PCD, HPHP_DesignJet_750C_F965,HP_DesignJet_750C_(E/A0)_Color
+"HP DesignJet 750C (D/A1) Mono"                        = HP750M24.PCD, HPHP_DesignJet_750C_296D,HP_DesignJet_750C_(D/A1)_Mono
+"HP DesignJet 750C (E/A0) Mono"                        = HP750M36.PCD, HPHP_DesignJet_750C_2C2C,HP_DesignJet_750C_(E/A0)_Mono
+"HP DesignJet 755CM"                                   = HP755CM.PCD, HPHP_DesignJet_755CM3DC5,HP_DesignJet_755CM
+"HP DesignJet 755CM 600 dpi Mono"                      = HP755CMM.PCD, HPHP_DesignJet_755CM59A7,HP_DesignJet_755CM_600_dpi_Mono
+"HP DesignJet (C3180A)"                                = HPDESIGN.PCD, HPHP_DesignJet_(C3180624,HP_DesignJet_(C3180A)
+"HP DraftMaster RX/MX"                                 = HPDMRXMX.PCD, HPHP_DraftMaster_RX/AC09,HP_DraftMaster_RX/MX
+"HP DraftMaster SX"                                    = HPDMSX.PCD, HPHP_DraftMaster_SXC3CE,HP_DraftMaster_SX
+"HP DraftPro Plus (C3170A)"                            = HPDPP22.PCD, HPHP_DraftPro_Plus_(4F58,HP_DraftPro_Plus_(C3170A)
+"HP DraftPro Plus (C3171A)"                            = HPDPP36.PCD, HPHP_DraftPro_Plus_(8F09,HP_DraftPro_Plus_(C3171A)
+
+[HP.NTamd64]
+"Hewlett-Packard HP-GL/2 Plotter"                      = HPGL2PEN.PCD, HPHewlett-Packard_HP7319,Hewlett-Packard_HP-GL/2_Plotter
+"HP 7550 Plus"                                         = HP7550PL.PCD, HPHP_7550_Plus04A9,HP_7550_Plus
+"HP DesignJet 200 (C3180A)"                            = HP20022.PCD, HPHP_DesignJet_200_(0417,HP_DesignJet_200_(C3180A)
+"HP DesignJet 200 (C3181A)"                            = HP20036.PCD, HPHP_DesignJet_200_(C446,HP_DesignJet_200_(C3181A)
+"HP DesignJet 220 (D/A1)"                              = HP22024.PCD, HPHP_DesignJet_220_(D7E6,HP_DesignJet_220_(D/A1)
+"HP DesignJet 220 (E/A0)"                              = HP22036.PCD, HPHP_DesignJet_220_(85DA,HP_DesignJet_220_(E/A0)
+"HP DesignJet 230 (D/A1)"                              = HP23024.PCD, HPHP_DesignJet_230_(45EB,HP_DesignJet_230_(D/A1)
+"HP DesignJet 230 (E/A0)"                              = HP23036.PCD, HPHP_DesignJet_230_(77D6,HP_DesignJet_230_(E/A0)
+"HP DesignJet 250C (D/A1)"                             = HP25024.PCD, HPHP_DesignJet_250C_441B,HP_DesignJet_250C_(D/A1)
+"HP DesignJet 250C (E/A0)"                             = HP25036.PCD, HPHP_DesignJet_250C_1627,HP_DesignJet_250C_(E/A0)
+"HP DesignJet 330 (D/A1)"                              = HP33024.PCD, HPHP_DesignJet_330_(80BA,HP_DesignJet_330_(D/A1)
+"HP DesignJet 330 (E/A0)"                              = HP33036.PCD, HPHP_DesignJet_330_(B285,HP_DesignJet_330_(E/A0)
+"HP DesignJet 350C (D/A1)"                             = HP35024.PCD, HPHP_DesignJet_350C_BA1F,HP_DesignJet_350C_(D/A1)
+"HP DesignJet 350C (E/A0)"                             = HP35036.PCD, HPHP_DesignJet_350C_EA23,HP_DesignJet_350C_(E/A0)
+"HP DesignJet 600 (C2847A)"                            = HP60022.PCD, HPHP_DesignJet_600_(8A89,HP_DesignJet_600_(C2847A)
+"HP DesignJet 600 (C2848A)"                            = HP60036.PCD, HPHP_DesignJet_600_(89B9,HP_DesignJet_600_(C2848A)
+"HP DesignJet 650C (C2858A)"                           = HP650C22.PCD, HPHP_DesignJet_650C_BACD,HP_DesignJet_650C_(C2858A)
+"HP DesignJet 650C (C2858B)"                           = HP650C22.PCD, HPHP_DesignJet_650C_4ACD,HP_DesignJet_650C_(C2858B)
+"HP DesignJet 650C (C2859A)"                           = HP650C36.PCD, HPHP_DesignJet_650C_7A9C,HP_DesignJet_650C_(C2859A)
+"HP DesignJet 650C (C2859B)"                           = HP650C36.PCD, HPHP_DesignJet_650C_8A9C,HP_DesignJet_650C_(C2859B)
+"HP DesignJet 750C (D/A1) Color"                       = HP75024.PCD, HPHP_DesignJet_750C_C9A0,HP_DesignJet_750C_(D/A1)_Color
+"HP DesignJet 750C (E/A0) Color"                       = HP75036.PCD, HPHP_DesignJet_750C_F965,HP_DesignJet_750C_(E/A0)_Color
+"HP DesignJet 750C (D/A1) Mono"                        = HP750M24.PCD, HPHP_DesignJet_750C_296D,HP_DesignJet_750C_(D/A1)_Mono
+"HP DesignJet 750C (E/A0) Mono"                        = HP750M36.PCD, HPHP_DesignJet_750C_2C2C,HP_DesignJet_750C_(E/A0)_Mono
+"HP DesignJet 755CM"                                   = HP755CM.PCD, HPHP_DesignJet_755CM3DC5,HP_DesignJet_755CM
+"HP DesignJet 755CM 600 dpi Mono"                      = HP755CMM.PCD, HPHP_DesignJet_755CM59A7,HP_DesignJet_755CM_600_dpi_Mono
+"HP DesignJet (C3180A)"                                = HPDESIGN.PCD, HPHP_DesignJet_(C3180624,HP_DesignJet_(C3180A)
+"HP DraftMaster RX/MX"                                 = HPDMRXMX.PCD, HPHP_DraftMaster_RX/AC09,HP_DraftMaster_RX/MX
+"HP DraftMaster SX"                                    = HPDMSX.PCD, HPHP_DraftMaster_SXC3CE,HP_DraftMaster_SX
+"HP DraftPro Plus (C3170A)"                            = HPDPP22.PCD, HPHP_DraftPro_Plus_(4F58,HP_DraftPro_Plus_(C3170A)
+"HP DraftPro Plus (C3171A)"                            = HPDPP36.PCD, HPHP_DraftPro_Plus_(8F09,HP_DraftPro_Plus_(C3171A)
+
+[HP.NTia64]
+"Hewlett-Packard HP-GL/2 Plotter"                      = HPGL2PEN.PCD, HPHewlett-Packard_HP7319,Hewlett-Packard_HP-GL/2_Plotter
+"HP 7550 Plus"                                         = HP7550PL.PCD, HPHP_7550_Plus04A9,HP_7550_Plus
+"HP DesignJet 200 (C3180A)"                            = HP20022.PCD, HPHP_DesignJet_200_(0417,HP_DesignJet_200_(C3180A)
+"HP DesignJet 200 (C3181A)"                            = HP20036.PCD, HPHP_DesignJet_200_(C446,HP_DesignJet_200_(C3181A)
+"HP DesignJet 220 (D/A1)"                              = HP22024.PCD, HPHP_DesignJet_220_(D7E6,HP_DesignJet_220_(D/A1)
+"HP DesignJet 220 (E/A0)"                              = HP22036.PCD, HPHP_DesignJet_220_(85DA,HP_DesignJet_220_(E/A0)
+"HP DesignJet 230 (D/A1)"                              = HP23024.PCD, HPHP_DesignJet_230_(45EB,HP_DesignJet_230_(D/A1)
+"HP DesignJet 230 (E/A0)"                              = HP23036.PCD, HPHP_DesignJet_230_(77D6,HP_DesignJet_230_(E/A0)
+"HP DesignJet 250C (D/A1)"                             = HP25024.PCD, HPHP_DesignJet_250C_441B,HP_DesignJet_250C_(D/A1)
+"HP DesignJet 250C (E/A0)"                             = HP25036.PCD, HPHP_DesignJet_250C_1627,HP_DesignJet_250C_(E/A0)
+"HP DesignJet 330 (D/A1)"                              = HP33024.PCD, HPHP_DesignJet_330_(80BA,HP_DesignJet_330_(D/A1)
+"HP DesignJet 330 (E/A0)"                              = HP33036.PCD, HPHP_DesignJet_330_(B285,HP_DesignJet_330_(E/A0)
+"HP DesignJet 350C (D/A1)"                             = HP35024.PCD, HPHP_DesignJet_350C_BA1F,HP_DesignJet_350C_(D/A1)
+"HP DesignJet 350C (E/A0)"                             = HP35036.PCD, HPHP_DesignJet_350C_EA23,HP_DesignJet_350C_(E/A0)
+"HP DesignJet 600 (C2847A)"                            = HP60022.PCD, HPHP_DesignJet_600_(8A89,HP_DesignJet_600_(C2847A)
+"HP DesignJet 600 (C2848A)"                            = HP60036.PCD, HPHP_DesignJet_600_(89B9,HP_DesignJet_600_(C2848A)
+"HP DesignJet 650C (C2858A)"                           = HP650C22.PCD, HPHP_DesignJet_650C_BACD,HP_DesignJet_650C_(C2858A)
+"HP DesignJet 650C (C2858B)"                           = HP650C22.PCD, HPHP_DesignJet_650C_4ACD,HP_DesignJet_650C_(C2858B)
+"HP DesignJet 650C (C2859A)"                           = HP650C36.PCD, HPHP_DesignJet_650C_7A9C,HP_DesignJet_650C_(C2859A)
+"HP DesignJet 650C (C2859B)"                           = HP650C36.PCD, HPHP_DesignJet_650C_8A9C,HP_DesignJet_650C_(C2859B)
+"HP DesignJet 750C (D/A1) Color"                       = HP75024.PCD, HPHP_DesignJet_750C_C9A0,HP_DesignJet_750C_(D/A1)_Color
+"HP DesignJet 750C (E/A0) Color"                       = HP75036.PCD, HPHP_DesignJet_750C_F965,HP_DesignJet_750C_(E/A0)_Color
+"HP DesignJet 750C (D/A1) Mono"                        = HP750M24.PCD, HPHP_DesignJet_750C_296D,HP_DesignJet_750C_(D/A1)_Mono
+"HP DesignJet 750C (E/A0) Mono"                        = HP750M36.PCD, HPHP_DesignJet_750C_2C2C,HP_DesignJet_750C_(E/A0)_Mono
+"HP DesignJet 755CM"                                   = HP755CM.PCD, HPHP_DesignJet_755CM3DC5,HP_DesignJet_755CM
+"HP DesignJet 755CM 600 dpi Mono"                      = HP755CMM.PCD, HPHP_DesignJet_755CM59A7,HP_DesignJet_755CM_600_dpi_Mono
+"HP DesignJet (C3180A)"                                = HPDESIGN.PCD, HPHP_DesignJet_(C3180624,HP_DesignJet_(C3180A)
+"HP DraftMaster RX/MX"                                 = HPDMRXMX.PCD, HPHP_DraftMaster_RX/AC09,HP_DraftMaster_RX/MX
+"HP DraftMaster SX"                                    = HPDMSX.PCD, HPHP_DraftMaster_SXC3CE,HP_DraftMaster_SX
+"HP DraftPro Plus (C3170A)"                            = HPDPP22.PCD, HPHP_DraftPro_Plus_(4F58,HP_DraftPro_Plus_(C3170A)
+"HP DraftPro Plus (C3171A)"                            = HPDPP36.PCD, HPHP_DraftPro_Plus_(8F09,HP_DraftPro_Plus_(C3171A)
+
+; Copy Sections
+;
+; Lists of files that are actually copied. These sections are referenced
+; from the installer sections, above. Only create a section if it contains
+; two or more files (if we only copy a single file, identify it in the
+; installer section, using the @filename notation) or if it's a color
+; profile (since the DestinationDirs can only handle sections, and not
+; individual files).
+;
+
+[HP20022.PCD]
+CopyFiles=@HP20022.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP20036.PCD]
+CopyFiles=@HP20036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP22024.PCD]
+CopyFiles=@HP22024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP22036.PCD]
+CopyFiles=@HP22036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP23024.PCD]
+CopyFiles=@HP23024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP23036.PCD]
+CopyFiles=@HP23036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP25024.PCD]
+CopyFiles=@HP25024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP25036.PCD]
+CopyFiles=@HP25036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP33024.PCD]
+CopyFiles=@HP33024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP33036.PCD]
+CopyFiles=@HP33036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP35024.PCD]
+CopyFiles=@HP35024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP35036.PCD]
+CopyFiles=@HP35036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP60022.PCD]
+CopyFiles=@HP60022.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP60036.PCD]
+CopyFiles=@HP60036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP650C22.PCD]
+CopyFiles=@HP650C22.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP650C36.PCD]
+CopyFiles=@HP650C36.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP75024.PCD]
+CopyFiles=@HP75024.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP75036.PCD]
+CopyFiles=@HP75036.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP750M24.PCD]
+CopyFiles=@HP750M24.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP750M36.PCD]
+CopyFiles=@HP750M36.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP7550PL.PCD]
+CopyFiles=@HP7550PL.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP755CM.PCD]
+CopyFiles=@HP755CM.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HP755CMM.PCD]
+CopyFiles=@HP755CMM.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPDESIGN.PCD]
+CopyFiles=@HPDESIGN.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPDMRXMX.PCD]
+CopyFiles=@HPDMRXMX.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPDMSX.PCD]
+CopyFiles=@HPDMSX.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPDPP22.PCD]
+CopyFiles=@HPDPP22.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPDPP36.PCD]
+CopyFiles=@HPDPP36.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[HPGL2PEN.PCD]
+CopyFiles=@HPGL2PEN.PCD,PLOTTER
+DataSection=PLOTTER_DATA
+
+[PLOTTER]
+PLOTTER.DLL
+PLOTUI.DLL
+PLOTUI.HLP
+
+
+;
+; Data Sections
+;
+; These sections contain data that is shared between devices.
+;
+
+
+[PLOTTER_DATA]
+DriverFile=PLOTTER.DLL
+ConfigFile=PLOTUI.DLL
+HelpFile=PLOTUI.HLP
+
+;
+; Call SetupSetDirectoryId with 66000 to set the target directory at runtime
+; (depending on which environment drivers are getting installed)
+;
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+;
+;  Source Disk Section
+;  This was added to enable Web Point&Print.
+;  All files added to this must also be added to Layout.INF
+;
+
+[SourceDisksNames.x86]
+1   = ,,,
+
+[SourceDisksNames.amd64]
+1   = ,,,
+
+[SourceDisksNames.ia64]
+1   = ,,,
+
+[SourceDisksFiles]
+hp20022.pcd = 1, mini\hp20022
+hp20036.pcd = 1, mini\hp20036
+hp22024.pcd = 1, mini\hp22024
+hp22036.pcd = 1, mini\hp22036
+hp23024.pcd = 1, mini\hp23024
+hp23036.pcd = 1, mini\hp23036
+hp25024.pcd = 1, mini\hp25024
+hp25036.pcd = 1, mini\hp25036
+hp33024.pcd = 1, mini\hp33024
+hp33036.pcd = 1, mini\hp33036
+hp35024.pcd = 1, mini\hp35024
+hp35036.pcd = 1, mini\hp35036
+hp60022.pcd = 1, mini\hp60022
+hp60036.pcd = 1, mini\hp60036
+hp650c22.pcd = 1, mini\hp650c22
+hp650c36.pcd = 1, mini\hp650c36
+hp75024.pcd = 1, mini\hp75024
+hp75036.pcd = 1, mini\hp75036
+hp750m24.pcd = 1, mini\hp750m24
+hp750m36.pcd = 1, mini\hp750m36
+hp7550pl.pcd = 1, mini\hp7550pl
+hp755cm.pcd = 1, mini\hp755cm
+hp755cmm.pcd = 1, mini\hp755cmm
+hpdesign.pcd = 1, mini\hpdesign
+hpdmrxmx.pcd = 1, mini\hpdmrxmx
+hpdmsx.pcd = 1, mini\hpdmsx
+hpdpp22.pcd = 1, mini\hpdpp22
+hpdpp36.pcd = 1, mini\hpdpp36
+hpgl2pen.pcd = 1, mini\hpgl2pen
+
+plotui.hlp   = 1
+
+[SourceDisksFiles.X86]
+plotter.dll  = 1,x86
+plotui.dll   = 1,x86
+
+[SourceDisksFiles.amd64]
+plotter.dll  = 1,amd64
+plotui.dll   = 1,amd64
+
+[SourceDisksFiles.IA64]
+plotter.dll  = 1,ia64
+plotui.dll   = 1,ia64
+
+;
+; Localizable Strings
+;
+[Strings]
+MS="Microsoft Windows 2000"
+PrinterClassName="Printers"
+; Manufacturers
+HP="HP"

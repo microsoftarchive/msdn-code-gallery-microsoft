@@ -1,0 +1,64 @@
+﻿<!-- Copyright (c) Microsoft. All rights reserved. -->
+<Page
+    x:Class="SDKTemplate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:ScenarioBindingConverter x:Key="ScenarioConverter"></local:ScenarioBindingConverter>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"  MinWidth="230" MaxWidth="600"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="LeftPane" Background="#FF140044" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="115"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Top" Grid.Row="0" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="5,20,0,0">
+                    <Image Source="Assets/windows-sdk.png" Stretch="None"/>
+                    <TextBlock Text="Windows platform sample" Foreground="White" Style="{StaticResource TagLineTextStyle}"/>
+                </StackPanel>
+                <TextBlock x:Name="SampleTitle" Foreground="White" Style="{StaticResource SampleHeaderTextStyle}" Margin="30,10,30,0" TextWrapping="Wrap" Text="Sample title here"/>
+            </StackPanel>
+            <ListBox x:Name="ScenarioControl" Grid.Row="1" SelectionChanged="ScenarioControl_SelectionChanged"
+                 SelectionMode="Single" HorizontalAlignment="Left" Style="{StaticResource ScenarioListBoxStyle}"
+                 VerticalAlignment="Top">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource ScenarioConverter}}" Style="{StaticResource ListItemTextStyle}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,10,0,20" VerticalAlignment="Top">
+                <TextBlock Margin="10,0,0,0" Foreground="White" TextWrapping="Wrap" >Status:</TextBlock>
+                <Border x:Name="StatusBorder" Margin="0,0,0,0" Visibility="Collapsed">
+                    <TextBlock x:Name="StatusBlock" Foreground="White" FontWeight="Bold" MaxHeight="200" TextTrimming="CharacterEllipsis"  Margin="20,10,10,20" TextWrapping="Wrap" />
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Vertical" Margin="10,0,5,10" VerticalAlignment="Bottom" >
+                <Image Source="Assets/microsoft-sdk.png"  Stretch="None" HorizontalAlignment="Left"/>
+                <TextBlock Text="&#xA9; Microsoft Corporation. All rights reserved." Foreground="White" Style="{StaticResource CopyrightTextStyle}"/>
+                <StackPanel x:Name="FooterPanel" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <HyperlinkButton Content="Terms" Tag="http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Copyright/default.aspx"
+                        Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+                    <TextBlock Text="|" Style="{StaticResource SeparatorStyle}" VerticalAlignment="Center"/>
+                    <HyperlinkButton Content="Trademarks" Tag="http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Trademarks/EN-US.aspx"
+                        Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+                    <TextBlock Text="|"  Style="{StaticResource SeparatorStyle}" VerticalAlignment="Center"/>
+                    <HyperlinkButton Content="Privacy" Tag="http://privacy.microsoft.com" Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Frame Grid.Column="1" x:Name="ScenarioFrame" Margin="30,50,30,0" />
+    </Grid>
+</Page>

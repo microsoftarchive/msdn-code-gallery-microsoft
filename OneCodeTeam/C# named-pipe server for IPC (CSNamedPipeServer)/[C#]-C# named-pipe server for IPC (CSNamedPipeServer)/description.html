@@ -1,0 +1,550 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C# named-pipe server for IPC (CSNamedPipeServer)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C# named-pipe server for IPC (CSNamedPipeServer)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            IPC and RPC, Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Named Pipe, Inter-process Communication
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/19/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSNamedPipeServer-4c760c2c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New">&nbsp;</p>
+<h2>CONSOLE APPLICATION : CSNamedPipeServer Project Overview</h2>
+<p style="font-family:Courier New">&nbsp;</p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+Named pipe is a mechanism for one-way or duplex inter-process communication <br>
+between the pipe server and one or more pipe clients in the local machine or <br>
+across the computers in the intranet:<br>
+<br>
+Client (GENERIC_WRITE) ---&gt; Server (GENERIC_READ)<br>
+<br>
+PIPE_ACCESS_OUTBOUND:<br>
+Client (GENERIC_READ) &lt;--- Server (GENERIC_WRITE)<br>
+<br>
+PIPE_ACCESS_DUPLEX:<br>
+Client (GENERIC_READ or GENERIC_WRITE, or both) &lt;--&gt; <br>
+Server (GENERIC_READ and GENERIC_WRITE)<br>
+<br>
+This code sample demonstrate two methods to create named pipe in Visual C#.<br>
+<br>
+1. Use the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> namespace<br>
+<br>
+The <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> namespace contains types that provide a means for <br>
+interprocess communication through anonymous and/or named pipes. <br>
+<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx" >http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx</a><br>
+These classes make the programming of named pipe in .NET much easier and <br>
+safer than P/Invoking native APIs directly. However, the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> <br>
+namespace is not available before .NET Framework 3.5. So, if you are <br>
+programming against .NET Framework 2.0, you have to P/Invoke native APIs <br>
+to use named pipe.<br>
+<br>
+The sample code in SystemIONamedPipeServer.Run() uses the <br>
+Systen.IO.Pipes.NamedPipeServerStream class to create a pipe that is named <br>
+&quot;\\.\pipe\SamplePipe&quot; to perform message-based communication. The pipe <br>
+supports duplex connections, so both client and server can read from and <br>
+write to the pipe. The security attributes of the pipe are customized to <br>
+allow Authenticated Users read and write access to a pipe, and to allow the <br>
+Administrators group full access to the pipe. When the pipe is connected by a <br>
+client, the server attempts to read the client's message from the pipe, and <br>
+write a response.<br>
+<br>
+2. P/Invoke the native APIs related to named pipe operations.<br>
+<br>
+The .NET interop services make it possible to call native APIs related to <br>
+named pipe operations from .NET. The sample code in <br>
+NativeNamedPipeServer.Run() demonstrates calling CreateNamedPipe to create <br>
+a pipe named &quot;\\.\pipe\SamplePipe&quot;, which supports duplex connections so that <br>
+both client and server can read from and write to the pipe. The security <br>
+attributes of the pipe are customized to allow Authenticated Users read and <br>
+write access to a pipe, and to allow the Administrators group full access to <br>
+the pipe. When the pipe is connected by a client, the server attempts to read <br>
+the client's message from the pipe by calling ReadFile, and write a response <br>
+by calling WriteFile. Please note that if you are programming against .NET <br>
+Framework 3.5 or any newer releases of .NET Framework, it is safer and easier <br>
+to use the types in the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> namespace to operate named pipes.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+The following steps walk through a demonstration of the named pipe sample.<br>
+<br>
+Step1. After you successfully build the CSNamedPipeClient and <br>
+CSNamedPipeServer sample projects in Visual Studio 2008, you will get the <br>
+applications: CSNamedPipeClient.exe and CSNamedPipeServer.exe. <br>
+<br>
+Step2. Run CSNamedPipeServer.exe in a command prompt to start up the server <br>
+end of the named pipe. If the command is &quot;CSNamedPipeServer.exe&quot;, the pipe <br>
+server is created by the types in the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> namespace. If the <br>
+command is &quot;CSNamedPipeServer.exe -native&quot;, the pipe server is created by <br>
+P/Invoking the native APIs related to named pipe operations. In both cases, <br>
+the application outputs the following information in the command prompt if <br>
+the pipe is created successfully.<br>
+<br>
+Server:<br>
+&nbsp;The named pipe (\\.\pipe\SamplePipe) is created.<br>
+&nbsp;Waiting for the client's connection...<br>
+<br>
+Step3. Run CSNamedPipeClient.exe in another command prompt to start up the <br>
+client end of the named pipe. If the command is &quot;CSNamedPipeClient.exe&quot;, the <br>
+client connects to the pipe by using the types in the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> <br>
+namespace. If the command is &quot;CSNamedPipeClient.exe -native&quot;, the client <br>
+connects to the pipe by P/Invoking the native APIs related to named pipe <br>
+operations. In both cases, the application should output the message below <br>
+in the command prompt when the client successfully connects to the named pipe.<br>
+<br>
+Client:<br>
+&nbsp;The named pipe (\\.\pipe\SamplePipe) is connected.<br>
+<br>
+In the meantime, the server application outputs this message to indicate that <br>
+the pipe is connected by a client.<br>
+<br>
+Server:<br>
+&nbsp;Client is connected.<br>
+<br>
+Step4. The client attempts to write a message to the named pipe. You will see <br>
+the message below in the commond prompt running the client application.<br>
+<br>
+Client:<br>
+&nbsp;Send 56 bytes to server: &quot;Default request from client&quot;<br>
+<br>
+When the server application reads the message from the client, it prints:<br>
+<br>
+Server:<br>
+&nbsp;Receive 56 bytes from client: &quot;Default request from client&quot;<br>
+<br>
+Next, the server writes a response to the pipe.<br>
+<br>
+Server:<br>
+&nbsp;Send 58 bytes to client: &quot;Default response from server&quot;<br>
+<br>
+And the client receives the response:<br>
+<br>
+Client:<br>
+&nbsp;Receive 58 bytes from server: &quot;Default response from server&quot;<br>
+<br>
+The connection is disconnected and the pipe is closed after that.<br>
+<br>
+</p>
+<h3>Sample Relation:</h3>
+<p style="font-family:Courier New">(The relationship between the current sample and the rest samples in
+<br>
+Microsoft All-In-One Code Framework <a href="http://1code.codeplex.com)" >
+http://1code.codeplex.com)</a><br>
+<br>
+CSNamedPipeClient/VBNamedPipeClient/CppNamedPipeClient -&gt; CSNamedPipeServer<br>
+CSNamedPipeServer is the server end of the named pipe. CSNamedPipeClient, <br>
+VBNamedPipeClient and CppNamedPipeClient can be the client ends that connect<br>
+to the named pipe.<br>
+<br>
+CSNamedPipeServer - VBNamedPipeServer - CppNamedPipeServer<br>
+CSNamedPipeServer, VBNamedPipeServer and CppNamedPipeServer are the same <br>
+named pipe server ends written in three different programming languages.<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+A. Named pipe server by using the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> namespace. <br>
+(SystemIONamedPipeServer.Run())<br>
+<br>
+1. Create a named pipe server (<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.NamedPipeServerStream.aspx"  title="Auto generated link to System.IO.Pipes.NamedPipeServerStream">System.IO.Pipes.NamedPipeServerStream</a>) object <br>
+and specify pipe name, pipe direction, options, transmission mode, security <br>
+attributes, etc.<br>
+<br>
+&nbsp; &nbsp;// Create the named pipe.<br>
+&nbsp; &nbsp;pipeServer = new NamedPipeServerStream(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.PIPE_NAME, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// The unique pipe name.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeDirection.InOut, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// The pipe is duplex<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NamedPipeServerStream.MaxAllowedServerInstances,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeTransmissionMode.Message, &nbsp; // Message-based communication<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeOptions.None, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // No additional parameters<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Input buffer size<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output buffer size<br>
+&nbsp; &nbsp; &nbsp; &nbsp;pipeSecurity, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Pipe security attributes<br>
+&nbsp; &nbsp; &nbsp; &nbsp;HandleInheritability.None &nbsp; &nbsp; &nbsp; // Not inheritable<br>
+&nbsp; &nbsp; &nbsp; &nbsp;);<br>
+<br>
+In this code sample, the pipe server support message-based duplex <br>
+communications. The security attributes of the pipe are customized to allow <br>
+Authenticated Users read and write access to a pipe, and to allow the <br>
+Administrators group full access to the pipe.<br>
+<br>
+&nbsp; &nbsp;PipeSecurity pipeSecurity = new PipeSecurity();<br>
+<br>
+&nbsp; &nbsp;// Allow Everyone read and write access to the pipe.<br>
+&nbsp; &nbsp;pipeSecurity.SetAccessRule(new PipeAccessRule(&quot;Authenticated Users&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeAccessRights.ReadWrite, AccessControlType.Allow));<br>
+<br>
+&nbsp; &nbsp;// Allow the Administrators group full access to the pipe.<br>
+&nbsp; &nbsp;pipeSecurity.SetAccessRule(new PipeAccessRule(&quot;Administrators&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeAccessRights.FullControl, AccessControlType.Allow));<br>
+<br>
+2. Wait for the client to connect by calling <br>
+NamedPipeServerStream.WaitForConnection().<br>
+<br>
+&nbsp; &nbsp;pipeServer.WaitForConnection();<br>
+<br>
+3. Read the client's request from the pipe and write a response by calling <br>
+NamedPipeServerStream.Read and NamedPipeServerStream.Write. The named pipe <br>
+was created to support message-based communication. This allows a reading <br>
+process to read varying-length messages precisely as sent by the writing <br>
+process. In this mode you should not use StreamWriter to write the pipe, or <br>
+use StreamReader to read the pipe. You can read more about the difference <br>
+from the article: <a href="http://go.microsoft.com/?linkid=9721786." >
+http://go.microsoft.com/?linkid=9721786.</a><br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Receive a request from client.<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;string message;<br>
+&nbsp; &nbsp;do<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;byte[] bRequest = new byte[Program.BUFFER_SIZE];<br>
+&nbsp; &nbsp; &nbsp; &nbsp;int cbRequest = bRequest.Length, cbRead;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbRead = pipeServer.Read(bRequest, 0, cbRequest);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Unicode-encode the received byte array and trim all the
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// '\0' characters at the end.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;message = Encoding.Unicode.GetString(bRequest).TrimEnd('\0');<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Console.WriteLine(&quot;Receive {0} bytes from client: \&quot;{1}\&quot;&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cbRead, message);<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;while (!pipeServer.IsMessageComplete);<br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Send a response from server to client.<br>
+&nbsp; &nbsp;// <br>
+<br>
+&nbsp; &nbsp;message = Program.RESPONSE_MESSAGE;<br>
+&nbsp; &nbsp;byte[] bResponse = Encoding.Unicode.GetBytes(message);<br>
+&nbsp; &nbsp;int cbResponse = bResponse.Length;<br>
+<br>
+&nbsp; &nbsp;pipeServer.Write(bResponse, 0, cbResponse);<br>
+<br>
+&nbsp; &nbsp;Console.WriteLine(&quot;Send {0} bytes to client: \&quot;{1}\&quot;&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbResponse, message.TrimEnd('\0'));<br>
+<br>
+4. Flush the pipe to allow the client to read the pipe's contents before <br>
+disconnecting. Then disconnect the client's connection.<br>
+<br>
+&nbsp; &nbsp;pipeServer.WaitForPipeDrain();<br>
+&nbsp; &nbsp;pipeServer.Disconnect();<br>
+<br>
+5. Close the server end of the pipe by calling NamedPipeServerStream.Close().<br>
+<br>
+&nbsp; &nbsp;pipeServer.Close();<br>
+<br>
+-------------------------<br>
+<br>
+B. Named pipe server by P/Invoke the native APIs related to named pipe <br>
+operations. (NativeNamedPipeServer.Run())<br>
+<br>
+1. Create a named pipe server by P/Invoking CreateNamedPipe and specifying <br>
+the pipe name, pipe direction, options, transmission mode, security <br>
+attributes, etc.<br>
+<br>
+&nbsp; &nbsp;// Create the named pipe.<br>
+&nbsp; &nbsp;hNamedPipe = NativeMethod.CreateNamedPipe(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.FULL_PIPE_NAME, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // The unique pipe name.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeOpenMode.PIPE_ACCESS_DUPLEX, &nbsp; &nbsp;// The pipe is duplex<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeMode.PIPE_TYPE_MESSAGE | &nbsp; &nbsp; &nbsp; &nbsp;// Message type pipe
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeMode.PIPE_READMODE_MESSAGE | &nbsp; &nbsp;// Message-read mode
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PipeMode.PIPE_WAIT, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Blocking mode is on<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PIPE_UNLIMITED_INSTANCES, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Max server instances<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Output buffer size<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Program.BUFFER_SIZE, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Input buffer size<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NMPWAIT_USE_DEFAULT_WAIT, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Time-out interval<br>
+&nbsp; &nbsp; &nbsp; &nbsp;sa &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Pipe security attributes<br>
+&nbsp; &nbsp; &nbsp; &nbsp;);<br>
+<br>
+In this code sample, the pipe server support message-based duplex <br>
+communications. The security attributes of the pipe are customized to allow <br>
+Authenticated Users read and write access to a pipe, and to allow the <br>
+Administrators group full access to the pipe.<br>
+<br>
+&nbsp; &nbsp;// Define the SDDL for the security descriptor.<br>
+&nbsp; &nbsp;string sddl = &quot;D:&quot; &#43; &nbsp; &nbsp; &nbsp; &nbsp;// Discretionary ACL<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&quot;(A;OICI;GRGW;;;AU)&quot; &#43; &nbsp;// Allow read/write to authenticated users<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&quot;(A;OICI;GA;;;BA)&quot;; &nbsp; &nbsp; // Allow full control to administrators<br>
+<br>
+&nbsp; &nbsp;SafeLocalMemHandle pSecurityDescriptor = null;<br>
+&nbsp; &nbsp;if (!NativeMethod.ConvertStringSecurityDescriptorToSecurityDescriptor(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;sddl, 1, out pSecurityDescriptor, IntPtr.Zero))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;throw new Win32Exception();<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;SECURITY_ATTRIBUTES sa = new SECURITY_ATTRIBUTES();<br>
+&nbsp; &nbsp;sa.nLength = Marshal.SizeOf(sa);<br>
+&nbsp; &nbsp;sa.lpSecurityDescriptor = pSecurityDescriptor;<br>
+&nbsp; &nbsp;sa.bInheritHandle = false;<br>
+<br>
+2. Wait for the client to connect by calling ConnectNamedPipe.<br>
+<br>
+&nbsp; &nbsp;if (!NativeMethod.ConnectNamedPipe(hNamedPipe, IntPtr.Zero))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (Marshal.GetLastWin32Error() != ERROR_PIPE_CONNECTED)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;throw new Win32Exception();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+<br>
+3. Read the client's request from the pipe and write a response by calling <br>
+ReadFile and WriteFile.<br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Receive a request from client.<br>
+&nbsp; &nbsp;// <br>
+<br>
+&nbsp; &nbsp;string message;<br>
+&nbsp; &nbsp;bool finishRead = false;<br>
+&nbsp; &nbsp;do<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;byte[] bRequest = new byte[Program.BUFFER_SIZE];<br>
+&nbsp; &nbsp; &nbsp; &nbsp;int cbRequest = bRequest.Length, cbRead;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;finishRead = NativeMethod.ReadFile(<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hNamedPipe, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Handle of the pipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bRequest, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Buffer to receive data<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cbRequest, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Size of buffer in bytes<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;out cbRead, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Number of bytes read
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IntPtr.Zero &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Not overlapped
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (!finishRead &amp;&amp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Marshal.GetLastWin32Error() != ERROR_MORE_DATA)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;throw new Win32Exception();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Unicode-encode the received byte array and trim all the
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// '\0' characters at the end.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;message = Encoding.Unicode.GetString(bRequest).TrimEnd('\0');<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Console.WriteLine(&quot;Receive {0} bytes from client: \&quot;{1}\&quot;&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cbRead, message);<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;while (!finishRead); &nbsp;// Repeat loop if ERROR_MORE_DATA<br>
+<br>
+&nbsp; &nbsp;// <br>
+&nbsp; &nbsp;// Send a response from server to client.<br>
+&nbsp; &nbsp;// <br>
+<br>
+&nbsp; &nbsp;message = Program.RESPONSE_MESSAGE;<br>
+&nbsp; &nbsp;byte[] bResponse = Encoding.Unicode.GetBytes(message);<br>
+&nbsp; &nbsp;int cbResponse = bResponse.Length, cbWritten;<br>
+<br>
+&nbsp; &nbsp;if (!NativeMethod.WriteFile(<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hNamedPipe, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Handle of the pipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp;bResponse, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Message to be written<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbResponse, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Number of bytes to write<br>
+&nbsp; &nbsp; &nbsp; &nbsp;out cbWritten, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Number of bytes written<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IntPtr.Zero &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Not overlapped<br>
+&nbsp; &nbsp; &nbsp; &nbsp;))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;throw new Win32Exception();<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;Console.WriteLine(&quot;Send {0} bytes to client: \&quot;{1}\&quot;&quot;,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;cbWritten, message.TrimEnd('\0'));<br>
+<br>
+<br>
+4. Flush the pipe to allow the client to read the pipe's contents before <br>
+disconnecting. Then disconnect the client's connection.<br>
+<br>
+&nbsp; &nbsp;NativeMethod.FlushFileBuffers(hNamedPipe);<br>
+&nbsp; &nbsp;NativeMethod.DisconnectNamedPipe(hNamedPipe);<br>
+<br>
+5. Close the server end of the pipe.<br>
+<br>
+&nbsp; &nbsp;hNamedPipe.Close();<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.Pipes.aspx"  title="Auto generated link to System.IO.Pipes">System.IO.Pipes</a> Namespace<br>
+<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx" >http://msdn.microsoft.com/en-us/library/system.io.pipes.aspx</a><br>
+<br>
+MSDN: NamedPipeServerStream<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.io.pipes.namedpipeserverstream.aspx" >http://msdn.microsoft.com/en-us/library/system.io.pipes.namedpipeserverstream.aspx</a><br>
+<br>
+How to: Use Named Pipes to Communicate Between Processes over a Network<br>
+<a href="http://msdn.microsoft.com/en-us/library/bb546085.aspx" >http://msdn.microsoft.com/en-us/library/bb546085.aspx</a><br>
+<br>
+Introducing Pipes [Justin Van Patten]<br>
+<a href="http://blogs.msdn.com/bclteam/archive/2006/12/07/introducing-pipes-justin-van-patten.aspx" >http://blogs.msdn.com/bclteam/archive/2006/12/07/introducing-pipes-justin-van-patten.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

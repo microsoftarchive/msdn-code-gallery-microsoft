@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/97a00f53-046a-471f-aba4-f9f658bc0e0aCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>XPSDrv Driver and Filter Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/2c72fd48-f2db-4c1e-94a8-c4572a238b2eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>XPSDrv Driver and Filter Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            printer, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Printing
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/4/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/XPSDrv-Driver-and-Filter-980d24bc">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample is intended to provide a starting point for developing XPSDrv printer drivers and to illustrate the facility and potential of an XPSDrv print driver. This goal is accomplished by implementing a number of real-world features within a set of XPS
+ print pipeline filters that are configured through a configuration plug-in that supports custom UI content and PrintTicket handling.
+</p>
+<p>Windows&nbsp;Vista introduced a new print architecture and a new document format known as XPS (XML Paper Specification). Part of the new architecture is the XPSDrv print driver, which is designed to provide a flexible, extensible path to manipulate and print
+ an XPS spool file through a series of filters.</p>
+<p>This sample is intended to provide a starting point for developing XPSDrv printer drivers and to illustrate the facility and potential of an XPSDrv print driver. This goal is accomplished by implementing a number of real-world features within a set of XPS
+ print pipeline filters that are configured through a configuration plug-in that supports custom UI content and PrintTicket handling.</p>
+<p>The sample broadly consists of three components: a set of filters, a configuration plug-in for handling custom UI content, and a configuration plug-in for handling more advanced PrintTicket features. For more information, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff564299(v=vs.85).aspx">
+XPS Printing Features</a>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. This sample will not build with Microsoft Visual Studio Express&nbsp;2013 for Windows Desktop, because the sample
+ uses Active Template Library (ATL). You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/XPSDrv-Driver-and-Filter-980d24bc/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>To build a driver solution using Windows&nbsp;8.1 driver kit (WDK&nbsp;8.1) and Visual Studio&nbsp;2013, perform the following steps.</p>
+<dl><dd>
+<p>1. Open the solution file in Visual Studio&nbsp;2013</p>
+</dd><dd>
+<p>2. Add all non-binary files (usually located in the \install directory of the sample) to the Package project</p>
+<dl><dd>
+<p>a. In the <b>Solution Explorer</b>, right click <b>Driver Files</b></p>
+</dd><dd>
+<p>b. Select <b>Add</b>, then click <b>Existing Item</b></p>
+</dd><dd>
+<p>c. Navigate to the location to which you downloaded the sample, and select all the files in the install directory, or the equivalent set of non-binary files such as INFs, INIs, GPD, PPD files, etc.</p>
+</dd><dd>
+<p>d. Click <b>Add</b></p>
+</dd></dl>
+</dd><dd>
+<p>3. Configure these files to be added into the driver package</p>
+<dl><dd>
+<p>a. In the <b>Solution Explorer</b>, right click the Package project and select
+<b>Properties</b></p>
+</dd><dd>
+<p>b. In the left pane, click <b>Configuration Properties</b> &gt; <b>Driver Install</b> &gt;
+<b>Package Files</b>.</p>
+</dd><dd>
+<p>c. In the right pane, use the ellipsis button (...) to browse to the set of files that needs to be added to the driver package. All the data files that you added in
+<b>Step 2-c</b>, except the INF file, should be added.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;This configuration is per-architecture, so this configuration must be repeated for each architecture that will be built.</p>
+</dd><dd>d. Click <b>OK</b> </dd></dl>
+</dd><dd>
+<p>4. Open the INF file and edit it to match the built output</p>
+<dl><dd>
+<p>a. Open the INF file</p>
+</dd><dd>
+<p>b. In the Version section, add a reference to a catalog file like this: CatalogFile=XpsDrvSmpl.cat
+</p>
+</dd><dd>
+<p>c. In the SourceDisksFiles section, change the location of the DLL files you are building, to =1. This indicates that there is no architecture specific directory in this driver. If you ship multiple architectures simultaneously, you will need to collate
+ the driver INF manually. </p>
+</dd></dl>
+</dd></dl>
+<p></p>
+<p>At this point, Visual Studio&nbsp;2013 will be able to build a driver package and output the files to disk. In order to configure driver signing and deployment, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554651(v=vs.85).aspx">
+Developing, Testing, and Deploying Drivers</a>.</p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;If you compile your sample driver with Microsoft Visual Studio version 10, or 11 with the _DEBUG flag set, then you should not use CComVariant on the following two XPS Print Filter Pipeline properties:</p>
+<ul>
+<li>XPS_FP_USER_TOKEN </li><li>XPS_FP_PRINTER_HANDLE </li></ul>
+There is a known issue with the current implementation of the Print Filter Pipeline, where the variant type for these two properties is set to VT_BYREF. And as a result of this known issue, any filter binary that is compiled with the _DEBUG flag set will experience
+ the ATLASSERT() failure. This is because when you use the CComVariant, its destructor checks the returned value from the Clear() function, as shown:
+<p></p>
+<p></p>
+<div class="code"><span>
+<table>
+<tbody>
+<tr>
+<th>C&#43;&#43;</th>
+</tr>
+<tr>
+<td>
+<pre>~CComVariant() throw()
+{
+   HRESULT hr = Clear();
+   ATLASSERT(SUCCEEDED(hr));
+   (hr);
+}</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<p>When you compile this sample driver with Visual Studio version 9, you don't experience this problem because the destructor for CComVariant doesn't perform this check on the returned value from the Clear() function.</p>
+<h2>Run the sample</h2>
+<h2><a id="Installation"></a><a id="installation"></a><a id="INSTALLATION"></a>Installation</h2>
+<p>The sample has the following prerequisites:</p>
+<ul>
+<li>Microsoft XPS Document Writer print driver and the XPS filter-pipeline infrastructure.
+</li><li>Microsoft MSXML 6.0 </li></ul>
+<p>Install the driver through the <b>Add Printer Wizard</b> by selecting &lt;driver root&gt;\install as the source for the driver install.</p>
+<h2><a id="Design_and_Operation"></a><a id="design_and_operation"></a><a id="DESIGN_AND_OPERATION"></a>Design and Operation</h2>
+<h3><a id="Overview"></a><a id="overview"></a><a id="OVERVIEW"></a>Overview</h3>
+<p>This sample can be used as a basis for implementing a driver based on the new XPS pipeline infrastructure.
+</p>
+<p>The Page Scaling filter is written by using the stream interface to attempt to demonstrate how to use the stream interface. It thus depends on a ZIP library to handle the PK archive structure. The sample does not include the code for the PK archive handling.
+</p>
+<p>Two interfaces are defined in <i>ipkarch.h</i> and <i>ipkfile.h</i> that need support from an additional PK archive handling module called pkarch.dll. Pkarch.dll is a file that is included in the
+<a href="http://www.pkware.com/software/developer-tools/sdk/pkzip-standard-toolkit">
+PKWare SDK</a>. If this module is not present, the page scaling filter sample will revert to merely copying the data from the read stream to the write stream. Developers who are using this sample can choose one of the following options:</p>
+<ul>
+<li>Simplify the scaling filter to use the XPS interfaces (like the other four filters)
+</li><li>License the third-party zip library that is used in the sample </li><li>Modify the sample to use another ZIP library. For example, you can modify the sample to use the
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd371643(v=vs.85).aspx">
+Packaging API Reference</a> </li></ul>
+<p></p>
+<p>IPKArch defines an interface for initializing, controlling, and accessing the PK archive. IPKFile defines an interface that abstracts the details of a PK archive file header record from the XPS container handling. Access to the files within the archive is
+ provided through a map between the file name and file objects that support the IPKFile interface. This allows the XPS processing code to retrieve file data by name (a convenience as the interaction between parts and relationships between parts is defined using
+ the part name).</p>
+<h3><a id="Print_Pipeline_Filters"></a><a id="print_pipeline_filters"></a><a id="PRINT_PIPELINE_FILTERS"></a>Print Pipeline Filters</h3>
+<p>There are five filters that are split into two types: four use the XPS filter interface and one uses the stream filter interface. The XPS interface provides the filter writer with a logical view on an XPS document by presenting logical XPS document parts
+ (XPS Document, Fixed Document Sequences, Fixed Documents, and Fixed Pages) to the filter in a known and defined order. The stream interface simply provides a stream that contains the XPS document--a zip archive. The filter writer is in this case required to
+ handle the PK archive structure, decompression of the parts within the container, and the XPS Open Packaging conventions.</p>
+<p>The four filters that use the XPS interface provide support for the following:</p>
+<ul>
+<li>The Watermark Filter is responsible for adding mark-up to Fixed Page content to express textual, bitmap, and vector-based watermarks.
+</li><li>The Booklet Filter is responsible for page re-ordering and padding page insertion to create booklets from the XPS document. Note that this filter re-uses the NUp filter to provide appropriate page transformation.
+</li><li>The NUp Filter is responsible for transforming and combining logical pages onto physical pages to provide multiple page per sheet support.
+</li><li>The Color Management Filter is responsible for constructing and applying color transforms to Fixed Page content.
+</li></ul>
+<p>The stream interface filter provides Page Scaling support (that is, wrapping content with the appropriate transforms to scale from a source Fixed Page to the destination).</p>
+<h3><a id="UI_Plug-in"></a><a id="ui_plug-in"></a><a id="UI_PLUG-IN"></a>UI Plug-in</h3>
+<p>The UI plug-in provides support for controlling features that are not supported by the Unidrv core UI. Three additional printer property pages are implemented that provide color management, watermarking, and general features. The UI plug-in also provides
+ custom Devmode support for options that are not easily expressed in a GPD file (for example, the numeric values required to define custom page scaling options).</p>
+<h3><a id="Print_Ticket_Provider_Plug-in"></a><a id="print_ticket_provider_plug-in"></a><a id="PRINT_TICKET_PROVIDER_PLUG-IN"></a>Print Ticket Provider Plug-in</h3>
+<p>Unidrv provides support for mapping simple features and options from a GPD file to a Print Ticket by a &quot;PrintSchemaKeywordMap&quot; keyword in the GPD file. Many of the features that are supported by the sample filters require a more sophisticated mapping between
+ the GPD description and the Print Schema definition. These features include features that are nested within features and control of numeric values. The Print Ticket provider plug-in provides this support by converting a number of GPD feature options to a single
+ more complicated Print Ticket feature. For example, the Print Schema definition of PageScaling requires numeric values for custom page scaling options (offset and scale values) as well as a sub-feature defining the scaling offset option. This plug-in can take
+ settings from a &quot;flat&quot; description of the scaling and offset alignment features in the GPD combined with custom DevMode values configured by the UI plug-in to generate an appropriate PrintTicket construct that conforms to the PrintSchema definition of PageScaling.</p>
+<p>The components of the XPSDrv sample enable a user or application to configure the filter pipeline to process an XPS container according to the supported filters. The XPS spool file that is passed to the filter pipeline broadly comprises two components: the
+ document structure and page content as well as one or more Print Tickets that configure the print job at various levels. Job content will be defined either as output directly from a Windows Presentation Foundation (WPF) application or through a conversion
+ from legacy GDI to XPS through the Microsoft XPS Document Writer (MXDW). PrintTicket settings can be controlled directly through the UI or through application settings in either DevMode or PrintTicket.</p>
+<p>To enable configuration of the driver, the sample uses a set of GPD files and a configuration plug-in. The configuration plug-in provides custom DevMode and custom UI support. This support enables the driver to store and configure driver specific settings
+ that can be used as a source for configuring PrintTicket features. In order to provide the appropriate PrintTicket support, the driver makes use of a combination of the core Unidrv PrintTicket support and a PrintTicket provider plug-in to enable the generation
+ of more sophisticated PrintTicket settings. In combination these allow an application or user to setup a PrintTicket ready for inclusion in an XPS document.</p>
+<p>With the PrintTicket in place and the document content supplied by either an application using WPF or a legacy application through MXDW, the filters that make up the filter pipeline for the sample driver act on the XPS document according to the settings
+ specified in the PrintTicket. Each filter checks whether its functionality has been enabled and extracts any settings relevant to its function before processing the container appropriately. The order in which filters are applied is important to the eventual
+ output; for example, a filter adding page content (like the watermark filter) can be placed anywhere in the pipeline, but its placement determines where the content is added. Configured to run before an NUp filter ensures page content is confined to the logical
+ page; whereas, if it is run after an NUp filter, the watermark will be applied to the transformed pages. The filter ordering is controlled by the filter configuration file; this file is an XML document that details the order and interface type for each filter.</p>
+<h3><a id="Common_Filter_Functionality"></a><a id="common_filter_functionality"></a><a id="COMMON_FILTER_FUNCTIONALITY"></a>Common Filter Functionality</h3>
+<p>Regardless of the type of interface that a filter uses to process the XPS document content, there are common requirements for all filters. These include filter initialization and shutdown and are provided as a base class from which either an XPS or stream
+ interface filter can derive.</p>
+<h3><a id="XPS_Interface"></a><a id="xps_interface"></a><a id="XPS_INTERFACE"></a>XPS Interface</h3>
+<p>Four of the five filters make use of the XPS interface that is provided by the filter pipeline manager as XPS provider and consumer interfaces. The XPS provider interface supplies XPS parts to the filter on demand. When a part is requested from the provider,
+ a generic interface pointer is returned. This interface is queried to identify its type: an XPS document, a Fixed Document Sequence, a Fixed Document or a Fixed Page. This functionality is common between filters that use the XPS interface and a base class
+ XPS interface implementation (that derives from the common filter class described earlier) is provided that retrieves, identifies, and dispatches the part to the appropriate handler. When all parts have been processed, the base class calls a method to finalize
+ the filter. To supply the filter-specific functionality, a filter derives from the base class and implements handlers for any of the part types it requires and/or the finalize method to complete its function. Additionally, the base class provides default implementations
+ for the XPS part handlers (using these exclusively merely passes the document on through the XPS consumer interface) and a method for initializing the XPS interface.</p>
+<h3><a id="Stream_Interface"></a><a id="stream_interface"></a><a id="STREAM_INTERFACE"></a>Stream Interface</h3>
+<p>One of the filters (page scaling) makes use of the stream interface that is provided by the filter pipeline manager as a read and write stream. This interface is a very basic interface that merely supplies the filter with a stream that contains the XPS document
+ as a PK archive. To be able to use the stream interface to modify document content, the filter needs to be able to process the PK archive to retrieve all of the files contained within, decompress the data associated with these files, process the open packaging
+ conventions (taking into account potentially interleaved data), and compress and send the data in a structure appropriate to both the open package and PK archive conventions. A class is provided that uses an XPS document processor for accessing the logical
+ structure of the package and reporting the Fixed Page content to the filter. This class supports the necessary interfaces to initialize the IO streams, start the process of handling the data, and a default handler for processing Fixed Page content. The page
+ scaling filter derives from this class and implements its own Fixed Page handler that is called by the XPS processor.</p>
+<h3><a id="Watermark_Filter"></a><a id="watermark_filter"></a><a id="WATERMARK_FILTER"></a>Watermark Filter</h3>
+<p>The Watermark filter is intended to demonstrate adding presentation content to the Fixed Pages within an existing XPS container by using the XPS interface as the source of the XPS document. This added content acts as a watermark and is configured by the
+ PrintTicket. The filter takes as input the PageWatermark public Print Schema feature with custom support for vector and bitmap watermark types and the Fixed Pages in an XPS document. This custom content is expressed as Private options to the existing PageWatermark
+ definition. The output is the sequence of Fixed Pages and accompanying resources required for the watermark.</p>
+<p>The filter is configured by parsing an input PrintTicket by using DOM to extract the relevant features and options. If the functionality is enabled, the filter processes the document as required. The PrintTicket is constructed through the following algorithm
+ to provide settings at the appropriate scope (Fixed Document Sequence, Fixed Document and Fixed Page):</p>
+<ol>
+<li>Validate and merge the print ticket from the FDS with the default PrintTicket converted from the default DevMode in the property bag. The resultant ticket will be the Job level ticket.
+</li><li>Validate and merge the print ticket from the current FD with the Job level ticket from step 1. The resultant ticket will be the document level ticket.
+</li><li>Validate and merge the print ticket from the current FP with the Doc level ticket from step 2. The resultant ticket will be the page level ticket.
+</li></ol>
+<p>When a watermark is enabled in the PrintTicket, the filter creates a watermark of the appropriate type (text, raster, or vector). This is returned as a generic watermark interface that abstracts the watermark type from the filter. The filter then calls the
+ watermark object to send any resources that it may require to the filter pipeline (the font for text, the bitmap for raster, and none for vector). All resources are added through a resource cache that enables the watermark object to ignore any problems with
+ sending repeated resources (the cache checks if the resource is present and only sends it if it has not seen the resource before). With the resource in place, the filter instantiates a SAX handler passing the watermark object. The SAX handler is used to parse
+ the Fixed Page, allowing the filter to control when it inserts the watermark into the Fixed Page; when underlay is required, the mark-up is inserted when the FixedPage start element is encountered and when overlay is required the mark-up is inserted when FixedPage
+ end element is encountered. By passing the abstracted watermark object, the SAX handler can be re-used for any watermark as it merely requests appropriate mark-up from the watermark object and inserts it into the Fixed Page mark-up as appropriate.</p>
+<h3><a id="Vector_Mark-up"></a><a id="vector_mark-up"></a><a id="VECTOR_MARK-UP"></a>Vector Mark-up</h3>
+<p>XPS documents can contain a range of vector elements that contain color data that describes how the elements should be rendered on a specific device. The following elements support color data:</p>
+<ul>
+<li>Color </li><li>Fill </li><li>Stroke </li></ul>
+<p>When any of these elements are found in a fixed page, the SAX handler passes the associated color data to a color conversion object. This uses the following algorithm to convert the color:</p>
+<ol>
+<li>The XML mark-up is broken down into color channel values, color channel value types, color format, and any other color details contained in the color mark-up string.
+</li><li>The resulting values are color transformed in conjunction with preferences defined in the PrintTicket. The result is a new set of color values.
+</li><li>These new values are used to reconstructs a color reference containing the new color values.
+</li><li>The newly constructed color reference is used in place of the original color reference, resulting in the transformed color output.
+</li></ol>
+<h3><a id="Bitmap_Resources"></a><a id="bitmap_resources"></a><a id="BITMAP_RESOURCES"></a>Bitmap Resources</h3>
+<p>When a bitmap is referred to in a fixed page, the SAX handler passes the bitmap URI to a bitmap conversion method in the color converter object.</p>
+<p>The conversion process starts by creating a new color managed bitmap object that represents the bitmap along with a color profile manager. The color profile manager is initialized by the PrintTicket settings and is used to supply a suitable color transform
+ based on those settings.</p>
+<p>After the color managed bitmap object is created, the object is passed to a resource caching class that manages which bitmaps are written out and ensures bitmaps are only written out once. A single bitmap can be referred to many times in an XPS container
+ but the bitmap itself should have a color transformation applied only once and should be written out only once to avoid unnecessary processing overhead. The caching manager ensures this by creating a unique key generated from the bitmap URI and color profile
+ that is then recorded against the URI. If the caching manager receives bitmap objects with an existing key, those bitmaps do not need re-processing and the stored URI is used merely to identify the color transformed bitmap.</p>
+<p>If a bitmap has not been handled yet, the caching manager calls a write data method in the color bitmap object to indicate that the bitmap should write itself out to the filter pipeline. The write process also includes the application of a color transform
+ to the bitmap. The following steps occur to apply the transform:</p>
+<ol>
+<li>A stream is created to the bitmap itself and the bitmap is loaded into memory.
+</li><li>A bitmap codec object is created that takes the bitmap and uses an appropriate codec to decompress the bitmap and present the bitmap data and values.
+</li><li>The bitmap data is then converted by using a color transform supplied by the color profile management class.
+</li><li>The bitmap codec object re-encodes the bitmap by using a matching codec to that used to decode the bitmap.
+</li><li>The encoded bitmap is streamed back out to the container. </li></ol>
+<h3><a id="Booklet_Filter"></a><a id="booklet_filter"></a><a id="BOOKLET_FILTER"></a>Booklet Filter</h3>
+<p>The Booklet filter is intended to demonstrate how a filter can re-order the pages and add additional pages to a document to enable booklet binding using the XPS interface as the source of the XPS document. Page transformation is not applied by the filter
+ but deferred to the NUp filter demonstrating filter re-use. The filter takes as input the JobBinding and DocumentBinding public Print Schema features (defined in the PrintTicket), and the sequence of pages in the fixed documents or fixed document sequence
+ within the XPS document and outputs the fixed pages in an appropriate order to be printed as a booklet. Page content is not modified; however, an additional fixed page might be required to ensure the appropriate fixed page flow.</p>
+<p>The filter is configured by parsing an input PrintTicket by using DOM to extract the relevant features and options. If the functionality is enabled, the filter processes the document as required. Again the PrintTicket is constructed according to the algorithm
+ that is documented in the watermark filter notes. </p>
+<p>The booklet filter maintains a list of references to the fixed page parts within an XPS document as they are presented to the filter. This list is used to output the correct page order and is reset and repopulated according to whether JobBinding or DocumentBinding
+ is set. If JobBinding is enabled, all pages within the Fixed Documents that make up the Fixed Document Sequence are cached and the list is not flushed until the document has completed. If DocumentBinding is enabled, the filter caches all pages in a Fixed Document
+ and flushes the list at the end of the Fixed Document. When the list is flushed, the pages are re-ordered and a padding page is added if the total page count is odd before being sent on to the filter pipeline.
+</p>
+<h3><a id="NUp_Filter"></a><a id="nup_filter"></a><a id="NUP_FILTER"></a>NUp Filter</h3>
+<p>The NUp filter is intended to demonstrate how a filter can transform vector mark-up within an XPS container by using the XPS interface as the source of the XPS document. The PrintTicket might contain preferences that the filter uses to apply a multi-up transformation
+ to the containers fixed pages, resulting in a new set of pages that contain the original pages as child canvases. The filter takes as input the JobNUp, DocumentNUp, JobBinding, DocumentBinding, PageMediaSize, and PageOrientation public Print Schema features
+ (defined in the PrintTicket) and the Fixed Pages that define the Fixed Document and Fixed Document Sequence. The output is a new sequence of Fixed Pages that contain the render-transformed source pages sent through the XPS interface to the filter pipeline.</p>
+<p>The filter is configured by parsing an input PrintTicket using DOM to extract the relevant features and options. If the functionality is enabled, the filter processes the document as required. Again the PrintTicket is constructed according to the algorithm
+ that is documented in the watermark filter notes.</p>
+<p>Within the filter, SAX is used to parse the XPS container with each fixed page being read, amended, and inserted into a new fixed page as a canvas. The amendment of the source fixed page involves removing any wrapping mark-up that defines a fixed page and
+ in place adding suitable mark-up to define a new canvas. The new canvas mark-up includes a transformation matrix that positions, rotates, and scales the canvas on the new fixed page. The transformation is provided by a supporting object that generates the
+ transform according to the PrintTicket settings. Settings in the print ticket that are used include how many source pages should be stored as canvases in a single new fixed page (NUp count), the ordering of canvases on the new fixed page, and the target page
+ size and orientation.</p>
+<p>New canvases are added to the new fixed page mark-up until the document contains the number of source fixed pages that are required in a single new fixed page or until there are no source pages left. When the new fixed page is full, it is written out to
+ the pipeline and another fixed page is started ready for population with source pages.</p>
+<p>In addition to the NUp feature processing, the NUp filter is re-used to apply the 2-Up processing required for booklet printing. This is achieved by looking for a valid binding option in the PrintTicket and applying 2-Up as appropriate.</p>
+<h2><a id="Page_Scaling_Filter"></a><a id="page_scaling_filter"></a><a id="PAGE_SCALING_FILTER"></a>Page Scaling Filter</h2>
+<p>The page scaling filter is intended to demonstrate how a filter can transform vector mark-up within a XPS container by using the stream interface as the source of the XPS document. The PrintTicket can contain page scaling preferences that the filter uses
+ to amend page dimension values in each fixed page processed.</p>
+<p>Within the filter, SAX is used to parse the XPS container with each fixed page being read, amended, and written back out. The modification of the fixed page mark-up begins by modifying the fixed page dimensions to match the target page size specified in
+ the print ticket for the current fixed page. Subsequently, the fixed page content is scaled to correctly fit the target scale by applying a canvas around the source content that includes a transformation matrix. The SAX handler is supported by a page scale
+ class which manages the creation of a transformation matrix and the presentation of the matrix correctly formatted for use in the fixed page.</p>
+<h2><a id="XPS_Container_Handling"></a><a id="xps_container_handling"></a><a id="XPS_CONTAINER_HANDLING"></a>XPS Container Handling</h2>
+<p>The stream filter is required to handle the Open Packaging conventions that are used by an XPS document. These conventions can be thought of as the document structure above that of the PK archive itself. Sources for a set of classes are provided that support
+ processing of the XPS document in terms of the constituent files in the PK archive. This includes:</p>
+<ul>
+<li>Initiating the document processing based on the root relationships part defined in the package.
+</li><li>Validation of the parts within the package against their content type and usage.
+</li><li>Processing of Fixed Document Sequence and all resources associated with it. </li><li>Processing of the Fixed Documents within the Fixed Document Sequence and all resources associated with them.
+</li><li>Processing of the Fixed Page parts with the Fixed Documents and all resources associated with them.
+</li><li>Passing Fixed Page content processing to a registered FP handler for modification.
+</li><li>Passing all parts on to a PK archive handling module with valid ordering. </li></ul>
+<p>The XPS processor is not responsible for extracting or decompressing part data from the PK archive. This task is the responsibility of an additional module that implements an interface known to the XPS container handling code.</p>
+<h2><a id="UI_Plug-in"></a><a id="ui_plug-in"></a><a id="UI_PLUG-IN"></a>UI Plug-in</h2>
+<p>The UI Plug-in is intended to demonstrate how to extend the standard Unidrv UI to add additional property sheets and controls and to provide support for custom features that are not supported by the core Unidrv UI. Three new pages have been added that allow
+ control of the sample filters:</p>
+<ul>
+<li>Color--enables configuration of the color conversion filter. </li><li>Watermarks--enables a watermark to be selected and enable configuration of its properties for use in the watermark filter.
+</li><li>Features--includes controls to configure the page scaling, booklet, and NUp filters. In addition, the standard driver settings--duplex, intent, and page borders--can also be modified.
+</li></ul>
+<p>Various UI control types have been implemented on these property pages to enable a user to modify settings in the driver. The UI supports the following control types:</p>
+<ul>
+<li>Check-box </li><li>Combo-box </li><li>List-Box </li><li>Edit-Box </li><li>Edit number (with buddy up/down control) </li></ul>
+<p>The settings that associated with each of these controls are stored as one the following types:</p>
+<ul>
+<li>GPD options. These settings are defined in the sample driver GPD configuration file and are handled by the Unidrv core via the CPSUI interface. All GPD options that are managed from the UI plug-in are hidden from the standard Unidrv Treeview dialog box.
+</li><li>OEM private DevMode. These settings are settings that cannot be represented in the GPD file format (for example, numerical values and strings). They are instead added to the DevMode at a private offset.
+</li></ul>
+<p>The Unidrv UI Plug-in interface includes methods that allow additional property pages to be inserted into the drivers property sheet. In the sample, only additional document property pages are implemented because there are no device property pages required.
+ A collection of property page objects are stored at the plug-in interface level, each of which is responsible for the three property pages (Color, Watermarks, and Features). Each property page object creates a Microsoft Windows property page from a dialog
+ resource and handles all Windows Messages that are received through a common dialog procedure. A collection of UI control objects are stored in the property page, one for each Windows control on the page.</p>
+<p>When a property page receives a message for a control, it looks up the relevant control in the collection (by using the resource identifier) and calls the appropriate method in the control interface, given the Windows message. Each control object is responsible
+ for handling its own initialization and any user input through the appropriate get and set functions. The sample get and set functions provide an interface to read and update the GPD options and OEM private DevMode.</p>
+<h2><a id="PrintTicket_Provider_Plug-in"></a><a id="printticket_provider_plug-in"></a><a id="PRINTTICKET_PROVIDER_PLUG-IN"></a>PrintTicket Provider Plug-in</h2>
+<p>The sample Print Ticket Provider plug-in is intended to demonstrate how to validate and map driver settings from a DevMode description to a Print Ticket description and back again. The driver allows configuration of custom settings through a custom user
+ interface. These custom settings are represented as either GPD options or in the OEM private DevMode and are mapped to and from the Print Ticket using an XML schema.</p>
+<p>To support Print Ticket handling, the Unidrv UI Plug-in Print Ticket Provider Interface is utilized. The Unidrv UI Plug-in interface includes methods that allow mapping of DevMode to and from a Print Ticket Schema. A collection of feature conversion objects
+ are stored at the plug-in interface level, each of which is responsible for the conversion of a specific feature (Color, Watermark, Booklet, Scaling, and NUp). Whenever the Unidrv core calls through the external interface of the plug-in to convert from DevMode
+ to Print Ticket or Print Ticket to DevMode, the collection is iterated through calling each conversion object in turn; each then perform its own DevMode/Print Ticket mapping via the appropriate get and set functions. The sample get and set functions provide
+ an interface to read and write the GPD options, OEM private DevMode, and Print Ticket keyword value pairs.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

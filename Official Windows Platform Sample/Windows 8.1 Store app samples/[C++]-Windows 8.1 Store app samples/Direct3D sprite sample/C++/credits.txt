@@ -1,0 +1,15 @@
+=============================
+MICROSOFT CORPORATION CREDITS
+=============================
+
+The SimpleSprites sample uses several texture assets that were obtained
+from NASA.gov.  These textures include:
+    m31.png
+    ida.dds
+
+Each of these textures was converted from the following original image files:
+    492456main_Swift_M31_large_UV_full.jpg
+    Ida.jpg
+
+The terms of use of these images can be found at:
+    http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html

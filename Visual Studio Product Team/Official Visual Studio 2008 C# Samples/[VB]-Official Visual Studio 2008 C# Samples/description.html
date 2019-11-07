@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/898aa3d3-8b1c-4e04-a2bd-e7a59c776c61Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Official Visual Studio 2008 C# Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Official Visual Studio 2008 C# Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ, .NET Framework
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            C# Language Features
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/28/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Welcome to the Official Visual Studio 2008 C# Samples</h1>
+<h2>Language Samples</h2>
+<div>We have created a set of language samples to help you get familiar with&nbsp; various C# language features.</div>
+<div>
+<ul>
+<li><strong><a href="../Yield Sample/description.html">Yield Sample</a></strong>:This sample shows how to create a list class which implements IEnumerable&amp;lt;int&amp;gt; and the yield keyword to enable foreach iteration over the contents
+ of the list. Two properties are defined, one returning the odd numbers, the other returning the even numbers.
+</li><li><strong><a href="../XML Documentation Sample/description.html">XML Documentation Sample</a></strong>:&nbsp;This sample shows how to use XML to document code.
+</li><li><strong><a href="../Versioning Sample/description.html">Versioning Sample</a></strong>:&nbsp;This sample demonstrates versioning in C# through the use of the override and new keywords. Versioning helps maintain compatibility between
+ base and derived classes as they evolve. </li><li><strong><a href="../User-Defined Conversions Sample/description.html">User-Defined Conversions Sample</a></strong>:&nbsp;This sample shows how to define conversions to or from classes or structures, and how such conversions are used.
+</li><li><strong><a href="http://code.msdn.microsoft.com/Unsafe-Code-Sample-165f8e5a">Unsafe Code Sample</a></strong>:&nbsp;This sample demonstrates how to use unmanaged code (code using pointers) in C#.
+</li><li><strong><a href="../Threading Sample/description.html">Threading Sample</a>:</strong>&nbsp;This sample demonstrates the following threading techniques.
+</li><li><strong><a href="../Structs Sample/description.html">Structs Sample</a></strong>:&nbsp;This sample presents the syntax and usage of structs. It also covers the important differences between classes and structs.
+</li><li><strong><a href="../Security Sample/description.html">Security Sample</a></strong>:&nbsp;This sample demonstrates how to modify security permissions through permission classes and permission attributes.
+</li><li><strong><a href="http://code.msdn.microsoft.com/Properties-Sample-e38fd36d">Properties Sample</a></strong>:&nbsp;This sample shows how properties are an integral part of the C# programming language. It demonstrates how properties are declared and used.
+</li><li><strong><a href="../Platform Invoke Sample/description.html">Platform Invoke Sample</a></strong>:&nbsp;This sample demonstrates how to call platform invokes (exported DLL functions) from C#.
+</li><li><strong><a href="../Partial Types Sample/description.html">Partial Types Sample</a></strong>:&nbsp;This sample demonstrates the use of partial types, which enable a class or struct to be defined in two or more C# files.
+</li><li><strong><a href="../Operator Overloading Sample/description.html">Operator Overloading Sample</a></strong>:&nbsp;This sample demonstrates how user-defined classes can overload operators.
+</li><li><strong><a href="../OLE DB Sample/description.html">OLE DB Sample</a></strong>:&nbsp;This sample demonstrates how to use a Microsoft Access database from C#. It shows how you can create a dataset and add tables to it from a database.
+ The BugTypes.mdb database used in the sample program is a Microsoft Access 2000 .mdb file.
+</li><li><strong><a href="../Nullable Sample/description.html">Nullable Sample</a></strong>:&nbsp;This sample demonstrates the use of nullable types. This feature allows value types to have an uninitialized, or empty, state similar to how reference
+ types can be set to null. </li><li><strong><a href="../Libraries Sample/description.html">Libraries Sample</a></strong>:&nbsp;This sample shows how to create and use a DLL in C#.
+</li><li><strong><a href="../Indexers Sample/description.html">Indexers Sample</a></strong>:&nbsp;This sample shows how C# classes can declare indexers to provide array-like access to the classes.
+</li><li><strong><a href="../Indexed Properties Sample/description.html">Indexed Properties Sample</a></strong>:&nbsp;This sample shows how C# classes can declare indexed properties to represent an array-like collection of different kinds of
+ things. </li><li><strong><a href="../Hello World Sample/description.html">Hello World Sample</a></strong>:&nbsp;This sample shows several versions of a Hello World program in C#.
+</li><li><strong><a href="../Generics Sample (C#)/description.html">Generics Sample (C#)</a></strong>:&nbsp;This sample shows how to create a custom generic list class with a single type parameter, and how to implement IEnumerable&lt;&gt; to enable
+ foreach iteration over the contents of the list.&nbsp; </li><li><strong><a href="../Explicit Interface Implementation Sample/description.html">Explicit Interface Implementation Sample</a></strong>:&nbsp;This sample demonstrates how to explicitly implement interface members and how to access those members from interface
+ instances. </li><li><strong><a href="../Events Sample/description.html">Events Sample</a>:</strong>&nbsp;This sample shows how to declare, invoke, and configure events in C#.
+</li><li><strong><a href="http://code.msdn.microsoft.com/Delegates-Sample-4981b6ac">Delegates Sample</a></strong>:&nbsp;This sample demonstrates the delegate types. It shows how to map delegates to static and instance methods, and how to combine them to create multicast
+ delegates. </li><li><strong><a href="../Conditional Methods Sample/description.html">Conditional Methods Sample</a></strong>:&nbsp;This sample demonstrates conditional methods, which provide a powerful mechanism by which calls to methods can be included
+ or omitted depending on whether a symbol is defined. </li><li><strong><a href="../Command Line Parameters Sample/description.html">Command Line Parameters Sample</a></strong>:&nbsp;This sample shows how the command line can be accessed and two ways of accessing the array of command-line parameters.
+</li><li><strong><a href="../COM Interop Part 2 Sample/description.html">COM Interop Part 2 Sample</a></strong>:&nbsp;This sample demonstrates using a C# server with a C&#43;&#43; COM client.
+</li><li><strong><a href="../COM Interop Part 1 Sample/description.html">COM Interop Part 1 Sample</a></strong>:&nbsp;This sample demonstrates how a C# program can interoperate with an unmanaged COM component.
+</li><li><strong><a href="../Collection Classes Sample/description.html">Collection Classes Sample</a></strong>:&nbsp;This sample shows how to implement a collection class that can be used with the foreach statement.
+</li><li><strong><a href="../Attributes Sample/description.html">Attributes Sample</a></strong>:&nbsp;This sample demonstrates how to create custom attribute classes, use them in code, and query them through reflection.
+</li><li><strong><a href="../Arrays Sample/description.html">Arrays Sample</a></strong>:&nbsp;This sample describes and shows how arrays work in C#.
+</li><li><strong><a href="../Anonymous Delegates Sample/description.html">Anonymous Delegates Sample</a></strong>:&nbsp;This sample demonstrates using an anonymous delegate to calculate a salary bonus for an employee. Using an anonymous delegate
+ simplifies the program because there is no need to define a separate method. </li></ul>
+<p>&nbsp;</p>
+</div>
+<div><span style="font-size:15px; font-weight:bold">LINQ Samples</span></div>
+<div>We have created four sets of samples for you that are designed to help you&nbsp; learn LINQ quickly, and to act as a reference and guide for those with more&nbsp; advanced skills. A few handy utilities are also included.</div>
+<div><span class="red"><strong>Important:</strong></span> If the folder links&nbsp; below do not function, please follow the instructions above under
+<strong>Unblocking Folder Links</strong>.</div>
+<div></div>
+<div><span style="font-size:12px; font-weight:bold">Getting Started with LINQ</span></div>
+<ul>
+<li><strong><a href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b">SampleQueries</a></strong>: This is the most important sample and&nbsp; contains about 500 examples of how to use each of the query operators in LINQ&nbsp; to Objects, LINQ to SQL,
+ LINQ to XML and LINQ to DataSet. </li><li><strong><a href="../SimpleLinqToObjects/description.html">SimpleLinqToObjects</a>:</strong> The hello world of the LINQ samples.&nbsp; This shows you how easy it is to do simple queries of in-memory objects using LINQ to Objects.
+</li><li><strong><a href="../LinqToNorthwind/description.html">LinqToNorthwind</a></strong>: A basic example of how to use LINQ To SQL&nbsp; to query a database.
+</li><li><strong><a href="../SimpleLinqToXml/description.html">SimpleLinqToXml</a></strong>: Get started using LINQ to XML.
+</li><li><strong><a href="../WinFormsDataBinding/description.html">WinFormsDataBinding</a></strong>: Learn how to display LINQ queries with grids in a Windows form. It includes a one to many query example.
+</li><li><strong><a href="../XQuery/description.html">XQuery</a></strong>: Another simple LINQ to XML sample query. This sample shows the minimal code necessary to write a LINQ to XML query
+</li><li><strong><a href="../LinqToXmlDataBinding/description.html">LinqToXmlDataBinding</a></strong>: Bind LINQ to XML code to WPF controls.
+</li></ul>
+<h3>Advanced Samples</h3>
+<ul>
+<li><strong><a href="http://code.msdn.microsoft.com/DynamicQuery-f65f6a4d">DynamicQuery</a>:
+</strong>Code to create LINQ queries at run time. </li><li><strong><a href="../Reflector/description.html">Reflector</a></strong>: Use LINQ to right queries against the objects in your code using the Reflection APIs.
+</li><li><strong><a href="../Rss/description.html">RSS</a></strong>: This sample acts as a tiny web server that aggregates several RSS feeds
+</li><li><strong><a href="http://code.msdn.microsoft.com/SimpleLambdas-331554a4">SimpleLambdas</a></strong>:&nbsp; Several examples of how to write and use lambda expressions.
+</li><li><strong><a href="../LINQ to TerraServer Provider Sample/description.html">WebServiceLinqProvider</a></strong>: A sample showing how to create a LINQ provider to query Terraserver, a web service offering geographical data.
+</li></ul>
+<h3>Addins and Visualizers</h3>
+<ul>
+<li><strong><a href="../ExpressionTreeVisualizer/description.html">ExpressionTreeVisualizer</a></strong>: Create a visualization of an&nbsp; Expression Tree.
+</li><li><strong><a href="../QueryVisualizer/description.html">QueryVisualizer</a></strong>: Allows LINQ to SQL developers to see the&nbsp; SQL for their query, and also to see the results of the query in a grid.
+</li><li><strong><a href="../PasteXmlAsLinq/description.html">PasteXmlAsLinq</a>:
+</strong>A Visual Studio addin that automatically converts XML markup to LINQ to XML code<strong>.
+</strong><em>Note:</em> Addins cannot be compiled or loaded within C# Express. </li></ul>
+<h3>Libraries or Utilities</h3>
+<ul>
+<li><strong><a href="description.html">Data</a>:
+</strong>Contains XML files and a modified copy&nbsp; of the Northwind database for use by several of the other samples.
+</li><li><strong><a id="46086" href="description.html">ObjectDumper</a>:
+</strong>A utility for writing the output from a LINQ&nbsp; query to the screen in text mode.
+</li><li><strong><a id="46089" href="description.html">NorthwindMapping</a></strong>: Contains the ORM mapping created by the&nbsp; LINQ to SQL designer for the Northwind database that ships with these samples.&nbsp;
+ It is used by <strong>DynamicQuery</strong> and <strong>WinFormsDataBinding</strong>.
+</li><li><strong><a href="description.html">Whitepapers</a></strong>: The following papers are stored in this directory in Word format:
+<ul>
+<li>LINQ Project Overview </li><li>LINQ to SQL Overview for C# and VB </li><li>Standard Query Operators </li><li>LINQ to XML Overview </li></ul>
+</li></ul>
+<h3>LINQ Samples Database Connectivity Issue</h3>
+<p>The default connect string for the samples should work without modification&nbsp; if you have SQL Server Express installed on your development machine. Here is an&nbsp; alternate connect string that you can modify for your own purposes if you are&nbsp; not
+ using SQL Express but have SQL Server available. You will probably need to&nbsp; modify the word test wherever it appears in the sample connect string.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">string connString = &quot;server=test;database=northwind;user id=test;password=test&quot;;
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">string</span>&nbsp;connString&nbsp;=&nbsp;<span class="cs__string">&quot;server=test;database=northwind;user&nbsp;id=test;password=test&quot;</span>;&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>On some SQL Express installations, you may not have the rights to start a&nbsp; user instance. If you get an error message to that effect, try removing the&nbsp; clause &quot;;user instance = true&quot; from the connection string.<br>
+&nbsp;<br>
+Be sure that the copies of the northwind database that you are accessing are&nbsp; not marked read only. If necessary, browse to the copy of NORTHWIND.MDF you are&nbsp; trying to access, right click on the file, choose properties. Clear the Read-only attribute.<br>
+&nbsp;<br>
+On some slow machines, or when using a virtual pc, users have reported that&nbsp; some database applications give errors the first time they run. Try running the&nbsp; sample two or three times.<br>
+&nbsp;<br>
+The customized copies of the Northwind database included with the samples&nbsp; ship without an LDF (log) file. This is done intentionally, so that the LDF and&nbsp; MDF files do not get out of sync. When you run a sample that uses the database,&nbsp; or attach
+ to the database from the Server Explorer inside Visual Studio, the LDF&nbsp; file will be created automatically. You may have trouble connecting to the MDF&nbsp; file if you are using the SQL Server Management Studio without first creating a&nbsp; log file.</p>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps3296-->
+                        <div id="item">
+                                <div><a href="LINQ - Sample Queries/description.html">LINQ - Sample Queries</a></div>
+                            <div>This project contains about 101 samples using LINQ.</div>
+                        </div>
+                        <!--pe3296-->
+                        <!--pe14072-->
+                        <!--pe14037-->
+                        <!--pe14084-->
+                        <!--pe14077-->
+                        <!--pe14081-->
+                        <!--pe14073-->
+                        <!--pe14039-->
+                        <!--pe14051-->
+                        <!--pe14083-->
+                        <!--pe14076-->
+                        <!--pe14022-->
+                        <!--pe14082-->
+                        <!--pe14027-->
+                        <!--pe14032-->
+                        <!--pe14034-->
+                        <!--pe14044-->
+                        <!--pe14023-->
+                        <!--pe14033-->
+                        <!--pe14074-->
+                        <!--pe14046-->
+                        <!--pe14026-->
+                        <!--pe14038-->
+                        <!--pe14075-->
+                        <!--pe14040-->
+                        <!--pe14031-->
+                        <!--pe14049-->
+                        <!--pe14050-->
+                        <!--pe14036-->
+                        <!--pe14080-->
+                        <!--pe14029-->
+                        <!--pe14035-->
+                        <!--pe14078-->
+                        <!--pe14045-->
+                        <!--pe14028-->
+                        <!--pe14048-->
+                        <!--pe14042-->
+                        <!--pe14024-->
+                        <!--pe14025-->
+                        <!--pe14041-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

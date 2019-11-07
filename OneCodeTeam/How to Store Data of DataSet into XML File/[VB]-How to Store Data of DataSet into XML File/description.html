@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to Store Data of DataSet into XML File</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to Store Data of DataSet into XML File</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET, Data Access, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            XML, DataSet, XML Schema
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/21/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-Store-Data-of-7b9710f3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<h1>How to Store Data of DataSet into XML File (CSDataSetToXML)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">In this sample, we will demonstrate how to write data into XML file from DataSet and read data into DataSet from XML.</p>
+<p class="MsoNormal">1. We will create one dataset with two tables.</p>
+<p class="MsoNormal">2. We will use two ways to export dataset into the XML files:WriteXml method and GetXml method.</p>
+<p class="MsoNormal">3. We will use two ways to import dataset from the XML files:ReadXml method and InferXmlSchema method.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Press F5 to run the sample, the following is the result.</p>
+<p class="MsoNormal">First, we create one dataset that contains two tables.</p>
+<p class="MsoNormal"><span><img src="description/image.png" alt="" width="639" height="271" align="middle">
+</span></p>
+<p class="MsoNormal">Second, we use two ways to export the dataset into XML files.</p>
+<p class="MsoNormal">a. Use WriteXml method to export the dataset.</p>
+<p class="MsoNormal"><span><img src="description/9a1b7e4d-a8b0-445d-8f92-264456ba0a4fimage.png" alt="" width="643" height="23" align="middle">
+</span></p>
+<p class="MsoNormal">b. Use GetXml method to export the dataset.</p>
+<p class="MsoNormal"><span><img src="description/c6583bb8-d5c4-4eb4-9045-2b3ac13d71b3image.png" alt="" width="640" height="24" align="middle">
+</span></p>
+<p class="MsoNormal">Third, we import the dataset from the XML files.</p>
+<p class="MsoNormal">a. Use ReadXml to import the dataset.</p>
+<p class="MsoNormal">We use ReadXml method to read the XML file that WriteXml method created early. Because we also read the schema from the XML file, we can find that the schema is as same as the schema of the original dataset.</p>
+<p class="MsoNormal"><span><img src="description/c01e2a52-500b-4fda-8748-c7414b46a22eimage.png" alt="" width="641" height="89" align="middle">
+</span></p>
+<p class="MsoNormal">b. Use InferXmlSchema method to infer the schemas.</p>
+<p class="MsoNormal">We display four types of XML structures.</p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span><span>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Elements that only have attributes</p>
+<p class="MsoListParagraphCxSpLast">Following is the Xml document:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;MySchool&gt;
+&nbsp; &lt;Course CourseID=&quot;C1045&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Calculus&quot; Credits=&quot;4&quot; DepartmentID=&quot;7&quot; /&gt;
+&nbsp; &lt;Course CourseID=&quot;C1061&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Physics&quot; Credits=&quot;4&quot; DepartmentID=&quot;1&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;1&quot; Name=&quot;Engineering&quot; Budget=&quot;350000&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;2&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;7&quot; Name=&quot;Mathematics&quot; Budget=&quot;250024&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;3&quot; /&gt;
+&lt;/MySchool&gt;
+
+</pre>
+<pre class="xml" id="codePreview">&lt;MySchool&gt;
+&nbsp; &lt;Course CourseID=&quot;C1045&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Calculus&quot; Credits=&quot;4&quot; DepartmentID=&quot;7&quot; /&gt;
+&nbsp; &lt;Course CourseID=&quot;C1061&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Physics&quot; Credits=&quot;4&quot; DepartmentID=&quot;1&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;1&quot; Name=&quot;Engineering&quot; Budget=&quot;350000&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;2&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;7&quot; Name=&quot;Mathematics&quot; Budget=&quot;250024&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;3&quot; /&gt;
+&lt;/MySchool&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph">Following is the result of inferring from the above Xml document:</p>
+<p class="MsoNormal"><span><img src="description/62d4f778-de0b-4580-80d0-73241fda295dimage.png" alt="" width="640" height="74" align="middle">
+</span></p>
+<p class="MsoListParagraphCxSpFirst">Now we can find that the name of root element becomes the name of dataset, the names of elements become the name of table and the names of attributes become the name of columns.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span><span>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Elements that have attributes and the element text</p>
+<p class="MsoListParagraphCxSpLast">Following is the Xml document:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;MySchool&gt;
+&nbsp; &lt;Course CourseID=&quot;C1045&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Calculus&quot; Credits=&quot;4&quot; DepartmentID=&quot;7&quot;&gt;New&lt;/Course&gt;
+&nbsp; &lt;Course CourseID=&quot;C1061&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Physics&quot; Credits=&quot;4&quot; DepartmentID=&quot;1&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;1&quot; Name=&quot;Engineering&quot; Budget=&quot;350000&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;2&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;7&quot; Name=&quot;Mathematics&quot; Budget=&quot;250024&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;3&quot;&gt;Cancelled&lt;/Department&gt;
+&lt;/MySchool&gt;
+
+</pre>
+<pre class="xml" id="codePreview">&lt;MySchool&gt;
+&nbsp; &lt;Course CourseID=&quot;C1045&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Calculus&quot; Credits=&quot;4&quot; DepartmentID=&quot;7&quot;&gt;New&lt;/Course&gt;
+&nbsp; &lt;Course CourseID=&quot;C1061&quot; Year=&quot;2012&quot;&nbsp; Title=&quot;Physics&quot; Credits=&quot;4&quot; DepartmentID=&quot;1&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;1&quot; Name=&quot;Engineering&quot; Budget=&quot;350000&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;2&quot; /&gt;
+&nbsp; &lt;Department DepartmentID=&quot;7&quot; Name=&quot;Mathematics&quot; Budget=&quot;250024&quot; StartDate=&quot;2007-09-01T00:00:00&#43;08:00&quot; Administrator=&quot;3&quot;&gt;Cancelled&lt;/Department&gt;
+&lt;/MySchool&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph">Following is the result of inferring from the above Xml document:</p>
+<p class="MsoNormal"><span><img src="description/c71afe1c-5bb4-4f14-80ee-a3214ba779a9image.png" alt="" width="637" height="88" align="middle">
+</span></p>
+<p class="MsoListParagraphCxSpFirst">The only difference between type 1 and 2 is that type 2 have the element text in Xml document. So we can find the only difference of the results is that the new columns, &quot;Course_Text&quot;, &quot;Department_Text&quot;.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span><span>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Repeating Elements</p>
+<p class="MsoListParagraphCxSpLast">Following is the Xml document:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;MySchool&gt;
+&nbsp; &lt;Course&gt;C1045&lt;/Course&gt;
+&nbsp; &lt;Course&gt;C1061&lt;/Course&gt;
+&nbsp; &lt;Department&gt;Engineering&lt;/Department&gt; 
+&nbsp;&nbsp;&lt;Department&gt;Mathematics&lt;/Department&gt;
+&lt;/MySchool&gt;
+
+</pre>
+<pre class="xml" id="codePreview">&lt;MySchool&gt;
+&nbsp; &lt;Course&gt;C1045&lt;/Course&gt;
+&nbsp; &lt;Course&gt;C1061&lt;/Course&gt;
+&nbsp; &lt;Department&gt;Engineering&lt;/Department&gt; 
+&nbsp;&nbsp;&lt;Department&gt;Mathematics&lt;/Department&gt;
+&lt;/MySchool&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph">Following is the result of inferring from the above Xml document:</p>
+<p class="MsoNormal"><span><img src="description/a2371ed5-3e20-432b-9228-93e8aaadda65image.png" alt="" width="637" height="81" align="middle">
+</span></p>
+<p class="MsoListParagraphCxSpFirst">We can find that the repeat elements result in a single inferred table.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span><span>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Elements With Child Elements</p>
+<p class="MsoListParagraphCxSpLast">Following is the Xml document:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;MySchool&gt;
+&nbsp; &lt;Course&gt;
+&nbsp;&nbsp;&nbsp; &lt;CourseID&gt;C1045&lt;/CourseID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Year&gt;2012&lt;/Year&gt;
+&nbsp;&nbsp;&nbsp; &lt;Title&gt;Calculus&lt;/Title&gt;
+&nbsp;&nbsp;&nbsp; &lt;Credits&gt;4&lt;/Credits&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;7&lt;/DepartmentID&gt;
+&nbsp; &lt;/Course&gt;
+&nbsp; &lt;Course&gt;
+&nbsp;&nbsp;&nbsp; &lt;CourseID&gt;C1061&lt;/CourseID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Year&gt;2012&lt;/Year&gt;
+&nbsp;&nbsp;&nbsp; &lt;Title&gt;Physics&lt;/Title&gt;
+&nbsp;&nbsp;&nbsp; &lt;Credits&gt;4&lt;/Credits&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;1&lt;/DepartmentID&gt;
+&nbsp; &lt;/Course&gt;
+&nbsp; .................................
+&nbsp; &lt;Department&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;1&lt;/DepartmentID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Name&gt;Engineering&lt;/Name&gt;
+&nbsp;&nbsp;&nbsp; &lt;Budget&gt;350000&lt;/Budget&gt;
+&nbsp;&nbsp;&nbsp; &lt;StartDate&gt;2007-09-01T00:00:00&#43;08:00&lt;/StartDate&gt;
+&nbsp;&nbsp;&nbsp; &lt;Administrator&gt;2&lt;/Administrator&gt;
+&nbsp; &lt;/Department&gt;
+&nbsp; &lt;Department&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;2&lt;/DepartmentID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Name&gt;English&lt;/Name&gt;
+&nbsp;&nbsp;&nbsp; &lt;Budget&gt;120000&lt;/Budget&gt;
+&nbsp;&nbsp;&nbsp; &lt;StartDate&gt;2007-09-01T00:00:00&#43;08:00&lt;/StartDate&gt;
+&nbsp;&nbsp;&nbsp; &lt;Administrator&gt;6&lt;/Administrator&gt;
+&nbsp; &lt;/Department&gt;
+&nbsp; .................................
+&lt;/MySchool&gt;
+
+</pre>
+<pre class="xml" id="codePreview">&lt;MySchool&gt;
+&nbsp; &lt;Course&gt;
+&nbsp;&nbsp;&nbsp; &lt;CourseID&gt;C1045&lt;/CourseID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Year&gt;2012&lt;/Year&gt;
+&nbsp;&nbsp;&nbsp; &lt;Title&gt;Calculus&lt;/Title&gt;
+&nbsp;&nbsp;&nbsp; &lt;Credits&gt;4&lt;/Credits&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;7&lt;/DepartmentID&gt;
+&nbsp; &lt;/Course&gt;
+&nbsp; &lt;Course&gt;
+&nbsp;&nbsp;&nbsp; &lt;CourseID&gt;C1061&lt;/CourseID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Year&gt;2012&lt;/Year&gt;
+&nbsp;&nbsp;&nbsp; &lt;Title&gt;Physics&lt;/Title&gt;
+&nbsp;&nbsp;&nbsp; &lt;Credits&gt;4&lt;/Credits&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;1&lt;/DepartmentID&gt;
+&nbsp; &lt;/Course&gt;
+&nbsp; .................................
+&nbsp; &lt;Department&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;1&lt;/DepartmentID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Name&gt;Engineering&lt;/Name&gt;
+&nbsp;&nbsp;&nbsp; &lt;Budget&gt;350000&lt;/Budget&gt;
+&nbsp;&nbsp;&nbsp; &lt;StartDate&gt;2007-09-01T00:00:00&#43;08:00&lt;/StartDate&gt;
+&nbsp;&nbsp;&nbsp; &lt;Administrator&gt;2&lt;/Administrator&gt;
+&nbsp; &lt;/Department&gt;
+&nbsp; &lt;Department&gt;
+&nbsp;&nbsp;&nbsp; &lt;DepartmentID&gt;2&lt;/DepartmentID&gt;
+&nbsp;&nbsp;&nbsp; &lt;Name&gt;English&lt;/Name&gt;
+&nbsp;&nbsp;&nbsp; &lt;Budget&gt;120000&lt;/Budget&gt;
+&nbsp;&nbsp;&nbsp; &lt;StartDate&gt;2007-09-01T00:00:00&#43;08:00&lt;/StartDate&gt;
+&nbsp;&nbsp;&nbsp; &lt;Administrator&gt;6&lt;/Administrator&gt;
+&nbsp; &lt;/Department&gt;
+&nbsp; .................................
+&lt;/MySchool&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph">Following is the result of inferring from the above Xml document:</p>
+<p class="MsoNormal"><span><img src="description/80132990-dcf0-47bd-adcf-c47b14b72eadimage.png" alt="" width="638" height="85" align="middle">
+</span></p>
+<p class="MsoListParagraph">The above Xml document is as same as the document that GetXml method created early and we get the same structure as the original dataset. For this type structure, we can find that the name of root becomes the name of dataset, the
+ names of second level elements become the names of tables and the names of the third level elements become the names of attributes.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+1. Use two ways to export the dataset into the XML files.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+a. Use WriteXml method to export the dataset.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using (FileStream fsWriterStream = new FileStream(xmlFileName, FileMode.Create))
+{
+&nbsp;&nbsp;&nbsp; using (XmlTextWriter xmlWriter = new XmlTextWriter(fsWriterStream, Encoding.Unicode))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataset.WriteXml(xmlWriter, XmlWriteMode.WriteSchema);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Write {0} to the File {1}.&quot;, dataset.DataSetName, xmlFileName);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine();
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre class="csharp" id="codePreview">using (FileStream fsWriterStream = new FileStream(xmlFileName, FileMode.Create))
+{
+&nbsp;&nbsp;&nbsp; using (XmlTextWriter xmlWriter = new XmlTextWriter(fsWriterStream, Encoding.Unicode))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataset.WriteXml(xmlWriter, XmlWriteMode.WriteSchema);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Write {0} to the File {1}.&quot;, dataset.DataSetName, xmlFileName);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine();
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+&nbsp;</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+b. Use GetXml method to export the dataset.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using (StreamWriter writer = new StreamWriter(xmlFileName))
+{
+&nbsp;&nbsp;&nbsp; writer.WriteLine(dataset.GetXml());
+&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Get Xml data from {0} and write to the File {1}.&quot;, dataset.DataSetName, xmlFileName);
+&nbsp;&nbsp;&nbsp; Console.WriteLine();
+}
+
+</pre>
+<pre class="csharp" id="codePreview">using (StreamWriter writer = new StreamWriter(xmlFileName))
+{
+&nbsp;&nbsp;&nbsp; writer.WriteLine(dataset.GetXml());
+&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Get Xml data from {0} and write to the File {1}.&quot;, dataset.DataSetName, xmlFileName);
+&nbsp;&nbsp;&nbsp; Console.WriteLine();
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+2. Use two ways to import the dataset from the XML files.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+a. Use ReadXml method to import the dataset.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">using (FileStream fsReaderStream = new FileStream(xmlFileName, FileMode.Open))
+{
+&nbsp;&nbsp;&nbsp; using (XmlTextReader xmlReader = new XmlTextReader(fsReaderStream))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newDataSet.ReadXml(xmlReader, XmlReadMode.ReadSchema);
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+<pre class="csharp" id="codePreview">using (FileStream fsReaderStream = new FileStream(xmlFileName, FileMode.Open))
+{
+&nbsp;&nbsp;&nbsp; using (XmlTextReader xmlReader = new XmlTextReader(fsReaderStream))
+&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newDataSet.ReadXml(xmlReader, XmlReadMode.ReadSchema);
+&nbsp;&nbsp;&nbsp; }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+b. Use InferXmlSchema method to import the dataset.<span style="font-size:9.5pt; font-family:Consolas; color:black">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">String[] xmlFileNames = { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithOnlyAttributes.xml&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithAttributes.xml&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @&quot;XMLFiles\RepeatingElements.xml&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithChildElements.xml&quot; };
+
+
+foreach (String xmlFileName in xmlFileNames)
+{
+&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Result of {0}&quot;, Path.GetFileNameWithoutExtension(xmlFileName));
+&nbsp;&nbsp;&nbsp; DataSet newSchool = new DataSet();
+&nbsp;&nbsp;&nbsp; newSchool.InferXmlSchema(xmlFileName,null);
+&nbsp;&nbsp;&nbsp; DataTableHelper.ShowDataSetSchema(newSchool);
+&nbsp;&nbsp;&nbsp; Console.WriteLine();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+</pre>
+<pre class="csharp" id="codePreview">String[] xmlFileNames = { 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithOnlyAttributes.xml&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithAttributes.xml&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @&quot;XMLFiles\RepeatingElements.xml&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@&quot;XMLFiles\ElementsWithChildElements.xml&quot; };
+
+
+foreach (String xmlFileName in xmlFileNames)
+{
+&nbsp;&nbsp;&nbsp; Console.WriteLine(&quot;Result of {0}&quot;, Path.GetFileNameWithoutExtension(xmlFileName));
+&nbsp;&nbsp;&nbsp; DataSet newSchool = new DataSet();
+&nbsp;&nbsp;&nbsp; newSchool.InferXmlSchema(xmlFileName,null);
+&nbsp;&nbsp;&nbsp; DataTableHelper.ShowDataSetSchema(newSchool);
+&nbsp;&nbsp;&nbsp; Console.WriteLine();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/system.data.dataset.getxml.aspx"><span class="SpellE">DataSet.GetXml</span> Method</a>
+</span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/d6swf149.aspx"><span class="SpellE">DataSet.ReadXml</span> Method (<span class="SpellE">XmlReader</span>)</a>
+</span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/cat50f7f.aspx">Inferring Tables</a>
+</span></p>
+<p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/fx29c3yd(VS.110).aspx">Loading a
+<span class="SpellE">DataSet</span> from XML</a> </span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/dfed905b-578e-4373-9111-b59c292b63e5image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

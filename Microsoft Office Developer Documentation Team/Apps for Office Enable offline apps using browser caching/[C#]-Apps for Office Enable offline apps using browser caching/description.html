@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/04f9c26e-88fd-4dfd-b715-9733d17420b6Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Apps for Office: Enable offline apps using browser caching</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Apps for Office: Enable offline apps using browser caching</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Word 2013, apps for Office, PowerPoint 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            data and storage
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/8/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Apps-for-Office-Enable-bdcb7a2f">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">The CodeSample_OfflineCalculatorApp.appcache file contains the AppCache manifest. The AppCache manifest declares that the following resources will be stored locally and referenced if the browser is in an offline state:</span></p>
+<ul>
+<li><span style="font-size:small">CodeSample_OfflineCalculator.html</span> </li><li><span style="font-size:small">App.css</span> </li><li><span style="font-size:small">Office.css</span> </li><li><span style="font-size:small">CodeSample_OfflineCalculatorApp.js</span> </li><li><span style="font-size:small">Office.js</span> </li><li><span style="font-size:small">MicrosoftAjax.js</span> </li><li><span style="font-size:small">jquery-1.7.1.js</span> </li><li><span style="font-size:small">toast.js</span> </li></ul>
+<p><span style="font-size:small">The manifest file is referenced in the <em>manifest
+</em>attribute of the <strong>html</strong> tag of the CodeSample_OfflineCalculatorApp.html file.</span></p>
+<p><span style="font-size:small">In addition, the sample demonstrates how to get data from a document, how to store and retrieve data from HTML5 web storage (localStorage), and how to insert data back into the document. It also demonstrates best practices for
+ surfacing errors to the user through using dynamically generated content.</span></p>
+<p><span style="font-size:small">For more information about the HTML5 Application Cache API, see
+<a href="http://msdn.microsoft.com/en-us/library/ie/hh673545(v=vs.85).aspx">Application Cache API (&ldquo;AppCache&rdquo;)</a>. For more information about HTML5 Web Storage, see
+<a href="http://msdn.microsoft.com/en-us/library/cc197062(VS.85).aspx">Introduction to Web Storage</a>. For more information about working with data using the JavaScript APIs for apps for Office, see the
+<a href="http://msdn.microsoft.com/library/b27e70c3-d87d-4d27-85e0-103996273298">
+JavaScript API for Office</a>.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">Word 2013 or PowerPoint 2013.</span> </li><li><span style="font-size:small">Visual Studio 2012, apps for Office project templates.</span>
+</li><li><span style="font-size:small">Basic familiarity with HTML5, JavaScript, CSS3, and jQuery.</span>
+</li></ul>
+<p><span style="font-size:small"><strong>Note</strong>: To test the offline capabilities, Windows 8 and Internet Explorer 10 Preview are also required.</span></p>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The <em>Apps for Office: Enable offline apps using browser caching</em> sample app contains the following important files:</span></p>
+<ul>
+<li><span style="font-size:small">CodeSample_OfflineCalculator project, including:</span>
+<ul>
+<li><span style="font-size:small">CodeSample_OfflineCalculatorApp.xml manifest</span>
+</li><li><span style="font-size:small">CodeSample_OfflineCalculatorApp.appcache manifest</span>
+</li><li><span style="font-size:small">CodeSample_OfflineCalculatorApp.js file</span> </li><li><span style="font-size:small">CodeSample_OfflineCalculatorApp.html file</span>
+</li><li><span style="font-size:small">toast.js</span> </li><li><span style="font-size:small">App.css file</span> </li></ul>
+</li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">No configuration is necessary to run the sample and operate the calculator.</span></p>
+<p><span style="font-size:small">To test the offline capabilities of the app, follow these steps:</span></p>
+<ol>
+<li><span style="font-size:small">Download and insert the app into Word 2013 or PowerPoint 2013.</span>
+</li><li><span style="font-size:small">Disconnect the Windows 8 computer from all networks.</span>
+</li><li><span style="font-size:small">Open Word 2013 or PowerPoint 2013&nbsp;and insert the app again.</span>
+</li></ol>
+<h1>Build the sample</h1>
+<p><span style="font-size:small">Choose the F5 key in Visual Studio 2012 to build and deploy the app.</span></p>
+<h1>Run and test the sample</h1>
+<ol>
+<li><span style="font-size:small">Choose the F5 key to build and deploy the app.</span>
+</li><li><span style="font-size:small">Use the app&rsquo;s interface to get and set data from the Word document, perform number computation tasks, and store data.</span>
+</li></ol>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">If the app fails to install, ensure that the <strong>
+SourceLocation</strong> element in the CodeSample_OfflineCalculator.xml file has the correct URL value for the
+<em>DefaultValue </em>attribute.</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/ie/hh673545(v=vs.85).aspx">Application Cache API (&ldquo;AppCache&rdquo;)</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/cc197062(VS.85).aspx">Introduction to Web Storage</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/library/f85ad02c-64f0-4b73-87f6-7f521b3afd69">Document.getSelectedDataAsync function</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/library/998f38dc-83bd-4659-a759-4758c632a6ef">Document.setSelectedDataAsync function</a></span>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

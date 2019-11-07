@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=71AE1851B6C794DEF5BD9BC8F835D0EE" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/47c63455-7231-44b0-b4ee-e4560979780cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C91CC0BBB362C4840AF9553071016400" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>StreamSocket sample (Windows 8)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/dc4f56b3-224a-4dd7-a435-210da682eb66Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>StreamSocket sample (Windows 8)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/StreamSocket-sample-53e53e29">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates the basics of the <a href="http://msdn.microsoft.com/library/windows/apps/br226882">
+<b>StreamSocket</b></a> class using the networking features provided by the Windows Runtime. The client component of the sample creates a TCP socket to make a network connection, uses the socket to send data, and closes the socket. The server component of the
+ sample creates a TCP socket to listen for and accept network connections, accepts connections from the incoming socket, uses the socket to receive data from the client, and closes the socket.
+</p>
+<p>The client component of the sample demonstrates the following features:</p>
+<p></p>
+<ul>
+<li>Use the <a href="http://msdn.microsoft.com/library/windows/apps/br226882"><b>StreamSocket</b></a> class to create a TCP socket.
+</li><li>Make a network connection to a TCP network server using one of the <a href="http://msdn.microsoft.com/library/windows/apps/br226882_connectasync">
+<b>StreamSocket.ConnectAsync</b></a> methods. </li><li>Send data to the server using the <a href="http://msdn.microsoft.com/library/windows/apps/br208154">
+<b>Streams.DataWriter</b></a> object which allows a programmer to write common types (integers and strings, for example) on any stream.
+</li></ul>
+<p></p>
+<p>The server component of the sample demonstrates the following features:</p>
+<p></p>
+<ul>
+<li>Use the <a href="http://msdn.microsoft.com/library/windows/apps/br226882listener">
+<b>StreamSocketListener</b></a> class to create a TCP socket to listen for an incoming TCP connection.
+</li><li>Bind the socket to a local service name to listen for an incoming network connection using the
+<a href="http://msdn.microsoft.com/library/windows/apps/br226882listener_bindservicenameasync">
+<b>StreamSocketListener.BindServiceNameAsync</b></a> method. </li><li>Receive a <a href="http://msdn.microsoft.com/library/windows/apps/br226882listener_connectionreceived">
+<b>StreamSocketListener.ConnectionReceived</b></a> event that indicates that a connection was received on the
+<a href="http://msdn.microsoft.com/library/windows/apps/br226882listener"><b>StreamSocketListener</b></a> object.
+</li><li>Receive data from the client using the <a href="http://msdn.microsoft.com/library/windows/apps/br208119">
+<b>Streams.DataReader</b></a> object which allows a programmer to read common types (integers and strings, for example) on any stream.
+</li></ul>
+<p></p>
+<p>This sample requires the following capabilities:</p>
+<ul>
+<li>Home or Work Networking - Even though this sample by default runs on loopback, it needs either the &quot;Home or Work Networking&quot; or &quot;Internet (Client &amp; Server)&quot; capability in order to accept connections using
+<a href="http://msdn.microsoft.com/library/windows/apps/br226882listener"><b>StreamSocketListener</b></a>. For more information, see
+<a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a> .
+</li></ul>
+<p></p>
+<p>Versions of this sample are provided in JavaScript, C#, VB, and C&#43;&#43;. This sample requires some experience with network programming.
+</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241655">
+Windows&nbsp;8</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2012, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241656">
+Visual Studio&nbsp;2012</a>.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><b>Other resources</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452752">Adding support for networking</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452977">Connecting to network services (Windows Store apps using JavaScript and HTML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452976">Connecting to network services (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh780595">How to secure socket connections with TLS/SSL (Windows Store apps using JavaScript and HTML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/jj150597">How to secure socket connections with TLS/SSL (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh771189">How to set background connectivity options</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh780596">How to use advanced socket controls (Windows Store apps using JavaScript and HTML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/jj150598">How to use advanced socket controls (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452996">Quickstart: Connecting to a network resource with a stream socket (Windows Store apps using JavaScript and HTML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/jj150599">Quickstart: Connecting to a network resource with a stream socket (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465229">Supporting proximity and tapping</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh770534">Troubleshoot and debug network connections</a>
+</dt><dt><b>Reference</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226882"><b>StreamSocket</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226882listener"><b>StreamSocketListener</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br207124"><b>Windows.Networking</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br208119"><b>Windows.Storage.Streams.DataReader</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br208154"><b>Windows.Storage.Streams.DataWriter</b></a>
+</dt><dt><b>Samples</b> </dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=258328">DatagramSocket sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=243039">ControlChannelTrigger TCP socket sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt></dl>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<ol>
+<li>Start Microsoft Visual Studio Express&nbsp;2012 for Windows&nbsp;8 and select <b>File</b> &gt;
+<b>Open</b> &gt; <b>Project/Solution</b>. </li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Express&nbsp;2012 for Windows&nbsp;8 Solution (.sln) file.
+</li><li>Press F7 or use <b>Build</b> &gt; <b>Build Solution</b> to build the sample. </li></ol>
+<h3>Run the sample</h3>
+<p>To debug the app and then run it, press F5 or use <b>Debug &gt; Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use
+<b>Debug &gt; Start Without Debugging</b>.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

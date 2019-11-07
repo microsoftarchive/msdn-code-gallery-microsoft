@@ -1,0 +1,52 @@
+<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+
+<Page
+    x:Class="ControlChannelTrigger.ScenarioInput1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Margin="0">
+        <TextBlock TextWrapping="Wrap" Style="{StaticResource DescriptionTextStyle}" Text="This scenario demonstrates how to use the ControlChannelTrigger object with the IXMLHTTPRequest(XHR) transport. This sample requires a web server that can hold an incoming HTTP POST request for some time and responds later when new data is available. Enter the url for the web server, and the data to post. Send the canary request first, then click Connect."/>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0"/>
+        <StackPanel HorizontalAlignment="Left" Height="172" Width="600">
+            <StackPanel HorizontalAlignment="Left" Height="70" Width="500" Orientation="Horizontal"/>
+            <Grid x:Name="ClientSettings" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Url: "  TextWrapping="Wrap" VerticalAlignment="Center" Style="{StaticResource DescriptionTextStyle}" />
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Post Data: " TextWrapping="Wrap"  VerticalAlignment="Center" Style="{StaticResource DescriptionTextStyle}" />
+                <TextBox Grid.Column="1" Grid.Row="0"  x:Name="Url" Text="http://server-hostname/ccthttpserversample/default.aspx" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Grid.Row="1"  x:Name="PostData" Text="" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Grid.Column="0" Grid.Row="2" x:Name="CanaryButton"
+                          Content="Send canary request" Click="CanaryButton_Click">
+                </Button>
+                <Button Grid.Column="1" Grid.Row="2" x:Name="ConnectButton"
+                          Content="Connect" Click="ConnectButton_Click">
+                </Button>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+
+</Page>

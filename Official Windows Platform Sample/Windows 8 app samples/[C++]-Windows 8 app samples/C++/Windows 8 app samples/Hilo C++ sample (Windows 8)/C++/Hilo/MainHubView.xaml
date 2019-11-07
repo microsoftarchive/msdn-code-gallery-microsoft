@@ -1,0 +1,332 @@
+<!--
+ THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+ ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+ THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ PARTICULAR PURPOSE.
+
+ Copyright (c) Microsoft Corporation. All rights reserved
+-->
+<local:HiloPage
+    x:Name="pageRoot"
+    x:Uid="Page"
+    x:Class="Hilo.MainHubView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Hilo.Common"
+    xmlns:local="using:Hilo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainHubVM}">
+
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+        <CollectionViewSource
+            x:Name="GroupedItemsViewSource"
+            d:Source="{Binding HubPhotosGroup, Source={d:DesignInstance Type=local:DesignTimeData, IsDesignTimeCreatable=True}}"
+            Source="{Binding PhotoGroups}"
+            IsSourceGrouped="true"
+            ItemsPath="Items"/>
+    </Page.Resources>
+
+    <Grid x:Name="ContentRoot"
+          d:DataContext="{Binding Source={d:DesignInstance Type=local:DesignTimeData, IsDesignTimeCreatable=True}}"
+          Background="{StaticResource HiloPageBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton"
+                    x:Uid="BackButton"
+                    AutomationProperties.AutomationId="BackButton"
+                    Click="GoBack" 
+                    IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}"
+                    Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="PageTitle"
+                       x:Uid="AppName"
+                       Grid.Column="1"
+                       Style="{StaticResource PageHeaderTextStyle}"
+                       Text="{Binding AppName}"/>
+        </Grid>
+     
+        <!-- Grouped Photos Hub -->
+        <local:VariableGridView x:Name="ItemGridView" 
+                                x:Uid="MainHubItemGridView"
+                                AutomationProperties.AutomationId="ItemGridView"
+                                Padding="116,0,40,46"
+                                Margin="0,-3,0,0"
+                                Grid.Row="1"
+                                ItemsPanel="{StaticResource HubHorizontalVirtualizingStackPanelTemplate}"
+                                ItemsSource="{Binding Source={StaticResource GroupedItemsViewSource}}"
+                                ItemContainerStyle="{StaticResource HiloGridViewItemStyle}"
+                                ItemClick="OnPhotoItemClicked"
+                                IsItemClickEnabled="True" 
+                                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                                SelectionMode="Single">
+            <local:VariableGridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2">
+                        <Border Background="{StaticResource HiloDefaultImageBrush}">
+                            <Image Source="{Binding Thumbnail}"
+                                   AutomationProperties.Name="{Binding Name}"
+                                   Stretch="UniformToFill"
+                                   VerticalAlignment="Stretch"
+                                   HorizontalAlignment="Stretch">
+                            </Image>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </local:VariableGridView.ItemTemplate>
+            <local:VariableGridView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Margin="1,0,0,6">
+                                <Button AutomationProperties.AutomationId="GroupTitle"
+                                        Content="{Binding Title}"
+                                        Style="{StaticResource HiloTextButtonStyle}"        
+                                        Command="{Binding ElementName=ItemGridView, 
+                                    Path=DataContext.NavigateToPicturesCommand}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <VariableSizedWrapGrid Orientation="Vertical"
+                                                   Margin="0,0,80,0"
+                                                   ItemHeight="200"
+                                                   ItemWidth="200"
+                                                   MaximumRowsOrColumns="5"/>
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </local:VariableGridView.GroupStyle>
+        </local:VariableGridView>
+
+        <!-- Snapped view -->
+        <ListView x:Name="SnapItemListView"
+                  AutomationProperties.AutomationId="SnapItemListView"
+                  AutomationProperties.Name="Snap Grouped Photos"
+                  Grid.Row="1"
+                  Margin="0,-10,0,0"
+                  Padding="10,0,0,60"
+                  ItemsSource="{Binding Source={StaticResource GroupedItemsViewSource}}"
+                  ItemContainerStyle="{StaticResource HiloListViewItemStyle}"
+                  IsItemClickEnabled="True"
+                  ItemClick="OnPhotoItemClicked"
+                  SelectionMode="Single"
+                  Visibility="Collapsed">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2">
+                        <Border Background="{StaticResource HiloDefaultImageBrush}">
+                            <Image Source="{Binding Thumbnail}" 
+                                   AutomationProperties.Name="{Binding Name}"
+                                   Stretch="UniformToFill"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Margin="7,7,0,0">
+                                <Button AutomationProperties.AutomationId="SnapGroupTitle"
+                                        Content="{Binding Title}"
+                                        Style="{StaticResource HiloTextButtonStyle}"
+                                        Command="{Binding ElementName=SnapItemListView, Path=DataContext.NavigateToPicturesCommand}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackButton" 
+                                                       Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="{StaticResource PortraitBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemGridView"
+                                                       Storyboard.TargetProperty="ItemsPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="{StaticResource HubVerticalVirtualizingStackPanelTemplate}" />
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemGridView" 
+                                                       Storyboard.TargetProperty="Padding">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="96,0,10,56"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RotateButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CropButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CartoonizeButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RotateButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CropButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CartoonizeButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+
+                <!--
+                    The back button and title have different styles when snapped, and the list representation is substituted
+                    for the grid displayed in all other view states
+                -->
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackButton"
+                                                       Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="{StaticResource SnappedBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PageTitle" 
+                                                       Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SnapItemListView" 
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemGridView" 
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" 
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RotateButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CropButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CartoonizeButton"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RotateButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CropButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CartoonizeButtonNoLabel"
+                                                       Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+
+    <local:HiloPage.BottomAppBar>
+        <AppBar x:Name="MainHubViewBottomAppBar"
+                x:Uid="AppBar"
+                AutomationProperties.AutomationId="MainHubViewBottomAppBar"
+                IsOpen="{Binding Path=IsAppBarOpen, Mode=TwoWay}"
+                IsSticky="{Binding Path=IsAppBarSticky, Mode=TwoWay}"
+                Padding="10,0,10,0"
+                Visibility="{Binding Path=IsAppBarEnabled, Mode=TwoWay, Converter={StaticResource BoolToVisConverter}}">
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" 
+                            Orientation="Horizontal">
+                    <Button x:Name="RotateButton"
+                            x:Uid="RotateAppBarButton"
+                            Command="{Binding RotateImageCommand}" 
+                            Style="{StaticResource RotateAppBarButtonStyle}" 
+                            Tag="Rotate" />
+                    <Button x:Name="CropButton"
+                            x:Uid="CropAppBarButton"
+                            Command="{Binding CropImageCommand}"
+                            Style="{StaticResource CropAppBarButtonStyle}"
+                            Tag="Crop" />
+                    <Button x:Name="CartoonizeButton"
+                            x:Uid="CartoonizeAppBarButton"
+                            Command="{Binding CartoonizeImageCommand}"
+                            Style="{StaticResource CartoonEffectAppBarButtonStyle}"
+                            Tag="Cartoon effect" />
+                    <Button x:Name="RotateButtonNoLabel"
+                            Command="{Binding RotateImageCommand}" 
+                            Style="{StaticResource RotateAppBarButtonNoLabelStyle}" 
+                            Tag="Rotate"
+                            Visibility="Collapsed">
+                        <ToolTipService.ToolTip>
+                            <ToolTip x:Uid="RotateAppBarButtonToolTip" />
+                        </ToolTipService.ToolTip>
+                    </Button>
+                    <Button x:Name="CropButtonNoLabel"
+                            Command="{Binding CropImageCommand}"
+                            Style="{StaticResource CropAppBarButtonNoLabelStyle}"
+                            Tag="Crop"
+                            Visibility="Collapsed">
+                        <ToolTipService.ToolTip>
+                            <ToolTip x:Uid="CropAppBarButtonToolTip" />
+                        </ToolTipService.ToolTip>
+                    </Button>
+                    <Button x:Name="CartoonizeButtonNoLabel"
+                            Command="{Binding CartoonizeImageCommand}"
+                            Style="{StaticResource CartoonEffectAppBarButtonNoLabelStyle}"
+                            Tag="Cartoon effect"
+                            Visibility="Collapsed">
+                        <ToolTipService.ToolTip>
+                            <ToolTip x:Uid="CartoonizeAppBarButtonToolTip" />
+                        </ToolTipService.ToolTip>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </local:HiloPage.BottomAppBar>
+</local:HiloPage>

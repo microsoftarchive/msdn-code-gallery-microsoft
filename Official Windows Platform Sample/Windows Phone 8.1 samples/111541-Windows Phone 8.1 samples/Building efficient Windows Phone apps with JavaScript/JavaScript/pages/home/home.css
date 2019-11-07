@@ -1,0 +1,14 @@
+﻿.homepage section[role=main] {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.fragment section[role=main] {
+	width: calc(100% - 48px)
+}
+
+.fragment header[role=banner] .titlearea {
+    -ms-grid-column: 3;
+    margin-top: 37px;
+    margin-left: -96px;
+}

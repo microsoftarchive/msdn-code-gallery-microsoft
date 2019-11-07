@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C# app uses ADO to access database (CSUseADO)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C# app uses ADO to access database (CSUseADO)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop, Data Platform
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/4/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSUseADO-93147f1b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>C# app uses ADO to access database (<span class="SpellE">CSUseADO</span>) <span style="">
+</span></h1>
+<h2>Introduction<span style=""> </span></h2>
+<p class="MsoNormal"><span style="">The <span class="SpellE">CSUseADO</span> sample demonstrates the Microsoft ADO technology to access databases using Visual C#. It shows the basic structure of connecting to a data source, issuing SQL commands, using Recordset
+ object and performing the cleanup. </span></p>
+<h2><span style="">Building the sample </span></h2>
+<p class="MsoNormal"><span style="">Attach the <b style="">_<span class="SpellE">External_Dependencies</span>\SQLServer2005DB.mdf</b> to your SQL Server (2005 or later versions).
+</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="826" height="366" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoListParagraph" style=""><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Connect to the data source<span style="">.</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+////////////////////////////////////////////////////////////////////////////////
+// Connect to the data source.
+// 
+
+
+Console.WriteLine(&quot;Connecting to the database ...&quot;);
+
+
+// Get the connection string 
+string connStr = string.Format(&quot;Provider=SQLOLEDB;Data Source={0};Initial Catalog={1};Integrated Security=SSPI&quot;,
+    &quot;.\\sqlexpress&quot;, &quot;SQLServer2005DB&quot;);
+
+
+// Open the connection
+conn = new ADODB.Connection();
+conn.Open(connStr, null, null, 0);
+
+</pre>
+<pre id="codePreview" class="csharp">
+////////////////////////////////////////////////////////////////////////////////
+// Connect to the data source.
+// 
+
+
+Console.WriteLine(&quot;Connecting to the database ...&quot;);
+
+
+// Get the connection string 
+string connStr = string.Format(&quot;Provider=SQLOLEDB;Data Source={0};Initial Catalog={1};Integrated Security=SSPI&quot;,
+    &quot;.\\sqlexpress&quot;, &quot;SQLServer2005DB&quot;);
+
+
+// Open the connection
+conn = new ADODB.Connection();
+conn.Open(connStr, null, null, 0);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraphCxSpFirst"></p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Build and execute an ADO command. </p>
+<p class="MsoListParagraphCxSpLast"><span style="">T</span>he command can be a SQL statement (SELECT/UPDATE/INSERT/DELETE), or a stored<span style="">
+</span>procedure call. <span style=""></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+////////////////////////////////////////////////////////////////////////////////
+// Build and Execute an ADO Command.
+// It can be a SQL statement (SELECT/UPDATE/INSERT/DELETE), or a stored 
+// procedure call. Here is the sample of an INSERT command.
+// 
+
+
+Console.WriteLine(&quot;Inserting a record to the CountryRegion table...&quot;);
+
+
+// 1. Create a command object
+ADODB.Command cmdInsert = new ADODB.Command();
+
+
+// 2. Assign the connection to the command
+cmdInsert.ActiveConnection = conn;
+
+
+// 3. Set the command text
+// SQL statement or the name of the stored procedure 
+cmdInsert.CommandText = &quot;INSERT INTO CountryRegion(CountryRegionCode, Name, ModifiedDate)&quot;
+    &#43; &quot; VALUES (?, ?, ?)&quot;;
+
+
+// 4. Set the command type
+// ADODB.CommandTypeEnum.adCmdText for oridinary SQL statements; 
+// ADODB.CommandTypeEnum.adCmdStoredProc for stored procedures.
+cmdInsert.CommandType = ADODB.CommandTypeEnum.adCmdText;
+
+
+// 5. Append the parameters
+
+
+// Append the parameter for CountryRegionCode (nvarchar(20)
+ADODB.Parameter paramLN = cmdInsert.CreateParameter(
+    &quot;CountryRegionCode&quot;,                        // Parameter name
+    ADODB.DataTypeEnum.adVarChar,               // Parameter type (nvarchar(20))
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    20,                                         // Max size of value in bytes
+    &quot;ZZ&quot;&#43;DateTime.Now.Millisecond);             // Parameter value
+cmdInsert.Parameters.Append(paramLN);
+
+
+// Append the parameter for FirstName (nvarchar(200))
+ADODB.Parameter paramFN = cmdInsert.CreateParameter(
+    &quot;FirstName&quot;,                                // Parameter name
+    ADODB.DataTypeEnum.adVarChar,               // Parameter type (nvarchar(200))
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    200,                                        // Max size of value in bytes
+    &quot;Test Region Name&quot;);                        // Parameter value
+cmdInsert.Parameters.Append(paramFN);
+
+
+// Append the parameter for EnrollmentDate (datetime)
+ADODB.Parameter paramED = cmdInsert.CreateParameter(
+    &quot;ModifiedDate&quot;,                             // Parameter name
+    ADODB.DataTypeEnum.adDate,                  // Parameter type (datetime)
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    -1,                                         // Max size (ignored for datetime)
+    DateTime.Now);                              // Parameter value
+cmdInsert.Parameters.Append(paramED);
+
+
+          
+// 6. Execute the command
+object nRecordsAffected = Type.Missing;
+object oParams = Type.Missing;
+cmdInsert.Execute(out nRecordsAffected, ref oParams,
+    (int)ADODB.ExecuteOptionEnum.adExecuteNoRecords);
+
+</pre>
+<pre id="codePreview" class="csharp">
+////////////////////////////////////////////////////////////////////////////////
+// Build and Execute an ADO Command.
+// It can be a SQL statement (SELECT/UPDATE/INSERT/DELETE), or a stored 
+// procedure call. Here is the sample of an INSERT command.
+// 
+
+
+Console.WriteLine(&quot;Inserting a record to the CountryRegion table...&quot;);
+
+
+// 1. Create a command object
+ADODB.Command cmdInsert = new ADODB.Command();
+
+
+// 2. Assign the connection to the command
+cmdInsert.ActiveConnection = conn;
+
+
+// 3. Set the command text
+// SQL statement or the name of the stored procedure 
+cmdInsert.CommandText = &quot;INSERT INTO CountryRegion(CountryRegionCode, Name, ModifiedDate)&quot;
+    &#43; &quot; VALUES (?, ?, ?)&quot;;
+
+
+// 4. Set the command type
+// ADODB.CommandTypeEnum.adCmdText for oridinary SQL statements; 
+// ADODB.CommandTypeEnum.adCmdStoredProc for stored procedures.
+cmdInsert.CommandType = ADODB.CommandTypeEnum.adCmdText;
+
+
+// 5. Append the parameters
+
+
+// Append the parameter for CountryRegionCode (nvarchar(20)
+ADODB.Parameter paramLN = cmdInsert.CreateParameter(
+    &quot;CountryRegionCode&quot;,                        // Parameter name
+    ADODB.DataTypeEnum.adVarChar,               // Parameter type (nvarchar(20))
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    20,                                         // Max size of value in bytes
+    &quot;ZZ&quot;&#43;DateTime.Now.Millisecond);             // Parameter value
+cmdInsert.Parameters.Append(paramLN);
+
+
+// Append the parameter for FirstName (nvarchar(200))
+ADODB.Parameter paramFN = cmdInsert.CreateParameter(
+    &quot;FirstName&quot;,                                // Parameter name
+    ADODB.DataTypeEnum.adVarChar,               // Parameter type (nvarchar(200))
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    200,                                        // Max size of value in bytes
+    &quot;Test Region Name&quot;);                        // Parameter value
+cmdInsert.Parameters.Append(paramFN);
+
+
+// Append the parameter for EnrollmentDate (datetime)
+ADODB.Parameter paramED = cmdInsert.CreateParameter(
+    &quot;ModifiedDate&quot;,                             // Parameter name
+    ADODB.DataTypeEnum.adDate,                  // Parameter type (datetime)
+    ADODB.ParameterDirectionEnum.adParamInput,  // Parameter direction
+    -1,                                         // Max size (ignored for datetime)
+    DateTime.Now);                              // Parameter value
+cmdInsert.Parameters.Append(paramED);
+
+
+          
+// 6. Execute the command
+object nRecordsAffected = Type.Missing;
+object oParams = Type.Missing;
+cmdInsert.Execute(out nRecordsAffected, ref oParams,
+    (int)ADODB.ExecuteOptionEnum.adExecuteNoRecords);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraphCxSpFirst"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Use the Recordset object. </p>
+<p class="MsoListParagraphCxSpLast">Recordset represents the entire set of records from a base table or the results of an executed command. It facilitates the enumeration, insertion, update, deletion of records. At any time, the Recordset object refers to
+ only a single record within the set as the current record.<span style=""> </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+Console.WriteLine(&quot;Enumerating the records in the CountryRegion table&quot;);
+
+
+// 1. Create a Recordset object
+rs = new ADODB.Recordset();
+
+
+// 2. Open the Recordset object
+string strSelectCmd = &quot;SELECT * FROM CountryRegion&quot;; // WHERE ...
+rs.Open(strSelectCmd,                                // SQL statement / table,view name / 
+                                                     // stored procedure call / file name
+    conn,                                            // Connection / connection string
+    ADODB.CursorTypeEnum.adOpenForwardOnly,          // Cursor type. (forward-only cursor)
+    ADODB.LockTypeEnum.adLockOptimistic,             // Lock type. (locking records only 
+                                                     // when you call the Update method.
+    (int)ADODB.CommandTypeEnum.adCmdText);             // Evaluate the first parameter as
+                                                     // a SQL command or stored procedure.
+
+
+// 3. Enumerate the records by moving the cursor forward
+
+
+// Move to the first record in the Recordset
+rs.MoveFirst(); 
+while (!rs.EOF)
+{
+    // When dumping a SQL-Nullable field in the table, need to test it for DBNull.Value.
+    string code = (rs.Fields[&quot;CountryRegionCode&quot;].Value == DBNull.Value) ?
+        &quot;(DBNull)&quot; : rs.Fields[&quot;CountryRegionCode&quot;].Value.ToString();
+
+
+    string name = (rs.Fields[&quot;Name&quot;].Value == DBNull.Value) ?
+        &quot;(DBNull)&quot; : rs.Fields[&quot;Name&quot;].Value.ToString();
+
+
+    DateTime modifiedDate = (rs.Fields[&quot;ModifiedDate&quot;].Value == DBNull.Value) ?
+        DateTime.MinValue : (DateTime)rs.Fields[&quot;ModifiedDate&quot;].Value;
+
+
+    Console.WriteLine(&quot; {2} \t{0}\t{1}&quot;, code, name, modifiedDate.ToString(&quot;yyyy-MM-dd&quot;));
+
+
+    // Move to the next record
+    rs.MoveNext();   
+}
+
+</pre>
+<pre id="codePreview" class="csharp">
+Console.WriteLine(&quot;Enumerating the records in the CountryRegion table&quot;);
+
+
+// 1. Create a Recordset object
+rs = new ADODB.Recordset();
+
+
+// 2. Open the Recordset object
+string strSelectCmd = &quot;SELECT * FROM CountryRegion&quot;; // WHERE ...
+rs.Open(strSelectCmd,                                // SQL statement / table,view name / 
+                                                     // stored procedure call / file name
+    conn,                                            // Connection / connection string
+    ADODB.CursorTypeEnum.adOpenForwardOnly,          // Cursor type. (forward-only cursor)
+    ADODB.LockTypeEnum.adLockOptimistic,             // Lock type. (locking records only 
+                                                     // when you call the Update method.
+    (int)ADODB.CommandTypeEnum.adCmdText);             // Evaluate the first parameter as
+                                                     // a SQL command or stored procedure.
+
+
+// 3. Enumerate the records by moving the cursor forward
+
+
+// Move to the first record in the Recordset
+rs.MoveFirst(); 
+while (!rs.EOF)
+{
+    // When dumping a SQL-Nullable field in the table, need to test it for DBNull.Value.
+    string code = (rs.Fields[&quot;CountryRegionCode&quot;].Value == DBNull.Value) ?
+        &quot;(DBNull)&quot; : rs.Fields[&quot;CountryRegionCode&quot;].Value.ToString();
+
+
+    string name = (rs.Fields[&quot;Name&quot;].Value == DBNull.Value) ?
+        &quot;(DBNull)&quot; : rs.Fields[&quot;Name&quot;].Value.ToString();
+
+
+    DateTime modifiedDate = (rs.Fields[&quot;ModifiedDate&quot;].Value == DBNull.Value) ?
+        DateTime.MinValue : (DateTime)rs.Fields[&quot;ModifiedDate&quot;].Value;
+
+
+    Console.WriteLine(&quot; {2} \t{0}\t{1}&quot;, code, name, modifiedDate.ToString(&quot;yyyy-MM-dd&quot;));
+
+
+    // Move to the next record
+    rs.MoveNext();   
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraphCxSpFirst"><span style=""></span></p>
+<p class="MsoListParagraphCxSpLast" style=""><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Clean up objects before exit. </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+////////////////////////////////////////////////////////////////////////////////
+// Clean up objects before exit.
+// 
+
+
+Console.WriteLine(&quot;Closing the connections ...&quot;);
+
+
+// Close the record set if it is open
+if (rs != null && rs.State == (int)ADODB.ObjectStateEnum.adStateOpen)
+    rs.Close();
+
+
+// Close the connection to the database if it is open
+if (conn != null && conn.State == (int)ADODB.ObjectStateEnum.adStateOpen)
+    conn.Close();
+
+</pre>
+<pre id="codePreview" class="csharp">
+////////////////////////////////////////////////////////////////////////////////
+// Clean up objects before exit.
+// 
+
+
+Console.WriteLine(&quot;Closing the connections ...&quot;);
+
+
+// Close the record set if it is open
+if (rs != null && rs.State == (int)ADODB.ObjectStateEnum.adStateOpen)
+    rs.Close();
+
+
+// Close the connection to the database if it is open
+if (conn != null && conn.State == (int)ADODB.ObjectStateEnum.adStateOpen)
+    conn.Close();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph"></p>
+<h2>More Information<span style=""> </span></h2>
+<p class="MsoNormal"><span style=""><a href="http://support.microsoft.com/kb/308611">HOW TO: Open ADO Connection and
+<span class="SpellE">RecordSet</span> Objects in Visual C# .NET</a> </span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

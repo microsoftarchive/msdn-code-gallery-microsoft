@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to use RESTful WCF Service with HTTP requests like &quot;Get/Post/Put/Delete&quot; [</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to use RESTful WCF Service with HTTP requests like &quot;Get/Post/Put/Delete&quot; [</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            .NET Development, Windows Communication Framework (WCF)
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            REST, HTTP Request, Get Post Put Delete
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-use-RESTful-WCF-e5e8d405">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to use RESTful WCF Service with HTTP requests like &quot;Get/Post/Put/Delete&quot; in VB (VBRESTfulWCFService)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal"><span style="">This article and the attached code sample demonstrate how to use RESTful WCF Service.</span>
+<span style="">REST defines an architectural style based on a set of constraints for building things the &quot;Web&quot; way. REST is not tied to any particular technology or platform – it's simply a way to design things to work like the &quot;<b style="">Web</b>&quot;.
+ People often refer to services that follow this philosophy as &quot;RESTful services.&quot; In this sample, we'll cover the fundamental REST design principles and show you how to build a RESTful service with Windows Communication Foundation (WCF), and with
+ &quot;<b style="">Get/Post/Put/Delete</b>&quot; request in the ASPNET MVC client. You can find the answers for all the following questions in the code sample:
+</span></p>
+<p class="MsoListBulletCxSpFirst" style=""><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">How to define a RESTful WCF service with &quot;<b style="">Get/Post/Put/Delete</b>&quot;?
+</span></p>
+<p class="MsoListBulletCxSpLast" style=""><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">How to use HttpWebRequest to invoke a RESTful WCF service?
+</span></p>
+<h2>Building the Sample</h2>
+<p class="MsoNormal"><span style="">To build this sample </span></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Open VBRESTfulWCFService.sln solution file in Visual Studio 2012
+</span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Build<span style="">&nbsp; </span>entire solution </span>
+</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style=""><br>
+After opening the sample project in Visual Studio 2012, you will find two projects:
+<b style="">VBRESTfulWCFServiceASPNETClient </b>and <b style="">VBRESTfulWCFServiceProvider</b>.
+<b style="">VBRESTfulWCFServiceASPNETClient </b>is a client project to use HttpWebRequest to invoke the RESTful WCF Service and do operations like: Get/Create/Update/Delete users.
+<b style="">VBRESTfulWCFServiceProvider </b>is a WCF Service to provide Get/Post/Put/Delete methods for client invoker. Build entire solution and press F5 to start debugging.
+</span></p>
+<p class="MsoNormal"><span style="">The initialization will get all users with a &quot;<b style="">Get</b>&quot; method from Restful WCF Service provider. You can find the page like below:
+</span></p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="763" height="333" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListBulletCxSpFirst" style=""><span style=""></span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style="">We can use &quot;<b style="">Create</b>
+<b style="">User</b>&quot;,&quot;<b style="">Edit</b>&quot; or &quot;<b style="">Delete</b>&quot; buttons to operate user list. If you want to create a user, click &quot;<b style="">Create User</b>&quot; button. You can find the page like below:
+</span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style=""></span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style=""><img src="description/e174630f-43d8-4cd1-b500-c928842d05ccimage.png" alt="" width="763" height="493" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style=""></span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style="">After typing user information and clicking &quot;<b style="">Create</b>&quot; button, we will find a new user is created.
+</span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style=""></span></p>
+<p class="MsoListBulletCxSpMiddle" style=""><span style=""><img src="description/1da12280-019d-45ea-9045-8f09fb5b70b0image.png" alt="" width="767" height="358" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListBulletCxSpLast" style="margin-left:0in; text-indent:0in"><span style=""></span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal"><span style="">The code sample provides the following reusable functions for creating and using RESTfule WCF Service.
+</span></p>
+<p class="MsoNormal"><b style=""><span style="">How to define a RESTful WCF service with &quot;Get/Post/Put/Delete&quot;?
+</span></b></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+''' &lt;summary&gt;
+''' WCF Service interface to define operations
+''' &lt;/summary&gt;
+&lt;ServiceContract(), DataContractFormat()&gt;
+Friend Interface IUserService
+
+
+&nbsp;&nbsp;&nbsp; ''' &lt;summary&gt;
+&nbsp;&nbsp;&nbsp; ''' Definde operation contract
+&nbsp;&nbsp;&nbsp; ''' &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp; ''' &lt;param name=&quot;user&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp; ''' &lt;remarks&gt;&lt;/remarks&gt;
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebInvoke(Method:=&quot;POST&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UriTemplate:=&quot;/User/Create&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Sub CreateUser(ByVal user As User)
+
+
+&nbsp;&nbsp;&nbsp; &lt;WebInvoke(Method:=&quot;DELETE&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;UriTemplate:=&quot;/User/Delete/{Id}&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OperationContract()&gt;
+&nbsp;&nbsp;&nbsp; Sub DeleteUser(ByVal id As String)
+
+
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebGet(UriTemplate:=&quot;/User/All&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Function GetAllUsers() As List(Of User)
+
+
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebInvoke(Method:=&quot;PUT&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UriTemplate:=&quot;/User/Edit&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Sub UpdateUser(ByVal user As User)
+End Interface
+
+</pre>
+<pre id="codePreview" class="vb">
+''' &lt;summary&gt;
+''' WCF Service interface to define operations
+''' &lt;/summary&gt;
+&lt;ServiceContract(), DataContractFormat()&gt;
+Friend Interface IUserService
+
+
+&nbsp;&nbsp;&nbsp; ''' &lt;summary&gt;
+&nbsp;&nbsp;&nbsp; ''' Definde operation contract
+&nbsp;&nbsp;&nbsp; ''' &lt;/summary&gt;
+&nbsp;&nbsp;&nbsp; ''' &lt;param name=&quot;user&quot;&gt;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp; ''' &lt;remarks&gt;&lt;/remarks&gt;
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebInvoke(Method:=&quot;POST&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UriTemplate:=&quot;/User/Create&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Sub CreateUser(ByVal user As User)
+
+
+&nbsp;&nbsp;&nbsp; &lt;WebInvoke(Method:=&quot;DELETE&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;UriTemplate:=&quot;/User/Delete/{Id}&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OperationContract()&gt;
+&nbsp;&nbsp;&nbsp; Sub DeleteUser(ByVal id As String)
+
+
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebGet(UriTemplate:=&quot;/User/All&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Function GetAllUsers() As List(Of User)
+
+
+&nbsp;&nbsp;&nbsp; &lt;OperationContract(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WebInvoke(Method:=&quot;PUT&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UriTemplate:=&quot;/User/Edit&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RequestFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResponseFormat:=WebMessageFormat.Json,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BodyStyle:=WebMessageBodyStyle.Bare)&gt;
+&nbsp;&nbsp;&nbsp; Sub UpdateUser(ByVal user As User)
+End Interface
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<p class="MsoNormal"><b style=""><span style="">How to use HttpWebRequest to invoke a RESTful WCF service?
+</span></b></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">vb</span>
+<pre class="hidden">
+''' &lt;summary&gt;
+''' Send the request to WCF Service
+''' &lt;/summary&gt;
+''' &lt;param name=&quot;template&quot;&gt;Object template like: User&lt;/param&gt;
+''' &lt;param name=&quot;action&quot;&gt;Action like: Delete&lt;/param&gt;
+''' &lt;param name=&quot;method&quot;&gt;Request method&lt;/param&gt;
+''' &lt;param name=&quot;t&quot;&gt;Object like: User&lt;/param&gt;
+Private Sub SendRequest(ByVal template As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal action As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal method As HttpMethod,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal t As T)
+&nbsp;&nbsp;&nbsp; Dim jsonData As String = JsonHelp.JsonSerialize(Of T)(t)
+&nbsp;&nbsp;&nbsp; If String.IsNullOrEmpty(jsonData) Then
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return
+&nbsp;&nbsp;&nbsp; End If
+
+
+&nbsp;&nbsp;&nbsp; Dim data As Byte() = UnicodeEncoding.UTF8.GetBytes(jsonData)
+
+
+&nbsp;&nbsp;&nbsp; httpRequest = DirectCast(WebRequest.Create(String.Format(basicUrl, template, action)), HttpWebRequest)
+&nbsp;&nbsp;&nbsp; httpRequest.Method = method.ToString()
+&nbsp;&nbsp;&nbsp; httpRequest.ContentType = &quot;application/json&quot;
+&nbsp;&nbsp;&nbsp; httpRequest.ContentLength = data.Length
+
+
+&nbsp;&nbsp;&nbsp; Try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using dataStream = httpRequest.GetRequestStream()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataStream.Write(data, 0, data.Length)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp; Catch we As WebException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = we.Message
+&nbsp;&nbsp;&nbsp; End Try
+End Sub
+
+
+
+
+''' &lt;summary&gt;
+''' Get the response from WCF Service
+''' &lt;/summary&gt;
+''' &lt;param name=&quot;template&quot;&gt;Object template like: User&lt;/param&gt;
+''' &lt;param name=&quot;action&quot;&gt;Action like: Delete&lt;/param&gt;
+''' &lt;param name=&quot;method&quot;&gt;Request method&lt;/param&gt;
+''' &lt;returns&gt;Return the result from WCF Service&lt;/returns&gt;
+Private Function GetResponse(ByVal template As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal action As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal method As HttpMethod) As String
+&nbsp;&nbsp;&nbsp; Dim responseData As String = String.Empty
+
+
+&nbsp;&nbsp;&nbsp; httpRequest = DirectCast(WebRequest.Create(String.Format(basicUrl, template, action)), HttpWebRequest)
+&nbsp;&nbsp;&nbsp; httpRequest.Method = method.ToString()
+
+
+&nbsp;&nbsp;&nbsp; Try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using httpResponse = TryCast(httpRequest.GetResponse(), HttpWebResponse)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataStream = httpResponse.GetResponseStream()
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using streamReader = New StreamReader(dataStream)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; responseData = streamReader.ReadToEnd()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp; Catch we As WebException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = we.Message
+&nbsp;&nbsp;&nbsp; Catch pve As ProtocolViolationException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = pve.Message
+&nbsp;&nbsp;&nbsp; End Try
+
+
+&nbsp;&nbsp;&nbsp; Return responseData
+End Function
+
+</pre>
+<pre id="codePreview" class="vb">
+''' &lt;summary&gt;
+''' Send the request to WCF Service
+''' &lt;/summary&gt;
+''' &lt;param name=&quot;template&quot;&gt;Object template like: User&lt;/param&gt;
+''' &lt;param name=&quot;action&quot;&gt;Action like: Delete&lt;/param&gt;
+''' &lt;param name=&quot;method&quot;&gt;Request method&lt;/param&gt;
+''' &lt;param name=&quot;t&quot;&gt;Object like: User&lt;/param&gt;
+Private Sub SendRequest(ByVal template As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal action As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal method As HttpMethod,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal t As T)
+&nbsp;&nbsp;&nbsp; Dim jsonData As String = JsonHelp.JsonSerialize(Of T)(t)
+&nbsp;&nbsp;&nbsp; If String.IsNullOrEmpty(jsonData) Then
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return
+&nbsp;&nbsp;&nbsp; End If
+
+
+&nbsp;&nbsp;&nbsp; Dim data As Byte() = UnicodeEncoding.UTF8.GetBytes(jsonData)
+
+
+&nbsp;&nbsp;&nbsp; httpRequest = DirectCast(WebRequest.Create(String.Format(basicUrl, template, action)), HttpWebRequest)
+&nbsp;&nbsp;&nbsp; httpRequest.Method = method.ToString()
+&nbsp;&nbsp;&nbsp; httpRequest.ContentType = &quot;application/json&quot;
+&nbsp;&nbsp;&nbsp; httpRequest.ContentLength = data.Length
+
+
+&nbsp;&nbsp;&nbsp; Try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using dataStream = httpRequest.GetRequestStream()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataStream.Write(data, 0, data.Length)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp; Catch we As WebException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = we.Message
+&nbsp;&nbsp;&nbsp; End Try
+End Sub
+
+
+
+
+''' &lt;summary&gt;
+''' Get the response from WCF Service
+''' &lt;/summary&gt;
+''' &lt;param name=&quot;template&quot;&gt;Object template like: User&lt;/param&gt;
+''' &lt;param name=&quot;action&quot;&gt;Action like: Delete&lt;/param&gt;
+''' &lt;param name=&quot;method&quot;&gt;Request method&lt;/param&gt;
+''' &lt;returns&gt;Return the result from WCF Service&lt;/returns&gt;
+Private Function GetResponse(ByVal template As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal action As String,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ByVal method As HttpMethod) As String
+&nbsp;&nbsp;&nbsp; Dim responseData As String = String.Empty
+
+
+&nbsp;&nbsp;&nbsp; httpRequest = DirectCast(WebRequest.Create(String.Format(basicUrl, template, action)), HttpWebRequest)
+&nbsp;&nbsp;&nbsp; httpRequest.Method = method.ToString()
+
+
+&nbsp;&nbsp;&nbsp; Try
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using httpResponse = TryCast(httpRequest.GetResponse(), HttpWebResponse)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataStream = httpResponse.GetResponseStream()
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Using streamReader = New StreamReader(dataStream)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; responseData = streamReader.ReadToEnd()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Using
+&nbsp;&nbsp;&nbsp; Catch we As WebException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = we.Message
+&nbsp;&nbsp;&nbsp; Catch pve As ProtocolViolationException
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StrMessage = pve.Message
+&nbsp;&nbsp;&nbsp; End Try
+
+
+&nbsp;&nbsp;&nbsp; Return responseData
+End Function
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<h2>More Information</h2>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/6b4cf5bf-9f01-459f-b9ba-42bff79b68c6image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to export data from DataSet or DataGridView into an Excel in ASP.NET</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to export data from DataSet or DataGridView into an Excel in ASP.NET</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Excel, DataSet, DataGridView
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/21/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<h2><span style="font-size:14.0pt; line-height:115%">The project illustrates how to export data from
+<span class="SpellE">DataSet</span> or <span class="SpellE">DataGridView</span> into an Excel workbook in ASP.NET
+</span></h2>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to export <span class="SpellE">
+datatable</span> to an Excel sheet using <span class="SpellE">OpenXML</span>.</p>
+<p class="MsoNormal"><strong>Customer Evidence: </strong></p>
+<h2><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,sans-serif; font-weight:normal"><a href="http://forums.asp.net/p/1197704/2076903.aspx">http://forums.asp.net/p/1197704/2076903.aspx</a>
+</span></h2>
+<h2><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,sans-serif; font-weight:normal"><a href="http://forums.asp.net/p/1687537/4449258.aspx">http://forums.asp.net/p/1687537/4449258.aspx</a>
+</span></h2>
+<h2><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,sans-serif; font-weight:normal"><a href="http://stackoverflow.com/questions/2568088/exporting-dataset-to-excel-file-with-multiple-sheets-in-asp-net">http://stackoverflow.com/questions/2568088/exporting-dataset-to-excel-file-with-multiple-sheets-in-asp-net</a>
+</span></h2>
+<h2>Building the Project</h2>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+Open the project (<span class="SpellE">VBNETWebExportDataTabletoExcel.vbproj or&nbsp;<span class="SpellE">WebExportDataTabletoExcel.csproj</span></span>) in the Visual Studio 2013 and build it.</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>Visual Basic</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Construct the datatable programetically
+                DataTable datatable = MakeDataTable();
+
+                string appPath = AppDomain.CurrentDomain.BaseDirectory;
+
+                string excelFileName = appPath &#43; @&quot;\TestFile.xlsx&quot;;
+
+                ExportDataSet(datatable, excelFileName);
+
+                Response.Write(&quot;\n\nDatatable exported to Excel file successfully&quot;);
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        private DataTable MakeDataTable()
+        {
+            // Create a new DataTable.
+            <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataTable.aspx"  title="Auto generated link to System.Data.DataTable">System.Data.DataTable</a> table = new DataTable(&quot;ParentTable&quot;);
+            // Declare variables for DataColumn and DataRow objects.
+            DataColumn column;
+            DataRow row;
+
+            // Create new DataColumn, set DataType, 
+            // ColumnName and add to DataTable.    
+            column = new DataColumn();
+            column.DataType = <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Type.GetType.aspx"  title="Auto generated link to System.Type.GetType">System.Type.GetType</a>(&quot;System.Int32&quot;);
+            column.ColumnName = &quot;id&quot;;
+            column.ReadOnly = true;
+            column.Unique = true;
+            // Add the Column to the DataColumnCollection.
+            table.Columns.Add(column);
+
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Type.GetType.aspx"  title="Auto generated link to System.Type.GetType">System.Type.GetType</a>(&quot;System.String&quot;);
+            column.ColumnName = &quot;ParentItem&quot;;
+            column.AutoIncrement = false;
+            column.Caption = &quot;ParentItem&quot;;
+            column.ReadOnly = false;
+            column.Unique = false;
+            // Add the column to the table.
+            table.Columns.Add(column);
+
+            // Make the ID column the primary key column.
+            DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+            PrimaryKeyColumns[0] = table.Columns[&quot;id&quot;];
+            table.PrimaryKey = PrimaryKeyColumns;
+
+            // Create three new DataRow objects and add 
+            // them to the DataTable
+            for (int i = 0; i &lt;= 2; i&#43;&#43;)
+            {
+                row = table.NewRow();
+                row[&quot;id&quot;] = i;
+                row[&quot;ParentItem&quot;] = &quot;ParentItem &quot; &#43; i;
+                table.Rows.Add(row);
+            }
+
+            return table;
+        }
+
+        private void ExportDataSet(DataTable table, string excelFileName)
+        {
+            using (var workbook = SpreadsheetDocument.Create(excelFileName, DocumentFormat.OpenXml.SpreadsheetDocumentType.Workbook))
+            {
+                var workbookPart = workbook.AddWorkbookPart();
+
+                workbook.WorkbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+
+                workbook.WorkbookPart.Workbook.Sheets = new DocumentFormat.OpenXml.Spreadsheet.Sheets();
+
+                var sheetPart = workbook.WorkbookPart.AddNewPart&lt;WorksheetPart&gt;();
+                var sheetData = new DocumentFormat.OpenXml.Spreadsheet.SheetData();
+                sheetPart.Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(sheetData);
+
+                DocumentFormat.OpenXml.Spreadsheet.Sheets sheets = workbook.WorkbookPart.Workbook.GetFirstChild&lt;DocumentFormat.OpenXml.Spreadsheet.Sheets&gt;();
+                string relationshipId = workbook.WorkbookPart.GetIdOfPart(sheetPart);
+
+                uint sheetId = 1;
+                if (sheets.Elements&lt;DocumentFormat.OpenXml.Spreadsheet.Sheet&gt;().Count() &gt; 0)
+                {
+                    sheetId =
+                        sheets.Elements&lt;DocumentFormat.OpenXml.Spreadsheet.Sheet&gt;().Select(s =&gt; s.SheetId.Value).Max() &#43; 1;
+                }
+
+                DocumentFormat.OpenXml.Spreadsheet.Sheet sheet = new DocumentFormat.OpenXml.Spreadsheet.Sheet() { Id = relationshipId, SheetId = sheetId, Name = table.TableName };
+                sheets.Append(sheet);
+
+                DocumentFormat.OpenXml.Spreadsheet.Row headerRow = new DocumentFormat.OpenXml.Spreadsheet.Row();
+
+                
+                // Construct column names
+                List&lt;String&gt; columns = new List&lt;string&gt;();
+                foreach (<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataColumn.aspx"  title="Auto generated link to System.Data.DataColumn">System.Data.DataColumn</a> column in table.Columns)
+                {
+                    columns.Add(column.ColumnName);
+
+                    DocumentFormat.OpenXml.Spreadsheet.Cell cell = new DocumentFormat.OpenXml.Spreadsheet.Cell();
+                    cell.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.String;
+                    cell.CellValue = new DocumentFormat.OpenXml.Spreadsheet.CellValue(column.ColumnName);
+                    headerRow.AppendChild(cell);
+                }
+
+                // Add the row values to the excel sheet
+                sheetData.AppendChild(headerRow);
+
+                foreach (<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataRow.aspx"  title="Auto generated link to System.Data.DataRow">System.Data.DataRow</a> dsrow in table.Rows)
+                {
+                    DocumentFormat.OpenXml.Spreadsheet.Row newRow = new DocumentFormat.OpenXml.Spreadsheet.Row();
+                    foreach (String col in columns)
+                    {
+                        DocumentFormat.OpenXml.Spreadsheet.Cell cell = new DocumentFormat.OpenXml.Spreadsheet.Cell();
+                        cell.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.String;
+                        cell.CellValue = new DocumentFormat.OpenXml.Spreadsheet.CellValue(dsrow[col].ToString());
+                        newRow.AppendChild(cell);
+                    }
+
+                    sheetData.AppendChild(newRow);
+                }
+            }
+        }</pre>
+<pre class="hidden">    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            ' Construct the datatable programetically
+            Dim datatable As DataTable = MakeDataTable()
+
+            Dim appPath As String = AppDomain.CurrentDomain.BaseDirectory
+
+            Dim excelFileName As String = appPath &amp; Convert.ToString(&quot;\TestFile.xlsx&quot;)
+
+            ExportDataSet(datatable, excelFileName)
+
+            Response.Write(vbLf &amp; vbLf &amp; &quot;Datatable exported to Excel file successfully&quot;)
+        Catch ex As Exception
+            Response.Write(ex.Message)
+        End Try
+    End Sub
+
+    Private Function MakeDataTable() As DataTable
+        ' Create a new DataTable.
+        Dim table As <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataTable.aspx"  title="Auto generated link to System.Data.DataTable">System.Data.DataTable</a> = New DataTable(&quot;ParentTable&quot;)
+        ' Declare variables for DataColumn and DataRow objects.
+        Dim column As DataColumn
+        Dim row As DataRow
+
+        ' Create new DataColumn, set DataType, 
+        ' ColumnName and add to DataTable.    
+        column = New DataColumn()
+        column.DataType = System.Type.[GetType](&quot;System.Int32&quot;)
+        column.ColumnName = &quot;id&quot;
+        column.[ReadOnly] = True
+        column.Unique = True
+        ' Add the Column to the DataColumnCollection.
+        table.Columns.Add(column)
+
+        ' Create second column.
+        column = New DataColumn()
+        column.DataType = System.Type.[GetType](&quot;System.String&quot;)
+        column.ColumnName = &quot;ParentItem&quot;
+        column.AutoIncrement = False
+        column.Caption = &quot;ParentItem&quot;
+        column.[ReadOnly] = False
+        column.Unique = False
+        ' Add the column to the table.
+        table.Columns.Add(column)
+
+        ' Make the ID column the primary key column.
+        Dim PrimaryKeyColumns As DataColumn() = New DataColumn(0) {}
+        PrimaryKeyColumns(0) = table.Columns(&quot;id&quot;)
+        table.PrimaryKey = PrimaryKeyColumns
+
+        ' Create three new DataRow objects and add 
+        ' them to the DataTable
+        For i As Integer = 0 To 2
+            row = table.NewRow()
+            row(&quot;id&quot;) = i
+            row(&quot;ParentItem&quot;) = &quot;ParentItem &quot; &#43; i.ToString()
+            table.Rows.Add(row)
+        Next
+
+        Return table
+    End Function
+
+
+    Private Sub ExportDataSet(table As DataTable, excelFileName As String)
+        Using workbook = SpreadsheetDocument.Create(excelFileName, DocumentFormat.OpenXml.SpreadsheetDocumentType.Workbook)
+            Dim workbookPart = workbook.AddWorkbookPart()
+
+            workbook.WorkbookPart.Workbook = New DocumentFormat.OpenXml.Spreadsheet.Workbook()
+
+            workbook.WorkbookPart.Workbook.Sheets = New DocumentFormat.OpenXml.Spreadsheet.Sheets()
+
+            Dim sheetPart = workbook.WorkbookPart.AddNewPart(Of WorksheetPart)()
+            Dim sheetData = New DocumentFormat.OpenXml.Spreadsheet.SheetData()
+            sheetPart.Worksheet = New DocumentFormat.OpenXml.Spreadsheet.Worksheet(sheetData)
+
+            Dim sheets As DocumentFormat.OpenXml.Spreadsheet.Sheets = workbook.WorkbookPart.Workbook.GetFirstChild(Of DocumentFormat.OpenXml.Spreadsheet.Sheets)()
+            Dim relationshipId As String = workbook.WorkbookPart.GetIdOfPart(sheetPart)
+
+            Dim sheetId As UInteger = 1
+            If sheets.Elements(Of DocumentFormat.OpenXml.Spreadsheet.Sheet)().Count() &gt; 0 Then
+                sheetId = sheets.Elements(Of DocumentFormat.OpenXml.Spreadsheet.Sheet)().[Select](Function(s) s.SheetId.Value).Max() &#43; 1
+            End If
+
+            Dim sheet As New DocumentFormat.OpenXml.Spreadsheet.Sheet() With { _
+                 .Id = relationshipId, _
+                 .SheetId = sheetId, _
+                .Name = table.TableName _
+            }
+            sheets.Append(sheet)
+
+            Dim headerRow As New DocumentFormat.OpenXml.Spreadsheet.Row()
+
+
+            ' Construct column names
+            Dim columns As List(Of [String]) = New List(Of String)()
+            For Each column As <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataColumn.aspx"  title="Auto generated link to System.Data.DataColumn">System.Data.DataColumn</a> In table.Columns
+                columns.Add(column.ColumnName)
+
+                Dim cell As New DocumentFormat.OpenXml.Spreadsheet.Cell()
+                cell.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.[String]
+                cell.CellValue = New DocumentFormat.OpenXml.Spreadsheet.CellValue(column.ColumnName)
+                headerRow.AppendChild(cell)
+            Next
+
+            ' Add the row values to the excel sheet
+            sheetData.AppendChild(headerRow)
+
+            For Each dsrow As <a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Data.DataRow.aspx"  title="Auto generated link to System.Data.DataRow">System.Data.DataRow</a> In table.Rows
+                Dim newRow As New DocumentFormat.OpenXml.Spreadsheet.Row()
+                For Each col As [String] In columns
+                    Dim cell As New DocumentFormat.OpenXml.Spreadsheet.Cell()
+                    cell.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.[String]
+                    cell.CellValue = New DocumentFormat.OpenXml.Spreadsheet.CellValue(dsrow(col).ToString())
+                    newRow.AppendChild(cell)
+                Next
+
+                sheetData.AppendChild(newRow)
+            Next
+        End Using
+    End Sub</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">protected</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Button1_Click(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Construct&nbsp;the&nbsp;datatable&nbsp;programetically</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataTable&nbsp;datatable&nbsp;=&nbsp;MakeDataTable();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;appPath&nbsp;=&nbsp;AppDomain.CurrentDomain.BaseDirectory;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;excelFileName&nbsp;=&nbsp;appPath&nbsp;&#43;&nbsp;@<span class="cs__string">&quot;\TestFile.xlsx&quot;</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExportDataSet(datatable,&nbsp;excelFileName);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(<span class="cs__string">&quot;\n\nDatatable&nbsp;exported&nbsp;to&nbsp;Excel&nbsp;file&nbsp;successfully&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response.Write(ex.Message);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;DataTable&nbsp;MakeDataTable()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;a&nbsp;new&nbsp;DataTable.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.DataTable&nbsp;table&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DataTable(<span class="cs__string">&quot;ParentTable&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Declare&nbsp;variables&nbsp;for&nbsp;DataColumn&nbsp;and&nbsp;DataRow&nbsp;objects.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataColumn&nbsp;column;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataRow&nbsp;row;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;new&nbsp;DataColumn,&nbsp;set&nbsp;DataType,&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;ColumnName&nbsp;and&nbsp;add&nbsp;to&nbsp;DataTable.&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DataColumn();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.DataType&nbsp;=&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Type.GetType.aspx"  title="Auto generated link to System.Type.GetType">System.Type.GetType</a>(<span class="cs__string">&quot;System.Int32&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.ColumnName&nbsp;=&nbsp;<span class="cs__string">&quot;id&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.ReadOnly&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.Unique&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Add&nbsp;the&nbsp;Column&nbsp;to&nbsp;the&nbsp;DataColumnCollection.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Columns.Add(column);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;second&nbsp;column.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DataColumn();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.DataType&nbsp;=&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://code.msdn.microsoft.com/How-to-export-data-from-35d94fc9/https://msdn.microsoft.com/en-US/library/System.Type.GetType.aspx"  title="Auto generated link to System.Type.GetType">System.Type.GetType</a>(<span class="cs__string">&quot;System.String&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.ColumnName&nbsp;=&nbsp;<span class="cs__string">&quot;ParentItem&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.AutoIncrement&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.Caption&nbsp;=&nbsp;<span class="cs__string">&quot;ParentItem&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.ReadOnly&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column.Unique&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Add&nbsp;the&nbsp;column&nbsp;to&nbsp;the&nbsp;table.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Columns.Add(column);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Make&nbsp;the&nbsp;ID&nbsp;column&nbsp;the&nbsp;primary&nbsp;key&nbsp;column.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DataColumn[]&nbsp;PrimaryKeyColumns&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DataColumn[<span class="cs__number">1</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrimaryKeyColumns[<span class="cs__number">0</span>]&nbsp;=&nbsp;table.Columns[<span class="cs__string">&quot;id&quot;</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.PrimaryKey&nbsp;=&nbsp;PrimaryKeyColumns;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;three&nbsp;new&nbsp;DataRow&nbsp;objects&nbsp;and&nbsp;add&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;them&nbsp;to&nbsp;the&nbsp;DataTable</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">for</span>&nbsp;(<span class="cs__keyword">int</span>&nbsp;i&nbsp;=&nbsp;<span class="cs__number">0</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span class="cs__number">2</span>;&nbsp;i&#43;&#43;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row&nbsp;=&nbsp;table.NewRow();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row[<span class="cs__string">&quot;id&quot;</span>]&nbsp;=&nbsp;i;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row[<span class="cs__string">&quot;ParentItem&quot;</span>]&nbsp;=&nbsp;<span class="cs__string">&quot;ParentItem&nbsp;&quot;</span>&nbsp;&#43;&nbsp;i;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.Rows.Add(row);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;table;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;ExportDataSet(DataTable&nbsp;table,&nbsp;<span class="cs__keyword">string</span>&nbsp;excelFileName)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;workbook&nbsp;=&nbsp;SpreadsheetDocument.Create(excelFileName,&nbsp;DocumentFormat.OpenXml.SpreadsheetDocumentType.Workbook))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;workbookPart&nbsp;=&nbsp;workbook.AddWorkbookPart();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workbook.WorkbookPart.Workbook&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Workbook();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;workbook.WorkbookPart.Workbook.Sheets&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Sheets();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sheetPart&nbsp;=&nbsp;workbook.WorkbookPart.AddNewPart&lt;WorksheetPart&gt;();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sheetData&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.SheetData();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetPart.Worksheet&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Worksheet(sheetData);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Sheets&nbsp;sheets&nbsp;=&nbsp;workbook.WorkbookPart.Workbook.GetFirstChild&lt;DocumentFormat.OpenXml.Spreadsheet.Sheets&gt;();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;relationshipId&nbsp;=&nbsp;workbook.WorkbookPart.GetIdOfPart(sheetPart);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">uint</span>&nbsp;sheetId&nbsp;=&nbsp;<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(sheets.Elements&lt;DocumentFormat.OpenXml.Spreadsheet.Sheet&gt;().Count()&nbsp;&gt;&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetId&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheets.Elements&lt;DocumentFormat.OpenXml.Spreadsheet.Sheet&gt;().Select(s&nbsp;=&gt;&nbsp;s.SheetId.Value).Max()&nbsp;&#43;&nbsp;<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Sheet&nbsp;sheet&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Sheet()&nbsp;{&nbsp;Id&nbsp;=&nbsp;relationshipId,&nbsp;SheetId&nbsp;=&nbsp;sheetId,&nbsp;Name&nbsp;=&nbsp;table.TableName&nbsp;};&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheets.Append(sheet);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Row&nbsp;headerRow&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Row();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Construct&nbsp;column&nbsp;names</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;String&gt;&nbsp;columns&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;List&lt;<span class="cs__keyword">string</span>&gt;();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(System.Data.DataColumn&nbsp;column&nbsp;<span class="cs__keyword">in</span>&nbsp;table.Columns)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns.Add(column.ColumnName);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Cell&nbsp;cell&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Cell();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell.DataType&nbsp;=&nbsp;DocumentFormat.OpenXml.Spreadsheet.CellValues.String;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell.CellValue&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.CellValue(column.ColumnName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headerRow.AppendChild(cell);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Add&nbsp;the&nbsp;row&nbsp;values&nbsp;to&nbsp;the&nbsp;excel&nbsp;sheet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetData.AppendChild(headerRow);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(System.Data.DataRow&nbsp;dsrow&nbsp;<span class="cs__keyword">in</span>&nbsp;table.Rows)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Row&nbsp;newRow&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Row();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(String&nbsp;col&nbsp;<span class="cs__keyword">in</span>&nbsp;columns)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentFormat.OpenXml.Spreadsheet.Cell&nbsp;cell&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.Cell();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell.DataType&nbsp;=&nbsp;DocumentFormat.OpenXml.Spreadsheet.CellValues.String;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cell.CellValue&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;DocumentFormat.OpenXml.Spreadsheet.CellValue(dsrow[col].ToString());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newRow.AppendChild(cell);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetData.AppendChild(newRow);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2>Running the sample</h2>
+<p class="MsoListParagraph" style="text-align:justify; text-indent:-.25in">&nbsp;</p>
+<p>1. Open the project in visual studio and press CTRL &#43; F5 to execute.</p>
+<p>2. Click on &ldquo;Export DataTable&rdquo;.</p>
+<p>3. On successful export, you will see the message &ldquo;Datatable exported to Excel file successfully&rdquo;</p>
+<p>4. Goto project folder and open the excel file named &ldquo;TestFile.xlsx&rdquo; and verify the contents.</p>
+<p class="MsoListParagraph" style="text-align:justify; text-indent:-.25in"><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;; color:black"><br>
+</span></p>
+<p class="MsoNormal" style="margin-left:.25in"><span>&nbsp;</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

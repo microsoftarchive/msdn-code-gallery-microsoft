@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to copy all blob between different storage account by Azure Storage Data Mov</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to copy all blob between different storage account by Azure Storage Data Mov</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Azure, Storage, Cloud, Azure Data Services
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Azure, azure storage, Azure Storage Data Movement Library
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span>How</span><span style="font-weight:bold; font-size:14pt"> to copy all blob between different storage account
+</span><span>by</span><span style="font-weight:bold; font-size:14pt"> </span><span style="font-weight:bold; font-size:14pt">Azure Storage Data Movement Library</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Sometime, we need move all blob in a container to different blob for backup, or just moving resources to different account.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">This example is to help you move all blob resource in a container to different storage account container.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Prerequisites</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-weight:bold; font-style:italic">&bull;&nbsp;</span><span style="font-weight:bold; font-style:italic">Storage Account</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">To transfer data between storage account, we need create source and target storage account.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/</span></a></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-weight:bold; font-style:italic">&bull;&nbsp;</span><span style="font-weight:bold; font-style:italic">Create storage connection string</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">The storage connection string is used to connect storage from solution.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-configure-connection-string/" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-configure-connection-string/</span></a></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-weight:bold; font-style:italic">&bull;&nbsp;</span><span style="font-weight:bold; font-style:italic">Create source storage container</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">The container that need to be transfer. All blob in this container will be copied.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">https://code.msdn.microsoft.com/How-to-copy-all-blob-db6234e2/https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Building the Sample</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-weight:bold; font-style:italic">&bull;&nbsp;</span><span style="font-weight:bold; font-style:italic">Open</span><span style="font-weight:bold; font-style:italic">
+</span><span style="font-weight:bold; font-style:italic">Sol</span><span style="font-weight:bold; font-style:italic">ution in Visual Studio 2015</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Please download the sample code, and open it in Visual Studio</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span style="font-weight:bold; font-style:italic">&bull;&nbsp;</span><span style="font-weight:bold; font-style:italic">Configure app.config
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">Open app.config and change yellow mark with your own settings.</span></span></p>
+<p style="font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-autospace:none; margin:0pt">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;</span><span style="color:#a31515; font-size:9.5pt; background:white">appSettings</span><span style="color:#0000ff; font-size:9.5pt; background:white">&gt;</span></span></p>
+<p style="font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-autospace:none; margin:0pt">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;</span><span style="color:#a31515; font-size:9.5pt; background:white">add</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">key</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">sourceStorageConnectionString</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">value</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:yellow">connectiongString</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+ /&gt;</span></span></p>
+<p style="font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-autospace:none; margin:0pt">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;</span><span style="color:#a31515; font-size:9.5pt; background:white">add</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">key</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">targetStorageConnectionString</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">value</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:yellow">connectiongString</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+ /&gt;</span></span></p>
+<p style="font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-autospace:none; margin:0pt">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;</span><span style="color:#a31515; font-size:9.5pt; background:white">add</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">key</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">sourceContainer</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">value</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:yellow">name</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+ /&gt;</span></span></p>
+<p style="font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-autospace:none; margin:0pt">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;</span><span style="color:#a31515; font-size:9.5pt; background:white">add</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">key</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">targetContainer</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+</span><span style="color:#ff0000; font-size:9.5pt; background:white">value</span><span style="color:#0000ff; font-size:9.5pt; background:white">=</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:yellow">name</span><span style="color:#000000; font-size:9.5pt; background:white">&quot;</span><span style="color:#0000ff; font-size:9.5pt; background:white">
+ /&gt;</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="color:#0000ff; font-size:9.5pt; background:white">&lt;/</span><span style="color:#a31515; font-size:9.5pt; background:white">appSettings</span><span style="color:#0000ff; font-size:9.5pt; background:white">&gt;</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:11pt">The source
+</span><span style="font-weight:bold; font-size:11pt">and target connection string is used to connect storage. The source container name is the container you need to copy.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">You need provide a target container name, if this container is not existing, will automatically create a new one.</span><span style="font-size:11pt">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a name="_GoBack"></a></span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/6ff385d2-b40b-4bef-85c7-e89c6ff87fdaimage.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

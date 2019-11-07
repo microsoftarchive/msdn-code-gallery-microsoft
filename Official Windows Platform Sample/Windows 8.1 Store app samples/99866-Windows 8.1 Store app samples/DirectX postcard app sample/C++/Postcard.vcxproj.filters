@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <FxCompile Include="SimplePixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="SimpleVertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="BasicCamera.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicLoader.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicReaderWriter.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShapes.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSTextureLoader.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXBase.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="PostcardRenderer.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="ExtrudedTextRenderer.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageRenderer.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="InkRenderer.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="PaperRenderer.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Extruder.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="OutlineRenderer.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="PointSnapper.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="PaperFragment.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="PaperFlyout.xaml.cpp" />
+    <ClCompile Include="EffectsFlyout.xaml.cpp" />
+    <ClCompile Include="SignatureFlyout.xaml.cpp" />
+    <ClCompile Include="TextFlyout.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="BasicCamera.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicLoader.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicMath.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicReaderWriter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSTextureLoader.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXBase.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXSample.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="PostcardRenderer.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtrudedTextRenderer.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageRenderer.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="InkRenderer.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="PaperRenderer.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Extruder.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="OutlineRenderer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="PointSnapper.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="PaperFragment.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="PaperFlyout.xaml.h" />
+    <ClInclude Include="EffectsFlyout.xaml.h" />
+    <ClInclude Include="SignatureFlyout.xaml.h" />
+    <ClInclude Include="TextFlyout.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="windows-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="smallTile-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="splash-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="squareTile-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="storeLogo-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="Styles.xaml" />
+    <Page Include="PaperFlyout.xaml">
+      <Filter>Flyouts</Filter>
+    </Page>
+    <Page Include="EffectsFlyout.xaml">
+      <Filter>Flyouts</Filter>
+    </Page>
+    <Page Include="SignatureFlyout.xaml">
+      <Filter>Flyouts</Filter>
+    </Page>
+    <Page Include="TextFlyout.xaml">
+      <Filter>Flyouts</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{55bd7440-53a1-4acb-867a-5e05466abc8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flyouts">
+      <UniqueIdentifier>{b3b4d7f7-10ea-4c1d-9d87-c11c7762b9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{5a5aae73-76d9-42c3-8272-94e9d4b3694e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5995239f-319a-4f43-805e-077c79068bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderers">
+      <UniqueIdentifier>{ee6203ec-c126-4956-8d89-2fef7fbcd1f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <Filter>Resources</Filter>
+    </AppxManifest>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>8583b350-174f-4db9-bc9b-6d65187c8303</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasicMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BasicReaderWriter.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectXSample.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Main.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BasicReaderWriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="$(MSBuildThisFileDirectory)SimplePixelShader.hlsl" />
+    <FxCompile Include="$(MSBuildThisFileDirectory)SimpleVertexShader.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)texturedata.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)storeLogo-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)windowsbig-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)smallTile-phone-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)splash-phone-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)squareTile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)tile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)mediumTile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)smalltile-windows-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="$(MSBuildThisFileDirectory)splash-windows-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

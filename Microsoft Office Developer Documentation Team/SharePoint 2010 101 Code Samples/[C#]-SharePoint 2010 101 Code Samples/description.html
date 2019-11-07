@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/bcbc7c42-cc66-477f-97be-8a059f28af29Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2010 101 Code Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2010 101 Code Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WCF, REST, SharePoint Server 2010, Sharepoint Online, SharePoint Foundation 2010
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            User Interface, SharePoint 2010, Sharepoint Web Parts, Sharepoint 2010 101 code samples, enterprise content management (ECM)
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/27/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2010-101-Code-da251182">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-size:medium">Description</span></h1>
+<p><span style="font-size:small">Each code sample is part of the SharePoint 2010 101 code samples project. These samples are provided so that you can incorporate&nbsp;them directly in your code.</span><br>
+&nbsp;<br>
+<span style="font-size:small">Each code sample consists of a standalone project created in Microsoft Visual Studio 2010 and demonstrates a distinct feature or feature set. Each sample includes comments describing the sample and the expected results. Each sample
+ also contains comments that explain how to set up your environment so that the sample code runs, where necessary.</span><br>
+&nbsp;<br>
+<span style="font-size:small">Microsoft SharePoint 2010 gives you the tools needed to create powerful applications. These managed code (C#, VB.NET, JavaScript, XML) samples can assist you in creating your own applications that perform specific functions or
+ as a starting point to create more complex solutions.</span><br>
+&nbsp;<br>
+<strong><span style="font-size:small">To open a solution:</span></strong><br>
+<span style="font-size:small">&nbsp;1. Start Microsoft Visual Studio 2010.</span><br>
+<span style="font-size:small">&nbsp;2. On the File menu, click Open, and then click Project/Solution.</span><br>
+<span style="font-size:small">&nbsp;3. Navigate to the folder containing the .sln file, select it, and then click Open.</span><br>
+&nbsp;<br>
+<strong><span style="font-size:small">To run a solution:</span></strong><br>
+<span style="font-size:small">&nbsp;1. In the solution files, read and follow the comments that describe how to set up your environment if necessary.</span><br>
+<span style="font-size:small">&nbsp;2. On the Build menu, click Build Solution.</span><br>
+<span style="font-size:small">&nbsp;3. When you have a successful build, right-click the project in the Solution Explorer window, and then click Deploy &lt;Solution Name&gt;.</span></p>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps15199-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Accessing Web Services/description.html">SharePoint Online Accessing Web Services</a></div>
+                            <div>This sample connects to SharePoint Online, authenticates by using claims authentication, and then displays the contents of a SharePoint Online list.</div>
+                        </div>
+                        <!--pe15199-->
+                        <!--ps15104-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Leveraging HTML5 Objects in SharePoint/description.html">SharePoint 2010 Leveraging HTML5 Objects in SharePoint</a></div>
+                            <div>This sample uses custom SharePoint master pages to enable IE9 and other compliant browsers to render HTML5 tags such as &lt;audio&gt;.</div>
+                        </div>
+                        <!--pe15104-->
+                        <!--ps15103-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing AJAX-Enabled Web Parts/description.html">SharePoint 2010 Developing AJAX-Enabled Web Parts</a></div>
+                            <div>This sample creates a SharePoint Web Part that uses Ajax UpdatePanel and UpdateProgress controls to call server-side methods.</div>
+                        </div>
+                        <!--pe15103-->
+                        <!--ps15231-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Styled Master Pages/description.html">SharePoint 2010 Developing Styled Master Pages</a></div>
+                            <div>This sample creates and deploys branded master pages to customize SharePoint sites, including custom stylesheets and images.</div>
+                        </div>
+                        <!--pe15231-->
+                        <!--ps15118-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing JQuery-Enabled Web Parts/description.html">SharePoint 2010 Developing JQuery-Enabled Web Parts</a></div>
+                            <div>This sample develops a Web Part that uses the JQuery library to display items from a SharePoint list.</div>
+                        </div>
+                        <!--pe15118-->
+                        <!--ps15090-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Hosting Silverlight Applications that Call Azure Services/description.html">SharePoint 2010 Hosting Silverlight Applications that Call Azure Services</a></div>
+                            <div>This sample calls WCF web services that are hosted in Windows Azure from Silverlight applications that are stored in SharePoint.</div>
+                        </div>
+                        <!--pe15090-->
+                        <!--ps15131-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Document Sets Programmatically/description.html">SharePoint 2010 Creating Document Sets Programmatically</a></div>
+                            <div>This sample creates new SharePoint document sets and configures their properties.</div>
+                        </div>
+                        <!--pe15131-->
+                        <!--ps15194-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Performing Searches from Silverlight/description.html">SharePoint 2010 Performing Searches from Silverlight</a></div>
+                            <div>This sample calls the SharePoint Search web service from a Silverlight application.</div>
+                        </div>
+                        <!--pe15194-->
+                        <!--ps15120-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Programmatically Reading User Profile Properties/description.html">SharePoint 2010 Programmatically Reading User Profile Properties</a></div>
+                            <div>This sample obtains properties from all SharePoint user profiles in your organization.</div>
+                        </div>
+                        <!--pe15120-->
+                        <!--ps15218-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling WCF Services from Web Parts/description.html">SharePoint 2010 Calling WCF Services from Web Parts</a></div>
+                            <div>This sample calls a WCF service that retrieves data after users click a button in a SharePoint Web Part.</div>
+                        </div>
+                        <!--pe15218-->
+                        <!--ps15220-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Items in Lists from External WCF Services/description.html">SharePoint 2010 Creating Items in Lists from External WCF Services</a></div>
+                            <div>This sample creates SharePoint list items by calling a method in a WCF service that uses the SharePoint List Data Retrieval Web Service.
+</div>
+                        </div>
+                        <!--pe15220-->
+                        <!--ps15182-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using REST to Query Data Ranges in Excel Worksheets/description.html">SharePoint 2010 Using REST to Query Data Ranges in Excel Worksheets</a></div>
+                            <div>This sample gets and displays data from a date range in an Excel spreadsheet by querying RESTful Excel Web Services.</div>
+                        </div>
+                        <!--pe15182-->
+                        <!--ps15223-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling WCF Services Hosted in SharePoint/description.html">SharePoint 2010 Calling WCF Services Hosted in SharePoint</a></div>
+                            <div>This sample calls a WCF service that is hosted by Sharepoint, and whose code uses the SharePoint Foundation Server-Side Object Model.</div>
+                        </div>
+                        <!--pe15223-->
+                        <!--ps15225-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Custom Navigation Providers/description.html">SharePoint 2010 Developing Custom Navigation Providers</a></div>
+                            <div>This sample creates and deploys two links to the top link bar on a SharePoint site.</div>
+                        </div>
+                        <!--pe15225-->
+                        <!--ps15221-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Custom SharePoint Service Applications/description.html">SharePoint 2010 Creating Custom SharePoint Service Applications</a></div>
+                            <div>This sample returns the current weekday by using a custom service application for SharePoint.</div>
+                        </div>
+                        <!--pe15221-->
+                        <!--ps15098-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Displaying Video Files Stored in Azure/description.html">SharePoint 2010 Displaying Video Files Stored in Azure</a></div>
+                            <div>This sample displays videos stored in Windows Azure in Silverlight applications.</div>
+                        </div>
+                        <!--pe15098-->
+                        <!--ps15145-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Custom Timer Jobs/description.html">SharePoint 2010 Creating Custom Timer Jobs</a></div>
+                            <div>This sample creates and schedules a SharePoint timer job that runs code at regular intervals.</div>
+                        </div>
+                        <!--pe15145-->
+                        <!--ps15143-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Performing Cross-List Queries/description.html">SharePoint 2010 Performing Cross-List Queries</a></div>
+                            <div>This sample uses the SPSiteDataQuery class to find items from all the lists in a SharePoint site.</div>
+                        </div>
+                        <!--pe15143-->
+                        <!--ps15091-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling Azure Services from Event Receivers/description.html">SharePoint 2010 Calling Azure Services from Event Receivers</a></div>
+                            <div>This sample calls WCF web services hosted in Windows Azure from SharePoint event receivers.</div>
+                        </div>
+                        <!--pe15091-->
+                        <!--ps15217-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling WCF Services from Timer Jobs/description.html">SharePoint 2010 Calling WCF Services from Timer Jobs</a></div>
+                            <div>This sample calls a WCF service from a custom timer job that creates a new announcement when it runs.</div>
+                        </div>
+                        <!--pe15217-->
+                        <!--ps15136-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Sequential Workflows/description.html">SharePoint 2010 Developing Sequential Workflows</a></div>
+                            <div>This sample develops SharePoint sequential workflows based on items in task lists.</div>
+                        </div>
+                        <!--pe15136-->
+                        <!--ps15195-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Performing Searches from Web Parts/description.html">SharePoint 2010 Performing Searches from Web Parts</a></div>
+                            <div>This sample calls a SharePoint Search or FAST Search service application from a Web Part.</div>
+                        </div>
+                        <!--pe15195-->
+                        <!--ps15216-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling WCF Services from Event Receivers/description.html">SharePoint 2010 Calling WCF Services from Event Receivers</a></div>
+                            <div>This sample calls a WCF service from an event receiver; after a new item is added to a SharePoint list, the service returns data that is appended to the body of that new item.
+</div>
+                        </div>
+                        <!--pe15216-->
+                        <!--ps15180-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using REST to Discover the Contents of Excel Worksheets/description.html">SharePoint 2010 Using REST to Discover the Contents of Excel Worksheets</a></div>
+                            <div>This sample displays the names of tables that are in a spreadsheet by calling RESTful Excel Web Services.</div>
+                        </div>
+                        <!--pe15180-->
+                        <!--ps15144-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Custom Field Types/description.html">SharePoint 2010 Creating Custom Field Types</a></div>
+                            <div>This sample creates a new field type that adds options for users who create new columns in SharePoint lists, libraries, or content types.</div>
+                        </div>
+                        <!--pe15144-->
+                        <!--ps15133-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Programmatically Finding Tagged Items/description.html">SharePoint 2010 Programmatically Finding Tagged Items</a></div>
+                            <div>This sample locates terms that match input strings and then locates all items tagged with those terms in SharePoint lists.</div>
+                        </div>
+                        <!--pe15133-->
+                        <!--ps15099-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating SQL Azure Records from Web Parts/description.html">SharePoint 2010 Creating SQL Azure Records from Web Parts</a></div>
+                            <div>This sample inserts records into SQL Azure tables by using code in SharePoint Web Parts.</div>
+                        </div>
+                        <!--pe15099-->
+                        <!--ps15205-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating and Deploying Sandboxed Event Receivers/description.html">SharePoint Online Creating and Deploying Sandboxed Event Receivers</a></div>
+                            <div>This sample responds to item events (such as ItemAdded) in sandboxed event receivers.</div>
+                        </div>
+                        <!--pe15205-->
+                        <!--ps15215-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Accessing SharePoint Lists from External WCF Services/description.html">SharePoint 2010 Accessing SharePoint Lists from External WCF Services</a></div>
+                            <div>This sample writes a WCF service that returns all the items in SharePoint lists, and includes a sample client console application to test the service.</div>
+                        </div>
+                        <!--pe15215-->
+                        <!--ps15230-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Starter Master Pages/description.html">SharePoint 2010 Developing Starter Master Pages</a></div>
+                            <div>This sample sets master pages for SharePoint sites by using feature receivers, and deploys master pages without styles or images as starters for branded master pages.
+</div>
+                        </div>
+                        <!--pe15230-->
+                        <!--ps15193-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Declaring Records Programmatically/description.html">SharePoint 2010 Declaring Records Programmatically</a></div>
+                            <div>This sample can determine whether a document is a record and declare it as a record.</div>
+                        </div>
+                        <!--pe15193-->
+                        <!--ps15093-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling Azure Services from Web Parts/description.html">SharePoint 2010 Calling Azure Services from Web Parts</a></div>
+                            <div>This sample calls WCF web services hosted in Windows Azure from SharePoint Web Parts.</div>
+                        </div>
+                        <!--pe15093-->
+                        <!--ps15187-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Retrieving List Contents in JSON Format and Parsing Responses/description.html">SharePoint 2010 Retrieving List Contents in JSON Format and Parsing Responses</a></div>
+                            <div>This sample gets items from SharePoint lists in JSON format, parses the responses, and then displays the item properties.</div>
+                        </div>
+                        <!--pe15187-->
+                        <!--ps15134-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Managing Document Sets Programmatically/description.html">SharePoint 2010 Managing Document Sets Programmatically</a></div>
+                            <div>This sample reads properties from all the document sets in a given SharePoint document library.</div>
+                        </div>
+                        <!--pe15134-->
+                        <!--ps15100-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Querying SQL Azure Data from Web Parts/description.html">SharePoint 2010 Querying SQL Azure Data from Web Parts</a></div>
+                            <div>This sample queries a SQL Azure database from code in a SharePoint Web Part.</div>
+                        </div>
+                        <!--pe15100-->
+                        <!--ps15101-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Updating SQL Azure Records from Web Parts/description.html">SharePoint 2010 Updating SQL Azure Records from Web Parts</a></div>
+                            <div>This sample saves changes to a SQL Azure record by using code in a SharePoint Web Part.</div>
+                        </div>
+                        <!--pe15101-->
+                        <!--ps15148-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Feature Receivers/description.html">SharePoint 2010 Developing Feature Receivers</a></div>
+                            <div>This sample develops a Feature receiver that performs an action when Features activate and cleans up when Features deactivate.</div>
+                        </div>
+                        <!--pe15148-->
+                        <!--ps15137-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing State Machine Workflows/description.html">SharePoint 2010 Developing State Machine Workflows</a></div>
+                            <div>This sample develops state machine workflows based on documents in SharePoint document libraries and items in tasks lists.</div>
+                        </div>
+                        <!--pe15137-->
+                        <!--ps15129-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript and CAML to Query Lists/description.html">SharePoint 2010 Using JavaScript and CAML to Query Lists</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to display the details of all the items in a SharePoint list.</div>
+                        </div>
+                        <!--pe15129-->
+                        <!--ps15196-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Accessing List Items from Silverlight/description.html">SharePoint 2010 Accessing List Items from Silverlight</a></div>
+                            <div>This sample returns items in SharePoint lists (in Silverlight applications) by using the SharePoint Client Object Model.</div>
+                        </div>
+                        <!--pe15196-->
+                        <!--ps15185-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Retrieving List Contents and Parsing Atom Responses/description.html">SharePoint 2010 Retrieving List Contents and Parsing Atom Responses</a></div>
+                            <div>This sample gets all the items in a SharePoint list by using the RESTful List Data web service.</div>
+                        </div>
+                        <!--pe15185-->
+                        <!--ps15209-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Delegate Controls/description.html">SharePoint 2010 Developing Delegate Controls</a></div>
+                            <div>This sample creates an ASP.NET user control to replace the standard SharePoint Global Navigation.</div>
+                        </div>
+                        <!--pe15209-->
+                        <!--ps15224-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Custom Field Controls/description.html">SharePoint 2010 Developing Custom Field Controls</a></div>
+                            <div>This sample creates custom field controls that display and edit fields on SharePoint publishing sites.</div>
+                        </div>
+                        <!--pe15224-->
+                        <!--ps15092-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling Azure Services from Timer Jobs/description.html">SharePoint 2010 Calling Azure Services from Timer Jobs</a></div>
+                            <div>This sample calls WCF web services hosted in Windows Azure from SharePoint timer jobs.</div>
+                        </div>
+                        <!--pe15092-->
+                        <!--ps15139-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Performing Cached Cross-Site Queries/description.html">SharePoint 2010 Performing Cached Cross-Site Queries</a></div>
+                            <div>This sample uses the SharePoint PortalSiteMapProvider class to perform high-performance cross-site queries.</div>
+                        </div>
+                        <!--pe15139-->
+                        <!--ps15147-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Event Receivers/description.html">SharePoint 2010 Developing Event Receivers</a></div>
+                            <div>This sample develops and registers an event receiver that intercepts SharePoint list item events such as ItemAdded and ItemUpdating.</div>
+                        </div>
+                        <!--pe15147-->
+                        <!--ps15204-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Accessing Current User Information in Sandboxed Solutions/description.html">SharePoint Online Accessing Current User Information in Sandboxed Solutions</a></div>
+                            <div>This sample creates a Web Part that functions in a sandboxed solution on SharePoint Online and gets information about the current user.</div>
+                        </div>
+                        <!--pe15204-->
+                        <!--ps15201-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Deploying Sandboxed Content Types and List Definitions/description.html">SharePoint Online Deploying Sandboxed Content Types and List Definitions</a></div>
+                            <div>This sample creates a Web Part that functions in a sandboxed solution on SharePoint Online and uses code to create content types and list definitions.</div>
+                        </div>
+                        <!--pe15201-->
+                        <!--ps15207-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating and Deploying Sandboxed Web Parts/description.html">SharePoint Online Creating and Deploying Sandboxed Web Parts</a></div>
+                            <div>This sample creates a Web Part that checks whether it is in a sandboxed solution and displays the title of the SharePoint site.</div>
+                        </div>
+                        <!--pe15207-->
+                        <!--ps15179-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling RESTful SharePoint Services From Desktop Applications/description.html">SharePoint 2010 Calling RESTful SharePoint Services From Desktop Applications</a></div>
+                            <div>This sample uses a service reference to connect to the List Data Retrieval Web Service and display lists of SharePoint items in a Data Grid.</div>
+                        </div>
+                        <!--pe15179-->
+                        <!--ps15192-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Custom Expiration Formulae/description.html">SharePoint 2010 Developing Custom Expiration Formulae</a></div>
+                            <div>This sample calculates an expiration date for a SharePoint information management policy by using a custom expiration formula.</div>
+                        </div>
+                        <!--pe15192-->
+                        <!--ps15197-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating List Items from Silverlight/description.html">SharePoint 2010 Creating List Items from Silverlight</a></div>
+                            <div>This sample creates SharePoint list items by calling the SharePoint Client Object Model from Silverlight applications.</div>
+                        </div>
+                        <!--pe15197-->
+                        <!--ps15132-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Taxonomies Programmatically/description.html">SharePoint 2010 Creating Taxonomies Programmatically</a></div>
+                            <div>This sample adds SharePoint groups, term sets, and terms to a term store programmatically.</div>
+                        </div>
+                        <!--pe15132-->
+                        <!--ps15138-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Workflow Activities/description.html">SharePoint 2010 Developing Workflow Activities</a></div>
+                            <div>This sample creates and deploys custom workflow activities that can be used in SharePoint Designer to extend workflows.</div>
+                        </div>
+                        <!--pe15138-->
+                        <!--ps15222-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Deleting Items in Lists from External WCF Services/description.html">SharePoint 2010 Deleting Items in Lists from External WCF Services</a></div>
+                            <div>This sample creates a WCF service that finds a SharePoint item and deletes it.</div>
+                        </div>
+                        <!--pe15222-->
+                        <!--ps15219-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling WCF Services from Custom Workflow Activities/description.html">SharePoint 2010 Calling WCF Services from Custom Workflow Activities</a></div>
+                            <div>This sample calls a WCF service from a SharePoint workflow that starts after a new item is created, and then modifies the item body field of that workflow.</div>
+                        </div>
+                        <!--pe15219-->
+                        <!--ps15189-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using REST to Obtain Excel Charts/description.html">SharePoint 2010 Using REST to Obtain Excel Charts</a></div>
+                            <div>This sample obtains image files of charts from Excel spreadsheets via REST.</div>
+                        </div>
+                        <!--pe15189-->
+                        <!--ps15102-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Uploading SharePoint Library Content to Azure Storage/description.html">SharePoint 2010 Uploading SharePoint Library Content to Azure Storage</a></div>
+                            <div>This sample uploads files from a SharePoint document library to Windows Azure storage.</div>
+                        </div>
+                        <!--pe15102-->
+                        <!--ps15226-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Exporting Content by Using the Content Deployment API/description.html">SharePoint 2010 Exporting Content by Using the Content Deployment API</a></div>
+                            <div>This sample exports content from SharePoint lists by calling the Content Migration API.</div>
+                        </div>
+                        <!--pe15226-->
+                        <!--ps15142-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Content Types Programmatically/description.html">SharePoint 2010 Creating Content Types Programmatically</a></div>
+                            <div>This sample creates SharePoint content types nondeclaratively in code.</div>
+                        </div>
+                        <!--pe15142-->
+                        <!--ps15175-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Logging Data to the Developer Dashboard/description.html">SharePoint 2010 Logging Data to the Developer Dashboard</a></div>
+                            <div>This sample uses monitored scopes to log information to developer dashboards, and includes scripts to enable and disable those dashboards.</div>
+                        </div>
+                        <!--pe15175-->
+                        <!--ps15190-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Creating Content Organizer Rules Programmatically/description.html">SharePoint 2010 Creating Content Organizer Rules Programmatically</a></div>
+                            <div>This sample creates and configures content organizer rules for content types in SharePoint document libraries.</div>
+                        </div>
+                        <!--pe15190-->
+                        <!--ps15183-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JQuery to Retrieve List Contents in JSON/description.html">SharePoint 2010 Using JQuery to Retrieve List Contents in JSON</a></div>
+                            <div>This sample uses the JQuery library to obtain and display items in SharePoint lists.</div>
+                        </div>
+                        <!--pe15183-->
+                        <!--ps15203-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating Excel Worksheets by Using Excel Web App/description.html">SharePoint Online Creating Excel Worksheets by Using Excel Web App</a></div>
+                            <div>This sample creates custom ribbon actions that use JavaScript and Excel Web Apps to create new spreadsheets.</div>
+                        </div>
+                        <!--pe15203-->
+                        <!--ps15238-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Connected Web Parts/description.html">SharePoint 2010 Developing Connected Web Parts</a></div>
+                            <div>This sample creates two SharePoint Web Parts that you can connect to exchange information.</div>
+                        </div>
+                        <!--pe15238-->
+                        <!--ps15181-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using REST to Create a SharePoint and Bing Maps Mashup/description.html">SharePoint 2010 Using REST to Create a SharePoint and Bing Maps Mashup</a></div>
+                            <div>This sample uses JavaScript to integrate data from Excel spreadsheets in SharePoint with Bing Maps.</div>
+                        </div>
+                        <!--pe15181-->
+                        <!--ps15200-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Authenticating Using the Client-Side Object Model/description.html">SharePoint Online Authenticating Using the Client-Side Object Model</a></div>
+                            <div>This sample connects to, and authenticates in, SharePoint Online.</div>
+                        </div>
+                        <!--pe15200-->
+                        <!--ps15178-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Web Templates/description.html">SharePoint 2010 Developing Web Templates</a></div>
+                            <div>This sample creates web templates, which are similar to SharePoint site definitions, but can be used in sandboxed solutions.</div>
+                        </div>
+                        <!--pe15178-->
+                        <!--ps15119-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Displaying User Profile Pictures Programmatically/description.html">SharePoint 2010 Displaying User Profile Pictures Programmatically</a></div>
+                            <div>This sample evaluates and displays the pictures of all users who have set profile pictures in a Web Part.</div>
+                        </div>
+                        <!--pe15119-->
+                        <!--ps15227-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Importing Content by Using the Content Deployment API/description.html">SharePoint 2010 Importing Content by Using the Content Deployment API</a></div>
+                            <div>This sample imports content from CMP files into SharePoint lists by calling the Content Migration API.</div>
+                        </div>
+                        <!--pe15227-->
+                        <!--ps15094-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Calling Azure Services from Custom Workflow Activities/description.html">SharePoint 2010 Calling Azure Services from Custom Workflow Activities</a></div>
+                            <div>This sample calls WCF web services hosted in Windows Azure from code in SharePoint workflows.</div>
+                        </div>
+                        <!--pe15094-->
+                        <!--ps15188-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using LINQ in REST Requests/description.html">SharePoint 2010 Using LINQ in REST Requests</a></div>
+                            <div>This sample uses LINQ queries to return filtered lists of items from SharePoint lists.</div>
+                        </div>
+                        <!--pe15188-->
+                        <!--ps15130-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Enable Notifications/description.html">SharePoint 2010 Using JavaScript to Enable Notifications</a></div>
+                            <div>This sample uses SharePoint status and notifications to feed back information to users.</div>
+                        </div>
+                        <!--pe15130-->
+                        <!--ps15208-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating and Deploying Sandboxed Workflow Activities/description.html">SharePoint Online Creating and Deploying Sandboxed Workflow Activities</a></div>
+                            <div>This sample creates a workflow activity that functions in a sandboxed solution on SharePoint Online.</div>
+                        </div>
+                        <!--pe15208-->
+                        <!--ps15146-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Working with Disposable Objects/description.html">SharePoint 2010 Working with Disposable Objects</a></div>
+                            <div>This sample disposes SPWeb and SPSite objects properly so that they do not unnecessarily consume memory.</div>
+                        </div>
+                        <!--pe15146-->
+                        <!--ps15141-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Canceling Synchronous Events/description.html">SharePoint 2010 Canceling Synchronous Events</a></div>
+                            <div>This sample checks the properties of synchronous events and cancels them to prevent users from deleting SharePoint items.</div>
+                        </div>
+                        <!--pe15141-->
+                        <!--ps15213-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Sandboxed Web Parts/description.html">SharePoint 2010 Developing Sandboxed Web Parts</a></div>
+                            <div>This sample creates a Web Part in a sandboxed solution, and includes Panels to hide controls, radio buttons, and the Render method.</div>
+                        </div>
+                        <!--pe15213-->
+                        <!--ps15186-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Retrieving Single List Items in REST Requests/description.html">SharePoint 2010 Retrieving Single List Items in REST Requests</a></div>
+                            <div>This sample gets a single item from a SharePoint list by using the RESTful List Data web service.</div>
+                        </div>
+                        <!--pe15186-->
+                        <!--ps15149-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing List Definitions/description.html">SharePoint 2010 Developing List Definitions</a></div>
+                            <div>This sample uses declarative programming to create a SharePoint list definition and an instance of that list.</div>
+                        </div>
+                        <!--pe15149-->
+                        <!--ps15177-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Solution Validators/description.html">SharePoint 2010 Developing Solution Validators</a></div>
+                            <div>This sample develops SharePoint solution validators that check activating user solutions and help verify sandboxed solutions.</div>
+                        </div>
+                        <!--pe15177-->
+                        <!--ps15096-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Deleting SQL Azure Records from Web Parts/description.html">SharePoint 2010 Deleting SQL Azure Records from Web Parts</a></div>
+                            <div>This sample deletes records in SQL Azure by using code in SharePoint Web Parts.</div>
+                        </div>
+                        <!--pe15096-->
+                        <!--ps15202-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating Documents Using Word, PowerPoint, or OneNote Web App/description.html">SharePoint Online Creating Documents Using Word, PowerPoint, or OneNote Web App</a></div>
+                            <div>This sample creates custom ribbon actions that use JavaScript and Office Web Apps to create new Word, PowerPoint, and OneNote documents.</div>
+                        </div>
+                        <!--pe15202-->
+                        <!--ps15191-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Custom Expiration Actions/description.html">SharePoint 2010 Developing Custom Expiration Actions</a></div>
+                            <div>This sample specifies custom actions to take and code to run after a document expires against a SharePoint information management policy.</div>
+                        </div>
+                        <!--pe15191-->
+                        <!--ps15210-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Editor Web Parts/description.html">SharePoint 2010 Developing Editor Web Parts</a></div>
+                            <div>This sample modifies a Web Part properties sheet to include an Editor Web Part that enables users to choose from all the lists in the SharePoint site.</div>
+                        </div>
+                        <!--pe15210-->
+                        <!--ps15206-->
+                        <div id="item">
+                                <div><a href="SharePoint Online Creating and Deploying Sandboxed Feature Receivers/description.html">SharePoint Online Creating and Deploying Sandboxed Feature Receivers</a></div>
+                            <div>This sample creates a feature receiver that works in a SharePoint Online sandboxed solution.</div>
+                        </div>
+                        <!--pe15206-->
+                        <!--ps15229-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Branded Media Controls/description.html">SharePoint 2010 Developing Branded Media Controls</a></div>
+                            <div>This sample brands a Media Field Control on a SharePoint site.</div>
+                        </div>
+                        <!--pe15229-->
+                        <!--ps15174-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Logging Site Events Programmatically/description.html">SharePoint 2010 Logging Site Events Programmatically</a></div>
+                            <div>This sample develops and registers event receivers to intercept web events such as SiteDeleted and WebMoved, and logs those events to a list for auditors.</div>
+                        </div>
+                        <!--pe15174-->
+                        <!--ps15127-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Show Dialog Boxes/description.html">SharePoint 2010 Using JavaScript to Show Dialog Boxes</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to display an application page as a dialog box.</div>
+                        </div>
+                        <!--pe15127-->
+                        <!--ps15234-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Connected Silverlight Web Parts/description.html">SharePoint 2010 Developing Connected Silverlight Web Parts</a></div>
+                            <div>This sample creates interconnected custom SharePoint Web Parts that can host Silverlight applications that exchange information.</div>
+                        </div>
+                        <!--pe15234-->
+                        <!--ps15228-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Page Layouts/description.html">SharePoint 2010 Developing Page Layouts</a></div>
+                            <div>This sample creates and deploys custom page layouts for content types in SharePoint publishing sites.</div>
+                        </div>
+                        <!--pe15228-->
+                        <!--ps15212-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Ribbon Drop Down Controls/description.html">SharePoint 2010 Developing Ribbon Drop Down Controls</a></div>
+                            <div>This sample uses a drop-down control on the SharePoint ribbon to forward users to the selected list.</div>
+                        </div>
+                        <!--pe15212-->
+                        <!--ps15211-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Ribbon Actions/description.html">SharePoint 2010 Developing Ribbon Actions</a></div>
+                            <div>This sample adds a button control (to the SharePoint ribbon) that runs JavaScript when clicked.</div>
+                        </div>
+                        <!--pe15211-->
+                        <!--ps15126-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Retrieve and Interrogate Items in Lists/description.html">SharePoint 2010 Using JavaScript to Retrieve and Interrogate Items in Lists</a></div>
+                            <div>This sample uses the SharePoint Client Object Model with a CAML query to return matching items from lists.</div>
+                        </div>
+                        <!--pe15126-->
+                        <!--ps15233-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Application Pages/description.html">SharePoint 2010 Developing Application Pages</a></div>
+                            <div>This sample creates and deploys a simple application page that displays information about the current SharePoint site, and modifies its description.</div>
+                        </div>
+                        <!--pe15233-->
+                        <!--ps15128-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Update Site Properties/description.html">SharePoint 2010 Using JavaScript to Update Site Properties</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to set titles and descriptions for SharePoint sites.</div>
+                        </div>
+                        <!--pe15128-->
+                        <!--ps15176-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Developing Site Definitions/description.html">SharePoint 2010 Developing Site Definitions</a></div>
+                            <div>This sample creates a custom SharePoint site definition that specifies Content Editor and Image Viewer Web Parts on a Web Part page.</div>
+                        </div>
+                        <!--pe15176-->
+                        <!--ps15125-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Get Details About Sites/description.html">SharePoint 2010 Using JavaScript to Get Details About Sites</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to display information about the current SharePoint site.</div>
+                        </div>
+                        <!--pe15125-->
+                        <!--ps15123-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Edit and Save Values in Items/description.html">SharePoint 2010 Using JavaScript to Edit and Save Values in Items</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to change items in SharePoint lists.</div>
+                        </div>
+                        <!--pe15123-->
+                        <!--ps15121-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Create Lists/description.html">SharePoint 2010 Using JavaScript to Create Lists</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to create SharePoint lists with JavaScript.</div>
+                        </div>
+                        <!--pe15121-->
+                        <!--ps15124-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Get Details About Site Collections/description.html">SharePoint 2010 Using JavaScript to Get Details About Site Collections</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to display information about the current site collection.</div>
+                        </div>
+                        <!--pe15124-->
+                        <!--ps15122-->
+                        <div id="item">
+                                <div><a href="SharePoint 2010 Using JavaScript to Delete Items from Lists/description.html">SharePoint 2010 Using JavaScript to Delete Items from Lists</a></div>
+                            <div>This sample uses the SharePoint Client Object Model to delete items from a SharePoint list with JavaScript.</div>
+                        </div>
+                        <!--pe15122-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

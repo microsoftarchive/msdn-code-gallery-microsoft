@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Call a workflow in an app using a remote event receiver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Call a workflow in an app using a remote event receiver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Workflows
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/23/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Call-a-f5d247db">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">Illustrates how to start a SharePoint workflow in an app for SharePoint by using a remote event receiver. In this scenario, an external site uses a remote event receiver to call a workflow in an app.</div>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<p><span class="label">Provided by: </span><a href="http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/" >Andrew Connell</a>,
+<a href="http://www.andrewconnell.com" >www.AndrewConnell.com</a></p>
+</div>
+<div class="section" id="sectionSection0">
+<p>This sample demonstrates two core concepts. First, it demonstrates how to create a remote event receiver that calls out to a remote service when a list item is created. It then demonstrates how the remote event receiver service can use the client object
+ model (CSOM) to find a workflow association and start a new instance of the workflow on a specific list item while also passing values into the workflow.</p>
+</div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>SharePoint 2013 installation that is connected to a configured Workflow Manager 1.0 farm.</p>
+</li><li>
+<p>Workflow Manager 1.0 that has the March 2013 cumulative update applied.</p>
+</li><li>
+<p>Service Bus 1.0, with the Mach 2013 cumulative update applied.</p>
+</li><li>
+<p>Visual Studio 2012 and Office Developer Tools for Visual Studio 2012</p>
+</li></ul>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<ul>
+<li>
+<p><strong>RERWorkflowApp.sln</strong> is the Visual Studio solution that contains the entire app for SharePoint and workflow, in addition to the remote web application containing the remote event receiver implementation.</p>
+</li><li>
+<p>The <strong>AnnouncementList</strong> in the Visual Studio solution contains a custom list schema and instance of an Announcement list.</p>
+</li><li>
+<p>The <span><span class="keyword">RemoteEventReceiver</span></span> in the Visual Studio solution contains the registration of the custom remote event receiver on the custom Announcement list.</p>
+</li><li>
+<p>The <span><span class="keyword">UpdateAnnoncementWorkflow</span></span> in the Visual Studio solution contains the workflow that, when initiated, updates the list item it was started by.</p>
+</li><li>
+<p>The <span><span class="keyword">RerSpHostedAppWeb</span></span> project in the Visual Studio solution contains the web project and remote event receiver service implementation.</p>
+</li></ul>
+</div>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Follow these steps to configure the sample app:</p>
+<ol>
+<li>
+<p>Ensure that you have a site collection created using the <span class="ui">Developer Site</span> template.</p>
+</li><li>
+<p>Created a self-signed certificate, a trusted security token issuer, and then update the remote web with the credentials:</p>
+<ul>
+<li>
+<p>Open the file <strong>01_CreateSSLCertificateForAppServer.ps1</strong> and address any &quot;TODO&quot; comments.</p>
+</li><li>
+<p>Run the Windows PowerShell script, <strong>01_CreateSSLCertificateForAppServer.ps1</strong>.</p>
+</li><li>
+<p>Open the file <strong>02_CreateTrustedSecurityTokenIssuer.ps1</strong> and address any &quot;TODO&quot; comments</p>
+</li><li>
+<p>Run the script <strong>02_CreateTrustedSecurityTokenIssuer.ps1</strong>.</p>
+</li><li>
+<p>Open the web.config file that is located in the <span><span class="keyword">RerWorkflowAppWeb</span></span>.</p>
+</li><li>
+<p>Copy the following into the <span class="code">&lt;appSettings&gt;</span> node:
+<br>
+<span class="code">&lt;add key=&quot;ClientSigningCertificatePath&quot; value=&quot; &quot; /&gt;</span><br>
+<span class="code">&lt;add key=&quot;ClientSigningCertificatePassword&quot; value=&quot;Password1&quot; /&gt;</span><br>
+<span class="code">&lt;add key=&quot;IssuerId&quot; value=&quot;11111111-1111-1111-1111-111111111111&quot; /&gt;</span></p>
+</li><li>
+<p>Update the key <span class="code">ClientSigningCertificatePath</span> to point to the full path of the password protected private key (<span><span class="keyword">*.pfx</span></span>)</p>
+</li></ul>
+</li><li>
+<p>Change the <span><span class="keyword">Site URL</span></span> property on the project to be the URL of the Developer Site.</p>
+</li></ol>
+</div>
+<h1 class="heading">Build the sample</h1>
+<div class="section" id="sectionSection4">
+<p>Build <span class="ui">RERWorkflowApp.sln</span>.</p>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection5">
+<ol>
+<li>
+<p>Open the <span class="ui">RERWorkflowApp.sln</span> and press F5 (ensuring that it has been configured to point to the Developer Site).</p>
+</li><li>
+<p>When the app deploys, it opens the home page, which contains a link to the <span class="ui">
+Announcements</span> list.</p>
+</li><li>
+<p>Click the <span class="ui">Announcements list</span> link, add a new item, and then click
+<span class="ui">Save</span>.</p>
+</li><li>
+<p>After a moment, the workflow starts by being called from the remote event receiver (which you can observe in the workflow debugging console window launched by Visual Studio).</p>
+</li><li>
+<p>Go back to the list item to see that the <span class="ui">Body</span> field was updated by the workflow.</p>
+</li></ol>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection6">
+<p>If the workflow fails, it is likely due to a misconfiguration of the certificate, registering the new trusted security token issuer, registering a new app principal, or when updating the AppManifest.xml or web.config.</p>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection7">
+<div class="caption"></div>
+<div class="tableSection">
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<td>
+<p>First release</p>
+</td>
+<td>
+<p>January 2013</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Revised</p>
+</td>
+<td>
+<p>April 2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection8">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/fp179930.aspx" >Apps for SharePoint overview</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/fp142379.aspx" >How to: Create a basic SharePoint-hosted app</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj163986.aspx" >Workflows in SharePoint 2013</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj163276.aspx" >Start: Set up and configure SharePoint 2013 Workflow Manager</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj193528(v=azure.10).aspx" >Workflow Manager 1.0</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj220043(v=office.15).aspx" >How to: Create a remote event receiver</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

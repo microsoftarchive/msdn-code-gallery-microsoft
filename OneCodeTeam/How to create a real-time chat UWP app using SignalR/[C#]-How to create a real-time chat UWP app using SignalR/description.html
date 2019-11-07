@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=46D0EADCABBE3E18DF970254C2C182AB" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=D4D084DF03A9CB234D78334671AC996E" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to create a real-time chat UWP app using SignalR</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to create a real-time chat UWP app using SignalR</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SignalR, ASP.NET SignalR, OWIN self-hosting, Universal Windows App Development, Universal Windows Platform, UWP
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SignalR, Universal Windows Platform, UWP
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Phone, Xbox, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/18/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-create-a-real-time-5626562d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="description/onecodesampletopbanner1.html" alt="">
+</a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><a name="OLE_LINK1"></a><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">How to create a real-time chat app in Universal Windows Platform using ASP.NET SignalR</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Introduction
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>This sample demonstrates how to create a real-time chat app in Universal Windows Platform using ASP.NET SignalR.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>SignalR allows bi-directional communication between server and client. Servers can now push the&nbsp;content to&nbsp;instantly connect clients&nbsp;when it becomes available.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>In this sample, we will create a self-host SignalR console app as the server and a UWP app as the client.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Building the sample</span></span></p>
+<p style="font-size:10.0pt; direction:ltr; unicode-bidi:normal; margin:0pt"><span style="font-size:12pt"><span style="font-size:10pt">This sample should be run in Microsoft Visual Studio 2015 version and Windows 10.</span></span></p>
+<p style="font-size:10.0pt; direction:ltr; unicode-bidi:normal; margin:0pt"><span style="font-size:12pt"><span style="font-size:10pt">Before you build
+</span><span style="font-size:10pt">the project, make sure you have restored all</span><span>&nbsp;</span><span style="font-size:10pt">the</span><span style="font-size:10pt"> package</span><span style="font-size:10pt">s</span><span style="font-size:10pt"> in
+ the project. </span></span></p>
+<p style="font-size:10.0pt; direction:ltr; unicode-bidi:normal; margin:0pt"><span style="font-size:12pt"><span style="font-size:10pt"><img src="description/image.png" alt="" width="609" height="527" align="middle">
+</span><a name="_GoBack"></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Running the sample</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt">&bull;&nbsp;</span><span style="font-size:10pt">Open solution in Visual Studio 2015.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt">&bull;&nbsp;</span><span style="font-size:10pt">Right-click on the solution, and select Set Startup Projects.... Select the Multiple startup projects radio button, and set both projects' Action to Start.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="font-size:10pt"><img src="description/c05f249e-0761-4c0e-ac03-954895f99560image.png" alt="" width="650" height="441" align="middle">
+</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt">&bull;&nbsp;</span><span style="font-size:10pt">Then do one of the following:</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Click the Start Debugging button on the toolbar.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Click Start Debugging in the Debug menu.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt; font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span style="font-size:10pt">Press F5.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="font-size:10pt">&bull;&nbsp;</span><span style="font-size:10pt">Input user name and group name, then click
+</span><span style="font-weight:bold; font-size:10pt">Join</span><span style="font-size:10pt"> button.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span><span><img src="description/8a90ab76-cf9e-4ee7-985e-3b807a8b2742image.png" alt="" width="593" height="427" align="middle">
+</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span><span>&bull;&nbsp;</span><span>In the chat page, input messages and then click
+</span><span style="font-weight:bold">Send</span><span style="font-weight:bold">.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span><span><img src="description/b9d06a7f-136c-4f59-b2ef-849fe95ec452image.png" alt="" width="593" height="427" align="middle">
+</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span><span>&bull;&nbsp;</span><span>Click </span><span style="font-weight:bold">Exit</span><span style="font-weight:bold">
+</span><span>to exit the chat room.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><span>CSSignalRHost project</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+ChatHub class</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">[HubName(&quot;ChatHub&quot;)]
+public class ChatHub : Hub
+{
+    /// &lt;summary&gt;
+    /// add connection to group
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;groupName&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public Task JoinGroup(string groupName)
+    {
+        return Groups.Add(Context.ConnectionId, groupName);
+    }
+
+    /// &lt;summary&gt;
+    /// remove connection from group
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;groupName&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public Task LeaveGroup(string groupName)
+    {
+        return Groups.Remove(Context.ConnectionId, groupName);
+    }
+
+    /// &lt;summary&gt;
+    /// send message to the connections in the group.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;groupName&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;userName&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;message&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;sendTime&quot;&gt;&lt;/param&gt;
+    public void SendToGroup(string groupName, string userName, string message, DateTime sendTime)
+    {
+        Clients.Group(groupName).ReceiveMessage(userName, message, sendTime);
+    }
+   
+}
+</pre>
+<div class="preview">
+<pre class="csharp">[HubName(<span class="cs__string">&quot;ChatHub&quot;</span>)]&nbsp;
+<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">class</span>&nbsp;ChatHub&nbsp;:&nbsp;Hub&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;add&nbsp;connection&nbsp;to&nbsp;group</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;groupName&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;Task&nbsp;JoinGroup(<span class="cs__keyword">string</span>&nbsp;groupName)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;Groups.Add(Context.ConnectionId,&nbsp;groupName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;remove&nbsp;connection&nbsp;from&nbsp;group</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;groupName&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;Task&nbsp;LeaveGroup(<span class="cs__keyword">string</span>&nbsp;groupName)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;Groups.Remove(Context.ConnectionId,&nbsp;groupName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;send&nbsp;message&nbsp;to&nbsp;the&nbsp;connections&nbsp;in&nbsp;the&nbsp;group.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;groupName&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;userName&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;message&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;sendTime&quot;&gt;&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;SendToGroup(<span class="cs__keyword">string</span>&nbsp;groupName,&nbsp;<span class="cs__keyword">string</span>&nbsp;userName,&nbsp;<span class="cs__keyword">string</span>&nbsp;message,&nbsp;DateTime&nbsp;sendTime)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clients.Group(groupName).ReceiveMessage(userName,&nbsp;message,&nbsp;sendTime);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Startup class</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">class Startup
+{
+    public void Configuration(IAppBuilder app)
+    {
+        app.UseCors(CorsOptions.AllowAll);
+        app.MapSignalR();
+    }
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">class</span>&nbsp;Startup&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Configuration(IAppBuilder&nbsp;app)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.UseCors(CorsOptions.AllowAll);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.MapSignalR();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">CSUWPSignalRClient</div>
+<div class="endscriptcode">Invoke SignalR method in App()</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private void SignalR()
+{
+    //Connect to the url
+    MyHubConnection = new HubConnection(&quot;http://127.0.0.1:8080&quot;);
+    //ChatHub is the hub name defined in the host program.
+    MyHubProxy = MyHubConnection.CreateHubProxy(&quot;ChatHub&quot;);
+}
+
+#endregion
+
+/// &lt;summary&gt;
+/// Initializes the singleton application object.  This is the first line of authored code
+/// executed, and as such is the logical equivalent of main() or WinMain().
+/// &lt;/summary&gt;
+public App()
+{
+    this.InitializeComponent();
+    this.Suspending &#43;= OnSuspending;
+   
+    //Initialize hub connection.
+    SignalR();
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;SignalR()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Connect&nbsp;to&nbsp;the&nbsp;url</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MyHubConnection&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HubConnection(<span class="cs__string">&quot;http://127.0.0.1:8080&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//ChatHub&nbsp;is&nbsp;the&nbsp;hub&nbsp;name&nbsp;defined&nbsp;in&nbsp;the&nbsp;host&nbsp;program.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;MyHubProxy&nbsp;=&nbsp;MyHubConnection.CreateHubProxy(<span class="cs__string">&quot;ChatHub&quot;</span>);&nbsp;
+}<span class="cs__preproc">&nbsp;
+&nbsp;
+#endregion</span>&nbsp;
+&nbsp;
+<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+<span class="cs__com">///&nbsp;Initializes&nbsp;the&nbsp;singleton&nbsp;application&nbsp;object.&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;first&nbsp;line&nbsp;of&nbsp;authored&nbsp;code</span>&nbsp;
+<span class="cs__com">///&nbsp;executed,&nbsp;and&nbsp;as&nbsp;such&nbsp;is&nbsp;the&nbsp;logical&nbsp;equivalent&nbsp;of&nbsp;main()&nbsp;or&nbsp;WinMain().</span>&nbsp;
+<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+<span class="cs__keyword">public</span>&nbsp;App()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.InitializeComponent();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.Suspending&nbsp;&#43;=&nbsp;OnSuspending;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Initialize&nbsp;hub&nbsp;connection.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;SignalR();&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Connect to hub and join in the group&nbsp;</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private async void btnJoin_Click(object sender, RoutedEventArgs e)
+{
+    btnJoin.IsEnabled = false;
+    tbxError.Text = string.Empty;
+    string groupName = tbxGroup.Text.Trim();
+    string userName = tbxName.Text.Trim();
+    if (groupName.Length == 0 || userName.Length == 0)
+    {
+        tbxError.Text = &quot;Group &amp; user name can't be empty.&quot;;
+        btnJoin.IsEnabled = true;
+        return;
+    }
+    //Connect to hub
+    App myApp = (Application.Current as App);
+    if (myApp.MyHubConnection.State != ConnectionState.Connected)
+    {
+        try
+        {
+            await myApp.MyHubConnection.Start();
+        }
+        catch
+        {
+            tbxError.Text = $&quot;Can't connect to server {myApp.MyHubConnection.Url}&quot;;
+            btnJoin.IsEnabled = true;
+            return;
+        }
+    }
+    //join to group
+    if (myApp.MyHubConnection.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+    {
+        await myApp.MyHubProxy.Invoke(&quot;JoinGroup&quot;, groupName);
+        dynamic info = new { groupName = groupName, userName = userName };
+        Frame.Navigate(typeof(ChatRoom), info);
+    }
+    else
+    {
+        tbxError.Text = $&quot;Can't connect to server {myApp.MyHubConnection.Url}&quot;;
+    }
+    btnJoin.IsEnabled = true;
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;async&nbsp;<span class="cs__keyword">void</span>&nbsp;btnJoin_Click(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;RoutedEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;btnJoin.IsEnabled&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;tbxError.Text&nbsp;=&nbsp;<span class="cs__keyword">string</span>.Empty;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;groupName&nbsp;=&nbsp;tbxGroup.Text.Trim();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;userName&nbsp;=&nbsp;tbxName.Text.Trim();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(groupName.Length&nbsp;==&nbsp;<span class="cs__number">0</span>&nbsp;||&nbsp;userName.Length&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tbxError.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Group&nbsp;&amp;&nbsp;user&nbsp;name&nbsp;can't&nbsp;be&nbsp;empty.&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnJoin.IsEnabled&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//Connect&nbsp;to&nbsp;hub</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;App&nbsp;myApp&nbsp;=&nbsp;(Application.Current&nbsp;<span class="cs__keyword">as</span>&nbsp;App);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(myApp.MyHubConnection.State&nbsp;!=&nbsp;ConnectionState.Connected)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;myApp.MyHubConnection.Start();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tbxError.Text&nbsp;=&nbsp;$<span class="cs__string">&quot;Can't&nbsp;connect&nbsp;to&nbsp;server&nbsp;{myApp.MyHubConnection.Url}&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnJoin.IsEnabled&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//join&nbsp;to&nbsp;group</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(myApp.MyHubConnection.State&nbsp;==&nbsp;Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;myApp.MyHubProxy.Invoke(<span class="cs__string">&quot;JoinGroup&quot;</span>,&nbsp;groupName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dynamic&nbsp;info&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;{&nbsp;groupName&nbsp;=&nbsp;groupName,&nbsp;userName&nbsp;=&nbsp;userName&nbsp;};&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame.Navigate(<span class="cs__keyword">typeof</span>(ChatRoom),&nbsp;info);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tbxError.Text&nbsp;=&nbsp;$<span class="cs__string">&quot;Can't&nbsp;connect&nbsp;to&nbsp;server&nbsp;{myApp.MyHubConnection.Url}&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;btnJoin.IsEnabled&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Receive message handler</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private async void ReceiveMessage(string userName, string message,DateTime sendTime)
+{
+    await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+    {
+        this.lvwMessages.Items.Add($&quot;{sendTime.ToString(&quot;MM-dd HH:mm:ss&quot;)}\n{userName}: {message}&quot;);
+    });
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;async&nbsp;<span class="cs__keyword">void</span>&nbsp;ReceiveMessage(<span class="cs__keyword">string</span>&nbsp;userName,&nbsp;<span class="cs__keyword">string</span>&nbsp;message,DateTime&nbsp;sendTime)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,&nbsp;()&nbsp;=&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.lvwMessages.Items.Add($<span class="cs__string">&quot;{sendTime.ToString(&quot;</span>MM-dd&nbsp;HH:mm:ss<span class="cs__string">&quot;)}\n{userName}:&nbsp;{message}&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">More information</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span><a href="https://code.msdn.microsoft.com/How-to-create-a-real-time-5626562d/https://www.asp.net/signalr/overview/getting-started"><span style="color:#0563c1; text-decoration:underline">ASP.NET SignalR</span></a></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
+<span>&nbsp;</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/1c632409-36a9-4686-9d47-11ccea387278image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

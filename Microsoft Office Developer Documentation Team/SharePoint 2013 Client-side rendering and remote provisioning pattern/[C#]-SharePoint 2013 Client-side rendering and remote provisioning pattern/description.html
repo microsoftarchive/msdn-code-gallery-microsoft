@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=62DBC035A4A8AD76676CA11B61CB6C59" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/864b28d2-6c07-40ad-9fde-ae6fe9b5b8ecCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=46CB1877D3C0B7D6D06D21CECE7C9CAB" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Client-side rendering and remote provisioning pattern</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Client-side rendering and remote provisioning pattern</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint Server 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Client Side Rendering, JSLink
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/10/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<div id="header">
+<table id="bottomTable" cellspacing="0" cellpadding="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left"><span id="runningHeaderText">&nbsp;</span></td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><strong><span id="nsrTitle" style="font-size:small">SharePoint 2013: Client-side rendering and remote provisioning of SharePoint artifacts and JSLink files</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<div class="summary">
+<p><strong>Summary: </strong>This sample demonstrates how to use a provider-hosted app to remotely provision SharePoint artifacts and JSLink files that use client-side rendering to customize the look and behavior of SharePoint lists, list fields, etc.</p>
+</div>
+<div class="introduction">
+<p><strong>Last modified: </strong>September 08, 2014</p>
+<p><em><strong>Applies to: </strong>apps for SharePoint&nbsp;| SharePoint Server 2013</em></p>
+<p><strong>In this article</strong><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_Prereq">Prerequisites</a><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_components">Key components</a><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_config">Configure the sample</a><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_test">Run and test the sample</a><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_Changelog">Change log</a><br>
+<a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/file://ipoawsfs201/DropZone/Rawhide/FileDropOff/Readmes_SP15_Beta2/Jimcrowley/Branding.ClientSideRendering/Branding.ClientSideRendering.htm#O15Readme_RelatedContent">Related content</a></p>
+<p>This sample combines the JSLink samples from <a href="http://code.msdn.microsoft.com/office/Client-side-rendering-JS-2ed3538a" >
+Muawiyah Shannak's Client-side rendering (JSLink) code samples</a> into a single provider-hosted app for SharePoint that provisions the JSLink files. This sample demonstrates how the remote provisioning pattern may be used to deploy client-side rendering components
+ and associate them with views and forms in a SharePoint list.</p>
+<p>Client-side rendering provides you with a mechanism that allows you to render customized output for a set of controls that are hosted in a SharePoint page (list views, add and edit forms, etc.). This mechanism enables you to use standard web technologies,
+ such as HTML and JavaScript, to define the rendering logic of custom and predefined field types.</p>
+<p>You can see the GitHub version of this sample in the <a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/https://github.com/OfficeDev/PnP/tree/master/Samples/Branding.ClientSideRendering" >
+Office365 Development Patterns and Practices</a> repository.</p>
+<div class="alert">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+<tr>
+<td>
+<p>The <a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/https://github.com/SPCSR/DisplayTemplates" >DisplayTemplates repository on GitHub</a> contains a number of JSLink display template samples that have been created by the SharePoint community.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<a name="O15Readme_Prereq">
+<h2 class="heading">Prerequisites</h2>
+<div class="section" id="sectionSection0">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>An Office 365 Developer Site</p>
+</li><li>
+<p>Visual Studio 2013 and Office Developer Tools for Visual Studio 2013 installed on your development computer</p>
+</li></ul>
+</div>
+</a><a name="O15Readme_components"></a>
+<h2 class="heading"><a name="O15Readme_components">Key components</a><a name="O15Readme_components" style="font-size:10px">
+<div class="section" id="sectionSection1" style="display:inline!important">
+<p style="display:inline!important">&nbsp;</p>
+</div>
+</a></h2>
+<div class="section" id="sectionSection1">
+<ul>
+<li>
+<p><strong>Branding.ClientSideRendering</strong> project, which contains:</p>
+<p><strong>AppManifest.xml</strong>: The configuration file that defines the app as a provider-hosted app for SharePoint.</p>
+</li><li>
+<p><strong>Branding.ClientSideRenderingWeb</strong> project, which contains:</p>
+<ul>
+<li>
+<p><strong>Pages\Default.aspx</strong>. The starter page that presents links to all of the JSLink samples.</p>
+</li><li>
+<p><strong>Pages\Default.aspx.cs</strong>. The file that contains the code that uploads the JSLink samples and remotely provisions all of the SharePoint artifacts (lists, list items, list views, etc.) that are affected by the JSLink files.</p>
+</li><li>
+<p><strong>Web.config</strong>. Stores the client id and client secret.</p>
+</li></ul>
+</li></ul>
+</div>
+<a name="O15Readme_config">
+<h2 class="heading">Configure the sample</h2>
+<div class="section" id="sectionSection2">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<p>Open the <strong>Branding.ClientSideRendering.sln</strong> file in Visual Studio 2013.</p>
+</li><li>
+<p>In the <span class="ui">Properties</span> pane, change the <span class="ui">
+Site URL</span> property. It is the absolute URL of your SharePoint test site collection on Office 365:
+<span class="code">https://</span><span class="placeholder">&lt;my tenant&gt;</span><span class="code">.sharepoint.com/sites/dev</span>.</p>
+<p>You may be prompted to enter your user name and password to log in to your developer site.</p>
+</li></ol>
+</div>
+</a><a name="O15Readme_test">
+<h2 class="heading">Run and test the sample</h2>
+<div class="section" id="sectionSection3">
+<ol>
+<li>
+<p>In Visual Studio 2013, press F5. The trust dialog will appear in your web browser. Figure 1 shows how this dialog will appear.</p>
+<div class="caption">Figure 1: Client-side rendering trust dialog</div>
+<br>
+<img id="125126" src="description/SP15_clientrenderingperms.png" alt="" width="561" height="242">
+</li><li>
+<p>In the trust dialog, click the <span class="ui">Trust It</span> button. The start page of the provider-hosted app will appear in your web browser.</p>
+</li><li>
+<p>On the start page of the app, click the Provision Samples button. This remotely provisions all of the JSLink files and SharePoint artifacts that the sample requires.</p>
+<div class="caption">Figure 2: Client-side rendering start page and provision samples button</div>
+<br>
+<img id="125127" src="description/SP15_clientrenderingstart.png" alt="" width="574" height="434">
+</li><li>
+<p>After the app has finished provisioning the samples, use the links to view each JSLink sample.</p>
+</li></ol>
+</div>
+</a><a name="O15Readme_Changelog">
+<h2 class="heading">Change log</h2>
+<div class="section" id="sectionSection4">
+<div class="caption"></div>
+<div class="tableSection">
+<table cellspacing="2" cellpadding="5" width="50%" frame="lhs">
+<tbody>
+<tr>
+<th>
+<p style="text-align:left"><span style="font-size:x-small">Version</span></p>
+</th>
+<th>
+<p style="text-align:left"><span style="font-size:x-small">Date</span></p>
+</th>
+</tr>
+<tr>
+<td>
+<p>First version</p>
+</td>
+<td>
+<p>September 2013</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</a><a name="O15Readme_RelatedContent">
+<h2 class="heading">Related content</h2>
+</a>
+<div class="section" id="sectionSection5"><a name="O15Readme_RelatedContent"></a>
+<ul>
+<a name="O15Readme_RelatedContent"></a>
+<li><a name="O15Readme_RelatedContent"></a>
+<p><a name="O15Readme_RelatedContent"></a><a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/https://github.com/OfficeDev/PnP/tree/master/Samples/Branding.ClientSideRendering" >Office365 Development Patterns and Practices</a></p>
+</li><li>
+<p><a href="http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/http://code.msdn.microsoft.com/SharePoint-2013-Client-0621131d/https://github.com/SPCSR/DisplayTemplates" >DisplayTemplates repository on GitHub</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/magazine/dn745867.aspx" >Using JSLink with SharePoint 2013</a></p>
+</li><li>
+<p><a href="http://code.msdn.microsoft.com/office/Client-side-rendering-JS-2ed3538a" >Client-side rendering (JSLink) code samples</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

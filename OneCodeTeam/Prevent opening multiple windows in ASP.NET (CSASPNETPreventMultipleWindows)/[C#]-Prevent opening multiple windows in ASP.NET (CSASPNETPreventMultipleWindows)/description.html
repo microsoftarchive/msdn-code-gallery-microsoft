@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Prevent opening multiple windows in ASP.NET (CSASPNETPreventMultipleWindows)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Prevent opening multiple windows in ASP.NET (CSASPNETPreventMultipleWindows)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Popup Window
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETPreventMultipleWind-b1dd2bd6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>CSASPNETPreventMultipleWindows Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Use:</h3>
+<p style="font-family:Courier New"><br>
+The project illustrates how to detect and prevent multiple windows or <br>
+tab usage in Web Applications.<br>
+<br>
+Demo the Sample. <br>
+<br>
+Please follow these demonstration steps below.<br>
+<br>
+Step 1: Open the CSASPNETPreventMultipleWindows.sln.<br>
+<br>
+Step 2: Expand the CSASPNETPreventMultipleWindows web application and press <br>
+&nbsp; &nbsp; &nbsp; &nbsp;Ctrl &#43; F5 to show the Default.aspx.<br>
+<br>
+Step 3: We will see two links on the page. First, you can Left click one<br>
+&nbsp; &nbsp; &nbsp; &nbsp;of them jump to correct link(Like Nextlink.aspx and Nextlink2.aspx).<br>
+<br>
+Step 4: Then, you can right click these links and choose Open In New Tab <br>
+&nbsp; &nbsp; &nbsp; &nbsp;or Open In New Window,and you will find the link not available.<br>
+<br>
+Step 5: you can even copy the right url and Paste it in the browser address bar for
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;test.but you can not achieve your goal.<br>
+<br>
+Step 6: Validation finished.<br>
+</p>
+<h3>Code Logical:</h3>
+<p style="font-family:Courier New"><br>
+Step 1. Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2010 or<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Visual Web Developer 2010. Name it as &quot;CSASPNETPreventMultipleWindows&quot;.<br>
+<br>
+Step 2. Add one folder, &quot;UserControls&quot;.Add two User Controls in this folder,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&quot;DefaultPage.ascx&quot;,&quot;NextPage.ascx&quot;.<br>
+<br>
+Step 3. Add five web forms in the root directory,&quot;Default.aspx&quot;,&quot;InvalidPage.aspx&quot;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;,&quot;Main.aspx&quot;,&quot;NextLink.aspx&quot;,&quot;NextLink2.aspx&quot;.<br>
+<br>
+Step 4. Move DefaultPage.ascx user control on Default.aspx file and move<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NextPage.ascx user control on all other files extension name are &quot;.aspx&quot;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Defalut.aspx.cs page, we have a method generate unique random number:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[code]<br>
+&nbsp; &nbsp; &nbsp; &nbsp;public string GetWindowName()<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;string WindowName = Guid.NewGuid().ToString().Replace(&quot;-&quot;, &quot;&quot;);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Session[&quot;WindowName&quot;] = WindowName;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return WindowName;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[/code]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And window.name will recieve this unique string,we use window.name to prevent<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mutiple windows and tabs. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[code]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//set window.name property<br>
+&nbsp; &nbsp; &nbsp; &nbsp;window.open(&quot;Main.aspx&quot;, &quot;&lt;%=GetWindowName() %&gt;&quot;);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //If this window name not equal to sessions,will be goto InvalidPage<br>
+&nbsp; &nbsp; &nbsp; if (window.name != &quot;&lt;%=GetWindowName()%&gt;&quot;) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;window.name = &quot;InvalidPage&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;window.open(&quot;InvalidPage.aspx&quot;,&quot;_self&quot;); &nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [/code]<br>
+<br>
+Step 5. Write the codes like the sample.you can get more details from comments in<br>
+&nbsp; &nbsp; &nbsp; &nbsp;the sample file.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+Step 6. Build the application and you can debug it.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: User control<br>
+<a  href="http://msdn.microsoft.com/en-us/library/fb3w5b53.aspx">http://msdn.microsoft.com/en-us/library/fb3w5b53.aspx</a><br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

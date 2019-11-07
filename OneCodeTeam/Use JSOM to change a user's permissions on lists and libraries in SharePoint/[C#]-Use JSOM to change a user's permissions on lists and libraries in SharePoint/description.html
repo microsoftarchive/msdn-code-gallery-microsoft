@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Use JSOM to change a user&#39;s permissions on lists and libraries in SharePoint</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Use JSOM to change a user&#39;s permissions on lists and libraries in SharePoint</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint, SharePoint 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            JSON, Permission
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/22/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-use-JSOM-to-change-f9fb89a5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to use JSOM to change a user's permissions on lists and libraries in SharePoint (SPSChangeUserListPermission)</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">&nbsp;</span><span>This sample demonstrates how to use JavaScript Object Model to change user permission on list or library.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Running the Sample</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">Open the project by double-click</span><span style="font-size:11pt">ing</span><span style="font-size:11pt"> the SPSChangeUserListPermission</span><span style="font-size:11pt">.</span><span style="font-size:11pt">sln.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">Locate the CSSPSChangeUserListPermission folders under the Layouts folder.</span><span style="font-size:11pt"> Open the ChangePermissions.aspx page. In the
+</span><span style="font-size:11pt">CustomPermission function, </span><span style="font-weight:bold">modify the</span><span style="font-weight:bold"> following variables to yours</span><span style="font-size:11pt">:</span><span style="font-size:11pt"> list
+</span><span style="font-size:11pt">name (</span><span style="font-size:11pt">RatingList in this sample)</span><span style="font-size:11pt">, username (</span><span style="font-size:11pt">domain\username)</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">and the </span><span style="font-size:11pt">RoleType (</span><span style="font-weight:bold">SP.RoleType.contributor</span><span style="font-size:11pt"> in this sample)</span><span style="font-size:11pt">.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">In the Solution Explorer window, right-click the project name and then click Deploy.
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">View the ChangePermissions page in the web browser</span><span style="font-size:11pt">.</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">T</span><span style="font-size:11pt">he link resembles the following:</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-weight:bold; text-decoration:underline">Yoursite/_layouts/15/CSSPSChangeUserListPermission/changepermissions.aspx</span><span style="font-size:11pt">.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-weight:bold">B</span><span style="font-weight:bold">efore</span><span style="font-size:11pt"> running the changepermissions page, we will have
+</span><span style="font-size:11pt">list permissions</span><span style="font-size:11pt"> as</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">shown </span><span style="font-size:11pt">below:</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><img src="description/image.png" alt="" width="575" height="267" align="middle">
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-weight:bold">After</span><span style="font-size:11pt"> run</span><span style="font-size:11pt">ning</span><span style="font-size:11pt"> the changepermissions page,
+</span><span style="font-size:11pt">we will get</span><span style="font-size:11pt"> list permissions</span><span style="font-size:11pt"> of new levels</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">as shown below</span><span style="font-size:11pt">:</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><img src="description/3a88c848-cab9-4af4-9144-98a5fb1b7456image.png" alt="" width="501" height="165" align="middle">
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">Validation</span><span style="font-size:11pt"> is</span><span style="font-size:11pt"> finished.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Using the Code</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>Start </span><span style="font-weight:bold">Visual Studio</span><span>.
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>On the </span><span style="font-weight:bold">File</span><span> menu, click
+</span><span style="font-weight:bold">New</span><span>, and then click </span><span style="font-weight:bold">Project</span><span>.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>In </span><span>the Installed Templates section</span><span>
+</span><span>of </span><span>the </span><span style="font-weight:bold">New</span><span>
+</span><span style="font-weight:bold">Project</span><span> dialog box,</span><span> expand either Visual Basic or Visual C#, expand
+</span><span style="font-weight:bold">SharePoint</span><span>, and then click </span>
+<span style="font-weight:bold">Empty SharePoint Project</span><span>.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>Right-click the project to add the desired folder.
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span>&quot;</span><span style="font-weight:bold">Add</span><span>&quot;</span><span>
+</span><span>&gt;&gt;</span><span>&quot;</span><span style="font-weight:bold">SharePoint Layouts Mapped Folder</span><span>&quot;.
+</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>Right-click the &quot;</span><span style="font-weight:bold">Layouts</span><span>&quot; folder then add a new folder named &quot;</span><span>ChangeUserListPermission</span><span>&quot;, then add a new Page named &quot;</span><span>ChangePermissions</span><span>.aspx&quot;.</span></span></p>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span>Add </span><span>references</span><span> to relevant JavaScript files to the page:</span><span>
+</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">html</span>
+<pre class="hidden">&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/_layouts/15/sp.runtime.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/_layouts/15/sp.js&quot;&gt;&lt;/script&gt;
+&lt;% #if SOME_UNDEFINED_CONSTANT %&gt; 
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.core.debug.js&quot; &gt;&lt;/script&gt;
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.runtime.debug.js&quot; &gt;&lt;/script&gt;
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.debug.js&quot; &gt;&lt;/script&gt;
+&lt;% #endif %&gt;
+</pre>
+<pre class="html" id="codePreview">&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/_layouts/15/sp.runtime.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/_layouts/15/sp.js&quot;&gt;&lt;/script&gt;
+&lt;% #if SOME_UNDEFINED_CONSTANT %&gt; 
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.core.debug.js&quot; &gt;&lt;/script&gt;
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.runtime.debug.js&quot; &gt;&lt;/script&gt;
+&lt;script type=&quot;text/ecmascript&quot; src=&quot;/_layouts/SP.debug.js&quot; &gt;&lt;/script&gt;
+&lt;% #endif %&gt;
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">And then use the following script to handle the operation:</span><span style="font-size:11pt">
+</span></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">&lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function () {
+            // Call the function.
+            CustomPermission();
+        });
+        // Web of current client context.
+        var web;
+        // The list\Library will be operation.
+        var oList;
+        // The user will be operation.
+        var oUser;
+        // The roles will be operation.
+        var roles;
+        function CustomPermission() {
+            // Get current client context.
+            var clientContext = new SP.ClientContext.get_current();
+            // Get current web.
+            this.web = clientContext.get_web();
+            // Provide the existing list name.
+            this.oList = this.web.get_lists().getByTitle('RatingList');
+            // Break the inheritance. 
+            this.oList.breakRoleInheritance(false, true);
+            // Get the user(domain\username).
+            this.oUser = this.web.ensureUser(&quot;seiyasu\\seiya&quot;);
+            // Define the roles that will be operation.
+            this.roles = SP.RoleDefinitionBindingCollection.newObject(clientContext);
+            this.roles.add(web.get_roleDefinitions().getByType(SP.RoleType.contributor));
+            // Register the role for the user.
+            this.oList.get_roleAssignments().add(this.oUser, this.roles)
+            clientContext.load(this.web);
+            clientContext.load(this.oUser);
+            clientContext.load(this.oList);
+            //Make a query call to execute the above statements
+            clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySuccess),
+                Function.createDelegate(this, this.onQueryFailure));
+        }
+      
+        function onQuerySuccess() {
+            $('#message').text('Updated');
+        }
+        function onQueryFailure(sender, args) {
+            alert('Request failed. ' &#43; args.get_message() &#43; '\n' &#43; args.get_stackTrace());
+        }
+&lt;/script&gt; 
+</pre>
+<pre class="js" id="codePreview">&lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function () {
+            // Call the function.
+            CustomPermission();
+        });
+        // Web of current client context.
+        var web;
+        // The list\Library will be operation.
+        var oList;
+        // The user will be operation.
+        var oUser;
+        // The roles will be operation.
+        var roles;
+        function CustomPermission() {
+            // Get current client context.
+            var clientContext = new SP.ClientContext.get_current();
+            // Get current web.
+            this.web = clientContext.get_web();
+            // Provide the existing list name.
+            this.oList = this.web.get_lists().getByTitle('RatingList');
+            // Break the inheritance. 
+            this.oList.breakRoleInheritance(false, true);
+            // Get the user(domain\username).
+            this.oUser = this.web.ensureUser(&quot;seiyasu\\seiya&quot;);
+            // Define the roles that will be operation.
+            this.roles = SP.RoleDefinitionBindingCollection.newObject(clientContext);
+            this.roles.add(web.get_roleDefinitions().getByType(SP.RoleType.contributor));
+            // Register the role for the user.
+            this.oList.get_roleAssignments().add(this.oUser, this.roles)
+            clientContext.load(this.web);
+            clientContext.load(this.oUser);
+            clientContext.load(this.oList);
+            //Make a query call to execute the above statements
+            clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySuccess),
+                Function.createDelegate(this, this.onQueryFailure));
+        }
+      
+        function onQuerySuccess() {
+            $('#message').text('Updated');
+        }
+        function onQueryFailure(sender, args) {
+            alert('Request failed. ' &#43; args.get_message() &#43; '\n' &#43; args.get_stackTrace());
+        }
+&lt;/script&gt; 
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt"><span>&bull;&nbsp;</span><span style="font-size:11pt">Now</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">y</span><a name="_GoBack"></a><span style="font-size:11pt">ou can build and debug it.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">More Information</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">SharePoint 2013 .NET Server, CSOM, JSOM, and REST API index</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/office/dn268594(v=office.15).aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/office/dn268594(v=office.15).aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">How to: Add and Remove Mapped Folders</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/ee231521.aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/ee231521.aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">SP.ClientContext Class</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/office/ff408569(v=office.14).aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/office/ff408569(v=office.14).aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">SPRoleType enumeration</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.sproletype.aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.sproletype.aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">SP.RoleDefinitionBindingCollection Class</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/office/ff410029(v=office.14).aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/office/ff410029(v=office.14).aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">How to: Work with Roles Using JavaScript</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/office/hh185014(v=office.14).aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/office/hh185014(v=office.14).aspx</span></a><span style="font-size:11pt">
+<br>
+</span><span style="font-size:11pt">SPRoleDefinitionCollection class</span><span style="font-size:11pt">
+<br>
+</span><a href="http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.sproledefinitioncollection(v=office.15).aspx" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.sproledefinitioncollection(v=office.15).aspx</span></a><span style="font-size:11pt">
+<br>
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><br>
+</span></span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/c8b92ea2-6f97-448d-a46f-858795e4fee1image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

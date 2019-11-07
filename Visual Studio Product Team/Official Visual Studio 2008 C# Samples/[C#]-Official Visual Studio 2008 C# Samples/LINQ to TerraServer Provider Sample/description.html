@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>LINQ to TerraServer Provider Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>LINQ to TerraServer Provider Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Web Serives
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/30/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/LINQ-to-TerraServer-d6f7873b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div class="Section1">
+<p class="Heading11" style="margin-left:0in">LINQ to TerraServer Provider Sample</p>
+<p class="Normal1">This sample is a custom LINQ provider for the TerraServer-USA Web service. It also contains a sample client application that uses the custom LINQ provider to query the Web service for geographical data.</p>
+<p class="Normal1">The TerraServer-USA Web service exposes a method that returns information about locations in the &lt;st1:place w:st=&quot;on&quot;&gt;&lt;st1:country-region w:st=&quot;on&quot;&gt;United States&lt;/st1:country-region&gt;&lt;/st1:place&gt; when the method is
+ given part or all of a location name. This method, which is named <span class="SpellE">
+<span class="CodeEmbedded">GetPlaceList</span></span>, is the method that the LINQ provider calls to obtain the data that the LINQ query is run against. The provider uses Windows Communication Foundation (WCF) to communicate with the Web service. For more
+ information about the TerraServer-USA Web service, see <span lang="DE"><a href="http://terraserver.microsoft.com/webservices.aspx"><span lang="EN-US" style="font-family:">Overview of the TerraServer-USA Web Services</span></a></span>.</p>
+<p class="Normal1">A LINQ provider that implements the <span class="SpellE"><strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IQueryable.aspx"  title="Auto generated link to System.Linq.IQueryable">System.Linq.IQueryable</a></strong></span><strong>&lt;T&gt;</strong> interface, such as this one, enables LINQ queries to be written against the data source that the provider
+ connects to. A provider may execute the query functionality on the data itself, or it may translate the LINQ query into a query language that is appropriate for the data source that it connects to. This provider obtains raw data from the Web service and then
+ modifies the original query in such a way that LINQ to Objects handles the query execution.</p>
+<p class="Normal1"><strong>Security Note</strong>:</p>
+<p class="Normal1">This sample code is intended to illustrate a concept, and it shows only the code that is relevant to that concept. It may not meet the security requirements for a specific environment, and it should not be used exactly as shown. We recommend
+ that you add security and error-handling code to make your projects more secure and robust. Microsoft provides this sample code &quot;AS IS&quot; with no warranties.</p>
+<p class="Heading21" style="margin-left:0in">Requirements</p>
+<p class="Normal1">You need the following components to run this sample:</p>
+<p class="BulletedList1"><span style="font-family:Symbol">&middot;</span><span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Visual Studio 2008</p>
+<p class="Heading21" style="margin-left:0in">To run the client application in Visual Studio</p>
+<p class="NumberedList1">1.<span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;
+</span>Open the file <span class="SpellE">LinqToTerraServerProvider.sln</span> with Visual Studio.</p>
+<p class="NumberedList1">2.<span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;
+</span>Press <strong><span style="color:gray">F5</span></strong> to run the application.</p>
+<p class="Heading21" style="margin-left:0in">File Descriptions</p>
+<p class="Normal1">The following table lists the files in the <span class="SpellE">
+<strong>LinqToTerraServerProvider</strong></span> project.</p>
+<p class="TableSpacing"><a name="ddue_InsertableRange">&nbsp;</a></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="609" style="width:456.8pt; border-collapse:collapse">
+<tbody>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">File</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border:solid silver 1.0pt; border-left:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">Description</span></p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">Evaluator.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Partially evaluates the query's expression tree. This translates all local variable references in the LINQ query into values.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">ExpressionTreeHelpers.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains methods that can be used to determine information about and extract data from specific types of expression trees.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">ExpressionTreeModifier.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">An expression tree visitor subclass that modifies the expression tree that represents the complete LINQ query.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">ExpressionVisitor.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">The base expression tree visitor class.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">InnermostWhereFinder.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">An expression tree visitor subclass that finds the expression in the query's expression tree that represents the innermost call to the
+<span class="SpellE"><strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.Queryable.Where.aspx"  title="Auto generated link to System.Linq.Queryable.Where">System.Linq.Queryable.Where</a></strong></span> method. This innermost expression is the expression that the provider extracts the search locations from.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">InvalidQueryException.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Defines an exception that is thrown when an invalid query is submitted.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">LocationFinder.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">An expression tree visitor subclass that extracts location information from the LINQ query to use in the Web service request. This class understands location information that is provided in one of the following forms:</p>
+<p class="BulletedList2"><span style="font-family:Symbol">&middot;</span><span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>An equality expression, for example <span class="SpellE"><span class="CodeEmbedded">place.Name</span></span><span class="CodeEmbedded"> == &quot;&lt;st1:city w:st=&quot;on&quot;&gt;&lt;st1:place w:st=&quot;on&quot;&gt;Seattle&lt;/st1:place&gt;&lt;/st1:city&gt;&quot;</span>.</p>
+<p class="BulletedList2"><span style="font-family:Symbol">&middot;</span><span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A method call expression for the method <span class="SpellE"><strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.String.StartsWith.aspx"  title="Auto generated link to System.String.StartsWith">System.String.StartsWith</a></strong></span>, for example
+<span class="SpellE"><span class="CodeEmbedded">place.Name.StartsWith</span></span><span class="CodeEmbedded">(&quot;Seat&quot;)</span>.</p>
+<p class="BulletedList2"><span style="font-family:Symbol">&middot;</span><span style="font-size:7.0pt; font-family:">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A method call expression for the method <span class="SpellE"><strong><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.Enumerable.Contains.aspx"  title="Auto generated link to System.Linq.Enumerable.Contains">System.Linq.Enumerable.Contains</a></strong></span><strong>&lt;T&gt;</strong> or
+<span class="SpellE"><strong>System.Collections.Generic.List</strong></span><strong>&lt;T&gt;.Contains</strong>, for example
+<span class="SpellE"><span class="CodeEmbedded">placeList.Contains</span></span><span class="CodeEmbedded">(<span class="SpellE">place.Name</span>)</span>.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">Place.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Defines a custom .NET type to represent the data from the Web service.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">QueryableTerraServerData.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains the type the client query defines queries against. This type implements
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IOrderedQueryable.aspx"  title="Auto generated link to System.Linq.IOrderedQueryable">System.Linq.IOrderedQueryable</a></span></strong></span><strong><span style="color:black">&lt;T&gt;</span></strong> to support sort operations in the query. Because
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IOrderedQueryable.aspx"  title="Auto generated link to System.Linq.IOrderedQueryable">System.Linq.IOrderedQueryable</a></span></strong></span><strong><span style="color:black">&lt;T&gt;</span></strong> derives from
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IQueryable.aspx"  title="Auto generated link to System.Linq.IQueryable">System.Linq.IQueryable</a></span></strong></span><strong><span style="color:black">&lt;T&gt;</span></strong>, by implementing
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IOrderedQueryable.aspx"  title="Auto generated link to System.Linq.IOrderedQueryable">System.Linq.IOrderedQueryable</a></span></strong></span><strong><span style="color:black">&lt;T&gt;</span></strong> this type also implements
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IQueryable.aspx"  title="Auto generated link to System.Linq.IQueryable">System.Linq.IQueryable</a></span></strong></span><strong><span style="color:black">&lt;T&gt;</span></strong>.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">TerraServerQueryContext.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains a class that organizes the work of executing a query.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">TerraServerQueryProvider.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains the type that implements the <span class="SpellE">
+<strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.IQueryProvider.aspx"  title="Auto generated link to System.Linq.IQueryProvider">System.Linq.IQueryProvider</a></span></strong></span> interface. The methods that this interface defines are called by the standard query operator methods that are defined in
+<span class="SpellE"><strong><span style="color:black"><a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Linq.Queryable.aspx"  title="Auto generated link to System.Linq.Queryable">System.Linq.Queryable</a></span></strong></span>, to execute the query.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">TypeSystem.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">This helper class implements a method that is used to supply the element type of the generic collection that contains the query results.</p>
+</td>
+</tr>
+<tr>
+<td width="224" valign="top" style="width:167.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">WebServiceHelper.cs</span></p>
+</td>
+<td width="385" valign="top" style="width:289.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Obtains data from the Web service. This code contains two checks that enhance the usability of the provider library. The first check limits the maximum time that a client application will wait for a response by limiting the total number
+ of calls that are made to the Web service, per query, to five. The second check determines whether the number of results returned by the Web service is equal to the maximum number of results that it can return. If the number of results is the maximum number,
+ it is likely that the results from the Web service are truncated. Instead of returning an incomplete list to the client, the provider throws an exception.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="TableSpacing">&nbsp;</p>
+<p class="Normal1">The following table lists the files in the <span class="SpellE">
+<strong>ClientApp</strong></span> project.</p>
+<p class="TableSpacing">&nbsp;</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="609" style="width:456.8pt; border-collapse:collapse">
+<tbody>
+<tr>
+<td width="92" valign="top" style="width:68.75pt; border:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">File</span></p>
+</td>
+<td width="517" valign="top" style="width:388.05pt; border:solid silver 1.0pt; border-left:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">Description</span></p>
+</td>
+</tr>
+<tr>
+<td width="92" valign="top" style="width:68.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">Program.cs</span></p>
+</td>
+<td width="517" valign="top" style="width:388.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains three example LINQ queries that query the <span class="SpellE">
+<span class="CodeEmbedded">QueryableTerraServerData</span></span> type defined in the
+<span class="SpellE">LinqToTerraServerProvider</span> project.</p>
+</td>
+</tr>
+<tr>
+<td width="92" valign="top" style="width:68.75pt; border:solid silver 1.0pt; border-top:none; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1"><span lang="DE">app.config</span></p>
+</td>
+<td width="517" valign="top" style="width:388.05pt; border-top:none; border-left:none; border-bottom:solid silver 1.0pt; border-right:solid silver 1.0pt; padding:0in 5.75pt 0in 5.75pt">
+<p class="Normal1">Contains an endpoint that defines how the application should communicate with the Web service.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="TableSpacing">&nbsp;</p>
+<p class="Normal1">For a more detailed discussion of the design of this custom LINQ provider, see the topic titled
+<span class="Italic"><span style="font-family:Verdana; color:windowtext">Walkthrough: Creating an
+<span class="SpellE">IQueryable</span> LINQ Provider</span></span> in the <span lang="DE">
+<a href="http://msdn2.microsoft.com/en-us/library/default.aspx"><span lang="EN-US">MSDN Library</span></a></span>.</p>
+<p class="MsoNormal">&nbsp;</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

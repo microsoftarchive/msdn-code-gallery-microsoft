@@ -1,0 +1,10 @@
+﻿/* CSS applied to the ListViews in this sample */
+
+.scenario5.win-listview .win-item {
+    padding: 10px;
+}
+
+.scenario5.win-listview .win-container {
+    height: 180px;
+    width: 180px;
+}

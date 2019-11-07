@@ -1,0 +1,6 @@
+﻿/* styles */
+
+/* enable pinch zooming */
+body {
+    -ms-content-zooming: zoom;
+}

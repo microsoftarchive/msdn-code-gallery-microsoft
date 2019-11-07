@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="DirectXFractal.cpp" />
+    <ClCompile Include="DirectXApp.cpp" />
+    <ClCompile Include="SampleOverlay.cpp" />
+    <ClCompile Include="DirectXBase.cpp" />
+    <ClCompile Include="BasicTimer.cpp" />
+    <ClCompile Include="BasicLoader.cpp" />
+    <ClCompile Include="DDSTextureLoader.cpp" />
+    <ClCompile Include="BasicReaderWriter.cpp" />
+    <ClCompile Include="AutoThrottle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="DirectXFractal.h" />
+    <ClInclude Include="DirectXApp.h" />
+    <ClInclude Include="DirectXSample.h" />
+    <ClInclude Include="SampleOverlay.h" />
+    <ClInclude Include="DirectXBase.h" />
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="BasicMath.h" />
+    <ClInclude Include="BasicLoader.h" />
+    <ClInclude Include="DDSTextureLoader.h" />
+    <ClInclude Include="BasicReaderWriter.h" />
+    <ClInclude Include="AutoThrottle.h" />
+    <ClInclude Include="DoublePrecisionMath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="squaretile-sdk.png" />
+    <Image Include="smalltile-sdk.png" />
+    <Image Include="storelogo-sdk.png" />
+    <Image Include="splash-sdk.png" />
+    <Image Include="windowsbig-sdk.png" />
+    <Image Include="gradient.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2d2ffd83-4d1a-4b9b-82e4-c34a59edf53e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\DirectCompute">
+      <UniqueIdentifier>{8c453c16-bd26-4f2f-8816-d558e4e4f236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\SinglePass">
+      <UniqueIdentifier>{2719ea1f-aa35-4267-9afb-ad3dce38918f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\ThreePhase">
+      <UniqueIdentifier>{f00b7948-8b3c-4929-af3e-2ba26d85e58f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="DrawRect.vs.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Initial.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+    <FxCompile Include="Step.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+    <FxCompile Include="Final.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+    <FxCompile Include="RenderTexture.ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="DirectCompute.cs.hlsl">
+      <Filter>Shaders\DirectCompute</Filter>
+    </FxCompile>
+    <FxCompile Include="SinglePass.ps.hlsl">
+      <Filter>Shaders\SinglePass</Filter>
+    </FxCompile>
+    <FxCompile Include="RenderBuffer.ps.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="DirectCompute.double.cs.hlsl">
+      <Filter>Shaders\DirectCompute</Filter>
+    </FxCompile>
+    <FxCompile Include="Final.unorm.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+    <FxCompile Include="Initial.unorm.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+    <FxCompile Include="Step.unorm.ps.hlsl">
+      <Filter>Shaders\ThreePhase</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Create low-integrity process in C# (CSCreateLowIntegrityProcess)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Create low-integrity process in C# (CSCreateLowIntegrityProcess)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Security, UAC, Integrity Level
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSCreateLowIntegrityProcess-d7cb5e4d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Create low-integrity process in C# (<span class="SpellE">CSCreateLowIntegrityProcess</span>)<span style="">
+</span></h1>
+<h2>Introduction</h2>
+<p class="MsoNormal"><span style="">The code sample demonstrates how to start a low-integrity process. The application launches itself at the low integrity level when you click the &quot;Launch myself at low integrity level&quot; button on the application.
+ Low integrity processes can only write to low integrity locations, such as the %USERPROFILE%\AppData\LocalLow folder or the HKEY_CURRENT_USER\Software\AppDataLow key. If you attempt to gain write access to objects at a higher integrity levels, you will get
+ an access denied error even though the user's SID is granted write access in the discretionary access control list (DACL).
+</span><span style=""></span></p>
+<p class="MsoNormal"><span style="">By default, child processes inherit the integrity level of their parent process. To start a low-integrity process, you must start a new child processwith a low-integrity access token by using CreateProcessAsUser. Please
+ refer to the CreateLowIntegrityProcess sample function for details.</span><span style="">
+</span></p>
+<h2>Running the Sample<span style=""> </span></h2>
+<p class="MsoNormal"><span style="">You must run this sample on Windows Vista or newer operating systems.
+</span></p>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Press F5 to run this application, and you will see following window if you are an administrator of this machine.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""><img src="description/image.png" alt="" width="236" height="195" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">If you click <b style="">Write to the
+<span class="SpellE">LocalAppData</span> folder</b> button or <b style="">Write to the
+<span class="SpellE">LocalAppDataLow</span> folder</b> button, these operations will succeed.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""><img src="description/4836c07e-13d0-4ccf-a424-cd967c69580eimage.png" alt="" width="347" height="171" align="middle">
+<img src="description/6a286c4e-0781-4249-b84b-078bb4f0701dimage.png" alt="" width="370" height="171" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle" style=""><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Click <b style="">Launch myself at low integrity level</b> button, a new instance of this application will be launched.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""><img src="description/9b71d51c-c8aa-4488-96c5-f901205eef73image.png" alt="" width="236" height="195" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">If you click <b style="">Write to the
+<span class="SpellE">LocalAppData</span> folder</b> button, the operation will fail.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""><img src="description/c05c8cb4-8ca0-48b1-9fdf-1e9be5bd3b00image.png" alt="" width="468" height="171" align="middle">
+</span><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style=""></span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">If you click <b style="">Write to the
+<span class="SpellE">LocalAppDataLow</span> folder</b> button, the operation will succeed.
+</span></p>
+<p class="MsoListParagraphCxSpLast"><span style=""><img src="description/f78a4ba4-ec57-40bb-8c44-549691828b2aimage.png" alt="" width="370" height="171" align="middle">
+</span><span style=""></span></p>
+<h2>Using the Code<span style=""> </span></h2>
+<p class="MsoNormal"><span style=""></span></p>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">A.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><b style=""><span style="">Starting a process at low integrity</span></b><span style="">
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">By default, child processes inherit the integrity level of their parent process. To start a low-integrity process, you must start a new child process with a low-integrity access token using the function
+<span class="SpellE"><b style="">CreateProcessAsUser</b>.</span> </span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">To start a low-integrity process
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:72.0pt"><span style=""><span style="">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Duplicate the handle of the current process, which is at medium integrity level by P/Invoking
+<span class="SpellE"><b style="">OpenProcessToken</b></span> and <span class="SpellE">
+<b style="">DuplicateTokenEx</b></span>. </span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:72.0pt"><span style=""><span style="">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">P/Invoke <span class="SpellE"><b style="">SetTokenInformation</b></span> to set the integrity level in the access token to Low.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:72.0pt"><span style=""><span style="">3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">P/Invoke <span class="SpellE"><b style="">CreateProcessAsUser</b></span> to create a new process using the handle to the low integrity access token.
+</span></p>
+<p class="MsoListParagraphCxSpLast"><span class="SpellE"><b style=""><span style="">CreateProcessAsUser</span></b></span><span style=""> updates the security descriptor in the new child process and the security descriptor for the access token to match the
+ integrity level of the low-integrity access token. The <span class="SpellE"><b style="">CreateLowIntegrityProcess</b></span> function in the code sample demonstrates this process.
+</span></p>
+<p class="MsoNormal"><span style=""></span></p>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">B.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><b style=""><span style="">Detecting the integrity level of the current process</span></b><span style="">
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">The <span class="SpellE">
+<b style="">GetProcessIntegrityLevel</b></span> function in the code sample demonstrates how to get the integrity level of the current process.
+</span></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:72.0pt"><span style=""><span style="">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Open the primary access token of the process with TOKEN_QUERY by P/Invoking
+<span class="SpellE"><b style="">OpenProcessToken</b></span>. </span></p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:72.0pt"><span style=""><span style="">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">P/Invoke <span class="SpellE"><b style="">GetTokenInformation</b></span> to query the
+<span class="SpellE"><b style="">TokenIntegrityLevel</b></span> information from the primary access token.
+</span></p>
+<h2>More Information<span style=""> </span></h2>
+<p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/bb625960.aspx">MSDN: Designing Applications to Run at a Low Integrity Level</a></span><span style="">
+</span></p>
+<p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/bb250462(VS.85).aspx">MSDN: Understanding and Working in Protected Mode Internet Explorer</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

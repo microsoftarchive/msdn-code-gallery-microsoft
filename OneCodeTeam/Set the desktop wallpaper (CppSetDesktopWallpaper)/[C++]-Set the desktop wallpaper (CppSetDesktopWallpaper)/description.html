@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Set the desktop wallpaper (CppSetDesktopWallpaper)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Set the desktop wallpaper (CppSetDesktopWallpaper)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Wallpaper
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppSetDesktopWallpaper-eb969505">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>WIN32 APPLICATION : CppSetDesktopWallpaper Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+This code sample application allows you select an image, view a preview <br>
+(resized smaller to fit if necessary), select a display style among Tile, <br>
+Center, Stretch, Fit (Windows 7 and later) and Fill (Windows 7 and later), <br>
+and set the image as the Desktop wallpaper. <br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+The following steps walk through a demonstration of the code sample.<br>
+<br>
+Step1. After you successfully build the sample project in Visual Studio 2008, <br>
+you will get an application: CppSetDesktopWallpaper.exe. <br>
+<br>
+Step2. Run the application on a Windows 7 system. The window consists of a <br>
+button to browse to an image, a picture box to preview the selected image, a <br>
+group of radio buttons to configure the style, and a button to set the <br>
+desktop wallpaper as that image.<br>
+<br>
+The Fit and Fill wallpaper styles are not supported before Windows 7, so if <br>
+the current operating system prior to Windows 7, e.g. Windows XP, only the <br>
+Tile, Center and Stretch styles are enabled. <br>
+<br>
+Step3. Click the Browse... button to select an image file. You will see a <br>
+preview of the selected image in the picture box. <br>
+<br>
+Step4. Check the Title style, and click the Set Wallpaper button. The <br>
+wallpaper is tiled across the screen. If you check the Stretch style, and <br>
+click the Set Wallpaper button, the wallpaper is stretched vertically and <br>
+horizontally to fit the screen. <br>
+<br>
+Step5. Close the application. <br>
+<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Create a new Visual C&#43;&#43; dialog-based Windows Application project named <br>
+CppSetDesktopWallpaper. Add controls to the main dialog. The dialog consists <br>
+of a button to browse to an image, a picture box to preview the selected <br>
+image, a group of radio buttons to configure the style, and a button to set <br>
+desktop wallpaper as that image.<br>
+<br>
+Step2. Design the Wallpaper helper methods in Wallpaper.h/cpp. <br>
+<br>
+&nbsp; &nbsp;HRESULT SetDesktopWallpaper(PWSTR pszFile, WallpaperStyle style);<br>
+<br>
+This is the key method that sets the desktop wallpaper. The method body is <br>
+composed of configuring the wallpaper style in the registry and setting the <br>
+wallpaper with SystemParametersInfo.<br>
+<br>
+&nbsp;1) Configuring the wallpaper style in the registry<br>
+&nbsp;<br>
+&nbsp;Desktop wallpaper can use one of three (or five, if the operating system is
+<br>
+&nbsp;Windows 7 or later) different sizing styles for display. <br>
+&nbsp;<br>
+&nbsp; &nbsp;Tile: &nbsp; &nbsp; &nbsp; Wallpaper is tiled across the screen.<br>
+&nbsp; &nbsp;Center: &nbsp; &nbsp; Wallpaper is centered on the screen.<br>
+&nbsp; &nbsp;Stretch: &nbsp; &nbsp;Wallpaper is stretched vertically and horizontally to fit the
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;screen.<br>
+&nbsp; &nbsp;Fit: &nbsp; &nbsp; &nbsp; &nbsp;Wallpaper is resized to fit the screen while maintaining the
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aspect ratio. (Windows 7 and later)<br>
+&nbsp; &nbsp;Fill: &nbsp; &nbsp; &nbsp; Wallpaper is resized and cropped to fill the screen while
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;maintaining the aspect ratio. (Windows 7 and later)<br>
+<br>
+&nbsp;In order to support these three styles in an object-oriented way, an <br>
+&nbsp;enumerated type was created.<br>
+<br>
+&nbsp; &nbsp;enum WallpaperStyle<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Tile,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Center,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Stretch,<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Fit, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;Fill<br>
+&nbsp; &nbsp;};<br>
+<br>
+&nbsp;Two registry values are set in the Control Panel\Desktop key. Based on <br>
+&nbsp;which style is requested, numeric codes are set for the WallpaperStyle and <br>
+&nbsp;TileWallpaper values:<br>
+<br>
+&nbsp;<a target="_blank" href="&lt;a http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop">http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop</a>'&gt;<a  href="http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop">http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop</a><br>
+<br>
+&nbsp;TileWallpaper<br>
+&nbsp; &nbsp;0: The wallpaper picture should not be tiled <br>
+&nbsp; &nbsp;1: The wallpaper picture should be tiled <br>
+<br>
+&nbsp;WallpaperStyle<br>
+&nbsp; &nbsp;0: &nbsp;The image is centered if TileWallpaper=0 or tiled if TileWallpaper=1<br>
+&nbsp; &nbsp;2: &nbsp;The image is stretched to fill the screen<br>
+&nbsp; &nbsp;6: &nbsp;The image is resized to fit the screen while maintaining the aspect
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;ratio. (Windows 7 and later)<br>
+&nbsp; &nbsp;10: The image is resized and cropped to fill the screen while maintaining
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;the aspect ratio. (Windows 7 and later)<br>
+<br>
+&nbsp; &nbsp;// Open the HKCU\Control Panel\Desktop registry key.<br>
+&nbsp; &nbsp;HKEY hKey = NULL;<br>
+&nbsp; &nbsp;hr = HRESULT_FROM_WIN32(RegOpenKeyEx(HKEY_CURRENT_USER, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;L&quot;Control Panel\\Desktop&quot;, 0, KEY_READ | KEY_WRITE, &hKey));<br>
+&nbsp; &nbsp;if (SUCCEEDED(hr))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PWSTR pszWallpaperStyle;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;PWSTR pszTileWallpaper;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;switch (style)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;case Tile:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszWallpaperStyle = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszTileWallpaper = L&quot;1&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;case Center:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszWallpaperStyle = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszTileWallpaper = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;case Stretch:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszWallpaperStyle = L&quot;2&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszTileWallpaper = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;case Fit: // (Windows 7 and later)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszWallpaperStyle = L&quot;6&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszTileWallpaper = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;case Fill: // (Windows 7 and later)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszWallpaperStyle = L&quot;10&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pszTileWallpaper = L&quot;0&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Set the WallpaperStyle and TileWallpaper registry values.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;DWORD cbData = lstrlen(pszWallpaperStyle) * sizeof(*pszWallpaperStyle);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = HRESULT_FROM_WIN32(RegSetValueEx(hKey, L&quot;WallpaperStyle&quot;, 0, REG_SZ,
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reinterpret_cast&lt;const BYTE *&gt;(pszWallpaperStyle), cbData));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (SUCCEEDED(hr))<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cbData = lstrlen(pszTileWallpaper) * sizeof(*pszTileWallpaper);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hr = HRESULT_FROM_WIN32(RegSetValueEx(hKey, L&quot;TileWallpaper&quot;, 0, REG_SZ,
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reinterpret_cast&lt;const BYTE *&gt;(pszTileWallpaper), cbData));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;RegCloseKey(hKey);<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp;2) Setting the wallpaper with SystemParametersInfo<br>
+&nbsp;<br>
+&nbsp;At this point, the sizing options have been set, but the actual image path <br>
+&nbsp;still needs to be set. The SystemParametersInfo function exists in the <br>
+&nbsp;user32.dll to allow you to set or retrieve hardware and configuration <br>
+&nbsp;information from your system. &nbsp;The function accepts four arguments. The
+<br>
+&nbsp;first indicates the operation to take place, the second two parameters <br>
+&nbsp;represent data to be set, dependant on requested operation, and the final <br>
+&nbsp;parameter allows you to specify how changes are saved and/or broadcasted. <br>
+&nbsp;<br>
+&nbsp;The operation to be invoked is SPI_SETDESKWALLPAPER. It sets the desktop <br>
+&nbsp;wallpaper. The value of the pvParam parameter determines file path of the <br>
+&nbsp;new wallpaper. The file must be a bitmap (.bmp). On Windows Vista and later
+<br>
+&nbsp;pvParam can also specify a .jpg file.<br>
+&nbsp;<br>
+&nbsp; &nbsp;// Set the desktop wallpapaer by calling the Win32 API SystemParametersInfo
+<br>
+&nbsp; &nbsp;// with the SPI_SETDESKWALLPAPER desktop parameter. The changes should
+<br>
+&nbsp; &nbsp;// persist, and also be immediately visible.<br>
+&nbsp; &nbsp;if (SUCCEEDED(hr))<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (!SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;static_cast&lt;PVOID&gt;(pszFile), <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE))<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hr = HRESULT_FROM_WIN32(GetLastError());<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp;Setting pvParam to SETWALLPAPER_DEFAULT or null in the above call reverts <br>
+&nbsp;to the default wallpaper. <br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: SystemParametersInfo Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms724947(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms724947(VS.85).aspx</a><br>
+<br>
+MSDN: Theme File Format<br>
+<a target="_blank" href="&lt;a http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop">http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop</a>'&gt;<a  href="http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop">http://msdn.microsoft.com/en-us/library/bb773190(VS.85).aspx#desktop</a><br>
+<br>
+Setting Wallpaper<br>
+<a  href="http://blogs.msdn.com/b/coding4fun/archive/2006/10/31/912569.aspx">http://blogs.msdn.com/b/coding4fun/archive/2006/10/31/912569.aspx</a><br>
+<br>
+How to load graphics files and display them in Visual C&#43;&#43;<br>
+<a  href="http://support.microsoft.com/kb/218972m">http://support.microsoft.com/kb/218972m</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

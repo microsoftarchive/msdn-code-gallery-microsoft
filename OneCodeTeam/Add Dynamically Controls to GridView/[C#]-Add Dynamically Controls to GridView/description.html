@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/04f9c26e-88fd-4dfd-b715-9733d17420b6Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Add Dynamically Controls to GridView</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Add Dynamically Controls to GridView</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            GridView
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Add-Dynamically-Controls-6cecd0ad">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Add Dynamic <span class="SpellE">LinkButton</span> in <span class="SpellE">
+<span class="GramE">Gridview</span></span><span class="GramE">(</span><span class="SpellE">CSASPNETAddDynamicControltoGridView</span>)</h1>
+<h2>Introduction </h2>
+<p class="MsoNormal">The sample code demonstrates how to add dynamically created controls to the GridView in the CodeBehind page. For some people, when the refresh or the page is PostBack, the dynamically created controls will disappear from GridView, this
+ sample will show how to resolve this issue.</p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Please follow these demonstration steps below.</p>
+<p class="MsoNormal">Step 1:&nbsp;Open the <span style="">CSASPNETAddDynamicControltoGridView</span>.sln. Expand the
+<a name="OLE_LINK1"></a><span class="SpellE"><span style=""><span style="">CSASPNETAddDynamicControltoGridView</span></span></span><span style="">
+</span>web application and press Ctrl &#43; F5 to show the Default.aspx. </p>
+<p class="MsoNormal">Step 2: We will see a web page like show below:</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="567" height="314" align="middle">
+</span></p>
+<p class="MsoNormal">Step 3:<span style="">&nbsp; </span>Click on a LinkButton to do a PostBack operations, the page will like show below:</p>
+<p class="MsoNormal"><span style=""><img src="description/cd65eb75-6805-4ded-a47e-384256a3a96aimage.png" alt="" width="509" height="336" align="middle">
+</span></p>
+<p class="MsoNormal">Step 4:<span style="">&nbsp;&nbsp; </span>Validation finished.</p>
+<h2>Using the Code</h2>
+<p class="MsoNormal" style="">Code Logical: <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal">Step 1. Create a C#<span style="">&nbsp; </span>&quot;ASP.NET Web Application&quot; in Visual Studio 2012. Name it as &quot;<span class="SpellE"><span style="">CSASPNETAddDynamicControltoGridView</span></span>&quot;.
+</p>
+<p class="MsoNormal">Step 2.<span style="">&nbsp; </span>Add a GridView Control to &quot;Default.aspx&quot; page then rename it to &quot;gdvCustomer&quot;. This page will bind the data and show the dynamically created LinkButton Control. In order to realize
+ this page:</p>
+<p class="MsoNormal">First, we need to bind data to gdvCustomer<span style="color:black">.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>HTML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">html</span>
+<pre class="hidden">
+&lt;asp:GridView ID=&quot;gdvCustomer&quot; runat=&quot;server&quot; AutoGenerateColumns=&quot;False&quot; OnDataBound=&quot;gdvCustomer_DataBound&quot;
+           DataKeyNames=&quot;Id&quot; DataSourceID=&quot;SqlDataSource1&quot;&gt;
+           &lt;Columns&gt;
+               &lt;asp:TemplateField&gt;
+                   &lt;ItemTemplate&gt;
+                   &lt;/ItemTemplate&gt;
+               &lt;/asp:TemplateField&gt;
+               &lt;asp:BoundField DataField=&quot;Id&quot; HeaderText=&quot;Id&quot; InsertVisible=&quot;False&quot; ReadOnly=&quot;True&quot;
+                   SortExpression=&quot;Id&quot; /&gt;
+               &lt;asp:BoundField DataField=&quot;Name&quot; HeaderText=&quot;Name&quot; SortExpression=&quot;Name&quot; /&gt;
+               &lt;asp:BoundField DataField=&quot;Age&quot; HeaderText=&quot;Age&quot; SortExpression=&quot;Age&quot; /&gt;              
+           &lt;/Columns&gt;
+       &lt;/asp:GridView&gt;
+       &lt;asp:SqlDataSource ID=&quot;SqlDataSource1&quot; runat=&quot;server&quot; ConnectionString=&quot;&lt;%$ ConnectionStrings:ConnectionString %&gt;&quot;
+           SelectCommand=&quot;SELECT [Id], [Name], [Age] FROM [CustomerInfo]&quot;&gt;&lt;/asp:SqlDataSource&gt;
+
+</pre>
+<pre id="codePreview" class="html">
+&lt;asp:GridView ID=&quot;gdvCustomer&quot; runat=&quot;server&quot; AutoGenerateColumns=&quot;False&quot; OnDataBound=&quot;gdvCustomer_DataBound&quot;
+           DataKeyNames=&quot;Id&quot; DataSourceID=&quot;SqlDataSource1&quot;&gt;
+           &lt;Columns&gt;
+               &lt;asp:TemplateField&gt;
+                   &lt;ItemTemplate&gt;
+                   &lt;/ItemTemplate&gt;
+               &lt;/asp:TemplateField&gt;
+               &lt;asp:BoundField DataField=&quot;Id&quot; HeaderText=&quot;Id&quot; InsertVisible=&quot;False&quot; ReadOnly=&quot;True&quot;
+                   SortExpression=&quot;Id&quot; /&gt;
+               &lt;asp:BoundField DataField=&quot;Name&quot; HeaderText=&quot;Name&quot; SortExpression=&quot;Name&quot; /&gt;
+               &lt;asp:BoundField DataField=&quot;Age&quot; HeaderText=&quot;Age&quot; SortExpression=&quot;Age&quot; /&gt;              
+           &lt;/Columns&gt;
+       &lt;/asp:GridView&gt;
+       &lt;asp:SqlDataSource ID=&quot;SqlDataSource1&quot; runat=&quot;server&quot; ConnectionString=&quot;&lt;%$ ConnectionStrings:ConnectionString %&gt;&quot;
+           SelectCommand=&quot;SELECT [Id], [Name], [Age] FROM [CustomerInfo]&quot;&gt;&lt;/asp:SqlDataSource&gt;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Then, we need to call DataBound method to add dynamically created Control<span style="color:black">.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+        protected void gdvCustomer_DataBound(object sender, EventArgs e)
+        {
+            AddLinkButton();
+        }
+
+
+        /// &lt;summary&gt;
+        /// Add a LinkButton To GridView Row.
+        /// &lt;/summary&gt;
+        private void AddLinkButton()
+        {
+            foreach (GridViewRow row in gdvCustomer.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    LinkButton lb = new LinkButton();
+                    lb.Text = &quot;Approve&quot;;
+                    lb.CommandName = &quot;ApproveVacation&quot;;
+                    lb.Command &#43;= LinkButton_Command;
+                    row.Cells[0].Controls.Add(lb);
+                }
+            }
+        }
+
+
+    
+
+
+
+To test the LinkButton, we add an
+event for the LinkButton .
+
+
+
+
+
+protected void LinkButton_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == &quot;ApproveVacation&quot;)
+            {
+                //This is to test 
+                LinkButton lb = (LinkButton)sender;
+                lb.Text = &quot;OK&quot;;
+            }
+        }
+
+</pre>
+<pre id="codePreview" class="csharp">
+        protected void gdvCustomer_DataBound(object sender, EventArgs e)
+        {
+            AddLinkButton();
+        }
+
+
+        /// &lt;summary&gt;
+        /// Add a LinkButton To GridView Row.
+        /// &lt;/summary&gt;
+        private void AddLinkButton()
+        {
+            foreach (GridViewRow row in gdvCustomer.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    LinkButton lb = new LinkButton();
+                    lb.Text = &quot;Approve&quot;;
+                    lb.CommandName = &quot;ApproveVacation&quot;;
+                    lb.Command &#43;= LinkButton_Command;
+                    row.Cells[0].Controls.Add(lb);
+                }
+            }
+        }
+
+
+    
+
+
+
+To test the LinkButton, we add an
+event for the LinkButton .
+
+
+
+
+
+protected void LinkButton_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == &quot;ApproveVacation&quot;)
+            {
+                //This is to test 
+                LinkButton lb = (LinkButton)sender;
+                lb.Text = &quot;OK&quot;;
+            }
+        }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">To<span style="color:black"> test the LinkButton, we add an event for the LinkButton .
+</span></p>
+<p class="MsoNormal"><span style="color:black"><br>
+<b style="">[Note]</b>Finally, add LinkButton in the Page_Init event and override the OnInit method.</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+protected void Page_Init(object sender, EventArgs e)
+       {
+           gdvCustomer.DataBind();
+       }
+
+
+       protected void Page_Load(object sender, EventArgs e)
+       {
+           if (!IsPostBack)
+           {
+               AddLinkButton();
+           }
+       }
+
+
+       /// &lt;summary&gt;
+       /// To initialize the page.
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       protected override void OnInit(EventArgs e)
+       {
+           base.OnInit(e);
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">
+protected void Page_Init(object sender, EventArgs e)
+       {
+           gdvCustomer.DataBind();
+       }
+
+
+       protected void Page_Load(object sender, EventArgs e)
+       {
+           if (!IsPostBack)
+           {
+               AddLinkButton();
+           }
+       }
+
+
+       /// &lt;summary&gt;
+       /// To initialize the page.
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       protected override void OnInit(EventArgs e)
+       {
+           base.OnInit(e);
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><br>
+Step 3. Build the application and you can debug it.</p>
+<h2>More Information</h2>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms178472.aspx">ASP.NET Page Life Cycle Overview</a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/f0f7f29e-23d4-412b-b4b8-6ee5d2b4cf54image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

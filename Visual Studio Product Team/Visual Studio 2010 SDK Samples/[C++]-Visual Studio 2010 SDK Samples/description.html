@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/12a6d37d-47b3-4850-ac0f-31346614fc53Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Visual Studio 2010 SDK Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Visual Studio 2010 SDK Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Visual Studio Editor, IronPython Integrated Shell, Visual Studio 2010 Shell, MSBuild, Visual Studio 2010 Project System, Visual Studio Project System, VSX, Display add-in in Visual Studio Toolbar, Customize Visual Studio Toolbox item, Load Visual Studio ToolboxItems, Menus, custom controls, Visual Studio Shell, Toolbox, Project Templates, All Visual Studio SDK Samples, Visual Studio 2010 MSBuild, Visual Studio Tool Windows, Toolbox Controls, Item Templates, Debugger, Debugger Extensibility, Visual Studio Shell (Integrated), Visual Studio Shell (Isolated)
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">7/13/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Visual-Studio-2010-SDK-ddfe1372">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Visual Studio 2010 SDK Samples</h1>
+<p>Visual Studio 2010 is an integrated development environment (IDE) that allows you to develop a wide variety of software applications quickly and easily. The Visual Studio SDK provides a framework that you can use to extend the functionality of Visual Studio
+ 2010.</p>
+<p>To get started first you will need to download and installed Visual Studio 2010 SP1 and the Visual Studio 2010 SDK.&nbsp; To work with the latest updates available install Visual Studio 2010 , Visual Studio 2010 Service Pack 1, and the Visual Studio 2010
+ SDK in the following order:</p>
+<ol>
+<li><a href="http://www.microsoft.com/visualstudio/en-us/try">Visual Studio 2010</a>
+</li><li><a href="http://www.microsoft.com/download/en/details.aspx?id=23691">Visual Studio 2010 Service Pack 1</a>
+</li><li><a href="http://www.microsoft.com/download/en/details.aspx?id=21835">Visual Studio 2010 Servcie Pack 1 SDK</a>
+</li><li><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=23025">Visual Studio 2010 Visualization &amp; Modeling SDK</a>
+</li><li><a href="http://visualstudiogallery.msdn.microsoft.com/0dfaa2eb-3951-49e7-ade7-b9343761e1d2">Visual Studio LightSwitch 2011 RTM Extensibility Toolkit</a>
+</li></ol>
+<p>&nbsp;The Visual Studio 2010 SDK will help you extend all aspects of the Visual Studio IDE.&nbsp; These samples will help provide examples on how to extend the following areas of Visual Studio:</p>
+<ul>
+<li>Adding menus and commands into the Menu system </li><li>Creating new Tool Windows </li><li>Extending the built in code editor </li><li>Creating new project and item templates </li><li>Creating and distributing custom controls </li><li>Adding new options in the Tools options dialog </li><li>Working with existing assests in project systems </li><li>Extending MSBuild </li><li>Creating new project systems </li><li>Managed, native and custom Debugger integration </li><li>Building and deploying applications with the Visual Studio 2010 Shell (Integrated or Isolated)
+</li></ul>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--pe36-->
+                        <!--pe37-->
+                        <!--pe53-->
+                        <!--pe56-->
+                        <!--pe10-->
+                        <!--pe39-->
+                        <!--pe13-->
+                        <!--ps54-->
+                        <div id="item">
+                                <div><a href="Code Sweep/description.html">Code Sweep</a></div>
+                            <div>This sample allows the user to specify a set of terms to search for by specifying a set of XML files containing the term definitions.</div>
+                        </div>
+                        <!--pe54-->
+                        <!--pe32-->
+                        <!--pe35-->
+                        <!--pe52-->
+                        <!--pe55-->
+                        <!--pe17-->
+                        <!--pe14-->
+                        <!--pe41-->
+                        <!--pe12-->
+                        <!--pe38-->
+                        <!--pe57-->
+                        <!--pe19-->
+                        <!--pe16-->
+                        <!--pe15-->
+                        <!--pe2353-->
+                        <!--pe40-->
+                        <!--pe33-->
+                        <!--ps2356-->
+                        <div id="item">
+                                <div><a href="VSSDK IDE Sample Menu And Commands/description.html">VSSDK IDE Sample Menu And Commands</a></div>
+                            <div>This sample demonstrates how to create menu and command items and visualize them inside Visual Studio’s menus and toolbars. </div>
+                        </div>
+                        <!--pe2356-->
+                        <!--pe31-->
+                        <!--pe18-->
+                        <!--ps2359-->
+                        <div id="item">
+                                <div><a href="Sample setup program for shell applications/description.html">Sample setup program for shell applications</a></div>
+                            <div>This solution provides a sample of how to create a setup program for your Isolated Shell and Integrated Shell application.
+</div>
+                        </div>
+                        <!--pe2359-->
+                        <!--pe34-->
+                        <!--ps2358-->
+                        <div id="item">
+                                <div><a href="Reference.Package/description.html">Reference.Package</a></div>
+                            <div>This sample shows how to create a Visual Studio package and how to add an entry into the Help About dialog. </div>
+                        </div>
+                        <!--pe2358-->
+                        <!--pe2354-->
+                        <!--ps2357-->
+                        <div id="item">
+                                <div><a href="Reference.Services Sample/description.html">Reference.Services Sample</a></div>
+                            <div>This sample shows how to be a Visual Studio service provider and how to consume Visual Studio services. </div>
+                        </div>
+                        <!--pe2357-->
+                        <!--ps20-->
+                        <div id="item">
+                                <div><a href="IronPython Studio VS Shell Isolated/description.html">IronPython Studio VS Shell Isolated</a></div>
+                            <div>This sample demonstrates how to bundle the IronPython Integration sample with the Visual Studio 2010 Isolated Shell. </div>
+                        </div>
+                        <!--pe20-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

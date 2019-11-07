@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/f8d7f333-2771-482d-9cd3-ae28e18a5305Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C# mailslot server for IPC (CSMailslotServer)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C# mailslot server for IPC (CSMailslotServer)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            IPC and RPC, Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            mailslot, Inter-process Communication
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/19/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSMailslotServer-1ca18b47">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New">&nbsp;</p>
+<h2>CONSOLE APPLICATION : CSMailslotServer Project Overview</h2>
+<p style="font-family:Courier New">&nbsp;</p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+Mailslot is a mechanism for one-way inter-process communication in the local<br>
+machine or across the computers in the intranet. Any clients can store <br>
+messages in a mailslot. The creator of the slot, i.e. the server, retrieves <br>
+the messages that are stored there:<br>
+<br>
+Client (GENERIC_WRITE) ---&gt; Server (GENERIC_READ)<br>
+<br>
+This code sample demonstrates calling CreateMailslot to create a mailslot <br>
+named &quot;\\.\mailslot\SampleMailslot&quot;. The security attributes of the slot are &nbsp;<br>
+customized to allow Authenticated Users read and write access to the slot, <br>
+and to allow the Administrators group full access to it. The sample first <br>
+creates such a mailslot, then it reads and displays new messages in the slot <br>
+when user presses ENTER in the console.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+The following steps walk through a demonstration of the mailslot sample.<br>
+<br>
+Step1. After you successfully build the CSMailslotClient and CSMailslotServer <br>
+sample projects in Visual Studio 2008, you will get the applications: <br>
+CSMailslotClient.exe and CSMailslotServer.exe. <br>
+<br>
+Step2. Run CSMailslotServer.exe in a command prompt to start up the server <br>
+end of the mailslot. The application will output the following information <br>
+in the command prompt if the mailslot is created successfully.<br>
+<br>
+&nbsp;Server:<br>
+&nbsp; &nbsp;The mailslot (\\.\mailslot\SampleMailslot) is created.<br>
+<br>
+Step3. Run CSMailslotClient.exe in another command prompt to start up the <br>
+client end of the mailslot. The application should output the message below <br>
+in the command prompt when the client successfully opens the mailslot.<br>
+<br>
+&nbsp;Client:<br>
+&nbsp; &nbsp;The mailslot (\\.\mailslot\SampleMailslot) is opened.<br>
+<br>
+Step4. The client attempts to write three messages to the mailslot. <br>
+<br>
+&nbsp;Client:<br>
+&nbsp; &nbsp;The message &quot;Message 1 for mailslot&quot; is written to the slot<br>
+&nbsp; &nbsp;The message &quot;Message 2 for mailslot&quot; is written to the slot<br>
+&nbsp; &nbsp;The message &quot;Message 3 for mailslot&quot; is written to the slot<br>
+<br>
+There is a three seconds' interval between the second message and the third <br>
+one. During the interval, if you press ENTER in the server application, the <br>
+mailslot server will retrieve the first two messages and display them. <br>
+<br>
+&nbsp;Server:<br>
+&nbsp; &nbsp;Checking new messages...<br>
+&nbsp; &nbsp;Message #1: Message 1 for mailslot<br>
+&nbsp; &nbsp;Message #2: Message 2 for mailslot<br>
+<br>
+After the interval, the client writes the thrid message. If you press ENTER <br>
+again in the server application, the mailslot server prints the message:<br>
+<br>
+&nbsp;Server:<br>
+&nbsp; &nbsp;Checking new messages...<br>
+&nbsp; &nbsp;Message #1: Message 3 for mailslot<br>
+<br>
+Step5. Enter 'Q' in the server application. This will close the mailslot and <br>
+quit the server.<br>
+<br>
+</p>
+<h3>Sample Relation:</h3>
+<p style="font-family:Courier New">(The relationship between the current sample and the rest samples in
+<br>
+Microsoft All-In-One Code Framework <a href="http://1code.codeplex.com)" >
+http://1code.codeplex.com)</a><br>
+<br>
+CSMailslotClient -&gt; CSMailslotServer<br>
+CSMailslotServer creates the mailslot. CSMailslotClient opens the mailslot <br>
+and writes messages to it.<br>
+<br>
+<br>
+Code Logic (P/Invoke the native APIs):<br>
+<br>
+1. Create a mailslot. <br>
+<br>
+&nbsp;1.1 Prepare the security attributes (the lpSecurityAttributes parameter in <br>
+&nbsp;CreateMailslot) for the mailslot. This is optional. If the <br>
+&nbsp;lpSecurityAttributes parameter of CreateMailslot is NULL, the mailslot gets
+<br>
+&nbsp;a default security descriptor and the handle cannot be inherited. The ACLs <br>
+&nbsp;in the default security descriptor of a mailslot grant full control to the <br>
+&nbsp;LocalSystem account, (elevated) administrators, and the creator owner. They
+<br>
+&nbsp;also give only read access to members of the Everyone group and the <br>
+&nbsp;anonymous account. However, if you want to customize the security <br>
+&nbsp;permission of the mailslot, (e.g. to allow Authenticated Users to read from
+<br>
+&nbsp;and write to the mailslot), you need to create a SECURITY_ATTRIBUTES structure.<br>
+&nbsp;<br>
+&nbsp;The CreateMailslotSecurity helper function creates and initializes a new <br>
+&nbsp;SECURITY_ATTRIBUTES structure to allow Authenticated Users read and write <br>
+&nbsp;access to a mailslot, and to allow the Administrators group full access to <br>
+&nbsp;the mailslot.<br>
+&nbsp;<br>
+&nbsp;1.2 Create the mailslot. (CreateMailslot)<br>
+<br>
+2. Check messages in the mailslot. (ReadMailslot)<br>
+<br>
+&nbsp;2.1. Check for the number of messages in the mailslot. (GetMailslotInfo)<br>
+<br>
+&nbsp;2.2. Retrieve the messages one by one from the mailslot. While reading, &nbsp;<br>
+&nbsp;update the number of messages that are left in the mailslot. <br>
+&nbsp;(ReadFile, GetMailslotInfo)<br>
+<br>
+3. Close the handle of the mailslot instance. (CloseHandle)<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+Using Mailslots / Reading from a Mailslot<br>
+<a href="http://msdn.microsoft.com/en-us/library/aa365785.aspx" >http://msdn.microsoft.com/en-us/library/aa365785.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

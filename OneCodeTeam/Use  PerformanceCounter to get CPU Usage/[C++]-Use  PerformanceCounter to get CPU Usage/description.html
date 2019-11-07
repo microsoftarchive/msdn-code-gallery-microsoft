@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/4f0db316-e33e-4e5c-b975-0f6de635f8e4Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Use  PerformanceCounter to get CPU Usage</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Use  PerformanceCounter to get CPU Usage</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WMI, System Administration, Windows Desktop App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            CPU, PerformanceCoun<wbr />ter
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/5/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Use-PerformanceCounter-to-272d57a1">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Track the system CPU usage (CppCpuUsage)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">This code sample demonstrates how to use the PerformanceCounter to track the CPU usage of the system or a certain process.<span style="">&nbsp;
+</span>It lets the user visualize a Plot of one or more Performance Counter Value against time.</p>
+<h2>Building the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Open Solution in Visual Studio 2010.</p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Go to &quot;Build&quot; -&gt; &quot;Build Solution&quot;</p>
+<h2>Running the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Open Solution in Visual Studio 2012</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Go to &quot;Debug&quot; -&gt; &quot;Start without Debugging&quot;</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>From Drop Down, Select Performance Counter of Interest.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Click &quot;Add&quot;</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>See a graph of Performance Counter value against time.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>You may add more counters by Repeating Steps 3 and 4.</p>
+<p class="MsoListParagraphCxSpLast"><span style=""><img src="description/image.png" alt="" width="701" height="562" align="middle">
+</span></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">This sample code functions in following high-level steps</p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>First List Down Valid Counter Names. For each processor a &quot;Processor Time&quot; and &quot;Idle Time&quot; performance counter is added. For each running process a &quot;Processor Time&quot; performance counter is added.</p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>A List of &quot;Selected&quot; Performance Counter is maintained. It is initialized to Empty Vector. When user selects a performance counter and clicks &quot;Add&quot;, that counter is added to the vector.</p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>A Thread runs in parallel. This Periodically, Queries each Performance Counter in the &quot;Selected&quot; list. The performance counters are plotted against time using GDI&#43;.</p>
+<p class="MsoNormal">Following are the reusable components of the Sample Code</p>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Get the Processor Count of System </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+DWORD GetProcessorCount()
+{
+    SYSTEM_INFO sysinfo; 
+    DWORD dwNumberOfProcessors;
+
+
+    GetSystemInfo(&sysinfo);
+
+
+    dwNumberOfProcessors = sysinfo.dwNumberOfProcessors;
+
+
+    return dwNumberOfProcessors;
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+DWORD GetProcessorCount()
+{
+    SYSTEM_INFO sysinfo; 
+    DWORD dwNumberOfProcessors;
+
+
+    GetSystemInfo(&sysinfo);
+
+
+    dwNumberOfProcessors = sysinfo.dwNumberOfProcessors;
+
+
+    return dwNumberOfProcessors;
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Get list of running process </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+vector&lt;PCTSTR&gt; GetProcessNames()
+{
+    DWORD dwProcessID[SIZE];
+    DWORD cbProcess;
+    DWORD cProcessID;
+    BOOL fResult = FALSE;
+    DWORD index;
+
+
+    HANDLE hProcess;
+    HMODULE lphModule[SIZE];
+    DWORD cbNeeded;    
+    int len;
+
+
+    vector&lt;PCTSTR&gt; vProcessNames;
+
+
+    TCHAR * szProcessName;
+    TCHAR * szProcessNameWithPrefix;
+
+
+    fResult = EnumProcesses(dwProcessID, sizeof(dwProcessID), &cbProcess);
+
+
+    if(!fResult)
+    {
+        goto cleanup;
+    }
+
+
+    cProcessID = cbProcess / sizeof(DWORD);
+
+
+    for( index = 0; index &lt; cProcessID; index&#43;&#43; )
+    {
+        szProcessName = new TCHAR[MAX_PATH];        
+        hProcess = OpenProcess( PROCESS_QUERY_INFORMATION |
+        PROCESS_VM_READ,
+        FALSE, dwProcessID[index] );
+        if( NULL != hProcess )
+        {
+            if ( EnumProcessModulesEx( hProcess, lphModule, sizeof(lphModule), 
+                &cbNeeded,LIST_MODULES_ALL) )
+            {
+                if( GetModuleBaseName( hProcess, lphModule[0], szProcessName, 
+                    MAX_PATH ) )
+                {
+                    len = _tcslen(szProcessName);
+                    _tcscpy(szProcessName&#43;len-4, TEXT(&quot;\0&quot;));
+                    
+                    bool fProcessExists = false;
+                    int count = 0;
+                    szProcessNameWithPrefix = new TCHAR[MAX_PATH];
+                    _stprintf(szProcessNameWithPrefix, TEXT(&quot;%s&quot;), szProcessName);
+                    do
+                    {
+                        if(count&gt;0)
+                        {
+                            _stprintf(szProcessNameWithPrefix,TEXT(&quot;%s#%d&quot;),szProcessName,count);
+                        }
+                        fProcessExists = false;
+                        for(auto it = vProcessNames.begin(); it &lt; vProcessNames.end(); it&#43;&#43;)
+                        {
+                            if(_tcscmp(*it,szProcessNameWithPrefix)==0)
+                            {
+                                fProcessExists = true;
+                                break;
+                            }
+                        }                    
+                        count&#43;&#43;;
+                    }
+                    while(fProcessExists);
+                    
+                    vProcessNames.push_back(szProcessNameWithPrefix);
+                }
+            }
+        }
+    }
+
+
+cleanup:
+    szProcessName = NULL;
+    szProcessNameWithPrefix = NULL;
+    return vProcessNames;
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+vector&lt;PCTSTR&gt; GetProcessNames()
+{
+    DWORD dwProcessID[SIZE];
+    DWORD cbProcess;
+    DWORD cProcessID;
+    BOOL fResult = FALSE;
+    DWORD index;
+
+
+    HANDLE hProcess;
+    HMODULE lphModule[SIZE];
+    DWORD cbNeeded;    
+    int len;
+
+
+    vector&lt;PCTSTR&gt; vProcessNames;
+
+
+    TCHAR * szProcessName;
+    TCHAR * szProcessNameWithPrefix;
+
+
+    fResult = EnumProcesses(dwProcessID, sizeof(dwProcessID), &cbProcess);
+
+
+    if(!fResult)
+    {
+        goto cleanup;
+    }
+
+
+    cProcessID = cbProcess / sizeof(DWORD);
+
+
+    for( index = 0; index &lt; cProcessID; index&#43;&#43; )
+    {
+        szProcessName = new TCHAR[MAX_PATH];        
+        hProcess = OpenProcess( PROCESS_QUERY_INFORMATION |
+        PROCESS_VM_READ,
+        FALSE, dwProcessID[index] );
+        if( NULL != hProcess )
+        {
+            if ( EnumProcessModulesEx( hProcess, lphModule, sizeof(lphModule), 
+                &cbNeeded,LIST_MODULES_ALL) )
+            {
+                if( GetModuleBaseName( hProcess, lphModule[0], szProcessName, 
+                    MAX_PATH ) )
+                {
+                    len = _tcslen(szProcessName);
+                    _tcscpy(szProcessName&#43;len-4, TEXT(&quot;\0&quot;));
+                    
+                    bool fProcessExists = false;
+                    int count = 0;
+                    szProcessNameWithPrefix = new TCHAR[MAX_PATH];
+                    _stprintf(szProcessNameWithPrefix, TEXT(&quot;%s&quot;), szProcessName);
+                    do
+                    {
+                        if(count&gt;0)
+                        {
+                            _stprintf(szProcessNameWithPrefix,TEXT(&quot;%s#%d&quot;),szProcessName,count);
+                        }
+                        fProcessExists = false;
+                        for(auto it = vProcessNames.begin(); it &lt; vProcessNames.end(); it&#43;&#43;)
+                        {
+                            if(_tcscmp(*it,szProcessNameWithPrefix)==0)
+                            {
+                                fProcessExists = true;
+                                break;
+                            }
+                        }                    
+                        count&#43;&#43;;
+                    }
+                    while(fProcessExists);
+                    
+                    vProcessNames.push_back(szProcessNameWithPrefix);
+                }
+            }
+        }
+    }
+
+
+cleanup:
+    szProcessName = NULL;
+    szProcessNameWithPrefix = NULL;
+    return vProcessNames;
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Get list of valid<span style="">&nbsp; </span>
+Performance Counter Names </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+vector&lt;PCTSTR&gt; GetValidCounterNames()
+{
+    vector&lt;PCTSTR&gt; validCounterNames;
+    DWORD dwNumberOfProcessors = GetProcessorCount();
+    DWORD index;
+    vector&lt;PCTSTR&gt; vszProcessNames;
+    TCHAR * szCounterName;
+
+
+    validCounterNames.push_back(TEXT(&quot;\\Processor(_Total)\\% Processor Time&quot;));
+    validCounterNames.push_back(TEXT(&quot;\\Processor(_Total)\\% Idle Time&quot;));
+
+
+    for( index = 0; index &lt; dwNumberOfProcessors; index&#43;&#43; )
+    {
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Processor(%u)\\%% Processor Time&quot;),index);
+        validCounterNames.push_back(szCounterName);
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Processor(%u)\\%% Idle Time&quot;),index);
+        validCounterNames.push_back(szCounterName);
+    }
+
+
+    vszProcessNames = GetProcessNames();
+
+
+    for(auto element = vszProcessNames.begin(); 
+        element &lt; vszProcessNames.end(); 
+        element&#43;&#43; )
+    {
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Process(%s)\\%% Processor Time&quot;),*element);
+        validCounterNames.push_back(szCounterName);
+    }    
+    
+cleanup:
+    szCounterName = NULL;
+    return validCounterNames;
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+vector&lt;PCTSTR&gt; GetValidCounterNames()
+{
+    vector&lt;PCTSTR&gt; validCounterNames;
+    DWORD dwNumberOfProcessors = GetProcessorCount();
+    DWORD index;
+    vector&lt;PCTSTR&gt; vszProcessNames;
+    TCHAR * szCounterName;
+
+
+    validCounterNames.push_back(TEXT(&quot;\\Processor(_Total)\\% Processor Time&quot;));
+    validCounterNames.push_back(TEXT(&quot;\\Processor(_Total)\\% Idle Time&quot;));
+
+
+    for( index = 0; index &lt; dwNumberOfProcessors; index&#43;&#43; )
+    {
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Processor(%u)\\%% Processor Time&quot;),index);
+        validCounterNames.push_back(szCounterName);
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Processor(%u)\\%% Idle Time&quot;),index);
+        validCounterNames.push_back(szCounterName);
+    }
+
+
+    vszProcessNames = GetProcessNames();
+
+
+    for(auto element = vszProcessNames.begin(); 
+        element &lt; vszProcessNames.end(); 
+        element&#43;&#43; )
+    {
+        szCounterName = new TCHAR[MAX_PATH];
+        _stprintf(szCounterName, TEXT(&quot;\\Process(%s)\\%% Processor Time&quot;),*element);
+        validCounterNames.push_back(szCounterName);
+    }    
+    
+cleanup:
+    szCounterName = NULL;
+    return validCounterNames;
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>class Query: For querying Performance Counters</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:1.0in; text-indent:-.25in">
+<span style=""><span style="">a)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Adds a Performance Counter to Log.</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void Query::AddCounterInfo(PCWSTR name)
+{
+    if(fIsWorking)
+    {
+        PDH_STATUS status;
+        CounterInfo ci;
+        ci.counterName = name;
+        status = PdhAddCounter(query, ci.counterName, 0 , &ci.counter);
+
+
+        if(status != ERROR_SUCCESS)
+        {
+            return;
+        }
+
+
+        vciSelectedCounters.push_back(ci);
+    }
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void Query::AddCounterInfo(PCWSTR name)
+{
+    if(fIsWorking)
+    {
+        PDH_STATUS status;
+        CounterInfo ci;
+        ci.counterName = name;
+        status = PdhAddCounter(query, ci.counterName, 0 , &ci.counter);
+
+
+        if(status != ERROR_SUCCESS)
+        {
+            return;
+        }
+
+
+        vciSelectedCounters.push_back(ci);
+    }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="">&nbsp;&nbsp; </span>b) Query once for each Selected Performance Counter.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C&#43;&#43;</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">cplusplus</span>
+<pre class="hidden">
+void Query::Record()
+{
+    PDH_STATUS status;
+    ULONG CounterType;
+    ULONG WaitResult;
+    PDH_FMT_COUNTERVALUE DisplayValue;    
+
+
+    status = PdhCollectQueryData(query);
+
+
+    if(status != ERROR_SUCCESS)
+    {
+        return;
+    }
+
+
+    status = PdhCollectQueryDataEx(query, SAMPLE_INTERVAL, Event);
+
+
+    if(status != ERROR_SUCCESS)
+    {
+        return;
+    }
+
+
+    WaitResult = WaitForSingleObject(Event, INFINITE);
+
+
+    if (WaitResult == WAIT_OBJECT_0) 
+    {
+        for(auto it = vciSelectedCounters.begin(); it &lt; vciSelectedCounters.end(); it&#43;&#43;)
+        {
+            status = PdhGetFormattedCounterValue(it-&gt;counter, PDH_FMT_DOUBLE, &CounterType, &DisplayValue);            
+
+
+            if(status != ERROR_SUCCESS)
+            {
+                continue;
+            }
+
+
+            Log log;
+            log.time = time;
+            log.value = DisplayValue.doubleValue;
+            it-&gt;logs.push_back(log);                
+        }
+    }
+
+
+    time&#43;&#43;;
+}
+
+</pre>
+<pre id="codePreview" class="cplusplus">
+void Query::Record()
+{
+    PDH_STATUS status;
+    ULONG CounterType;
+    ULONG WaitResult;
+    PDH_FMT_COUNTERVALUE DisplayValue;    
+
+
+    status = PdhCollectQueryData(query);
+
+
+    if(status != ERROR_SUCCESS)
+    {
+        return;
+    }
+
+
+    status = PdhCollectQueryDataEx(query, SAMPLE_INTERVAL, Event);
+
+
+    if(status != ERROR_SUCCESS)
+    {
+        return;
+    }
+
+
+    WaitResult = WaitForSingleObject(Event, INFINITE);
+
+
+    if (WaitResult == WAIT_OBJECT_0) 
+    {
+        for(auto it = vciSelectedCounters.begin(); it &lt; vciSelectedCounters.end(); it&#43;&#43;)
+        {
+            status = PdhGetFormattedCounterValue(it-&gt;counter, PDH_FMT_DOUBLE, &CounterType, &DisplayValue);            
+
+
+            if(status != ERROR_SUCCESS)
+            {
+                continue;
+            }
+
+
+            Log log;
+            log.time = time;
+            log.value = DisplayValue.doubleValue;
+            it-&gt;logs.push_back(log);                
+        }
+    }
+
+
+    time&#43;&#43;;
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/3482f8c7-6d55-4a99-9a91-52af674e2846image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

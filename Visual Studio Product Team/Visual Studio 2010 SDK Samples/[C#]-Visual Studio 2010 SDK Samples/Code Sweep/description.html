@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Code Sweep</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Code Sweep</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            MSBuild, VSX
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">3/3/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Code-Sweep-3bfb7bb5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2>Summary</h2>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel">This sample allows the user to specify a set of terms to search for by specifying a set of XML files containing the term definitions. The user-configurable settings are stored in the
+ project file. The scan can be invoked either on command or as an integrated part of the build process. When the scan is performed, a custom task provider causes hits, if any, to be shown in the task list.<br>
+</span></p>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Introduction</h2>
+<p>This sample will:<br>
+<br>
+* Demonstrates writing MSBuild tasks, which run as part of the build.<br>
+* Demonstrates using a host object to communicate with MSBuild tasks from within the integrated development environment (IDE).<br>
+* Shows how to store and retrieve information in both MSBuild projects and non-MSBuild projects.<br>
+* Shows how to implement a custom task provider, including a custom toolbar and shortcut menu.<br>
+* Demonstrates how to place commands on the Project menu and the Solution Explorer shortcut menu, and how to handle them.<br>
+* Includes an algorithm to search for multiple terms across multiple streams of characters.<br>
+<br>
+This sample is divided into several projects:<br>
+1. Scanner: class library that implements the scanning functionality.<br>
+2. BuildTask: MSBuild task implementation that allows the scan to run as part of the build process.<br>
+3. VsPackage: Visual Studio Package (VSPackage) implementation that provides a UI for the scanning functionality.<br>
+4. VsPackageUI: resource definitions for the native satellite DLL used by VsPackage.<br>
+5. Utilities: generally useful utility functions used by other projects in the solution.<br>
+6. Setup: builds a MSI module which can be used to install CodeSweep on any computer with Visual Studio 2005.<br>
+7. DevenvSetupCustomAction: builds a custom action executable used by the setup project that runs &quot;devenv.exe /setup&quot; to merge the new menu items defined by CodeSweep into the Visual Studio menu structure.<br>
+Additionally, there is a second solution (TDD\TDD.sln) that contains the unit<br>
+tests written for CodeSweep.<br>
+<br>
+The terms to search for are defined in XML files. For an example of the supported format, see<br>
+VsPackage\sample<em>term</em>table.xml. A term may have zero or more &quot;exclusions&quot;, which define<br>
+contexts in which it will not count as a hit. The list of term tables to use is specified on<br>
+a per-project basis, and can be configured in the dialog box invoked by the CodeSweep command (on<br>
+the Project menu or Solution Explorer shortcut menu).<br>
+<br>
+Only files with supported extensions can be scanned; others are ignored. This restriction<br>
+exists so that large binary files can be avoided if desired. The default list of supported<br>
+extensions is found in extensions.xml, which is copied to the user's Application Data\Microsoft\CodeSweep<br>
+folder on first run. To support new extensions, add them to that file.<br>
+<br>
+A scan can be invoked either by MSBuild during the build process, or explicitly<br>
+by the user at any time. In either case - to invoke explicitly or to control invocation during builds - use the configuration dialog box. If the scan is enabled to run during<br>
+the build, it will be run in command-line builds as well as builds in the IDE.<br>
+<br>
+When a scan is performed, the results are sent to the Task List. To see them, click CodeSweep in the<br>
+provider drop-down list on the Task List toolbar. In the list of results, you can double-click a result to go to its location. The CodeSweep Task List toolbar contains four buttons: Stop Scan,<br>
+Repeat Last Scan, Ignore, and Show Ignored Instances. The Ignore command marks the selected<br>
+result(s) as ignored, which means that they will not be shown in the Task List (even in<br>
+future scans). To see the ignored instances, click the Show Ignored Instances button. The<br>
+shortcut menu also contains these commands.<br>
+<br>
+</p>
+<h2>Requirements</h2>
+<ul>
+<li>Visual Studio 2010 </li><li>Visual Studio 2010 SDK </li></ul>
+<p>&nbsp;</p>
+<h2>Download and install</h2>
+<ul>
+<li>Download the zip file associated with the sample </li><li>Unzip the sample to your machine </li><li>Double click on the .sln file to launch the solution </li></ul>
+<p>&nbsp;</p>
+<h2>Building and running the sample</h2>
+<ul>
+<li>To build and execute the sample, press F5 after the sample is loaded </li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

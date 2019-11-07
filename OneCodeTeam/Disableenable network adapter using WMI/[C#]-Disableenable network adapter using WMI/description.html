@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Disable/enable network adapter using WMI</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Disable/enable network adapter using WMI</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WMI, System Administration, Windows Desktop App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            network adapter
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/13/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Disableenable-network-8112f642">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="">Enable\Disable Network Adapter By Using WMI In C# </span>(CSWMIEnableDisableNetworkAdapter)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">CSWMIEnableDisableNetworkAdapter shows <span style="">you how to enable and disable a Network Adapter using WMI. The Win32_NetworkAdapter WMI class represents a network adapter of a computer running a Windows operating system. We enable
+ \ disable a network adapter by using the &quot;Enable&quot; or &quot;Disable&quot; method of the class. Because the NetEnabled property is not available in the some operating system (Windows Server 2003, Windows XP, Windows 2000, and Windows NT 4.0), so this
+ sample does not work in these operating system. </span></p>
+<h2><span style="">Building the Sample </span></h2>
+<p class="MsoNormal">To build this sample</p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Open CSWMIEnableDisableNetworkAdapter.sln file in Visual Studio 2010</p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Build the Solution<span style=""> </span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal"><span style="">The follow </span>screenshot<span style=""> shows the main form of the application. The form will list all network adapters information ( ProductName, Connettion Status) in the machine. You can click the button for each
+ network adapter to enable\disable it. The sample must be run as administrator. </span>
+</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="576" height="425" align="middle">
+</span></p>
+<h2>Using the Code<span style=""> </span></h2>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">The constructor of NetworkAdapter class </span>
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+internal class NetworkAdapter
+{
+    #region NetworkAdapter Properties
+
+
+    /// &lt;summary&gt;
+    /// The DeviceId of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public int DeviceId
+    {
+        get;
+        private set;
+    }
+    
+    /// &lt;summary&gt;
+    /// The ProductName of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public string Name
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The NetEnabled status of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public int NetEnabled
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The Net Connection Status Value
+    /// &lt;/summary&gt;
+    public int NetConnectionStatus
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The Net Connection Status Description
+    /// &lt;/summary&gt;
+    public static string[] SaNetConnectionStatus = 
+    { 
+        Resources.NetConnectionStatus0,
+        Resources.NetConnectionStatus1,
+        Resources.NetConnectionStatus2,
+        Resources.NetConnectionStatus3,
+        Resources.NetConnectionStatus4,
+        Resources.NetConnectionStatus5,
+        Resources.NetConnectionStatus6,
+        Resources.NetConnectionStatus7,
+        Resources.NetConnectionStatus8,
+        Resources.NetConnectionStatus9,
+        Resources.NetConnectionStatus10,
+        Resources.NetConnectionStatus11,
+        Resources.NetConnectionStatus12
+    };
+
+
+    /// &lt;summary&gt;
+    /// Enum the NetEnabled Status
+    /// &lt;/summary&gt;
+    private enum EnumNetEnabledStatus
+    { 
+        Disabled = -1,
+        Unknow,
+        Enabled
+    }
+
+
+    /// &lt;summary&gt;
+    /// Enum the Operation reuslt of Enable and Disable  Network Adapter
+    /// &lt;/summary&gt;
+    private enum EnumEnableDisableResult
+    {
+        Fail = -1,
+        Unknow,
+        Success
+    }
+
+
+    #endregion
+
+
+    #region Construct NetworkAdapter
+
+
+    public NetworkAdapter(int deviceId,
+        string name,  
+        int netEnabled, 
+        int netConnectionStatus)
+    {
+        DeviceId = deviceId;
+        Name = name;
+        NetEnabled = netEnabled;
+        NetConnectionStatus = netConnectionStatus;
+    }
+}
+
+
+</pre>
+<pre id="codePreview" class="csharp">
+internal class NetworkAdapter
+{
+    #region NetworkAdapter Properties
+
+
+    /// &lt;summary&gt;
+    /// The DeviceId of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public int DeviceId
+    {
+        get;
+        private set;
+    }
+    
+    /// &lt;summary&gt;
+    /// The ProductName of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public string Name
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The NetEnabled status of the NetworkAdapter
+    /// &lt;/summary&gt;
+    public int NetEnabled
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The Net Connection Status Value
+    /// &lt;/summary&gt;
+    public int NetConnectionStatus
+    {
+        get;
+        private set;
+    }
+
+
+    /// &lt;summary&gt;
+    /// The Net Connection Status Description
+    /// &lt;/summary&gt;
+    public static string[] SaNetConnectionStatus = 
+    { 
+        Resources.NetConnectionStatus0,
+        Resources.NetConnectionStatus1,
+        Resources.NetConnectionStatus2,
+        Resources.NetConnectionStatus3,
+        Resources.NetConnectionStatus4,
+        Resources.NetConnectionStatus5,
+        Resources.NetConnectionStatus6,
+        Resources.NetConnectionStatus7,
+        Resources.NetConnectionStatus8,
+        Resources.NetConnectionStatus9,
+        Resources.NetConnectionStatus10,
+        Resources.NetConnectionStatus11,
+        Resources.NetConnectionStatus12
+    };
+
+
+    /// &lt;summary&gt;
+    /// Enum the NetEnabled Status
+    /// &lt;/summary&gt;
+    private enum EnumNetEnabledStatus
+    { 
+        Disabled = -1,
+        Unknow,
+        Enabled
+    }
+
+
+    /// &lt;summary&gt;
+    /// Enum the Operation reuslt of Enable and Disable  Network Adapter
+    /// &lt;/summary&gt;
+    private enum EnumEnableDisableResult
+    {
+        Fail = -1,
+        Unknow,
+        Success
+    }
+
+
+    #endregion
+
+
+    #region Construct NetworkAdapter
+
+
+    public NetworkAdapter(int deviceId,
+        string name,  
+        int netEnabled, 
+        int netConnectionStatus)
+    {
+        DeviceId = deviceId;
+        Name = name;
+        NetEnabled = netEnabled;
+        NetConnectionStatus = netConnectionStatus;
+    }
+}
+
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph" style="text-indent:-.25in"><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;"><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span></span></span><span style="">Below is the core code to get all Network Adapters in the computer.</span><span style="font-size:10.0pt; line-height:115%; font-family:&quot;Courier New&quot;">
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+List&lt;NetworkAdapter&gt; allNetworkAdapter = new List&lt;NetworkAdapter&gt;();
+
+
+string strWQuery = &quot;SELECT DeviceID, ProductName, Description, &quot; 
+    &#43; &quot;NetEnabled, NetConnectionStatus &quot;
+    &#43; &quot;FROM Win32_NetworkAdapter &quot; 
+    &#43; &quot;WHERE Manufacturer &lt;&gt; 'Microsoft' &quot;;
+ObjectQuery oQuery = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Management.ObjectQuery.aspx"  title="Auto generated link to System.Management.ObjectQuery">System.Management.ObjectQuery</a>(strWQuery);
+ManagementObjectSearcher oSearcher = new ManagementObjectSearcher(oQuery);
+ManagementObjectCollection oReturnCollection = oSearcher.Get();
+
+
+foreach (ManagementObject mo in oReturnCollection)
+{
+    netEnabled = (Convert.ToBoolean(mo[&quot;NetEnabled&quot;].ToString())) ? 1 : -1;
+    allNetworkAdapter.Add(new NetworkAdapter(
+        Convert.ToInt32(mo[&quot;DeviceID&quot;].ToString()), 
+        mo[&quot;ProductName&quot;].ToString(),
+        mo[&quot;Description&quot;].ToString(), 
+        netEnabled, 
+        Convert.ToInt32(mo[&quot;NetConnectionStatus&quot;].ToString())));
+};
+return allNetworkAdapter;
+
+</pre>
+<pre id="codePreview" class="csharp">
+List&lt;NetworkAdapter&gt; allNetworkAdapter = new List&lt;NetworkAdapter&gt;();
+
+
+string strWQuery = &quot;SELECT DeviceID, ProductName, Description, &quot; 
+    &#43; &quot;NetEnabled, NetConnectionStatus &quot;
+    &#43; &quot;FROM Win32_NetworkAdapter &quot; 
+    &#43; &quot;WHERE Manufacturer &lt;&gt; 'Microsoft' &quot;;
+ObjectQuery oQuery = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Management.ObjectQuery.aspx"  title="Auto generated link to System.Management.ObjectQuery">System.Management.ObjectQuery</a>(strWQuery);
+ManagementObjectSearcher oSearcher = new ManagementObjectSearcher(oQuery);
+ManagementObjectCollection oReturnCollection = oSearcher.Get();
+
+
+foreach (ManagementObject mo in oReturnCollection)
+{
+    netEnabled = (Convert.ToBoolean(mo[&quot;NetEnabled&quot;].ToString())) ? 1 : -1;
+    allNetworkAdapter.Add(new NetworkAdapter(
+        Convert.ToInt32(mo[&quot;DeviceID&quot;].ToString()), 
+        mo[&quot;ProductName&quot;].ToString(),
+        mo[&quot;Description&quot;].ToString(), 
+        netEnabled, 
+        Convert.ToInt32(mo[&quot;NetConnectionStatus&quot;].ToString())));
+};
+return allNetworkAdapter;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraphCxSpFirst"><span style=""></span></p>
+<p class="MsoListParagraphCxSpLast" style="text-indent:-.25in"><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style="">Below is the core code to Enable or Disable a Network Adapter.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+ManagementObject currentMObject = new ManagementObject();
+string strWQuery = &quot;SELECT DeviceID,ProductName,Description,NetEnabled &quot;
+    &#43; &quot;FROM Win32_NetworkAdapter &quot; 
+    &#43; &quot;WHERE DeviceID = &quot; &#43; this.DeviceID.ToString();
+ObjectQuery oQuery = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Management.ObjectQuery.aspx"  title="Auto generated link to System.Management.ObjectQuery">System.Management.ObjectQuery</a>(strWQuery);
+ManagementObjectSearcher oSearcher = new ManagementObjectSearcher(oQuery);
+ManagementObjectCollection oReturnCollection = oSearcher.Get();
+
+
+foreach (ManagementObject mo in oReturnCollection)
+{
+    currentMObject = mo;
+}
+
+
+//Enable the Network Adapter
+currentMObject.InvokeMethod(&quot;Enable&quot;, null);
+
+
+//Disable the Network Adapter
+//currentMObject.InvokeMethod(&quot;Disable&quot;, null);
+
+</pre>
+<pre id="codePreview" class="csharp">
+ManagementObject currentMObject = new ManagementObject();
+string strWQuery = &quot;SELECT DeviceID,ProductName,Description,NetEnabled &quot;
+    &#43; &quot;FROM Win32_NetworkAdapter &quot; 
+    &#43; &quot;WHERE DeviceID = &quot; &#43; this.DeviceID.ToString();
+ObjectQuery oQuery = new <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Management.ObjectQuery.aspx"  title="Auto generated link to System.Management.ObjectQuery">System.Management.ObjectQuery</a>(strWQuery);
+ManagementObjectSearcher oSearcher = new ManagementObjectSearcher(oQuery);
+ManagementObjectCollection oReturnCollection = oSearcher.Get();
+
+
+foreach (ManagementObject mo in oReturnCollection)
+{
+    currentMObject = mo;
+}
+
+
+//Enable the Network Adapter
+currentMObject.InvokeMethod(&quot;Enable&quot;, null);
+
+
+//Disable the Network Adapter
+//currentMObject.InvokeMethod(&quot;Disable&quot;, null);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal"><span style=""></span></p>
+<h2><span style="">More Information </span></h2>
+<p class="MsoNormal"><span style="">The Win32_NetworkAdapter class is deprecated and use the MSFT_NetAdapter class instead. WMI class
+</span>represents a network adapter: <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx">
+http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx</a><span style="">
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

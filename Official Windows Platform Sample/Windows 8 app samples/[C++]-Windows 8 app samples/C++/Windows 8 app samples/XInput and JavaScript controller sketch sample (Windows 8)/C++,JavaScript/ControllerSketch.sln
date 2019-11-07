@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "ControllerSketch", "js\ControllerSketch.jsproj", "{05926574-CC01-4A9A-8EA5-2B2AF9F40709}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameController", "cpp\GameController.vcxproj", "{EF2BA968-157E-498D-A8D2-69969A4744C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Debug|ARM = Debug|ARM
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|x64.ActiveCfg = Debug|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|x64.Build.0 = Debug|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|x64.Deploy.0 = Debug|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|Win32.ActiveCfg = Debug|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|Win32.Build.0 = Debug|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|Win32.Deploy.0 = Debug|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|ARM.ActiveCfg = Debug|ARM
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|ARM.Build.0 = Debug|ARM
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Debug|ARM.Deploy.0 = Debug|ARM
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|Win32.ActiveCfg = Release|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|Win32.Build.0 = Release|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|Win32.Deploy.0 = Release|Win32
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|x64.ActiveCfg = Release|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|x64.Build.0 = Release|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|x64.Deploy.0 = Release|x64
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|ARM.ActiveCfg = Release|ARM
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|ARM.Build.0 = Release|ARM
+		{05926574-CC01-4A9A-8EA5-2B2AF9F40709}.Release|ARM.Deploy.0 = Release|ARM
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|x64.ActiveCfg = Debug|x64
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|x64.Build.0 = Debug|x64
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|Win32.Build.0 = Debug|Win32
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Debug|ARM.Build.0 = Debug|ARM
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|x64.ActiveCfg = Release|x64
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|x64.Build.0 = Release|x64
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|Win32.ActiveCfg = Release|Win32
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|Win32.Build.0 = Release|Win32
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|ARM.ActiveCfg = Release|ARM
+		{EF2BA968-157E-498D-A8D2-69969A4744C7}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

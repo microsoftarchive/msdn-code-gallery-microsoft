@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=BDD0C107FD3496B07A064D75B5E21375" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3F42EB2A3FB3302B5588ED94203C49E2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to detect the current Windows platform information</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to detect the current Windows platform information</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Desktop App Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Platform Detector
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/21/2016</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Sample-to-demonstrate-how-495e69db">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2>
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt="">
+</a></div>
+</h2>
+<h2>How to detect the current Windows platform information</h2>
+<h2>Introduction</h2>
+<p>The sample demonstrates how we can detect the following information about the current Windows platform:</p>
+<ol>
+<li>Operating System Name </li><li>Service Pack Level Installed on the machine </li><li>Computer Name </li><li>Machine Bitness </li><li>Workgroup/Domain </li></ol>
+<p><a href="http://stackoverflow.com/questions/1953377/how-to-know-a-process-is-32-bit-or-64-bit-programmatically">http://stackoverflow.com/questions/1953377/how-to-know-a-process-is-32-bit-or-64-bit-programmatically</a>&nbsp;&nbsp;&nbsp;
+<br>
+<a href="http://social.msdn.microsoft.com/Forums/en-US/csharpgeneral/thread/24792cdc-2d8e-454b-9c68-31a19892ca53">http://social.msdn.microsoft.com/Forums/en-US/csharpgeneral/thread/24792cdc-2d8e-454b-9c68-31a19892ca53</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<h2>Running the Sample</h2>
+<p>Press Ctrl &#43; F5 to run this sample to see the form.</p>
+<p><img id="126573" src="description/134213.png" alt="" width="519" height="410"></p>
+<h2>Using the Code</h2>
+<p>Declare the following structure to store the Operating System Information.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public struct OSVERSIONINFO
+{
+    public int dwOSVersionInfoSize;
+    public int dwMajorVersion;
+    public int dwMinorVersion;
+    public int dwBuildNumber;
+    public int dwPlatformId;
+    [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+    public string szCSDVersion;
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span><span class="cs__keyword">struct</span>&nbsp;OSVERSIONINFO&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">int</span>&nbsp;dwOSVersionInfoSize;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">int</span>&nbsp;dwMajorVersion;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">int</span>&nbsp;dwMinorVersion;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">int</span>&nbsp;dwBuildNumber;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">int</span>&nbsp;dwPlatformId;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[MarshalAs(UnmanagedType.ByValTStr,&nbsp;SizeConst&nbsp;=&nbsp;<span class="cs__number">128</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">string</span>&nbsp;szCSDVersion;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;The following function fills the OSVERSIONINFO structure and also add a reference to the System.Runtime.InteropServices.dll.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">[DllImport(&quot;kernel32.Dll&quot;)]
+public static extern short GetVersionEx(ref OSVERSIONINFO o);
+static public string GetServicePack()
+{
+    OSVERSIONINFO os = new OSVERSIONINFO();
+    os.dwOSVersionInfoSize = Marshal.SizeOf(typeof(OSVERSIONINFO));
+    GetVersionEx(ref os);
+    if (os.szCSDVersion == &quot;&quot;)
+        return &quot;No Service Pack Installed&quot;;
+    else
+        return os.szCSDVersion;
+}
+</pre>
+<div class="preview">
+<pre class="csharp">[DllImport(<span class="cs__string">&quot;kernel32.Dll&quot;</span>)]&nbsp;
+<span class="cs__keyword">public</span><span class="cs__keyword">static</span><span class="cs__keyword">extern</span><span class="cs__keyword">short</span>&nbsp;GetVersionEx(<span class="cs__keyword">ref</span>&nbsp;OSVERSIONINFO&nbsp;o);&nbsp;
+<span class="cs__keyword">static</span><span class="cs__keyword">public</span><span class="cs__keyword">string</span>&nbsp;GetServicePack()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;OSVERSIONINFO&nbsp;os&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;OSVERSIONINFO();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;os.dwOSVersionInfoSize&nbsp;=&nbsp;Marshal.SizeOf(<span class="cs__keyword">typeof</span>(OSVERSIONINFO));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;GetVersionEx(<span class="cs__keyword">ref</span>&nbsp;os);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(os.szCSDVersion&nbsp;==&nbsp;<span class="cs__string">&quot;&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span><span class="cs__string">&quot;No&nbsp;Service&nbsp;Pack&nbsp;Installed&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span><span class="cs__keyword">return</span>&nbsp;os.szCSDVersion;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;The following function returns if it is a Server version of OS on the machine. Also add a reference to the System.Management.dll.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public bool IsServerVersion()
+{
+    using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(&quot;SELECT * FROM Win32_OperatingSystem&quot;))
+    {
+        foreach (ManagementObject managementObject in searcher.Get())
+        {
+            // ProductType will be one of:
+            // 1: Workstation
+            // 2: Domain Controller
+            // 3: Server
+            uint productType = (uint)managementObject.GetPropertyValue(&quot;ProductType&quot;);
+            return productType != 1;
+        }
+    }
+    return false;
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span><span class="cs__keyword">bool</span>&nbsp;IsServerVersion()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(ManagementObjectSearcher&nbsp;searcher&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;ManagementObjectSearcher(<span class="cs__string">&quot;SELECT&nbsp;*&nbsp;FROM&nbsp;Win32_OperatingSystem&quot;</span>))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(ManagementObject&nbsp;managementObject&nbsp;<span class="cs__keyword">in</span>&nbsp;searcher.Get())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;ProductType&nbsp;will&nbsp;be&nbsp;one&nbsp;of:</span><span class="cs__com">//&nbsp;1:&nbsp;Workstation</span><span class="cs__com">//&nbsp;2:&nbsp;Domain&nbsp;Controller</span><span class="cs__com">//&nbsp;3:&nbsp;Server</span><span class="cs__keyword">uint</span>&nbsp;productType&nbsp;=&nbsp;(<span class="cs__keyword">uint</span>)managementObject.GetPropertyValue(<span class="cs__string">&quot;ProductType&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;productType&nbsp;!=&nbsp;<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span><span class="cs__keyword">false</span>;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Declare the following Interop class to call GetSystemMetrics which will help us distinguish between Windows Server 2003 and Windows Server 2003 R2</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public partial class WindowsAPI
+{
+    [DllImport(&quot;user32.dll&quot;)]
+    public static extern int GetSystemMetrics(int smIndex);
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;partial&nbsp;<span class="cs__keyword">class</span>&nbsp;WindowsAPI&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="cs__string">&quot;user32.dll&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span><span class="cs__keyword">static</span><span class="cs__keyword">extern</span><span class="cs__keyword">int</span>&nbsp;GetSystemMetrics(<span class="cs__keyword">int</span>&nbsp;smIndex);&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Add the following code to the Form Load Event Handler and also add a reference to the System.DirectoryServices.dll.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Set textBox5 and textBox6 appropriately based on the bitness of the machine and the process
+if (Environment.Is64BitOperatingSystem)
+{
+    textBox5.Text = &quot;64-Bit&quot;;
+}
+else
+{
+    textBox5.Text = &quot;32-Bit&quot;;
+}
+
+if (Environment.Is64BitProcess)
+{
+    textBox6.Text = &quot;64-Bit&quot;;
+}
+else
+{
+    textBox6.Text = &quot;32-Bit&quot;;
+}
+
+//Set the textbox1 to the Operating System name by checking the OS version. 
+Version vs = Environment.OSVersion.Version;
+
+bool isServer = IsServerVersion();
+
+switch (vs.Major)
+{
+    case 3:
+        textBox1.Text = &quot;Windows NT 3.51&quot;;
+        break;
+    case 4:
+        textBox1.Text = &quot;Windows NT 4.0&quot;;
+        break;
+    case 5:
+        if (vs.Minor == 0)
+            textBox1.Text = &quot;Windows 2000&quot;;
+        else if (vs.Minor == 1)
+            textBox1.Text = &quot;Windows XP&quot;;
+        else
+        {
+            if (isServer)
+            {
+                if (WindowsAPI.GetSystemMetrics(89) == 0)
+                    textBox1.Text = &quot;Windows Server 2003&quot;;
+                else
+                    textBox1.Text = &quot;Windows Server 2003 R2&quot;;
+            }
+            else
+                textBox1.Text = &quot;Windows XP&quot;;
+        }
+        break;
+    case 6:
+        if (vs.Minor == 0)
+        {
+            if (isServer)
+                textBox1.Text = &quot;Windows Server 2008&quot;;
+            else
+                textBox1.Text = &quot;Windows Vista&quot;;
+        }
+        else if (vs.Minor == 1)
+        {
+            if (isServer)
+                textBox1.Text = &quot;Windows Server 2008 R2&quot;;
+            else
+                textBox1.Text = &quot;Windows 7&quot;;
+        }
+        else if (vs.Minor == 2)
+            textBox1.Text = &quot;Windows 8&quot;;
+        else
+        {
+            if (isServer)
+                textBox1.Text = &quot;Windows Server 2012 R2&quot;;
+            else
+                textBox1.Text = &quot;Windows 8.1&quot;;
+        }
+        break;
+} 
+
+//Set the textBox2 to the machine name
+textBox2.Text = Environment.MachineName;
+
+//Set the textBox4 to the domain name to which the machine is connected else set it to Workgroup
+try
+{
+    textBox4.Text = <a class="libraryLink" href="https://code.msdn.microsoft.com/Sample-to-demonstrate-how-495e69db/https://code.msdn.microsoft.com/Sample-to-demonstrate-how-495e69db/https://msdn.microsoft.com/en-US/library/System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain.aspx"  title="Auto generated link to System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain">System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain</a>().Name; 
+}
+catch (ActiveDirectoryObjectNotFoundException ex)
+{
+    textBox4.Text = &quot;WORKGROUP&quot;;     
+}
+
+//Set textBox3 to the current service pack level installed on the machine
+textBox3.Text = GetServicePack();
+        }
+    }
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Set&nbsp;textBox5&nbsp;and&nbsp;textBox6&nbsp;appropriately&nbsp;based&nbsp;on&nbsp;the&nbsp;bitness&nbsp;of&nbsp;the&nbsp;machine&nbsp;and&nbsp;the&nbsp;process</span><span class="cs__keyword">if</span>&nbsp;(Environment.Is64BitOperatingSystem)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox5.Text&nbsp;=&nbsp;<span class="cs__string">&quot;64-Bit&quot;</span>;&nbsp;
+}&nbsp;
+<span class="cs__keyword">else</span>&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox5.Text&nbsp;=&nbsp;<span class="cs__string">&quot;32-Bit&quot;</span>;&nbsp;
+}&nbsp;
+&nbsp;
+<span class="cs__keyword">if</span>&nbsp;(Environment.Is64BitProcess)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox6.Text&nbsp;=&nbsp;<span class="cs__string">&quot;64-Bit&quot;</span>;&nbsp;
+}&nbsp;
+<span class="cs__keyword">else</span>&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox6.Text&nbsp;=&nbsp;<span class="cs__string">&quot;32-Bit&quot;</span>;&nbsp;
+}&nbsp;
+&nbsp;
+<span class="cs__com">//Set&nbsp;the&nbsp;textbox1&nbsp;to&nbsp;the&nbsp;Operating&nbsp;System&nbsp;name&nbsp;by&nbsp;checking&nbsp;the&nbsp;OS&nbsp;version.&nbsp;</span>&nbsp;
+Version&nbsp;vs&nbsp;=&nbsp;Environment.OSVersion.Version;&nbsp;
+&nbsp;
+<span class="cs__keyword">bool</span>&nbsp;isServer&nbsp;=&nbsp;IsServerVersion();&nbsp;
+&nbsp;
+<span class="cs__keyword">switch</span>&nbsp;(vs.Major)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">case</span><span class="cs__number">3</span>:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;NT&nbsp;3.51&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">break</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">case</span><span class="cs__number">4</span>:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;NT&nbsp;4.0&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">break</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">case</span><span class="cs__number">5</span>:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(vs.Minor&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;2000&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span><span class="cs__keyword">if</span>&nbsp;(vs.Minor&nbsp;==&nbsp;<span class="cs__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;XP&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(isServer)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(WindowsAPI.GetSystemMetrics(<span class="cs__number">89</span>)&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Server&nbsp;2003&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Server&nbsp;2003&nbsp;R2&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;XP&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">break</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">case</span><span class="cs__number">6</span>:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(vs.Minor&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(isServer)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Server&nbsp;2008&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Vista&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span><span class="cs__keyword">if</span>&nbsp;(vs.Minor&nbsp;==&nbsp;<span class="cs__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(isServer)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Server&nbsp;2008&nbsp;R2&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;7&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span><span class="cs__keyword">if</span>&nbsp;(vs.Minor&nbsp;==&nbsp;<span class="cs__number">2</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;8&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(isServer)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;Server&nbsp;2012&nbsp;R2&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textBox1.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Windows&nbsp;8.1&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">break</span>;&nbsp;
+}&nbsp;&nbsp;
+&nbsp;
+<span class="cs__com">//Set&nbsp;the&nbsp;textBox2&nbsp;to&nbsp;the&nbsp;machine&nbsp;name</span>&nbsp;
+textBox2.Text&nbsp;=&nbsp;Environment.MachineName;&nbsp;
+&nbsp;
+<span class="cs__com">//Set&nbsp;the&nbsp;textBox4&nbsp;to&nbsp;the&nbsp;domain&nbsp;name&nbsp;to&nbsp;which&nbsp;the&nbsp;machine&nbsp;is&nbsp;connected&nbsp;else&nbsp;set&nbsp;it&nbsp;to&nbsp;Workgroup</span><span class="cs__keyword">try</span>&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox4.Text&nbsp;=&nbsp;<a class="libraryLink" href="https://code.msdn.microsoft.com/Sample-to-demonstrate-how-495e69db/https://code.msdn.microsoft.com/Sample-to-demonstrate-how-495e69db/https://msdn.microsoft.com/en-US/library/System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain.aspx"  title="Auto generated link to System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain">System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain</a>().Name;&nbsp;&nbsp;
+}&nbsp;
+<span class="cs__keyword">catch</span>&nbsp;(ActiveDirectoryObjectNotFoundException&nbsp;ex)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;textBox4.Text&nbsp;=&nbsp;<span class="cs__string">&quot;WORKGROUP&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+&nbsp;
+<span class="cs__com">//Set&nbsp;textBox3&nbsp;to&nbsp;the&nbsp;current&nbsp;service&nbsp;pack&nbsp;level&nbsp;installed&nbsp;on&nbsp;the&nbsp;machine</span>&nbsp;
+textBox3.Text&nbsp;=&nbsp;GetServicePack();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>More Information</h2>
+<p>How to Determine the Operation System Service Pack Level in Visual C#.NET<br>
+<a href="http://support.microsoft.com/kb/304721">http://support.microsoft.com/kb/304721</a></p>
+<p>MSDN: Environment Properties<br>
+<a href="http://msdn.microsoft.com/en-us/library/System.Environment_properties(v=vs.110).aspx">http://msdn.microsoft.com/en-us/library/System.Environment_properties(v=vs.110).aspx</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="endscriptcode">
+<div class="endscriptcode">
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640"><img src="description/image.png" alt=""></a></div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

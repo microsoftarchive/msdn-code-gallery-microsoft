@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Use SMTP to send email (CSSMTPSendEmail)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Use SMTP to send email (CSSMTPSendEmail)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Network
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SMTP
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/11/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSSMTPSendEmail-2717a609">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>CONSOLE APPLICATION( CSSMTPSendEmail)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">CSSMTPSendEmail demonstrates sending email with attachment and embedded image in the message body using SMTP server from a C# program.</p>
+<p class="MsoNormal">With the introduction of .NET 2.0, the classes for sending email are packed in the <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.Mail.aspx"  title="Auto generated link to System.Net.Mail">System.Net.Mail</a> namespace. In the example, we use the MailMessage and the SmtpClient classes.</p>
+<h2>Using the Code</h2>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Build an email object and set the basic email properties.<span style="">
+</span></p>
+<p class="MsoListParagraphCxSpMiddle"><span class="GramE"><span style="">Represents an e-mail message that can be sent using the
+<span class="SpellE">SmtpClient</span> class.</span></span> <span style="">Instances of the
+<span class="SpellE">MailMessage</span> class are used to construct e-mail messages that are transmitted to an SMTP server for delivery using the
+<span class="SpellE">SmtpClient</span> class. </span></p>
+<p class="MsoListParagraphCxSpMiddle"><span style="">The sender, recipient, subject, and body of an e-mail message may be specified as parameters when a
+<span class="SpellE">MailMessage</span> is used to initialize a <span class="SpellE">
+MailMessage</span> object. These parameters may also be set or accessed using properties on the
+<span class="SpellE">MailMessage</span> object. </span></p>
+<p class="MsoListParagraphCxSpLast"><span style=""><span style="">&nbsp;</span>The primary mail message headers and elements for the message may be set using the following properties of the
+<span class="SpellE">MailMessage</span> class. </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    MailMessage mail = new MailMessage();
+    mail.To.Add(&quot;anyreceiver@anydomain.com&quot;);
+    mail.From = new MailAddress(&quot;anyaddress@anydomain.com&quot;);
+
+</pre>
+<pre id="codePreview" class="csharp">
+    MailMessage mail = new MailMessage();
+    mail.To.Add(&quot;anyreceiver@anydomain.com&quot;);
+    mail.From = new MailAddress(&quot;anyaddress@anydomain.com&quot;);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph" style=""><span style=""><span style="">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Add an attachment of the email.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    mail.Attachments.Add(new Attachment(attachedFile));
+
+</pre>
+<pre id="codePreview" class="csharp">
+    mail.Attachments.Add(new Attachment(attachedFile));
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoListParagraph" style=""><span style=""><span style="">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Embed an image in the message body.</p>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Configure the SMTP client.</p>
+<p class="MsoListParagraphCxSpMiddle"><span class="GramE">Allows applications to send e-mail by using the Simple Mail Transfer Protocol (SMTP).</span> The
+<span class="SpellE">SmtpClient</span> class is used to send e-mail to an SMTP server for delivery. The SMTP protocol is defined in RFC 2821, which is available at
+<a href="http://www.ietf.org/">http://www.ietf.org</a>. </p>
+<p class="MsoListParagraphCxSpLast">The classes shown in the following table are used to construct e-mail messages that can be sent using
+<span class="SpellE">SmtpClient</span>.</p>
+<p class="MsoListParagraphCxSpFirst" style=""><span style=""><span style="">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Send the email.</p>
+<p class="MsoListParagraphCxSpMiddle"><span class="GramE">Sends the specified message to an SMTP server for delivery.</span> This method blocks while the e-mail is transmitted. You can specify a time-out value using the Timeout property to ensure that the
+ method returns after a specified amount of time elapses. </p>
+<p class="MsoListParagraphCxSpMiddle">Before calling this method, the Host and Port properties must be set either through the configuration files by setting the relevant properties, or by passing this information into the
+<span class="SpellE"><span class="GramE">SmtpClient</span></span><span class="GramE">(</span>String, Int32) constructor.
+</p>
+<p class="MsoListParagraphCxSpMiddle">You cannot call this method if there is a message being sent asynchronously.
+</p>
+<p class="MsoListParagraphCxSpMiddle">If the SMTP host requires credentials, you must set them before calling this method. To specify credentials, use the
+<span class="SpellE">UseDefaultCredentials</span> or Credentials properties. </p>
+<p class="MsoListParagraphCxSpMiddle">If you receive <span class="GramE">an</span>
+<span class="SpellE">SmtpException</span> exception, check the <span class="SpellE">
+StatusCode</span> property to find the reason the operation failed. The <span class="SpellE">
+SmtpException</span> can also contain an inner exception that indicates the reason the operation failed.
+</p>
+<p class="MsoListParagraphCxSpLast">When sending e-mail using Send to multiple recipients and the SMTP server accepts some recipients as valid and rejects others, Send sends e-mail to the accepted recipients and then a
+<span class="SpellE">SmtpFailedRecipientsException</span> is thrown. The exception will contain a listing of the recipients that were rejected.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+   smtp.Send(mail);
+
+</pre>
+<pre id="codePreview" class="csharp">
+   smtp.Send(mail);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information</h2>
+<p class="MsoListParagraph" style="margin-bottom:0cm; margin-bottom:.0001pt; line-height:normal; text-autospace:none">
+<span style="font-family:������"></span></p>
+<p class="MsoNormal"><span style="font-family:������">MSDN: SmtpClient Class </span>
+</p>
+<p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient.aspx">http://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient.aspx</a>
+</span></p>
+<p class="MsoNormal"><span style="font-family:������">Sending Emails from C# Application using default SMTP
+</span></p>
+<p class="MsoNormal"><span style=""><a href="http://www.codeproject.com/KB/cs/Sending_Mails_From_C_.aspx">http://www.codeproject.com/KB/cs/Sending_Mails_From_C_.aspx</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

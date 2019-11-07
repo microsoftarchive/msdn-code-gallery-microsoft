@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Multithreaded web downloader (CSMultiThreadedWebDownloader)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Multithreaded web downloader (CSMultiThreadedWebDownloader)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows General, Network
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            HTTP Download
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/8/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSMultiThreadedWebDownloade-2be7db9b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>Windows APPLICATION: CSMultiThreadedWebDownloader </h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New">The sample demonstrates how to download a file on Web using multiple threads.<br>
+<br>
+The class <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.WebClient.aspx"  title="Auto generated link to System.Net.WebClient">System.Net.WebClient</a> has a DownloadProgressChanged event, and you can register<br>
+this event to show the progress. But this class does not support Pause/Resume.<br>
+<br>
+The class MultiThreadedWebDownloader in this sample could be used to download data through
+<br>
+internet and supports following features:<br>
+1. Download the whole file using multiple threads. <br>
+2. Set the proxy.<br>
+3. Set the buffer and cache size.<br>
+4. Start, Pause, Resume and Cancel a download. &nbsp;<br>
+5. Supply the file size, download speed and used time.<br>
+6. Expose the events StatusChanged, DownloadProgressChanged and DownloadCompleted.<br>
+<br>
+NOTE:<br>
+<br>
+1. To pause and resume a download, or download a file using multi-threads, the server
+<br>
+&nbsp; must support &quot;Accept-Ranges&quot; header, so that we can add range to the webrequset<br>
+&nbsp; to download a specified block of the file.<br>
+<br>
+2. If you are trying to download a single file using multiple threads/ multiple <br>
+&nbsp; HttpWebRequest’s, multiple requests (each asking for a different range) will all
+<br>
+&nbsp; be pipelined over a single connection (not necessarily all). You have to take into<br>
+&nbsp; consideration as to how many threads you are spinning, and how many max Connections<br>
+&nbsp; you have set for the ServicePointManager. By default, ServicePointManager has a
+<br>
+&nbsp; default of 2 max connections for console applications, so only 2 requests can be
+<br>
+&nbsp; active at a time and will be downloading 2 parts of the large file. So yes, your
+<br>
+&nbsp; approach will speed up the download, but you also need to take into account the
+<br>
+&nbsp; maximum number of connections. If you increase the number of available connections,<br>
+&nbsp; you will get a better download rate. But, do not increase it to a very large value,
+<br>
+&nbsp; otherwise you will end up spiking the CPU due to the overhead of creating multiple<br>
+&nbsp; connections simultaneously. Try to limit the max Conn number = 12 * # CPU which
+<br>
+&nbsp; asp.net uses. <br>
+<br>
+&nbsp; </p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New">Step1. Build the sample project in Visual Studio 2010.<br>
+<br>
+Step2. Run CSMultiThreadedWebDownloader.exe. <br>
+<br>
+Step3. Type following link as url.<br>
+<a  href="http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe">http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe</a><br>
+<br>
+Step4. Click the button &quot;Check Url&quot;. Then the textbox &quot;Url&quot; and the button &quot;Check Url&quot;
+<br>
+&nbsp; &nbsp; &nbsp; will be disabled, the textbox &quot;Local path&quot; and the button &quot;Download&quot; will be eabled.
+<br>
+<br>
+Step5. Type a local path like D:\DotNetFx4.exe.<br>
+<br>
+Step6. Click the button &quot;Download&quot;, you will see the status &quot;Downloading&quot; and the summary
+<br>
+&nbsp; &nbsp; &nbsp; &quot;Received: ***KB, Total: ***KB, Speed: ***KB/s Thread: *&quot;, the progressbar will<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; also change.<br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; In Windows Explorer, you will find a file &nbsp;D:\DotNetFx4.exe.tmp.<br>
+<br>
+Step7. Click the button &quot;Pause&quot;, you will see the status &quot;Paused&quot; and the summary
+<br>
+&nbsp; &nbsp; &nbsp; &quot;Received: ***KB, Total: ***KB, Time: ***&quot;, the progressbar will also stop.<br>
+<br>
+Step8. Click the button &quot;Resume&quot;, you will see the status &quot;Downloading&quot; and the summary
+<br>
+&nbsp; &nbsp; &nbsp; &quot;Received: ***KB, Total: ***KB, Speed: ***KB/s&quot;, the progressbar will also change.<br>
+<br>
+Step9. When the download completes, you will see the status &quot;Completed&quot; and the summary
+<br>
+&nbsp; &nbsp; &nbsp; &quot;Received: ***KB, Total: ***KB, Time: ***&quot;, the progressbar will also stop.<br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; In Windows Explorer, you will find a file &nbsp;D:\DotNetFx4.exe.<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+1. When the application starts, it loads the proxy settings in app.config. <br>
+<br>
+2. Before downloading the file, MultiThreadedWebDownloader has to check whether<br>
+&nbsp; 2.1 The file exists.<br>
+&nbsp; 2.2 The remote server supports &quot;Accept-Ranges&quot; header.<br>
+&nbsp; 2.3 The size of the file is more than 0.<br>
+<br>
+3. If the check is passed, then user can specify the local path and start the download.<br>
+&nbsp; <br>
+&nbsp; When the download starts, check whether the destination file exists. If not, create<br>
+&nbsp; a local file with the same size as the file to be downloaded.<br>
+<br>
+&nbsp; If the remote server does not support &quot;Accept-Ranges&quot; header, the downloader will<br>
+&nbsp; create just one HttpDownloadClient to download the file in a single thread. Else, the
+<br>
+&nbsp; downloader will create multiple HttpDownloadClients to download the file in multiple<br>
+&nbsp; threads.<br>
+<br>
+4. When a HttpDownloadClient object is created, initialize the fields/properties<br>
+&nbsp; StartPoint, EndPoint, BufferSize, MaxCacheSize, BufferCountPerNotification, Url<br>
+&nbsp; DownloadPath and Status.<br>
+<br>
+5. Each download thread will read a buffer of bytes from the response stream, and store the<br>
+&nbsp; buffer to a MemoryStream cache first. If the cache is full, or the download is paused,
+<br>
+&nbsp; canceled or completed, write the data in cache to local file.<br>
+<br>
+6. Raise the event DownloadProgressChanged when read a specified number of buffers.<br>
+<br>
+7. If the download is paused, each HttpDownloadClient will store the downloaded size. When<br>
+&nbsp; it is resumed, start to download the file from a start point.<br>
+<br>
+8. Update the used time and status when the current download stops.<br>
+<br>
+9. Raise the event DownloadCompleted when the download is completed or canceled.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/system.net.webrequest.aspx"  title="Auto generated link to system.net.webrequest">system.net.webrequest</a> class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx</a><br>
+<br>
+How can i check if file download completed <br>
+<a  href="http://social.msdn.microsoft.com/Forums/en-US/csharpgeneral/thread/e115d4a1-5800-4f2a-98d8-079de6cf8a1a">http://social.msdn.microsoft.com/Forums/en-US/csharpgeneral/thread/e115d4a1-5800-4f2a-98d8-079de6cf8a1a</a><br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

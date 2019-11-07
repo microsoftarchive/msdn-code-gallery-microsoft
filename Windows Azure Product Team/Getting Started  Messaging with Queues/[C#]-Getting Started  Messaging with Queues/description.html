@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=62DBC035A4A8AD76676CA11B61CB6C59" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/bbaae96c-224e-49fa-b126-0ffa05fb4baeCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=60546B18CCC226DE9D7A404EDD74623E" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Getting Started : Messaging with Queues</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Getting Started : Messaging with Queues</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Microsoft Azure, Service Bus
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Service Bus
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/13/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Getting-Started-Brokered-aa7a0ac3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p style="text-align:justify">This sample demonstrates how to use Windows Azure Service Bus to send and receive messages from a queue. The queue provides decoupled, asynchronous communication between a sender and any number of receivers (here, a single receiver).</p>
+<p><span style="color:black">Imagine a scenario where a company tracks issues sent by customers. This sample demonstrates how to do this with a&nbsp;Queue. Messages are delivered in the order recieved.
+</span><span style="color:black">The sample has a single message receiver processing messages from the Queue, but additional receivers can be added on that same Queue. In that case competing consumers can be used to load-balance and load level between the systems.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">Create a Service Bus Namespace from <a href="http://windows.azure.com">
+http://windows.azure.com</a> </span></p>
+<p>&nbsp;</p>
+<h1>Sample Flow</h1>
+<p><br>
+<span style="font-size:small">The sample flows in the following manner:</span></p>
+<ol>
+<li><span style="font-size:small">Creation of Queue</span> </li><li><span style="font-size:small">Send messages to&nbsp;Queue</span> </li><li><span style="font-size:small">Receive messages for&nbsp;Queue&nbsp;</span>&nbsp;
+</li></ol>
+<h1>Running the Sample</h1>
+<p><span style="font-size:small">To run the sample:</span></p>
+<ol>
+<li><span style="font-size:small">Download Microsoft.ServiceBus.dll via NuGet.</span>
+</li><li><span style="font-size:small">Build the solution in Visual Studio. </span></li><li><span style="font-size:small">Provide a Service Bus connection string from Portal in app.config file.</span>
+</li><li><span style="font-size:small">Run the project.</span> </li></ol>
+<h2><strong>Expected Output - Sender</strong></h2>
+<p><span style="font-size:small">Creating Queue</span></p>
+<p><span style="font-size:small">Sending messages to Queue...</span></p>
+<p><span style="font-size:small">Message sent: Id = 1, Body = First message information</span></p>
+<p><span style="font-size:small">Message sent: Id = 2, Body = Second message information</span></p>
+<p><span style="font-size:small">Message sent: Id = 3, Body = Third message information</span></p>
+<p>&nbsp;</p>
+<h2><strong><span style="color:black">Expected Output - Receiver</span></strong></h2>
+<p><span style="font-size:small">&nbsp;</span></p>
+<p><span style="font-size:small">Receiving messages from Queue...</span></p>
+<p><span style="font-size:small">Message received: Id = 1, Body = First message information</span></p>
+<p><span style="font-size:small">Message received: Id = 2, Body = Second message information</span></p>
+<p><span style="font-size:small">Message received: Id = 3, Body = Third message information</span></p>
+<p><span style="font-size:small">End of scenario, press ENTER to exit.<span style="font-family:Times New Roman; font-size:small">
+</span></span></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

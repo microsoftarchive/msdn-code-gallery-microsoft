@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>153aa087-8129-46dc-bd69-d2b20e429fe0</UniqueIdentifier>
+      <Extensions>ico;bmp;dlg;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;resw;resjson</Extensions>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{04556fc2-670d-45d9-bfc9-72eceef6d27f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="ScenarioList.xaml" />
+    <Page Include="ScenarioInput1.xaml" />
+    <Page Include="ScenarioOutput1.xaml" />
+    <Page Include="ScenarioInput2.xaml" />
+    <Page Include="ScenarioOutput2.xaml" />
+    <Page Include="ScenarioInput3.xaml" />
+    <Page Include="ScenarioOutput3.xaml" />
+    <Page Include="ScenarioInput4.xaml" />
+    <Page Include="ScenarioOutput4.xaml" />
+    <Page Include="ScenarioInput5.xaml" />
+    <Page Include="ScenarioOutput5.xaml" />
+    <Page Include="PreviewUnavailable.xaml" />
+    <Page Include="ScenarioInput6.xaml" />
+    <Page Include="ScenarioOutput6.xaml" />
+    <Page Include="ContinuationPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ScenarioList.xaml.cpp" />
+    <ClCompile Include="ScenarioInput1.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput1.xaml.cpp" />
+    <ClCompile Include="ScenarioInput2.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput2.xaml.cpp" />
+    <ClCompile Include="ScenarioInput3.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput3.xaml.cpp" />
+    <ClCompile Include="ScenarioInput4.xaml.cpp" />
+    <ClCompile Include="ScenarioInput5.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput4.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput5.xaml.cpp" />
+    <ClCompile Include="PreviewUnavailable.xaml.cpp" />
+    <ClCompile Include="ScenarioInput6.xaml.cpp" />
+    <ClCompile Include="ScenarioOutput6.xaml.cpp" />
+    <ClCompile Include="BasePrintPage.cpp" />
+    <ClCompile Include="ContinuationPage.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="ScenarioList.xaml.h" />
+    <ClInclude Include="CppSamplesUtils.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput1.xaml.h" />
+    <ClInclude Include="ScenarioOutput1.xaml.h" />
+    <ClInclude Include="ScenarioInput2.xaml.h" />
+    <ClInclude Include="ScenarioOutput2.xaml.h" />
+    <ClInclude Include="ScenarioInput3.xaml.h" />
+    <ClInclude Include="ScenarioOutput3.xaml.h" />
+    <ClInclude Include="ScenarioInput4.xaml.h" />
+    <ClInclude Include="ScenarioInput5.xaml.h" />
+    <ClInclude Include="ScenarioOutput4.xaml.h" />
+    <ClInclude Include="ScenarioOutput5.xaml.h" />
+    <ClInclude Include="DisplayContent.h" />
+    <ClInclude Include="PreviewUnavailable.xaml.h" />
+    <ClInclude Include="ScenarioInput6.xaml.h" />
+    <ClInclude Include="ScenarioOutput6.xaml.h" />
+    <ClInclude Include="BasePrintPage.h" />
+    <ClInclude Include="ContinuationPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\microsoft-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\placeholder-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\print_1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\print_2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\print_3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\smallTile-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\splash-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\squareTile-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\storeLogo-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\tile-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\windows-sdk.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo1.JPG">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo2.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo3.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo4.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo5.JPG">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo6.JPG">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo7.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo8.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\photo9.jpg">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\print_4.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

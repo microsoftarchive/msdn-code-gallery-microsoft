@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MSDN Search - VS 2013</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MSDN Search - VS 2013</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Extensibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Microsoft Visual Studio 2013 SDK
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/29/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/MSDN-Search-VS-2013-7053588b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="longDesc">
+<h2>Introduction</h2>
+<p><span>This sample demonstrates how to extend Quick Launch and add a search provider to search outside Tools Options / Menus / Open Documents (the built-in providers).</span></p>
+<ul>
+<li><span>In this sample Quick Launch display results from MSDN.</span> </li></ul>
+<p>&nbsp;</p>
+<h2>Quick Navigation</h2>
+<table>
+<tbody>
+<tr>
+<td><span>1 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#Req">
+Requirements</a></span></td>
+</tr>
+<tr>
+<td><span>2 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#downloadAndInstall">
+Download and Install</a></span></td>
+</tr>
+<tr>
+<td><span>3 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#BuildAndRun">
+Building and Running</a></span></td>
+</tr>
+<tr>
+<td><span>4 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#GettingStarted">
+Getting Started</a></span></td>
+</tr>
+<tr>
+<td><span>4.1 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#ProjFiles">
+Project Files</a></span></td>
+</tr>
+<tr>
+<td><span>4.4 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#Status">
+Status</a></span></td>
+</tr>
+<tr>
+<td><span>4.5 <a href="http://code.msdn.microsoft.com/QuickLaunchExtensionMSDNSearchProvider#AddResx">
+Additional Resources</a></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2>Requirements</h2>
+<p><span><a class="externalLink" href="http://msdn.com/vstudio">Visual Studio 2013 and Visual Studio 2013 SDK</a></span><br>
+<br>
+</p>
+<h2>Download and Install</h2>
+<ul>
+<li><span>Go to the &quot;Downloads tab&quot; and download the zip file associated with this sample
+</span></li><li><span>Unzip the sample to your machine </span></li><li><span>Double click on the .sln file to launch the solution </span></li></ul>
+<p>&nbsp;</p>
+<h2>Building and Running</h2>
+<p><span>To build and execute the sample, press F5 after the sample is loaded. This will launch the experimental hive which will demonstrate the sample's function.</span><br>
+<br>
+</p>
+<h3>Getting Started</h3>
+<p><br>
+<span>Once this sample is installed, when using Quick Launch, MSDN is one of the search providers for which results are displayed. You will also see MSDN Search in Tools Options &gt; Quick Launch under the list of providers. To scope search to MSDN, prefix
+ search string with @msdn, e.g. &quot;@msdn Hello World&quot;. </span><br>
+<br>
+</p>
+<h2>Project Files</h2>
+<table border="1">
+<tbody>
+<tr>
+<th>
+<p><span>File Name</span></p>
+</th>
+<th>
+<p><span>Description</span></p>
+</th>
+</tr>
+<tr>
+<td><span><strong>MSDNSearchPackage</strong></span></td>
+<td><span>This file contains the ExtensionPointPackage implementation. Declares the supported extension points (the Quick Launch search provider). It also is responsible for declaring About Box registration data.</span></td>
+</tr>
+<tr>
+<td><span><strong>MSDNSearchProvider</strong></span></td>
+<td><span>This file contains the search provider implementation. The class implements the IVsSearchProvider interface that enables Quick Launch integration.</span></td>
+</tr>
+<tr>
+<td><span><strong>MSDNSearchTask</strong></span></td>
+<td><span>This class derives from <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.VisualStudio.Shell.VsSearchTask.aspx"  title="Auto generated link to Microsoft.VisualStudio.Shell.VsSearchTask">Microsoft.VisualStudio.Shell.VsSearchTask</a> and implements the task used to perform the actual searches. It queries the MSDN online server, process the returned RSS feed and creates search results to be displayed in the Quick
+ Launch popup.</span></td>
+</tr>
+<tr>
+<td><span><strong>MSDNSearchResult</strong></span></td>
+<td><span>This class represents a search result from MSDN Search category. It exposes properties such as DisplayText, Tooltip, and implements the action to be executed when the search result is selected by the user.</span></td>
+</tr>
+<tr>
+<td><span><strong>Guids</strong></span></td>
+<td><span>This is the list of command IDs that the sample defines</span></td>
+</tr>
+<tr>
+<td><span><strong>Resources (.resx/.Designer.cs)</strong></span></td>
+<td><span>These files are used to support localized strings and search results icons.</span></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td><span><strong>Resources\ResultsIcon.ico</strong></span></td>
+<td><span>This file defines the icon to be used for the search results in MSDN category</span></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td><span><strong>Resources\Product.ico</strong></span></td>
+<td><span>This file defines the icon to be used for the product, in About Box and in Extensions and Updates dialog.</span></td>
+</tr>
+<tr>
+<td><span><strong>VSPackage.resx</strong></span></td>
+<td><span>This file is used to support localized strings and images for About Box registration.</span></td>
+</tr>
+<tr>
+<td><span><strong>Example.MSDNSearch.png</strong></span></td>
+<td><span>This file defines the preview image to be used by the VSIX extension in the Extensions and Updates dialog.</span></td>
+</tr>
+</tbody>
+</table>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel"><br>
+</span></p>
+<h2>Status</h2>
+<table border="1">
+<tbody>
+<tr>
+<th><span>Function </span></th>
+<th><span>Status </span></th>
+</tr>
+<tr>
+<td><span>Demonstrates Accessibility</span></td>
+<td><span>No</span></td>
+</tr>
+<tr>
+<td><span>Demonstrates Error Handling</span></td>
+<td><span>Yes</span></td>
+</tr>
+<tr>
+<td><span>Follows SDK Coding Standards</span></td>
+<td><span>No</span></td>
+</tr>
+<tr>
+<td><span>Demonstrates Localization</span></td>
+<td><span>No</span></td>
+</tr>
+<tr>
+<td><span>Implements Functional Tests</span></td>
+<td><span>No</span></td>
+</tr>
+<tr>
+<td><span>Samples supported by Microsoft</span></td>
+<td><span>Yes</span></td>
+</tr>
+<tr>
+<td><span>Implements Unit Tests</span></td>
+<td><span>No</span></td>
+</tr>
+</tbody>
+</table>
+<p><span id="Span3"><br>
+</span></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

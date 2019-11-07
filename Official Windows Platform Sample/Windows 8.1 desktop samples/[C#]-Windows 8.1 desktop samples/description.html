@@ -1,0 +1,1004 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=C911D510A8FF96468115FC697F48DB9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=3B88C67755B382DB6EC23F09A048D6C2" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows 8.1 desktop samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows 8.1 desktop samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Controls, Security, User Interface, Data Access, Globalization, Networking, Storage, Windows 8, Audio and video, App model, Devices and sensors, Windows 8.1
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/10/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Windows-8-Desktop-Samples">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample pack includes all the app code examples developed and updated for Windows 8.1. The sample pack provides a convenient way to download all the samples at once. The samples in this sample pack are available in C# and/or C&#43;&#43;.</p>
+<p>This sample pack includes all the app code examples developed and updated for Windows 8.1. The sample pack provides a convenient way to download all the samples at once. The samples in this sample pack are available in C# and/or C&#43;&#43;. The Windows Samples
+ Gallery contains a variety of code samples that exercise the various new programming models, platforms, features, and components available in Windows 8.1 and/or Windows Server 2012 R2. These downloadable samples are provided as compressed ZIP files that contain
+ a Visual Studio solution (SLN) file for the sample, along with the source files, assets, resources, and metadata necessary to successfully compile and run the sample.</p>
+<p>For more information about the programming models, platforms, languages, and APIs demonstrated in this sample, please refer to the guidance, tutorials, and reference topics provided in the Windows 8.1 documentation available in the Windows Developer Center.
+ This sample is provided as-is in order to indicate or demonstrate the functionality of the programming models and feature APIs for Windows 8.1 and/or Windows Server 2012 R2.</p>
+<p>This pack may be very large and take some time to download.</p>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1</dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2</dt></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--pe15580-->
+                        <!--pe13116-->
+                        <!--ps15490-->
+                        <div id="item">
+                                <div><a href="Sending toast notifications from desktop apps sample/description.html">Sending toast notifications from desktop apps sample</a></div>
+                            <div>This sample demonstrates how a desktop app can display a toast notification and respond to events generated by the user&#39;s interaction (or lack of interaction) with the toast.</div>
+                        </div>
+                        <!--pe15490-->
+                        <!--ps15616-->
+                        <div id="item">
+                                <div><a href="Virtual hard disk management sample/description.html">Virtual hard disk management sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs and Virtual Hard Disk APIs to manage virtual hard disks.</div>
+                        </div>
+                        <!--pe15616-->
+                        <!--pe15653-->
+                        <!--pe13131-->
+                        <!--pe13117-->
+                        <!--pe25584-->
+                        <!--pe23516-->
+                        <!--pe13175-->
+                        <!--ps26133-->
+                        <div id="item">
+                                <div><a href="Per-Monitor Aware WPF Sample/description.html">Per-Monitor Aware WPF Sample</a></div>
+                            <div>This sample demonstrates updating a Windows Presentation Foundation (WPF) application to be per-monitor DPI-aware.</div>
+                        </div>
+                        <!--pe26133-->
+                        <!--pe13124-->
+                        <!--pe13170-->
+                        <!--pe15640-->
+                        <!--pe13165-->
+                        <!--pe15641-->
+                        <!--pe15654-->
+                        <!--pe13147-->
+                        <!--pe13119-->
+                        <!--pe13173-->
+                        <!--pe15658-->
+                        <!--pe18278-->
+                        <!--ps18279-->
+                        <div id="item">
+                                <div><a href="Management Infrastructure API sample/description.html">Management Infrastructure API sample</a></div>
+                            <div> Windows&#160;8.1 and Windows Server&#160;2012&#160;R2 introduce a new set of management APIs, called the Windows Management Infrastructure APIs. This includes provider C APIs, client C APIs, and client .Net APIs. These new APIs are more tightly aligned with the CI...</div>
+                        </div>
+                        <!--pe18279-->
+                        <!--ps13118-->
+                        <div id="item">
+                                <div><a href="Cluster Aware Updating plug-in sample/description.html">Cluster Aware Updating plug-in sample</a></div>
+                            <div>This sample demonstrates a Cluster Aware Updating (CAU) plug-in that runs an arbitrary, administrator-specified, command on each cluster node.</div>
+                        </div>
+                        <!--pe13118-->
+                        <!--pe13141-->
+                        <!--ps13114-->
+                        <div id="item">
+                                <div><a href="Add app package sample/description.html">Add app package sample</a></div>
+                            <div>This sample shows you how to install a package on the system using the Package deployment API.</div>
+                        </div>
+                        <!--pe13114-->
+                        <!--pe13139-->
+                        <!--pe13168-->
+                        <!--pe13129-->
+                        <!--pe13128-->
+                        <!--ps13115-->
+                        <div id="item">
+                                <div><a href="Windows Powershell  basic OData Web Service sample/description.html">Windows Powershell  basic OData Web Service sample</a></div>
+                            <div> This sample is an implementation of the two interfaces that authorize all incoming users and provides everyone default Windows PowerShell session configuration. Using the Management OData Web Service requires a third party to implement the Microsoft...</div>
+                        </div>
+                        <!--pe13115-->
+                        <!--pe25545-->
+                        <!--pe13177-->
+                        <!--ps15577-->
+                        <div id="item">
+                                <div><a href="Hyper-V networking sample/description.html">Hyper-V networking sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI networking APIs to create, configure, and remove networking related objects such as switches and ports.</div>
+                        </div>
+                        <!--pe15577-->
+                        <!--pe17054-->
+                        <!--ps25550-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages sample/description.html">Enumerate app packages sample</a></div>
+                            <div>This sample shows how to enumerate all app packages installed on the system, and enumerate every user that has installed each package.</div>
+                        </div>
+                        <!--pe25550-->
+                        <!--pe17031-->
+                        <!--pe13166-->
+                        <!--pe15502-->
+                        <!--pe13127-->
+                        <!--ps15477-->
+                        <div id="item">
+                                <div><a href="Hyper-V recovery snapshot sample/description.html">Hyper-V recovery snapshot sample</a></div>
+                            <div>This sample demonstrates how to set up and use the Hyper-V backup WMI APIs.</div>
+                        </div>
+                        <!--pe15477-->
+                        <!--pe13171-->
+                        <!--pe17053-->
+                        <!--pe13130-->
+                        <!--pe13148-->
+                        <!--pe17032-->
+                        <!--ps13135-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages sample/description.html">Enumerate app packages sample</a></div>
+                            <div>This sample shows how to enumerate all app packages installed on the system, and enumerate every user that installed each package.</div>
+                        </div>
+                        <!--pe13135-->
+                        <!--pe15526-->
+                        <!--pe23515-->
+                        <!--pe15617-->
+                        <!--pe15586-->
+                        <!--pe17035-->
+                        <!--ps15491-->
+                        <div id="item">
+                                <div><a href="Hyper-V dynamic memory sample/description.html">Hyper-V dynamic memory sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to obtain information about, and modify, dynamic memory in a virtual machine.</div>
+                        </div>
+                        <!--pe15491-->
+                        <!--ps17038-->
+                        <div id="item">
+                                <div><a href="Effective access rights for files sample/description.html">Effective access rights for files sample</a></div>
+                            <div>Demonstrates the use of Authorization APIs to compute a user&#39;s effective access rights on a file or folder.</div>
+                        </div>
+                        <!--pe17038-->
+                        <!--pe18280-->
+                        <!--pe17033-->
+                        <!--ps25600-->
+                        <div id="item">
+                                <div><a href="Windows Server Essentials Dashboard add-in Samples/description.html">Windows Server Essentials Dashboard add-in Samples</a></div>
+                            <div>This sample demonstrates how to develop various add-ins to the Windows Server Essentials Dashboard.</div>
+                        </div>
+                        <!--pe25600-->
+                        <!--ps25559-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host02 Sample/description.html">Windows PowerShell Host02 Sample</a></div>
+                            <div>This sample application uses the PowerShell runtime along with a host implementation to call Get-Process and display the results as you would see them in powershell.exe.</div>
+                        </div>
+                        <!--pe25559-->
+                        <!--pe17048-->
+                        <!--pe13154-->
+                        <!--pe15492-->
+                        <!--pe23514-->
+                        <!--pe15639-->
+                        <!--ps15568-->
+                        <div id="item">
+                                <div><a href="Hyper-V metrics sample/description.html">Hyper-V metrics sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V metrics WMI APIs to manage metrics for a virtual machine.</div>
+                        </div>
+                        <!--pe15568-->
+                        <!--pe15657-->
+                        <!--pe13120-->
+                        <!--pe15493-->
+                        <!--pe17042-->
+                        <!--ps15598-->
+                        <div id="item">
+                                <div><a href="Hyper-V replication sample/description.html">Hyper-V replication sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI replication APIs to configure and control virtual machine replication.</div>
+                        </div>
+                        <!--pe15598-->
+                        <!--pe17045-->
+                        <!--pe13169-->
+                        <!--ps25601-->
+                        <div id="item">
+                                <div><a href="Windows Server Essentials HostedEmail add-in samples/description.html">Windows Server Essentials HostedEmail add-in samples</a></div>
+                            <div>This sample describes the key components for a hosted email add-in, a mockup service, and a logging helper for Windows Server Essentials.</div>
+                        </div>
+                        <!--pe25601-->
+                        <!--pe15541-->
+                        <!--ps13155-->
+                        <div id="item">
+                                <div><a href="App package removal sample/description.html">App package removal sample</a></div>
+                            <div>This sample shows how to remove an app package from the system using the Package deployment API.</div>
+                        </div>
+                        <!--pe13155-->
+                        <!--ps25563-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host06 Sample/description.html">Windows PowerShell Host06 Sample</a></div>
+                            <div>This sample application shows building a fairly complete interactive console-based host which allows users to run cmdlets and see the output.</div>
+                        </div>
+                        <!--pe25563-->
+                        <!--pe15578-->
+                        <!--pe15574-->
+                        <!--ps15607-->
+                        <div id="item">
+                                <div><a href="Hyper-V resource pool management sample/description.html">Hyper-V resource pool management sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage Hyper-V resource pools.</div>
+                        </div>
+                        <!--pe15607-->
+                        <!--pe15623-->
+                        <!--pe15656-->
+                        <!--pe15480-->
+                        <!--ps15469-->
+                        <div id="item">
+                                <div><a href="Hyper-V application health monitoring sample/description.html">Hyper-V application health monitoring sample</a></div>
+                            <div>This sample demonstrates how to monitor the health of guest applications running in a virtual machine of a Hyper-V server.</div>
+                        </div>
+                        <!--pe15469-->
+                        <!--pe15540-->
+                        <!--pe15522-->
+                        <!--pe17036-->
+                        <!--pe15605-->
+                        <!--pe15547-->
+                        <!--ps25576-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 04 Sample/description.html">Windows PowerShell Runspace 04 Sample</a></div>
+                            <div>This sample shows how to use the PowerShell class to run commands. The commands generate a terminating exception that the caller should catch and process.</div>
+                        </div>
+                        <!--pe25576-->
+                        <!--ps25582-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 10 Sample/description.html">Windows PowerShell Runspace 10 Sample</a></div>
+                            <div>This sample shows how to add a cmdlet to an InitialSessionState object and then use the modified InitialSessionState object when creating a Runspace object.</div>
+                        </div>
+                        <!--pe25582-->
+                        <!--ps13156-->
+                        <div id="item">
+                                <div><a href="Windows Powershell  role-based OData Web Service sample/description.html">Windows Powershell  role-based OData Web Service sample</a></div>
+                            <div>Using the Management OData Web Service requires a third party to implement the Microsoft.Management.OData.CustomAuthorization and System.Management.Automation.Remoting.PSSessionConfiguration interfaces to expose Windows PowerShell cmdlets. These inte...</div>
+                        </div>
+                        <!--pe13156-->
+                        <!--ps17052-->
+                        <div id="item">
+                                <div><a href="Server manager deployment CIM sample/description.html">Server manager deployment CIM sample</a></div>
+                            <div>This sample demonstrates how to use Microsoft&#39;s CIM APIs</div>
+                        </div>
+                        <!--pe17052-->
+                        <!--pe18277-->
+                        <!--pe15489-->
+                        <!--pe13144-->
+                        <!--pe13145-->
+                        <!--pe13172-->
+                        <!--ps25597-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Template Provider 01 Sample/description.html">Windows PowerShell Template Provider 01 Sample</a></div>
+                            <div>This sample creates a template for a provider that hooks into the Windows PowerShell namespaces. It contains all possible provider overrides and interfaces.</div>
+                        </div>
+                        <!--pe25597-->
+                        <!--ps25578-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 06 Sample/description.html">Windows PowerShell Runspace 06 Sample</a></div>
+                            <div>This sample shows how to add a module to an initial session state, how to create a runspace that uses the initial session state, and how to run a cmdlet that is provided by the module. This sample assumes that the user has the GetProcessSample02.dll ...</div>
+                        </div>
+                        <!--pe25578-->
+                        <!--pe15659-->
+                        <!--pe15651-->
+                        <!--pe15587-->
+                        <!--ps15588-->
+                        <div id="item">
+                                <div><a href="Hyper-V planned virtual machines sample/description.html">Hyper-V planned virtual machines sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage planned virtual machines.</div>
+                        </div>
+                        <!--pe15588-->
+                        <!--pe15638-->
+                        <!--ps18274-->
+                        <div id="item">
+                                <div><a href="Hyper-V virtual Fiber Channel sample/description.html">Hyper-V virtual Fiber Channel sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI Fiber Channel APIs to create, configure, and remove storage area networks and virtual Fiber Channel ports.</div>
+                        </div>
+                        <!--pe18274-->
+                        <!--ps13136-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages by name and publisher sample/description.html">Enumerate app packages by name and publisher sample</a></div>
+                            <div>This sample shows how to enumerate app packages installed on the system by name and publisher.</div>
+                        </div>
+                        <!--pe13136-->
+                        <!--pe15539-->
+                        <!--ps25547-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Event Registration Sample/description.html">Windows PowerShell Event Registration Sample</a></div>
+                            <div>This sample shows how to create a cmdlet for event registration by deriving from ObjectEventRegistrationBase.</div>
+                        </div>
+                        <!--pe25547-->
+                        <!--ps25555-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell GetProcessSample03 Sample/description.html">Windows PowerShell GetProcessSample03 Sample</a></div>
+                            <div>This sample shows how to create a cmdlet that can take input from pipeline.</div>
+                        </div>
+                        <!--pe25555-->
+                        <!--ps25573-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 01 Sample/description.html">Windows PowerShell Runspace 01 Sample</a></div>
+                            <div>This sample uses the PowerShell class to run the Get-Process cmdlet synchronously. The Name and HandleCount are extracted from the objects returned by the cmdlet and displayed. Subsequent runspace samples show how to implement additional runspace fun...</div>
+                        </div>
+                        <!--pe25573-->
+                        <!--ps25579-->
+                        <div id="item">
+                                <div><a href="Winodws PowerShell Runspace 07 Sample/description.html">Winodws PowerShell Runspace 07 Sample</a></div>
+                            <div>This sample shows how to create a runspace and how to run commands using a PowerShell object. It builds a pipeline that runs the Get-Process cmdlet, which is piped to the Measure-Object cmdlet to count the number of processes running on the system.</div>
+                        </div>
+                        <!--pe25579-->
+                        <!--pe15645-->
+                        <!--pe15560-->
+                        <!--pe15626-->
+                        <!--ps25574-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 02 Sample/description.html">Windows PowerShell Runspace 02 Sample</a></div>
+                            <div>This sample uses the PowerShell class to run the Get-Process cmdlet synchronously. Windows Forms and data binding are used to display the results in a DataGridView control. Subsequent runspace samples show how to implement additional runspace functio...</div>
+                        </div>
+                        <!--pe25574-->
+                        <!--ps25570-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Remote Runspace 01 Sample/description.html">Windows PowerShell Remote Runspace 01 Sample</a></div>
+                            <div>This sample shows how to construct a remote runspace, set connection and operation timeouts, establish a remote connection, and close the connection.</div>
+                        </div>
+                        <!--pe25570-->
+                        <!--ps25543-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Debugger API Sample/description.html">Windows PowerShell Debugger API Sample</a></div>
+                            <div>This sample shows how to use the PowerShell Debugger API.</div>
+                        </div>
+                        <!--pe25543-->
+                        <!--ps25602-->
+                        <div id="item">
+                                <div><a href="Windows Server Essentials Launchpad add-in samples/description.html">Windows Server Essentials Launchpad add-in samples</a></div>
+                            <div>This sample shows how to add links to the Launchpad client agent for Windows Server Essentials.</div>
+                        </div>
+                        <!--pe25602-->
+                        <!--ps25594-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell StopProcessSample04 Sample/description.html">Windows PowerShell StopProcessSample04 Sample</a></div>
+                            <div>This sample shows how to declare parameter sets, the input object, and how to specify the default parameter set to use. This cmdlet stops processes running on the local computer.</div>
+                        </div>
+                        <!--pe25594-->
+                        <!--pe15602-->
+                        <!--pe15636-->
+                        <!--pe15471-->
+                        <!--pe13178-->
+                        <!--pe17051-->
+                        <!--pe15572-->
+                        <!--pe13174-->
+                        <!--pe13160-->
+                        <!--pe13163-->
+                        <!--pe13153-->
+                        <!--pe15523-->
+                        <!--ps15570-->
+                        <div id="item">
+                                <div><a href="Hyper-V virtual machine migration sample/description.html">Hyper-V virtual machine migration sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage virtual machine migration.</div>
+                        </div>
+                        <!--pe15570-->
+                        <!--pe25565-->
+                        <!--ps25546-->
+                        <div id="item">
+                                <div><a href="Hyper-V enhanced session mode sample/description.html">Hyper-V enhanced session mode sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage enhanced session mode.</div>
+                        </div>
+                        <!--pe25546-->
+                        <!--ps25551-->
+                        <div id="item">
+                                <div><a href="Hyper-V generation 2 virtual machine sample/description.html">Hyper-V generation 2 virtual machine sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage generation 2 virtual machines.</div>
+                        </div>
+                        <!--pe25551-->
+                        <!--pe15559-->
+                        <!--pe15604-->
+                        <!--pe13157-->
+                        <!--pe15521-->
+                        <!--pe15582-->
+                        <!--pe15592-->
+                        <!--pe15585-->
+                        <!--pe15544-->
+                        <!--pe15494-->
+                        <!--pe13159-->
+                        <!--pe15603-->
+                        <!--ps25541-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Container Activity Sample/description.html">Windows PowerShell Container Activity Sample</a></div>
+                            <div>This sample shows how to write a Windows Workflow Activity that can accept a PowerShell script block as an argument.</div>
+                        </div>
+                        <!--pe25541-->
+                        <!--ps25575-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 03 Sample/description.html">Windows PowerShell Runspace 03 Sample</a></div>
+                            <div>This sample uses the PowerShell class to execute a script that retrieves process information for the list of process names passed into the script. It shows how to pass input objects to a script and how to retrieve error objects as well as the output ...</div>
+                        </div>
+                        <!--pe25575-->
+                        <!--ps25558-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host01 Sample/description.html">Windows PowerShell Host01 Sample</a></div>
+                            <div>This sample uses the RunspaceInvoke class to execute a script that calls exit. The host application looks at this and prints out the result.</div>
+                        </div>
+                        <!--pe25558-->
+                        <!--pe15620-->
+                        <!--pe15579-->
+                        <!--pe15630-->
+                        <!--pe15506-->
+                        <!--pe15553-->
+                        <!--pe15535-->
+                        <!--pe15537-->
+                        <!--pe17040-->
+                        <!--ps25567-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell PowerShell01 Sample/description.html">Windows PowerShell PowerShell01 Sample</a></div>
+                            <div>This sample uses InitialSessionState to constrain a runspace and add commands and providers.</div>
+                        </div>
+                        <!--pe25567-->
+                        <!--ps25581-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 09 Sample/description.html">Windows PowerShell Runspace 09 Sample</a></div>
+                            <div>This sample shows how to use a PowerShell object to run a script that generates the numbers from 1 to 10 with delays between each number. The pipeline of the PowerShell object is run asynchronously and events are used to handle the output.</div>
+                        </div>
+                        <!--pe25581-->
+                        <!--pe15571-->
+                        <!--pe15619-->
+                        <!--pe15549-->
+                        <!--pe15545-->
+                        <!--pe15528-->
+                        <!--pe13133-->
+                        <!--pe15581-->
+                        <!--pe15583-->
+                        <!--ps18276-->
+                        <div id="item">
+                                <div><a href="Association sample/description.html">Association sample</a></div>
+                            <div> This sample demonstrates associations between OData entities in a Management OData server. It shows how to associate two entities with one another by editing the Schema.mof file, and how the association is mapped to the supporting cmdlets. It also d...</div>
+                        </div>
+                        <!--pe18276-->
+                        <!--pe13176-->
+                        <!--pe15499-->
+                        <!--pe15550-->
+                        <!--pe13151-->
+                        <!--pe13121-->
+                        <!--pe17056-->
+                        <!--pe17049-->
+                        <!--pe15655-->
+                        <!--pe15590-->
+                        <!--ps25566-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Job Source Adapter Sample/description.html">Windows PowerShell Job Source Adapter Sample</a></div>
+                            <div>This sample shows how to derive a FileCopyJob class from the Job2 type and a FileCopyJobSourceAdapter class from the JobSourceAdapter type.</div>
+                        </div>
+                        <!--pe25566-->
+                        <!--ps25540-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Activity Generator Sample/description.html">Windows PowerShell Activity Generator Sample</a></div>
+                            <div>This sample shows how to use the Windows PowerShell Activity Generation API to generate the source code for an activity that wraps a Windows PowerShell command from C# code. The sample then and then compiles the source code into an activity dll.</div>
+                        </div>
+                        <!--pe25540-->
+                        <!--ps25553-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell GetProcessSample01 Sample/description.html">Windows PowerShell GetProcessSample01 Sample</a></div>
+                            <div>This sample shows how to create a simple cmdlet.</div>
+                        </div>
+                        <!--pe25553-->
+                        <!--ps25548-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Event Notification Sample/description.html">Windows PowerShell Event Notification Sample</a></div>
+                            <div>This sample shows how to receive notifications of Windows PowerShell events that are generated on remote computers.</div>
+                        </div>
+                        <!--pe25548-->
+                        <!--pe25549-->
+                        <!--pe25542-->
+                        <!--ps25537-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 05/description.html">Windows PowerShell AccessDB Provider Sample 05</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider that creates PowerShell drives to manipulate items with containers and navigation support.</div>
+                        </div>
+                        <!--pe25537-->
+                        <!--ps25564-->
+                        <div id="item">
+                                <div><a href="Hyper-V Integration Services sample/description.html">Hyper-V Integration Services sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V Integration Services WMI APIs to interact with a virtual machine.</div>
+                        </div>
+                        <!--pe25564-->
+                        <!--ps25568-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell PowerShell02 Sample/description.html">Windows PowerShell PowerShell02 Sample</a></div>
+                            <div>This sample uses a RunspacePool to run multiple commands concurrently. Although commands can be run synchronously using runspace pools, typically runspace pools are used to run commands concurrently.</div>
+                        </div>
+                        <!--pe25568-->
+                        <!--ps25586-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Select-String Sample/description.html">Windows PowerShell Select-String Sample</a></div>
+                            <div>This sample creates a cmdlet called Select-Str that searches files for specified patterns. The patterns can be case-sensitive or case-insensitive. The user can also specify a script block to use for performing the matching operation instead of relyin...</div>
+                        </div>
+                        <!--pe25586-->
+                        <!--pe17047-->
+                        <!--pe17057-->
+                        <!--pe15554-->
+                        <!--pe15518-->
+                        <!--pe15505-->
+                        <!--pe15486-->
+                        <!--pe15487-->
+                        <!--pe15525-->
+                        <!--pe15533-->
+                        <!--pe13138-->
+                        <!--pe13140-->
+                        <!--pe15468-->
+                        <!--pe15473-->
+                        <!--pe15478-->
+                        <!--pe15632-->
+                        <!--pe15635-->
+                        <!--pe15565-->
+                        <!--pe15600-->
+                        <!--pe15608-->
+                        <!--ps25583-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 11 Sample/description.html">Windows PowerShell Runspace 11 Sample</a></div>
+                            <div>This sample shows how to use the CommandMetadata class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command (a function) is then added to an initial session state that is used to cr...</div>
+                        </div>
+                        <!--pe25583-->
+                        <!--ps25536-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 04/description.html">Windows PowerShell AccessDB Provider Sample 04</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider that creates PowerShell drives to manipulate items with containers.</div>
+                        </div>
+                        <!--pe25536-->
+                        <!--pe15538-->
+                        <!--ps13137-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages by user SID sample/description.html">Enumerate app packages by user SID sample</a></div>
+                            <div>This sample demonstrates how to enumerate app packages installed on the system by the specified user.</div>
+                        </div>
+                        <!--pe13137-->
+                        <!--pe13132-->
+                        <!--pe17041-->
+                        <!--pe13150-->
+                        <!--pe13122-->
+                        <!--pe13161-->
+                        <!--pe15584-->
+                        <!--pe17034-->
+                        <!--pe15524-->
+                        <!--ps25560-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host03 Sample/description.html">Windows PowerShell Host03 Sample</a></div>
+                            <div>This sample application shows building a fairly complete interactive console-based host which allows users to run cmdlets and see the output.</div>
+                        </div>
+                        <!--pe25560-->
+                        <!--ps25588-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Serialization 02 Sample/description.html">Windows PowerShell Serialization 02 Sample</a></div>
+                            <div>By default, serialization preserves all public properties of an object. This sample looks at an existing .NET class and shows how to make sure that information from an instance of this class is preserved across serialization and deserialization when ...</div>
+                        </div>
+                        <!--pe25588-->
+                        <!--pe15543-->
+                        <!--pe15609-->
+                        <!--pe15624-->
+                        <!--pe15575-->
+                        <!--pe15652-->
+                        <!--pe15649-->
+                        <!--pe15622-->
+                        <!--pe17039-->
+                        <!--pe13126-->
+                        <!--ps25571-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Remote Runspace Pool 01 Sample/description.html">Windows PowerShell Remote Runspace Pool 01 Sample</a></div>
+                            <div>This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently using this pool. Although commands can be run synchronously using runspace pools, typically runspace pools are used to run command concurrently.</div>
+                        </div>
+                        <!--pe25571-->
+                        <!--ps25592-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell StopProcessSample02 Sample/description.html">Windows PowerShell StopProcessSample02 Sample</a></div>
+                            <div>This sample shows how to write a cmdlet that implements user notifications using WriteWarning, WriteVerbose, and WriteDebug. The cmdlet stops a specified process.</div>
+                        </div>
+                        <!--pe25592-->
+                        <!--ps25596-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Supports Paging 01 Sample/description.html">Windows PowerShell Supports Paging 01 Sample</a></div>
+                            <div>This sample shows how to implement a cmdlet called Get-Numbers that supports paging operations. The Get-Numbers cmdlet generates up to 100 consecutive numbers starting from 0. The IncludeTotalCount, Skip, and First parameters enable the user to perfo...</div>
+                        </div>
+                        <!--pe25596-->
+                        <!--ps25603-->
+                        <div id="item">
+                                <div><a href="Windows Server Essentials Provider Samples/description.html">Windows Server Essentials Provider Samples</a></div>
+                            <div>The Provider Framework is a communication framework in Windows Server Essentials that allows a developer to develop server management components. This sample shows how to create a provider to create a chat room and how to interact between the UI and ...</div>
+                        </div>
+                        <!--pe25603-->
+                        <!--pe13134-->
+                        <!--pe15470-->
+                        <!--pe15527-->
+                        <!--pe15484-->
+                        <!--pe17050-->
+                        <!--pe17055-->
+                        <!--ps25534-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 02/description.html">Windows PowerShell AccessDB Provider Sample 02</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider that creates PowerShell drives.</div>
+                        </div>
+                        <!--pe25534-->
+                        <!--pe15647-->
+                        <!--pe15566-->
+                        <!--pe15563-->
+                        <!--pe15615-->
+                        <!--pe15612-->
+                        <!--pe15614-->
+                        <!--pe15625-->
+                        <!--pe15576-->
+                        <!--pe15593-->
+                        <!--pe15637-->
+                        <!--ps25535-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 03/description.html">Windows PowerShell AccessDB Provider Sample 03</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider that creates PowerShell drives to manipulate items.</div>
+                        </div>
+                        <!--pe25535-->
+                        <!--pe17046-->
+                        <!--pe15482-->
+                        <!--pe15500-->
+                        <!--pe15503-->
+                        <!--pe15507-->
+                        <!--pe15509-->
+                        <!--pe15519-->
+                        <!--pe15512-->
+                        <!--pe15514-->
+                        <!--pe15534-->
+                        <!--pe15548-->
+                        <!--ps25595-->
+                        <div id="item">
+                                <div><a href="Hyper-V storage QoS sample/description.html">Hyper-V storage QoS sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI storage APIs to configure and monitor Quality of Service for virtual disks.</div>
+                        </div>
+                        <!--pe25595-->
+                        <!--ps25593-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell StopProcessSample03 Sample/description.html">Windows PowerShell StopProcessSample03 Sample</a></div>
+                            <div>This sample shows how to write a cmdlet that declares aliases for parameters and supports wildcards.</div>
+                        </div>
+                        <!--pe25593-->
+                        <!--ps25569-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Script Line Profiler Sample/description.html">Windows PowerShell Script Line Profiler Sample</a></div>
+                            <div>This sample shows how to create a script line profiler using the new Windows PowerShell 3.0 AST (Abstract Syntax Tree) support.</div>
+                        </div>
+                        <!--pe25569-->
+                        <!--ps25577-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 5 Sample/description.html">Windows PowerShell Runspace 5 Sample</a></div>
+                            <div>This sample shows how to create an initial session state and then use the initial session state when creating the runspace. This sample assumes that user has the GetProcessSample01.dll that is produced by the GetProcessSample01 sample copied to the c...</div>
+                        </div>
+                        <!--pe25577-->
+                        <!--pe17043-->
+                        <!--pe15646-->
+                        <!--ps25562-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host05 Sample/description.html">Windows PowerShell Host05 Sample</a></div>
+                            <div>This sample application shows building a fairly complete interactive console-based host which allows users to run cmdlets and see the output.</div>
+                        </div>
+                        <!--pe25562-->
+                        <!--pe15627-->
+                        <!--pe15558-->
+                        <!--pe13146-->
+                        <!--pe13142-->
+                        <!--pe15557-->
+                        <!--pe17044-->
+                        <!--pe15634-->
+                        <!--pe13123-->
+                        <!--pe13162-->
+                        <!--pe15555-->
+                        <!--pe15556-->
+                        <!--pe15531-->
+                        <!--pe15532-->
+                        <!--ps25538-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 06/description.html">Windows PowerShell AccessDB Provider Sample 06</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider that creates PowerShell drives to manipulate items, navigate containers, and access content.</div>
+                        </div>
+                        <!--pe25538-->
+                        <!--pe25544-->
+                        <!--ps25589-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Serialization 03 Sample/description.html">Windows PowerShell Serialization 03 Sample</a></div>
+                            <div>This sample looks at an existing .NET class and shows how to make sure that instances of this class and of derived classes are deserialized (rehydrated) into live .NET objects.</div>
+                        </div>
+                        <!--pe25589-->
+                        <!--ps25598-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Transacted Comment Sample/description.html">Windows PowerShell Transacted Comment Sample</a></div>
+                            <div>This sample shows a set of cmdlets that participate in Windows PowerShell transactions. These cmdlets provide a comment log that can be changed, completed, or rolled back along with the rest of the transaction. It also provides a simple transactional...</div>
+                        </div>
+                        <!--pe25598-->
+                        <!--ps25599-->
+                        <div id="item">
+                                <div><a href="Virtual Machine operations sample/description.html">Virtual Machine operations sample</a></div>
+                            <div>This sample shows how to use the Hyper-V WMI APIs to perform various operations on virtual machines.</div>
+                        </div>
+                        <!--pe25599-->
+                        <!--pe15536-->
+                        <!--pe15542-->
+                        <!--pe15476-->
+                        <!--pe15479-->
+                        <!--pe15481-->
+                        <!--pe15650-->
+                        <!--pe15567-->
+                        <!--pe15594-->
+                        <!--pe15591-->
+                        <!--pe15611-->
+                        <!--pe15601-->
+                        <!--pe15596-->
+                        <!--pe15597-->
+                        <!--pe15628-->
+                        <!--pe15629-->
+                        <!--pe15552-->
+                        <!--pe17037-->
+                        <!--pe15472-->
+                        <!--pe15485-->
+                        <!--pe15501-->
+                        <!--pe15496-->
+                        <!--pe15513-->
+                        <!--pe15510-->
+                        <!--pe15498-->
+                        <!--ps25591-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell StopProcessSample01 Sample/description.html">Windows PowerShell StopProcessSample01 Sample</a></div>
+                            <div>This sample shows how to write a cmdlet that implements a PassThru parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the ShouldProcess and ShouldContinue methods. This cmdlet sto...</div>
+                        </div>
+                        <!--pe25591-->
+                        <!--ps25554-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell GetProcessSample02 Sample/description.html">Windows PowerShell GetProcessSample02 Sample</a></div>
+                            <div>This sample shows how to create a cmdlet that has a parameter. The cmdlet takes one or more process names, and returns the matching processes.</div>
+                        </div>
+                        <!--pe25554-->
+                        <!--ps25561-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Host04 Sample/description.html">Windows PowerShell Host04 Sample</a></div>
+                            <div>This sample application shows building a fairly complete interactive console-based host which allows users to run cmdlets and see the output.</div>
+                        </div>
+                        <!--pe25561-->
+                        <!--pe15595-->
+                        <!--pe15648-->
+                        <!--pe15530-->
+                        <!--pe15546-->
+                        <!--ps25572-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Remoting Disconnect Reconnect Sample/description.html">Windows PowerShell Remoting Disconnect Reconnect Sample</a></div>
+                            <div>This sample shows how to construct a remote runspace, construct a pipeline to execute a long running script, disconnect the runspace and pipeline, reconstruct the runspace and pipeline state, reconnect the runspace and pipeline, and retrieve command ...</div>
+                        </div>
+                        <!--pe25572-->
+                        <!--pe25552-->
+                        <!--ps25539-->
+                        <div id="item">
+                                <div><a href="Activity Controller Extensibility Sample/description.html">Activity Controller Extensibility Sample</a></div>
+                            <div>This sample demonstrates how to extend the Windows PowerShell Workflow activity controller.</div>
+                        </div>
+                        <!--pe25539-->
+                        <!--ps25580-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Runspace 8 Sample/description.html">Windows PowerShell Runspace 8 Sample</a></div>
+                            <div>This sample shows how to use a PowerShell object to run commands. The PowerShell object builds a pipeline that include the Get-Process cmdlet, which is then piped to the Sort-Object cmdlet. Parameters are added to the Sort-Object cmdlet to sort the H...</div>
+                        </div>
+                        <!--pe25580-->
+                        <!--pe15529-->
+                        <!--pe15504-->
+                        <!--pe15511-->
+                        <!--pe15488-->
+                        <!--pe13164-->
+                        <!--pe13158-->
+                        <!--pe13125-->
+                        <!--pe15631-->
+                        <!--pe15613-->
+                        <!--pe15610-->
+                        <!--pe15599-->
+                        <!--pe15589-->
+                        <!--pe15562-->
+                        <!--pe15633-->
+                        <!--pe15643-->
+                        <!--ps25533-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell AccessDB Provider Sample 01/description.html">Windows PowerShell AccessDB Provider Sample 01</a></div>
+                            <div>This sample shows how to implement a basic Windows PowerShell provider.</div>
+                        </div>
+                        <!--pe25533-->
+                        <!--pe15474-->
+                        <!--pe15475-->
+                        <!--pe15467-->
+                        <!--pe15497-->
+                        <!--pe15515-->
+                        <!--pe15516-->
+                        <!--pe15517-->
+                        <!--pe15551-->
+                        <!--ps25590-->
+                        <div id="item">
+                                <div><a href="Simple Workflow Extensibility Sample/description.html">Simple Workflow Extensibility Sample</a></div>
+                            <div>This sample demonstrates how to host the Windows PowerShell Worflow runtime in an application.</div>
+                        </div>
+                        <!--pe25590-->
+                        <!--ps25587-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Serialization 01 Sample/description.html">Windows PowerShell Serialization 01 Sample</a></div>
+                            <div>This sample looks at an existing .NET class and shows how to make sure that information from selected public properties of this class is preserved across serialization and deserialization. The sample uses a types.ps1xml file to declare which properti...</div>
+                        </div>
+                        <!--pe25587-->
+                        <!--ps25585-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell Select-Object 01 Sample/description.html">Windows PowerShell Select-Object 01 Sample</a></div>
+                            <div>This sample creates a cmdlet called Select-Obj which acts as a filter to select only certain objects to process or pass down the pipeline. It is most effectively used as a pipeline receiver from other cmdlets such as Get-Service or Get-Process. The F...</div>
+                        </div>
+                        <!--pe25585-->
+                        <!--ps25556-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell GetProcessSample04 Sample/description.html">Windows PowerShell GetProcessSample04 Sample</a></div>
+                            <div>This sample shows how to create a cmdlet that handles non-terminating errors.</div>
+                        </div>
+                        <!--pe25556-->
+                        <!--ps25557-->
+                        <div id="item">
+                                <div><a href="Windows PowerShell GetProcessSample05 Sample/description.html">Windows PowerShell GetProcessSample05 Sample</a></div>
+                            <div>This sample shows how to create a cmdlet that displays a list of specified processes.</div>
+                        </div>
+                        <!--pe25557-->
+                        <!--pe15606-->
+                        <!--pe15618-->
+                        <!--pe15621-->
+                        <!--pe15561-->
+                        <!--pe15573-->
+                        <!--pe15644-->
+                        <!--pe15642-->
+                        <!--pe15520-->
+                        <!--pe15508-->
+                        <!--pe15495-->
+                        <!--pe15483-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.ControllerSketch.JS" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>XInput game controller JS sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>images\storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-US" />
+  </Resources>
+  <Applications>
+    <Application Id="ControllerSketch" StartPage="default.html">
+      <VisualElements DisplayName="XInput game controller JS sample" Logo="images\squareTile-sdk.png" SmallLogo="images\smallTile-sdk.png" Description="XInput game controller JS sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <DefaultTile ShowName="allLogos" ShortName="XInput game controller JS" />
+        <SplashScreen Image="images\splash-sdk.png" BackgroundColor="#00b2f0" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

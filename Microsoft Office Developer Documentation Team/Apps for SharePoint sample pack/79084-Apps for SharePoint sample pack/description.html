@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://uhf.microsoft.com/mscc/statics/mscc-0.4.1.min.css" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=DEF5E8F7E708877BD3C08A3782047A60" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=A2B16243798131F749B2726AC060C7D4" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Apps for SharePoint sample pack</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Apps for SharePoint sample pack</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, REST, Javascript, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Authentication, Mobile, Workflows, data and storage, sites and content, social computing
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/29/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Apps-for-SharePoint-sample-64c80184">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>Some of the SharePoint add-ins (formerly called &quot;apps for SharePoint&quot;) in this package are configured as &quot;autohosted&quot;. The autohosted preview has been discontinued. These sample add-ins still work when debugged with F5 in Visual Studio. To actually deploy
+ a sample in SharePoint, you will need to make a small change in the appmanifest.xml file. Replace the &lt;AutoDeployedWebApplication&gt; element and all its child elements with this string: &quot;&lt;RemoteWebApplication ClientId=&quot;*&quot; /&gt;&quot;</p>
+<p>Download all the code samples developed for apps for SharePoint in a single, convenient package.</p>
+<p>This sample pack includes all the code samples developed for apps for SharePoint. The sample pack provides a convenient way to download all the samples at once.</p>
+<h2>Apps for SharePoint sample pack</h2>
+<p>Apps for SharePoint are self-contained pieces of functionality that extend the capabilities of a SharePoint website. An app for SharePoint integrates the best of the web and SharePoint: It is targeted, lightweight, and easy to use, and it solves a user need.</p>
+<p>This sample pack includes all of the code samples developed for apps for SharePoint. You can also download the individual samples or read more about them by choosing theView samples tab.</p>
+<p>For additional information, you can visit the Apps for Office and SharePoint Developer Center: http://dev.office.com/. Visit frequently to learn about recently published content; to view essential getting-started content; to view rich media content such
+ as videos and screencasts; to get connected to instructor-led training and other learning resources; to learn more about product features and scenarios in our MSDN Resource Centers; and to find community resources such as MSDN forums, Microsoft team blogs,
+ MVP blogs, and much more.</p>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps17521-->
+                        <div id="item">
+                                <div>SharePoint 2013 workflow Using task action</div>
+                            <div>This sample illustrates how to use a the new Task Actions feature that has been added to SharePoint Designer 2013 for enhanced workflow design and development.</div>
+                        </div>
+                        <!--pe17521-->
+                        <!--ps17345-->
+                        <div id="item">
+                                <div>SharePoint 2013 Hello World remote app using REST</div>
+                            <div>Learn how to create a basic &quot;hello world&quot; provider-hosted app for SharePoint that uses the SharePoint REST interface to read information about a SharePoint 2013 site from a remote web application.</div>
+                        </div>
+                        <!--pe17345-->
+                        <!--ps17289-->
+                        <div id="item">
+                                <div>SharePoint 2013 Perform basic data access operations by using REST in apps</div>
+                            <div>Learn how to use the SharePoint REST APIs to perform basic data access operations (Create, Read, Update, Delete) on SharePoint 2013 lists and list items.</div>
+                        </div>
+                        <!--pe17289-->
+                        <!--ps17309-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Open a remote app webpage using an ECB custom action/description.html">SharePoint 2013 Open a remote app webpage using an ECB custom action</a></div>
+                            <div>This code sample includes an ECB (Edit Control Block) custom action that passes the SharePoint website URL, List ID, and Item ID from where it is invoked to a remote webpage.</div>
+                        </div>
+                        <!--pe17309-->
+                        <!--ps17279-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Customize a list view by using client-side rendering/description.html">SharePoint 2013 Customize a list view by using client-side rendering</a></div>
+                            <div>This sample uses client-side rendering technology in SharePoint 2013 to customize a view in an announcements list.</div>
+                        </div>
+                        <!--pe17279-->
+                        <!--ps17530-->
+                        <div id="item">
+                                <div>SharePoint 2013 workflow Create a custom action</div>
+                            <div>Learn how to use Visual Studio 2012 to create a SharePoint 2013 workflow that uses a custom actions and calls an external web service. When calling the web service, the sample workflow makes use of the new DynamicValue data type.</div>
+                        </div>
+                        <!--pe17530-->
+                        <!--ps18713-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Get the host web title using the cross-domain library (JSOM)/description.html">SharePoint 2013 Get the host web title using the cross-domain library (JSOM)</a></div>
+                            <div>Learn how to use the cross-domain library in apps for SharePoint to read the host web title by using the JavaScript Object Model (JSOM).</div>
+                        </div>
+                        <!--pe18713-->
+                        <!--ps17314-->
+                        <div id="item">
+                                <div>SharePoint 2013 Using the search REST service from an app for SharePoint</div>
+                            <div>Learn how to submit a search query to Search in SharePoint 2013 from within an app for SharePoint.</div>
+                        </div>
+                        <!--pe17314-->
+                        <!--ps17286-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Get the host web title using the cross-domain library (REST)/description.html">SharePoint 2013 Get the host web title using the cross-domain library (REST)</a></div>
+                            <div>Learn how to use the cross-domain library in apps for SharePoint to read the host web’s title by using the Representational State Transfer (REST) service.</div>
+                        </div>
+                        <!--pe17286-->
+                        <!--ps21011-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Approval workflow that uses a custom initiation form/description.html">SharePoint 2013 Approval workflow that uses a custom initiation form</a></div>
+                            <div>Learn how to use a flowchart-style workflow to route a workflow to different people depending on the course the workflow takes.</div>
+                        </div>
+                        <!--pe21011-->
+                        <!--ps21028-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Route workflows to states depending on actions and events/description.html">SharePoint 2013 Route workflows to states depending on actions and events</a></div>
+                            <div>Demonstrates how to route a workflow to different states depending on actions and events.</div>
+                        </div>
+                        <!--pe21028-->
+                        <!--ps17484-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use event receivers to handle events in apps for SharePoint/description.html">SharePoint 2013 Use event receivers to handle events in apps for SharePoint</a></div>
+                            <div>Learn how to handle events in an app for SharePoint by using the SharePoint development tools in Visual Studio 2012.</div>
+                        </div>
+                        <!--pe17484-->
+                        <!--ps17444-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access an external list with REST/description.html">SharePoint 2013 Access an external list with REST</a></div>
+                            <div>Learn how to create an app for SharePoint that will use RESTful URLs to query and manipulate data in an external list.</div>
+                        </div>
+                        <!--pe17444-->
+                        <!--ps17525-->
+                        <div id="item">
+                                <div>SharePoint 2013 workflow Sales tax calculator</div>
+                            <div>Demonstrates using Visual Studio 2012 and ﻿Workflow Manager Client 1.0 to create a workflow that calls a web service to obtain the sales tax rate for a given location. It then calculates the sales tax based on the base price in a product catalog.</div>
+                        </div>
+                        <!--pe17525-->
+                        <!--ps17282-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Get data from a remote service using the web proxy/description.html">SharePoint 2013 Get data from a remote service using the web proxy</a></div>
+                            <div>Learn how to read data in a remote service from a SharePoint webpage by using the web proxy in apps for SharePoint.</div>
+                        </div>
+                        <!--pe17282-->
+                        <!--ps17283-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Get data by using a proxy page for the cross-domain library/description.html">SharePoint 2013 Get data by using a proxy page for the cross-domain library</a></div>
+                            <div>Learn how to read data in a remote service from a SharePoint 2013 webpage by creating a custom proxy page for the cross-domain library in apps for SharePoint.</div>
+                        </div>
+                        <!--pe17283-->
+                        <!--ps17571-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 workflow Workflow OM in an app for SharePoint/description.html">SharePoint 2013 workflow Workflow OM in an app for SharePoint</a></div>
+                            <div>Provides a brief introduction to using the SharePoint 2013 object model to support advanced workflow development scenarios.</div>
+                        </div>
+                        <!--pe17571-->
+                        <!--ps19370-->
+                        <div id="item">
+                                <div>SharePoint 2013 Perform basic data operations on files and folders using REST</div>
+                            <div>A code sample using REST and the SharePoint Javascript cross-domain library to perform basic operations on document libraries and files.
+</div>
+                        </div>
+                        <!--pe19370-->
+                        <!--ps21005-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Add runtime instrumentation and error logging to apps/description.html">SharePoint 2013 Add runtime instrumentation and error logging to apps</a></div>
+                            <div>Learn how to add custom errors to the app monitoring system and enable runtime request tracing for apps for SharePoint.</div>
+                        </div>
+                        <!--pe21005-->
+                        <!--ps17528-->
+                        <div id="item">
+                                <div>SharePoint 2013 workflow Call an external web service</div>
+                            <div>Learn how to use Visual Studio 2012 to create a SharePoint 2013 workflow that calls an external web service. When calling the web service, the sample workflow also makes use of the new DynamicValue data type.</div>
+                        </div>
+                        <!--pe17528-->
+                        <!--ps21009-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the cross-domain library and REST for CRUD operations/description.html">SharePoint 2013 Use the cross-domain library and REST for CRUD operations</a></div>
+                            <div>Use the cross-domain library and the SharePoint REST API to perform standard CRUD operations on a list in the app web.</div>
+                        </div>
+                        <!--pe21009-->
+                        <!--ps17294-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the chrome control and the cross-domain library (REST)/description.html">SharePoint 2013 Use the chrome control and the cross-domain library (REST)</a></div>
+                            <div>This code sample includes a remote webpage that hosts the chrome control and retrieves information from the host web using the cross domain library and Representational State Transfer (REST) in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17294-->
+                        <!--ps21031-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the REST and CSOM Social APIs in apps for SharePoint/description.html">SharePoint 2013 Use the REST and CSOM Social APIs in apps for SharePoint</a></div>
+                            <div>Demonstrates how to use the REST and CSOM Social APIs in a provider-hosted app for SharePoint.
+</div>
+                        </div>
+                        <!--pe21031-->
+                        <!--ps21039-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create publishing pages in apps for SharePoint/description.html">SharePoint 2013 Create publishing pages in apps for SharePoint</a></div>
+                            <div>Demonstrates how to use the SP.Publishing JavaScript namespace in an app for SharePoint to create publishing pages in a publishing web.</div>
+                        </div>
+                        <!--pe21039-->
+                        <!--ps17313-->
+                        <div id="item">
+                                <div>SharePoint 2013 Build REST queries and use REST to traverse a site</div>
+                            <div>Learn how to use the SharePoint REST APIs to traverse a SharePoint 2013 site, and to create an app that builds queries that perform basic data operations (Create, Read, Update, and Delete) on basic SharePoint entities that are exposed at REST endpoints.</div>
+                        </div>
+                        <!--pe17313-->
+                        <!--ps17308-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Make app-only policy type calls in a remote app (REST)/description.html">SharePoint 2013 Make app-only policy type calls in a remote app (REST)</a></div>
+                            <div>Uses the AllowAppOnlyPolicy attribute and makes app only policy type calls. It uses OAuth to call back into SharePoint Server.  The sample uses Representational State Transfer (REST).</div>
+                        </div>
+                        <!--pe17308-->
+                        <!--ps20989-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Perform operations on SharePoint Document Library from PHP site/description.html">SharePoint 2013 Perform operations on SharePoint Document Library from PHP site</a></div>
+                            <div>This sample Provider-hosted SharePoint App shows how to perform following operations from a PHP site: List Documents, Check out a document, Check in a document, Edit document metadata, Upload a document</div>
+                        </div>
+                        <!--pe20989-->
+                        <!--ps17344-->
+                        <div id="item">
+                                <div>SharePoint 2013 Hello World remote app using CSOM</div>
+                            <div>Learn how to create a basic &quot;hello world&quot; provider-hosted app for SharePoint that uses the SharePoint CSOM to read information about a SharePoint 2013 site from a remote web application.</div>
+                        </div>
+                        <!--pe17344-->
+                        <!--ps17558-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access the Machine Translation Service with JavaScript/description.html">SharePoint 2013 Access the Machine Translation Service with JavaScript</a></div>
+                            <div>Learn how to translate document libraries, single documents or folders, and text streams with the Machine Translation Service in SharePoint Server 2013 using the JavaScript client object model.</div>
+                        </div>
+                        <!--pe17558-->
+                        <!--ps17272-->
+                        <div id="item">
+                                <div>SharePoint 2013 Localize the app web, host web, and remote components of an app</div>
+                            <div>This sample simulates a bookstore by using a SharePoint 2013 document library in which every document is a book. End users can request and buy new books by using the provided custom actions. The components of the app are localized for English and Spanish.</div>
+                        </div>
+                        <!--pe17272-->
+                        <!--ps17285-->
+                        <div id="item">
+                                <div>SharePoint 2013 Get list items by using the cross-domain library (REST)</div>
+                            <div>Learn how to use the cross-domain library in apps for SharePoint to read items in a list hosted in the app web.</div>
+                        </div>
+                        <!--pe17285-->
+                        <!--ps17295-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the SharePoint style sheet in an app/description.html">SharePoint 2013 Use the SharePoint style sheet in an app</a></div>
+                            <div>This code sample references the SharePoint 2013 website&#39;s style sheet in a remote webpage and uses the available styles.</div>
+                        </div>
+                        <!--pe17295-->
+                        <!--ps17454-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create a remote event receiver for external data/description.html">SharePoint 2013 Create a remote event receiver for external data</a></div>
+                            <div>Learn how to create a remote event receiver that performs actions based on changes in external data in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17454-->
+                        <!--ps17346-->
+                        <div id="item">
+                                <div>SharePoint 2013 Hello World SharePoint-hosted app</div>
+                            <div>Learn how to create a basic SharePoint-hosted app for SharePoint that uses JavaScript to read and display information about a SharePoint 2013 site.</div>
+                        </div>
+                        <!--pe17346-->
+                        <!--ps17559-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access complex external content types with CSOM/description.html">SharePoint 2013 Access complex external content types with CSOM</a></div>
+                            <div>Learn how to use client code libraries to manipulate app-scoped external content types in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17559-->
+                        <!--ps17557-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 MyFileConnector custom BCS indexing connector sample/description.html">SharePoint 2013 MyFileConnector custom BCS indexing connector sample</a></div>
+                            <div>Learn how to create a custom Business Connectivity Services (BCS) indexing connector for Search in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17557-->
+                        <!--ps17291-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Store and retrieve SharePoint list items on a Windows Phone/description.html">SharePoint 2013 Store and retrieve SharePoint list items on a Windows Phone</a></div>
+                            <div>To provide app users with access to data when connectivity with SharePoint is lost, or to save data to storage between sessions of the app regardless of server availability, you can take advantage of the Closing and Launching events of the PhoneApplicationService class.</div>
+                        </div>
+                        <!--pe17291-->
+                        <!--ps17297-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the chrome control in a cloud-hosted app/description.html">SharePoint 2013 Use the chrome control in a cloud-hosted app</a></div>
+                            <div>This sample includes a remote webpage that hosts the chrome control.</div>
+                        </div>
+                        <!--pe17297-->
+                        <!--ps17307-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Make app-only policy type calls in a remote app (CSOM)/description.html">SharePoint 2013 Make app-only policy type calls in a remote app (CSOM)</a></div>
+                            <div>Uses the AllowAppOnlyPolicy attribute and makes app-only policy type calls. It uses OAuth to call back into SharePoint Server.  Sample uses the SharePoint 2013 client object model (CSOM).</div>
+                        </div>
+                        <!--pe17307-->
+                        <!--ps17288-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Open a remote app webpage using a ribbon custom action/description.html">SharePoint 2013 Open a remote app webpage using a ribbon custom action</a></div>
+                            <div>This code sample includes an ECB (Edit Control Block) custom action that passes the SharePoint website URL, List ID, and selected Item IDs from where it is invoked to a remote webpage.</div>
+                        </div>
+                        <!--pe17288-->
+                        <!--ps21042-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use apps for Office in a provider-hosted app for SharePoint/description.html">SharePoint 2013 Use apps for Office in a provider-hosted app for SharePoint</a></div>
+                            <div>Use the client object model in an app for SharePoint to retrieve and render actions for Office documents, and have those actions performed by the Office Web App companion version of the Office application.</div>
+                        </div>
+                        <!--pe21042-->
+                        <!--ps21038-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Implement paging in a mobile app for SharePoint/description.html">SharePoint 2013 Implement paging in a mobile app for SharePoint</a></div>
+                            <div>Learn how to enable a user to page through list data from a SharePoint 2013 site using a Windows Phone app.</div>
+                        </div>
+                        <!--pe21038-->
+                        <!--ps21127-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create simple animations in apps using the animation library/description.html">SharePoint 2013 Create simple animations in apps using the animation library</a></div>
+                            <div>Use the SPAnimation engine to add a few simple animations to a photo.</div>
+                        </div>
+                        <!--pe21127-->
+                        <!--ps21068-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create and retrieve taxonomic metadata in apps for SharePoint/description.html">SharePoint 2013 Create and retrieve taxonomic metadata in apps for SharePoint</a></div>
+                            <div>Demonstrates how to use JavaScript in an app to retrieve and manage taxonomic terms, including creating new groups, term sets, and terms.</div>
+                        </div>
+                        <!--pe21068-->
+                        <!--ps17674-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use multiple SharePoint lists in a Windows Phone app (sample 2)/description.html">SharePoint 2013 Use multiple SharePoint lists in a Windows Phone app (sample 2)</a></div>
+                            <div>Create Windows Phone apps that use data from multiple SharePoint lists.</div>
+                        </div>
+                        <!--pe17674-->
+                        <!--ps17271-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Display remote webpage content using the coffeemaker app part/description.html">SharePoint 2013 Display remote webpage content using the coffeemaker app part</a></div>
+                            <div>This SharePoint 2013 Preview code sample includes an app part that displays a remote webpage’s content. The remote page content consists of labels and images for a coffee cup. End users can further customize their coffee through the custom properties in the app part.</div>
+                        </div>
+                        <!--pe17271-->
+                        <!--ps17347-->
+                        <div id="item">
+                                <div>SharePoint 2013 Perform basic data access operations by using CSOM in apps</div>
+                            <div>Learn how to read and write list and list item data by using the SharePoint 2013 client object model (CSOM).</div>
+                        </div>
+                        <!--pe17347-->
+                        <!--ps18693-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Programmatically create a map view with Geolocation field type/description.html">SharePoint 2013 Programmatically create a map view with Geolocation field type</a></div>
+                            <div>By using the new Geolocation field type in SharePoint 2013, you can integrate location information and maps in a SharePoint list and create location-based map views.
+</div>
+                        </div>
+                        <!--pe18693-->
+                        <!--ps21069-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Implement live tile navigation for SharePoint lists/description.html">SharePoint 2013 Implement live tile navigation for SharePoint lists</a></div>
+                            <div>Demonstrates how to use JavaScript in an app for SharePoint to retrieve information about lists, and provide live tiles for navigating to those lists.</div>
+                        </div>
+                        <!--pe21069-->
+                        <!--ps21040-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create Word documents using OOXML in apps for SharePoint/description.html">SharePoint 2013 Create Word documents using OOXML in apps for SharePoint</a></div>
+                            <div>Learn how to use the Office OpenXML SDK in an app for SharePoint to create Word documents in SharePoint libraries.</div>
+                        </div>
+                        <!--pe21040-->
+                        <!--ps21041-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Game implemented as an app for SharePoint/description.html">SharePoint 2013 Game implemented as an app for SharePoint</a></div>
+                            <div>Learn how to use JavaScript in an app for SharePoint to read and write data to a SharePoint list, from a game that is also implemented in JavaScript.</div>
+                        </div>
+                        <!--pe21041-->
+                        <!--ps21045-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Render SharePoint list data as a chart in an app/description.html">SharePoint 2013 Render SharePoint list data as a chart in an app</a></div>
+                            <div>This sample app demonstrates how to use JavaScript in an app for SharePoint to retrieve data from a SharePoint list, and then render that data as a chart by using JavaScript and HTML.</div>
+                        </div>
+                        <!--pe21045-->
+                        <!--ps17653-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Implement business logic and data validation/description.html">SharePoint 2013 Implement business logic and data validation</a></div>
+                            <div>Implement data validation in a Windows Phone app created by using the Windows Phone SharePoint List Application template.</div>
+                        </div>
+                        <!--pe17653-->
+                        <!--ps17455-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Creating an OData source with BCS notifications/description.html">SharePoint 2013 Creating an OData source with BCS notifications</a></div>
+                            <div>Learn how to create a Windows Communication Foundation (WCF) data service that exposes data from the Northwind database using the OData protocol to provide data as well as notifications of changes to that data found in the external system.</div>
+                        </div>
+                        <!--pe17455-->
+                        <!--ps17293-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the chrome control and the cross-domain library (JSOM)/description.html">SharePoint 2013 Use the chrome control and the cross-domain library (JSOM)</a></div>
+                            <div>This code sample includes a remote webpage that hosts the chrome control and retrieves information from the host web using the cross domain library and the JavaScript client object model (JSOM) in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17293-->
+                        <!--ps17278-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Customize a field type by using client-side rendering/description.html">SharePoint 2013 Customize a field type by using client-side rendering</a></div>
+                            <div>This sample uses client-side rendering technology in SharePoint 2013 to customize a field type.</div>
+                        </div>
+                        <!--pe17278-->
+                        <!--ps17284-->
+                        <div id="item">
+                                <div>SharePoint 2013 Get list items by using the cross-domain library (JSOM)</div>
+                            <div>Learn how to use the cross-domain library in apps for SharePoint to read items in a list hosted in the app web.</div>
+                        </div>
+                        <!--pe17284-->
+                        <!--ps17290-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Set the Bing Maps key by using the client object model/description.html">SharePoint 2013 Set the Bing Maps key by using the client object model</a></div>
+                            <div>Learn how to set the Bing Maps key programmatically at the web and farm level, by using the SharePoint client object model and by using Windows PowerShell, to enable Bing Maps functionality in SharePoint 2013 lists and location-based web and mobile apps.</div>
+                        </div>
+                        <!--pe17290-->
+                        <!--ps17280-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Customize the UI of a SharePoint list app for Windows Phone/description.html">SharePoint 2013 Customize the UI of a SharePoint list app for Windows Phone</a></div>
+                            <div>Customize the Windows Phone user interface that is generated by the Windows Phone SharePoint List Application template.</div>
+                        </div>
+                        <!--pe17280-->
+                        <!--ps17273-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create a GeoLocation field that renders maps using Nokia Maps/description.html">SharePoint 2013 Create a GeoLocation field that renders maps using Nokia Maps</a></div>
+                            <div>You can render data from Nokia maps in SharePoint 2013 by creating a custom field type that inherits from the Geolocation field type.</div>
+                        </div>
+                        <!--pe17273-->
+                        <!--ps17427-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create external lists based on app-scoped external content type/description.html">SharePoint 2013 Create external lists based on app-scoped external content type</a></div>
+                            <div>Learn how to create a new external content type based on an OData source and an external data list to display the data from the external system.</div>
+                        </div>
+                        <!--pe17427-->
+                        <!--ps21003-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Add runtime instrumentation and error logging to apps/description.html">SharePoint 2013 Add runtime instrumentation and error logging to apps</a></div>
+                            <div>Learn how to add custom errors to the app monitoring system and enable runtime request tracing for apps for SharePoint.</div>
+                        </div>
+                        <!--pe21003-->
+                        <!--ps21070-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Work with user profile properties in apps for SharePoint/description.html">SharePoint 2013 Work with user profile properties in apps for SharePoint</a></div>
+                            <div>Learn how to use JavaScript in an app for SharePoint to retrieve and work with user profile properties, including providing links for viewing and editing user profiles.</div>
+                        </div>
+                        <!--pe21070-->
+                        <!--ps21032-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the REST and CSOM Social APIs in provider-hosted apps/description.html">SharePoint 2013 Use the REST and CSOM Social APIs in provider-hosted apps</a></div>
+                            <div>Use the REST and SharePoint 2013 client object model Social APIs in an app to interact with the feed portions of the Social API and request appropriate permissions.</div>
+                        </div>
+                        <!--pe21032-->
+                        <!--ps21033-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Register apps that dynamically request permissions using OAuth/description.html">SharePoint 2013 Register apps that dynamically request permissions using OAuth</a></div>
+                            <div>Demonstrates how to register an app and have the app dynamically request permissions on the fly on behalf of a user.</div>
+                        </div>
+                        <!--pe21033-->
+                        <!--ps21026-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create a provider-hosted app that customizes app installation/description.html">SharePoint 2013 Create a provider-hosted app that customizes app installation</a></div>
+                            <div>Demonstrates how to create a provider-hosted app that creates a Picture library in the host web during app installation.</div>
+                        </div>
+                        <!--pe21026-->
+                        <!--ps21029-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Call a workflow in an app using a remote event receiver/description.html">SharePoint 2013 Call a workflow in an app using a remote event receiver</a></div>
+                            <div>Illustrates how to start a SharePoint workflow in an app for SharePoint by using a remote event receiver.</div>
+                        </div>
+                        <!--pe21029-->
+                        <!--ps18714-->
+                        <div id="item">
+                                <div>SharePoint 2013 Execute basic tasks using the JavaScript object model (JSOM)</div>
+                            <div>Learn how to perform basic tasks using the JavaScript object model (JSOM) in an app for SharePoint. This sample also shows how to use the JSOM in a SharePoint-hosted html page.</div>
+                        </div>
+                        <!--pe18714-->
+                        <!--ps17675-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create a Windows Phone app to receive push notifications/description.html">SharePoint 2013 Create a Windows Phone app to receive push notifications</a></div>
+                            <div>Create a Windows Phone app for receiving notifications from a SharePoint 2013 list.</div>
+                        </div>
+                        <!--pe17675-->
+                        <!--ps17641-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access Machine Translation Service from Silverlight application/description.html">SharePoint 2013 Access Machine Translation Service from Silverlight application</a></div>
+                            <div>Learn how to translate document libraries, single documents or folders, and text streams with the Machine Translation Service in SharePoint Server 2013 using the Silverlight client object model.</div>
+                        </div>
+                        <!--pe17641-->
+                        <!--ps17477-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Assign new settings to a navigation term set (.NET server)/description.html">SharePoint 2013 Assign new settings to a navigation term set (.NET server)</a></div>
+                            <div>Shows how to assign new settings to a navigation term set using .NET server managed code in SharePoint 2013.</div>
+                        </div>
+                        <!--pe17477-->
+                        <!--ps17453-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create an app to access a public OData source/description.html">SharePoint 2013 Create an app to access a public OData source</a></div>
+                            <div>Learn how to create an app-scoped external content type and access that data using the Representational State Transfer (REST) API.</div>
+                        </div>
+                        <!--pe17453-->
+                        <!--ps17311-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use multiple SharePoint lists in a Windows Phone app (sample 1)/description.html">SharePoint 2013 Use multiple SharePoint lists in a Windows Phone app (sample 1)</a></div>
+                            <div>Create Windows Phone apps that use data from multiple SharePoint lists.</div>
+                        </div>
+                        <!--pe17311-->
+                        <!--ps17296-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create push notifications in SharePoint for Windows Phone apps/description.html">SharePoint 2013 Create push notifications in SharePoint for Windows Phone apps</a></div>
+                            <div>Create a solution in SharePoint Server 2013 for sending push notifications that can be received by Windows Phone apps.</div>
+                        </div>
+                        <!--pe17296-->
+                        <!--ps17281-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Display remote app content in the host web using an app part/description.html">SharePoint 2013 Display remote app content in the host web using an app part</a></div>
+                            <div>This SharePoint 2013 code sample includes a simple page hosted in a remote app. The app part displays the contents of the remote webpage and sends the value of the custom properties through the query string.</div>
+                        </div>
+                        <!--pe17281-->
+                        <!--ps17277-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create a simple external list-based phone app/description.html">SharePoint 2013 Create a simple external list-based phone app</a></div>
+                            <div>Create a simple mobile app in SharePoint 2013 that contains data from an external data source by using Business Connectivity Services and an external list.</div>
+                        </div>
+                        <!--pe17277-->
+                        <!--ps17275-->
+                        <div id="item">
+                                <div>SharePoint 2013 Create a phone app that displays Maps for SharePoint 2013</div>
+                            <div>Integrate location information and maps into SharePoint lists and location-based web and mobile apps for SharePoint by using the new Geolocation field.</div>
+                        </div>
+                        <!--pe17275-->
+                        <!--ps17270-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Add a Geolocation column to a list programmatically/description.html">SharePoint 2013 Add a Geolocation column to a list programmatically</a></div>
+                            <div>By using the new Geolocation field type, you can integrate location information and maps in SharePoint lists and create location-based websites for SharePoint 2013.</div>
+                        </div>
+                        <!--pe17270-->
+                        <!--ps17287-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Mix remote web applications with SharePoint components in apps/description.html">SharePoint 2013 Mix remote web applications with SharePoint components in apps</a></div>
+                            <div>This sample shows how to combine a remote web application and classic SharePoint components in a single app for SharePoint. Also shows how remote web applications can access the app web using REST/OData.</div>
+                        </div>
+                        <!--pe17287-->
+                        <!--ps17292-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Support and convert SharePoint field types in Windows Phone app/description.html">SharePoint 2013 Support and convert SharePoint field types in Windows Phone app</a></div>
+                            <div>Implement data-conversion logic to support SharePoint field types in Windows Phone apps.</div>
+                        </div>
+                        <!--pe17292-->
+                        <!--ps17310-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use HTTPs in a remote app and use OAuth for callbacks/description.html">SharePoint 2013 Use HTTPs in a remote app and use OAuth for callbacks</a></div>
+                            <div>This sample is a remote app that uses HTTPs protocol. It uses OAuth to call back into SharePoint Server.</div>
+                        </div>
+                        <!--pe17310-->
+                        <!--ps17443-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create multiple external lists with associations/description.html">SharePoint 2013 Create multiple external lists with associations</a></div>
+                            <div>Demonstrates how to create an external content type using multiple associated entities, and how to display that data in multiple external lists.</div>
+                        </div>
+                        <!--pe17443-->
+                        <!--ps17316-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access Machine Translation Service using the CSOM/description.html">SharePoint 2013 Access Machine Translation Service using the CSOM</a></div>
+                            <div>Learn how to translate document libraries, single documents or folders, and text streams with the Machine Translation Service in SharePoint Server 2013 using the .NET client object model.</div>
+                        </div>
+                        <!--pe17316-->
+                        <!--ps17475-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Assign new settings to a navigation term set using CSOM/description.html">SharePoint 2013 Assign new settings to a navigation term set using CSOM</a></div>
+                            <div>Shows how to assign new settings to a navigation term set using the SharePoint 2013 client object model (CSOM).</div>
+                        </div>
+                        <!--pe17475-->
+                        <!--ps17640-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access Machine Translation Service using server object model/description.html">SharePoint 2013 Access Machine Translation Service using server object model</a></div>
+                            <div>Learn how to translate document libraries, single documents or folders, and text streams with the Machine Translation Service in SharePoint Server 2013 using the server object model.</div>
+                        </div>
+                        <!--pe17640-->
+                        <!--ps17676-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Export Name field in a Document Library list to a mobile app/description.html">SharePoint 2013 Export Name field in a Document Library list to a mobile app</a></div>
+                            <div>Export the Name field of a Document Library list to a mobile app by using the Visual Studio SharePoint List wizard. The Name field does not appear automatically when a user creates a mobile app for a document library in SharePoint.</div>
+                        </div>
+                        <!--pe17676-->
+                        <!--ps20692-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Add the client-side People Picker control to apps/description.html">SharePoint 2013 Add the client-side People Picker control to apps</a></div>
+                            <div>This sample is a Visual Studio solution that contains a client-side People Picker control in a SharePoint-hosted app for SharePoint. The sample code shows how to add, initialize, and query the picker.</div>
+                        </div>
+                        <!--pe20692-->
+                        <!--ps21010-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create clip animations in apps using the animation library/description.html">SharePoint 2013 Create clip animations in apps using the animation library</a></div>
+                            <div>Use the SPAnimation engine to produce animation effects to clip a photo in an img tag.</div>
+                        </div>
+                        <!--pe21010-->
+                        <!--ps21008-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Customize list views and forms using client-side rendering/description.html">SharePoint 2013 Customize list views and forms using client-side rendering</a></div>
+                            <div>Use client-side rendering to provide custom rendering for both the All Items view and the New Announcement form.</div>
+                        </div>
+                        <!--pe21008-->
+                        <!--ps21030-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Create an external content type that supports notifications/description.html">SharePoint 2013 Create an external content type that supports notifications</a></div>
+                            <div>Learn how to create an external content type that supports notifications in SharePoint 2013.</div>
+                        </div>
+                        <!--pe21030-->
+                        <!--ps21071-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use SharePoint 2013 translation services from Word/description.html">SharePoint 2013 Use SharePoint 2013 translation services from Word</a></div>
+                            <div>Demonstrates how to use JavaScript and C# in a Word 2013 task pane app to connect to and authenticate a SharePoint Online site by using OAuth, and then translate  portions of a document.</div>
+                        </div>
+                        <!--pe21071-->
+                        <!--ps21027-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use a web proxy to retrieve data from an external data source/description.html">SharePoint 2013 Use a web proxy to retrieve data from an external data source</a></div>
+                            <div>Use the web proxy architecture to retrieve data from an external data source using client-side JavaScript.</div>
+                        </div>
+                        <!--pe21027-->
+                        <!--ps21012-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Event planner workflow app/description.html">SharePoint 2013 Event planner workflow app</a></div>
+                            <div>Demonstrates real-world workflow tasks—including deploying the workflow in an app; reading, updating, and creating SharePoint list items; and waiting for events to occur.</div>
+                        </div>
+                        <!--pe21012-->
+                        <!--ps21035-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use app upgrade event in a provider-hosted app for SharePoint/description.html">SharePoint 2013 Use app upgrade event in a provider-hosted app for SharePoint</a></div>
+                            <div>Learn how to add a simple custom list to the app web during  installation, and  then add a new column to the list and update the column in existing items.</div>
+                        </div>
+                        <!--pe21035-->
+                        <!--ps21036-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Visualize data from a SharePoint list in an app/description.html">SharePoint 2013 Visualize data from a SharePoint list in an app</a></div>
+                            <div>Learn how to use JavaScript in an app for SharePoint to retrieve data from a SharePoint list, and then render that data in a variety of engaging ways by using JavaScript and HTML.</div>
+                        </div>
+                        <!--pe21036-->
+                        <!--ps21037-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Access the Social APIs in online apps for SharePoint using CSOM/description.html">SharePoint 2013 Access the Social APIs in online apps for SharePoint using CSOM</a></div>
+                            <div>Use the client object model (CSOM) in an app for SharePoint to retrieve and work with social feeds, including rendering posts and replies, posting new updates, and replying to existing posts.</div>
+                        </div>
+                        <!--pe21037-->
+                        <!--ps21067-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use the Analytics namespace to log usage analytic events/description.html">SharePoint 2013 Use the Analytics namespace to log usage analytic events</a></div>
+                            <div>Learn how to create an app for SharePoint to log usage analytics events by using the JavaScript SP.Analytics namespace.</div>
+                        </div>
+                        <!--pe21067-->
+                        <!--ps21128-->
+                        <div id="item">
+                                <div><a href="SharePoint 2013 Use OAuth to integrate Word and SharePoint 2013/description.html">SharePoint 2013 Use OAuth to integrate Word and SharePoint 2013</a></div>
+                            <div>Use JavaScript and C# in a Word 2013 task pane app to connect to and authenticate a SharePoint Online site using OAuth, and then create a SharePoint list based on data retrieved from a Word document.</div>
+                        </div>
+                        <!--pe21128-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Reference Service - VS 2013</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Reference Service - VS 2013</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Extensibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Microsoft Visual Studio 2013 SDK, Microsoft Visual Studio 2013 SDK
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/29/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Reference-Service-VS-2013-5249e0a5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="longDesc">
+<p>This sample shows how to be a Visual Studio service provider and how to consume Visual Studio services.</p>
+<h2>Introduction:</h2>
+<p><br>
+There are three samples associated with this project, one for each programming language.<br>
+<br>
+<strong>C&#43;&#43;</strong><br>
+<br>
+The sample contains three main classes. A service provider package called ServiceProviderPackage,<br>
+a service consumer package called ServiceConsumerPackage, and a local service provider called<br>
+LocalServiceProvider, which belongs to the service provider package.<br>
+<br>
+ServiceProviderPackage registers its service in the Visual Studio registry so that it will be<br>
+loaded when any package queries for the service. In this sample ServiceConsumerPackage will<br>
+do this. Additionally, ServiceProviderPackage offers this service to Visual Studio when it is<br>
+loaded. Simply registering the service in the Visual Studio registry is insufficient to allow a<br>
+client to successfully query for it.<br>
+<br>
+ServiceConsumerPackage registers its menu and provides three menu items on the Visual Studio Tools<br>
+menu entitled:<br>
+<br>
+</p>
+<ul>
+<li>&quot;VSSDK C&#43;&#43; Execute Global Service&quot; </li><li>&quot;VSSDK C&#43;&#43; Execute Local Service&quot; </li><li>&quot;VSSDK C&#43;&#43; Execute Local using Global Service&quot; </li></ul>
+<p><br>
+The command handlers for these menu items are provided by ServiceConsumerPackage. Each handler<br>
+attempts to query for either the globally offered service provided by ServiceProviderPackage<br>
+or the local service provided by ServiceProviderPackage. Querying for the local service is<br>
+expected to fail. Utilizing each menu item will cause a text string to be sent to the Output<br>
+window. (NOTE - There is a bug in the Output window. If you don't see the text, then simply restart Visual Studio).<br>
+<br>
+<br>
+<strong>C# and VB</strong><br>
+<br>
+This sample shows how to create and expose services inside Visual Studio. It creates two services with two
+<br>
+different levels of visibility. The service with global visibility is available for any of Visual Studio's other components. The service with
+<br>
+local visibility is available only from within the package itself or when the IServiceProvider interface
+<br>
+implemented by the package is inside the chain of active providers.<br>
+<br>
+The sample creates two assemblies, one with the definition of the interfaces used and one with the actual
+<br>
+implementation of the packages and services. The assembly with the implementation, created by the Reference.Services
+<br>
+project, defines two packages. One package exposes the services and a second package uses them. The services are
+<br>
+implemented with two helper classes.<br>
+<br>
+The part of interest about how to proffer services is the code inside the ServicesPackage class. Specifically:<br>
+<br>
+1. In the declaration of the class we use the ProvideServiceAttribute registration attribute defined in the
+<br>
+Managed Package Framework to add the information about the global service proffered
+<br>
+by the package to the registry.<br>
+<br>
+2. In the constructor of the package we add the types of the proffered services to the list of the services<br>
+provided by the package. Notice that at this point we don&rsquo;t create any instance of the service, but we
+<br>
+provide a callback function that will be called the first time a client queries for a specific service.
+<br>
+We do this to optimize performance. We don&rsquo;t want to construct something that might never
+<br>
+be used.<br>
+<br>
+3. The callback function used to create a new instance of the services.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<h3>Screenshot:</h3>
+<h3><img id="115678" src="description/Services.jpg" alt="" width="1211" height="800"></h3>
+<h3>Requirements:</h3>
+<ul>
+<li>Visual Studio 2013 </li><li>Visual Studio 2013 SDK </li></ul>
+<p>&nbsp;</p>
+<h3>Download and install:</h3>
+<ul>
+<li>Download the zip file associated with the sample </li><li>Unzip the sample to your machine </li><li>Double click on the .sln file to launch the solution </li></ul>
+<p>&nbsp;</p>
+<h3>Building and running the sample</h3>
+<ul>
+<li>To build and execute the sample, press F5 after the sample is loaded </li><li>Add any other special information here.&nbsp; </li></ul>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Use app upgrade event in a provider-hosted app for SharePoint</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Use app upgrade event in a provider-hosted app for SharePoint</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            sites and content
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Use-app-b15dc651">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p id="header">This sample project is a provider-hosted app with two versions. One version adds a simple custom list titled Books with a few items to the app web during app installation. The second version uses the app upgrade event to supply C# code that
+ executes during the app upgrade process and adds a new column to the Books lists and updates that column in existing items.</p>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<h1 class="heading">Description</h1>
+<div class="section" id="sectionSection0">
+<p><span class="label">Provided by:</span></p>
+</div>
+<div class="section" id="sectionSection0">
+<p><a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=52a3f2aa-710f-4496-9b78-f240eccc74ad" >Ted Pattison</a>,
+<a href="http://www.criticalpathtraining.com" >Critical Path Training</a></p>
+<p>The first version of the UpgradeEventDemo sample project (version 1.0.0.0) demonstrates how to create a provider-hosted app that creates a new list in the app web during installation. The app accomplishes it in a declarative fashion by adding a
+<span><span class="keyword">ListInstance</span></span> element to the feature, which activates in the scope of the app web during app installation.</p>
+<p>The second version of the UpgradeEventDemo sample project (version 2.0.0.0) demonstrates how to register the
+<span><span class="keyword">UpgradedEventEndpoint</span></span> in the AppManifest.xml file, which causes the SharePoint host environment to call back into the remote web of the app during the
+<span><span class="keyword">AppUpgraded</span></span> event using a Windows Communication Foundation (WCF) web service entry point.</p>
+<p>Key features illustrated in the sample:</p>
+<ul>
+<li>
+<div>Creating a new list in the app web during app installation</div>
+</li><li>
+<div>Adding new list items to the new list during installation</div>
+</li><li>
+<div>Registering <span><span class="keyword">UpgradededEventEndPoint</span></span> in the app manifest</div>
+</li><li>
+<div>Authenticating calls from the app using a server-to-server (S2S) trust</div>
+</li><li>
+<div>Customizing app upgrade using code</div>
+</li><li>
+<div>Using C# and the client object model (CSOM) in the remote web to add a new column to a list and to update items as part of the upgrade process</div>
+</li></ul>
+</div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<div>A SharePoint 2013 development environment with a local SharePoint farm.</div>
+</li><li>
+<div>SharePoint farm must be configured to support apps for SharePoint.</div>
+</li><li>
+<div>Visual Studio 2012 and the Office Developer Tools for Visual Studio 2012.</div>
+</li><li>
+<div>Basic familiarity with the concepts of developing a provider-hosted app. See</div>
+</li></ul>
+</div>
+<div class="section" id="sectionSection1">
+<ul>
+<li>
+<div><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp142381(v=office.15)" >How to: Create a basic provider-hosted app for SharePoint</a>.</div>
+</li></ul>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<p id="sectionSection2" class="section">The sample consists of two versions of the same Visual Studio 2012 solution that contains two projects. The first project, named
+<strong>UpgradeEventDemo</strong>, represents the portion of the provider-hosted app that is installed into the SharePoint host environment. The second project, named
+<strong>UpgradeEventDemoWeb</strong>, is an ASP.NET application that is used to implement the app's remote web.</p>
+<ul>
+<li>
+<p>Version 1.0.0.0 of the app creates the Books list in the app web. When the app is started, the start page in the remote web provides a link to navigate to the default view of the Book list in the app web, which looks like Figure 1.</p>
+<p class="caption"><strong>Figure 1. Book list in the app web</strong></p>
+<br>
+<img id="76762" src="description/image2.png" alt="Book list in the app web" width="527" height="372">
+</li><li>
+<p>In version 2.0.0.0 of the UpgradeEventDemo app, the AppManifest.xml file has been modified with an XML element to register an event hander for
+<span><span class="keyword">UpgradedEventEndpoint</span></span>, which points to entry point in the remote web named AppEventReceiver.svc, as shown in the following example.</p>
+<div class="code"><span>&nbsp;</span></div>
+</li></ul>
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th>XML </th>
+<th>&nbsp;</th>
+</tr>
+<tr>
+<td colspan="2">
+<pre>&lt;Properties&gt;
+  &lt;Title&gt;Upgrade Event Demo (MSDN)&lt;/Title&gt;
+  &lt;StartPage&gt;~remoteAppUrl/Pages/Default.aspx?{StandardTokens}&lt;/StartPage&gt;
+  &lt;UpgradedEventEndpoint&gt;~remoteAppUrl/AppEventReceiver.svc&lt;/UpgradedEventEndpoint&gt;
+&lt;/Properties&gt;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="sectionSection2" class="section">&nbsp;</p>
+<ul>
+<li>
+<div class="code">The <strong>AppEventReceiver.svc.cs</strong> file contains the C# code that uses the client object model (CSOM) to add a new text column to the Books list for tracking the Book Genre. This code also updates existing items.</div>
+<p>The web.config file in the UpgradeEventDemo project contains three <span><span class="keyword">appSettings</span></span> that are essential in configuring the S2S trust between the app and the SharePoint host environment.&nbsp;</p>
+</li></ul>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Run the Windows PowerShell script named <span class="ui">SetupS2STrust.ps1</span> to create an SSL certificate with both a .cer file and a .pfx file, and also to register a trusted security token issuer in the local SharePoint farm.</p>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection4">
+<div class="subSection">
+<ol>
+<li>
+<div>Open version 1.0.0.0 of the <span class="ui">UpgradeEventDemo</span> solution in Visual Studio 2012.</div>
+</li><li>
+<div>Test the app through the debugger by running the <strong>Deploy</strong> command on the app project. The app should deploy and allow you to see the start page. Click the link on the start page to see the Books list.</div>
+</li><li>
+<div>Use the <strong>Publish</strong> command on the UpgradeEventDemoWeb project to deploy the remote web as an ASP.NET website using a well-known URL (for example,
+<span class="code">http://remoteweb.contoso.com</span>).</div>
+</li><li>
+<div>Use the <strong>Publish</strong> command on the UpgradeEventDemo project to create a new app package for version 1 of the app, which uses the URL used to deploy the remote web.</div>
+</li><li>
+<div>Close version 1.0.0.0 of the UpgradeEventDemo project in Visual Studio.</div>
+</li><li>
+<div>Create a new app catalog site.</div>
+</li><li>
+<div>Publish the app package for version 1.0.0.0 in the app catalog.</div>
+</li><li>
+<div>Install version 1.0.0.0 of the app in a test site. Make sure that you can launch the app and see the start page with the link to the Books list in the app web.</div>
+</li><li>
+<div>Open version 2.0.0.0 of the UpgradeEventDemo project in Visual Studio.</div>
+</li><li>
+<div>Use the <strong>Publish</strong> command on the UpgradeEventDemoWeb project to deploy version 2 of the remote web, which should effectively replace version 1.0.0.0 using the same well-known URL (for example,
+<span class="code">http://remoteweb.contoso.com</span>).</div>
+</li><li>
+<div>Use the <strong>Publish</strong> command on the UpgradeEventDemo project to create a new app package for version 2 of the app, which uses the URL used to deploy the remote web.</div>
+</li><li>
+<div>Publish version 2.0.0.0 of the app package in the app catalog.</div>
+</li><li>
+<div>Go to the test site and examine the title for the app. Wait until the upgrade notification is showing. Once you have the option to upgrade, go through the upgrade process, which should trigger the code to add a new column. When the upgrade code runs successfully,
+ the new Books list looks like Figure 2.</div>
+<div class="caption">Figure 2. New Books list when the upgrade code runs successfully</div>
+<br>
+<img id="76763" src="description/image1.png" alt="New Books list after the upgrade code runs" width="439" height="307">
+</li></ol>
+</div>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection5">
+<p>If the app fails to install, troubleshoot the following aspects of your development environment:</p>
+<ul>
+<li>
+<div>Make sure your environment supports apps. In Visual Studio 2012, create a new SharePoint-hosted app and ensure that you can deploy it in a test site on your farm. If you cannot, your environment is not configured to support apps for SharePoint.</div>
+</li><li>
+<div>Make sure you can run S2S trust apps. Create a provider-hosted app and select
+<span class="ui">Use a certificate</span> when asked how you want to authenticate your app. Ensure the certificate is configured correctly and that you have registered a trusted security token issuer. If you cannot successfully deploy and test a new provider-hosted
+ app, you have a configuration issue with S2S trusts,</div>
+</li><li>
+<div>Inspect the <span><span class="keyword">appSettings</span></span> elements in the web.config file, and compare it to the SetupS2Strust.ps1 script. Verify that all the S2S trust settings are correct for your environment.</div>
+</li></ul>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection6">
+<p>First release: January 2013</p>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection7">
+<ul>
+<li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179930.aspx" >Apps for SharePoint overview</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp142381(v=office.15)" >How to: Create a basic provider-hosted app for SharePoint</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179901.aspx" >How to: Create high-trust apps for SharePoint 2013 using the server-to-server protocol</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179912.aspx" >How to: Complete basic operations using SharePoint 2013 client library code</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp142384.aspx" >Authorization and authentication for apps in SharePoint 2013</a></div>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

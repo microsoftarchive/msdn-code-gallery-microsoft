@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1c1e217c-1475-400e-91a7-b2be1bd6efa0Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Detect the Windows session state (VBDetectWindowsSessionState)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Detect the Windows session state (VBDetectWindowsSessionState)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Session
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VBDetectWindowsSessionState-b6704e7a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>Windows APPLICATION: VBDetectWindowsSessionState Overview </h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New">The sample demonstrates how to detect the Windows session state.<br>
+<br>
+1 To detect whether the current session is locked, you can use the extern method <br>
+&nbsp;OpenInputDesktop in User32.dll. This method is used to open the desktop that
+<br>
+&nbsp;receives user input. If this operation failed, it means that the session is locked.<br>
+<br>
+2 If a user locked / unlocked the current session, you can use the SessionSwitch event<br>
+&nbsp;to monitor it. <br>
+<br>
+&nbsp;<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Win32.SystemEvents.aspx"  title="Auto generated link to Microsoft.Win32.SystemEvents">Microsoft.Win32.SystemEvents</a> contains a SessionSwitch event. This event occurs<br>
+&nbsp;when the user session switches, e.g. when the session is locked / unlocked or
+<br>
+&nbsp;when a user has logged on to a session, and so on. If you register this event,
+<br>
+&nbsp;you can get the session state when the state changed.<br>
+<br>
+<br>
+Note:<br>
+1 If UAC popups a secure desktop, this method may also fail. There is no API for<br>
+&nbsp;differentiating between Locked Desktop and UAC Secure Desktop.<br>
+<br>
+2 The SessionSwitch event is fired only in the current session. If another user locks
+<br>
+&nbsp;or unlocks his session on the same machine, you won't see this event in your own
+<br>
+&nbsp;session.<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Build this project in VS2010. <br>
+<br>
+Step2. Run VBDetectWindowsSessionState.exe.<br>
+<br>
+Step3. Check the &quot;Enable a timer to detect the session state every 5 seconds&quot;, and then<br>
+&nbsp; &nbsp; &nbsp; you will see &quot;Current State: &lt;state&gt; &nbsp;Time: &lt;time&gt;&quot; on the top of the UI,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; and a new record in the list box every 5 seconds.
+<br>
+<br>
+Step4. Uncheck the &quot;Enable a timer to detect the session state every 5 seconds&quot;.
+<br>
+<br>
+Step5. Press Win&#43;L to lock the PC, then unlock it. You will see 2 new records in the<br>
+&nbsp; &nbsp; &nbsp; list box. One is &quot;&lt;time&gt; SessionLock &lt;Occurred&gt;&quot; and another one is<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&quot;&lt;time&gt; SessionUnlock &lt;Occurred&gt;&quot;.<br>
+<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+1. Design a class WindowsSession. When an instance of this class is initialized, register<br>
+&nbsp; the SystemEvents.SessionSwitch event.<br>
+&nbsp; &nbsp;<br>
+2. If the SystemEvents.SessionSwitch event, then raise a StateChanged event.<br>
+&nbsp; <br>
+3. The class WindowsSession also wraps 2 extern methods OpenInputDesktop and CloseDesktop.<br>
+&nbsp; If the method OpenInputDesktop fails, the return value is IntPtr.Zero, which means that<br>
+&nbsp; the current session is locked.<br>
+&nbsp; &nbsp; &nbsp; <br>
+4. Design the UI in MainForm which contains a list box. <br>
+<br>
+&nbsp; The MainForm will handle the StateChanged event of a WindowsSession instance. If the<br>
+&nbsp; event occurred, then add a new record in the list box. &nbsp;<br>
+<br>
+&nbsp; The MainForm also contains a timer that could detect the WindowsSessionState every 5<br>
+&nbsp; seconds.<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+SystemEvents.SessionSwitch Event<br>
+<a  href="http://msdn.microsoft.com/en-us/library/microsoft.win32.systemevents.sessionswitch.aspx">http://msdn.microsoft.com/en-us/library/microsoft.win32.systemevents.sessionswitch.aspx</a><br>
+<br>
+OpenInputDesktop Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms684309(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms684309(VS.85).aspx</a><br>
+<br>
+CloseDesktop Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms682024(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms682024(VS.85).aspx</a><br>
+<br>
+Desktop Security and Access Rights<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms682575(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms682575(VS.85).aspx</a><br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/f0ce43d4-e8ea-415f-bfdd-f6bb39d3f968image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

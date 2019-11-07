@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=0F22413366F5977978C46D94D86B40A8" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=BA54336BC791F42AE754C419920C1AAE" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to create an Azure SQL Database programmatically with Visual Studio 2015</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to create an Azure SQL Database programmatically with Visual Studio 2015</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Azure, Cloud, Azure SQL Database, Azure Data Services
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Azure
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/22/2017</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong></strong><em></em></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="color:#2e74b5">How to create a Microsoft Azure SQL Database programmatically</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">&nbsp;</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="color:#2e74b5">Build the sample</span></span></p>
+<ol>
+<li><span style="font-weight:bold; font-style:italic; font-size:11pt">&nbsp;</span><span style="font-size:11pt">Start Microsoft Visual Studio 2015 and select
+</span><span style="font-weight:bold; font-size:11pt">File &gt; Open &gt; Project/Solution.</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">Go to the directory to which the sample was unzipped. Then go to the subdirectory named for the sample and double-click the Visual Studio 2015 Solution (.sln) file</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">&nbsp;Create and configure Active Directory</span>
+</li></ol>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">a.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Go to </span><span style="font-weight:bold; font-size:11pt">Microsoft Azure</span><span style="font-size:11pt"> (portal.azure.com)</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">b.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Select </span><span style="font-weight:bold; font-size:11pt">Active Directory &gt; Applications &gt; Add</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">c.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Enter a </span><span style="font-weight:bold; font-size:11pt">Name</span><span style="font-size:11pt"> and choose
+</span><span style="font-weight:bold; font-size:11pt">Native Client Application</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">d.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Enter a </span><span style="font-weight:bold; font-size:11pt">Redirect URI
+</span><span style="font-size:11pt">(does not need to be an actual endpoint, just a valid URI)</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">e.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">After AD is created, click </span><span style="font-weight:bold; font-size:11pt">Properties</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"></span><span style="font-size:11pt">i.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Take note of the </span><span style="font-weight:bold; font-size:11pt">Application ID</span><span style="font-size:11pt">(as clientID in the code) on this page for the next step</span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">f.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Click <strong>Required permissions</strong></span><span style="font-size:11pt">.</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">g.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Click&nbsp;</span><span style="font-weight:bold; font-size:11pt">Add</span><span style="font-size:11pt">&nbsp;button and select
+<strong>Windows&nbsp;</strong></span><span style="font-weight:bold; font-size:11pt">Azure Service Management API</span><span style="font-size:11pt"> from the table and complete the wizard.</span></span></p>
+<p style="margin-left:72pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:18pt">
+<span style="font-size:11pt"><span style="font-size:11pt">h.</span><span style="font-weight:bold; font-style:italic; font-size:11pt">
+</span><span style="font-size:11pt">Grant permission to access this API by selecting
+</span><span style="font-weight:bold; font-size:11pt">Access Azure Service Management as organization users (preview)</span></span></p>
+<p><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">&nbsp; &nbsp; 4. Add your variables to the program</span></p>
+<ul>
+<li><span style="font-size:11pt">azureSubscriptionId &ndash; From portal.azure.com in
+</span><span style="font-weight:bold; font-size:11pt">Subscriptions</span> </li><li><span style="font-size:11pt">location &ndash; See </span><a href="https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://azure.microsoft.com/en-us/pricing/details/sql-database/" style="text-decoration:none"><span style="color:#0563c1; font-size:11pt; text-decoration:underline">https://azure.microsoft.com/en-
+ us/pricing/details/sql-database/</span></a><span style="font-size:11pt"> for more information</span>
+</li><li><span style="font-size:11pt">edition &ndash; See </span><a href="https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://azure.microsoft.com/en-us/pricing/details/sql-database/" style="text-decoration:none"><span style="color:#0563c1; font-size:11pt; text-decoration:underline">https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://azure.microsoft.com/en-us/pricing/details/sql-database/</span></a><span style="font-size:11pt">
+ for more information</span> </li><li><span style="font-size:11pt">requestedServiceObjectName &ndash; See </span><a href="https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://azure.microsoft.com/en-us/pricing/details/sql-database/" style="text-decoration:none"><span style="color:#0563c1; font-size:11pt; text-decoration:underline">https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://code.msdn.microsoft.com/How-to-create-an-Azure-SQL-dbd0bf6a/https://azure.microsoft.com/en-us/pricing/details/sql-database/</span></a><span style="font-size:11pt">
+ for more information</span> </li><li><span style="font-size:11pt">resourceGroupName &ndash; From portal.azure.com in
+</span><span style="font-weight:bold; font-size:11pt">Resource Groups</span><span style="font-size:11pt">, create new or select existing Resource group</span>
+</li><li><span style="font-size:11pt">serverName &ndash; From portal.azure.com in </span>
+<span style="font-weight:bold; font-size:11pt">Resource Groups</span><span style="font-size:11pt">, go into selected Resource group and
+</span><span style="font-weight:bold; font-size:11pt">&#43;Add</span><span style="font-size:11pt"> new or select existing SQL server</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">databaseName &ndash; Name of your database</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">domainName &ndash; Go to portal.azure.com and hover over your name in the upper right corner and the Domain will appear in the pop-up window</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">clientId &ndash; From Step 3</span>
+</li><li><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">clientAppUri &ndash; The Redirect URI from Step 3&nbsp;</span>
+</li></ul>
+<p><span style="font-size:11pt; line-height:27.6pt; text-indent:18pt">&nbsp; &nbsp; 5. Build the sample. Build &gt; Build Solution</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="color:#2e74b5">Run the sample</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">To debug the sample and then run it, press F5 or use
+</span><span style="font-weight:bold; font-size:11pt">Debug &gt; Start Debugging</span><span style="font-size:11pt">. To run the sample without debugging, press Ctrl&#43;F5 or use
+</span><span style="font-weight:bold; font-size:11pt">Debug &gt; Start Without Debugging</span><span style="font-size:11pt">.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

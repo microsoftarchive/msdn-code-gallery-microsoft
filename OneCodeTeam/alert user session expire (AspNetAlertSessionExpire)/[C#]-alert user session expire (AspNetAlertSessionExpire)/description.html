@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/04f9c26e-88fd-4dfd-b715-9733d17420b6Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>alert user session expire (AspNetAlertSessionExpire)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>alert user session expire (AspNetAlertSessionExpire)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Session
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/10/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/AspNetAlertSessionExpire-c230a148">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    ========================================================================<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CSASPNETAlertSessionExpired Overview<br>
+========================================================================<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Summary:<br>
+<br>
+The project illustrates how to design a simple user control, which is used to <br>
+alert the user when the session is about to expired. <br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Demo the Sample. <br>
+<br>
+Open the CSASPNETAlertSessionExpired.sln with Visual Studio2010, extend the <br>
+CSASPNETAlertSessionExpired web application node and press F5 to test the application.<br>
+<br>
+If you want to have a further test, please follow the demonstration step below.<br>
+<br>
+Step 1: Press F5 to open the default.aspx.<br>
+<br>
+Step 2: By default, we can see a &quot;GetSessionState&quot; button, you can click the <br>
+button to query the SessionState.<br>
+<br>
+Step 3: The session is set expired in 1 minute, So idle the page for 30 seconds.<br>
+<br>
+Step 4: After 30 seconds, you will see an alert message &quot;Your session will be expired<br>
+after 30 seconds, would you like to extend the session time?&quot; You can choose <br>
+&quot;Yes&quot; or &quot;No&quot;.<br>
+<br>
+Step 5: If you choose &quot;Yes&quot;, the session will be reset. You can click the &quot;GetSessionState&quot;
+<br>
+button to query the session status, you will see the SessionState: Existing.<br>
+<br>
+Step 6: If you choose &quot;No&quot;, the &quot;GetSessionState&quot; button will be disabled temporarily.<br>
+When the session is really expired you can click the &quot;GetSessionState&quot; button, <br>
+the page will redirect to the SessionExpired page.<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+Code Logical:<br>
+<br>
+We use jQuery, ASP.NET AJAX at client side.<br>
+In this sample, we add a SessionExpired user control and Script Manager on<br>
+the Master page. It will display an alert message if user idle for long time, user
+<br>
+can choose whether to extend the session before it's expired or not.<br>
+<br>
+Step 1. &nbsp;Create an ASP.NET Web Application. In this sample it is <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;CSASPNETAlertSessionExpired&quot;.<br>
+<br>
+Step 2. &nbsp;Right-click the CSASPNETAlertSessionExpired , and click Add -&gt; New Item -&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; New Folder &quot;Controls&quot;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Right-click The Controls directory, and click Add-&gt; New Item -&gt; Web<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;User Control name as &quot;SessionExpired.ascx&quot;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * SessionExpired.ascx.cs: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、The SessionExpired class inherits from
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ICallHandlerEvent which is used to indicate that the control can be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the target of a callback event on the server. Then it will extend<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the Session's lifetime.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2、Register the Session's timeout value to the client so that user<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can extend the Session's lifetime before it expired.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3、Verify the Session is expired or not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; * SessionExpired.ascx:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; It will get the Session's timeout value and request the server<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; interval by async method.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [CODE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; if (!IsPostBack)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Session[&quot;SessionForTest&quot;] = &quot;SessionForTest&quot;;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; [/CODE]<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; Add the Session state judgment like:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; [CODE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; if (Session[&quot;SessionForTest&quot;] == null)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbSessionState.Text = SessionStates.Expired.ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lbSessionState.Text = SessionStates.Exist.ToString();<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; [/CODE]<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+Step 3. &nbsp;Right-click the CSASPNETAlertSessionExpired , and click Add -&gt; New Item -&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; New Folder &quot;Util&quot;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create a menu type which is used to output the session state consistent.<br>
+<br>
+Step 4. &nbsp;Open the Site.Master,(If there is no Site.Master, create one.)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; add a user control reference and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a script reference like below.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [CODE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&lt;uc:SessionExpired ID=&quot;ucSessionExpired&quot; runat=&quot;server&quot; /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [/CODE]<br>
+<br>
+Step 5. &nbsp;Open the Default.aspx(If there is no Default.aspx, create one which
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; is a Web Form using Master Page)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add the scripts and css reference &nbsp;like below:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;script &nbsp;type=&quot;text/javascript&quot; &nbsp;language=&quot;javascript&quot; src=&quot;Scripts/jquery-1.4.1-vsdoc.js&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;Scripts/SessionExpired.js&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;link href=&quot;Styles/SessionExpired.css&quot; &nbsp;rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;We use these references to make this sample to write code easier<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and looks better.<br>
+<br>
+Step 6. &nbsp;Open the Web.config(If there is no Web.config, create one.)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; Set the Session timeout value like below:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [CODE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;system.web&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sessionState timeout=&quot;1&quot;&gt;&lt;/sessionState&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/system.web&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [/CODE]<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+References:<br>
+<br>
+MSDN: How to: Implement Callbacks in ASP.NET Web Pages<br>
+http://msdn.microsoft.com/en-us/library/ms366518.aspx<br>
+<br>
+MSDN: How to: Save Values in Session State<br>
+http://msdn.microsoft.com/en-us/library/6ad7zeeb(VS.90).aspx<br>
+<br>
+MSDN: ASP.NET Session State Overview<br>
+http://msdn.microsoft.com/en-us/library/ms178581.aspx<br>
+<br>
+MSDN: Working with ASP.NET Master Pages Programmatically<br>
+http://msdn.microsoft.com/en-us/library/c8y19k6h.aspx<br>
+<br>
+<br>
+/////////////////////////////////////////////////////////////////////////////<br>
+
+</div>
+
+
+    </div>
+</body>
+</html>

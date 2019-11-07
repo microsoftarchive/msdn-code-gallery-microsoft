@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C# app automates PowerPoint (CSAutomatePowerPoint)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C# app automates PowerPoint (CSAutomatePowerPoint)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Automation, PowerPoint
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/1/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSAutomatePowerPoint-b312d416">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-family:������">CONSOLE APPLICATION</span> (<span style="font-family:������">CSAutomatePowerPoint</span>)</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The CSAutomatePowerPoint example demonstrates the use of Visual C# codes to create a Microsoft PowerPoint instance, add a new presentation, insert a new slide, add some texts to the slide, save the presentation, quit PowerPoint and then
+ clean up unmanaged COM resources.<span style=""> </span>Office automation is based on Component Object Model (COM). When you call a COM object of Office from managed code, a Runtime Callable Wrapper (RCW) is automatically created. The RCW marshals calls between
+ the .NET application and the COM object. The RCW keeps a reference count on the COM object. If all references have not been released on the RCW, the COM object of Office does not quit and may cause the Office application not to quit after your automation.
+ In order to make sure that the Office application quits cleanly, the sample demonstrates two solutions.
+</p>
+<p class="MsoNormal">Solution1.AutomatePowerPoint demonstrates automating Microsoft PowerPoint application by using Microsoft PowerPoint Primary Interop Assembly (PIA) and explicitly assigning each COM accessor object to a new variable that you would explicitly
+ call Marshal.FinalReleaseComObject to release it at the end. </p>
+<p class="MsoNormal">Solution2.AutomatePowerPoint demonstrates automating Microsoft PowerPoint application by using Microsoft PowerPoint PIA and forcing a garbage collection as soon as the automation function is off the stack (at which point the RCW objects
+ are no longer rooted) to clean up RCWs and release COM objects.<span style="">&nbsp;
+</span></p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">The following steps walk through a demonstration of the PowerPoint automation sample that starts a Microsoft PowerPoint instance, adds a new presentation, inserts a slide, adds some texts to the slide, saves the presentation, quits PowerPoint
+ and then cleans up unmanaged COM resources. </p>
+<p class="MsoNormal">Step1. After you successfully build the sample project in Visual Studio 2010, you will get the application: CSAutomatePowerPoint.exe.
+</p>
+<p class="MsoNormal">Step2. Open Windows Task Manager (Ctrl&#43;Shift&#43;Esc) to confirm that no powerpnt.exe is running.
+</p>
+<p class="MsoNormal">Step3. Run the application. It should print the following content in the console window if no error is thrown.
+</p>
+<p class="MsoNormal"><span style=""><img src="description/image.png" alt="" width="576" height="376" align="middle">
+</span></p>
+<p class="MsoNormal">Then, you will see two new presentations in the directory of the application:
+</p>
+<p class="MsoNormal">Sample1.pptx and Sample2.pptx. Both presentations contain only one slide with the following title.
+</p>
+<p class="MsoNormal"><span style="">&nbsp; </span><span style=""><img src="description/860bfd52-700d-479a-b142-c0c190bdadc5image.png" alt="" width="576" height="242" align="middle">
+</span></p>
+<p class="MsoNormal">Step4. In Windows Task Manager, confirm that the powerpnt.exe process does not exist, i.e. the Microsoft PowerPoint intance was closed and cleaned up
+</p>
+<p class="MsoNormal">properly. </p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">Step1. Create a Console application and reference the PowerPoint Primary<span style="">&nbsp;
+</span>Interop Assembly (PIA) and Office 12. To reference the PowerPoint PIA and Office 12, right-click the project file and click the &quot;Add Reference...&quot; button. In the Add Reference dialog, navigate to the .NET tab, find <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Interop.PowerPoint.aspx"  title="Auto generated link to Microsoft.Office.Interop.PowerPoint">Microsoft.Office.Interop.PowerPoint</a>
+ 12.0.0.0 and Office 12.0.0.0 and click OK. </p>
+<p class="MsoNormal">Step2. Import and rename the Excel interop and the Office namepaces:
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+using Office = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Core.aspx"  title="Auto generated link to Microsoft.Office.Core">Microsoft.Office.Core</a>;
+using Word = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Interop.Word.aspx"  title="Auto generated link to Microsoft.Office.Interop.Word">Microsoft.Office.Interop.Word</a>;
+
+</pre>
+<pre id="codePreview" class="csharp">
+using Office = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Core.aspx"  title="Auto generated link to Microsoft.Office.Core">Microsoft.Office.Core</a>;
+using Word = <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.Office.Interop.Word.aspx"  title="Auto generated link to Microsoft.Office.Interop.Word">Microsoft.Office.Interop.Word</a>;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step3. Start up a PowerPoint application by creating a PowerPoint.Application object.
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+oPowerPoint = new PowerPoint.Application();
+
+</pre>
+<pre id="codePreview" class="csharp">
+oPowerPoint = new PowerPoint.Application();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">By default PowerPoint is invisible, till you make it visible.<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    // Make the PowerPoint instance invisible
+    oPowerPoint.Visible = Office.MsoTriState.msoFalse;
+    // Or make the PowerPoint instance visible
+    oPowerPoint.Visible = Office.MsoTriState.msoTrue;
+
+</pre>
+<pre id="codePreview" class="csharp">
+    // Make the PowerPoint instance invisible
+    oPowerPoint.Visible = Office.MsoTriState.msoFalse;
+    // Or make the PowerPoint instance visible
+    oPowerPoint.Visible = Office.MsoTriState.msoTrue;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step4. Get the Presentations collection from Application.Presentations and call its Add function to add a new presentation. The Add function returns a Presentation object.
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+oPres = oPowerPoint.Presentations;
+oPre = oPres.Add(Office.MsoTriState.msoTrue);
+
+</pre>
+<pre id="codePreview" class="csharp">
+oPres = oPowerPoint.Presentations;
+oPre = oPres.Add(Office.MsoTriState.msoTrue);
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step5. Insert a slide by calling the Add method on the Presentation.Slides collection, and add some texts to the slide.
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    oSlides = oPre.Slides;
+    oSlide = oSlides.Add(1, PowerPoint.PpSlideLayout.ppLayoutText);    
+    oShapes = oSlide.Shapes;
+    oShape = oShapes[1];
+    oTxtFrame = oShape.TextFrame;
+    oTxtRange = oTxtFrame.TextRange;
+    oTxtRange.Text = &quot;All-In-One Code Framework&quot;;
+
+</pre>
+<pre id="codePreview" class="csharp">
+    oSlides = oPre.Slides;
+    oSlide = oSlides.Add(1, PowerPoint.PpSlideLayout.ppLayoutText);    
+    oShapes = oSlide.Shapes;
+    oShape = oShapes[1];
+    oTxtFrame = oShape.TextFrame;
+    oTxtRange = oTxtFrame.TextRange;
+    oTxtRange.Text = &quot;All-In-One Code Framework&quot;;
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step6. Save the presentation as a pptx file and close it. </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    string fileName = Path.GetDirectoryName(
+        Assembly.GetExecutingAssembly().Location) &#43; &quot;\\Sample1.pptx&quot;;
+    oPre.SaveAs(fileName, 
+        PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation, 
+        Office.MsoTriState.msoTriStateMixed);
+    oPre.Close();
+
+</pre>
+<pre id="codePreview" class="csharp">
+    string fileName = Path.GetDirectoryName(
+        Assembly.GetExecutingAssembly().Location) &#43; &quot;\\Sample1.pptx&quot;;
+    oPre.SaveAs(fileName, 
+        PowerPoint.PpSaveAsFileType.ppSaveAsOpenXMLPresentation, 
+        Office.MsoTriState.msoTriStateMixed);
+    oPre.Close();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step7. Quit the PowerPoint application. </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+oPowerPoint.Quit();
+
+</pre>
+<pre id="codePreview" class="csharp">
+oPowerPoint.Quit();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">Step8. Clean up the unmanaged COM resource. To get PowerPoint terminated rightly, we need to call Marshal.FinalReleaseComObject() on each COM object we used. We can either explicitly call Marshal.FinalReleaseComObject on all accessor
+ objects: </p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+   // See Solution1.AutomatePowerPoint
+    if (oTxtRange != null)
+    {
+        Marshal.FinalReleaseComObject(oTxtRange);
+        oTxtRange = null;
+    }
+    if (oTxtFrame != null)
+    {
+        Marshal.FinalReleaseComObject(oTxtFrame);
+        oTxtFrame = null;
+    }
+    if (oShape != null)
+    {
+        Marshal.FinalReleaseComObject(oShape);
+        oShape = null;
+    }
+    if (oShapes != null)
+    {
+        Marshal.FinalReleaseComObject(oShapes);
+        oShapes = null;
+    }
+    if (oSlide != null)
+    {
+        Marshal.FinalReleaseComObject(oSlide);
+        oSlide = null;
+    }
+    if (oSlides != null)
+    {
+        Marshal.FinalReleaseComObject(oSlides);
+        oSlides = null;
+    }
+    if (oPre != null)
+    {
+        Marshal.FinalReleaseComObject(oPre);
+        oPre = null;
+    }
+    if (oPres != null)
+    {
+        Marshal.FinalReleaseComObject(oPres);
+        oPres = null;
+    }
+    if (oPowerPoint != null)
+    {
+        Marshal.FinalReleaseComObject(oPowerPoint);
+        oPowerPoint = null;
+    }
+
+</pre>
+<pre id="codePreview" class="csharp">
+   // See Solution1.AutomatePowerPoint
+    if (oTxtRange != null)
+    {
+        Marshal.FinalReleaseComObject(oTxtRange);
+        oTxtRange = null;
+    }
+    if (oTxtFrame != null)
+    {
+        Marshal.FinalReleaseComObject(oTxtFrame);
+        oTxtFrame = null;
+    }
+    if (oShape != null)
+    {
+        Marshal.FinalReleaseComObject(oShape);
+        oShape = null;
+    }
+    if (oShapes != null)
+    {
+        Marshal.FinalReleaseComObject(oShapes);
+        oShapes = null;
+    }
+    if (oSlide != null)
+    {
+        Marshal.FinalReleaseComObject(oSlide);
+        oSlide = null;
+    }
+    if (oSlides != null)
+    {
+        Marshal.FinalReleaseComObject(oSlides);
+        oSlides = null;
+    }
+    if (oPre != null)
+    {
+        Marshal.FinalReleaseComObject(oPre);
+        oPre = null;
+    }
+    if (oPres != null)
+    {
+        Marshal.FinalReleaseComObject(oPres);
+        oPres = null;
+    }
+    if (oPowerPoint != null)
+    {
+        Marshal.FinalReleaseComObject(oPowerPoint);
+        oPowerPoint = null;
+    }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="MsoNormal">and/or force a garbage collection as soon as the calling function is off the stack (at which point these objects are no longer rooted) and then call GC.WaitForPendingFinalizers.
+</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
+</div>
+<span class="hidden">csharp</span>
+<pre class="hidden">
+    // See Solution2.AutomatePowerPoint
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+    // GC needs to be called twice in order to get the Finalizers called 
+    // - the first time in, it simply makes a list of what is to be 
+    // finalized, the second time in, it actually is finalizing. Only 
+    // then will the object do its automatic ReleaseComObject.
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+
+</pre>
+<pre id="codePreview" class="csharp">
+    // See Solution2.AutomatePowerPoint
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+    // GC needs to be called twice in order to get the Finalizers called 
+    // - the first time in, it simply makes a list of what is to be 
+    // finalized, the second time in, it actually is finalizing. Only 
+    // then will the object do its automatic ReleaseComObject.
+    GC.Collect();
+    GC.WaitForPendingFinalizers();
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<h2>More Information<span style=""> </span></h2>
+<p class="MsoListParagraph" style=""><span style="font-family:Symbol"><span style="">��<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="http://msdn.microsoft.com/en-us/library/bb265982.aspx">MSDN: PowerPoint 2007 Developer Reference</a></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

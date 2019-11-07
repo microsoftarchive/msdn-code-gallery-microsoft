@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Import/export Excel worksheet in ASP.NET (CSASPNETExcelImportExport)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Import/export Excel worksheet in ASP.NET (CSASPNETExcelImportExport)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET, Office
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Office, Excel
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">2/3/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETExcelImportExport-71cf1101">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New">&nbsp;</p>
+<h2>ASP.NET APPLICATION: CSASPNETExcelImportExport Project Overview</h2>
+<p style="font-family:Courier New">&nbsp;</p>
+<h3>Use:</h3>
+<p style="font-family:Courier New"><br>
+This CSASPNETExcelImportExport sample introduces how to import data from an <br>
+Excel spreadsheet to SQL Server and how to generate an Excel spreadsheet <br>
+with data from SQL Server.<br>
+<br>
+This project includes two pages: Default and Image.<br>
+<br>
+ExcelExport page retrieves data from SQL Server using a DataTable and then <br>
+exports the DataTable to an Excel 2003/2007 spreadsheet on server disk. <br>
+<br>
+ExcelImport page fills a DataTable with data from an Excel 2003/2007 <br>
+spreadsheet using a DataTable, and then import the DataTable to SQL Server <br>
+via SqlBulkCopy, which efficiently bulk loads a SQL Server table.<br>
+<br>
+This sample uses the SQLServer2005DB sample database. <br>
+<br>
+</p>
+<h3>Creation:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Create a C# ASP.NET Web Application named CSASPNETExcelImportExport in <br>
+Visual Studio 2008 / Visual Web Developer.<br>
+<br>
+Step2. Create a new Web page named ExcelImport. Drag a FileUpload,<br>
+a RadioButtonList, a Button and a Label into the ExcelImport page. <br>
+<br>
+After that, rename the controls as follows:<br>
+<br>
+FileUpload1 &nbsp; &nbsp; &nbsp; &nbsp; -&gt; &nbsp; &nbsp;fupExcel <br>
+RadioButtonList1 &nbsp; &nbsp;-&gt; &nbsp; &nbsp;rblArchive<br>
+Button1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt; &nbsp; &nbsp;btnImport<br>
+Label1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-&gt; &nbsp; &nbsp;lblMessages<br>
+<br>
+Step3. Add two items in rblArchive:<br>
+<br>
+&lt;asp:RadioButtonList ID=&quot;rblArchive&quot; runat=&quot;server&quot;&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Value=&quot;Yes&quot;&gt;Yes&lt;/asp:ListItem&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Selected=&quot;True&quot; Value=&quot;No&quot;&gt;No&lt;/asp:ListItem&gt;<br>
+&lt;/asp:RadioButtonList&gt; &nbsp; &nbsp;<br>
+<br>
+Step4. Copy the following methods from the sample, and paste them in the <br>
+code-behind of Default page:<br>
+<br>
+GetRowCounts &nbsp; &nbsp; &nbsp; &nbsp;-- &nbsp; Get the row counts in SQL Server table<br>
+RetrieveData &nbsp; &nbsp; &nbsp; &nbsp;-- &nbsp; Retrieve data from the Excel spreadsheet.<br>
+SqlBulkCopyImport &nbsp; -- &nbsp; Import the data from DataTable to SQL Server via<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SqlBulkCopy<br>
+<br>
+Step5. Double-click on btnImport to generate the Button_Click event handlers.<br>
+After that, fill the generated methods with the sample code.<br>
+<br>
+Step6. Create a new Web page named ExcelExport. Drag two RadioButtonList, <br>
+a Button and a HyperLinkinto the ExcelExport page. After that, rename <br>
+the controls as follows:<br>
+<br>
+RadioButtonList1 &nbsp; &nbsp;-&gt; &nbsp; &nbsp;rblExtension<br>
+RadioButtonList1 &nbsp; &nbsp;-&gt; &nbsp; &nbsp;rblDownload<br>
+Button1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt; &nbsp; &nbsp;btnExport<br>
+HyperLink1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-&gt; &nbsp; &nbsp;hlDownload<br>
+<br>
+Step7. Add two items in rblExtension:<br>
+<br>
+&lt;asp:RadioButtonList ID=&quot;rblExtension&quot; runat=&quot;server&quot;&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Selected=&quot;True&quot; Value=&quot;2003&quot;&gt;Excel 97-2003&lt;/asp:ListItem&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Value=&quot;2007&quot;&gt;Excel 2007&lt;/asp:ListItem&gt;<br>
+&lt;/asp:RadioButtonList&gt; &nbsp;<br>
+<br>
+Step7. Add two items in rblDownload:<br>
+<br>
+&lt;asp:RadioButtonList ID=&quot;rblDownload&quot; runat=&quot;server&quot;&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Selected=&quot;True&quot; Value=&quot;Yes&quot;&gt;Yes&lt;/asp:ListItem&gt;<br>
+&nbsp; &nbsp;&lt;asp:ListItem Value=&quot;No&quot;&gt;No&lt;/asp:ListItem&gt;<br>
+&lt;/asp:RadioButtonList&gt;<br>
+<br>
+Step8. Copy the following methods from the sample, and paste them in the <br>
+code-behind of Default page:<br>
+<br>
+RetrieveData &nbsp; &nbsp;-- &nbsp; Retrieve data from SQL Server table<br>
+ExportToExcel &nbsp; -- &nbsp; Export data to an Excel spreadsheet via ADO.NET<br>
+<br>
+Step9. Double-click on btnExport to generate the Button_Click event handlers.<br>
+After that, fill the generated methods with the sample code.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+SqlBulkCopy Class<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlbulkcopy.aspx" >http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlbulkcopy.aspx</a><br>
+<br>
+DataRow.SetAdded Method .<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.data.datarow.setadded.aspx" >http://msdn.microsoft.com/en-us/library/system.data.datarow.setadded.aspx</a><br>
+<br>
+<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Data.OleDb.aspx"  title="Auto generated link to System.Data.OleDb">System.Data.OleDb</a> Namespace<br>
+<a href="http://msdn.microsoft.com/en-us/library/system.data.oledb.aspx" >http://msdn.microsoft.com/en-us/library/system.data.oledb.aspx</a><br>
+<br>
+How to query and display excel data by using ASP.NET, ADO.NET, and Visual C# .NET<br>
+<a href="http://support.microsoft.com/kb/306572/" >http://support.microsoft.com/kb/306572/</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ASP.NET MVC file download sample (CSASPNETMVCFileDownload)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ASP.NET MVC file download sample (CSASPNETMVCFileDownload)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            ASP.NET MVC
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETMVCFileDownload-8b8a7fee">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>ASP.NET MVC APPLICATION : CSASPNETMVCFileDownload Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Use:</h3>
+<p style="font-family:Courier New"><br>
+&nbsp;The project illustrates how to perform file downloading in ASP.NET MVC<br>
+&nbsp;web application. <br>
+&nbsp;<br>
+&nbsp;The detailed functionality include how to use MVC routing to register <br>
+&nbsp;a custom url routing pattern for our file download processing. Include:<br>
+&nbsp;<br>
+&nbsp;* how to display a file list for downloading<br>
+&nbsp;* how to stream out file content in MVC web page<br>
+&nbsp;<br>
+&nbsp;and the sample application also include a custom ActionResult class<br>
+&nbsp; which is used to output the file content(binary format).<br>
+<br>
+</p>
+<h3>Prerequisite:</h3>
+<p style="font-family:Courier New"><br>
+Visual Studio 2008 SP1 with ASP.NET MVC 1.0 extension installed. <br>
+<br>
+*ASP.NET MVC 1.0 RTM download:<br>
+<a  href="http://www.microsoft.com/downloads/details.aspx?FamilyID=53289097-73ce-43bf-b6a6-35e00103cb4b&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=53289097-73ce-43bf-b6a6-35e00103cb4b&amp;displaylang=en</a><br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New">&nbsp;<br>
+*open the project<br>
+<br>
+*select &nbsp;default.aspx page and view it in browser<br>
+<br>
+*in the main page UI, select the &quot;FileDownload&quot; tab<br>
+<br>
+*click any file link to download the certain file<br>
+<br>
+</p>
+<h3>Code Logical:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Create a Visual Studio 2008 SP1 ASP.NET MVC Web Application project<br>
+<br>
+Step2. Clear unnecessary parts in the project, including: scripts for jquery, <br>
+&nbsp; &nbsp; &nbsp; controller and view for account management...<br>
+<br>
+Step3: Add our FileDownload Controller class and the corresponding view files<br>
+&nbsp; &nbsp; &nbsp; For more information about how to create Controller class, refer to:<br>
+&nbsp; &nbsp; &nbsp; <a  href="http://www.asp.net/learn/mvc/#MVC_Controllers">
+http://www.asp.net/learn/mvc/#MVC_Controllers</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp;<br>
+Step4: Add a custom ActionResult class for output file content<br>
+<br>
+Step5: Add the proper URL routing rules in global.asax file's events. The<br>
+&nbsp; &nbsp; &nbsp; Routing rules are very important for connecting the requests to the
+<br>
+&nbsp; &nbsp; &nbsp; proper MVC Controller and Action methods. For detailed info, refer to:<br>
+&nbsp; &nbsp; &nbsp; <a  href="http://weblogs.asp.net/scottgu/archive/2007/12/03/asp-net-mvc-framework-part-2-url-routing.aspx">
+http://weblogs.asp.net/scottgu/archive/2007/12/03/asp-net-mvc-framework-part-2-url-routing.aspx</a><br>
+<br>
+<br>
+Key components:<br>
+<br>
+* web.config file: contains all the necessary configuration information of <br>
+&nbsp;this web application<br>
+<br>
+* global.asax: contains all the URL routing rules<br>
+<br>
+* HomeController class: contains the main application <br>
+&nbsp; &nbsp;navigation logic(such as default page and about page)<br>
+<br>
+* FileController class: contains the navigation and processing logic of the <br>
+&nbsp;FileDownloading function(include file list and file download)<br>
+<br>
+* Home Views: the page UI elements for HomeController<br>
+<br>
+* File Views: the page UI elements for FileController<br>
+<br>
+* shared Views & Site.Master: those UI elements shared by all page UI<br>
+<br>
+* BinaryContentResult: Custom ActionResult class used for outputting file <br>
+&nbsp;content(as binary format)<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+#ASP.NET MVC Tutorials<br>
+<a  href="http://www.asp.net/Learn/mvc/">http://www.asp.net/Learn/mvc/</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

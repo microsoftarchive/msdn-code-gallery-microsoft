@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.BackgroundTask.CPP" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>BackgroundTask C++ sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Assets\storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="BackgroundTask.App" Executable="$targetnametoken$.exe" EntryPoint="BackgroundTask.App">
+      <VisualElements DisplayName="BackgroundTask C++ sample" Logo="Assets\squareTile-sdk.png" SmallLogo="Assets\smallTile-sdk.png" Description="BackgroundTask C++ sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\badgelogo-sdk.png" />
+        <DefaultTile ShortName="BGTask CPP" ShowName="allLogos" WideLogo="Assets\tile-sdk.png" />
+        <SplashScreen Image="Assets\splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.SampleBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ServicingComplete">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

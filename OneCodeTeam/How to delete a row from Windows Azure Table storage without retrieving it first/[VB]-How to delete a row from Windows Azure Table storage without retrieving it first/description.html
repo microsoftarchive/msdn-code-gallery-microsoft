@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/3e00d0a6-7844-40b8-8b92-12c0e4eeaed2Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to delete a row from Windows Azure Table storage without retrieving it first</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to delete a row from Windows Azure Table storage without retrieving it first</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Microsoft Azure
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Azure
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/How-to-delete-a-row-from-97fad523">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<hr>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="description/8171.onecodesampletopbanner.png" alt="">
+</a></div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to reduce the</span><span style="font-weight:bold; font-size:14pt"> times of</span><span style="font-weight:bold; font-size:14pt"> requests
+</span><span style="font-weight:bold; font-size:14pt">sent </span><span style="font-weight:bold; font-size:14pt">to Azure Storage Service</span><span style="font-weight:bold; font-size:14pt"> in Windows Store apps</span><span style="font-weight:bold; font-size:14pt">
+</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">When </span><span style="font-size:11pt">you
+</span><span style="font-size:11pt">develop an app </span><span style="font-size:11pt">that
+</span><span style="font-size:11pt">need</span><span style="font-size:11pt">s</span><span style="font-size:11pt"> connect</span><span style="font-size:11pt">ing</span><span style="font-size:11pt"> to Azure storage service</span><span style="font-size:11pt">,
+ it </span><span style="font-size:11pt">will take a long time</span><span style="font-size:11pt"> to</span><span style="font-size:11pt"> s</span><span style="font-size:11pt">end request</span><span style="font-size:11pt">s</span><span style="font-size:11pt">
+ and get response</span><span style="font-size:11pt">s</span><span style="font-size:11pt"> in the client application.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">This sample </span><span>demonstrate</span><span>s</span><span> how to reduce the
+</span><span>times of </span><span>connection between client app and Azure storage service. It also shows how to handle general exception when</span><span> you</span><span> get the response.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Building the Sample</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:12pt"><span style="color:#000000; font-size:11pt">&bull;&nbsp;</span><span style="color:#000000; font-size:11pt">Create a new</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="font-weight:bold; color:#000000; font-size:11pt">Storage
+ Account</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="color:#000000; font-size:11pt">from the Windows Azure Management Portal.</span></span></p>
+<p style="margin-left:30pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="color:#000000; font-size:10pt">&nbsp;</span><span style="color:#000000; font-size:11pt">To do this, follow the instructions in</span><span style="color:#000000; font-size:11pt">&nbsp;</span><a href="http://www.windowsazure.com/en-us/manage/services/storage/how-to-create-a-storage-account/" style="text-decoration:none"><span style="color:#960bb4; font-size:11pt; text-decoration:underline">How
+ To Create a Storage Account</span></a><span style="color:#000000; font-size:11pt">.</span></span></p>
+<p style="margin-left:30pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="color:#000000; font-size:10pt">&nbsp;</span><span style="color:#000000; font-size:11pt">Get the</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="font-weight:bold; color:#000000; font-size:11pt">Storage
+ Account Keys</span><span style="color:#000000; font-size:11pt">. Browse to your storage account dashboard and click</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="font-weight:bold; color:#000000; font-size:11pt">Manage Access Keys</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="color:#000000; font-size:11pt">on
+ the bottom bar.</span></span></p>
+<p style="margin-left:30pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="color:#000000; font-size:10pt">&nbsp;</span><span style="font-size:12pt"><img src="description/image.png" alt="" width="201" height="57" align="middle">
+</span></span></p>
+<p style="margin-left:30pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="color:#000000; font-size:11pt">Copy the</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="font-weight:bold; color:#000000; font-size:11pt">Storage Account Name</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="color:#000000; font-size:11pt">and</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="font-weight:bold; color:#000000; font-size:11pt">Primary
+ Access Key</span><span style="color:#000000; font-size:11pt">&nbsp;</span><span style="color:#000000; font-size:11pt">values.</span></span></p>
+<p style="margin-left:30pt; margin-right:0pt; margin-top:5pt; margin-bottom:5pt; font-size:10.0pt; line-height:24pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:12pt"><span style="font-size:12pt"><img src="description/61bd3217-7681-4f6c-93d3-fb8200a79b89image.png" alt="" width="546" height="459" align="middle">
+</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp;<span style="font-size:11pt">Open this project, go to the
+</span><span style="font-weight:bold">Solution-&gt;Project-&gt;DataSource-&gt;TableDataSource.cs
+</span><span style="font-size:11pt">file</span><span>,</span><span style="font-size:11pt"> replace account name and account key you copied in the step 1.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp;<span style="font-size:11pt">Build the project, download the class library from nugget.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp;<span style="font-size:11pt">Press </span>
+<span style="font-weight:bold">F5</span><span style="font-size:11pt"> </span><span style="font-size:11pt">to
+</span><span style="font-size:11pt">start the app.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Running the Sample</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">This app only ha</span><span style="font-size:11pt">s one page view:</span><span style="font-size:11pt"> main page view.</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt"><img src="description/700e97c4-96b9-4b4f-8055-eb8d65972bdeimage.png" alt="" width="185" height="458" align="middle">
+</span></span></p>
+<p style="margin-left:18pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
+<span style="font-size:11pt">&bull;&nbsp; <span style="font-size:11pt">You can Click</span><span style="font-size:11pt"> the</span><span style="font-size:11pt">
+</span><span style="font-weight:bold">Delete</span><span style="font-size:11pt"> button first, then use
+</span><span style="font-size:11pt">the </span><span style="font-weight:bold">Regenerate the Sample data
+</span><span style="font-size:11pt">button</span><span style="font-size:11pt"> to</span><span style="font-size:11pt"> create the sample data.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Using the Code</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">The code sample provide</span><span style="font-size:11pt">s</span><span style="font-size:11pt"> the following reusable functions to handle Azure storage transient fault error.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt; font-weight:bold"><span style="font-size:11pt; font-weight:bold">How to handle conflict error?</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">public class ConflictRetryPolicy:IRetryPolicy 
+   { 
+       int maxRetryAttemps = 10; 
+       TimeSpan defaultRetryInterval = TimeSpan.FromSeconds(5); 
+ 
+       public ConflictRetryPolicy(TimeSpan deltaBackoff, int retryAttempts) 
+       { 
+           maxRetryAttemps = retryAttempts; 
+           defaultRetryInterval = deltaBackoff; 
+       } 
+ 
+       public IRetryPolicy CreateInstance() 
+       { 
+           return new ConflictRetryPolicy(TimeSpan.FromSeconds(5), 10); 
+       } 
+ 
+       public bool ShouldRetry(int currentRetryCount, int statusCode, Exception lastException, out TimeSpan retryInterval, OperationContext operationContext) 
+       { 
+           retryInterval = defaultRetryInterval; 
+           if (currentRetryCount &gt;= maxRetryAttemps) 
+           { 
+               return false; 
+           } 
+           if (statusCode == 409) 
+           { 
+               return true; 
+           } 
+           else 
+           { 
+               return false; 
+           } 
+       } 
+   } 
+</pre>
+<pre class="hidden">Public Class ConflictRetryPolicy
+    Implements IRetryPolicy
+    Private maxRetryAttemps As Integer = 10
+    Private defaultRetryInterval As TimeSpan = TimeSpan.FromSeconds(5)
+    Public Sub New(deltaBackoff As TimeSpan, retryAttempts As Integer)
+        maxRetryAttemps = retryAttempts
+        defaultRetryInterval = deltaBackoff
+    End Sub
+    Public Function CreateInstance() As IRetryPolicy Implements IRetryPolicy.CreateInstance
+        Return New ConflictRetryPolicy(TimeSpan.FromSeconds(5), 10)
+    End Function
+    Public Function ShouldRetry(currentRetryCount As Integer, statusCode As Integer, lastException As Exception, ByRef retryInterval As TimeSpan, operationContext As <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/Microsoft.WindowsAzure.Storage.OperationContext.aspx"  title="Auto generated link to Microsoft.WindowsAzure.Storage.OperationContext">Microsoft.WindowsAzure.Storage.OperationContext</a>) As Boolean Implements IRetryPolicy.ShouldRetry
+        retryInterval = defaultRetryInterval
+        If currentRetryCount &gt;= maxRetryAttemps Then
+            Return False
+        End If
+        If statusCode = 409 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+End Class
+</pre>
+<pre id="codePreview" class="csharp">public class ConflictRetryPolicy:IRetryPolicy 
+   { 
+       int maxRetryAttemps = 10; 
+       TimeSpan defaultRetryInterval = TimeSpan.FromSeconds(5); 
+ 
+       public ConflictRetryPolicy(TimeSpan deltaBackoff, int retryAttempts) 
+       { 
+           maxRetryAttemps = retryAttempts; 
+           defaultRetryInterval = deltaBackoff; 
+       } 
+ 
+       public IRetryPolicy CreateInstance() 
+       { 
+           return new ConflictRetryPolicy(TimeSpan.FromSeconds(5), 10); 
+       } 
+ 
+       public bool ShouldRetry(int currentRetryCount, int statusCode, Exception lastException, out TimeSpan retryInterval, OperationContext operationContext) 
+       { 
+           retryInterval = defaultRetryInterval; 
+           if (currentRetryCount &gt;= maxRetryAttemps) 
+           { 
+               return false; 
+           } 
+           if (statusCode == 409) 
+           { 
+               return true; 
+           } 
+           else 
+           { 
+               return false; 
+           } 
+       } 
+   } 
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt; font-weight:bold"><span style="font-size:11pt; font-weight:bold">How to reduce request
+</span><span style="font-size:11pt; font-weight:bold">sending</span><span style="font-size:11pt; font-weight:bold">
+</span><span style="font-size:11pt; font-weight:bold">time</span><span style="font-size:11pt; font-weight:bold">s</span><span style="font-size:11pt; font-weight:bold">?</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"></span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span><span>VB</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span><span class="hidden">vb</span>
+<pre class="hidden">public static async Task&lt;bool&gt; DeleteEntity(DynamicTableEntity entity) 
+       { 
+           try 
+           { 
+               var table = client.GetTableReference(tableName); 
+ 
+               TableOperation deleteOperation = TableOperation.Delete(entity); 
+               var result = await table.ExecuteAsync(deleteOperation); 
+ 
+               return true; 
+           } 
+           catch (Exception e) 
+           { 
+               //In windows store apps, StorageException is an internal class. 
+               //You can't convert Exception to StorageException, so you should use  
+               //RequestResult.TranslateFromExceptionMessage(e.Message) to get the HttpStatusCode. 
+               var result = RequestResult.TranslateFromExceptionMessage(e.Message); 
+ 
+               //We treat 404 as it has already been deleted. 
+               if (result.HttpStatusCode == 404) 
+               { 
+                   return true; 
+               } 
+               else 
+               { 
+                   return false; 
+                   //throw new WebException(result.HttpStatusMessage); 
+               } 
+           } 
+ 
+       } 
+</pre>
+<pre class="hidden">Public Shared Async Function DeleteEntity(entity As DynamicTableEntity) As Task(Of Boolean)
+     Try
+         Dim table = client.GetTableReference(tableName)
+         Dim deleteOperation As TableOperation = TableOperation.Delete(entity)
+         Dim result = Await table.ExecuteAsync(deleteOperation)
+         Return True
+     Catch e As Exception
+         ' In windows store app, StorageException is an internal class.
+         ' You can't convert Exception to StorageException, so you should use 
+         ' RequestResult.TranslateFromExceptionMessage(e.Message) get the HttpStatusCode.
+         Dim result = RequestResult.TranslateFromExceptionMessage(e.Message)
+         ' We treat 404 as it has already been deleted.
+         If result.HttpStatusCode = 404 Then
+             Return True
+         Else
+             ' Throw new WebException(result.HttpStatusMessage);
+             Return False
+         End If
+     End Try
+ End Function
+</pre>
+<pre id="codePreview" class="csharp">public static async Task&lt;bool&gt; DeleteEntity(DynamicTableEntity entity) 
+       { 
+           try 
+           { 
+               var table = client.GetTableReference(tableName); 
+ 
+               TableOperation deleteOperation = TableOperation.Delete(entity); 
+               var result = await table.ExecuteAsync(deleteOperation); 
+ 
+               return true; 
+           } 
+           catch (Exception e) 
+           { 
+               //In windows store apps, StorageException is an internal class. 
+               //You can't convert Exception to StorageException, so you should use  
+               //RequestResult.TranslateFromExceptionMessage(e.Message) to get the HttpStatusCode. 
+               var result = RequestResult.TranslateFromExceptionMessage(e.Message); 
+ 
+               //We treat 404 as it has already been deleted. 
+               if (result.HttpStatusCode == 404) 
+               { 
+                   return true; 
+               } 
+               else 
+               { 
+                   return false; 
+                   //throw new WebException(result.HttpStatusMessage); 
+               } 
+           } 
+ 
+       } 
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-how-to-use-table-storage-20/" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">Azure table storage feature guide</span></a><span style="font-size:11pt">
+ shows </span><span style="font-size:11pt">that it is not necessary to retrieve an entity before deletion
+</span><span style="font-size:11pt">if you </span><span style="font-size:11pt">have</span><span style="font-size:11pt">
+</span><span style="font-size:11pt">already retrieve</span><span style="font-size:11pt">d</span><span style="font-size:11pt"> it before. So we can delete that retrieve operation in code.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><span style="font-size:11pt">If you send the same entity delete operation twice, you should catch the 404 error and ignore it as
+</span><span style="font-size:11pt">the </span><span style="font-size:11pt">code above</span><span style="font-size:11pt"> does</span><span style="font-size:11pt">.</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt">&nbsp;</span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">More Information</span></span></p>
+<p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
+<span style="font-size:11pt"><a href="http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-how-to-use-table-storage-20/#delete-entity" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://www.windowsazure.com/en-us/documentation/articles/storage-dotnet-how-to-use-table-storage-20/#delete-entity</span></a></span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
+ and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
+ and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/a20d39fc-847b-4f6c-a5ee-5b3dad80666dimage.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

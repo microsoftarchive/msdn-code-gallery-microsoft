@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Set the recovery property of Windows service (CSWindowsServiceRecoveryProperty)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Set the recovery property of Windows service (CSWindowsServiceRecoveryProperty)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Service
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Recovery Property
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSWindowsServiceRecoveryPro-2147e7ac">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>CONSOLE APPLICATION : CSWindowsServiceRecoveryProperty Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+CSWindowsServiceRecoveryProperty example demonstrates how to use <br>
+ChangeServiceConfig2 to configure the service &quot;Recovery&quot; properties in C#.
+<br>
+This example operates all the options you can see on the service &quot;Recovery&quot;
+<br>
+tab, including setting the &quot;Enable actions for stops with errors&quot; option in
+<br>
+Windows Vista and later operating systems. This example also include how to <br>
+grant the shut down privilege to the process, so that we can configure a <br>
+special option in the &quot;Recovery&quot; tab - &quot;Restart Computer Options...&quot;.<br>
+<br>
+</p>
+<h3>Prerequisites:</h3>
+<p style="font-family:Courier New"><br>
+1. &nbsp;The code sample must run on Windows Vista and later operating systems. <br>
+2. &nbsp;The code sample need to run as administrator.<br>
+3. &nbsp;You need to install the CSWindowsService sample service before you run <br>
+&nbsp; &nbsp;this code sample. <br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+1. &nbsp;Install CSWindowsService service on your system.<br>
+2. &nbsp;Build this project and run it as administrator.<br>
+3. &nbsp;Use services.msc command to view the services on your system and find the
+<br>
+&nbsp; &nbsp;CSWindowsService service, and then you can double click on that service
+<br>
+&nbsp; &nbsp;to open the property window.<br>
+4. &nbsp;In the Recovery tab, you can find the recovery properties had been <br>
+&nbsp; &nbsp;configured by the sample application.<br>
+<br>
+</p>
+<h3>Code Logic:</h3>
+<p style="font-family:Courier New"><br>
+1. &nbsp;Open the service control manager with a high permission.<br>
+2. &nbsp;Open the service with the service name and a high permission.<br>
+3.&nbsp;&nbsp;&nbsp;&nbsp;Create three actions for the service control manager perform at these
+<br>
+&nbsp; &nbsp;three situations &quot;First failure&quot;, &quot;Second failure&quot; and &quot;Subsequent
+<br>
+&nbsp; &nbsp;failures&quot;.<br>
+4. &nbsp;Grant shut down privilege to the process, so that we can configure the <br>
+&nbsp; &nbsp;&quot;Restart Computer Options...&quot;.<br>
+&nbsp; &nbsp;a. &nbsp;Retrieve a pseudo handle for the current process.<br>
+&nbsp; &nbsp;b. &nbsp;Open the access token associated with the process.<br>
+&nbsp; &nbsp;c. &nbsp;Retrieve the locally unique identifier (LUID) used on a specified
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;system to locally represent the specified privilege name.<br>
+&nbsp; &nbsp;d. &nbsp;Enable privileges in the specified access token.<br>
+5. &nbsp;Construct a service failure actions struct with the above actions, the <br>
+&nbsp; &nbsp;time after which to reset the failure count to zero if there are no <br>
+&nbsp; &nbsp;failures, in seconds, reboot message, the program with or without the
+<br>
+&nbsp; &nbsp;command line parameters will execute with we set the failure action to
+<br>
+&nbsp; &nbsp;Run_Command after the service failed and the fail count.<br>
+6. &nbsp;Enable actions for stops with errors.<br>
+7. &nbsp;Call the ChangeServiceConfig2 method to set the service recovery <br>
+&nbsp; &nbsp;properties.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+CSWindowsService<br>
+<a  href="http://1code.codeplex.com/SourceControl/changeset/view/55574#628216">http://1code.codeplex.com/SourceControl/changeset/view/55574#628216</a><br>
+<br>
+Service Security and Access Rights<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms685981(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms685981(VS.85).aspx</a><br>
+<br>
+Privilege Constants<br>
+<a  href="http://msdn.microsoft.com/en-us/library/bb530716(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/bb530716(v=VS.85).aspx</a><br>
+<br>
+System Error Codes (0-499)<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms681382(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms681382(VS.85).aspx</a><br>
+<br>
+SC_ACTION_TYPE<br>
+<a  href="http://msdn.microsoft.com/en-us/library/bb401750.aspx">http://msdn.microsoft.com/en-us/library/bb401750.aspx</a><br>
+<br>
+SC_ACTION Structure<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms685126(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms685126(VS.85).aspx</a><br>
+<br>
+SERVICE_FAILURE_ACTIONS Structure<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms685939(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms685939(VS.85).aspx</a><br>
+<br>
+OpenSCManager Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms684323(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms684323(VS.85).aspx</a><br>
+<br>
+OpenService Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms684330(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms684330(VS.85).aspx</a><br>
+<br>
+ChangeServiceConfig2 Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms681988(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms681988(VS.85).aspx</a><br>
+<br>
+DllImportAttribute Class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.dllimportattribute.aspx">http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.dllimportattribute.aspx</a><br>
+<br>
+TOKEN_PRIVILEGES Structure<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa379630(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa379630(VS.85).aspx</a><br>
+<br>
+GetCurrentProcess Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms683179(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms683179(VS.85).aspx</a><br>
+<br>
+OpenProcessToken Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa379295(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa379295(VS.85).aspx</a><br>
+<br>
+LookupPrivilegeValue Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa379180(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa379180(VS.85).aspx</a><br>
+<br>
+AdjustTokenPrivileges Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa375202(VS.85).aspx">http://msdn.microsoft.com/en-us/library/aa375202(VS.85).aspx</a><br>
+<br>
+Set up Recovery Actions to Take Place When a Service Fails<br>
+<a  href="http://technet.microsoft.com/en-us/library/cc753662.aspx">http://technet.microsoft.com/en-us/library/cc753662.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

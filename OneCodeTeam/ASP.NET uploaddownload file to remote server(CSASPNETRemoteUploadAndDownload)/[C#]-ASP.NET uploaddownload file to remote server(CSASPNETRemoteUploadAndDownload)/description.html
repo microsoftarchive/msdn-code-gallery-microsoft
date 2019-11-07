@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ASP.NET upload/download file to remote server(CSASPNETRemoteUploadAndDownload)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ASP.NET upload/download file to remote server(CSASPNETRemoteUploadAndDownload)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Upload, Download
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSASPNETRemoteUploadAndDown-a80b7cb5">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>ASP.NET APPLICATION : CSASPNETRemoteUploadAndDownload Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The CSASPNETRemoteUploadAndDownload sample shows how to upload files to and <br>
+download files from remote server in an ASP.NET application. <br>
+<br>
+This project is created by using WebClient and FtpWebRequest object in C# <br>
+language. Both WebClient and FtpWebRequest classes provide common methods for <br>
+sending data to URI of server and receiving data from a resource identified <br>
+by URI as well. When uploading or downloading files, these classes will do <br>
+webrequest to the URL which user types in.<br>
+<br>
+The UploadData() method sends a data buffer(without encoding it) to a <br>
+resource using HTTP or FTP method specified in the method parameter, and then <br>
+returns the web response from the server. The DownloadData() method posts an <br>
+HTTP or FTP download request to the remote server and get outputstream from <br>
+the server.<br>
+<br>
+</p>
+<h3>Prerequisites:</h3>
+<p style="font-family:Courier New"><br>
+1. The virtual upload path of remote server need to be enabled the writing <br>
+permissions for an Asp.net account or other accessible user accounts, which <br>
+means the directory on server should be writable. Otherwise the remote <br>
+server will return 403 error(Regarding server status code definitions, see <br>
+<a  href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).</a><br>
+<br>
+2. If remote server(http or ftp) does not enable anonymous access, then we <br>
+need to provide a user account and set WebClient.Credentials property in <br>
+order to verify the user, allowing the server to know who you are. <br>
+(the following documentation will also refer to it).<br>
+<br>
+3. Attention:<br>
+If the server is running IIS7 verion, we need to do a few more steps to set <br>
+user permissions:<br>
+<br>
+Install WebDev Extension for IIS7. Please follow the instructions in this <br>
+article. <br>
+<a  href="http://learn.iis.net/page.aspx/350/installing-and-configuring-webdav-on-iis-7/">http://learn.iis.net/page.aspx/350/installing-and-configuring-webdav-on-iis-7/</a><br>
+<br>
+If the server machine does not have the WebDev Extension program, you can <br>
+download it from the links below<br>
+<br>
+&nbsp; &nbsp;32bit: <br>
+<a target="_blank" href="&lt;a http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en</a>'&gt;<a  href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en</a><br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp;64bit:<br>
+<a target="_blank" href="&lt;a http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en</a>'&gt;<a  href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en">http://www.microsoft.com/downloads/en/details.aspx?FamilyID=13e97aaa-fb1b-4cf8-b95f-19ae02321385&amp;displaylang=en</a><br>
+<br>
+&nbsp;If you do not install and enable this extension service, IIS7 will forbid <br>
+&nbsp;RemoteUpload method and return the 404 or 403 http error code.<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+1.Open CSRemoteUploadAndDownload.sln file.<br>
+<br>
+2.Right click the Default.aspx, choose &quot;view in browser&quot; or view <br>
+&quot;Default.aspx&quot; in browser to run this application.<br>
+<br>
+3.There are two features you can see in Default.aspx page.<br>
+<br>
+&nbsp;For RemoteUpload:<br>
+&nbsp; &nbsp;1) Enter a server url which you want to upload to. <br>
+&nbsp; &nbsp;(e.g. <a  href="http://www.example.com/upload/,">http://www.example.com/upload/,</a> ftp://ftpserver/)<br>
+&nbsp; &nbsp;2) Choose your local file by using UploadFile control.<br>
+&nbsp; &nbsp;3) Click the upload button and then you will see the result on screen.<br>
+<br>
+&nbsp;For RemoteDownload:<br>
+&nbsp; &nbsp;1) Enter a server url from which you want to download. <br>
+&nbsp; &nbsp; &nbsp;(e.g. <a  href="http://www.example.com/download/test.txt,">
+http://www.example.com/download/test.txt,</a> ftp://ftpserver/test.txt)<br>
+&nbsp; &nbsp;2) Enter a destination local path or directory which saves the file.
+<br>
+&nbsp; &nbsp;(e.g. C:\Temp\)<br>
+&nbsp; &nbsp;3) Click the download button and then result will be shown on screen.<br>
+&nbsp; &nbsp;<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+Use WebClient and FtpWebRequest to upload, download data in .NET application.<br>
+Notice that adding reference of <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.aspx"  title="Auto generated link to System.IO">System.IO</a>, <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a> at the very beginning.<br>
+<br>
+-------------<br>
+Upload:<br>
+RemoteUpload class has some necessary preperties and constructors,<br>
+which should be used in UploadFile method.<br>
+<br>
+UrlString preperty: The URI of the resource to receive the data<br>
+FileNamePath : The Full physical path of Upload file.<br>
+NewFileName: The Remote server upload file name.<br>
+<br>
+1. Get the file name of FileNamePath preperty.<br>
+<br>
+2. Get the array of bytes in post filedata.<br>
+<br>
+3. Get the correct remote server url.<br>
+<br>
+4. * Http: <br>
+&nbsp; Create WebClient instance(importing the reference of namespace <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a>),
+<br>
+&nbsp; using DefaultCredentials to sets the network credentials that are sent to <br>
+&nbsp; the host and used this account to authenticate the request,which means use
+<br>
+&nbsp; DefaultCredentials to login in remote server(about WebClient.Credentials <br>
+&nbsp; Property.<br>
+<br>
+&nbsp; MSDN: <a  href="http://msdn.microsoft.com/en-us/library/system.net.webclient.credentials.aspx">
+http://msdn.microsoft.com/en-us/library/system.net.webclient.credentials.aspx</a>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a  href="http://msdn.microsoft.com/en-us/library/system.net.networkcredential.aspx)">
+http://msdn.microsoft.com/en-us/library/system.net.networkcredential.aspx)</a><br>
+&nbsp; <br>
+&nbsp; * FTP:<br>
+&nbsp; Create FtpWebRequest instance. Use WebRequestMethods.Ftp.UploadFile method
+<br>
+&nbsp; to upload file. In this sample, the Ftp Server can be access by anonymous <br>
+&nbsp; users, so it is unnecessary for us to specify username and password.<br>
+&nbsp; If Server needs to authenticate users before connecting it. We should also
+<br>
+&nbsp; provide our username and password. (Regarding FtpWebRequest.Credentials <br>
+&nbsp; Property<br>
+<br>
+&nbsp; MSDN: <a  href="http://msdn.microsoft.com/en-us/library/354e0act.aspx)">
+http://msdn.microsoft.com/en-us/library/354e0act.aspx)</a><br>
+<br>
+5. Get the bytes of uploaded file which store in memory(FileStream).<br>
+<br>
+6. Upload data buffer to remote server by using HTTP method &quot;PUT&quot;. If the
+<br>
+request method is empty, default value is &quot;POST&quot; for http server and &quot;STOR&quot;
+<br>
+for ftp server.<br>
+<br>
+7. Then UploadData() method return the boolean value if Upload succeed or <br>
+failed.<br>
+<br>
+8. Close and release WebClient or WebRequest resource.<br>
+<br>
+-------------<br>
+Download:<br>
+The primary function of the DownloadFile method is to download data from <br>
+remote server to local application through URI with a specified url address.<br>
+<br>
+1. Get the remote server url address.<br>
+<br>
+2. Get the destination file path.<br>
+<br>
+3. Use WebRequest object to check if the file exists or not on the server <br>
+side (importing the reference of namespace <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a>).<br>
+<br>
+4. * HTTP: <br>
+&nbsp; Create WebClient(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.Net.aspx"  title="Auto generated link to System.Net">System.Net</a>,similar to UploadFile method metioned above) <br>
+&nbsp; instance, access DownloadData() method to download file buffer resource <br>
+&nbsp; with the specified URI to local path. Actually, for HTTP resource, the <br>
+&nbsp; &quot;GET&quot; method is used.<br>
+<br>
+&nbsp; * FTP:<br>
+&nbsp; Create FtpWebRequest instance, by using WebRequestMethods.Ftp.DownloadFile
+<br>
+&nbsp; method, we can retrive response stream from the server.This method uses <br>
+&nbsp; the &quot;RETR&quot; command to download an FTP resource.<br>
+<br>
+5. This DownloData method will return a Byte arry of download resource.What <br>
+we need to do is just using FileStream(using <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.IO.aspx"  title="Auto generated link to System.IO">System.IO</a>) to write a block of <br>
+bytes to local server path from this download file buffer.<br>
+<br>
+6. Close and release FileStream resource.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+WebClient Class<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx">http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx</a><br>
+<br>
+UploadData method<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.webclient.uploaddata.aspx">http://msdn.microsoft.com/en-us/library/system.net.webclient.uploaddata.aspx</a><br>
+<br>
+DonwloadData method<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.webclient.downloaddata.aspx">http://msdn.microsoft.com/en-us/library/system.net.webclient.downloaddata.aspx</a><br>
+<br>
+FtpWebRequest<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.net.ftpwebrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.ftpwebrequest.aspx</a><br>
+<br>
+How to: Upload Files with FTP<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms229715.aspx">http://msdn.microsoft.com/en-us/library/ms229715.aspx</a><br>
+<br>
+</p>
+<h3></h3>
+<p style="font-family:Courier New"></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

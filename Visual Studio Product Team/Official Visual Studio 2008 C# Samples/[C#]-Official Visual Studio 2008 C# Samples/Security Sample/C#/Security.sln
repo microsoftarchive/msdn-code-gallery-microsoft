@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security1", "Security1\Security1.csproj", "{74B4ABF6-AD21-4DBD-B969-2AC131EA7C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security2", "Security2\Security2.csproj", "{05F26726-D7C0-4257-8E1E-BE9245B6923F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security3", "Security3\Security3.csproj", "{8BEA55A0-3F5C-40EA-9F88-E56BA763EF30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B4ABF6-AD21-4DBD-B969-2AC131EA7C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B4ABF6-AD21-4DBD-B969-2AC131EA7C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B4ABF6-AD21-4DBD-B969-2AC131EA7C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B4ABF6-AD21-4DBD-B969-2AC131EA7C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F26726-D7C0-4257-8E1E-BE9245B6923F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F26726-D7C0-4257-8E1E-BE9245B6923F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F26726-D7C0-4257-8E1E-BE9245B6923F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F26726-D7C0-4257-8E1E-BE9245B6923F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEA55A0-3F5C-40EA-9F88-E56BA763EF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEA55A0-3F5C-40EA-9F88-E56BA763EF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEA55A0-3F5C-40EA-9F88-E56BA763EF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEA55A0-3F5C-40EA-9F88-E56BA763EF30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

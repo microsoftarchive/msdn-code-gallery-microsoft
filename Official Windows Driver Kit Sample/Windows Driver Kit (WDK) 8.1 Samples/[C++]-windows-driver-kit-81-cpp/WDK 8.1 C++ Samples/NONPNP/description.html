@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>NONPNP</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>NONPNP</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            general
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/NONPNP-5fb0fa62">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample is primarily meant to demonstrate how to write a NON-PNP driver using the Kernel Mode Driver Framework.
+</p>
+<p>It also illustrates several other important framework interfaces. Following table gives a typical usage scenario and summarizes all the features used in this sample.</p>
+<table>
+<tbody>
+<tr>
+<th>Scenario</th>
+<th>Features demonstrated</th>
+</tr>
+<tr>
+<td>
+<p>This sample would be useful for writing a driver that does not interact with any hardware. Typically, such drivers are written to provide some kernel-level services to a user application. These drivers are dynamically loaded by the application when it is
+ run and unloaded when it exits. </p>
+<p>(Examples: FileMon, Regmon, DeviceTree are examples of tools that use this type of driver.)</p>
+</td>
+<td>
+<ul>
+<li>
+<p>How to Write a NON PNP driver</p>
+</li><li>
+<p>How to register EvtPreProcessCallback to handle requests in the context of the calling thread</p>
+</li><li>
+<p>Show how to probe and lock buffers in the preprocess callback for METHOD_NEITHER IOCTL requests
+</p>
+</li><li>
+<p>Also show how to handle other 3 types of IOCTLs (METHOD_BUFFERED, METHOD_IN_DIRECT &amp; METHOD_OUT_DIRECT)</p>
+</li><li>
+<p>How to open a file in Kernel-mode and Read &amp; Write to it</p>
+</li><li>
+<p>Finally show event tracing and dumping variable length data in the tracelog using HEXDUMP format.</p>
+</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The sample is accompanied by a simple multithreaded Win32 console application to test the driver.</p>
+<p>This sample is adapted from the original IOCTL sample present in WDK (src\general\ioctl).</p>
+<p>Disclaimer: This is a minimal driver meant to demonstrate an OS feature. Neither it nor its sample programs are intended for use in a production environment. Rather, they are intended for educational purposes and as a skeleton driver.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/NONPNP-5fb0fa62/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff557565">Kernel-Mode Driver Framework</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<p>If the build succeeds, you will find the driver, nonpnp.sys, and the test application, nonpnpapp.exe, in the binary output directory specified for the build environment.</p>
+<p>To test this driver, copy the nonpnp.inf into the same folder as the nonpnpapp.exe and the wdfcoinstaller&lt;version&gt;.dll .</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp; </p>
+<p class="note">You can obtain redistributable framework updates by downloading the
+<i>wdfcoinstaller.msi</i> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>. This package performs a silent install into the directory of your Windows Driver Kit (WDK) installation. You will see no confirmation that the installation has completed. You can verify that the redistributables have been
+ installed on top of the WDK by ensuring there is a redist\wdf directory under the root directory of the WDK, %ProgramFiles(x86)%\Windows Kits\8.0.</p>
+<p></p>
+<p>Next, run nonpnpapp.exe, a simple Win32 multithreaded console mode application. The driver will be automatically loaded and started. When you exit the app, the driver will be stopped and removed.</p>
+<p>Usage: nonpnpapp.exe (-l) (-v version)</p>
+<p><b>Note</b>: This application first tries to open the device (\Device\FileIo). If the device doesn't exist, it takes that as a hint that the driver is not loaded and tries to load the driver using service control manager API. If the service is loaded successfully,
+ it tries to open the device again. If successful, it makes all four different types of DeviceControl calls to the driver. After that it makes a WriteFile call with an arbitrary size buffer. The driver, in response, writes that buffer to a file opened in the
+ Create request. The name of the file was provided by the application as part of the device name and the directory path is hardcoded to %WINDIR%\temp. When the WriteFile returns, the application makes a ReadFile call to read the file through the driver, and
+ then compares the data returned by the driver with the one it originally wrote. If you specify -l option in command line, the application does this Write and Read operation in an infinite loop. The -v command line option is used to specify the version of the
+ KMDF coinstaller (wdfcoinstaller&lt;version&gt;.dll) to load. If none is specified then it loads the coinstaller for v1.0 (wdfcoinstaller01000.dll)</p>
+<p><b>File Manifest</b> </p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<p>nonpnp.htm</p>
+</td>
+<td>
+<p>Documentation for this sample (this file).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>nonpnp.c</p>
+</td>
+<td>
+<p>Source file of the sample driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>nonpnp.h </p>
+</td>
+<td>
+<p>Header file of the sample driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>localwpp.ini</p>
+</td>
+<td>
+<p>File used for event tracing and dumping variable length data in the tracelog using HEXDUMP format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sources</p>
+</td>
+<td>
+<p>Generic file that lists source files and all the build options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Testapp.c</p>
+</td>
+<td>
+<p>Source file of the test application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Install.c</p>
+</td>
+<td>
+<p>Contains functions to load/start/stop/remove the driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Testapp.h</p>
+</td>
+<td>
+<p>Header file for common definitions and function prototypes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>nonpnp.inf</p>
+</td>
+<td>
+<p>Inf file which contains the wdf section. The wdf section is used by the KMDF coinstaller to determine the KMDF library version being used by the nonpnp driver and to get the service name of the driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>nonpnp.rc</p>
+</td>
+<td>
+<p>Resource file that specifies information such as file type, version, etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile</p>
+</td>
+<td>
+<p>This file merely indirects to the real makefile that is shared by all the driver components of the Windows NT DDK.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>trace.h</p>
+</td>
+<td>
+<p>Header file for debug tracing related functions and macros</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>public.h </p>
+</td>
+<td>
+<p>Header file containing definitions shared by the sample driver and test application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="wdf_section"></a><a id="WDF_SECTION"></a><b>WDF SECTION</b> </h3>
+<p>Nonpnp drivers typically don't need an INF file to install. Since we are using framework interfaces, we have to use the Kmdf coinstaller to install the framework binaries on the target machine. The Kmdf coinstaller needs a WDF specific section in the INF
+ to get the driver service name and the version of the Kmdf library the driver is bound to. The syntax and description of the section is given below. Any non inf based driver using Kmdf library will need to have a dummy inf file with the wdf section in it.
+ The format of the Wdf section is given below: </p>
+<p></p>
+<dl><dt>[Version] </dt><dt>Signature=&quot;$WINDOWS NT$&quot; </dt><dt>[&lt;driver name&gt;.NT.Wdf] </dt><dt>KmdfService = &lt;your driver service name here&gt;, &lt;driver service install subsection&gt;
+</dt><dt>[&lt;driver service install subsection&gt;] </dt><dt>KmdfLibraryVersion = &lt;version bound to here, in Major.minor format&gt; </dt></dl>
+<p></p>
+<p>For example, for V1.0 KmdfLibraryVersion is &quot;1.0&quot;</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

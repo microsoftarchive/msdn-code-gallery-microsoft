@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MFC app invokes COM server and ActiveX control (MFCCOMClient)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>MFC app invokes COM server and ActiveX control (MFCCOMClient)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            COM, MFC
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            COM Client
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/MFCCOMClient-0a1a8cec">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>MICROSOFT FOUNDATION CLASS LIBRARY : MFCCOMClient Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Use:</h3>
+<p style="font-family:Courier New"><br>
+As we discussed in the sample CppCOMClient, there are basically three ways to <br>
+create and access a COM object in a native client. MFC is one of them. This <br>
+sample demonstrates the following two things:<br>
+<br>
+1. The creation and access of a COM object (more specifically, an ATL out-of-<br>
+process COM object in this sample) using MFC and the class wrapper generated <br>
+by the VC&#43;&#43; class wizard.<br>
+<br>
+CATLExeSimpleObjectWrapper.h contains the wrapper class of the COM server;<br>
+MFCCreateCOMPage.h/cpp has the codes that use the wrapper class to create and <br>
+access a COM server ATLExeCOMServer; IDD_CREATECOM_PAGE is the property page &nbsp;<br>
+in the dialog that demonstrates the COM client.<br>
+<br>
+2. The creation and access of an ActiveX control using MFC to add the control<br>
+to the dialog template.<br>
+<br>
+mfcactivexctrl.h/cpp has the wrapper class of the ActiveX control that is <br>
+inserted into the dialog IDD_ACTIVEXCTRL_PAGE. MFCActiveXCtrlPage.h/cpp <br>
+corresponds to the dialog resource.<br>
+<br>
+</p>
+<h3>Project Relation:</h3>
+<p style="font-family:Courier New"><br>
+MFCCOMClient -&gt; ATLExeCOMServer<br>
+MFCCOMClient is the client application of the COM server ATLExeCOMServer.<br>
+<br>
+MFCCOMClient -&gt; MFCActiveX<br>
+MFCCOMClient hosts the ActiveX control MFCActiveX.<br>
+<br>
+</p>
+<h3>Build:</h3>
+<p style="font-family:Courier New"><br>
+MFCCOMClient depends on ATLExeCOMServer and MFCActiveX. To build and run <br>
+MFCCOMClient successfully, please make sure ATLExeCOMServer and MFCActiveX <br>
+are built and registered rightly.<br>
+<br>
+</p>
+<h3>Creation:</h3>
+<p style="font-family:Courier New"><br>
+A. Creating the project<br>
+<br>
+Step1. Create a MFC dialog-based project named MFCCOMClient.<br>
+<br>
+Step2. Build the UI of the demo.<br>
+<br>
+2.1 Add a Tab Control to the main dialog and add a CTabCtrl member, <br>
+m_tabCtrl, to be bound to the control. <br>
+<br>
+2.2 Insert two dialog resources IDD_CREATECOM_PAGE, IDD_ACTIVEXCTRL_PAGE and<br>
+set their Style as Child, Border as None. Use the class wizard to create two <br>
+classes, CMFCCreateCOMPage and CMFCActiveXCtrlPage for the dialog resources<br>
+respectively. <br>
+<br>
+2.3 In the OnInitDialog method of the main dialog class CMFCCOMClientDlg, <br>
+setup the tab control, m_tabCtrl, by inserting two tab items and show <br>
+IDD_CREATECOM_PAGE and IDD_ACTIVEXCTRL_PAGE in them.<br>
+<br>
+B. Creating a COM object using MFC (MFCCreateCOMPage.h/cpp)<br>
+<br>
+Step1. Create the wrapper class to encapsulate the COM class.<br>
+<br>
+1.1 Right-click the MFCCOMClient project and select Add / Add Class. Double-<br>
+click &quot;MFC Class From TypeLib&quot;. <br>
+<br>
+1.2 Find the type library of ATLExeCOMServer in Add Class From Typelib <br>
+Wizard, and add the interface ISimpleObject from the Interfaces column <br>
+to the column of Generated classes. Rename the resulting class and file as <br>
+CATLExeSimpleObjectWrapper, then click Finish.<br>
+<br>
+This creates the file CATLExeSimpleObjectWrapper.h with the class <br>
+CATLExeSimpleObjectWrapper that encapsulate the COM interface <br>
+ATLExeCOMServer.ISimpleObject.<br>
+<br>
+Step2. Create and access the COM object using the wrapper class.<br>
+<br>
+2.1 In the class CMFCCreateCOMPage, create a new thread (AfxBeginThread) and<br>
+initialize COM for the thread by calling CoInitializeEx, or CoInitialize.<br>
+<br>
+2.2 Create an instance of the wrapper class CATLExeSimpleObjectWrapper and <br>
+use its CreateDispatch() method to create the actual COM object.<br>
+<br>
+2.3 Access the COM object's methods and properties. In order to catch the <br>
+errors in the execution, add a try {...} catch (COleException *e) {} block.<br>
+<br>
+2.4 The wrapper class handles the release of the object for us, so we do not<br>
+need to care about it.<br>
+<br>
+2.5 Uninitialize COM for this thread by calling CoUninitialize.<br>
+<br>
+C. Hosting an ActiveX control (MFCActiveXCtrlPage.h/cpp)<br>
+<br>
+Step1. On the dialog IDD_ACTIVEXCTRL_PAGE in which we will add the ActiveX <br>
+control, right-click the mouse and select Insert ActiveX Control.<br>
+<br>
+Step2. Find &quot;MFCActiveX Control&quot; in the Insert ActiveX Control dialog and add<br>
+it. A new control appears on IDD_ACTIVEXCTRL_PAGE. Stretch and position the <br>
+control appropriately.<br>
+<br>
+Step3. Right-click the control, and select Add Variable. In Add Member <br>
+Variable Wizard, set Variable type as CMFCActiveXCtrl, enter m_OcxActiveXCtrl<br>
+in Variable name and click Finish. This generates the class CMFCActiveXCtrl <br>
+that wraps the ActiveX control in mfcactivexctrl.h/cpp, and adds a variable, <br>
+CMFCActiveXCtrl m_OcxActiveXCtrl, to the class CMFCActiveXCtrlPage.<br>
+<br>
+Step4. Access the properties and methods of the ActiveX control like this:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FLOAT fProp = m_OcxActiveXCtrl.GetFloatProperty();<br>
+<br>
+Step5. To access the events of the control (e.g. FloatPropertyChanging in <br>
+MFCActiveX), right-click the ActiveX control on IDD_ACTIVEXCTRL_PAGE and <br>
+select Add Event Handler. Rename the function handler of <br>
+FloatPropertyChanging to be FloatPropertyChangingMFCActiveXCtrl and click <br>
+Add and Edit. In the event handler, pop up a message box to allow selecting <br>
+OK or Cancel, then pass the user's selection back to the control through the<br>
+Cancel parameter.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;void CMFCActiveXCtrlPage::FloatPropertyChangingMFCActiveXCtrl(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float NewValue, BOOL* Cancel)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CString strMessage;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strMessage.Format(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;FloatProperty is being changed to %f&quot;), NewValue);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// OK or cancel the change of FloatProperty<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Cancel = (IDCANCEL == MessageBox(strMessage,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_T(&quot;MFCActiveX!FloatPropertyChanging&quot;), MB_OKCANCEL));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+COM Programming by Example: Using MFC, ActiveX, ATL, ADO, and COM&#43; <br>
+By John E. Swanke<br>
+<a  href="http://www.amazon.com/COM-Programming-Example-ActiveX-CD-ROM/dp/1929629036">http://www.amazon.com/COM-Programming-Example-ActiveX-CD-ROM/dp/1929629036</a><br>
+<br>
+Viewing and Adding ActiveX Controls to a Dialog Box<br>
+<a  href="http://msdn.microsoft.com/en-us/library/6e37cay9.aspx">http://msdn.microsoft.com/en-us/library/6e37cay9.aspx</a><br>
+<br>
+Using MFC to Host a WebBrowser Control<br>
+<a  href="http://msdn.microsoft.com/en-us/library/aa752046.aspx">http://msdn.microsoft.com/en-us/library/aa752046.aspx</a><br>
+<br>
+Using ActiveX Controls Example: Insert Internet Explorer into your Dialogs<br>
+By Hazem Nasereddin<br>
+<a  href="http://www.codeproject.com/KB/COM/webbrowser.aspx">http://www.codeproject.com/KB/COM/webbrowser.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/6a244f64-ef00-4481-b6a4-ee49b0a4a506image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=6A843E98DB5AEC74CF385ACE5E94CB36" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=7B1318331AB587926159A23CD37DE62D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>How to call web Service in Excel Using VSTO</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>How to call web Service in Excel Using VSTO</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Office, Office Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Excel, VSTO, call web service
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/12/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/How-to-call-web-Service-in-3e082197">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>How to call web Service in Excel Using VSTO (<span class="SpellE">CS<span>ExcelCallWebService</span></span>)</h1>
+<h2>Introduction<span> </span></h2>
+<p class="Normal"><span>The sample demonstrates how to call web service in excel. The excel client call web service to get the returned string about weather and parse the returned string to
+<span class="SpellE">XElement</span> collection. Then query the collection and bind the value of
+<span class="SpellE">XElement</span> to the <span class="SpellE">NameRange</span> control.</span></p>
+<h2 class="Normal"><strong>Video</strong></h2>
+<p><strong><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-call-Web-service-in-Excel-using-Visual-Studio-Tools-for-Office" ><img id="136307" src="https://i1.code.msdn.s-msft.com/how-to-call-web-service-in-3e082197/image/file/136307/1/how%20to%20call%20web%20service%20in%20excel%20using%20visual%20studio%20tools%20for%20office%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a><br>
+</strong></p>
+<h2>Building the Sample</h2>
+<p class="Normal"><span>Before you build the sample, you must install Microsoft Office 2013 on your Operation System and be sure that Excel process is not running.
+</span></p>
+<h2>Running the Sample<span> </span></h2>
+<p class="Normal"><span>Step1. Open &quot;CSExcelCallWebService.sln&quot; and click F5 to run the solution
+</span></p>
+<p class="Normal"><span>Step2. Choose the &quot;Call <span class="SpellE">WebService</span> Ribbon&quot; ribbon and input correct city name and country name. Then click &quot;Get Weather&quot; button to display the data about weather in worksheet. You will see the following
+ form: </span></p>
+<p class="Normal"><span><img src="description/image.png" alt="" width="837" height="701" align="middle">
+</span><span>&nbsp;</span></p>
+<p class="Normal"><span>Step3. If you input incorrect city name or country name, you will get error message &quot;Input City or Country is error, Please check them again&quot; in cell A1.
+</span></p>
+<p class="Normal"><span>Step4. Close Excel 2013 and In the Solution Explorer, right click
+</span><span class="SpellE">CS<span>ExcelCallWebService</span></span><span> and click Clean.
+</span></p>
+<h2>Using the Code<span> </span></h2>
+<p class="Normal"><span>Step1. Create Excel 2013 Workbook project in Visual Studio 2012
+</span></p>
+<p class="Normal"><span>Step2. Add a service reference: </span></p>
+<p class="Normal"><span><img src="description/cfdcef1d-f778-4ea1-8d14-7db8e770b26aimage.png" alt="" width="627" height="506" align="middle">
+</span><span>&nbsp;</span></p>
+<p class="Normal"><span>Step3. Open sheet1.cs to write the code: </span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+///  Call Web service and display the results to the NameRange control
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;city&quot;&gt;Search City&lt;/param&gt;
+/// &lt;param name=&quot;country&quot;&gt;Search Country&lt;/param&gt;
+public void DisplayWebServiceResult(string city, string country)
+{
+    // Get Name Range and Clear current display
+    NamedRange range = (NamedRange)this.Controls[&quot;Data&quot;];
+    range.Clear();
+
+
+    // Initialize the value of x 
+    int x = 0;
+
+
+    try
+    {
+        // Initialize a new instance of Service Client 
+        using (GlobalWeatherSoapClient weatherclien = new GlobalWeatherSoapClient())
+        {
+            // Call Web service method to Get Weather Data
+            string xmlweatherresult = weatherclien.GetWeather(city, country);
+
+
+            // Load an XElement from a string that contains XML data
+            var xmldata = XElement.Parse(xmlweatherresult);
+
+
+            // Query the Name and value of Weather
+            var query = from weather in xmldata.Elements()
+                        select new
+                        {
+                            weather.Name,
+                            weather.Value
+                        };
+
+
+            if (query.Count() &gt; 0)
+            {
+                foreach (var item in query)
+                {
+                    // Use RefersToR1C1 property to change the range that a NameRange control refers to
+                    range.RefersToR1C1 = String.Format(&quot;=R1C1:R{0}C2&quot;, query.Count());
+
+
+                    // Update data  in range.
+                    // Excel uses 1 as the base for index.
+                    ((Excel.Range)range.Cells[x &#43; 1, 1]).Value2 = item.Name.ToString();
+                    ((Excel.Range)range.Cells[x &#43; 1, 2]).Value2 = item.Value.ToString();
+                    x&#43;&#43;;
+                    if (x == query.Count() - 1)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    catch
+    {
+        this.Range[&quot;A1&quot;].Value2 = &quot;Input City or Country is error, Please check them again&quot;;
+
+
+        // -16776961 is represent for red
+        this.Range[&quot;A1&quot;].Font.Color = -16776961;
+    }
+}
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+///  Call Web service and display the results to the NameRange control
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;city&quot;&gt;Search City&lt;/param&gt;
+/// &lt;param name=&quot;country&quot;&gt;Search Country&lt;/param&gt;
+public void DisplayWebServiceResult(string city, string country)
+{
+    // Get Name Range and Clear current display
+    NamedRange range = (NamedRange)this.Controls[&quot;Data&quot;];
+    range.Clear();
+
+
+    // Initialize the value of x 
+    int x = 0;
+
+
+    try
+    {
+        // Initialize a new instance of Service Client 
+        using (GlobalWeatherSoapClient weatherclien = new GlobalWeatherSoapClient())
+        {
+            // Call Web service method to Get Weather Data
+            string xmlweatherresult = weatherclien.GetWeather(city, country);
+
+
+            // Load an XElement from a string that contains XML data
+            var xmldata = XElement.Parse(xmlweatherresult);
+
+
+            // Query the Name and value of Weather
+            var query = from weather in xmldata.Elements()
+                        select new
+                        {
+                            weather.Name,
+                            weather.Value
+                        };
+
+
+            if (query.Count() &gt; 0)
+            {
+                foreach (var item in query)
+                {
+                    // Use RefersToR1C1 property to change the range that a NameRange control refers to
+                    range.RefersToR1C1 = String.Format(&quot;=R1C1:R{0}C2&quot;, query.Count());
+
+
+                    // Update data  in range.
+                    // Excel uses 1 as the base for index.
+                    ((Excel.Range)range.Cells[x &#43; 1, 1]).Value2 = item.Name.ToString();
+                    ((Excel.Range)range.Cells[x &#43; 1, 2]).Value2 = item.Value.ToString();
+                    x&#43;&#43;;
+                    if (x == query.Count() - 1)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    catch
+    {
+        this.Range[&quot;A1&quot;].Value2 = &quot;Input City or Country is error, Please check them again&quot;;
+
+
+        // -16776961 is represent for red
+        this.Range[&quot;A1&quot;].Font.Color = -16776961;
+    }
+}
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="Normal">&nbsp;</p>
+<p class="Normal"><span>Step4. Create a Ribbon control to the project and design the UI, then you can input the city name and country name to get data of weather.
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+       /// Get Weather method
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnGetWeather_Click(object sender, RibbonControlEventArgs e)
+       {
+           if (citybox.Text.Trim().Equals(string.Empty) || countrybox.Text.Trim().Equals(string.Empty))
+           {
+               MessageBox.Show(&quot;Please input the city or country name firstly.&quot;);
+               return;
+           }
+
+
+           // Call web service to get Weather
+           Globals.Sheet1.DisplayWebServiceResult(citybox.Text.Trim(),countrybox.Text.Trim());
+       }
+
+</pre>
+<pre id="codePreview" class="csharp">/// &lt;summary&gt;
+       /// Get Weather method
+       /// &lt;/summary&gt;
+       /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+       /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+       private void btnGetWeather_Click(object sender, RibbonControlEventArgs e)
+       {
+           if (citybox.Text.Trim().Equals(string.Empty) || countrybox.Text.Trim().Equals(string.Empty))
+           {
+               MessageBox.Show(&quot;Please input the city or country name firstly.&quot;);
+               return;
+           }
+
+
+           // Call web service to get Weather
+           Globals.Sheet1.DisplayWebServiceResult(citybox.Text.Trim(),countrybox.Text.Trim());
+       }
+
+</pre>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p class="Normal">&nbsp;</p>
+<h2>More Information<span> </span></h2>
+<p class="MsoNormal"><span><a href="http://msdn.microsoft.com/en-us/library/vstudio/microsoft.office.tools.excel.namedrange.aspx"><span class="SpellE">NamedRange</span> Interface</a>
+</span></p>
+<p class="MsoNormal"><span><a href="http://msdn.microsoft.com/en-us/library/system.xml.linq.xelement.parse.aspx"><span class="SpellE">XElement.Parse</span> Method</a>
+</span></p>
+<p class="MsoNormal"><span><a href="http://msdn.microsoft.com/en-us/library/bb387098.aspx"><span class="SpellE">Linq</span> to Xml</a>
+</span></p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/24c21ea2-6424-40ed-a2d8-a9535ded9c97image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

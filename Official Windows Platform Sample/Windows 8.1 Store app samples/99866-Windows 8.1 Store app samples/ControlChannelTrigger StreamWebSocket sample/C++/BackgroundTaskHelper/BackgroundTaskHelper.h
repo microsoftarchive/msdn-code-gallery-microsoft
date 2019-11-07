@@ -1,0 +1,22 @@
+﻿#pragma once
+#include "pch.h"
+using namespace Platform;
+using namespace Windows::ApplicationModel::Background;
+
+namespace BackgroundTaskHelper
+{
+    [Windows::Foundation::Metadata::WebHostHidden]
+    public ref class NetworkChangeTask sealed :IBackgroundTask
+    {
+    public:
+        virtual void Run(IBackgroundTaskInstance^ taskInstance);
+    };
+
+    [Windows::Foundation::Metadata::WebHostHidden]
+    public ref class PushNotifyTask sealed : IBackgroundTask
+    {
+    public:
+        virtual void Run(IBackgroundTaskInstance^ taskInstance);
+        void InvokeSimpleToast(String^ msgReceived);
+    };
+}

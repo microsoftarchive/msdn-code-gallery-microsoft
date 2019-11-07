@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C++ Windows Shell preview handler (CppShellExtPreviewHandler)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C++ Windows Shell preview handler (CppShellExtPreviewHandler)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Shell
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Shell Extension, Preview Handler
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">1/15/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppShellExtPreviewHandler-58db53b8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New">&nbsp;</p>
+<h2>DYNAMIC LINK LIBRARY : CppShellExtPreviewHandler Project Overview</h2>
+<p style="font-family:Courier New">&nbsp;</p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The code sample demonstrates the C&#43;&#43; implementation of a preview handler for <br>
+a new file type registered with the .recipe extension. <br>
+<br>
+Preview handlers are called when an item is selected to show a lightweight, <br>
+rich, read-only preview of the file's contents in the view's reading pane. <br>
+This is done without launching the file's associated application. Windows <br>
+Vista and later operating systems support preview handlers. <br>
+<br>
+To be a valid preview handler, several interfaces must be implemented. This <br>
+includes IPreviewHandler (shobjidl.h); IInitializeWithFile, <br>
+IInitializeWithStream, or IInitializeWithItem (propsys.h); IObjectWithSite <br>
+(ocidl.h); and IOleWindow (oleidl.h). There are also optional interfaces, <br>
+such as IPreviewHandlerVisuals (shobjidl.h), that a preview handler can <br>
+implement to provide extended support.<br>
+<br>
+The example preview handler has the class ID (CLSID): <br>
+&nbsp; &nbsp;{78A573CA-297E-4D9F-A5FC-7F6E5EEA6FC9}<br>
+<br>
+It provides previews for .recipe files. The .recipe file type is simply an <br>
+XML file registered as a unique file name extension. It includes the title of <br>
+the recipe, its author, difficulty, preparation time, cook time, nutrition <br>
+information, comments, an embedded preview image, and so on. The preview <br>
+handler extracts the title, comments, and the embedded image, and display <br>
+them in a preview window.<br>
+<br>
+</p>
+<h3>Prerequisite:</h3>
+<p style="font-family:Courier New"><br>
+The example preview handler must be registered on Windows Vista or newer <br>
+operating systems.<br>
+<br>
+</p>
+<h3>Setup and Removal:</h3>
+<p style="font-family:Courier New"><br>
+A. Setup<br>
+<br>
+If you are going to use the Shell extension in a x64 Windows system, please <br>
+configure the Visual C&#43;&#43; project to target 64-bit platforms using project <br>
+configurations (<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/9yb4317s.aspx).</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/9yb4317s.aspx)." >http://msdn.microsoft.com/en-us/library/9yb4317s.aspx).</a>
+<br>
+<br>
+If the extension is to be loaded in a 32-bit Windows system, you can use the <br>
+default Win32 project configuration to build the project.<br>
+<br>
+In a command prompt running as administrator, navigate to the folder that <br>
+contains the build result CppShellExtPreviewHandler.dll and enter the command:<br>
+<br>
+&nbsp; &nbsp;Regsvr32.exe CppShellExtPreviewHandler.dll<br>
+<br>
+The preview handler is registered successfully if you see a message box <br>
+saying:<br>
+<br>
+&nbsp; &nbsp;&quot;DllRegisterServer in CppShellExtPreviewHandler.dll succeeded.&quot;<br>
+<br>
+B. Removal<br>
+<br>
+In a command prompt running as administrator, navigate to the folder that <br>
+contains the build result CppShellExtPreviewHandler.dll and enter the command:<br>
+<br>
+&nbsp; &nbsp;Regsvr32.exe /u CppShellExtPreviewHandler.dll<br>
+<br>
+The preview handler is unregistered successfully if you see a message box <br>
+saying:<br>
+<br>
+&nbsp; &nbsp;&quot;DllUnregisterServer in CppShellExtPreviewHandler.dll succeeded.&quot;<br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+The following steps walk through a demonstration of the preview handler code <br>
+sample.<br>
+<br>
+Step1. If you are going to use the Shell extension in a x64 Windows system, <br>
+please configure the Visual C&#43;&#43; project to target 64-bit platforms using <br>
+project configurations (<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/9yb4317s.aspx).</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/9yb4317s.aspx)." >http://msdn.microsoft.com/en-us/library/9yb4317s.aspx).</a>
+<br>
+If the extension is to be loaded in a 32-bit Windows system, you can use the <br>
+default Win32 project configuration.<br>
+<br>
+Step2. After you successfully build the sample project in Visual Studio 2010, <br>
+you will get a DLL: CppShellExtPreviewHandler.dll. Start a command prompt as <br>
+administrator, navigate to the folder that contains the file and enter the <br>
+command:<br>
+<br>
+&nbsp; &nbsp;Regsvr32.exe CppShellExtPreviewHandler.dll<br>
+<br>
+The preview handler is registered successfully if you see a message box saying:<br>
+<br>
+&nbsp; &nbsp;&quot;DllRegisterServer in CppShellExtPreviewHandler.dll succeeded.&quot;<br>
+<br>
+Step3. Find the chocolatechipcookies.recipe file in the sample folder. Turn <br>
+on Windows Explorer Preview pane, and select the chocolatechipcookies.recipe <br>
+file. You will see a picture of chocoate chip cookies, and the title and <br>
+comments of the recipe in the preview pane. <br>
+<br>
+The .recipe file type is simply an XML file registered as a unique file name <br>
+extension. It includes the title of the recipe, its author, difficulty, <br>
+preparation time, cook time, nutrition information, comments, an embedded <br>
+preview image, and so on. The preview handler extracts the title, comments, <br>
+and the embedded image, and display them in a preview window.<br>
+<br>
+Step4. In the same command prompt, run the command <br>
+<br>
+&nbsp; &nbsp;Regsvr32.exe /u CppShellExtPreviewHandler.dll<br>
+<br>
+to unregister the Shell preview handler.<br>
+<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+A. Creating and configuring the project<br>
+<br>
+In Visual Studio 2010, create a Visual C&#43;&#43; / Win32 / Win32 Project named <br>
+&quot;CppShellExtPreviewHandler&quot;. In the &quot;Application Settings&quot; page of Win32 <br>
+Application Wizard, select the application type as &quot;DLL&quot; and check the &quot;Empty <br>
+project&quot; option. After you click the Finish button, an empty Win32 DLL <br>
+project is created.<br>
+<br>
+-----------------------------------------------------------------------------<br>
+<br>
+B. Implementing a basic Component Object Model (COM) DLL<br>
+<br>
+Shell extension handlers are COM objects implemented as DLLs. Making a basic <br>
+COM includes implementing DllGetClassObject, DllCanUnloadNow, <br>
+DllRegisterServer, and DllUnregisterServer in (and exporting them from) the <br>
+DLL, adding a COM class with the basic implementation of the IUnknown <br>
+interface, preparing the class factory for your COM class. The relevant files <br>
+in this code sample are:<br>
+<br>
+&nbsp;dllmain.cpp - implements DllMain and the DllGetClassObject, DllCanUnloadNow,
+<br>
+&nbsp; &nbsp;DllRegisterServer, DllUnregisterServer functions that are necessary for a
+<br>
+&nbsp; &nbsp;COM DLL. <br>
+<br>
+&nbsp;GlobalExportFunctions.def - exports the DllGetClassObject, DllCanUnloadNow,
+<br>
+&nbsp; &nbsp;DllRegisterServer, DllUnregisterServer functions from the DLL through the
+<br>
+&nbsp; &nbsp;module-definition file. You need to pass the .def file to the linker by
+<br>
+&nbsp; &nbsp;configuring the Module Definition File property in the project's Property
+<br>
+&nbsp; &nbsp;Pages / Linker / Input property page.<br>
+<br>
+&nbsp;Reg.h/cpp - defines the reusable helper functions to register or unregister
+<br>
+&nbsp; &nbsp;COM components in the registry: <br>
+&nbsp; &nbsp;RegisterInprocServer, UnregisterInprocServer<br>
+<br>
+&nbsp;RecipePreviewHandler.h/cpp - defines the COM class. You can find the basic <br>
+&nbsp; &nbsp;implementation of the IUnknown interface in the files.<br>
+<br>
+&nbsp;ClassFactory.h/cpp - defines the class factory for the COM class. <br>
+<br>
+-----------------------------------------------------------------------------<br>
+<br>
+C. Implementing the preview handler and registering it for a certain file <br>
+class<br>
+<br>
+-----------<br>
+Implementing the preview handler:<br>
+<br>
+A preview handler must implement the following interfaces:<br>
+<br>
+&nbsp; &nbsp;IInitializeWithStream::Initialize (strongly preferred), <br>
+&nbsp; &nbsp; &nbsp; &nbsp;IInitializeWithFile, or IInitializeWithItem <br>
+&nbsp; &nbsp;IObjectWithSite <br>
+&nbsp; &nbsp;IOleWindow <br>
+&nbsp; &nbsp;IPreviewHandler <br>
+<br>
+If your preview handler supports visual settings provided by the host such as <br>
+background color and font, it must also implement the following interface:<br>
+<br>
+&nbsp; &nbsp;IPreviewHandlerVisuals <br>
+<br>
+The RecipePreviewProvider.h/cpp files define the preview handler for .recipe <br>
+files.<br>
+<br>
+&nbsp; &nbsp;class RecipePreviewHandler : <br>
+&nbsp; &nbsp; &nbsp; &nbsp;public IInitializeWithStream, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;public IPreviewHandler, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;public IPreviewHandlerVisuals, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;public IOleWindow, <br>
+&nbsp; &nbsp; &nbsp; &nbsp;public IObjectWithSite<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp;public:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// IInitializeWithStream<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP Initialize(IStream *pStream, DWORD grfMode);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// IPreviewHandler<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetWindow(HWND hwnd, const RECT *prc);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetFocus();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP QueryFocus(HWND *phwnd);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP TranslateAccelerator(MSG *pmsg);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetRect(const RECT *prc);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP DoPreview();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP Unload();<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// IPreviewHandlerVisuals (Optional)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetBackgroundColor(COLORREF color);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetFont(const LOGFONTW *plf);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetTextColor(COLORREF color);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// IOleWindow<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP GetWindow(HWND *phwnd);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP ContextSensitiveHelp(BOOL fEnterMode);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// IObjectWithSite<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP SetSite(IUnknown *punkSite);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;IFACEMETHODIMP GetSite(REFIID riid, void **ppv);<br>
+&nbsp; &nbsp;};<br>
+<br>
+&nbsp;1. Implementing IPreviewHandler<br>
+<br>
+&nbsp;IPreviewHandler::SetWindow - this method gets called when the previewer <br>
+&nbsp; &nbsp;gets created. It sets the parent window of the previewer window, as well
+<br>
+&nbsp; &nbsp;as the area within the parent to be used for the previewer window. You
+<br>
+&nbsp; &nbsp;need to resize your preview so that it renders only in the area described
+<br>
+&nbsp; &nbsp;by the prc parameter.<br>
+<br>
+&nbsp;IPreviewHandler::SetRect - this method directs the preview handler to set <br>
+&nbsp; &nbsp;focus to itself.<br>
+<br>
+&nbsp;IPreviewHandler::DoPreview - this is where the real work is done. Since a <br>
+&nbsp; &nbsp;preview is dynamic, the preview content should only be loaded when it is
+<br>
+&nbsp; &nbsp;needed. Do not load content in the initialization. If the preview &nbsp;<br>
+&nbsp; &nbsp;handler window does not exist, create it. Your preview handler's windows
+<br>
+&nbsp; &nbsp;should be children of the window provided by IPreviewHandler::SetWindow.
+<br>
+&nbsp; &nbsp;They should be the size provided by IPreviewHandler::SetWindow and <br>
+&nbsp; &nbsp;IPreviewHandler::SetRect (whichever was called most recently). Once you
+<br>
+&nbsp; &nbsp;have a window, load the data from the IStream that the preview handler
+<br>
+&nbsp; &nbsp;was initialized with, and render that data to your preview handler's
+<br>
+&nbsp; &nbsp;window.<br>
+<br>
+&nbsp; &nbsp;In the code sample, we load the XML document from the stream of the <br>
+&nbsp; &nbsp;.recipe file, extract the recipe title, comments and picture from the XML
+<br>
+&nbsp; &nbsp;document, and populate the information on the preview window. <br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = LoadXMLDocument(&amp;pXMLDoc);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;...<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = GetRecipeTitle(pXMLDoc, &amp;pszRecipeTitle);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;...<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = GetRecipeComments(pXMLDoc, &amp;pszRecipeComments);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;...<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = GetRecipeImage(pXMLDoc, &amp;hRecipeImage, &amp;dwAlpha);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;...<br>
+&nbsp; &nbsp; &nbsp; &nbsp;hr = CreatePreviewWindow(pszRecipeTitle, pszRecipeComments, hRecipeImage);<br>
+<br>
+&nbsp; &nbsp;The CreateDialog API is used to create the preview window from the dialog
+<br>
+&nbsp; &nbsp;box template IDD_MAINDIALOG. <br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;m_hwndPreview = CreateDialog(g_hInst, MAKEINTRESOURCE(IDD_MAINDIALOG),
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;m_hwndParent, NULL);<br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp;The dialog box template must set the following properties<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Border = None<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Control = True<br>
+&nbsp; &nbsp; &nbsp; &nbsp;Style = Child<br>
+<br>
+&nbsp;IPreviewHandler::SetFocus - this method is called when the focus enters the
+<br>
+&nbsp; &nbsp;reading pane through a tab action. Since it can be entered as a forward
+<br>
+&nbsp; &nbsp;tab or reverse tab, use the current state of the SHIFT key to decide
+<br>
+&nbsp; &nbsp;whether the first or last tab stop in the reading pane should receive the
+<br>
+&nbsp; &nbsp;focus.<br>
+<br>
+&nbsp;IPreviewHandler::QueryFocus - this method should call the GetFocus function
+<br>
+&nbsp; &nbsp;and return the result of that call in the phwnd parameter.<br>
+<br>
+&nbsp;IPreviewHandler::TranslateAccelerator - this method directs the preview <br>
+&nbsp; &nbsp;handler to handle a keystroke passed up from the message pump of the
+<br>
+&nbsp; &nbsp;process in which the preview handler is running.<br>
+<br>
+&nbsp;IPreviewHandler::Unload - this method gets called when a shell item is de-<br>
+&nbsp; &nbsp;selected. It directs the preview handler to cease rendering a preview and
+<br>
+&nbsp; &nbsp;to release all resources that have been allocated based on the item <br>
+&nbsp; &nbsp;passed in during the initialization.<br>
+<br>
+&nbsp;2. Implementing IInitializeWithStream/IInitializeWithItem/IInitializeWithFile<br>
+<br>
+&nbsp;IPreviewHandler must always be implemented in concert with one of these <br>
+&nbsp;interfaces: <br>
+&nbsp;<br>
+&nbsp; &nbsp;IInitializeWithStream - provides the file stream<br>
+&nbsp; &nbsp;IInitializeWithItem - provides the IShellItem<br>
+&nbsp; &nbsp;IInitializeWithFile - provides the file path<br>
+<br>
+&nbsp;Whenever possible, it is recommended that initialization be done through a <br>
+&nbsp;stream using IInitializeWithStream. Benefits of this include increased <br>
+&nbsp;security and stability. In the method, store the IStream and mode parameters
+<br>
+&nbsp;so that you can read the item's data when you are ready to preview the item.
+<br>
+&nbsp;Do not load the data in Initialize. Load the data in <br>
+&nbsp;IPreviewHandler::DoPreview just before you render.<br>
+<br>
+&nbsp;3. Implementing IObjectWithSite<br>
+<br>
+&nbsp;IObjectWithSite::SetSite - it provides the site's IUnknown pointer to the <br>
+&nbsp; &nbsp;object.<br>
+<br>
+&nbsp;IObjectWithSite::GetSite - it gets the last site set with <br>
+&nbsp; &nbsp;IObjectWithSite::SetSite. If there is no known site, the object returns a
+<br>
+&nbsp; &nbsp;failure code.<br>
+<br>
+&nbsp;4. Implementing IOleWindow<br>
+<br>
+&nbsp;IOleWindow::GetWindow - this method retrieves a handle to one of the <br>
+&nbsp; &nbsp;windows participating in in-place activation (frame, document, parent, or
+<br>
+&nbsp; &nbsp;in-place object window).<br>
+<br>
+&nbsp;IOleWindow::ContextSensitiveHelp - this method determines whether context-<br>
+&nbsp; &nbsp;sensitive help mode should be entered during an in-place activation <br>
+&nbsp; &nbsp;session.<br>
+<br>
+&nbsp;5. Implementing IPreviewHandlerVisuals (Optional)<br>
+<br>
+&nbsp;This interface should be implemented when directing the preview handler to <br>
+&nbsp;respond to the host's color and font schemes. The host queries the handler <br>
+&nbsp;for IPreviewHandlerVisuals. If found to be supported, the host provides it <br>
+&nbsp;with color, font, and text color. In this code sample, the interface is not
+<br>
+&nbsp;used.<br>
+<br>
+&nbsp;IPreviewHandlerVisuals::SetBackgroundColor - store this color and use it <br>
+&nbsp; &nbsp;during rendering when you want to provide a background color.<br>
+<br>
+&nbsp;IPreviewHandlerVisuals::SetFont - store this font information and use it <br>
+&nbsp; &nbsp;during rendering when you want to display text consistent with the <br>
+&nbsp; &nbsp;current Windows Vista settings.<br>
+<br>
+&nbsp;IPreviewHandlerVisuals::SetTextColor - store this text color information <br>
+&nbsp; &nbsp;and use it during rendering when you want to display text consistent with
+<br>
+&nbsp; &nbsp;the current Windows Vista settings.<br>
+<br>
+-----------<br>
+Registering the handler for a certain file class:<br>
+<br>
+The registration and unregistration of the preview handler are implemented in <br>
+the dllmain.cpp and Reg.h/cpp files.<br>
+<br>
+Preview handlers can be associated with certain file classes. The MSDN article <br>
+<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/cc144144.aspx</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/cc144144.aspx" >http://msdn.microsoft.com/en-us/library/cc144144.aspx</a> illustrates the
+<br>
+registration of preview handlers in detail. The handler is registered by <br>
+setting the default value of the following registry key to be the CLSID the <br>
+handler class. <br>
+<br>
+&nbsp; &nbsp;HKEY_CLASSES_ROOT\&lt;File Type&gt;\shellex\{8895b1c6-b41f-4c1c-a562-0d564250836f}<br>
+<br>
+For example, <br>
+<br>
+&nbsp; &nbsp;HKCR<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NoRemove .recipe<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NoRemove shellex<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{8895b1c6-b41f-4c1c-a562-0d564250836f} =
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s '{78A573CA-297E-4D9F-A5FC-7F6E5EEA6FC9}'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+<br>
+Next, add the subkey under CLSID for your preview handler. Create a new <br>
+prevhost AppID so that the preview handler always runs in its own isolated <br>
+process. An example is shown here. <br>
+<br>
+<br>
+&nbsp; &nbsp;HKCR<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NoRemove CLSID<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{78A573CA-297E-4D9F-A5FC-7F6E5EEA6FC9} =
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s 'CppShellExtPreviewHandler.RecipePreviewHandler Class'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;val AppID = s '{2992DE27-3526-48C5-B765-E55278ECBE9D}'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;InprocServer32 = s '&lt;path of CppShellExtPreviewHandler.dll&gt;'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;val ThreadingModel = s 'Apartment'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NoRemove AppID<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{2992DE27-3526-48C5-B765-E55278ECBE9D}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;val DllSurrogate = s '%SystemRoot%\system32\prevhost.exe'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+<br>
+Finally, the preview handler must be added to the list of all preview <br>
+handlers in the following registry key.<br>
+<br>
+&nbsp; &nbsp;HKLM or HKCU\Software\Microsoft\Windows\CurrentVersion\PreviewHandlers<br>
+<br>
+This list is used as an optimization by the system to enumerate all <br>
+registered preview handlers for display purposes. Again, the default value is <br>
+not required, it simply aids in the debugging process.<br>
+<br>
+&nbsp; &nbsp;HKLM or HKCU<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;NoRemove SOFTWARE<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NoRemove Microsoft<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NoRemove Windows<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NoRemove CurrentVersion<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NoRemove<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PreviewHandlers<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;val {78A573CA-297E-4D9F-A5FC-7F6E5EEA6FC9} =
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s 'RecipePreviewHandler'<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}</p>
+<h3>Diagnostic:</h3>
+<p style="font-family:Courier New"><br>
+If you have followed the recommendations to implement your preview handler as <br>
+an in-process server, to debug your preview handler, you can attach to <br>
+Prevhost.exe. As mentioned earlier, be aware that there could be two <br>
+instances of Prevhost.exe, one for normal low IL processes and one for those <br>
+handlers that have opted out of running as a low IL process.<br>
+<br>
+If you do not find Prevhost.exe in your list of available processes, it <br>
+probably has not been loaded at that point. Clicking on a file for a preview <br>
+loads the surrogate and it should then appear as an attachable process.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: Preview Handlers and Shell Preview Host<br>
+<a href="http://msdn.microsoft.com/en-us/library/cc144143.aspx" >http://msdn.microsoft.com/en-us/library/cc144143.aspx</a><br>
+<br>
+MSDN: Building Preview Handlers<br>
+<a href="http://msdn.microsoft.com/en-us/library/cc144139.aspx" >http://msdn.microsoft.com/en-us/library/cc144139.aspx</a><br>
+<br>
+MSDN: Registering Preview Handlers<br>
+<a href="&lt;a target=" >http://msdn.microsoft.com/en-us/library/cc144144.aspx</a>'&gt;<a href="http://msdn.microsoft.com/en-us/library/cc144144.aspx" >http://msdn.microsoft.com/en-us/library/cc144144.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/95e3bc78-76ea-4f7c-8b0e-445ca740f249image.png" alt="">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

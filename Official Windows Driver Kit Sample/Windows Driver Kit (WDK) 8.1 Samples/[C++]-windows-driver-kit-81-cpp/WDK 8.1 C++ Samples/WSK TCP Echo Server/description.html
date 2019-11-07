@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WSK TCP Echo Server</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>WSK TCP Echo Server</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ndis, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/WSK-TCP-Echo-Server-03f04004">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample driver is a minimal driver meant to demonstrate the usage of the Winsock Kernel (WSK) programming interface.
+</p>
+<p>The sample implements a simple kernel-mode application by using the Winsock Kernel (WSK) programming interface. The application accepts incoming TCP connection requests on port 40007 over both IPv4 and IPv6 and, on each connection, it echoes all received
+ data back to the peer until the connection is closed by the peer. The application is designed to use a single worker thread to perform all of its processing. For better performance on a multi-processor computer, the sample can be enhanced to use more worker
+ threads. This sample is designed such that operations on a given connection should always be processed by the same worker thread. This provides a simple form of synchronization that ensures proper socket closure in a setting where multiple operations might
+ be outstanding and completed asynchronously on a given connection. For the sake of simplicity, this sample does not enforce any limit on the number of connections accepted (other than the natural limit imposed by the available system memory) or on the amount
+ of time that a connection stays alive. A production server application should be designed with these security points in mind.</p>
+<p>This sample is not intended for use in a production environment.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/WSK-TCP-Echo-Server-03f04004/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2>Run the sample</h2>
+<h2><a id="WPP_SOFTWARE_TRACING"></a><a id="wpp_software_tracing"></a>WPP SOFTWARE TRACING</h2>
+<p>This sample driver uses WPP Software Tracing in order to log its actions. You can find detailed information on WPP Software Tracing in the WDK documentation. Here is a quick overview of one way to collect trace logs from the sample driver by using the tracing
+ tools that are available in the \tools\tracing directory in the WDK. All code for this sample is located in the src\network\WSK\echosrv directory.</p>
+<ol>
+<li>In a Command Prompt window, copy Echosrv.ctl and Echosrv.pdb into a directory and change to that directory (cd).
+</li><li>
+<p>Start software tracing for the sample driver by typing the following command:</p>
+<p><b>tracelog -start echosrvtrace -guid echosrv.ctl -f logfile.etl -flags 0x3</b>
+</p>
+<p>The value that is provided for the -flags option determines which events will be logged by the sample driver. The sample currently has two event types denoted by the TRCERROR and TRCINFO macros where TRCERROR is 0x1 and TRCINFO is 0x2. Thus, a flag value
+ of 0x3 (0x1 combined in a bitwise OR with 0x2) in the previous tracelog command tells the sample driver to log both TRCERROR and TRCINFO events.</p>
+</li><li>
+<p>In order to stop tracing, type the following command:</p>
+<p>tracelog -stop echosrvtrace</p>
+</li><li>
+<p>Convert the trace logs in Logfile.etl into a human-readable format by typing the following command:</p>
+<p><b>tracefmt -o logfile.txt -f logfile.etl -r . -i \</b><i>full-path</i><b>\ echosrv.sys</b>
+</p>
+</li><li>Open Logfile.txt to view the trace logs. </li></ol>
+<p>Be aware that tracing for the sample driver can be started at any time before the driver is started or while the driver is already running.</p>
+<h2><a id="To_run_the_sample"></a><a id="to_run_the_sample"></a><a id="TO_RUN_THE_SAMPLE"></a>To run the sample</h2>
+<p>Install and run this sample driver by using the following steps:</p>
+<ol>
+<li>Copy the Echosrv.sys file to a directory on the test machine. </li><li>
+<p>In a Command Prompt window, type the following command:</p>
+<p><b>sc create echosrv type= kernel binpath= \</b><i>full-path</i><b>\ echosrv.sys</b>
+</p>
+<p>where \<i>full-path</i>\ is the directory that contains the Echosrv.sys file.</p>
+</li><li>
+<p>To start the driver, type:</p>
+<p><b>sc start echosrv</b> </p>
+</li><li>
+<p>To stop the driver, type:</p>
+<p><b>sc stop echosrv</b> </p>
+</li></ol>
+<p>After the driver is installed and started, it will listen for incoming TCP connection requests on port 40007 over both IPv4 and IPv6 protocols until the driver is stopped. On each connection, the driver will echo all the received data back to the peer until
+ the connection is closed by the peer.</p>
+<p>For more information on the usage of the Winsock Kernel (WSK) programming interface, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff571084">Winsock Kernel</a>.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

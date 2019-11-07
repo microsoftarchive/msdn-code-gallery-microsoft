@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SkeletonI2C Sample Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SkeletonI2C Sample Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            SPB
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/SkeletonI2C-ad2d95cb">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The SkeletonI2C sample demonstrates how to design a KMDF controller driver for Windows that conforms to the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450903">simple peripheral bus</a> (SPB) device driver interface (DDI). SPB is an abstraction for low-speed serial buses (for example, I<sup>2</sup>C and SPI) that allows peripheral drivers
+ to be developed for cross-platform use without any knowledge of the underlying bus hardware or device connections. While this sample implements an empty I<sup>2</sup>C driver, it could just as easily be the starting point for an SPI driver with only minor
+ modifications. </p>
+<p>Note that the SkeletonI2C sample is simplified to show the overall structure of an SPB controller, but contains only the code that the driver requires to communicate with the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh406203">SPB framework extension (SpbCx)</a> and KMDF. The SkeletonI2C sample driver omits all hardware-specific code. It does not simulate data transfers or implement request completion asynchronously.
+ Pay close attention to code comments marked with &quot;TODO&quot; that refer to blocks of code that must be removed or updated.</p>
+<p>The simplified structure of the SkeletonI2C sample driver makes it a convenient starting point for development of a real SPB controller driver that manages the hardware functions in an SPB controller.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/SkeletonI2C-ad2d95cb/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>The SkeletonI2C sample can be built, installed, and interacted with via SPB as-is.</p>
+<h2>Run the sample</h2>
+<p>To install the SkeletonI2C driver, follow these instructions:</p>
+<ol>
+<li>
+<p>Ensure that the driver builds without errors.</p>
+</li><li>
+<p>Copy the SYS and INF files to a separate folder.</p>
+</li><li>
+<p>Run devcon.exe. You can find this program in the tools\devcon folder where you installed the WDK. Type one of the following commands in the command window:</p>
+<ul>
+<li>Use the command &quot;<code>devcon.exe update SkeletonI2C.inf ACPI\&lt;HWID&gt;</code>&quot; to install the driver on an existing device node. This is necessary if a peripheral device node must be linked to this controller via the
+<b>I2CSerialBus</b> or <b>SPISerialBus</b> macros. See Skeletoni2c.asl for a sample firmware declaration.
+</li><li>Use the command &quot;<code>devcon.exe install SkeletonI2C.inf ACPI\skeletoni2c</code>&quot; to dynamically create a controller device node, and to install the SkeletonI2C driver on this node. When installed this way, a peripheral driver will not be able to &quot;find&quot;
+ its I<sup>2</sup>C or SPI controller. </li></ul>
+</li></ol>
+<h2><a id="Modifying_the_sample"></a><a id="modifying_the_sample"></a><a id="MODIFYING_THE_SAMPLE"></a>Modifying the sample</h2>
+<p>Here are some high-level points to consider when modifying the SkeletonI2C sample for use on real hardware:</p>
+<ul>
+<li>Edit (and likely rename) Skeletoni2c.h to describe your hardware's register set.
+</li><li>Modify Controller.cpp and Device.cpp to translate the SPB DDI and primitives into I<sup>2</sup>C or SPI protocol for your hardware. This includes initialization, I/O configuration, and interrupt processing.
+</li><li>Address any comments marked with &quot;TODO&quot; in the sample, especially those that short circuit the I/O path to complete requests synchronously.
+</li><li>Modify the HWID (<code>ACPI\skeletoni2c</code>) in Skeletoni2c.inf to match the device node in your firmware.
+</li><li>Generate and specify a unique trace GUID in I2ctrace.h. </li><li>Refactor the driver name, functions, comments, etc., to better describe your implementation.
+</li></ul>
+<h2><a id="Code_tour"></a><a id="code_tour"></a><a id="CODE_TOUR"></a>Code tour</h2>
+<p>The following are relevant functions in the SkeletonI2C driver for implementing the SPB DDI.</p>
+<table>
+<tbody>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>INITIALIZATION</td>
+</tr>
+<tr>
+<td><code>OnDeviceAdd</code> </td>
+<td>
+<p>Within <code>OnDeviceAdd</code>, the driver makes several configuration calls for SPB.</p>
+<p><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450918"><b>SpbDeviceInitConfig</b></a> must be called before creating the WDFDEVICE. Note that SpbCx sets a default security descriptor on the device object, but the controller driver can
+ override it by calling <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff546035">
+<b>WdfDeviceInitAssignSDDLString</b></a> after <b>SpbDeviceInitConfig</b>.</p>
+<p>After creating the WDFDEVICE, the driver configures it appropriately for SPB by calling
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450919"><b>SpbDeviceInitialize</b></a>. Here the driver also sets the target and request attributes.</p>
+<p>Finally the driver configures a WDF system-managed idle time-out.</p>
+</td>
+</tr>
+<tr>
+<td>TARGET CONNECTION</td>
+</tr>
+<tr>
+<td><code>OnTargetConnect</code> </td>
+<td>
+<p>Invoked when a client opens a handle to the specified SPB target. Queries the I<sup>2</sup>C connection parameters from the resource hub (via SPB) and initializes the target context.</p>
+</td>
+</tr>
+<tr>
+<td>SPB I/O CALLBACKS</td>
+</tr>
+<tr>
+<td><code>OnRead</code> </td>
+<td>
+<p>SPB read callback. Invokes the <code>PbcConfigureForNonSequence</code> function to set up the transfer.</p>
+</td>
+</tr>
+<tr>
+<td><code>OnWrite</code> </td>
+<td>
+<p>SPB write callback. Invokes the <code>PbcConfigureForNonSequence</code> function to set up the transfer.</p>
+</td>
+</tr>
+<tr>
+<td><code>OnSequence</code> </td>
+<td>
+<p>SPB sequence callback. Configures the controller for an atomic transfer*.</p>
+</td>
+</tr>
+<tr>
+<td><code>OnControllerLock</code> </td>
+<td>
+<p>SPB lock controller callback. Configures to handle subsequent I/O as an atomic transfer*. For I<sup>2</sup>C the controller should place a start bit on the bus. For SPI the controller should assert the chip-select line. The driver may choose to carry this
+ out as part of this callback or defer until the first I/O operation is received (the next call to
+<code>OnRead</code> or <code>OnWrite</code>).</p>
+</td>
+</tr>
+<tr>
+<td><code>OnControllerUnlock</code> </td>
+<td>
+<p>SPB unlock controller callback. Marks the end of an atomic transfer*. For I<sup>2</sup>C, the controller should place a stop bit on the bus. For SPI, the controller should de-assert the chip-select line.</p>
+</td>
+</tr>
+<tr>
+<td>SPB HELPER METHODS</td>
+</tr>
+<tr>
+<td><code>PbcConfigureForIndex</code> </td>
+<td>
+<p>Configures the request context for the specified transfer index. This could be a single I/O or part of a sequence.</p>
+</td>
+</tr>
+<tr>
+<td><code>PbcRequestComplete</code> </td>
+<td>
+<p>Sets the number of bytes completed for a request and invokes the <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh450920">
+<b>SpbRequestComplete</b></a> method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>*An atomic transfer in SPB is implemented using Sequence or a Lock/Unlock pair. For I<sup>2</sup>C, this means a set of reads and writes with restarts in between. For SPI, this means a set of reads and writes with the chip select-line asserted throughout.</p>
+<p>The following are relevant functions in the SkeletonI2C driver for implementing controller-specific I2C protocol. For the most part, these are placeholders and must be filled in appropriately.</p>
+<table>
+<tbody>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>INITIALIZATION</td>
+</tr>
+<tr>
+<td><code>ControllerInitialize</code> </td>
+<td>
+<p>One-time controller initialization. Prepare FIFOs, clocks, interrupts, etc.</p>
+</td>
+</tr>
+<tr>
+<td><code>ControllerConfigureForTransfer</code> </td>
+<td>
+<p>Per-I/O controller configuration. Depending on the type of I/O (and whether its part of an ongoing atomic transfer), the driver may need to configure direction, set interrupts, etc.</p>
+<p>Additionally, for I<sup>2</sup>C, the driver may need to insert a start, restart, or stop bit as necessary, and for SPI the driver may need to assert or de-assert the chip select line.</p>
+</td>
+</tr>
+<tr>
+<td>I/O PROCESSING</td>
+</tr>
+<tr>
+<td><code>OnInterruptIsr</code> </td>
+<td>
+<p>Interrupt callback. Acknowledges interrupts and saves state as necessary. Queues a DPC for processing.</p>
+</td>
+</tr>
+<tr>
+<td><code>OnInterruptDpc</code> </td>
+<td>
+<p>DPC callback. Processes saved interrupts. If necessary the request is completed.</p>
+</td>
+</tr>
+<tr>
+<td><code>ControllerProcessInterrupts</code> </td>
+<td>
+<p>Handles processing for both normal and error condition interrupts. Invokes <code>
+ControllerCompleteTransfer</code>() as appropriate.</p>
+</td>
+</tr>
+<tr>
+<td><code>ControllerCompleteTransfer</code> </td>
+<td>
+<p>Invoked when an I/O completes or an error is detected. If this I/O is part of a sequence,
+<code>PbcRequestConfigureForIndex</code>() is called to prepare the next I/O; otherwise, the request is marked for completion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="File_manifest"></a><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>File manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>controller.h, controller.cpp</td>
+<td>
+<p>Controller-specific implementation of I<sup>2</sup>C protocol.</p>
+</td>
+</tr>
+<tr>
+<td>driver.h, driver.cpp</td>
+<td>
+<p><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff544113"><b>DriverEntry</b></a> and Events on the Driver Object. Contains SpbCx initialization.</p>
+</td>
+</tr>
+<tr>
+<td>device.h, device.cpp</td>
+<td>
+<p>WDF and SPB event callbacks and helper methods. Other than initialization, contains all interaction with SpbCx.</p>
+</td>
+</tr>
+<tr>
+<td>hw.h, hw.cpp</td>
+<td>
+<p>HW register abstraction and access methods.</p>
+</td>
+</tr>
+<tr>
+<td>i2ctrace.h</td>
+<td>
+<p>Sets up WPP tracing.</p>
+</td>
+</tr>
+<tr>
+<td>internal.h</td>
+<td>
+<p>Common includes and typedefs. WDF context definitions.</p>
+</td>
+</tr>
+<tr>
+<td>makefile</td>
+<td>
+<p>Redirects to the real makefile that is shared by all components of the WDK.</p>
+</td>
+</tr>
+<tr>
+<td>makefile.inc</td>
+<td>
+<p>Defines custom build actions. Includes the conversion of the .INX file into a .INF file.</p>
+</td>
+</tr>
+<tr>
+<td>resource.rc</td>
+<td>
+<p>Resource descriptor file used for versioning.</p>
+</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>
+<p>Lists source files and build options.</p>
+</td>
+</tr>
+<tr>
+<td>sources.dep</td>
+<td>
+<p>Defines build dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>skeletoni2c.asl</td>
+<td>
+<p>Empty ASL file for a controller device node. In order for a peripheral driver to find the underlying I<sup>2</sup>C or SPI controller, this ACPI path must be specified in the
+<code>I2CSerialBus</code> or <code>SPISerialBus</code> macro.</p>
+</td>
+</tr>
+<tr>
+<td>skeletoni2c.h</td>
+<td>
+<p>Controller's register set definition and defines.</p>
+</td>
+</tr>
+<tr>
+<td>skeletoni2c.inx</td>
+<td>
+<p>Describes the installation of the driver. The build process converts this file to a .INF.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

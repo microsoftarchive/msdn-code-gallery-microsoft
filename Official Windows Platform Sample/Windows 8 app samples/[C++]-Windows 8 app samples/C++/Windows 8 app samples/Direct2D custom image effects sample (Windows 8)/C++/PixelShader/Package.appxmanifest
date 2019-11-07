@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.D2DPixelShaderEffect.CPP" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>Direct2D custom pixel shader effect C++ sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storelogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="DirectXApplication.App" Executable="CustomPixelShaderSample.exe" EntryPoint="DirectXApplication.App">
+      <VisualElements DisplayName="Direct2D custom pixel shader effect C++ sample" Logo="squaretile-sdk.png" SmallLogo="smalltile-sdk.png" Description="Direct2D custom pixel shader effect C++ sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <DefaultTile ShowName="allLogos" ShortName="D2D custom pixel shader effect C++" />
+        <SplashScreen Image="splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

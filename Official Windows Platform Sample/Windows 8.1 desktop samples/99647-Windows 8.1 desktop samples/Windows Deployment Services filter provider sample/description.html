@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/b79636be-b088-48b5-8a8d-c21645d26d2fCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows Deployment Services filter provider sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows Deployment Services filter provider sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Services
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Windows-Deployment-filter-a6d478f7">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>Demonstrates how to create a custom PXE provider DLL that can replace or run in conjunction with the standard WDSDCPXE PXE provider on a Windows Deployment Services (WDS) server.
+</p>
+<p></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd379586">Windows Deployment Services</a> (WDS) enables the deployment of Windows operating systems. You can use WDS to set up new clients with a network-based installation without requiring
+ that administrators visit each computer or install directly from CD or DVD media. The PXE Server contains the core networking capability of the server solution. The PXE Server supports a plug-in interface. Plug-ins are also known as “PXE Providers”. This provider
+ model allows for custom PXE solutions to be developed while leveraging the same core PXE Server networking code base.</p>
+<ul>
+<li>Plug-ins known as &quot;PXE Providers&quot; enable you to develop custom solutions that use the core networking code base of the WDS PXE Server implementation. This sample consists of a filter provider that illustrates how to create an additional PXE Provider that
+ sits before BINL, or any other PXE Provider, in the ordered provider list. </li><li>A filter provider acts as a gate before the WDSDCPXE or another PXE provider and controls whether or not a client will be serviced by the next provider in the provider list. If you would like your provider to always have the first opportunity to answer
+ an incoming PXE request, you should place it first in the list. </li><li>This filter provider sample stores data in a text file rather than in Active Directory.
+</li></ul>
+<p></p>
+<p>A simple walkthrough for using the sample filter provider consists of the following. First, compile the sample code into a DLL. Second, create an .ini file. Third, register the sample provider as first in the ordered provider list. Fourth, boot a sample
+ client using PXE. Any requests not filtered by the sample provider will then be passed to the next registered provider in the ordered list.</p>
+<p>When you download this sample you will also receive a README.txt file.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb530732">Using the Windows Deployment Services Server API</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=254937">Windows Deployment Services image enumeration sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=254936">Windows Deployment Services provider sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=254942">Windows Deployment Services transport manager sample</a>
+</dt></dl>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>None supported </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<p></p>
+<ol>
+<li>Start Visual Studio and select <b>File &gt; Open &gt; Project/Solution</b>. </li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file titled FilterProv.sln.
+</li><li>Press F7 (or F6 for Visual Studio&nbsp;2013) or use <b>Build &gt; Build Solution</b> to build the sample.
+</li></ol>
+<p></p>
+<h3>Run the sample</h3>
+<p>To debug the app and then run it, press F5 or use <b>Debug &gt; Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use
+<b>Debug &gt; Start Without Debugging</b>.</p>
+<p>For detailed information on how to run the Windows Deployment Services PXE filter provider sample see the Readme.txt file provided with this sample.
+</p>
+<p>Windows Deployment Services (WDS) enables the deployment of Windows operating systems using a network-based installation. You also need the following to complete this sample.</p>
+<ul>
+<li>Install the Windows Deployment Services server role on Windows Server&nbsp;2012&nbsp;R2.
+</li><li>Initialize the Windows Deployment Services server. </li><li>Add a boot image (Boot.wim) to the server. This is a Windows PE image that a client computer can boot into to install the operating system. The boot image (Boot.wim) can be found on the Windows product DVD.
+</li></ul>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

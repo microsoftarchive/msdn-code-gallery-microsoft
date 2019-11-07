@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/b79636be-b088-48b5-8a8d-c21645d26d2fCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows PowerShell Debugger API Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows PowerShell Debugger API Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Powershell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Windows-PowerShell-f5c03f2d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample shows how to use the PowerShell Debugger API. </p>
+<p>This sample shows how to use the PowerShell debugging API to handle debugger events and process debug commands. It also demonstrates Workflow debugging. Workflow debugging is new for PowerShell version 4 and is an opt-in feature. In order to debug Workflow
+ script functions the debugger DebugMode must include the DebugModes.LocalScript flag. Note that Workflow is not supported for WOW (Windows on Windows) and so this sample should be built using x64 CPU if building on an x64 platform.
+</p>
+<p>The DebuggerSample class contains a single public Run method that creates a sample script file, sets a single breakpoint in the script Workflow function, and runs the script. There are two event handlers that handle the debugger
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182204"><b>Debugger.BreakpointUpdated</b></a> and
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182205"><b>Debugger.DebuggerStop</b></a> events. There is also a simple Read, Evaluate, Print Loop (REPL) that handles user debugger commands.</p>
+<p><b>Sample Objectives</b></p>
+<p>This sample demonstrates the following:</p>
+<ol>
+<li>Creating a sample script file to debug that includes a Workflow function. </li><li>How to handle a <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182204">
+<b>Debugger.BreakpointUpdated</b></a> event. </li><li>How to handle a <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182205">
+<b>Debugger.DebuggerStop</b></a> event. </li><li>How to process user debugger commands in a simple REPL. </li></ol>
+<p></p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><a href="http://go.microsoft.com/fwlink/?LinkID=178145">Windows PowerShell</a>
+</dt><dt><b>Reference</b> </dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182204"><b>Debugger.BreakpointUpdated</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd182205"><b>Debugger.DebuggerStop</b></a>
+</dt></dl>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<p></p>
+<ol>
+<li>If you are building on an x64 platform make sure your are building to an x64 CPU.
+</li><li>Start Microsoft Visual Studio and select <b>File</b> &gt; <b>Open</b> &gt; <b>
+Project/Solution</b>. </li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Solution (.sln) file.
+</li><li>Make sure the DebuggerSample project references the System.Management.Automation.dll assembly.
+</li><li>Press F7 or use <b>Build</b> &gt; <b>Build Solution</b> to build the sample.
+<p>The library will be built in the default<b> \bin</b> or <b>\bin\Debug</b> directory.</p>
+</li></ol>
+<p></p>
+<h3>Run the sample</h3>
+<p></p>
+<ol>
+<li>Build the project as described above and run it. </li><li>A console will appear that runs the sample script file and stops at the breakpoint on line 10.
+</li><li>Type <code>'h'</code> to get the debugger help list. </li><li>Type <code>'k</code>' to see the call stack. </li><li>Type <code>'list'</code> to see the script and the current line of execution.
+</li><li>Type <code>'v'</code> to step through the Workflow script. </li><li>Type <code>'$Title'</code> to see the Title variable. </li><li>Type <code>'$JobId'</code> to see the Workflow job id. </li><li>Type <code>'Get-PSBreakpoint'</code> to see the breakpoints. You can also add a new breakpoint with Set-PSBreakpoint.
+</li><li>Type <code>'o'</code> to step out of the Workflow function. </li><li>Type <code>'c'</code> to finish running the script. </li></ol>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

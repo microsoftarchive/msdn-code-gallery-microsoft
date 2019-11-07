@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Register hotkey for the current app (CSRegisterHotkey)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Register hotkey for the current app (CSRegisterHotkey)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows General
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Hotkey
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CSRegisterHotkey-e3f5061e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>Windows APPLICATION: CSRegisterHotkey Overview </h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The sample demonstrates how to register and unregister a hotkey for the <br>
+current application.<br>
+<br>
+User32.dll contains 2 extern method RegisterHotKey and UnregisterHotKey to <br>
+define or free a system-wide hot key. The method Application.AddMessageFilter <br>
+is used to add a message filter to monitor Windows messages as they are <br>
+routed to their destinations. Before a message is dispatched, the method <br>
+PreFilterMessage could handle it. <br>
+<br>
+</p>
+<h3>Demo:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Build this project in VS2010. <br>
+<br>
+Step2. Run CSRegisterHotkey.exe.<br>
+<br>
+Step3. Click the textbox in the form, and press Alt&#43;Ctrl&#43;T. You will see <br>
+&nbsp; &nbsp; &nbsp; &quot;Alt,Control&#43;T&quot; in the textbox, and the &nbsp;&quot;Register&quot; button is enabled.<br>
+<br>
+Step4. Click the &quot;Register&quot; button, then the textbox and the &quot;Register&quot;
+<br>
+&nbsp; &nbsp; &nbsp; button will be disabled, the &quot;Unregister&quot; button will be enabled.<br>
+<br>
+&nbsp; &nbsp; &nbsp; If the hot key has already been registered, you will get an alert
+<br>
+&nbsp; &nbsp; &nbsp; &quot;The hotkey is already in use.&quot;. You can try other hotkey like Alt&#43;M.<br>
+<br>
+Step5. Press Alt&#43;Ctrl&#43;T even when this application is not the active window. <br>
+&nbsp; &nbsp; &nbsp; The application will show up and be activated.<br>
+<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+1. Design a class HotKeyRegister that wraps 2 extern methods RegisterHotKey <br>
+&nbsp; and UnregisterHotKey of User32.dll. This class also supplies a static <br>
+&nbsp; method GetModifiers to get the modifiers and key from the KeyData property
+<br>
+&nbsp; of KeyEventArgs.<br>
+<br>
+&nbsp; When creating a new instance of this class with the parameters handle, id,
+<br>
+&nbsp; modifiers and key, the constructor will call the method RegisterHotKey to <br>
+&nbsp; register the specified hotkey.<br>
+<br>
+2. The enum KeyModifiers contains the supported modifiers, like CTRL, ALT and <br>
+&nbsp; SHIFT. The WinKey is also supported by the RegisterHotKey method, but <br>
+&nbsp; keyboard shortcuts that involve the WINDOWS key are reserved for use by <br>
+&nbsp; the operating system.<br>
+<br>
+3. Design the UI in MainFrom which contains a textbox, 2 buttons and some <br>
+&nbsp; labels. <br>
+<br>
+&nbsp; The MainFrom will handle the KeyDown event of the textbox and check <br>
+&nbsp; whether the pressed keys are valid, the keys that must be pressed in <br>
+&nbsp; combination with the key Ctrl, Shift or Alt, like Ctrl&#43;Alt&#43;T. <br>
+<br>
+&nbsp; It will also handle the Click event of the buttons to define or free a <br>
+&nbsp; system-wide hotkey. When the form is closed, it will dispose the <br>
+&nbsp; HotKeyRegister instance.<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+MSDN: RegisterHotKey Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/ms646309.aspx">http://msdn.microsoft.com/en-us/library/ms646309.aspx</a><br>
+<br>
+MSDN: UnregisterHotKey Function<br>
+<a  href="http://msdn.microsoft.com/en-us/library/s646327.aspx">http://msdn.microsoft.com/en-us/library/s646327.aspx</a><br>
+<br>
+MSDN: Application.AddMessageFilter Method <br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.application.addmessagefilter.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.application.addmessagefilter.aspx</a><br>
+<br>
+IMessageFilter Interface<br>
+<a  href="http://msdn.microsoft.com/en-us/library/system.windows.forms.imessagefilter.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.imessagefilter.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/b54ac75c-991a-4c3a-a697-d8e8f7fa5c86image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

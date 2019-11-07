@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=71AE1851B6C794DEF5BD9BC8F835D0EE" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/47c63455-7231-44b0-b4ee-e4560979780cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C91CC0BBB362C4840AF9553071016400" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Search contract sample (Windows 8)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/dc4f56b3-224a-4dd7-a435-210da682eb66Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Search contract sample (Windows 8)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            App model
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/Search-contract-sample-add25823">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample shows how to let users search your app when they select the Search charm and open the search pane and how to use the search pane to display suggestions for users' queries. You can add search to your app by participating in the Search contract.
+ This sample uses <a href="http://msdn.microsoft.com/library/windows/apps/br225108">
+<b>Windows.ApplicationModel.Search</b></a> API, including the <a href="http://msdn.microsoft.com/library/windows/apps/br225058">
+<b>SearchPane</b></a> class. </p>
+<p>You should use this sample as you go through the <a href="http://msdn.microsoft.com/library/windows/apps/hh465238">
+Quickstart: Adding search to a Windows Store app</a> topic to fully understand how to participate in the Search contract. The sample and quickstart demonstrate these tasks:
+</p>
+<ol>
+<li>
+<p><b>Participate in the Search contract so that users can search the app from anywhere in the system</b></p>
+<p>If the user is not using your app when they select the Search charm, they can still search your app by selecting it from the list of apps that is visible in the search pane.</p>
+</li><li>
+<p><b>Display suggestions from an app-defined list in the search pane</b></p>
+</li><li>
+<p><b>Display suggestions in East-Asian languages in the search pane</b></p>
+</li><li>
+<p><b>Display suggestions from Windows in the search pane</b></p>
+</li><li>
+<p><b>Display suggestions from Open Search in the search pane</b></p>
+<p>This shows how to supply suggestions to the search pane from a web server that returns suggestions in the
+<a href="http://go.microsoft.com/fwlink/p/?linkid=251110">OpenSearch Suggestions format</a>.
+</p>
+<p>Use these steps to try it in the sample:</p>
+<ol>
+<li>Enter the URL to a web service that returns suggestions in the <a href="http://www.opensearch.org/Specifications/OpenSearch/Extensions/Suggestions/1.0">
+OpenSearch Suggestions format</a>. Use {searchTerms} in the URL to represent where you want the query text to be inserted. (For example, &quot;http://contoso.com?q={searchTerms}&quot;.)
+</li><li>Select the Search charm. </li><li>Type in a query. </li><li>Search suggestions are provided. </li></ol>
+<p>The following errors may occur during a search.</p>
+<ul>
+<li><b>Incorrect URL</b>&nbsp;&nbsp; &quot;Suggestions could not be retrieved, please verify that the URL points to a valid service (for example http://contoso.com?q={searchTerms}&quot;
+</li><li><b>Ill-formed results</b>&nbsp;&nbsp; &quot;Suggestions could not be displayed, please verify that the service provides valid OpenSearch suggestions&quot;
+</li></ul>
+</li><li>
+<p><b>Display suggestions from a service that returns XML</b></p>
+<p>This shows how to supply suggestions to the search pane from a web server that returns suggestions in the
+<a href="http://msdn.microsoft.com/library/windows/apps/cc891508">XML search suggestions format</a>.
+</p>
+<p>Use these steps to try it in the sample:</p>
+<ol>
+<li>Enter the URL to a web service that returns suggestions in the <a href="http://msdn.microsoft.com/en-us/library/cc848863(v=vs.85).aspx">
+XML Search Suggestions format</a>. Use {searchTerms} in the URL to represent where you want the query text to be inserted. (For example, &quot;http://contoso.com?q={searchTerms}&quot;.)
+</li><li>Select the Search charm. </li><li>Type in a query. </li><li>Search suggestions are provided. </li></ol>
+<p></p>
+<p>The following errors may occur during a search.</p>
+<ul>
+<li><b>Incorrect URL</b>&nbsp;&nbsp; &quot;Suggestions could not be retrieved, please verify that the URL points to a valid service (for example http://contoso.com?q={searchTerms}&quot;
+</li><li><b>Ill-formed results</b>&nbsp;&nbsp; &quot;Suggestions could not be displayed, please verify that the service provides valid OpenSearch suggestions&quot;
+</li></ul>
+<p></p>
+</li><li>
+<p><b>Let the user open the search pane by starting to type a query</b></p>
+<p>This lets your users access the Search charm quickly while they are using a keyboard in your app. See
+<a href="http://msdn.microsoft.com/library/windows/apps/hh465233">Guidelines and checklist for search</a> to learn about when and where you should consider enabling type to search.</p>
+</li></ol>
+<p>To learn more about integrating with the Search contract so that the user can search your app, see
+<a href="http://msdn.microsoft.com/library/windows/apps/hh465238">Quickstart: Adding search to a Windows Store app</a> and
+<a href="http://msdn.microsoft.com/library/windows/apps/hh465233">Guidelines and checklist for search</a>.</p>
+<p>Important APIs in this sample include:</p>
+<ul>
+<li>JavaScript: <a href="http://msdn.microsoft.com/library/windows/apps/hh701913">
+<b>WebUISearchActivatedEventArgs</b></a> class </li><li>C#/C&#43;&#43;/VB: <a href="http://msdn.microsoft.com/library/windows/apps/br224747">
+<b>SearchActivatedEventArgs</b></a> class </li><li><a href="http://msdn.microsoft.com/library/windows/apps/br225058"><b>SearchPane</b></a> class
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br225058querysubmittedeventargs"><b>SearchPaneQuerySubmittedEventArgs</b></a> class
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br225058suggestionsrequestedeventargs"><b>SearchPaneSuggestionsRequestedEventArgs</b></a> class
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br225101"><b>SearchSuggestionCollection</b></a> class
+</li></ul>
+<p>To obtain an evaluation copy of Windows&nbsp;8, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241655">
+Windows&nbsp;8</a>. </p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2012, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241656">
+Visual Studio&nbsp;2012</a>. </p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt><dt><b>Related samples</b> </dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=231617">App activate and suspend using WinJS sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=231474">App activated, resume, and suspend using the WRL sample</a>
+</dt></dl>
+<h3>Related technologies</h3>
+<a href="http://msdn.microsoft.com/library/windows/apps/br225108"><b>Windows.ApplicationModel.Search namespace</b></a>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<p>To build this sample, open the solutions (.sln) file titled SearchContractSample.sln from Visual Studio&nbsp;2012 for Windows&nbsp;8 (any SKU). Press F7 or go to Build-&gt;Build Solution from the top menu after the sample has loaded.</p>
+<h3>Run the sample</h3>
+<p>To run this sample after building it, go to the installation folder for this sample with Windows Explorer and run SearchContractSample.exe from the &lt;install_root&gt;\bin\Debug folder. Alternatively, press F5 (run with debegging enabled) or Ctrl-F5 (run
+ without debugging enabled). (Or select the corresponding options from the Debug menu.)</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

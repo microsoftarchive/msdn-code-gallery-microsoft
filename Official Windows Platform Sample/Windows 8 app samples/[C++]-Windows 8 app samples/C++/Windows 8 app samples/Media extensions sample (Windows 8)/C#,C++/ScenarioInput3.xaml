@@ -1,0 +1,24 @@
+﻿<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+ ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+ THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ PARTICULAR PURPOSE.
+
+ Copyright (c) Microsoft Corporation. All rights reserved -->
+<Page
+	x:Class="MediaExtensionsCS.ScenarioInput3"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	d:DesignHeight="300"
+	d:DesignWidth="400">
+
+    <StackPanel>
+        <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A media effect allows an application to process uncompressed audio and video streams before it reaches the rendering engine. The below example demonstrates how to add the inbox Video Stabilization effect to a video stream for playback." />
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Button x:Name="Open" Content="Play Video" Margin="0,0,10,0" Click="Open_Click"/>
+            <Button x:Name="Stop" Content="Stop Video" Margin="0,0,10,0" Click="Stop_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

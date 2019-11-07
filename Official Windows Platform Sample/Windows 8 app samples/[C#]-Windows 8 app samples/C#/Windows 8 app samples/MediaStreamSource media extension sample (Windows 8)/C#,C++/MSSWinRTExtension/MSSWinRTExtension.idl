@@ -1,0 +1,88 @@
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//// PARTICULAR PURPOSE.
+////
+//// Copyright (c) Microsoft Corporation. All rights reserved
+
+#include <sdkddkver.h>
+
+import "inspectable.idl";
+import "Windows.Foundation.idl";
+import "Windows.Media.idl";
+import "Windows.Storage.Streams.idl";
+
+namespace MSSWinRTExtension
+{
+	interface IMediaStreamSourceService;
+	interface IMediaStreamSample;
+
+	runtimeclass MediaStreamSample;
+    runtimeclass MediaStreamSourceService;
+
+    [version(NTDDI_WIN8)]
+    typedef enum MediaStreamType
+    {
+        Audio = 0,
+        Video = 1,
+        Script = 2
+    } MediaStreamType;
+
+    [version(NTDDI_WIN8), uuid(9A7509B7-66D3-426F-A4B7-A10B6437B22C)]
+	interface IMediaStreamSourcePlugin : IInspectable
+	{
+		HRESULT SetService([in] MediaStreamSourceService *pService);
+
+		HRESULT OpenMediaAsync();
+		HRESULT GetSampleAsync(MSSWinRTExtension.MediaStreamType streamType);
+		HRESULT CloseMedia();
+	}
+
+    [version(NTDDI_WIN8), uuid(7060EE3C-B835-44F2-9E26-2C439FC077A9), exclusiveto(MediaStreamSourceService)]
+	interface IMediaStreamSourceService : IInspectable
+	{
+		HRESULT ErrorOccurred([in] HSTRING errorCode);
+		HRESULT ReportGetSampleCompleted([in] MediaStreamSample *pSample); 
+		HRESULT ReportOpenMediaCompleted([in] Windows.Foundation.Collections.IPropertySet *pSourceAttributes, 
+			[in] Windows.Foundation.Collections.IPropertySet *pAudioStreamAttributes);
+	}
+
+    [version(NTDDI_WIN8), uuid(AE41000C-0092-47C7-BB61-8C33DA814D39), exclusiveto(MediaStreamSample)]
+	interface IMediaStreamSample : IInspectable
+	{
+		[propget] HRESULT Timestamp([out, retval] LONGLONG *pllTimestamp);
+		[propget] HRESULT Duration([out, retval] LONGLONG *pllDuration);
+	}
+
+    [version(NTDDI_WIN8), uuid(8A828F94-56E2-46FE-A4D2-009BAC7C2EE5), exclusiveto(MediaStreamSample)]
+	interface IMediaStreamSampleFactory : IInspectable
+	{
+		[overload("CreateSample")] HRESULT CreateSample(
+			[in] Windows.Storage.Streams.IBuffer *pBuffer, 
+			[in] long nOffset,
+			[in] long cCount,
+			[in] LONGLONG llTimestamp, 
+			[in] LONGLONG llDuration, 
+			[out] [retval] MediaStreamSample **ppSample);
+	}
+
+	[version(NTDDI_WIN8)]
+	[activatable(IMediaStreamSampleFactory,NTDDI_WIN8)]
+	runtimeclass MediaStreamSample
+	{
+		[default] interface IMediaStreamSample;
+	}
+
+	[version(NTDDI_WIN8)]
+	runtimeclass MediaStreamSourceService
+	{
+		[default] interface IMediaStreamSourceService;
+	}
+
+	[version(NTDDI_WIN8)]
+	[activatable(NTDDI_WIN8)]
+	runtimeclass MediaStreamSchemeHandler
+	{
+		[default] interface Windows.Media.IMediaExtension;
+	}
+}
