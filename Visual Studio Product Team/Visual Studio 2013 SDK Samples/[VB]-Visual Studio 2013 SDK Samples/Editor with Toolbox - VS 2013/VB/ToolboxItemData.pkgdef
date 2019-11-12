@@ -1,6 +1,0 @@
-﻿//
-// This assembly path is required to be on VS binding paths to successfully deserializing
-// ToolboxItemData. (Use a unique GUID below to avoid conflicting with other binding paths.)
-//
-[$RootKey$\BindingPaths\{16C5BE51-7549-4DCE-973A-1AA42BBB4601}]
-"$PackageFolder$"=""

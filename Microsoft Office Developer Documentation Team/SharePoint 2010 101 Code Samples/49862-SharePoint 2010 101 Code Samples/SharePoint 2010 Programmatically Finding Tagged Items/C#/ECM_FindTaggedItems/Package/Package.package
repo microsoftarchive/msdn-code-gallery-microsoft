@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="735da0dc-1257-4b16-a18c-2d32a9f36f17" solutionId="735da0dc-1257-4b16-a18c-2d32a9f36f17" resetWebServer="false" name="ECM_FindTaggedItems" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="c27982a4-79a7-4083-b2a8-f4d2dea4bfd4" />
-  </projectItems>
-</package>

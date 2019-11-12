@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="97ce3260-0b0a-487d-97cc-5587b8923ffe" solutionId="97ce3260-0b0a-487d-97cc-5587b8923ffe" resetWebServer="false" name="REST_RetrieveListInJSONFormat" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="73a0f7c3-2d61-4b25-b24c-8e7c5baf4d52" />
-  </projectItems>
-</package>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="37123961-fb35-4e48-859a-a1ed45a36d62" solutionId="37123961-fb35-4e48-859a-a1ed45a36d62" resetWebServer="false" name="COMMUNITIES_ReadPictures" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="8130159b-7249-43e5-a138-86a205a42d3e" />
-  </features>
-</package>

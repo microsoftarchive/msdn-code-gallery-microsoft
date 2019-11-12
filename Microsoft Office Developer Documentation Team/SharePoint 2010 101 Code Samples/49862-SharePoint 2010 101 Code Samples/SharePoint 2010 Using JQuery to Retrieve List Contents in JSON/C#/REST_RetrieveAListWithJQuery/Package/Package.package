@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4e76564e-7504-49fb-aa12-31b19da6a965" solutionId="4e76564e-7504-49fb-aa12-31b19da6a965" resetWebServer="false" name="REST_RetrieveAListWithJQuery" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="2d778b04-b320-48c8-b05c-d754a63d9e57" />
-  </projectItems>
-</package>

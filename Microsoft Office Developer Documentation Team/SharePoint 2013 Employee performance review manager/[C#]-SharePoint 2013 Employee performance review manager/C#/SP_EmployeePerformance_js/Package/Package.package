@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1a840ebf-b293-4f81-9810-ebd355fe4be8" solutionId="1a840ebf-b293-4f81-9810-ebd355fe4be8" resetWebServer="false" sharePointProductVersion="15.0" name="SP_EmployeePerformance_js" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="5cd6ce25-442f-4c57-b87c-e3386ce9e15f" />
-    <featureReference itemId="76cb904c-10a7-401e-bf94-b11f6083b320" />
-  </features>
-</package>

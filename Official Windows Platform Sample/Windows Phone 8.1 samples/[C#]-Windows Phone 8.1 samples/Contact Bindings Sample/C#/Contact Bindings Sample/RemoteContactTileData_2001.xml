@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<TileData>
-  <RemoteId>2001</RemoteId>
-  <Title>Open app</Title>
-  <!-- There is a maximum of 3 images that can be used inside the Connect Tile Data-->
-  <ImageUri>ms-appx:///ConnectTileImages/ConnectTile_2001_1.png</ImageUri>
-  <ImageUri>ms-appx:///ConnectTileImages/ConnectTile_2001_2.png</ImageUri>
-  <ImageUri>ms-appx:///ConnectTileImages/ConnectTile_2001_3.png</ImageUri>
-</TileData>

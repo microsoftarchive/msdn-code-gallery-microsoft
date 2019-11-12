@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ClientWebPart Name="ClientWebPart" Title="clientPeoplePickerApp" Description="clientPeoplePickerApp description" DefaultWidth="300" DefaultHeight="200">
-    <Content Type="html" Src="~appWebUrl/Pages/ClientWebPart.aspx?{StandardTokens}" />
-  </ClientWebPart>
-</Elements>

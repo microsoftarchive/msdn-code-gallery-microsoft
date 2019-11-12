@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="4deb1176-1ab6-48c0-bfff-790fbd6eaecf" solutionId="4deb1176-1ab6-48c0-bfff-790fbd6eaecf" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="AZURE_CallingEventReceiver">
-    <features>
-        <featureReference itemId="a05d368a-1438-45b8-a11d-0935ebaba78a" />
-    </features>
-</package>

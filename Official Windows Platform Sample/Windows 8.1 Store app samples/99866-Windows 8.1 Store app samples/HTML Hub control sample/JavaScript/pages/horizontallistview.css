@@ -1,9 +1,0 @@
-﻿/*
-Copyright (c) Microsoft Corporation. All rights reserved
-*/
-
-.horizontallistview section[role=main] {
-    margin-left: 120px;
-    margin-right: 120px;
-    height: 100%;
-}

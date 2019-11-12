@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2ed1f1ca-a55d-4bef-bd7f-2a33f94756a9" solutionId="2ed1f1ca-a55d-4bef-bd7f-2a33f94756a9" resetWebServer="false" name="CSOM_RetrieveItemsInAList" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="e5401775-cc18-4d08-8860-ba9ed2b4fe27" />
-  </projectItems>
-</package>

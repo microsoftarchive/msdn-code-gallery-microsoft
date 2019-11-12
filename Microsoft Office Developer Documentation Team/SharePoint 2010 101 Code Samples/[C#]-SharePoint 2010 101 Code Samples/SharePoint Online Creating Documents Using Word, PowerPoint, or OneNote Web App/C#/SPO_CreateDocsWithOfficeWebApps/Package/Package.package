@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3dfda6fc-36ba-4df4-8b83-f5239029aefb" solutionId="3dfda6fc-36ba-4df4-8b83-f5239029aefb" resetWebServer="false" name="SPO_CreateDocsWithOfficeWebApps" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="3062732e-4194-4250-8ed8-aa9c9ab3b73b" />
-  </features>
-</package>

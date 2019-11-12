@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<!-- This module deploys the HTML5 compatible master page to the right catalog-->
-	<Module Name="HTML5MasterPage" Url="_catalogs/masterpage">
-		<File Path="HTML5MasterPage\HTML5.v4.master" Url="HTML5.v4.master" Type="GhostableInLibrary" />
-	</Module>
-</Elements>

@@ -1,1 +1,0 @@
-Please navigate to ..\..\Process\ManagedClient to find the sample source code of MI DotNet(C#) API.

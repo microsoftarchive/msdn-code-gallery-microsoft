@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="14cca439-d11d-4aef-b035-74894aed5582" description="This feature demonstrates how to add a starter master page to a SharePoint site. A starter master page includes all required controls but no graphics or styling and is intended as a starting point for custom master pages. The feature receiver sets the starter master page as the default for the site." featureId="14cca439-d11d-4aef-b035-74894aed5582" imageUrl="" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.ae8d05aa-da52-4a45-8915-b0b79c4f0d66.FullName$" solutionId="00000000-0000-0000-0000-000000000000" title="Starter Master Page Feature" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
-  <projectItems>
-    <projectItemReference itemId="12a94866-aecf-48e3-88eb-68c43deeb800" />
-  </projectItems>
-</feature>

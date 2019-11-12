@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b8b416ed-27e2-4b0a-862b-0ec879880b76" solutionId="b8b416ed-27e2-4b0a-862b-0ec879880b76" resetWebServer="false" name="PHPWithOAuth" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="789969d1-c991-4c51-92fa-f40fec3c9a2d" />
-  </features>
-</package>

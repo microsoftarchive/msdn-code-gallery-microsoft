@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="WCF_CallServiceFromWebPart" List="113" Url="_catalogs/wp">
-    <File Path="WCF_CallServiceFromWebPart\WCF_CallServiceFromWebPart.webpart" Url="WCF_CallServiceFromWebPart.webpart" Type="GhostableInLibrary">
-      <Property Name="Group" Value="Custom" />
-    </File>
-  </Module>
-</Elements>

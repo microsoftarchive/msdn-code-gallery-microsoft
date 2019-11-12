@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Pages">
-    <File Path="Pages\blank.html" Url="Pages/blank.html" ReplaceContent="TRUE" />
-    <File Path="Pages\ListViewSamples.aspx" Url="Pages/ListViewSamples.aspx" ReplaceContent="TRUE" />
-  </Module>
-</Elements>

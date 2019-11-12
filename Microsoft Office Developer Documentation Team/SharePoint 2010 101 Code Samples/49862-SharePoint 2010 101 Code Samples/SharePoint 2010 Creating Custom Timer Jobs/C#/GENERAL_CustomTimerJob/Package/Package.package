@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0a80f8d8-9020-4e41-9e04-a77618e3be26" solutionId="0a80f8d8-9020-4e41-9e04-a77618e3be26" resetWebServer="false" name="GENERAL_CustomTimerJob" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="54074fcc-8177-411d-b74c-862797f75f6c" />
-  </features>
-</package>

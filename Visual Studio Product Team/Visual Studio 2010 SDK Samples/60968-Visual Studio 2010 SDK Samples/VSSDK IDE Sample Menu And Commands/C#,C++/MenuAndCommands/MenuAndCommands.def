@@ -1,7 +1,0 @@
-﻿; MenuAndCommands.def : Declares the module parameters.
-
-LIBRARY      "MenuAndCommands.DLL"
-
-EXPORTS
-	DllCanUnloadNow            PRIVATE
-	DllGetClassObject          PRIVATE

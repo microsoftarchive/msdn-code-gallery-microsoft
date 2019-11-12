@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c2a11c8b-564a-491d-a1a9-e00bd011442e" solutionId="c2a11c8b-564a-491d-a1a9-e00bd011442e" resetWebServer="false" name="WCM_StyledMasterPage" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="367d11f4-0551-4e01-8a9d-19ee2ddf2d6e" />
-  </features>
-  <projectItems>
-    <projectItemReference itemId="05d9d911-bce0-4450-8331-e389edcc488e" />
-  </projectItems>
-</package>

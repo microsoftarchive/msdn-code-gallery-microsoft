@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="98b625f5-80f1-460c-ba01-4e9f063bfc92" solutionId="98b625f5-80f1-460c-ba01-4e9f063bfc92" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="AZURE_CallingWorkflow">
-    <features>
-        <featureReference itemId="39204671-ef05-4ab2-8ca9-ed1ec738043d" />
-    </features>
-</package>

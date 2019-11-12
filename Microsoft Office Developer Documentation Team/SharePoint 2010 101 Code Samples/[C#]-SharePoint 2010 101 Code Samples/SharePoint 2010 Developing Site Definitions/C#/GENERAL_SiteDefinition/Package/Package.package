@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="58f3a774-26a1-4885-8094-5fb4f3aa284a" solutionId="58f3a774-26a1-4885-8094-5fb4f3aa284a" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="GENERAL_SiteDefinition">
-    <projectItems>
-        <projectItemReference itemId="d920bf1e-0dc2-4570-af1d-7258290aff32" />
-    </projectItems>
-</package>

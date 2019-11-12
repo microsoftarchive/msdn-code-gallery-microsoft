@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="ec9a9053-055e-4049-96bc-ffceff539184" solutionId="ec9a9053-055e-4049-96bc-ffceff539184" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="Donation">
-    <features>
-        <featureReference  itemId="68167086-c09b-4ab2-a345-f58770df35e5" />
-    </features>
-</package>

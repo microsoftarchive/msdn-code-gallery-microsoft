@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="GENERAL_LogToDevDashboard" List="113" Url="_catalogs/wp">
-    <File Path="GENERAL_LogToDevDashboard\GENERAL_LogToDevDashboard.webpart" Url="GENERAL_LogToDevDashboard.webpart" Type="GhostableInLibrary">
-      <Property Name="Group" Value="Custom" />
-    </File>
-  </Module>
-</Elements>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.OfficeApp" DefaultFile="WD_SharePointTranslation_cs.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="WD_SharePointTranslation_cs.xml" Type="AppPackage" />
-  </Files>
-  <ExtensionData>
-    <ExtensionDataItem Key="OfficeAppManifestRelativePath" Value="WD_SharePointTranslation_cs\WD_SharePointTranslation_cs.xml" />
-  </ExtensionData>
-</ProjectItem>

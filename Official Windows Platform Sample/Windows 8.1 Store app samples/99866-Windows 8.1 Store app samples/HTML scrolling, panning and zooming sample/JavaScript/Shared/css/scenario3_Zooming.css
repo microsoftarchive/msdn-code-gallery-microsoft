@@ -1,8 +1,0 @@
-﻿/* Style used for setting enabling zoom      */
-.zoomElement {
-    overflow: auto;
-    -ms-content-zooming: zoom;
-    -ms-scroll-rails: none;
-    -ms-content-zoom-limit-min: 100%;
-    -ms-content-zoom-limit-max: 500%;
-}

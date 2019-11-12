@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="a2674378-e157-4906-b62b-ffb2d2e80c82" solutionId="a2674378-e157-4906-b62b-ffb2d2e80c82" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="GENERAL_CancelASynchronousEvent">
-    <features>
-        <featureReference itemId="bb122e0a-8351-422d-aba8-a41797625188" />
-    </features>
-</package>

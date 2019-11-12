@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="AZURE_DeletingWebPart" List="113" Url="_catalogs/wp">
-    <File Path="AZURE_DeletingWebPart\AZURE_DeletingWebPart.webpart" Url="AZURE_DeletingWebPart.webpart" Type="GhostableInLibrary" >
-      <Property Name="Group" Value="Custom" />
-    </File>
-  </Module>
-</Elements>

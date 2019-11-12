@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://intranet.contoso.com/_vti_bin/lists.asmx?wsdl" docRef="http://intranet.contoso.com/_vti_bin/lists.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://intranet.contoso.com/_vti_bin/lists.asmx" xmlns:q1="http://schemas.microsoft.com/sharepoint/soap/" binding="q1:ListsSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://intranet.contoso.com/_vti_bin/lists.asmx" xmlns:q2="http://schemas.microsoft.com/sharepoint/soap/" binding="q2:ListsSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>

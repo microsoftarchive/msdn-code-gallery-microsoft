@@ -1,5 +1,0 @@
-LIBRARY Microsoft.SDKSamples.Kitchen.Proxies.dll
-
-EXPORTS
-    DllCanUnloadNow         PRIVATE
-    DllGetClassObject       PRIVATE

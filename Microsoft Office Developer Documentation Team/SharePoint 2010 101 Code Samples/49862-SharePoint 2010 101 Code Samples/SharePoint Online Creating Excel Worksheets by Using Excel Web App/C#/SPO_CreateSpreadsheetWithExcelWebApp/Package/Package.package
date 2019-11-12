@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6dd846ca-7bd9-4835-87db-6e89de1dfb48" solutionId="6dd846ca-7bd9-4835-87db-6e89de1dfb48" resetWebServer="false" name="SPO_CreateSpreadsheetWithExcelWebApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="b347ef03-ba8e-4f6f-8e0d-37cbb2ef353d" />
-  </features>
-</package>

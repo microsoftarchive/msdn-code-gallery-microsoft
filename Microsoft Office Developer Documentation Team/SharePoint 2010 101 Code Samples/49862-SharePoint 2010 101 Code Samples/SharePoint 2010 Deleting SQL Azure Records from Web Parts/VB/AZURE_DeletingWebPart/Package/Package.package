@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="267baf14-75f5-4860-868d-d8ff253709d4" solutionId="267baf14-75f5-4860-868d-d8ff253709d4" resetWebServer="false" name="AZURE_DeletingWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="e1403376-c1f4-44c1-9300-dd611278a5f7" />
-  </features>
-</package>

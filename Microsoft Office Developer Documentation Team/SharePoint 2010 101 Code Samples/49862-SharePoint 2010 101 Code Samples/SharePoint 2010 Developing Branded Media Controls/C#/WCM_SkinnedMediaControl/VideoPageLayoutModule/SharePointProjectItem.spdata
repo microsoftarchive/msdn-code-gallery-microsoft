@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="Elements.xml" Target="VideoPageLayoutModule\" Type="ElementManifest" />
-    <ProjectItemFile Source="VideoArticlePageLayout.aspx" Target="VideoPageLayoutModule\" Type="ElementFile" />
-    <ProjectItemFile Source="CustomMediaPlayerSkin.xaml" Target="VideoPageLayoutModule\" Type="ElementFile" />
-    <ProjectItemFile Source="ANNOUNCE.GIF" Target="VideoPageLayoutModule\" Type="ElementFile" />
-  </Files>
-</ProjectItem>

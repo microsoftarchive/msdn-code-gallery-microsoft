@@ -1,9 +1,0 @@
-; umdf1394dev.def : Declares the module parameters.
-;
-
-LIBRARY      "umdf1394vdev.DLL"
-
-EXPORTS
-    DllGetClassObject    PRIVATE ; default
-
-  

@@ -1,3 +1,0 @@
-This folder is initially empty and is intended to contain the block compressed (DDS) image assets that are built from the ImageContentPipeline C++ project.
-
-You can ignore any non-DDS files in this folder, as the binary output of ImageContentPipeline is not used.

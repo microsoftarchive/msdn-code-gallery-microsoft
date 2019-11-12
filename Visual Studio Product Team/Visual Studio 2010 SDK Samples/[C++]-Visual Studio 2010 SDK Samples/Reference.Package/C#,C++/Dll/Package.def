@@ -1,7 +1,0 @@
-﻿; Package.def : Declares the module parameters.
-
-LIBRARY      "Package.DLL"
-
-EXPORTS
-	DllCanUnloadNow            PRIVATE
-	DllGetClassObject          PRIVATE

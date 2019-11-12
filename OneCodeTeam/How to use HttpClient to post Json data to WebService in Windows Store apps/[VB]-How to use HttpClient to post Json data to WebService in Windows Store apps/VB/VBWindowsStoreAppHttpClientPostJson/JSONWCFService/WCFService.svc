@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="JSONWCFService.WCFService" CodeBehind="WCFService.svc.vb" %>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e1c3b1ed-0579-4879-9094-ea12dec89ab2" solutionId="e1c3b1ed-0579-4879-9094-ea12dec89ab2" resetWebServer="false" name="UI_RibbonDropDownControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="c038c099-22e7-4262-b449-883323c207e7" />
-  </features>
-</package>

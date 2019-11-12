@@ -1,7 +1,0 @@
-LIBRARY SampProv
-
-EXPORTS
-
-PxeProviderInitialize
-
-

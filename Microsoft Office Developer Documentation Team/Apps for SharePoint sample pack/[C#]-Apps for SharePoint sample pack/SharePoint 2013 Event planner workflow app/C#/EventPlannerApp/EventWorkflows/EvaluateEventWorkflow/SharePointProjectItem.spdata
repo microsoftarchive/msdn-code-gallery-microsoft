@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Workflow4" DefaultFile="Workflow.xaml" FeatureReceiverClass="Microsoft.SharePoint.WorkflowServices.SPWorkflowPackageFeatureReceiver" FeatureReceiverAssembly="Microsoft.SharePoint.WorkflowServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" SupportedTrustLevels="All" SupportedDeploymentScopes="Web" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="Elements.xml" Target="EvaluateEventWorkflow\" Type="ElementManifest" />
-    <ProjectItemFile Source="Workflow.xaml" Target="EvaluateEventWorkflow\" Type="ElementFile" />
-    <ProjectItemVirtualFile Source="WorkflowStartAssociation" GroupId="Microsoft.VisualStudio.SharePoint.Workflow4Association" Target="EvaluateEventWorkflow\" Type="ElementFile" />
-    <ProjectItemVirtualFile Source="ItemAddedAssociation" GroupId="Microsoft.VisualStudio.SharePoint.Workflow4Association" Target="EvaluateEventWorkflow\" Type="ElementFile" />
-  </Files>
-</ProjectItem>

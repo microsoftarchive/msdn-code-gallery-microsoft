@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="fcc3ca7a-48a9-4761-98dc-f96b407eae93" solutionId="fcc3ca7a-48a9-4761-98dc-f96b407eae93" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="SPO_SandboxedEventReceiver">
-    <features>
-        <featureReference itemId="59ba674d-cfdb-4b0e-8dd5-3323494aad6d" />
-    </features>
-</package>

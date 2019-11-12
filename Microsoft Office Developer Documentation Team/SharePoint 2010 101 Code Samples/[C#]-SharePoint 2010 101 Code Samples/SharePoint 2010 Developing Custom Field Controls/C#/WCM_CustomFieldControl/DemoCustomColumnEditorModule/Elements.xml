@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<Control Id="AdditionalPageHead"
-			 ControlAssembly="WCM_CustomFieldControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9ce94884ce12889d"
-			 ControlClass="WCM_CustomFieldControl.CustomFieldControl"
-			 Sequence="1000" />
-</Elements>

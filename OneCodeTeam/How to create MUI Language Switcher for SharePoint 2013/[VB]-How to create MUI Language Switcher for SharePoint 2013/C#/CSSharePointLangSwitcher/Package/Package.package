@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="41151789-e6b6-4bb4-a6e7-3a8d103196be" solutionId="41151789-e6b6-4bb4-a6e7-3a8d103196be" resetWebServer="false" sharePointProductVersion="15.0" name="CSSharePointLangSwitcher" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="0dd523a1-9be3-4caf-8217-834a83f1ad35" />
-  </features>
-  <projectItems>
-    <projectItemReference itemId="061dfc3a-e93f-4988-a829-3eac710c0dae" />
-  </projectItems>
-</package>

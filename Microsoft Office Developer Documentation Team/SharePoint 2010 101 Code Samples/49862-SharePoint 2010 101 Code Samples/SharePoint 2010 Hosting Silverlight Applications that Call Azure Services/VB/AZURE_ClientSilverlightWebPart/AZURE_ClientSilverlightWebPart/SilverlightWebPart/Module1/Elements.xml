@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Module1" Url="SiteAssets/Silverlight/AZURE_ClientSilverlightApp" Path="Module1">
-    <File Url="AZURE_ClientSilverlightApp.xap" Type="GhostableInLibrary" />
-  </Module>
-</Elements>

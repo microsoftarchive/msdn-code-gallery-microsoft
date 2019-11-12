@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="InterviewDetails" OnQuickLaunch="TRUE" TemplateType="10001" Url="Lists/InterviewDetails" Description="Interview Details List"></ListInstance>
-</Elements>

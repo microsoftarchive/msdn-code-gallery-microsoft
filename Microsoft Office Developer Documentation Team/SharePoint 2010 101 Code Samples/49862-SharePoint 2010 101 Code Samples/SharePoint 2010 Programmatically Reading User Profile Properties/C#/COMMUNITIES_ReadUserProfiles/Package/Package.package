@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="14d4ea01-987f-4cdd-8787-5c0db31d2d08" solutionId="14d4ea01-987f-4cdd-8787-5c0db31d2d08" resetWebServer="false" name="COMMUNITIES_ReadUserProfiles" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="f70219d0-4dea-4baa-a61f-f7f67203f5c1" />
-  </features>
-</package>

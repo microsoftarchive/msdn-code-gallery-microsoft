@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="db0cca7c-f045-495a-afe8-ed97c06ad825" solutionId="db0cca7c-f045-495a-afe8-ed97c06ad825" resetWebServer="false" name="GENERAL_CachedCrossSiteQueries" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="56ee68b0-282c-4da5-8f95-2402d75ffae0" />
-  </features>
-</package>

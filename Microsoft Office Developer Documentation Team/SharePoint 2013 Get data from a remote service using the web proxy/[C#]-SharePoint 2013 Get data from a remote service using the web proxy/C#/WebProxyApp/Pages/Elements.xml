@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Pages">
-  <File Path="Pages\ReadRSS.aspx" Url="Pages/ReadRSS.aspx" />
-<File Path="Pages\WebProxyExec.js" Url="Pages/WebProxyExec.js" />
-</Module>
-</Elements>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a31df44e-0859-4741-923a-3dbe2b414429" solutionId="a31df44e-0859-4741-923a-3dbe2b414429" resetWebServer="false" name="WCM_CustomFieldControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="0f09c27d-eefe-473d-b3ac-ac777779ca48" />
-  </features>
-</package>

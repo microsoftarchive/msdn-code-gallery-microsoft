@@ -1,7 +1,0 @@
-DIRS=	\
-   driver        \
-   hw            \
-   hvl           \
-   extsta        \
-   extap
-   

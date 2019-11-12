@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b157db11-9a05-48b4-bfc0-ea34ce37ac7d" solutionId="b157db11-9a05-48b4-bfc0-ea34ce37ac7d" resetWebServer="false" name="TheaterCompany" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="0d59960c-b717-472f-907e-563b43e2a32a" />
-  </features>
-</package>

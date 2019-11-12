@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="Microsoft.ServiceModel.Samples.Service1" CodeBehind="~/App_Code/Service1.vb" %>

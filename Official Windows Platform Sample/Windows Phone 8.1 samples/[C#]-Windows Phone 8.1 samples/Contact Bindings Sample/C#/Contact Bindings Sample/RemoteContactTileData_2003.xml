@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<TileData>
-  <RemoteId>2003</RemoteId>
-  <Title>Open app</Title>
-  <ImageUri>ms-appx:///ConnectTileImages/ConnectTile_2003_1.png</ImageUri>
-  <ImageUri>ms-appx:///ConnectTileImages/ConnectTile_2003_2.png</ImageUri>
-</TileData>

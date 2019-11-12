@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="07cb2265-3cf8-4bad-aed2-25e9dac98116" solutionId="07cb2265-3cf8-4bad-aed2-25e9dac98116" resetWebServer="false" sharePointProductVersion="15.0" name="FleetManagementApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="556cc84f-69f7-4967-8018-7411db62e2e3" />
-  </features>
-</package>

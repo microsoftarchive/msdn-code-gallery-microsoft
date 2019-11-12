@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f5b76b35-b140-4769-8fa8-a5588e614f19" solutionId="f5b76b35-b140-4769-8fa8-a5588e614f19" resetWebServer="false" name="REST_ExcelServicesAndBingMapsMashup" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="1b3adf4a-d677-4099-9cd9-87bc0a8f78fc" />
-  </projectItems>
-</package>

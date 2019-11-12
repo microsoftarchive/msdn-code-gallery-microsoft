@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="Elements.xml" Target="Module1\" Type="ElementManifest" />
-    <ProjectOutputFile ProjectId="a2f1aa39-8b31-49e1-8da3-8c58ed484028" ProjectPath="..\AZURE_SilverlightVideoApp\AZURE_SilverlightVideoApp.csproj" Target="Module1\" Type="ElementFile" />
-  </Files>
-</ProjectItem>

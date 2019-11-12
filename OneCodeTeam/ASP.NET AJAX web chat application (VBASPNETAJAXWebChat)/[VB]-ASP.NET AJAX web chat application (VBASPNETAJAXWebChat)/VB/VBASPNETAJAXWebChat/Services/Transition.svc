@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="VBASPNETAJAXWebChat.Transition" CodeBehind="Transition.svc.vb" %>

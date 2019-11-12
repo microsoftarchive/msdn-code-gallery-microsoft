@@ -1,4 +1,0 @@
-<!ELEMENT dtds (dtd)+>
-<!ELEMENT dtd (name,url)>
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT url (#PCDATA)>

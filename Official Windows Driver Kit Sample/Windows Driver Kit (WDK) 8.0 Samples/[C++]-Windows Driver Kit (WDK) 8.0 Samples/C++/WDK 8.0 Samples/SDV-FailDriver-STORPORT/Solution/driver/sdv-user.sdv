@@ -1,7 +1,0 @@
-StorPortAllocatePool2
-StorPortDeprecated
-StorPortEnablePassive    
-StorPortNotification2
-StorPortSpinLock
-StorPortStartIo
-StorPortStatusPending

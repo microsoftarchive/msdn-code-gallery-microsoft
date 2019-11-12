@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="Elements.xml" Target="Module1\" Type="ElementManifest" />
-    <ProjectOutputFile ProjectId="7f88b989-a5cd-4993-aab2-94b8b30a569d" ProjectPath="..\DayNamerClientApp\DayNamerClientApp.csproj" Target="Module1\" Type="ElementFile" />
-  </Files>
-</ProjectItem>

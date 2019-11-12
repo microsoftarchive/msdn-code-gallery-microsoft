@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Scripts">
-    <File Path="Scripts\App.js" Url="Scripts/App.js" />
-    <File Path="Scripts\_references.js" Url="Scripts/_references.js" />
-</Module>
-</Elements>

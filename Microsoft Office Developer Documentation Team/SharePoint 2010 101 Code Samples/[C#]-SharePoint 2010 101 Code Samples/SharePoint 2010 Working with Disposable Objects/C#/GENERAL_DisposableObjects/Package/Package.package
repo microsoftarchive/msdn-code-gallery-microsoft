@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1214d8d0-208f-46d2-a763-f9fe8bfa8e9b" solutionId="1214d8d0-208f-46d2-a763-f9fe8bfa8e9b" resetWebServer="false" name="GENERAL_DisposableObjects" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="d59125d1-32ba-4d33-9d3a-f052bcc4b08b" />
-  </features>
-</package>

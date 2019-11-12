@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Pages">
-    <File Path="Pages\Home.aspx" Url="Pages/Home.aspx" />
-  <File Path="Pages\WorkflowOMTest.aspx" Url="Pages/WorkflowOMTest.aspx" />
-</Module>
-</Elements>

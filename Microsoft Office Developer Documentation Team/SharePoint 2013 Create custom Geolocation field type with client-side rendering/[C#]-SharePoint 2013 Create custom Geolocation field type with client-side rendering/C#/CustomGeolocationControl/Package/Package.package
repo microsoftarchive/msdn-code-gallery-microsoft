@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d18ee101-896c-4628-b10e-b2def2314079" solutionId="d18ee101-896c-4628-b10e-b2def2314079" resetWebServer="false" sharePointProductVersion="15.0" name="CustomGeolocationControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="ba9c734f-ec1a-4ecc-9fe0-702b4e20655b" />
-    <projectItemReference itemId="122378df-5f71-4007-9721-956ae49cf32f" />
-  </projectItems>
-</package>

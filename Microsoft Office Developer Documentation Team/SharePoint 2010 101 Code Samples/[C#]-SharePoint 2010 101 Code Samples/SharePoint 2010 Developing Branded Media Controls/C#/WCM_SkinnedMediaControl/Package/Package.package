@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9dee60ba-7399-4297-9381-bdb7113b989f" solutionId="9dee60ba-7399-4297-9381-bdb7113b989f" resetWebServer="false" name="WCM_SkinnedMediaControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="50c4540c-e664-45b6-a99c-b4cbd38cfb1a" />
-  </features>
-</package>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a64df9d3-0d65-4a18-a39d-ee56f16c6fc1" solutionId="a64df9d3-0d65-4a18-a39d-ee56f16c6fc1" resetWebServer="false" sharePointProductVersion="15.0" name="OfficeWebWidgetsDemo" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="eb7f5d3d-0965-4662-aab2-159fb5ce5902" />
-  </features>
-</package>

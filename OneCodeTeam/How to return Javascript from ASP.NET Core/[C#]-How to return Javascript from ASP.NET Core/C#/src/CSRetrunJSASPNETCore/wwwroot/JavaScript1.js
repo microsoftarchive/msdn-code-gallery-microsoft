@@ -1,1 +1,0 @@
-﻿alert("this message is from JavaScript1.js");

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="edf941b4-5845-425c-8921-515952725e19" solutionId="edf941b4-5845-425c-8921-515952725e19" resetWebServer="false" name="RM_CreateContentOrganizerRule" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="686c51ba-fe70-46ca-a7b3-63a100321f1d" />
-  </projectItems>
-</package>

@@ -1,1 +1,0 @@
-netcfg -l .\MSPassthroughExt.inf -c s -i ms_passthroughext

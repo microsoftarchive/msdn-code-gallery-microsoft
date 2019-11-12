@@ -1,1 +1,0 @@
-netcfg -u ms_passthroughext

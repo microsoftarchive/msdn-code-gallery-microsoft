@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Content">
-    <File Path="Content\App.css" Url="Content/App.css" ReplaceContent="TRUE" />
-    <File Path="Content\jquery-ui-1.10.2.custom.css" Url="Content/jquery-ui-1.10.2.custom.css" ReplaceContent="TRUE" />
-  </Module>
-</Elements>

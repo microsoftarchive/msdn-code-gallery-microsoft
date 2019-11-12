@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Pages">
-    <File Path="Pages\ReadText.aspx" Url="Pages/ReadText.aspx" />
-  <File Path="Pages\CustomProxyExec.js" Url="Pages/CustomProxyExec.js" />
-</Module>
-</Elements>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Donation - DonationInstance"
-                OnQuickLaunch="TRUE"
-                TemplateType="10055"
-                Url="Lists/Donation-DonationInstance"
-                Description="My List Instance">
-  </ListInstance>
-</Elements>

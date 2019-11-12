@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="303d3955-9508-4c98-a6ef-9c5c8dd0d417" solutionId="303d3955-9508-4c98-a6ef-9c5c8dd0d417" resetWebServer="false" name="WCM_StarterMasterPage" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="f9ca5289-c150-4f47-b7d2-b38b17dc911c" />
-  </features>
-</package>

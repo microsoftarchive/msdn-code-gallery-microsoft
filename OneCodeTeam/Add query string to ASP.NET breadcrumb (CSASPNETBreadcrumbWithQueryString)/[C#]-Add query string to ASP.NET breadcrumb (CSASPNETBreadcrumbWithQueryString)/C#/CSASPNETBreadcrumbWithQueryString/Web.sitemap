@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="~/Default.aspx" title="root"  description="root" resourceKey="root">
-      <siteMapNode url="~/Category.aspx" title="category" description="category" resourceKey="category">
-        <siteMapNode url="~/Item.aspx" title="item" description="item" resourceKey="item" />
-      </siteMapNode>
-    </siteMapNode>
-</siteMap>

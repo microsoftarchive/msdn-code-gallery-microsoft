@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Event Survey" OnQuickLaunch="TRUE" TemplateType="10003" Url="Lists/Event Survey" Description="My List Instance"></ListInstance>
-</Elements>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a7fa5420-50c1-4924-92e8-a5a9944f8789" solutionId="a7fa5420-50c1-4924-92e8-a5a9944f8789" resetWebServer="false" sharePointProductVersion="15.0" name="TaxonomyApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="a2cde50d-d511-40f4-a3cf-5f768ad2be7d" />
-  </features>
-</package>

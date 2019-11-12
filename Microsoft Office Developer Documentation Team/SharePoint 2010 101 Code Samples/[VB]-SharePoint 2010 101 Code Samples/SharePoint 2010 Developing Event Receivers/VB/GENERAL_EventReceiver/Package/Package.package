@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="5c5c6702-fb17-4ffb-8ebd-78dba8d0a102" solutionId="5c5c6702-fb17-4ffb-8ebd-78dba8d0a102" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="GENERAL_EventReceiver">
-    <features>
-        <featureReference itemId="04bd42c8-0e0c-45d7-9b8b-cb798c876cb9" />
-    </features>
-</package>

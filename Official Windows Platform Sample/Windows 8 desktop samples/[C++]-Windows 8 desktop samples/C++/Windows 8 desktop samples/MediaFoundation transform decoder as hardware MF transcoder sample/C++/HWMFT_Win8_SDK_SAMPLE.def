@@ -1,7 +1,0 @@
-LIBRARY	"HWMFT_Win8_SDK_SAMPLE"
-EXPORTS
-    DllMain             PRIVATE
-    DllCanUnloadNow     PRIVATE
-    DllRegisterServer   PRIVATE
-    DllUnregisterServer PRIVATE
-    DllGetClassObject   PRIVATE

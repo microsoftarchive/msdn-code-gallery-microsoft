@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3d013c36-e4d6-4957-9cbd-24acc37db90c" solutionId="3d013c36-e4d6-4957-9cbd-24acc37db90c" resetWebServer="false" name="WCF_ServiceHostedInSharePoint" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="b3b09c9b-7b61-4308-88fd-02af477af847" />
-  </projectItems>
-</package>

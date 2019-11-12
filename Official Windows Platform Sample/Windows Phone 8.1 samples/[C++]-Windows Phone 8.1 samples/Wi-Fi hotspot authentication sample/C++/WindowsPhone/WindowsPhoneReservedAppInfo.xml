@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WindowsPhoneReservedAppInfo xmlns="http://schemas.microsoft.com/phone/2013/windowsphonereservedappinfo">
-  <SoftwareCapabilities>
-    <SoftwareCapability Id="ID_CAP_CSP_WIFI_HOTSPOT" />
-  </SoftwareCapabilities>
-</WindowsPhoneReservedAppInfo>

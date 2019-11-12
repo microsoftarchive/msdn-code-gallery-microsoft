@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="UI_SandboxedWebPart" List="113" Url="_catalogs/wp">
-    <File Path="UI_SandboxedWebPart\UI_SandboxedWebPart.webpart" Url="UI_SandboxedWebPart.webpart" Type="GhostableInLibrary">
-      <Property Name="Group" Value="Custom" />
-    </File>
-  </Module>
-</Elements>

@@ -1,6 +1,0 @@
-<MySchool>
-  <Course CourseID="C1045" Year="2012"  Title="Calculus" Credits="4" DepartmentID="7">New</Course>
-  <Course CourseID="C1061" Year="2012"  Title="Physics" Credits="4" DepartmentID="1" />
-  <Department DepartmentID="1" Name="Engineering" Budget="350000" StartDate="2007-09-01T00:00:00+08:00" Administrator="2" />
-  <Department DepartmentID="7" Name="Mathematics" Budget="250024" StartDate="2007-09-01T00:00:00+08:00" Administrator="3">Cancelled</Department>
-</MySchool>

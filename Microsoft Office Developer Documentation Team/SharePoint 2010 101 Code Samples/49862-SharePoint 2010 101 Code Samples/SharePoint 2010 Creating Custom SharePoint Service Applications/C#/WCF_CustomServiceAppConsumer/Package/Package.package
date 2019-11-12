@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e1a8dae7-7338-4372-952e-6ce295e60081" solutionId="e1a8dae7-7338-4372-952e-6ce295e60081" resetWebServer="false" name="WCF_CustomServiceAppConsumer" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="596b8585-8b2b-45c8-b1a6-c01ec102a902" />
-  </features>
-</package>

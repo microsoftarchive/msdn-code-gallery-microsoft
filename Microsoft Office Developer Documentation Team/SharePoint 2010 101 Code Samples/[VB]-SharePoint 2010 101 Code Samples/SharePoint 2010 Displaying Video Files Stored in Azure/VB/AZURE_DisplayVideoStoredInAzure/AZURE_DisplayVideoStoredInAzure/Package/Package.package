@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="a0bbf879-69b5-4ede-b2fe-03396f7a700b" solutionId="a0bbf879-69b5-4ede-b2fe-03396f7a700b" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="AZURE_DisplayVideoStoredInAzure">
-    <features>
-        <featureReference itemId="c7d0ea7b-9038-4b8a-8ce4-688415c58268" />
-    </features>
-</package>

@@ -1,6 +1,0 @@
-geometry.vb.bin:
-R32G32B32_FLOAT vertex buffer data.
-Icosahedron-based sphere vertices with topology data baked in at a scale factor of 10:1.
-
-geometry.ib.bin:
-R32_UINT index buffer data for use with geometry.vb.bin.

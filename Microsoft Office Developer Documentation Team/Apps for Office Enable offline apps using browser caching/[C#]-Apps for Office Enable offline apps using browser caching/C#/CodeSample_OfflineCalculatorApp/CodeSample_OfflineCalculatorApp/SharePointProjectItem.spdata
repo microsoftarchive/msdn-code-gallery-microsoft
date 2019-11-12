@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ProjectItem Type="Microsoft.VisualStudio.SharePoint.OfficeApp" DefaultFile="CodeSample_OfflineCalculatorApp.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="AppPackage" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
-  <Files>
-    <ProjectItemFile Source="CodeSample_OfflineCalculatorApp.xml" Type="AppPackage" />
-  </Files>
-  <ExtensionData>
-    <ExtensionDataItem Key="OfficeAppManifestRelativePath" Value="CodeSample_OfflineCalculatorApp\CodeSample_OfflineCalculatorApp.xml" />
-  </ExtensionData>
-</ProjectItem>

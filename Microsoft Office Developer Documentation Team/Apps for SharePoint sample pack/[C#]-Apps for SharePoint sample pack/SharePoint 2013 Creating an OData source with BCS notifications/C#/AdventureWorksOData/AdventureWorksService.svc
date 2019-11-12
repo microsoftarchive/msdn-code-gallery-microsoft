@@ -1,3 +1,0 @@
-﻿
-
-<%@ ServiceHost Language="C#" Factory="System.Data.Services.DataServiceHostFactory, Microsoft.Data.Services, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Service="AdventureWorksOData.AdventureWorksService" %>

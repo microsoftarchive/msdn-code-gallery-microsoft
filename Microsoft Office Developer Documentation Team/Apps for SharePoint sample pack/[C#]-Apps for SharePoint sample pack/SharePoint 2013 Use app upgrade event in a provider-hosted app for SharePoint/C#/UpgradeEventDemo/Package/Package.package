@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="98e2d697-33cd-4624-9947-0c82de486933" solutionId="98e2d697-33cd-4624-9947-0c82de486933" resetWebServer="false" name="UpgradeEventDemo" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="872e8bb3-c87e-4fdd-9ba0-e42d0703bbb0" />
-  </features>
-</package>

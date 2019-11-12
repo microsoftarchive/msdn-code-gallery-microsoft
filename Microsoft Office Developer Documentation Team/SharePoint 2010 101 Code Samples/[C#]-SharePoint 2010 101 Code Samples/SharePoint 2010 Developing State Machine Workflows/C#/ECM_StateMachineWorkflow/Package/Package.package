@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="89990c23-5acb-45f5-9448-e5e94130e917" solutionId="89990c23-5acb-45f5-9448-e5e94130e917" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="ECM_StateMachineWorkflow">
-    <features>
-        <featureReference itemId="88e69493-c1e3-48ba-bdef-14510a336859" />
-    </features>
-</package>

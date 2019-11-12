@@ -1,5 +1,0 @@
-LIBRARY   CppDynamicLinkLibrary
-EXPORTS
-   GetStringLength1     @1
-   CompareInts  		@2
-   g_nVal1				DATA

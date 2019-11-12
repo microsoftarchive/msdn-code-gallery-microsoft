@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AccessSQLService.Service" CodeBehind="Service.svc.cs" %>

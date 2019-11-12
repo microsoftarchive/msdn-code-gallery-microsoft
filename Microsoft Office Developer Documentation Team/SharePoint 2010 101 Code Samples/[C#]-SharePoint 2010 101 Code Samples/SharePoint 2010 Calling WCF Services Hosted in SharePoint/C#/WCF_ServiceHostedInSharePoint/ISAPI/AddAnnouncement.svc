@@ -1,3 +1,0 @@
-﻿<%@ServiceHost Language="C#" Debug="true"
-    Service="WCF_ServiceHostedInSharePoint.AnnouncementAdderService, $SharePoint.Project.AssemblyFullName$"
-        Factory="Microsoft.SharePoint.Client.Services.MultipleBaseAddressBasicHttpBindingServiceHostFactory, Microsoft.SharePoint.Client.ServerRuntime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>

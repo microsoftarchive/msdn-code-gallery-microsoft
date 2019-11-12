@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <!-- Parent ContentType: Item (0x01) -->
-  <ContentType ID="0x0100B10C4F490FA148C7A334D62D6DBB2C2B" Name="EventSurveyCT" Group="Custom Content Types" Description="My Content Type" Inherits="TRUE" Version="0">
-    <FieldRefs>
-      <FieldRef ID="{ad8a87f5-c356-4a1e-aa03-3626bb6bbbe7}" DisplayName="Event Rating" Required="TRUE" Name="EventRatingColumn" />
-    </FieldRefs>
-  </ContentType>
-</Elements>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7ded9996-811d-47e2-a145-a7ee96da1296" solutionId="7ded9996-811d-47e2-a145-a7ee96da1296" resetWebServer="false" name="CSOM_DeleteItemFromList" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="39841329-0208-4eeb-8960-7f291b22ba5a" />
-  </projectItems>
-</package>

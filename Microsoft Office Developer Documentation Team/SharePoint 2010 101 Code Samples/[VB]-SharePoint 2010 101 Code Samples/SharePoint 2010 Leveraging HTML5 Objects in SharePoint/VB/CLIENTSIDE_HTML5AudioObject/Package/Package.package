@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dff911a8-2aed-410a-8a3c-f3f58831b407" solutionId="dff911a8-2aed-410a-8a3c-f3f58831b407" resetWebServer="false" name="CLIENTSIDE_HTML5AudioObject" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="47da8f8f-23da-4c02-94a4-e39439c5c797" />
-  </features>
-</package>

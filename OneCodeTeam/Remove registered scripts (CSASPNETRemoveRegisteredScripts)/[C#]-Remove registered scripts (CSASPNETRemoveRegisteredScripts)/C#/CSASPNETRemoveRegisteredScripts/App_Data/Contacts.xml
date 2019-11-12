@@ -1,8 +1,0 @@
-﻿<Contacts>
-  <Contact id="1"
-           Name="test1"
-           Age="22"/>
-  <Contact id="2"
-           Name="test2"
-           Age="25"/>
-</Contacts>

@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="VBRESTfulWCFServiceProvider.UserService" CodeBehind="UserService.svc.vb" %>

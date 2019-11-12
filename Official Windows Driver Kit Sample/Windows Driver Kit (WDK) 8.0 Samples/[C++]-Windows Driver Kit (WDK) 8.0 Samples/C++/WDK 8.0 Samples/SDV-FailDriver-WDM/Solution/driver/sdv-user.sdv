@@ -1,5 +1,0 @@
-CancelSpinLock
-IrqlIoApcLte
-IrqlKeSetEvent
-LowerDriverReturn
-SpinLock

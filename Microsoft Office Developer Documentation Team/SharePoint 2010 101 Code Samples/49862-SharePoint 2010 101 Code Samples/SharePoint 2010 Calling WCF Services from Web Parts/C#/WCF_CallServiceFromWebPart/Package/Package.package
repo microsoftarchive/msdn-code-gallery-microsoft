@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="09711139-3203-4a03-b361-2298a04c52a5" solutionId="09711139-3203-4a03-b361-2298a04c52a5" resetWebServer="false" name="WCF_CallServiceFromWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="bd87f966-bddb-408c-a429-203411d6729b" />
-  </features>
-</package>

@@ -1,7 +1,0 @@
-LIBRARY FilterProv
-
-EXPORTS
-
-PxeProviderInitialize
-
-

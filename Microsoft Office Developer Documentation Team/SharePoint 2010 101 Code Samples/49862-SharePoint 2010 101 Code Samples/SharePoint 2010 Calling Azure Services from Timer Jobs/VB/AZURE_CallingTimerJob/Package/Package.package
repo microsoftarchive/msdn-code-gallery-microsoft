@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="77cb2d25-0a77-4bfe-a50c-7b921d8d863c" solutionId="77cb2d25-0a77-4bfe-a50c-7b921d8d863c" resetWebServer="false" name="AZURE_CallingTimerJob" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="ed1e7ba7-9306-4265-aa1d-3daf5e8f63ca" />
-  </features>
-</package>

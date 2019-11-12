@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-	<!-- By using the ID "GlobalNavigation", we declare that this is a delegate control
-		 that replaces the SharePoint global navigation. -->
-	<Control Id="GlobalNavigation"
-			 Sequence="90"
-			 ControlSrc="~/_ControlTemplates/GlobalNavDelegate.ascx" />
-</Elements>

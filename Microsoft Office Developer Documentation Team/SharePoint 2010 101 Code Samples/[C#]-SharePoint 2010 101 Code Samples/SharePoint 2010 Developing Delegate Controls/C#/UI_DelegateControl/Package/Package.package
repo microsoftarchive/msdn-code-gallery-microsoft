@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="18690903-4b79-43b6-9bd5-4434ff6f1d0a" solutionId="18690903-4b79-43b6-9bd5-4434ff6f1d0a" resetWebServer="false" name="UI_DelegateControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="5eeb43f3-6ba3-433c-a85b-18d00be98132" />
-  </features>
-  <projectItems>
-    <projectItemReference itemId="d5c6cd8c-8e23-4a4b-8201-cfbd9291b361" />
-  </projectItems>
-</package>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="f388cc38-37f1-4646-bb76-1b1e5877d79b" solutionId="f388cc38-37f1-4646-bb76-1b1e5877d79b" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="AZURE_QueryingWebPart">
-    <features>
-        <featureReference itemId="58384c6b-93ab-43a5-824a-1d0983e6c0d5" />
-    </features>
-</package>

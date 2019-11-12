@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="e00df03c-9baa-4b1f-9e96-6d2de965ab70" solutionId="e00df03c-9baa-4b1f-9e96-6d2de965ab70" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="AZURE_ClientSilverlightWebPart">
-    <features>
-        <featureReference itemId="ba5ef194-d473-4d74-aa6f-b6f5ea0d3915" />
-    </features>
-</package>

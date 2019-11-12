@@ -1,6 +1,0 @@
-﻿// For details on localizing a Windows app, see: http://go.microsoft.com/fwlink/?LinkId=212836
-
-{
-    "ButtonControlDescription"  : "Hello World!",
-    "_greeting.comment"     : "This is a comment to the localizer"
-}

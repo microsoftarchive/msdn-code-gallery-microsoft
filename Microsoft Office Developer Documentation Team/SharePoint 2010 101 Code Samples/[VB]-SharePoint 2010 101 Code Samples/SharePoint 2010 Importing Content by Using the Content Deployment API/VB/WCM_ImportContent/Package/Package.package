@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3b7251d1-4c6c-4df1-8fe5-e090cf719c92" solutionId="3b7251d1-4c6c-4df1-8fe5-e090cf719c92" resetWebServer="false" name="WCM_ImportContent" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="d088c0e8-5a85-47c5-9f26-ae7c87712ea8" />
-  </projectItems>
-</package>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7f15e8d4-9e1d-4a33-a843-d2d1d627f44f" solutionId="7f15e8d4-9e1d-4a33-a843-d2d1d627f44f" resetWebServer="false" name="SPO_SandboxedWorkflowActivity" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="4508df2a-7428-4d27-94a8-a8949309fcac" />
-  </features>
-</package>

@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2936e117-5ff0-4d69-9455-eeb953e79399" solutionId="2936e117-5ff0-4d69-9455-eeb953e79399" resetWebServer="false" sharePointProductVersion="15.0" name="NokiaMapsCustomField" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="419e25b2-399c-4430-b091-2892bd36ab70" />
-    <projectItemReference itemId="9f32cc41-e001-41a4-a4ba-7de5ab0a8ccb" />
-  </projectItems>
-</package>

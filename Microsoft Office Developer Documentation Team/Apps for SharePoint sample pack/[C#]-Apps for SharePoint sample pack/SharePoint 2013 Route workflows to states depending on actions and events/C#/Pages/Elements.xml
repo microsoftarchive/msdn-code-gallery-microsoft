@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="Pages">
-    <File Path="Pages\Default.aspx" Url="Pages/Default.aspx" ReplaceContent="TRUE" />
-    <File Path="Pages\MaintenanceRequest.aspx" Url="Pages/MaintenanceRequest.aspx" ReplaceContent="TRUE" />
-    <File Path="Pages\AssociationForm.aspx" Url="Pages/AssociationForm.aspx" ReplaceContent="TRUE" />
-  </Module>
-</Elements>

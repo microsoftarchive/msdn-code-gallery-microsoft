@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="74ee164c-b385-46af-916c-ac29e28e919d" solutionId="74ee164c-b385-46af-916c-ac29e28e919d" resetWebServer="false" sharePointProductVersion="15.0" name="VBSPSChangeUserListPermission" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <projectItems>
-    <projectItemReference itemId="2b552aca-bfd6-4d99-a60d-715f59602d34" />
-  </projectItems>
-</package>

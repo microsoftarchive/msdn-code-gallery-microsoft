@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="375bac59-44f3-494e-888c-14191a53ff1f" solutionId="375bac59-44f3-494e-888c-14191a53ff1f" resetWebServer="false" name="WCF_CallServiceFromTimerJob" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="0a738722-d92e-4bff-8dfd-2d231df3c96a" />
-  </features>
-</package>

@@ -1,7 +1,0 @@
-﻿; Services.def : Declares the module parameters.
-
-LIBRARY      "Services.DLL"
-
-EXPORTS
-	DllCanUnloadNow            PRIVATE
-	DllGetClassObject          PRIVATE

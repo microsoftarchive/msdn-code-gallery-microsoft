@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="29e44eae-025b-4121-a4cc-eb20aa7cdb31" solutionId="29e44eae-025b-4121-a4cc-eb20aa7cdb31" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="ECM_SequentialWorkflow">
-    <features>
-        <featureReference itemId="14f457ee-9465-418e-af44-878e5f717803" />
-    </features>
-</package>

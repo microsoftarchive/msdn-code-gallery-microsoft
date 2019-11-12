@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4c576b8e-69fb-44a5-91b1-0700a3a2d150" solutionId="4c576b8e-69fb-44a5-91b1-0700a3a2d150" resetWebServer="false" name="WCM_CustomNavProvider" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="1a48e9d9-a4f1-4b60-b6bb-8ec186a99fc0" />
-  </features>
-</package>

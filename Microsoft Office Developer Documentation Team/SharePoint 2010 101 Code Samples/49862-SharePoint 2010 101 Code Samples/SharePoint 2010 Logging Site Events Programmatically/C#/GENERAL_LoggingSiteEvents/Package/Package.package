@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="894c327e-9287-4f1b-af16-59048cf19dc8" solutionId="894c327e-9287-4f1b-af16-59048cf19dc8" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="GENERAL_LoggingSiteEvents">
-    <features>
-        <featureReference itemId="93e0b9d6-e8d7-4d54-85dd-98fca7f7356b" />
-    </features>
-</package>

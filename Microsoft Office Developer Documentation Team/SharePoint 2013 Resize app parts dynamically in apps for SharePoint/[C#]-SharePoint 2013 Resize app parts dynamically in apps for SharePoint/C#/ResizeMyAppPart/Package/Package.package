@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ade2abbb-1adc-4281-a7a0-1904ff06fc45" solutionId="ade2abbb-1adc-4281-a7a0-1904ff06fc45" resetWebServer="false" sharePointProductVersion="15.0" name="ResizeMyAppPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="6f531700-86d7-4681-b060-b755f7c6bf4d" />
-  </features>
-</package>

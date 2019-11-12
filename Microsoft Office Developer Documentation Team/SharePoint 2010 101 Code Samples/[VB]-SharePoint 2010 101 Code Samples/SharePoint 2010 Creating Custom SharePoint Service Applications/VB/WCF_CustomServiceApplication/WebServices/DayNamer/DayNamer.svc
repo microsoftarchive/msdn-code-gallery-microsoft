@@ -1,3 +1,0 @@
-﻿<%@ServiceHost Language="VB"
-    Service="WCF_CustomServiceApplication.Server.DayNamerServiceApplication, $SharePoint.Project.AssemblyFullName$" 
-    Factory="WCF_CustomServiceApplication.Server.DayNamerServiceHostFactory, $SharePoint.Project.AssemblyFullName$" %>
