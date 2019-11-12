@@ -1,0 +1,10 @@
+; SensorsHIDDriverSample.def : Declares the module parameters.
+
+LIBRARY SensorsHIDDriverSample.dll
+
+EXPORTS
+        DllCanUnloadNow         PRIVATE
+        DllGetClassObject       PRIVATE
+        DllRegisterServer       PRIVATE
+        DllUnregisterServer     PRIVATE
+

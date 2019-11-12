@@ -1,0 +1,1290 @@
+﻿#MainContent
+{
+    overflow:visible;
+}
+
+
+#JelloSizer {
+    max-width:288px;
+}
+
+#bodyContainer
+{
+    min-height: 350px;
+}
+
+#searchBoxContainer
+{
+    float: right;
+    margin-bottom: 6px;
+    width: 33%;
+}
+
+
+#leftSubHeader
+{
+    margin-left: 0px;
+    margin-right: 10px; /*margin-bottom: 10px;*/
+    vertical-align: top;
+}
+
+#leftSubHeader #title
+{
+    margin-left: 0px;
+}
+
+#rightSubHeader
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    vertical-align: top;
+}
+
+.bold, #subHeader a, #bodyContainer a
+{
+    font-weight: bold;
+}
+
+.stxtcell
+{
+    padding-right: 4px;
+}
+
+.stxtinpt
+{
+    margin-right: 4px;
+    height: 18px;
+    width: 100%;
+    padding: 0px;
+    padding-left: 4px;
+    padding-top: 2px;
+    border: 1px solid #4a4a4a;
+}
+
+.stxtinptpassive
+{
+    color: #ACACAC;
+    margin-right: 4px;
+    height: 18px;
+    width: 100%;
+    padding: 0px;
+    padding-left: 4px;
+    padding-top: 2px;
+    border: 1px solid #4a4a4a;
+}
+
+.srchbox .stxtinpt, .srchbox .stxtinptpassive
+{
+    border: 1px solid #ECECEC;
+}
+label
+{
+    font-weight: bold;
+}
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+.round
+{
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.required
+{
+    color: Red;
+}
+
+.Opera wbr
+{
+    display: inline-block;
+}
+
+.IE9 wbr:after
+{
+content: "\00200B"; 
+}
+
+/** filter box **/
+.filterHeader
+{
+    background: #dd0000;
+    color: White;
+    margin: 0px;
+    padding: 4px;
+    height: 18px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: larger;
+    vertical-align: middle;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.filterItem
+{
+    border-bottom: 1px solid gray;
+    line-height: 20px;
+    width: 100%;
+}
+.filterItem a, .filterItemSelected a
+{
+    color: #4a4a4a;
+    margin-left: 4px;
+}
+.filterItemSelected
+{
+    border: 1px solid #dd0000;
+    line-height: 20px;
+}
+/** end filter box **/
+
+
+h1
+{
+    display: inline;
+    font-size: medium;
+}
+
+#title h1
+{
+    margin-right: 5px;
+}
+
+#itemDetails
+{
+    padding-left: 5px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+#itemDetails .detailName
+{
+    font-weight: bold;
+}
+
+#itemTags
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input#newTags
+{
+    border: solid 1px Silver;
+    width: 100%;
+    color: Silver;
+    padding-left: 4px;
+}
+
+#itemTags ul
+{
+    padding-left: 0px;
+}
+
+#itemDetails li a, #itemTags ul li a
+{
+    font-weight: normal;
+}
+
+#itemTags ul li
+{
+    list-style-type: none;
+    list-style-image: none;
+    margin-bottom: 1em;
+}
+
+#usageAgreement .formLabel
+{
+    display: block;
+    margin-top: 10px;
+}
+#usageAgreement textarea
+{
+    width: 99%;
+    margin-top: 4px;
+}
+#usageAgreement #usageRights
+{
+    margin-top: 8px;
+}
+#usageAgreement .inputArea
+{
+    margin-top: 4px;
+}
+#usageAgreement input
+{
+    width: auto;
+}
+
+
+#uploadBox
+{
+    background-color: #FFFFFF;
+    text-align: left;
+    vertical-align: middle;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 6px;
+}
+
+
+#ReviewsTabPane ul
+{
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 2px;
+}
+
+#ReviewsTabPane ul li
+{
+    list-style-type: none;
+    list-style-image: none;
+    padding-bottom: 10px;
+}
+
+#ReviewsTabPane .left,
+{
+    float: left;
+    width: 60px;
+}
+
+#ReviewsTabPane p, #UserReview p
+{
+    margin-top: .4em;
+}
+
+
+#rssButton
+{
+	float:right;
+	padding:.35em .25em 0 0;
+}
+
+.rssImg {
+    background: transparent url('icon_rss.gif') no-repeat;
+    width: 16px;
+    height: 14px;
+}
+
+#ReviewsTabPane .seeAllLink, #DiscussionsTabPane .seeAllLink {
+    margin-top:10px;
+    text-align:center;
+}
+
+#ReviewsTabPane .itemHidden
+{
+    background: lightgrey !important;
+}
+
+/*-------- Start DiscussionsTab --------*/
+.postMeta
+{
+    float: left;
+}
+
+.postReply
+{
+    cursor: hand;
+    float: right;
+    font-weight: bold;
+}
+
+.postSaveReply
+{
+    display: none;
+}
+
+.postSaveReply textarea
+{
+    width: 99%;
+    margin-bottom: 4px;
+    height: 8em;
+}
+
+.toggleDiscussion
+{
+    cursor: hand;
+}
+
+.saveReplyErrorMessage
+{
+    display: none;
+    margin: 0 0 4px 0;
+    color: Red;
+    font-weight: bold;
+}
+
+/*-------- End DiscussionsTab --------*/
+
+
+/*-------- Start StatsPage --------*/
+#statsPage
+{
+    border: none;
+    background-color: Transparent;
+    margin-top: 1em;
+}
+
+#statsPage .rangeBox
+{
+    padding: 5px;
+    background-color: #ECECEC;
+    border: solid 1px #C2C2C2;
+    float: left;
+}
+#statsPage .statBox
+{
+    margin-top: 1em;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: none;
+}
+#statsPage .statBox h3
+{
+    font-size: 1.1em;
+    display: inline;
+}
+
+#statsPage #statMessage
+{
+    margin-top: 1em;
+    display: none;
+}
+
+#pointTooltip
+{
+    border: solid #000000 1px;
+    height: 35px;
+    background-color: #EEEEEE;
+    position: absolute;
+    display: none;
+    text-align: center;
+    padding: 9px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    z-index: 1000;
+    white-space: nowrap;    
+}
+
+.flotChart
+{
+    height: 300px;
+}
+
+/*-------- End StatsPage --------*/
+
+
+.EyebrowContainer
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    width: 90%;
+    font-weight: normal;
+    
+}
+.EyebrowElement
+{
+    font-weight: bold;
+}
+
+
+/*-------- Start Validation --------*/
+.input-validation-error
+{
+}
+
+
+input[type="checkbox"].input-validation-error
+{
+    border: 0px;
+    background: none;
+}
+
+
+
+.field-validation-error, .validation-summary-errors
+{
+    color: #FF0000;
+    font-weight: bold;
+}
+
+/*-------- End Validation --------*/
+
+
+
+/*-------- Start Tag Selector --------*/
+#tagSelector
+{
+    font-size: small;
+}
+#tagSelector table
+{
+    width: 100%;
+}
+
+#tagSelector .tag
+{
+    margin-left: 4px;
+    padding: 6px 0px 2px 0px;
+    border-bottom: 1px solid #cccccc;
+}
+
+#tagSelector .tag a
+{
+    color: #444444;
+    font-weight: normal;
+}
+
+#tagSelector .tagText, #tagSelector .tagProjectCount
+{
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 4px;
+}
+
+#tagSelector .tagProjectCount
+{
+    text-align: right;
+    color: #888888;
+}
+/*-------- End Tag Selector --------*/
+
+/*-------- Start Rating Stars --------*/
+span.Rating
+{
+    margin-left:-2px;
+}
+
+.RatingStarContainer
+{
+    display: inline-block;
+    width:90px;
+    float:left;
+}
+
+.RatingStar
+{
+    width: 12px;
+    height: 16px;
+    padding: 0 12px 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    display: inline-block;
+}
+
+.FilledRatingStar, .HalfRatingStar, .EmptyRatingStar
+{
+    width: 9px;
+    height: 16px;
+    padding: 0 9px 0 0;
+}
+
+.FilledRatingStar
+{
+    background: transparent url('ImageSprite.png') no-repeat -69px 0;
+}
+
+.HalfRatingStar
+{
+    background: transparent url('ImageSprite.png') no-repeat -47px 0;
+}
+
+.EmptyRatingStar
+{
+    background: transparent url('ImageSprite.png') no-repeat -26px 0;
+}
+
+.EditStarMode .RatingStar
+{
+    cursor: pointer;
+}
+
+/*-------- End Rating Stars --------*/
+
+
+#buildVersion
+{
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 26px;
+    padding-top: 8px;
+    text-align: right;
+}
+
+#documentText
+{
+    background-color: White;
+    margin-top: 1em;
+}
+
+
+
+.formHelpText
+{
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.radioLabel
+{
+    font-weight: normal;
+}
+
+.anonymousUser
+{
+    font-weight: bold;
+}
+
+#submissionAgreement
+{
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+#submissionAgreement a
+{
+    font-weight: normal;
+}
+
+#yourRatingLabel
+{
+    font-weight: bold;
+    float: left;
+}
+
+.toggleDiscussion
+{
+    margin-right: 4px;
+}
+
+/*-------- Start DiscussionsTab --------*/
+
+.threadActions
+{
+    text-align: right;
+    margin-top: 10px;
+    float: right;
+}
+
+#DiscussionsTabPane .reply, #DiscussionsTabPane .toggleDiscussion
+{
+    cursor: pointer;
+}
+
+
+#defaultDicussionText, #newDiscussion
+{
+    padding-top: 10px;
+}
+#DiscussionsTabPane .posts
+{
+    display: block;
+}
+#DiscussionsTabPane .threadHeader .left
+{
+    float: left;
+}
+#DiscussionsTabPane .threadHeader .right
+{
+    float: right;
+}
+#DiscussionsTabPane .normal
+{
+    font-weight: normal;
+}
+
+#DiscussionsTabPane .threadHeader
+{
+    position: relative;
+    background-color: #ECECEC;
+    padding: 4px 10px 4px 10px;
+}
+
+#DiscussionsTabPane .threadHeader .title
+{
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: .7em;
+}
+#DiscussionsTabPane .threadHeader .label
+{
+    color: #000000;
+}
+#DiscussionsTabPane .postMeta
+{
+    color: #666666;
+}
+#DiscussionsTabPane .threadHeader .value
+{
+    font-weight: bold;
+    color: #000000;
+}
+#DiscussionsTabPane .post .right div
+{
+    margin-top: .3em;
+}
+#DiscussionsTabPane .reply
+{
+    font-weight: normal;
+    cursor: hand;
+}
+
+#DiscussionsTabPane .post .right
+{
+    float: left;
+    width: 75%;
+    margin-left: 9%;
+}
+#DiscussionsTabPane ul li
+{
+    list-style-type: none;
+    list-style-image: none;
+    padding-bottom: 10px;
+}
+#DiscussionsTabPane .post .left
+{
+    float: left;
+    width: 60px;
+}
+#DiscussionsTabPane ul
+{
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 2px;
+}
+
+#newDiscussion #Title
+{
+    width: 50%;
+}
+#newDiscussion textarea
+{
+    width: 99%;
+    height: 10em;
+}
+
+#DiscussionsTabPane
+{
+    margin-left: 0px;
+    padding: 0 1em 1em 1em;
+}
+
+.discussion .postActions
+{
+    float: right;
+}
+
+#DiscussionsTabPane .itemHidden
+{
+    background: lightgrey;
+}
+
+/*-------- End DiscussionsTab --------*/
+
+
+
+/*-------- Start Notifications --------*/
+
+#notificationsSummaryBox
+{
+	font-weight: bold;
+	padding: .5em;
+}
+
+
+.notificationsByDay, .notifications
+{
+	/*list-style: none;*/	
+}
+
+.dayHeader
+{
+	border-bottom: 1px solid silver;	
+	margin-top: 1em;
+	padding-bottom: .5em;
+}
+
+.notifications
+{
+	margin-top: .5em;
+}
+
+ul.notifications li
+{
+	line-height: 1.5em;
+}
+
+ul.notifications li.unread
+{
+	font-weight: bold;
+}
+
+ul.notifications li ol, ul.notifications li ul
+{
+	margin-left:1.5em;
+}
+
+/*-------- End Notifications --------*/
+
+
+.loadingDiv{
+    padding:1em;
+}
+
+#directoryContent .browseFilterBar
+{
+    font-weight:bold;
+    padding: 5px 5px 7px 5px;
+    background-color: rgb(236,236,236);
+}
+
+#directoryContent .browseFilterBar a
+{
+    font-weight:normal;
+}
+        #directoryContent .browseFilterBar .browseSort select
+        {
+            height:20px;
+            vertical-align:middle
+        }        
+        
+        #directoryContent .browseFilterBar .browseSort img
+        {
+            vertical-align:middle
+        }
+
+#directoryContent .browseSort
+{
+    float:right;
+    color:#666666
+}
+
+#adminPage .formElement 
+{
+    margin-top:1em;
+}
+
+#adminPage #reservedVsixList, #adminPage #userList
+{
+    display:none;
+    width:400px;
+    position:relative;
+    overflow:auto;
+    background-color:#FFF;
+}
+#adminPage #reservedVsixList thead, #adminPage #userList thead
+{
+    font-weight:bold;
+}
+#adminPage #reservedVsixList td
+{
+    padding:5px 15px 0 0;
+}
+
+#adminPage .inlineTextBox
+{
+    float:left;
+    margin-left:10px;
+}
+#adminPage #specificUser
+{
+    display:none;
+}
+
+
+#ProjectsTabPane
+{
+    padding: 0.5em;
+    margin-right: 10px;
+    margin-right:0px;
+}
+
+
+.itemContainer .moreProjects
+{
+	padding-top:10px;
+	text-align:right;
+}
+
+
+/* Impromptu warning style */
+.ipWarningfade{
+    position: absolute; 
+    background-color: #aaaaaa; 
+}
+div.ipWarning{ 
+    width: 400px; 
+    position: absolute; 
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 20px 0 20px 20px;
+}
+.ipWarningcontainer{ 
+    font-weight: bold; 
+}
+.ipWarningclose { 
+    display: none;
+}
+.ipWarningmessage div
+{
+    position: relative;
+}
+.ipWarningmessage div div+div {
+    text-align: center;
+    padding-right: 20px;
+}
+.ipWarningmessage div div:first-child div {
+    margin-left: 50px;
+}
+.ipWarningmessage div div:first-child img {
+    position: absolute;
+    margin: -20px 0 0 0;
+    top: 35%;
+}
+.ipWarningbuttons {
+    text-align: center; 
+    margin: 20px 0 0 0;
+}
+.ipWarning button { 
+    padding: 2px; 
+    font-weight: bold; 
+}
+
+#searchImg {
+    background: transparent url('ImageSprite.png') no-repeat 0 0;
+    width: 22px;
+    height: 24px;
+}
+
+
+#searchImageCell 
+{
+   width: 24px;
+   text-align:right;
+   padding:0px;
+   vertical-align: middle;
+}
+
+/*-------- Start Dashboard Page --------*/
+
+#dashboardPage {
+    padding-top:5px;
+    clear:both;
+}
+#dashboardPage .contributions .tabContents {
+    padding: 5px 5px 10px 5px;
+    clear:both;
+}
+#dashboardPage #mainContentWrapper {
+    float:left;
+    width:100%;
+}
+
+#dashboardPage #detailsSection {
+    float:left;
+    margin-left:-100%;
+    width:300px;
+}
+
+.IE7 #dashboardPage #detailsSection {
+    width:auto;
+    min-width: 300px;
+    max-width: 300px;
+}
+.IE7 #dashboardPage #detailsSection .itemBar {
+    width: 270px;
+}
+
+#dashboardPage #detailsSection h3 {
+    word-wrap:break-word;
+}
+
+#dashboardPage #mainContent {
+    margin:0 0 0 310px;
+    position:relative;
+}
+
+#dashboardPage .dashboardEvenRow
+{
+    background-color: #ececec;
+}
+#dashboardPage .dashboardPadding
+{
+    padding-bottom: 4px;
+}
+#dashboardPage .dashboardCell
+{
+    width: 100%;
+    vertical-align: top;
+    padding: 1em 0.5em 0.5em 0.5em;
+}
+#dashboardPage .projectManagement
+{
+    width: 24em;
+    padding: 0em 1em 0em 1em;
+    vertical-align: top;
+    text-align: right;
+    float: right;
+}
+
+#dashboardPage .dashboardAvatar
+{
+    border: solid 1px #CCC;
+    padding: 4px;
+    background-color: White;
+    vertical-align: middle;
+    float:left;
+    margin-right:8px;
+}
+
+#dashboardPage #subscriptionsLink 
+{
+    position:absolute;
+    right:5px;
+}
+
+#dashboardPage #detailsSection .itemBar {
+   padding:10px;
+   margin-bottom:5px;
+   text-align:center;
+}
+
+.IE7 #dashboardPage #detailsSection .titleBar {
+    padding-left:10px;
+}
+
+#dashboardPage #detailsSection  .profileLink {
+    text-align:center;
+}
+
+#dashboardPage .itemDelete
+{
+    vertical-align:top;
+    padding-top:.8em;
+    width:30px;
+}
+
+#dashboardPage .itemDeleteText
+{
+    border-style:solid;
+    border-width:thin;
+    border-collapse:collapse;
+    padding-bottom:2px;
+    padding-left:4px;
+    padding-right:4px;
+    color:Gray
+}
+
+/*-------- End Dashboard Page --------*/
+
+
+/*-------- Start Tab Control --------*/
+
+.tabHeaders {
+    font-weight: bold;
+}
+.tabHeaders div {
+    float: left;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.tabHeaders div {
+    margin-right: 5px;
+}
+.tabHeaders div.current {
+    cursor: default;
+}
+.tabContents {
+    clear: both;
+    padding: 10px 5px 10px 5px;
+}
+.tabContents > div {
+    display: none;
+}
+.tabContents div.current {
+    display: block;
+}
+
+/*-------- End Tab Control --------*/
+
+
+/*-------- Start Subscription Form --------*/
+
+#subscribeForm
+{
+    background-color:#D3D3D1;
+    border:1px solid #000000;
+    -border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding:15px;
+    position: absolute;
+    display: block;
+}
+
+#subscribeForm .subscribeFormbuttons
+{
+   text-align:right;
+   margin-top: 10px;
+}
+#subscribeForm .subscribeFormbuttons > button
+{
+    color: Blue;
+    border: none;
+    background: none;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+#subscribeForm .subscribeFormclose
+{
+    display:none;
+}
+
+#subscribeForm table {
+    margin-bottom:15px;
+}
+
+#subscribeForm table th
+{
+   text-align:left;
+   font-weight: bold;
+   border-bottom: 1px solid #000000;
+}
+
+#subscribeForm table td
+{
+    padding: 5px 10px 5px 20px;
+}
+
+#subscribeForm .rowHeading td
+{
+    font-weight: bold;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+#subscribeForm table tr td:first-child
+{
+    padding: 5px 40px 5px 0;
+}
+
+
+/*-------- End Subscription Form --------*/
+
+/*---------- Begin Translation Page ----------*/
+.translatePage
+{
+    padding: 10px;
+}
+
+.translatePage #leftSubHeaderContainer
+{
+    margin-top:20px;
+}
+
+.translatePage #title h1
+{
+    font-size:25px;
+}
+
+.translatePage #subtitle h2
+{
+    font-size:15px;
+}
+
+.translatePage #subtitle
+{
+    margin-left:10px;
+}
+
+
+.translatePage #formContainer
+{
+    margin-left:10px;
+    margin-top:30px;
+}
+
+.translatePage .formLabel
+{
+    float:left;
+    width: 250px;
+    font-weight: normal;
+}
+
+.translatePage .formRow
+{
+    clear:both;
+    padding: 10px 0 10px 10px; 
+}
+
+.translatePage .formSubmitRow
+{
+    clear:both;
+    margin-top:20px;
+    margin-left:300px; 
+    margin-bottom:20px;
+}
+
+.translatePage .formControl {
+    width:300px;
+    float:left;
+}
+
+.translatePage .formControl .textInput
+{
+    width:300px;
+}
+
+.translatePage .formControl textarea
+{
+    width:425px;
+    height:100px;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.translatePage .formControl .tag
+{
+    width:425px;
+}
+
+.translatePage .formControl .richText
+{
+    margin-top:10px;
+    width:500px;
+    height:440px;
+}
+
+.translatePage .formWideLabel
+{
+    width:500px;
+}
+
+.translatePage .formBigLabel
+{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.translatePage .formControlBelow
+{
+    clear:both;
+    margin-top:10px;
+    width:500px;
+}
+
+.translatePage .required
+{
+    color: Red;
+}
+
+.translatePage .helpText
+{
+    color: #9D9D9D;
+    font-style: italic;
+}
+
+.translatePage .field-validation-error, .validation-summary-errors
+{
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.translatePage .tinyMCETemplate {
+    position: relative;
+    left: 360px;
+    width: 240px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.translateTabSelected, .translateTab, #languageSelection
+{
+    font-weight: bold;
+    font-size: small;
+    float: left;
+    text-align: center;
+    color: #ffffff;
+    margin: 10px; 
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#languageSelection
+{
+    padding: 5px;
+}
+
+.translateTabSelected .translateLabel, .translateTab .translateLabel
+{
+    padding: 7px;
+    white-space: nowrap;  
+    float: left;  
+}
+
+.translateTabSelected A.translateLabel:link, .translateTab A.translateLabel:link
+{
+   color: white;
+}
+
+.translateTab #deleteLanguage, .translateTab #moreLanguages
+{
+    padding-left: 10px;
+}
+
+.translatePage .readonlyBox
+{
+    margin-left: 275px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.translateNote
+{
+    padding: 5px;
+    margin-left: 10px; 
+    color: #ffffff;   
+    font-size: smaller;
+}
+
+/*---------- End Translation Page ----------*/
+
+/*-------- Begin User Card --------*/
+        
+#userCard .bio {
+    max-width:300px;
+    white-space: normal;
+}
+        
+#userCard .avatar
+{
+    padding: 5px 5px 10px 5px;
+    margin: 0 0 3px 0;
+    text-align: center;
+}
+
+#userCard .itemBar {
+    padding: 5px;
+    text-align: left;
+}
+
+/*-------- End User Card --------*/

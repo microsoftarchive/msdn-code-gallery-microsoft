@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PkgDef Editor</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>PkgDef Editor</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Visual Studio Editor, VSX
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">2/28/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/PkgDef-Editor-d4904338">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-size:large">Summary</span></h1>
+<p>This sample demonstrates how to create a package of Editor Extensions that provide across-the-board support of a language without implementing a full-blown language service.</p>
+<p>Most features are implemented as some form of <strong>ITagger</strong>.<br>
+<br>
+In this sample we implement support for <em>.pkgdef</em> files, which are used to register VSPackages and other items with Visual Studio or Visual Studio Shell applications. Included are:</p>
+<ul>
+<li>Colorizing of keys, value names, values, comments, string tokens, and guids </li><li>Syntax validation (showing errors with squiggles and QuickInfo) </li><li>Token validation (showing errors with squiggles and QuickInfo) </li><li>Token completion (when a &lsquo;$&rsquo; is typed) and QuickInfo </li><li>Supports the continuation line syntax (i.e., &lsquo;\&rsquo; at the end of a line)
+</li><li>Highlights matching braces and quotes </li><li>Outline collapsing of values beneath sections (keys) </li><li>List errors in the Error List window (and allows double click jump to the associated line)
+</li></ul>
+<h1>&nbsp;<span style="font-size:large">Requirements</span></h1>
+<ul>
+<li><a class="externalLink" href="http://www.microsoft.com/visualstudio/en-us/try/default.mspx#download">Visual Studio 2010
+</a></li><li><a class="externalLink" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb82d35c-1632-4370-acfb-83c01c2ece24&amp;displaylang=en">Visual Studio 2010 SDK
+</a></li></ul>
+<h1><span style="font-size:large">Getting Started</span></h1>
+<ol>
+<li>Download and unzip the sample </li><li>Open the solution file </li><li>Build the solution </li><li>Run solution in the Visual Studio experimental instance by pressing F5 </li></ol>
+<h1><span style="font-size:large">Test the Functionality</span></h1>
+<ol>
+<li>On the <strong>File</strong> menu, click <strong>Open</strong> </li><li>Browse to the <strong>TestPkgDefs</strong> sub-directory within the solution.
+</li><li>Select and <strong>Open</strong> one of the files. </li><li>A new tab opens with the contents of the file colorized. (Yes, there are errors in
+<em>blog.pkgdef</em>) </li><li>Try typing and hovering over various language elements. </li></ol>
+<h1><span style="font-size:large">Files</span></h1>
+<ul>
+<li><strong>PkgDefLanguage.cs</strong> &ndash; implements <strong>PkgDefTaggerProvider</strong>, which provides the core of the language processing, handling continuation lines and returning tags for each language element
+</li><li><strong>PkgDefLanguageTokens.cs</strong> &ndash; enumerates the token types and some associated string constants
+</li><li><strong>ErrorTagger.cs</strong> &ndash; implements an <strong>ITaggerProvider</strong> for tags of type
+<strong>ErrorTag</strong>; uses the <strong>PkgDefTaggerProvider</strong> for parsing and filters and translates the tokens appropriately; also implements a buffer change event handler that watches for changes and idle time (see
+<strong>BufferIdleEventUtil.cs</strong>) to update the <strong>Error List</strong> window with error tasks
+</li><li><strong>Classifier\Classifier.cs</strong> &ndash; implements an <strong>ITaggerProvider</strong> for tags of type
+<strong>ClassificationTag</strong>; uses the <strong>PkgDefTaggerProvider</strong> for parsing and filters and translates the tokens appropriately
+</li><li><strong>Classifier\ClassificationFormat.cs</strong> &ndash; defines the <strong>
+EditorFormatDefinition</strong>s that are associated with each tag returned by the classifier
+</li><li><strong>Classifier\ClassificationType.cs</strong> &ndash; defines the Content Type and File Extensions supported by the classifier, along with the classification types
+</li><li><strong>OutlineTagger.cs</strong> &ndash; implements an <strong>ITaggerProvider</strong> for tags of type
+<strong>IOutliningRegionTag</strong> using its own parser that only looks for top-level regions to collapse; also uses a buffer change event handler (see
+<strong>BufferIdleEventUtil.cs</strong>) to scan the entire document during idle time (rather than try to track the possible effect of each change on each region)
+</li><li><strong>BufferIdleEventUtil.cs</strong> &ndash; implements a buffer change event tracker with a timer than accumulates changes until the user stops typing
+</li><li><strong>BraceMatching.cs</strong> &ndash; implements an <strong>IViewTaggerProvider</strong> for tags of type
+<strong>TextMarkerTag</strong> that monitors changes in the typing caret, watching for braces and quotes, so that it can highlight the matching item
+</li><li><strong>Intellisense\QuickInfoController.cs </strong>&ndash; implements a <strong>
+IIntellisenseController</strong> needed to translate mouse hover events into QuickInfo sessions
+</li><li><strong>Intellisense\QuickInfoControllerProvider.cs </strong>&ndash; implements the factory for the
+<strong>IIntellisenseController</strong> for pkgdef files </li><li><strong>Intellisense\PkgDefTokenQuickInfoSource.cs</strong> &ndash; provides QuickInfo data for pkgdef tokens (string substitution)
+</li><li><strong>Intellisense\CompletionController</strong>.cs &ndash; implements an <strong>
+IOleCommandTarget</strong> that watches for appropriate typing events to initiate (tokens start with &lsquo;$&rsquo;), filter, and finish token completion
+</li><li><strong>Intellisense\CompletionSource.cs</strong> &ndash; provides the actual list of completion items<strong>&nbsp;</strong>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

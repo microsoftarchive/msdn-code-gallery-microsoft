@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>IronPython Studio VS Shell Isolated</title>        
+        <meta name="description" content="This sample demonstrates how to bundle the IronPython Integration sample with the Visual Studio 2010 Isolated Shell. " />
+        <link href="iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="offline.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+            function initializePage() {
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+
+                var htmlDecode = function(encodedData) {
+                    var decodedData = "";
+                    if (encodedData) {
+                        var div = document.createElement('div');
+                        div.innerHTML = encodedData;
+                        decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+                    }
+                    return decodedData;
+                };
+                
+                Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+                    var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+                    var labelElems = Galleries.findElem(titleElem, 'span');
+                    if (labelElems.length == 0) {
+                        labelElems = titleElem;
+                    }
+                    var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+                    var pres = Galleries.findElem(scriptBlock, 'pre');
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        Galleries.iterateElem(labelElems, function(index, elem) {
+                            var codePre = pres[index];
+                            var labelSpan = elem;
+                            var languageSpan = languageSpans[index];
+                            
+                            elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                            codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                            languageSpan.parentNode.removeChild(languageSpan);
+                        });
+
+                        pres = Galleries.findElem(scriptBlock, 'pre');
+                        Galleries.iterateElem(labelElems, function(index, elem) {
+                            var codePre = pres[index];
+                            var labelSpan = elem;
+                            if (index == 0) {
+                                scriptBlock.activeTab = 0;
+                            }
+                            else {
+                                labelSpan.className += otherTabClass;
+                                codePre.className += hiddenPreClass;
+                            }
+                            Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                                var activeTab = scriptBlock.activeTab;
+                                labelElems[activeTab].className += otherTabClass;
+                                pres[activeTab].className += hiddenPreClass;
+
+                                codePre.className = codePre.className.replace(hiddenPreClass, '');
+                                labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                                scriptBlock.activeTab = index;
+
+                                if (window.parent.Galleries) {
+                                    window.parent.Galleries.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                        if (preview.length == 0) {
+                            preview.push(pres[pres.length - 1]);
+                        }
+                        Galleries.iterateElem(preview, function(index, elem) {
+                            elem.parentNode.removeChild(elem);
+                        });
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = document.createElement('a');
+                            copyLink.href = 'javascript:void(0);';
+                            copyLink.className = 'copyCode';
+                            copyLink.innerHTML = 'Copy Code';
+                            Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                                clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                                return false;
+                            });
+                            scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.resizeDesc();
+                }
+
+            }
+
+            Galleries.onWindowLoad(function(){
+                initializePage();
+            });
+
+        </script>
+                <style type="text/css">
+                    body { 
+                        font-family: 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+                    }
+                </style>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<h2>Introduction</h2>
+<p>This sample demonstrates how to bundle the <a class="externalLink" href="http://beta.code.msdn.microsoft.com/IronPython-Integration-6b03988d">
+IronPython Integration sample</a> with the <a class="externalLink" href="http://www.microsoft.com/downloads/details.aspx?familyid=DFBA7AC4-5366-456E-ABD6-0E3E6BA83B7C&amp;displaylang=en">
+Visual Studio 2010 Isolated Shell</a>. Before you try to build the project make sure you have installed the Pre-requisites.<br>
+<br>
+The Visual Studio 2010 Shells are available in both integrated and isolated modes &ndash; please see here for further details. If you are interested in an integrated mode sample please refer to the
+<a class="externalLink" href="http://code.msdn.com/IPyIntegratedShell">IronPython Studio VS Shell Integrated sample</a>.<br>
+<br>
+For more information on VS extensibility, visit the <a class="externalLink" href="http://msdn.com/vsx">
+VSX Developer Center</a>.<br>
+<br>
+If instead of a sample you would like IronPython support in Visual Studio 2010, please download the
+<a class="externalLink" href="http://ironpython.net/ironpython/tools/">IronPython tools for Visual Studio</a>. For IronPython general questions please use the
+<a class="externalLink" href="http://lists.ironpython.com/listinfo.cgi/users-ironpython.com">
+IronPython mailing list</a>.<br>
+<br>
+</p>
+<h2>Target audience</h2>
+<ul>
+<li>VSX developers (including VS SDK and VS Shell) </li><li>Visual Studio enthusiasts </li></ul>
+<h2>Pre-Requisites</h2>
+<p>This is the list of software pre-requisites you need to build the IronPython Studio Isolated setup:<br>
+<br>
+</p>
+<ul>
+<li><a class="externalLink" href="http://www.microsoft.com/downloads/details.aspx?familyid=47305CF4-2BEA-43C0-91CD-1B853602DCC5&amp;displaylang=en">Visual Studio 2010 SDK</a>
+</li><li><a class="externalLink" href="http://sourceforge.net/projects/wix/files/WiX%20v3.0%20%28stable%29/3.0.5419.0%20RTM/wix3.0.5419.0-x86-setup.zip/download">WiX 3.0</a>
+</li></ul>
+<p><br>
+The machine where you plan to install IronPython Studio Integrated bits needs to have installed:<br>
+<br>
+</p>
+<ul>
+<li><a class="externalLink" href="http://www.microsoft.com/downloads/details.aspx?familyid=DFBA7AC4-5366-456E-ABD6-0E3E6BA83B7C&amp;displaylang=en">Visual Studio 2010 Shell Isolated Mode Redistributable package</a>
+</li></ul>
+
+        </div>
+    </body>
+</html>

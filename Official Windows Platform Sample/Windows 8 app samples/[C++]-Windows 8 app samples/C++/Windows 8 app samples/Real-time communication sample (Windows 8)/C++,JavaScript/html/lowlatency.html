@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/js/lowlatency.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <p>
+            This scenario demonstrates the end-to-end latency of video captured using the 
+            Media Capture API and displayed using the video tag with low latency mode enabled. 
+            Two output windows are displayed: 1) a camera preview window shows the raw output from your
+            camera 2) a localhost client window. The localhost client window shows the video from the
+            camera when compressed, streamed, and recieved over machine's loopback network interface.
+            This window demonstrates the end-to-end latency of video captured, streamed to, and displayed 
+            by a remote client minus network latency.             
+        </p>
+        <p>Tap or click the 'Start Preview' button to get started.</p>
+        <div class="threeColumnGridContainer">
+            <div class="previewButton">
+                <button class="action" id="previewButton" disabled="disabled">Start Preview</button>
+            </div>
+            <div class="clientButton">
+                <button class="action" id="clientButton" disabled="disabled">Start Loopback Client</button>
+            </div>
+            <div class="latencyModeToggle">
+                <div id="latencyModeToggle" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Low Latency mode', disabled: true}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+        <div id="statusMessage"></div>
+        <div id="scenario1Grid">
+            <h2 id="webcampreviewtitle">Camera Preview</h2>
+            <h2 id="localclienttitle">Network Client (Localhost)</h2>
+            <div id="webcampreview" class="contentHolder">
+                <img id="webcamPreviewPoster" alt="image holder" src="/images/webcam_preview_poster.png" />
+                <video id="previewVideo" msrealtime="true" ></video>
+            </div>
+            <div id="localclient" class="contentHolder">
+                <video id="playbackVideo" poster="/images/localhost_preview_poster.png"></video>
+                <video id="realTimePlaybackVideo" class="item" msrealtime="true" poster="/images/localhost_preview_poster.png"></video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

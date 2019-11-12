@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6CB3D0D-61D5-4E44-B72C-9985A2F5FEDE}</ProjectGuid>
+    <RootNamespace>ToastsSampleCPP</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <PlatformToolset>v110</PlatformToolset>
+    <ConfigurationType>Application</ConfigurationType>
+    <AppContainerApplication>true</AppContainerApplication>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CppSamplesUtils.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MainPage.xaml.h">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput1.xaml.h">
+      <DependentUpon>ScenarioInput1.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput1.xaml.h">
+      <DependentUpon>ScenarioOutput1.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput2.xaml.h">
+      <DependentUpon>ScenarioInput2.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput2.xaml.h">
+      <DependentUpon>ScenarioOutput2.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput3.xaml.h">
+      <DependentUpon>ScenarioInput3.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput3.xaml.h">
+      <DependentUpon>ScenarioOutput3.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput4.xaml.h">
+      <DependentUpon>ScenarioInput4.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput4.xaml.h">
+      <DependentUpon>ScenarioOutput4.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput5.xaml.h">
+      <DependentUpon>ScenarioInput5.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput5.xaml.h">
+      <DependentUpon>ScenarioOutput5.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioInput6.xaml.h">
+      <DependentUpon>ScenarioInput6.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioOutput6.xaml.h">
+      <DependentUpon>ScenarioOutput6.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ScenarioList.xaml.h">
+      <DependentUpon>ScenarioList.xaml</DependentUpon>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioInput6.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioOutput6.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScenarioList.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\microsoft-sdk.png" />
+    <Image Include="images\placeholder-sdk.png" />
+    <Image Include="images\smallTile-sdk.png" />
+    <Image Include="images\splash-sdk.png" />
+    <Image Include="images\squareTile-sdk.png" />
+    <Image Include="images\storeLogo-sdk.png" />
+    <Image Include="images\windows-sdk.png" />
+    <Image Include="images\toastImageAndText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MainPage.xaml.cpp">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput1.xaml.cpp">
+      <DependentUpon>ScenarioInput1.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput1.xaml.cpp">
+      <DependentUpon>ScenarioOutput1.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput2.xaml.cpp">
+      <DependentUpon>ScenarioInput2.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput2.xaml.cpp">
+      <DependentUpon>ScenarioOutput2.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput3.xaml.cpp">
+      <DependentUpon>ScenarioInput3.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput3.xaml.cpp">
+      <DependentUpon>ScenarioOutput3.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput4.xaml.cpp">
+      <DependentUpon>ScenarioInput4.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput4.xaml.cpp">
+      <DependentUpon>ScenarioOutput4.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput5.xaml.cpp">
+      <DependentUpon>ScenarioInput5.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput5.xaml.cpp">
+      <DependentUpon>ScenarioOutput5.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioInput6.xaml.cpp">
+      <DependentUpon>ScenarioInput6.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioOutput6.xaml.cpp">
+      <DependentUpon>ScenarioOutput6.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ScenarioList.xaml.cpp">
+      <DependentUpon>ScenarioList.xaml</DependentUpon>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NotificationsExtensions\NotificationsExtensions.csproj">
+      <Project>{6e87464b-b064-40ca-8161-7c18c337adff}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

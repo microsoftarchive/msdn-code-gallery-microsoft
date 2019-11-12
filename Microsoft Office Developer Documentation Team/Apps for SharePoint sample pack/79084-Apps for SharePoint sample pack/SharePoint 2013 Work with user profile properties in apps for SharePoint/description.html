@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Work with user profile properties in apps for SharePoint</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Work with user profile properties in apps for SharePoint</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Javascript, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            social computing
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/19/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Work-with-99d43c17">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="header">
+<table id="bottomTable" cellspacing="0" cellpadding="0">
+<tbody>
+<tr id="headerTableRow1">
+<td align="left"><span id="runningHeaderText">&nbsp;</span></td>
+</tr>
+<tr id="headerTableRow2">
+<td align="left"><span id="nsrTitle">SharePoint 2013: Work with user profile properties in apps for SharePoint</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mainSection">
+<div id="mainBody">
+<div>
+<p>This sample app demonstrates how to use JavaScript in an app for SharePoint to retrieve and work with user profile properties, including providing links for viewing and editing user profiles.</p>
+</div>
+<div>
+<p><strong>Last modified: </strong>March 04, 2014</p>
+<p><strong>In this article</strong> <br>
+<a href="#sectionSection0">Description</a> <br>
+<a href="#sectionSection1">Prerequisites</a> <br>
+<a href="#sectionSection2">Key components of the sample</a> <br>
+<a href="#sectionSection3">Configure the sample</a> <br>
+<a href="#sectionSection4">Build the sample</a> <br>
+<a href="#sectionSection5">Run and test the sample</a> <br>
+<a href="#sectionSection6">Troubleshooting</a> <br>
+<a href="#sectionSection7">Change log</a> <br>
+<a href="#sectionSection8">Related content</a></p>
+</div>
+<h1>Description</h1>
+<div id="sectionSection0">
+<p><span>Provided by:</span> <a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=c558e0ed-382f-4008-8002-4634a9167b99" >
+Martin Harwar</a>, <a href="http://point8020.com/Default.aspx" >Point8020</a></p>
+<p>The solution is based on the SharePoint-hosted app template provided by Visual Studio 2012. The solution retrieves the current user's profile by using the
+<strong><span class="keyword">SP.UserProfiles</span></strong> namespace, and displays some of the properties from the profile to the user, along with links for editing and viewing their entire profile.</p>
+</div>
+<h1>Prerequisites</h1>
+<div id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<p>Visual Studio 2012</p>
+</li><li>
+<p>Office Developer Tools for Visual Studio 2012</p>
+</li><li>
+<p>Either of the following:</p>
+<ul>
+<li>
+<p>SharePoint Server 2013 configured to host apps, and with a developer site collection already created; or,</p>
+</li><li>
+<p>Access to an Office 365 developer site configured to host apps.</p>
+</li></ul>
+</li></ul>
+</div>
+<h1>Key components of the sample</h1>
+<div id="sectionSection2">
+<p>The sample app contains the following:</p>
+<ul>
+<li>
+<p>The <strong>Default.aspx</strong> webpage, which is used to present the user profile data and links.</p>
+</li><li>
+<p>The <strong>App.js</strong> file in the <strong>scripts</strong> folder, which is used to retrieve and manage user profile data by using the JavaScript implementation of the client object model (JSOM).</p>
+</li><li>
+<p>The <strong>SP.UserProfiles.js</strong> file. This file is provided by SharePoint Server, and has been added to the
+<strong>scripts</strong> folder. It has also been added as a script link in the Default.aspx page, because that enables the script in App.js to use
+<strong><span class="keyword">UserProfile</span></strong> classes.</p>
+</li><li>
+<p>The <strong>AppManifest.xml</strong> file, which has been edited to specify that the app requests
+<strong>read</strong> permissions for user profiles.</p>
+</li></ul>
+<p>All other files are automatically provided by the Visual Studio project template for apps for SharePoint, and they have not been modified in the development of this sample.</p>
+</div>
+<h1>Configure the sample</h1>
+<div id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<p>Open the <strong><span class="ui">SP_UserProfile_js.sln</span></strong> file using Visual Studio 2012.</p>
+</li><li>
+<p>In the <strong><span class="ui">Properties</span></strong> window, add the full URL to your SharePoint Server 2013 developer site collection or Office 365 developer site to the
+<strong><span class="keyword">Site URL</span></strong> property.</p>
+</li></ol>
+<p>No other configuration is required.</p>
+</div>
+<h1>Build the sample</h1>
+<div id="sectionSection4">
+<p>To build the sample, press CTRL&#43;SHIFT&#43;B.</p>
+</div>
+<h1>Run and test the sample</h1>
+<div id="sectionSection5">
+<p>To run and test the sample, do the following:</p>
+<ol>
+<li>
+<p>Press F5 to run the app.</p>
+</li><li>
+<p>Sign in to your SharePoint Server 2013 developer site collection or Office 365 developer site if you are prompted to do so by the browser.</p>
+</li></ol>
+<p>Figures 1 and 2 show screen shots from the resulting app.</p>
+<strong>
+<div class="caption">Figure 1. App requesting access to user profile objects</div>
+</strong><br>
+<img src="description/image.png" alt="">
+<p><strong>&nbsp;</strong></p>
+<strong>
+<div class="caption">Figure 2. Specific properties and links exposed when Get My Profile is clicked</div>
+</strong><br>
+<img src="description/1b952439-679b-4585-a48b-11aea181f40dimage.png" alt="">
+<p>&nbsp;</p>
+</div>
+<h1>Troubleshooting</h1>
+<div id="sectionSection6">
+<p>Ensure that you have a properly configured SharePoint server that is configured to host apps (with a developer site collection already created), or that you have signed up for an Office 365 developer site configured to host apps.</p>
+</div>
+<h1>Change log</h1>
+<div id="sectionSection7">
+<p>First release: January 30, 2013.</p>
+</div>
+<h1>Related content</h1>
+<div id="sectionSection8">
+<ul>
+<li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp179930.aspx" >Apps for SharePoint overview</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp161179.aspx" >How to: Set up an environment for developing apps for SharePoint on Office 365</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp179923.aspx" >How to: Set up an on-premises development environment for apps for SharePoint</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp142379.aspx" >How to: Create a basic SharePoint-hosted app</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj920104.aspx" >How to: Retrieve user profile properties by using the JavaScript object model in SharePoint 2013</a></p>
+</li><li>
+<p><a href="http://msdn.microsoft.com/en-us/library/jj163201.aspx" >How to: Complete basic operations using JavaScript library code in SharePoint 2013</a></p>
+</li></ul>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

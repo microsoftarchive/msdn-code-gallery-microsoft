@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{c2108ff5-7d30-4522-8740-ac5e552cd817}</ProjectGuid>
+    <RootNamespace>Hilo</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ProjectName>Hilo</ProjectName></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>../CartoonEffect;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CartoonEffect.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\..\CartoonEffect;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BooleanToBrushConverter.h" />
+    <ClInclude Include="CalendarExtensions.h" />
+    <ClInclude Include="CartoonizeImageView.xaml.h">
+      <DependentUpon>CartoonizeImageView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="CartoonizeImageViewModel.h" />
+    <ClInclude Include="CropImageView.xaml.h">
+      <DependentUpon>CropImageView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="CropImageViewModel.h" />
+    <ClInclude Include="DebugLoggingExceptionPolicy.h" />
+    <ClInclude Include="DelegateCommand.h" />
+    <ClInclude Include="DesignTimeData.h" />
+    <ClInclude Include="ExceptionPolicy.h" />
+    <ClInclude Include="ExceptionPolicyFactory.h" />
+    <ClInclude Include="ExifExtensions.h" />
+    <ClInclude Include="FileSystemRepository.h" />
+    <ClInclude Include="FileSizeConverter.h" />
+    <ClInclude Include="HiloCommonDefinitions.h" />
+    <ClInclude Include="HiloPage.h" />
+    <ClInclude Include="HubGroupType.h" />
+    <ClInclude Include="HubPhotoGroup.h" />
+    <ClInclude Include="ImageBase.h" />
+    <ClInclude Include="ImageBrowserView.xaml.h">
+      <DependentUpon>ImageBrowserView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ImageBrowserViewModel.h" />
+    <ClInclude Include="ImageNavigationData.h" />
+    <ClInclude Include="ImageUtilities.h" />
+    <ClInclude Include="ImageView.xaml.h">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ImageViewModel.h" />
+    <ClInclude Include="IMonthBlock.h" />
+    <ClInclude Include="IPhoto.h" />
+    <ClInclude Include="IPhotoGroup.h" />
+    <ClInclude Include="IResizable.h" />
+    <ClInclude Include="IResourceLoader.h" />
+    <ClInclude Include="IYearGroup.h" />
+    <ClInclude Include="LocalResourceLoader.h" />
+    <ClInclude Include="MainHubView.xaml.h">
+      <DependentUpon>MainHubView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MainHubViewModel.h" />
+    <ClInclude Include="MonthBlock.h" />
+    <ClInclude Include="MonthGroup.h" />
+    <ClInclude Include="NullPhotoGroup.h" />
+    <ClInclude Include="ObservableQuery.h" />
+    <ClInclude Include="PageType.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Common\BindableBase.h" />
+    <ClInclude Include="Common\BooleanToVisibilityConverter.h" />
+    <ClInclude Include="Common\BooleanNegationConverter.h" />
+    <ClInclude Include="Common\LayoutAwarePage.h" />
+    <ClInclude Include="Common\RichTextColumns.h" />
+    <ClInclude Include="Common\SuspensionManager.h" />
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Photo.h" />
+    <ClInclude Include="PhotoCache.h" />
+    <ClInclude Include="PhotoPathComparer.h" />
+    <ClInclude Include="QueryChange.h" />
+    <ClInclude Include="RandomPhotoSelector.h" />
+    <ClInclude Include="Repository.h" />
+    <ClInclude Include="RotateImageView.xaml.h">
+      <DependentUpon>RotateImageView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="RotateImageViewModel.h" />
+    <ClInclude Include="TaskExceptionsExtensions.h" />
+    <ClInclude Include="TaskExtensions.h" />
+    <ClInclude Include="ThumbnailGenerator.h" />
+    <ClInclude Include="TileUpdateScheduler.h" />
+    <ClInclude Include="VariableGridView.h" />
+    <ClInclude Include="ViewModelBase.h" />
+    <ClInclude Include="ViewModelLocator.h" />
+    <ClInclude Include="WideFiveImageTile.h" />
+    <ClInclude Include="YearGroup.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ApplicationStyles.xaml" />
+    <Page Include="CartoonizeImageView.xaml" />
+    <Page Include="Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CropImageView.xaml" />
+    <Page Include="ImageBrowserView.xaml" />
+    <Page Include="ImageView.xaml" />
+    <Page Include="MainHubView.xaml" />
+    <Page Include="RotateImageView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Common\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="BooleanToBrushConverter.cpp" />
+    <ClCompile Include="CalendarExtensions.cpp" />
+    <ClCompile Include="CartoonizeImageView.xaml.cpp">
+      <DependentUpon>CartoonizeImageView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="CartoonizeImageViewModel.cpp" />
+    <ClCompile Include="Common\BindableBase.cpp" />
+    <ClCompile Include="Common\BooleanToVisibilityConverter.cpp" />
+    <ClCompile Include="Common\BooleanNegationConverter.cpp" />
+    <ClCompile Include="Common\LayoutAwarePage.cpp" />
+    <ClCompile Include="Common\RichTextColumns.cpp" />
+    <ClCompile Include="Common\SuspensionManager.cpp" />
+    <ClCompile Include="CropImageView.xaml.cpp">
+      <DependentUpon>CropImageView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="CropImageViewModel.cpp" />
+    <ClCompile Include="DebugLoggingExceptionPolicy.cpp" />
+    <ClCompile Include="DelegateCommand.cpp" />
+    <ClCompile Include="DesignTimeData.cpp" />
+    <ClCompile Include="ExceptionPolicyFactory.cpp" />
+    <ClCompile Include="ExifExtensions.cpp" />
+    <ClCompile Include="FileSystemRepository.cpp" />
+    <ClCompile Include="FileSizeConverter.cpp" />
+    <ClCompile Include="HiloPage.cpp" />
+    <ClCompile Include="HubPhotoGroup.cpp" />
+    <ClCompile Include="ImageBase.cpp" />
+    <ClCompile Include="ImageBrowserView.xaml.cpp">
+      <DependentUpon>ImageBrowserView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ImageBrowserViewModel.cpp" />
+    <ClCompile Include="ImageNavigationData.cpp" />
+    <ClCompile Include="ImageUtilities.cpp" />
+    <ClCompile Include="ImageView.xaml.cpp">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ImageViewModel.cpp" />
+    <ClCompile Include="LocalResourceLoader.cpp" />
+    <ClCompile Include="MainHubView.xaml.cpp">
+      <DependentUpon>MainHubView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MainHubViewModel.cpp" />
+    <ClCompile Include="MonthBlock.cpp" />
+    <ClCompile Include="MonthGroup.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Photo.cpp" />
+    <ClCompile Include="PhotoCache.cpp" />
+    <ClCompile Include="PhotoPathComparer.cpp" />
+    <ClCompile Include="RandomPhotoSelector.cpp" />
+    <ClCompile Include="RotateImageView.xaml.cpp">
+      <DependentUpon>RotateImageView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="RotateImageViewModel.cpp" />
+    <ClCompile Include="TaskExtensions.cpp" />
+    <ClCompile Include="ThumbnailGenerator.cpp" />
+    <ClCompile Include="TileUpdateScheduler.cpp" />
+    <ClCompile Include="VariableGridView.cpp" />
+    <ClCompile Include="ViewModelBase.cpp" />
+    <ClCompile Include="ViewModelLocator.cpp" />
+    <ClCompile Include="WideFiveImageTile.cpp" />
+    <ClCompile Include="YearGroup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\ar-SA\Resources.resw" />
+    <PRIResource Include="Strings\de-DE\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <PRIResource Include="Strings\ja-JP\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\HiloLogo.scale-100.png" />
+    <Image Include="Assets\HiloLogo.scale-80.png" />
+    <Image Include="Assets\HiloSmallLogo.scale-100.png" />
+    <Image Include="Assets\HiloSmallLogo.scale-80.png" />
+    <Image Include="Assets\HiloSplash.scale-100.png" />
+    <Image Include="Assets\HiloSplash.scale-100_contrast-black.png" />
+    <Image Include="Assets\HiloSplash.scale-100_contrast-white.png" />
+    <Image Include="Assets\HiloSplash.scale-140.png" />
+    <Image Include="Assets\HiloSplash.scale-180.png" />
+    <Image Include="Assets\HiloStoreLogo.scale-100.png" />
+    <Image Include="Assets\HiloStoreLogo.scale-100_contrast-black.png" />
+    <Image Include="Assets\HiloStoreLogo.scale-100_contrast-white.png" />
+    <Image Include="Assets\HiloStoreLogo.scale-140.png" />
+    <Image Include="Assets\HiloStoreLogo.scale-180.png" />
+    <Image Include="Assets\HiloWideLogo.scale-100.png" />
+    <Image Include="Assets\HiloWideLogo.scale-80.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

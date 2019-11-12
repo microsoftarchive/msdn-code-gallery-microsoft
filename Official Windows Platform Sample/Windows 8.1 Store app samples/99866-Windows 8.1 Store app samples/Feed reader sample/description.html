@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Feed reader sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Feed reader sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            HTML5, Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            JSON, User Interface, web feed
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/16/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Feed-reader-sample-99d68cf8">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This Windows Store app sample demonstrates a basic end-to-end implementation of a news feed reader. It uses a
+<a href="http://msdn.microsoft.com/library/windows/apps/br242878"><b>ListView</b></a> to organize and display articles from various subscriptions specified in a JSON-formatted data file. The data is obtained over a network connection or from a local cache.</p>
+<blockquote><b>Other end-to-end Windows Store app samples:&nbsp;&nbsp;</b><a href="http://msdn.microsoft.com/library/windows/apps/dn263104">End-to-end sample apps</a>.</blockquote>
+<p>Specifically, this sample covers these news reader features and Windows Store app&nbsp;APIs.
+</p>
+<p></p>
+<p>This app includes these news reader features and Windows Store app&nbsp;APIs. </p>
+<ul>
+<li>
+<p>A pannable <a href="http://msdn.microsoft.com/library/windows/apps/br242878"><b>ListView</b></a> page showing the subscribed news feeds and up to 15 articles per subscription.</p>
+<p>Sample: Look at the news.css, news.html, and news.js files in the \pages\news\ folder.</p>
+</li><li>
+<p>A section page showing all available articles in the selected subscription.</p>
+<p>Sample: See feed.css, feed.html, and feed.js files in the \pages\feed\ folder.</p>
+</li><li>
+<p>A detail page showing the content of the article selected from the <a href="http://msdn.microsoft.com/library/windows/apps/br242878">
+<b>ListView</b></a> or section page.</p>
+<p>Sample: Examine article.css, article.html, and article.js files in the \pages\article\ folder.</p>
+</li><li>
+<p>A subscription page showing all available news feeds. Users can subscribe to a news feed by selecting it.
+</p>
+<p>Sample: </p>
+<ul>
+<li>Look at the subscriptions.css, subscriptions.html, and subscriptions.js files in the \pages\subscriptions\ folder and the feedCollection.json file in the Project folder.
+</li><li>For default subscriptions, see <code>var defaultSubscriptions = [&quot;Engadget&quot;, &quot;Windows App Builder Blog&quot;];</code> in io.js in the \js folder.
+</li><li>Maximum subscriptions and articles are specified by <code>// Constants defining limits of the ListView. WinJS.Namespace.define(&quot;ListViewLimits&quot;, { subLimit: 10, maxItems: 15 });</code> in default.js in the \js folder.
+</li></ul>
+<p></p>
+</li><li>
+<p>Data structure representing the available newsfeeds, subscribed newsfeeds, and news articles.
+</p>
+<p>Sample: See data.js in the \js folder.</p>
+</li><li>
+<p>Loading, formatting, and displaying of news reader data. </p>
+<p>Sample: Review io.js and render.js files in the \js folder.</p>
+</li></ul>
+<p>Here are some general Windows Store app features demonstrated by this app.</p>
+<ul>
+<li>
+<p>Splash screen on start up.</p>
+<p>Sample: Check <code>SplashScreen</code> in the package.appxmanifest file in the Project folder and splashscreen.png in the \images folder.</p>
+</li><li>
+<p>Single page architecture.</p>
+<p>Sample: Inspect the <code>&lt;div id=&quot;contenthost&quot; data-win-control=&quot;Application.PageControlNavigator&quot; data-win-options=&quot;{home: '/pages/news/news.html'}&quot;&gt;&lt;/div&gt;</code> element in default.html, and navigator.js in the \js folder.</p>
+</li><li>
+<p>App bar with <b>Refresh</b> command and Nav bar with a link to a <b>Subscriptions</b> page.
+</p>
+<p>Sample: Examine the <code>&lt;div id=&quot;appbar&quot; data-win-control=&quot;WinJS.UI.AppBar&quot;&gt;</code> node in default.html.</p>
+</li><li>
+<p>Semantic Zoom to view the subscribed news feeds or individual articles for the selected news feed.
+</p>
+<p>Sample: View the <code>&lt;div id=&quot;articlesListViewArea&quot; data-win-control=&quot;WinJS.UI.SemanticZoom&quot;&gt;</code> and
+<code>&lt;div id=&quot;articlesListView-out&quot; aria-label=&quot;List of feeds&quot; data-win-control=&quot;WinJS.UI.ListView&quot; data-win-options=&quot;{ selectionMode: 'none', tapBehavior: 'invokeOnly', swipeBehavior: 'none' }&quot;&gt;</code> nodes in news.html and the initializeLayout function
+ in news.js, both of which are in the \pages\news folder.</p>
+</li><li>
+<p>Adaptive layouts to rearrange content when the app is resized.</p>
+<p>Sample: Review article.css in the \pages\article folder and feed.css in the \pages\feed folder.</p>
+</li></ul>
+<p></p>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2013, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301697">
+Visual Studio&nbsp;2013</a>.</p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;For Windows&nbsp;8 app samples, download the <a href="http://go.microsoft.com/fwlink/p/?LinkId=301698">
+Windows&nbsp;8 app samples pack</a>. The samples in the Windows&nbsp;8 app samples pack will build and run only on Microsoft Visual Studio&nbsp;2012.</p>
+<p></p>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><b>Samples</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/dn263104">End-to-end sample apps</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows app samples</a>
+</dt><dt><b>Conceptual</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465382">Adding ListView controls</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh761500">Navigation design for Windows Store apps</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br211370">Connecting to networks and web services (JavaScript)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465399">Developing connected applications</a>
+</dt><dt><b>Tasks</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465346">Quickstart: Adding a splash screen</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452768">Quickstart: Using single-page navigation</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465309">Quickstart: adding an app bar with commands</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh465492">Quickstart: adding a SemanticZoom</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/jj150600">Quickstart: Defining app layouts</a>
+</dt><dt><b>Reference (feeds)</b> </dt><dt><a href="http://go.microsoft.com/fwlink/?LinkID=308896">JSON Object </a></dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br225998"><b>Uri</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br243456"><b>SyndicationClient</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br207293"><b>NetworkInformation</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh701482"><b>ReadTextAsync</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh700824"><b>readText</b></a>
+</dt><dt><b>Reference (general)</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229774"><b>WinJS.Application Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229776"><b>WinJS.Class Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229783"><b>WinJS.Utilities Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br212652"><b>WinJS.Namespace Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229778"><b>WinJS.Navigation Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br224766"><b>Windows.ApplicationModel.Activation Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229775"><b>WinJS.Binding Namespace</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br211867"><b>WinJS.Promise</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br211837"><b>ListView</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229723"><b>Template</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br229690"><b>SemanticZoom</b></a>
+</dt></dl>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2><a id="build"></a><a id="BUILD"></a></h2>
+<ol>
+<li>Start Visual Studio&nbsp;2013 and select <b>File</b> &gt; <b>Open</b> &gt; <b>Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio&nbsp;2013 Solution (.sln) file.
+</li><li>Press F7 or use <b>Build</b> &gt; <b>Build Solution</b> to build the sample. </li></ol>
+<h2>Run the sample</h2>
+<h2><a id="run"></a><a id="RUN"></a></h2>
+<ol>
+<li>Open the sample's project in Visual Studio&nbsp;2013. </li><li>To debug the app and then run it, press F5 or use <b>Debug</b> &gt; <b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use
+<b>Debug</b> &gt; <b>Start Without Debugging</b>. </li></ol>
+<p>App highlights:</p>
+<ul>
+<li>When the app starts for the first time, the main page displays two default feed subscriptions with articles.
+</li><li>Use Semantic Zoom to switch between subscription views. Zoom out by pinching (click the Minus button in the lower right corner with the mouse, Ctrl&#43;Minus key with a keyboard) and zoom in by stretching (click a subscription with the mouse, Ctrl&#43;Plus key
+ with a keyboard). </li><li>Swipe from the top edge of the display (or right-click with a mouse, Windows Logo Key&#43;Z or menu key with a keyboard) to display the Nav bar and the App bar.
+</li><li>Use the <b>Refresh</b> command on the App bar to sync the subscriptions. </li><li>Use the <b>Subscriptions</b> page link on the Nav bar to view the <b>Subscriptions</b> page. Select feeds to subscribe to and display on the main page. Tap
+<b>Done</b> when finished. </li><li>Use Semantic Zoom to switch between feed views on the <b>Subscriptions</b> page. Zoom out by pinching (click the Minus button in the lower right corner with the mouse, Ctrl&#43;Minus key with a keyboard) and zoom in by stretching (click a feed with the mouse,
+ Ctrl&#43;Plus key with a keyboard). </li></ul>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

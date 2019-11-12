@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.PersonalityAnimations.CPP" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>PersonalityAnimations CPP sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Assets\storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="PersonalityAnimations.App" Executable="$targetnametoken$.exe" EntryPoint="PersonalityAnimations.App">
+      <VisualElements DisplayName="PersonalityAnimations CPP sample" Logo="Assets\squareTile-sdk.png" SmallLogo="Assets\smallTile-sdk.png" Description="PersonalityAnimations CPP sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <DefaultTile ShortName="ShortName CPP" ShowName="allLogos" />
+        <SplashScreen Image="Assets\splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

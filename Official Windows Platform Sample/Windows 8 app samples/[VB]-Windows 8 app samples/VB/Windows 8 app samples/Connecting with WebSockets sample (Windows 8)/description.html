@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=71AE1851B6C794DEF5BD9BC8F835D0EE" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/47c63455-7231-44b0-b4ee-e4560979780cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C91CC0BBB362C4840AF9553071016400" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Connecting with WebSockets sample (Windows 8)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/dc4f56b3-224a-4dd7-a435-210da682eb66Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Connecting with WebSockets sample (Windows 8)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/Connecting-with-WebSockets-46a868e7">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates how to use WebSockets in a connected Windows Store app. The sample covers basic functionality such as making a connection, sending and receiving data, and closing the connection. The sample also shows recommended ways of handling
+ both trusted (hard coded) URI inputs and unvalidated (user-entered) URI inputs. </p>
+<p>Windows&nbsp;8 provides support for both client and server use of WebSockets. The <a href="http://msdn.microsoft.com/library/windows/apps/br226960">
+<b>Windows.Networking.Sockets</b></a> namespace defines two types of WebSocket objects for use by clients in Windows Store apps.
+</p>
+<ul>
+<li><a href="http://msdn.microsoft.com/library/windows/apps/br226842"><b>MessageWebSocket</b></a> is suitable for typical scenarios where messages are not extremely large. Both UTF-8 and binary messages are supported.
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br226923"><b>StreamWebSocket</b></a> is more suitable for scenarios in which large files (such as photos or movies) are being transferred, allowing sections of a message to be read with each read operation
+ rather than reading the entire message at once. Only binary messages are supported.
+</li></ul>
+Both <a href="http://msdn.microsoft.com/library/windows/apps/br226842"><b>MessageWebSocket</b></a> and
+<a href="http://msdn.microsoft.com/library/windows/apps/br226923"><b>StreamWebSocket</b></a> connections are demonstrated in this sample.
+<p></p>
+<p>Versions of this sample are provided in JavaScript, C#, VB, and C&#43;&#43;. </p>
+<p>To obtain an evaluation copy of Windows&nbsp;8, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241655">
+Windows&nbsp;8</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2012, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241656">
+Visual Studio&nbsp;2012</a>.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><b>Other resources</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452752">Adding support for networking</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh761442">Connecting with WebSockets</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh761443">Quickstart: Connecting with a MessageWebSocket</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh761445">Quickstart: Connecting with a StreamWebSocket</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt><dt><b>Reference</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226842"><b>MessageWebSocket</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226923"><b>StreamWebSocket</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a>
+</dt></dl>
+<h3>Related technologies</h3>
+<a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<ol>
+<li>Start Visual Studio&nbsp;2012 and select <b>File &gt; Open &gt; Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file.
+</li><li>Press F6 or use <b>Build &gt; Build Solution</b> to build the sample. </li></ol>
+<h3>Run the sample</h3>
+<p>This sample requires that a web server that supports WebSockets is available for the app to access for sending and receiving data. The web server must be started before the app is run. The web server must also have a
+<i>WebSocketSample</i> path available. The sample includes a PowerShell script that will install IIS on the local computer, create the
+<i>WebSocketSample</i> folder on the server, and copy a file to this folder. </p>
+<p>The easiest way to run the sample is to use the provided PowerShell scripts. Browse to the
+<i>Server</i> folder in your sample folder to setup and start the web server for WebSockets. There are two options possible.</p>
+<p></p>
+<ul>
+<li>Start PowerShell elevated (Run as administrator) and run the following command:
+<p><b>.\SetupScript.ps1</b></p>
+<p>Note that you may also need to change script execution policy. </p>
+</li><li>Start an elevated Command Prompt (Run as administrator) and run following command:
+<p><b>PowerShell.exe -ExecutionPolicy Unrestricted -File SetupServer.ps1</b></p>
+</li></ul>
+<p></p>
+<p>When the web server is not needed anymore, please browse to the <i>Server</i> folder in your sample folder and run one of the following:</p>
+<p></p>
+<ul>
+<li>Start PowerShell elevated (Run as administrator) and run the following command:
+<p><b>.\RemoveScript.ps1</b></p>
+<p>Note that you may also need to change script execution policy. </p>
+</li><li>Start an elevated Command Prompt (Run as administrator) and run following command:
+<p><b>PowerShell.exe -ExecutionPolicy Unrestricted -File RemoveScript.ps1</b></p>
+</li></ul>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;This sample does not require that any network capabilities are enabled. However, if you modify the sample to connect to a server located on the Internet or an intranet, the corresponding network capability must be set. For more
+ information, see <a href="http://msdn.microsoft.com/library/windows/apps/hh770532">
+How to configure network isolation capabilities</a> .</p>
+<p>The sample can run using any web server that supports WebSockets, not only the one provided with the sample. In this case, running the previous scripts are not required. However, this requires some special configuration of the server to create the
+<i>WebSocketSample</i> folder and copy a file to this folder. The sample must also be updated if run against a non-localhost web server:
+</p>
+<p>To configure the sample for use with a different web server:</p>
+<dl><dd>Copy the <i>Server\webSite</i> directory to the <i>WebSocketSample</i> folder on the web server and configure the server to support WebSockets.
+</dd><dd>Additional capabilities may need to be added. For example, &quot;Home or Work Networking&quot; if the web server is located on a local intranet.
+</dd><dd>The target URI field should be updated. This is changed in JavaScript by editing the HTML files so that the serverAddress input is enabled (disabled=&quot;disabled&quot; attribute is removed) and the serverAddress value that contains the URI to the web server has
+ the hostname or IP address of the web server substituted for localhost. This is changed in other languages by editing the XAML files so that the ServerAddressField TextBox is enabled (IsEnabled=&quot;true&quot;) and the ServerAddressField TextBox that contains the URI
+ to the web server has the hostname or IP address of the web server substituted for localhost.
+</dd></dl>
+<p class="note"><b>Note</b>&nbsp;&nbsp;IIS is not available on ARM builds. Instead, set up the web server on a separate 64-bit or 32-bit computer and follow the steps for using the sample against a non-localhost web server.
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;When used with the supplied scripts, this sample communicates with another process on the same machine (IIS server on loopback) for demonstration purposes only. Communicating over loopback to other processes is not permitted in
+ Windows Store apps and such apps would not pass Store validation. </p>
+<p></p>
+<p>To deploy this app after building it, select <b>Deploy Solution</b> from the <b>
+Build</b> menu. A tile for the sample will be available on the Start Screen. To both deploy and run the sample, press F5 (run with debugging enabled) or Ctrl&#43;F5 (run without debugging enabled) from Visual Studio&nbsp;2012 (any SKU). (Or select the corresponding
+ options from the Debug menu.) </p>
+<p>After the web server has started, start the app on the local computer. </p>
+<dl><dd>A tile to start the app will be available on the Start Screen. </dd></dl>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

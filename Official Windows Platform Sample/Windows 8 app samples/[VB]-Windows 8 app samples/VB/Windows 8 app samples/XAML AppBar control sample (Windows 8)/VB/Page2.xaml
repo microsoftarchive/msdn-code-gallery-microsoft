@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="AppBarControl.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppBarControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFFF4B07">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="PageTwo" Text="This is Page Two" FontSize="30" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="UseAppBar" Text="(use AppBar to go back)" FontSize="20" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>

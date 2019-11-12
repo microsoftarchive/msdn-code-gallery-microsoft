@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Hyper-V virtual Fiber Channel sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Hyper-V virtual Fiber Channel sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Hyper-V
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Hyper-V-virtual-Fiber-35d27dcd">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates how to use the Hyper-V WMI Fiber Channel APIs to create, configure, and remove storage area networks and virtual Fiber Channel ports. The sample demonstrates how to perform each of the following operations:</p>
+<ul>
+<li>Create a virtual storage area network (SAN) and assign resources to it using the
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/jj203725"><b>CreatePool</b></a> method.
+</li><li>Delete a virtual SAN using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/jj203726">
+<b>DeletePool</b></a> method. </li><li>Modify the settings of a virtual SAN using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/jj203728">
+<b>ModifyPoolSettings</b></a> method. </li><li>Modify the resources assigned to a virtual SAN using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/jj203727">
+<b>ModifyPoolResources</b></a> method. </li><li>Create a virtual Fiber Channel port for a virtual machine using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh850020">
+<b>Msvm_VirtualSystemManagementService.AddResourceSettings</b></a> method. </li><li>Delete a virtual Fiber Channel port from a virtual machine using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh850278">
+<b>Msvm_VirtualSystemManagementService.RemoveResourceSettings</b></a> method. </li><li>Configure the world wide name generator to generate world wide names in a specified range using the
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh850102"><b>Msvm_VirtualSystemManagementService.ModifyServiceSettings</b></a> method to modify the
+<b>MinimumWWPNAddress</b>, <b>MaximumWWPNAddress</b>, and (optionally) <b>CurrentWWNNAddress</b> properties of the
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh850254"><b>Msvm_VirtualSystemManagementServiceSettingData</b></a> class.
+</li><li>Enumerate the virtual Fiber Channel ports for a virtual machine using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh859772">
+<b>Msvm_FcPortAllocationSettingData</b></a> and <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh859768">
+<b>Msvm_ExternalFcPort</b></a> classes. </li></ul>
+<p></p>
+<p>This sample is written in C# and requires some experience with WMI programming.</p>
+<p>The Windows Samples Gallery contains a variety of code samples that demonstrate the use of various new programming features for managing Hyper-V that are available in Windows&nbsp;8.1 and/or Windows Server&nbsp;2012&nbsp;R2. These downloadable samples are provided as compressed
+ ZIP files that contain a Microsoft Visual Studio&nbsp;2010 solution (SLN) file for the sample, along with the source files, assets, resources, and metadata necessary to successfully compile and run the sample. For more information about the programming models,
+ platforms, languages, and APIs demonstrated in this sample, please refer to the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh850319">
+Hyper-V WMI provider (V2)</a> documentation.</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<h3>Related technologies</h3>
+<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh859763">Hyper-V virtual Fiber Channels API</a>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<ol>
+<li>
+<p>Start Visual Studio&nbsp;2010 and select <b>File</b> &gt; <b>Open</b> &gt; <b>Project/Solution</b>.</p>
+</li><li>
+<p>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file titled FibreChannel.sln.</p>
+</li><li>
+<p>Press F7 (or F6 for Microsoft Visual Studio&nbsp;2013) or use <b>Build</b> &gt; <b>
+Build Solution</b> to build the sample.</p>
+</li></ol>
+<h3>Run the sample</h3>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;This sample must be run as an administrator.</p>
+<p></p>
+<p>This sample can be run in several different modes. To obtain a list of the operations, use the following command line:</p>
+<p><b>FibreChannelSamples.exe /?</b></p>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+<h3><a id="Create_a_virtual_SAN"></a><a id="create_a_virtual_san"></a><a id="CREATE_A_VIRTUAL_SAN"></a>Create a virtual SAN</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe CreateSan </b><i>SanName</i><b> (</b><i>WWPN</i><b>
+</b><i>WWNN</i><b> &#43;) </b>[<i>&quot;SAN Notes&quot;</i>]</p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>SanName</i> is the name to be applied to the SAN. </li><li><i>WWPN</i> is the port name and <i>WWNN</i> is the node name for the SAN. You can include one or more pairs of these arguments in sequence.
+</li><li><i>SAN Notes</i> are the notes for the SAN. The notes must be contained inside of quotation marks. This parameter is optional and a standard note will be added if it is not specified.
+</li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Delete_a_virtual_SAN"></a><a id="delete_a_virtual_san"></a><a id="DELETE_A_VIRTUAL_SAN"></a>Delete a virtual SAN</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe DeleteSan </b><i>SanName</i></p>
+<p>where <i>SanName</i> is the name of the SAN to delete.</p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Modify_the_settings_of_a_virtual_SAN"></a><a id="modify_the_settings_of_a_virtual_san"></a><a id="MODIFY_THE_SETTINGS_OF_A_VIRTUAL_SAN"></a>Modify the settings of a virtual SAN</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe ModifySanName </b><i>SanName</i><b> </b><i>NewSanName</i></p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>SanName</i> is the current name of the SAN to be modified. </li><li><i>NewSanName</i> is the new name to be applied to the SAN. </li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Modify_the_resources_assigned_to_a_virtual_SAN"></a><a id="modify_the_resources_assigned_to_a_virtual_san"></a><a id="MODIFY_THE_RESOURCES_ASSIGNED_TO_A_VIRTUAL_SAN"></a>Modify the resources assigned to a virtual SAN</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe ModifySanPorts </b><i>SanName</i><b> (</b><i>WWPN</i><b>
+</b><i>WWNN</i><b> &#43;)</b></p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>SanName</i> is the name of the SAN to be modified. </li><li><i>WWPN</i> is the new port name and <i>WWNN</i> is the new node name to be applied to the SAN. You can include one or more pairs of these arguments in sequence.
+</li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Create_a_virtual_Fiber_Channel_port_for_a_virtual_machine"></a><a id="create_a_virtual_fiber_channel_port_for_a_virtual_machine"></a><a id="CREATE_A_VIRTUAL_FIBER_CHANNEL_PORT_FOR_A_VIRTUAL_MACHINE"></a>Create a virtual Fiber Channel port for
+ a virtual machine</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe CreateVirtualFcPort </b><i>VmName</i><b> </b><i>SanName</i><b>
+</b>[<i>WWPN-A</i>|<i>WWNN-A</i>|<i>WWPN-B</i>|<i>WWNN-B</i>]</p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>VmName</i> is the name of the virtual machine to create the virtual Fiber Channel port for.
+</li><li><i>SanName</i> is the name of the SAN. </li><li><i>WWPN-A</i> <i>WWNN-A</i> <i>WWPN-B</i> <i>WWNN-B</i> are the port and node names for the virtual Fiber Channel port. These arguments are optional. If they are not included, these names will be auto-generated.
+</li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Delete_a_virtual_Fiber_Channel_port_from_a_virtual_machine"></a><a id="delete_a_virtual_fiber_channel_port_from_a_virtual_machine"></a><a id="DELETE_A_VIRTUAL_FIBER_CHANNEL_PORT_FROM_A_VIRTUAL_MACHINE"></a>Delete a virtual Fiber Channel port
+ from a virtual machine</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe DeleteVirtualFcPort </b><i>VmName</i><b> </b><i>WWPN-A</i><b>
+</b><i>WWNN-A</i><b> </b><i>WWPN-B</i><b> </b><i>WWNN-B</i></p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>VmName</i> is the name of the virtual machine to delete the virtual Fiber Channel port from.
+</li><li><i>WWPN-A</i> <i>WWNN-A</i> <i>WWPN-B</i> <i>WWNN-B</i> are the port and node names of the virtual Fiber Channel port to delete.
+</li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Configure_the_world_wide_name_generator"></a><a id="configure_the_world_wide_name_generator"></a><a id="CONFIGURE_THE_WORLD_WIDE_NAME_GENERATOR"></a>Configure the world wide name generator</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe ConfigureWwnGenerator </b><i>Min WWPN</i><b> </b><i>Max WWPN</i><b>
+</b><i>New WWNN</i></p>
+<p>where the parameters are as follows:</p>
+<ul>
+<li><i>Min WWPN</i> is the new minimum world wide port name to use for the <b>MinimumWWPNAddress</b> property.
+</li><li><i>Max WWPN</i> is the new maximum world wide port name to use for the <b>MaximumWWPNAddress</b> property.
+</li><li><i>New WWNN</i> is the world wide node name to use for the <b>CurrentWWNNAddress</b> property.
+</li></ul>
+<p></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+<h3><a id="Enumerate_the_virtual_Fiber_Channel_ports_for_a_virtual_machine"></a><a id="enumerate_the_virtual_fiber_channel_ports_for_a_virtual_machine"></a><a id="ENUMERATE_THE_VIRTUAL_FIBER_CHANNEL_PORTS_FOR_A_VIRTUAL_MACHINE"></a>Enumerate the virtual
+ Fiber Channel ports for a virtual machine</h3>
+<p>To run this sample in this mode, follow these steps.</p>
+<ol>
+<li>
+<p>Enter the debug command line arguments for the project. The usage of this sample is:</p>
+<p><b>FibreChannelSamples.exe EnumerateFcPorts</b></p>
+</li><li>
+<p>To debug the app and then run it from Visual Studio&nbsp;2010, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>.</p>
+</li><li>The final result of the operation will be displayed in the console window. </li></ol>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

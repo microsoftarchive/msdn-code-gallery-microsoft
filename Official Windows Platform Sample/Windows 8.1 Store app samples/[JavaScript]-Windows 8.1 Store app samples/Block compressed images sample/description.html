@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/67b74b86-a273-4ad7-9ed5-0f97276412eaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Block compressed images sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Block compressed images sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            DirectX, Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            DDS files, block compressed images
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/25/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/BlockCompressedImages-19830098">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>Demonstrates how to create and use block compressed images (DDS files) in a Windows Store app.
+</p>
+<dl><dt><a id="How_to_use_this_sample"></a><a id="how_to_use_this_sample"></a><a id="HOW_TO_USE_THIS_SAMPLE"></a>How to use this sample
+</dt><dd>
+<p>This sample project uses block compressed (DDS) images that are generated by the ImageContentPipeline C&#43;&#43; project. Before running the this sample, you must first perform the following steps:</p>
+<ol>
+<li>In <b>Solution Explorer</b>, right click on the <b>ImageContentPipeline C&#43;&#43; project</b> and select
+<b>Build</b>. This project has the ImageContentTask custom build step set up to convert guitar-transparent.png and oldWood4_nt.jpg (in the
+<b>OriginalAssets</b> folder) to block compressed (DDS) form in the <b>BlockCompressedAssets</b> folder.
+<p class="note"><b>Note</b>&nbsp;&nbsp;You can view the ImageContentTask settings by right clicking on one of the images and selecting
+<b>Properties</b>.</p>
+</li><li>In <b>Solution Explorer</b>, right click on the <b>BlockCompressedAssets folder</b> &gt;
+<b>Add</b> &gt; <b>Existing Item</b>. </li><li>Navigate to the <b>BlockCompressedAssets folder</b> and add the two DDS images. (guitar-transparent.dds and oldWood4_nt.dds)
+</li></ol>
+</dd><dt><a id="About_block_compressed_images_in__"></a><a id="about_block_compressed_images_in__"></a><a id="ABOUT_BLOCK_COMPRESSED_IMAGES_IN__"></a>About block compressed images in Windows Store apps:
+</dt><dd>
+<p>Block compression is a technique for reducing GPU memory consumption of image assets, as described in
+<a href="http://msdn.microsoft.com/library/windows/apps/bb694531">Block Compression (Direct3D 10)</a>. Any Microsoft Visual Studio C&#43;&#43; project may be used to generate block compressed images by adding the
+<b>ImageContentTask build customization</b> to the project, as described in <a href="http://msdn.microsoft.com/library/windows/apps/hh972446">
+Using 3-D Assets in Your Game or App</a>. Windows Store app can support DDS files using the following block compression formats:</p>
+<ul>
+<li>BC1_UNORM (for opaque or 1 bit transparency images) </li><li>BC2_UNORM (for images with transparency) </li><li>BC3_UNORM (for images with transparency that is spatially correlated) </li></ul>
+<p>In addition, the following restrictions must be observed:</p>
+<ul>
+<li>Select <b>Yes</b> for the <b>Convert to pre-multiplied alpha format</b> option in Visual Studio.
+</li><li>Select <b>No</b> for the <b>Generate Mips</b> option in Visual Studio. </li><li>The image must be a multiple of 4 pixels in width and height. </li></ul>
+</dd><dt><a id="Generating_your_own_image_assets"></a><a id="generating_your_own_image_assets"></a><a id="GENERATING_YOUR_OWN_IMAGE_ASSETS"></a>Generating your own image assets
+</dt><dd>
+<p>The <b>ImageContentPipeline</b> project has been customized to make DDS asset creation more convenient:</p>
+<ul>
+<li>
+<p>By default, any new images that are set as Item Type = Image Content Pipeline will use premultiplied alpha and will not generate mipmaps. This matches the requirements of Windows Store apps.
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;You still must select a valid compression mode (BC1_UNORM, BC2_UNORM, or BC3_UNORM) and ensure that your image is a multiple of 4 pixels in width and height.</p>
+<p></p>
+<p>The project output directory is set to <b>BlockCompressedAssets</b> regardless of platform or configuration.</p>
+</li></ul>
+</dd></dl>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><a href="http://msdn.microsoft.com/library/windows/apps/bb694531">Block Compression (Direct3D 10)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh972446">Using 3-D Assets in Your Game or App</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows app samples</a>
+</dt></dl>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p></p>
+<ol>
+<li>Start Visual Studio&nbsp;2013 and select <b>File</b> &gt; <b>Open</b> &gt; <b>Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio&nbsp;2013 Solution (.sln) file.
+</li><li>Press F7 or use <b>Build</b> &gt; <b>Build Solution</b> to build the sample. </li></ol>
+<p></p>
+<h2>Run the sample</h2>
+<p>To debug the app and then run it, press F5 or use <b>Debug</b> &gt; <b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use
+<b>Debug</b> &gt; <b>Start Without Debugging</b>. </p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

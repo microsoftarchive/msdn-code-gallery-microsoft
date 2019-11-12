@@ -1,0 +1,5 @@
+﻿/* Styles used for enabling scroll chaining   */ 
+.scrollChaining {
+    -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+}

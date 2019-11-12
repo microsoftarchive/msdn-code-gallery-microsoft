@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>d794f0bc-4e95-4981-a113-c8a83ca1d188</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="decoder.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="decoder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="decoder.cpp" />
+    <ClCompile Include="Dll.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MPEG1Decoder.idl" />
+  </ItemGroup>
+</Project>

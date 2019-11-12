@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="ShaderCompiler.DirectXPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShaderCompiler"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="SampleOverlay" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image Source="windowstitle-sdk.png" Width="64" Height="64" Margin="8,8,0,0"></Image>
+            <TextBlock Margin="8,14,8,0" FontSize="36" FontFamily="Segoe UI" FontWeight="Light">HLSL Shader Compiler</TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="290"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Margin="8,8,8,0" VerticalAlignment="Bottom" FontSize="20">Header</TextBlock>
+                <TextBox x:Name="HeaderCodeTextBox" Grid.Row="1" Margin="8" FontFamily="Consolas" IsReadOnly="True"></TextBox>
+                <TextBlock Grid.Row="2" Margin="8,8,8,0" VerticalAlignment="Bottom" FontSize="20">Source</TextBlock>
+                <ScrollViewer Grid.Row="3" Margin="8" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <TextBox x:Name="SourceCodeTextBox" FontFamily="Consolas" TextChanged="SourceCodeTextChanged"></TextBox>
+                </ScrollViewer>
+                <TextBlock Grid.Row="4" Margin="8,8,8,0" VerticalAlignment="Bottom" FontSize="20">Linkage Toggles</TextBlock>
+                <ScrollViewer Grid.Row="5" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton x:Name="LightingToggleButton" Margin="8" IsChecked="True" Click="ToggleButtonClick">Lighting</ToggleButton>
+                        <ToggleButton x:Name="FogToggleButton" Margin="8" Click="ToggleButtonClick">Depth Fog</ToggleButton>
+                        <ToggleButton x:Name="GrayscaleToggleButton" Margin="8" Click="ToggleButtonClick">Grayscale</ToggleButton>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Margin="8,8,8,0" VerticalAlignment="Bottom" FontSize="20">Output</TextBlock>
+                <ScrollViewer x:Name="OutputTextBoxScrollViewer" Grid.Row="1" Margin="8" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <TextBox x:Name="OutputTextBox" FontFamily="Consolas" FontSize="12" IsReadOnly="True"></TextBox>
+                </ScrollViewer>
+                <ToggleButton x:Name="BenchmarkToggleButton" Grid.Row="2" Margin="8" Click="ToggleButtonClick">Benchmark</ToggleButton>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Margin="8,8,8,0" VerticalAlignment="Bottom" FontSize="20">Preview</TextBlock>
+                <SwapChainPanel x:Name="PreviewPanel" Grid.Row="1" Margin="8" SizeChanged="PreviewPanelSizeChanged"></SwapChainPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

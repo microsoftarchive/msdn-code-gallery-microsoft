@@ -1,0 +1,60 @@
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//// PARTICULAR PURPOSE.
+////
+//// Copyright (c) Microsoft Corporation. All rights reserved
+
+import "Windows.Media.idl";
+import "Windows.Media.MediaProperties.idl";
+
+#include <sdkddkver.h>
+
+namespace Microsoft.Samples.SimpleCommunication
+{
+    runtimeclass StspMediaSink;
+    runtimeclass InitializeOperation;
+    runtimeclass IncomingConnectionEventArgs;
+
+    interface IStspMediaSink;
+
+    [version(NTDDI_WIN8), uuid(0D506D03-5DA6-4C43-B9D6-340D64B11BA9)]
+    delegate HRESULT IncomingConnectionHandler([in] StspMediaSink *sender, [in] IncomingConnectionEventArgs *args);
+
+    [version(NTDDI_WIN8), uuid(D4E22811-AD92-4EA7-82C1-231DDB7995F0), exclusiveto(StspMediaSink)]
+    interface IStspMediaSink : IInspectable
+    {
+        HRESULT Close();
+        HRESULT InitializeAsync(
+            [in] Windows.Media.MediaProperties.IMediaEncodingProperties *audioEncodingProperties, 
+            [in] Windows.Media.MediaProperties.IMediaEncodingProperties *videoEncodingProperties, 
+            [out, retval] InitializeOperation **asyncInfo);
+
+        [eventadd] HRESULT IncomingConnectionEvent([in] IncomingConnectionHandler *handler, [out, retval] EventRegistrationToken *cookie);
+        [eventremove] HRESULT IncomingConnectionEvent([in] EventRegistrationToken cookie);
+    }
+
+    [version(NTDDI_WIN8), activatable(NTDDI_WIN8)]
+    runtimeclass StspMediaSink {
+        [default] interface IStspMediaSink;
+        interface Windows.Media.IMediaExtension;
+    }
+
+    [version(NTDDI_WIN8), uuid(1BEC93D8-227A-4ACF-B813-94FB722DAACD), exclusiveto(IncomingConnectionEventArgs)]
+    interface IIncomingConnectionEventArgs : IInspectable
+    {
+        [propget] HRESULT RemoteUrl([out,retval]HSTRING *value);
+        HRESULT Accept();
+        HRESULT Refuse();
+    }
+
+    [version(NTDDI_WIN8)]
+    runtimeclass InitializeOperation {
+        [default] interface Windows.Foundation.IAsyncAction;
+    }
+
+    [version(NTDDI_WIN8)]
+    runtimeclass IncomingConnectionEventArgs {
+        [default] interface IIncomingConnectionEventArgs;
+    }
+}

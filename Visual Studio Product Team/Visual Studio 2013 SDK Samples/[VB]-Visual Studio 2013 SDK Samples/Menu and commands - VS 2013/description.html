@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Menu and commands - VS 2013</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Menu and commands - VS 2013</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Extensibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Microsoft Visual Studio 2013 SDK, Microsoft Visual Studio 2013 SDK
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/29/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Menu-and-commands-VS-2013-71c62827">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample demonstrates how to create menu and command items and visualize them inside Visual Studio&rsquo;s menus and toolbars.
+<br>
+<br>
+</p>
+<h3>Goals</h3>
+<ul>
+<li>Adding a menu item / command to Visual Studio and handling it </li><li>Placing commands in various places (Solution Explorer toolbar, custom toolbar, Tools menu, editor context menu)
+</li><li>Dynamic text in menu items </li><li>Associating a keybinding (keyboard shortcut) to a menu item </li></ul>
+<p><br>
+The main focus of this sample is the VSCT file containing the definition of these elements. The code is minimal. The event handler functions that are called when the user executes the commands simply write a message on the Output window. The only exceptions
+ are the callback for the menu items with dynamic properties (text or visibility). In this case, the properties will be changed according to some logic.<br>
+<br>
+This sample is organized into four main areas:</p>
+<ol>
+<li>How to create simple menu and command items. </li><li>How to place them inside other elements provided by other packages (for example, default Visual Studio menus or toolbars) or by this same package.
+</li><li>How to modify the text or the visibility of a command at runtime. </li><li>How to associate a keyboard accelerator to a command. </li></ol>
+<p><br>
+Inside the VSCT file, the command definition section defines a new toolbar, some menu groups, and a few commands. This section contains all the interesting parts about areas 1 and 3. The button subsection of the command definition section includes the usage
+ of different visibility flags. These flags allow us to tell Visual Studio that we want to programmatically change a specific set of command properties when our package is loaded.<br>
+<br>
+The second section in the VSCT file, the command placement section, is of interest for area 2 listed above. In this section, you can see how to place a command inside a menu group or a menu group inside a menu.<br>
+<br>
+The last section, the key binding section, allows associations between commands and keyboard accelerators.<br>
+<br>
+<br>
+</p>
+<h3>To start the sample:</h3>
+<ol>
+<li>Open the MenuAndCommands.sln solution. </li><li>Build the solution. </li><li>Press F5 register it in the experimental instance and launch Visual Studio from the experimental instance.
+</li></ol>
+<p>&nbsp;</p>
+<h3>To start the sample functionality:</h3>
+<ul>
+<li>On the <strong>View</strong> menu, click <strong>Output</strong> to display the
+<strong>Output</strong> window. </li><li>On the <strong>Tools</strong> menu, click <strong>C# Command Sample</strong>. A message appears in the
+<strong>Output</strong> window. </li><li>On the <strong>Tools</strong> menu, click <strong>C# Text Changes</strong>. </li><li>Click the <strong>Tools</strong> menu again and note that the text for that menu item has changed to indicate how many times you chose the command.
+</li><li>On the <strong>Tools</strong> menu, click <strong>C# Dynamic Visibility 1</strong>.
+</li><li>Click <strong>Tools</strong> menu again and note that the menu item has disappeared and been replaced by a
+<strong>C# Dynamic Visibility 2</strong> command. Click it and <strong>C# Dynamic Visibility 1</strong> returns.
+</li></ul>
+<p>&nbsp;</p>
+<h3>Screenshot</h3>
+<h3><img src="file://tg-server-hp/PartnerDrops/VSSDKSamples/2013/VSSDK_IDE_Sample_Menu_And_Commands/description/menuandcommands.png" alt=""></h3>
+<p><img id="115741" src="description/Exammple.MenuAndCommands.png" alt="" width="1213" height="898"></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9e116645-9d9a-4566-82a8-7b29a5b324f1Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ook Language sample - VS 2013</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Ook Language sample - VS 2013</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Extensibility
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        Microsoft Visual Studio 2013 SDK, Microsoft Visual Studio 2013 SDK
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">5/29/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Ook-Language-sample-VS-2013-92660d3d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="longDesc">
+<h2>Summary</h2>
+<p>This is the example used during the Visual Studio Ecosystem Summit Presentation &quot;Getting Linguistic: Integrating a Language into Visual Studio&quot; by Chris Granger. It implements the following language features for the esoteric language &quot;Ook!&quot;:</p>
+<ul>
+<li>General purpose token tagger </li><li>A classification tagger </li><li>A QuickInfo source and controller </li><li>A completion source and controller </li></ul>
+<h2>Requirements</h2>
+<ul>
+<li><a href="http://www.microsoft.com/visualstudio/en-us/try/default.mspx#download">Visual Studio 2013
+</a></li><li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=40758">Visual Studio 2013 SDK
+</a></li></ul>
+<h2>Download and install</h2>
+<ul>
+<li>Download the zip file associated with the sample </li><li>Unzip the sample to your machine </li><li>Double click on the .sln file to launch the solution </li></ul>
+<h2>Building and running the sample</h2>
+<ul>
+<li>To build and execute the sample, press F5 after the sample is loaded </li></ul>
+<h2>Additional Resources</h2>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/dd885242(v=vs.110).aspx">Editor Documentation
+</a></li></ul>
+<h2>Source Code Files</h2>
+<h3><strong>C#</strong></h3>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=1140979290">ClassificationFormat.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=580042278">ClassificationType.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=373876586">CompletionController.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=402417788">CompletionSource.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=248154053">OokClassifier.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=1645637164">OokQuickInfoSource.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=671967555">OokTokenTag.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=249668627">OokTokenTypes.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=1069928346">QuickInfoController.cs
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41687&amp;pathId=731371404">QuickInfoControllerProvider.cs
+</a></li></ul>
+<h3><strong>VB</strong></h3>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=590553440">ClassificationFormat.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=800281128">ClassificationType.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=1167593411">CompletionController.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=122121584">CompletionSource.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=1582932553">OokClassifier.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=128290181">OokQuickInfoSource.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=1926721561">OokTokenTag.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=1094009952">OokTokenTypes.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=726809581">QuickInfoController.vb
+</a></li><li><a href="http://code.msdn.microsoft.com/Ook-Language-Integration-13038284/sourcecode?fileId=41688&amp;pathId=1728327408">QuickInfoControllerProvider.vb &nbsp;</a>
+</li></ul>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

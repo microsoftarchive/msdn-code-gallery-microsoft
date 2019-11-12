@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario1_GetText.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario2_GetStream.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario3_GetList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario4_PostText.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario5_PostStream.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario6_PostMultipart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario7_PostStreamWithProgress.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario8_PostCustomContent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario9_GetCookie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario10_SetCookie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario11_DeleteCookie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario12_MeteredConnectionFilter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Scenario13_RetryFilter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)SampleConfiguration.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)HttpJsonContent.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario1_GetText.xaml.cs">
+      <DependentUpon>Scenario1_GetText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario2_GetStream.xaml.cs">
+      <DependentUpon>Scenario2_GetStream.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario3_GetList.xaml.cs">
+      <DependentUpon>Scenario3_GetList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario4_PostText.xaml.cs">
+      <DependentUpon>Scenario4_PostText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario5_PostStream.xaml.cs">
+      <DependentUpon>Scenario5_PostStream.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario6_PostMultipart.xaml.cs">
+      <DependentUpon>Scenario6_PostMultipart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario7_PostStreamWithProgress.xaml.cs">
+      <DependentUpon>Scenario7_PostStreamWithProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario8_PostCustomContent.xaml.cs">
+      <DependentUpon>Scenario8_PostCustomContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario9_GetCookie.xaml.cs">
+      <DependentUpon>Scenario9_GetCookie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario10_SetCookie.xaml.cs">
+      <DependentUpon>Scenario10_SetCookie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario11_DeleteCookie.xaml.cs">
+      <DependentUpon>Scenario11_DeleteCookie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario12_MeteredConnectionFilter.xaml.cs">
+      <DependentUpon>Scenario12_MeteredConnectionFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenario13_RetryFilter.xaml.cs">
+      <DependentUpon>Scenario13_RetryFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PlugInFilter.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)SlowInputStream.cs"/>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\mediumtile-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\microsoft-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\smalltile-Windows-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\smalltile-Phone-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\splash-Windows-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\splash-Phone-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\squaretile-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\storelogo-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\tile-sdk.png"/>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\windows-sdk.png"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+</Project>

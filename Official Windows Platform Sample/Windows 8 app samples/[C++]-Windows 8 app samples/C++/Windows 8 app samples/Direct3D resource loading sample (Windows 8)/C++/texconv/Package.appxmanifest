@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="tool-texconv" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>tool-texconv</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storelogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="texconv.App" Executable="tool-texconv.exe" EntryPoint="tool-texconv.App">
+      <VisualElements DisplayName="tool-texconv" Logo="squaretile-sdk.png" SmallLogo="smalltile-sdk.png" Description="tool-texconv" ForegroundText="dark" BackgroundColor="#00b2f0">
+        <DefaultTile ShowName="allLogos" ShortName="tool-texconv" />
+        <SplashScreen Image="splash-sdk.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1b88b18a-5268-4861-9da2-6c6e2539edaaCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Use apps for Office in a provider-hosted app for SharePoint</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Use apps for Office in a provider-hosted app for SharePoint</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint, Office 2013
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            sites and content
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/28/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Use-apps-271950a3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample app demonstrates how to use the client object model (CSOM) in an app for SharePoint to retrieve and render various actions for Office documents, and have those actions performed by the Office Web App companion version of the originating Office
+ application.</p>
+<div id="mainSection">
+<div id="mainBody">
+<div class="introduction">
+<h1 class="heading">Description</h1>
+<div class="section" id="sectionSection0">
+<p><span class="label">Provided by:</span></p>
+</div>
+<div class="section" id="sectionSection0">
+<p><a href="http://mvp.microsoft.com/en-US/findanmvp/Pages/profile.aspx?MVPID=c558e0ed-382f-4008-8002-4634a9167b99" >Martin Harwar</a>,
+<a href="http://point8020.com/Default.aspx" >Point8020</a></p>
+<p>The solution is based on the provider-hosted app template provided by Visual Studio 2012. The solution authenticates against SharePoint Online to retrieve names and URLs of Office documents from document libraries in the hosting SharePoint site. The app
+ renders a tile-based user interface that includes various actions for each document, such as viewing or editing the document in the browser. When the user chooses an action, the app invokes the Office Web App functionality that is included with SharePoint
+ Server 2013.</p>
+<p>Figure 1 shows the main view of the app, showing tiles for each of the files on the hosting SharePoint site, along with icon buttons for viewing or editing the file with the Office Web app</p>
+<p class="caption"><strong>Figure 1. Main view of the app</strong></p>
+<br>
+<img id="76816" src="description/2b-1.png" alt="Figure 1" width="580" height="589"></div>
+<h1 class="heading">Prerequisites</h1>
+<div class="section" id="sectionSection1">
+<p>This sample requires the following:</p>
+<ul>
+<li>
+<div>Visual Studio 2012</div>
+</li><li>
+<div>Office Developer Tools for Visual Studio 2012</div>
+</li><li>
+<div>Either of the following:</div>
+<ul>
+<li>
+<div>SharePoint Server 2013 configured to host apps, and with a Developer Site collection already created; or,</div>
+</li><li>
+<div>Access to an Office 365 developer site configured to host apps.</div>
+</li></ul>
+</li></ul>
+</div>
+<h1 class="heading">Key components of the sample</h1>
+<div class="section" id="sectionSection2">
+<p>The sample app contains the following:</p>
+<ul>
+<li>
+<div>The <strong>Default.aspx</strong> webpage, which is used to render tiles for Office documents. The tiles enable the user to click various actions, such as viewing or editing the documents the Office Web Apps browser.</div>
+</li><li>
+<div>The <strong>point8020Metro.css</strong> style sheet in the CSS folder, which is used to display files as tiles.</div>
+</li><li>
+<div>Various image files in the Images folder.</div>
+</li><li>
+<div>The <strong>AppManifest.xml</strong> file, which has been edited to specify that the app requests full control permissions for the hosting web.</div>
+</li></ul>
+<p>All other files are automatically provided by the Visual Studio project template for apps for SharePoint, and they have not been modified in the development of this sample.</p>
+</div>
+<h1 class="heading">Configure the sample</h1>
+<div class="section" id="sectionSection3">
+<p>Follow these steps to configure the sample.</p>
+<ol>
+<li>
+<div>Open the <span class="ui">SP_ProviderApp_WAC_cs.sln</span> file using Visual Studio 2012.</div>
+</li><li>
+<div>In the <span class="ui">Properties</span> window, add the full URL to your SharePoint Server 2013 Developer Site collection or Office 365 Developer Site to the
+<span><span class="keyword">Site URL</span></span> property.</div>
+</li></ol>
+<p>No other configuration is required.</p>
+</div>
+<h1 class="heading">Build the sample</h1>
+<div class="section" id="sectionSection4">
+<p>To build the sample, press CTRL&#43;SHIFT&#43;B.</p>
+</div>
+<h1 class="heading">Run and test the sample</h1>
+<div class="section" id="sectionSection5">
+<p>To run and test the sample, do the following:</p>
+<ol>
+<li>
+<div>Press F5 to run the app.</div>
+</li><li>
+<div>Sign in to your SharePoint Server 2013 Developer Site collection or Office 365 Developer Site if you are prompted to do so by the browser.</div>
+</li><li>
+<div>Trust the app when prompted to do so.</div>
+</li></ol>
+</div>
+<h1 class="heading">Troubleshooting</h1>
+<div class="section" id="sectionSection6">
+<p>Ensure that you have signed up for an Office 365 Developer Site configured to host apps, or that you have access to a correctly configured SharePoint 2013 farm.</p>
+<p>Note that it is much easier to sign up for an Office 365 Developer Site than it is to troubleshoot local farm configurations if you just want to run this sample. The key point is that Office Web Apps are automatically configured for you in an Office 365
+ Developer Site).</p>
+</div>
+<h1 class="heading">Change log</h1>
+<div class="section" id="sectionSection7">
+<p>First release: January, 2013.</p>
+</div>
+<h1 class="heading">Related content</h1>
+<div class="section" id="sectionSection8">
+<ul>
+<li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179924.aspx" >Sign up for an Office 365 Developer Site</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp161507.aspx" >Apps for Office and SharePoint</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp179930.aspx" >Apps for SharePoint overview</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp161179.aspx" >How to: Set up an environment for developing apps for SharePoint on Office 365</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/office/apps/fp179923.aspx" >How to: Set up an on-premises development environment for apps for SharePoint</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp142381.aspx" >How to: Create a basic provider-hosted app for SharePoint</a></div>
+</li><li>
+<div><a href="http://msdn.microsoft.com/en-us/library/fp179912.aspx" >How to: Complete basic operations using SharePoint 2013 client library code</a></div>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

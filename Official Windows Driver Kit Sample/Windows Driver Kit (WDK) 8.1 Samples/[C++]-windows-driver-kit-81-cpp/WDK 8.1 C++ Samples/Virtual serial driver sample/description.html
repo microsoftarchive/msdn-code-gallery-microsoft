@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Virtual serial driver sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Virtual serial driver sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            UMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            serial
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Virtual-serial-driver-8383ea42">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates these two serial drivers: </p>
+<ul>
+<li>A simple virtual serial driver (ComPort) </li><li>A controller-less modem driver (FakeModem).This driver supports sending and receiving AT commands using the ReadFile and WriteFile calls or via a TAPI interface using an application such as, HyperTerminal.
+</li></ul>
+<p></p>
+<p>This sample driver is a minimal driver meant to demonstrate the usage of the User-Mode Driver Framework. It is not intended for use in a production environment.
+</p>
+<p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff546939">
+Serial Controller and Device Drivers</a> in the WDK documentation.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Virtual-serial-driver-8383ea42/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff560456">User-Mode Driver Framework</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>You can build the sample in two ways: using Microsoft Visual Studio or the command line (<i>MSBuild</i>).</p>
+<h2><a id="Download_and_extract_the_sample"></a><a id="download_and_extract_the_sample"></a><a id="DOWNLOAD_AND_EXTRACT_THE_SAMPLE"></a>Download and extract the sample</h2>
+<p>Click the download button on this page. Click <b>Save</b>, and then click <b>Open Folder</b>. Right click Virtual serial driver sample.zip, and choose
+<b>Extract All</b>. Specify or browse to a folder for the extracted files. For example, you could extract to c:\VirtualSerialDriverSample.</p>
+<h2><a id="Open_the_driver_solution_in_Visual_Studio"></a><a id="open_the_driver_solution_in_visual_studio"></a><a id="OPEN_THE_DRIVER_SOLUTION_IN_VISUAL_STUDIO"></a>Open the driver solution in Visual Studio</h2>
+<p>Navigate to the folder that has the extracted sample. Double click the solution file, VirtualSerial.sln. In Microsoft Visual Studio, locate Solution Explorer. (If this is not already open, choose
+<b>Solution Explorer</b> from the <b>View</b> menu.) In Solution Explorer, you can see one solution that has two driver projects named
+<b>ComPort</b> and <b>FakeModem</b> and a package project named <b>package</b> (lower case).</p>
+<h2><a id="Set_the_configuration_and_platform_in_Visual_Studio"></a><a id="set_the_configuration_and_platform_in_visual_studio"></a><a id="SET_THE_CONFIGURATION_AND_PLATFORM_IN_VISUAL_STUDIO"></a>Set the configuration and platform in Visual Studio</h2>
+<p>In Visual Studio, in Solution Explorer, right click <b>Solution ‘VirtualSerial’ (3 projects)</b>, and choose
+<b>Configuration Manager</b>. Set the configuration and the platform. Make sure that the configuration and platform are the same for both the driver project and the package project. Do not check the
+<b>Deploy</b> boxes. Here are some examples of configuration and platform settings.</p>
+<table>
+<tbody>
+<tr>
+<th>Configuration</th>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Win8.1 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;8.1. The driver will not run on any earlier versions of Windows.</td>
+</tr>
+<tr>
+<td>Win7 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;7 or a later version of Windows.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Build_the_sample_using_Visual_Studio"></a><a id="build_the_sample_using_visual_studio"></a><a id="BUILD_THE_SAMPLE_USING_VISUAL_STUDIO"></a>Build the sample using Visual Studio</h2>
+<p>In Visual Studio, on the <b>Build</b> menu, choose <b>Build Solution</b>.</p>
+<p>For more information about using Visual Studio to build a driver package, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">
+Building a Driver</a>.</p>
+<h2><a id="Locate_the_built_driver_package"></a><a id="locate_the_built_driver_package"></a><a id="LOCATE_THE_BUILT_DRIVER_PACKAGE"></a>Locate the built driver package</h2>
+<p>In File Explorer, navigate to the folder that contains your built driver package. The location of this folder varies depending on what you set for configuration and platform. For example, if your settings are Win7 Debug and x64, the package is in your solution
+ folder under x64\Win7Debug\Package.</p>
+<p>The package contains these files:</p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>fakemodem.dll</td>
+<td>The driver file for the modem.</td>
+</tr>
+<tr>
+<td>fakemodem.inf</td>
+<td>An information (INF) file that contains information needed to install the driver for the modem.</td>
+</tr>
+<tr>
+<td>virtualserial.dll</td>
+<td>The driver file for the virtual serial port.</td>
+</tr>
+<tr>
+<td>virtualserial.dll</td>
+<td>An INF file that contains information needed to install the driver as a root enumerated software driver for the virtual serial port.</td>
+</tr>
+<tr>
+<td>WdfCoinstaller010<i>xx</i>.dll</td>
+<td>The coinstaller for version 1.<i>xx</i> of KMDF.</td>
+</tr>
+<tr>
+<td>wudf.cat</td>
+<td>A signed catalog file, which serves as the signature for the entire package.</td>
+</tr>
+</tbody>
+</table>
+<h2>Run the sample</h2>
+<p>The computer where you install the driver is called the <i>target computer</i> or the
+<i>test computer</i>. Typically this is a separate computer from where you develop and build the driver package. The computer where you develop and build the driver is called the
+<i>host computer</i>.</p>
+<p>The process of moving the driver package to the target computer and installing the driver is called
+<i>deploying the driver</i>. You can deploy the UMDF Driver Skeleton Sample automatically or manually.</p>
+<h3><a id="Installing_the_VirtualSerial_driver"></a><a id="installing_the_virtualserial_driver"></a><a id="INSTALLING_THE_VIRTUALSERIAL_DRIVER"></a>Installing the VirtualSerial driver</h3>
+<p>Before you automatically deploy a driver, you must provision the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh698272">Configuring a Computer for Driver Deployment, Testing, and Debugging</a>.</p>
+<ol>
+<li>On the host computer, in Visual Studio, in Solution Explorer, right click <b>
+package</b> (lower case), and choose <b>Properties</b>. Navigate to <b>Configuration Properties &gt; Driver Install &gt; Deployment</b>.
+</li><li>Check <b>Enable deployment</b>, and check <b>Remove previous driver versions before deployment</b>. For
+<b>Target Computer Name</b>, select the name of a target computer that you provisioned previously. Select
+<b>Hardware ID Driver Update</b>, and enter <b>UMDF\VirtualSerial</b> Note that regardless of the hardware ID specified here, both drivers are deployed but only the specified device is installed on the target computer. Click
+<b>OK</b>. </li><li>On the <b>Build</b> menu, choose <b>Deploy Package</b> or <b>Build Solution</b>.
+</li></ol>
+<p>On the target computer, in a Command Prompt window, enter <b>devmgmt</b> to open Device Manager. In Device Manager, on the
+<b>View</b> menu, choose <b>Devices by type</b>. In the device tree, locate <b>Microsoft VirtualSerial User-Mode Device Sample (COM<i>n</i>)</b> under the
+<b>Ports (COM &amp;LPT)</b> node.</p>
+<h3><a id="Installing_the_FakeModem_driver"></a><a id="installing_the_fakemodem_driver"></a><a id="INSTALLING_THE_FAKEMODEM_DRIVER"></a>Installing the FakeModem driver</h3>
+<p>Before you automatically deploy a driver, you must provision the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh698272">Configuring a Computer for Driver Deployment, Testing, and Debugging</a>.</p>
+<ol>
+<li>Install the toaster bus driver (dynambus.sys). Information on how to install the toaster bus driver, see
+<a href="http://code.msdn.microsoft.com/windowshardware/Toaster-7d256224#content">
+Toaster</a>. </li><li>On the target computer, open a Command Prompt window and enter <b>dvmgmt</b> to open Device Manager.
+</li><li>In Device Manager, make sure that the <b>Toaster Dynamic Bus Enumerator</b> node appears under
+<b>System Devices</b>. </li><li>Copy notify.exe (general\toaster\exe\notify) to the target computer and run the application as administrator.
+</li><li>Choose <b>Bus</b> &gt; <b>Plugin</b>. </li><li>In the <b>Plug in Device</b> dialog, specify <b>Serial Number</b> as 1 and <b>
+Device Id</b> as {b85b7c50-6a01-11d2-b841-00c04fad5171}\fakemodem. </li><li>Click <b>OK</b> to start device enumeration. </li><li>In Device Manager, on the <b>View</b> menu, choose <b>Devices by connection</b>. Locate
+<b>Toaster Dynamic Bus Enumerator</b>. Notice that the child of the node. That node is the raw PDO for the fake modem device.
+</li><li>On the host computer, in Visual Studio, in Solution Explorer, right click <b>
+package</b> (lower case), and choose <b>Properties</b>. Navigate to <b>Configuration Properties &gt; Driver Install &gt; Deployment</b>.
+</li><li>Check <b>Enable deployment</b>, and check <b>Remove previous driver versions before deployment</b>. For
+<b>Target Computer Name</b>, select the name of a target computer that you provisioned previously. Select
+<b>Hardware ID Driver Update</b>, and enter <b>{b85b7c50-6a01-11d2-b841-00c04fad5171}\fakemodem</b>. Click
+<b>OK</b>. </li></ol>
+<p>On the target computer, in Device Manager, on the <b>View</b> menu, choose <b>
+Devices by type</b>. In the device tree, locate <b>Microsoft Fake Modem User-Mode Device Sample #2</b> under the<b> Modem</b> node.</p>
+<p>On the <b>View</b> menu, choose <b>Devices by connection</b>. Locate <b>Microsoft Fake Modem User-Mode Device Sample #2</b> as a child of
+<b>Toaster Dynamic Bus Enumerator</b>.</p>
+<p>The bus driver, in this case the Toaster Dynamic Bus driver, creates a PDO for the specified hardware ID. At this time, you can view the PDO in Device Manager. It appears as a child node under the bus driver node. No driver is associated with this child
+ device object. In the registry you can see the settings associated with it under the HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\{b85b7c50-6a01-11d2-b841-00c04fad5171}\&lt;instance&gt;.
+</p>
+<p>To install the driver, you must specify the driver install package. Visual Studio builds the package and then deploys it to the target computer, where it's stored under C:\DriverTest\Driver. For the Fake Modem device, its INF specifies the device class as
+ Modem and Modem.sys as the function driver. The INF also specifies the Reflector driver (Wudfrd.sys) as a lower device filter driver. The kernel mode device stack is as follows:</p>
+<p><img src="description/image.png" alt="" align="middle">
+</p>
+<p>In the user-mode stack, FakeModem.dll is loaded as the device driver. When an application that wants to communicate with the device initiates requests, the I/O Manager creates the neccassary IRP and passes it to the reflector. The reflector reroutes the
+ request back to device driver in user mode. That driver either handles the request or sends it to the kernel-mode driver, Modem.sys.
+</p>
+<h2><a id="Testing_the_sample"></a><a id="testing_the_sample"></a><a id="TESTING_THE_SAMPLE"></a>Testing the sample</h2>
+<p>To test the virtual serial driver, first install the device as described in the preceding section. Then, you can communicate with the driver by opening a handle to the appropriate COM port and calling ReadFile or WriteFile functions. Alternatively, you can
+ communicate with the serial driver by running <b>HyperTerminal</b> (hypertrm.exe). The AT command set supported by virtual serial includes:
+</p>
+<table>
+<tbody>
+<tr>
+<td><b>AT</b></td>
+<td>returns <b>OK</b></td>
+</tr>
+<tr>
+<td><b>ATA</b></td>
+<td>returns <b>CONNECT</b></td>
+</tr>
+<tr>
+<td><b>ATD&lt;number&gt;</b></td>
+<td>returns <b>CONNECT</b></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Code_tour"></a><a id="code_tour"></a><a id="CODE_TOUR"></a>Code tour</h2>
+<table>
+<tbody>
+<tr>
+<th>File manifest</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>comsup.cpp &amp; comsup.h </td>
+<td>COM Support code - specifically base classes which provide implementations for the standard COM interfaces
+<b>IUnknown</b> and <b>IClassFactory</b> which are used throughout the sample.
+<p>The implementation of <b>IClassFactory</b> is designed to create instances of the CMyDriver class. If you should change the name of your base driver class, you would also need to modify this file.
+</p>
+</td>
+</tr>
+<tr>
+<td>dllsup.cpp </td>
+<td>DLL Support code - provides the DLL's entry point as well as the single required export (<b>DllGetClassObject</b>).
+<p>These depend on comsup.cpp to perform the necessary class creation. </p>
+</td>
+</tr>
+<tr>
+<td>exports.def </td>
+<td>This file lists the functions that the driver DLL exports. </td>
+</tr>
+<tr>
+<td>internal.h </td>
+<td>This is the main header file for the sample driver. </td>
+</tr>
+<tr>
+<td>driver.cpp &amp; driver.h </td>
+<td>Definition and implementation of the driver callback class (CMyDriver) for the sample. This includes
+<b>DriverEntry</b> and events on the framework driver object. </td>
+</tr>
+<tr>
+<td>device.cpp &amp; driver.h </td>
+<td>Definition and implementation of the device callback class (CMyDriver) for the sample. This includes events on the framework device object.
+</td>
+</tr>
+<tr>
+<td>queue.cpp &amp; queue.h</td>
+<td>Definition and implementation of the base queue callback class (CMyQueue). This includes events on the framework I/O queue object.
+</td>
+</tr>
+<tr>
+<td>VirtualSerial.rc /FakeModem.rc </td>
+<td>This file defines resource information for the sample driver. </td>
+</tr>
+<tr>
+<td>VirtualSerial.inf / FakeModem.inf </td>
+<td>INF file that contains installation information for this driver.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

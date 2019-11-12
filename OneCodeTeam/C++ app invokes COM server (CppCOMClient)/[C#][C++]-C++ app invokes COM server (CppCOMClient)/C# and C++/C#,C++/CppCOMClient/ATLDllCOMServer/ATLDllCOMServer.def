@@ -1,0 +1,10 @@
+; ATLDllCOMServer.def : Declares the module parameters.
+
+LIBRARY      "ATLDllCOMServer.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	DllInstall		PRIVATE

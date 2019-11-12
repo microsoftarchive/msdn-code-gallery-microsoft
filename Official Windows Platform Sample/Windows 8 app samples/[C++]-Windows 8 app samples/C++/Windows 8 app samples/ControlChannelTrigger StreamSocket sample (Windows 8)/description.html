@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=71AE1851B6C794DEF5BD9BC8F835D0EE" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/47c63455-7231-44b0-b4ee-e4560979780cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C91CC0BBB362C4840AF9553071016400" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ControlChannelTrigger StreamSocket sample (Windows 8)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/dc4f56b3-224a-4dd7-a435-210da682eb66Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ControlChannelTrigger StreamSocket sample (Windows 8)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/27/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/ControlChannelTrigger-682d5128">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The sample shows how to use the <a href="http://msdn.microsoft.com/library/windows/apps/hh701032">
+<b>ControlChannelTrigger</b></a> class to enable a Windows Store app using a TCP <a href="http://msdn.microsoft.com/library/windows/apps/br226882">
+<b>StreamSocket</b></a> so that the app is always connected and always reachable. This sample demonstrates the use of background network notifications in a Windows Store app.
+</p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032"><b>ControlChannelTrigger</b></a> class and related interfaces are used to enable real-time network status and triggers for class elements in the
+<a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a> and related namespaces. These features allow an app to receive notifications while the app is suspended. These notifications can be set to occur when network
+ packets are received or to maintain keep-alive packets. This sample uses notifications to receive incoming network packets. This allows the app to minimize power usage for improved battery life and wake up to respond to incoming packets and other conditions
+ only when needed. </p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032"><b>ControlChannelTrigger</b></a> class is commonly used by long-running network apps to minimize network and system resource usage (an email application that is left running, for example).
+ Network triggers allow an app to drop to a low-power mode for periods of time while still keeping established network connections intact and operating in a low-power state. An app can set a server keep-alive interval used by the system for when the app should
+ wake up. An app can also set a trigger to wake up when network data is received by the system for the app.
+</p>
+<p>A Windows Store app for Windows&nbsp;8 is normally suspended when it's no longer the foreground app and moved to the background. There are some exceptions to suspending an app (actively printing, accessing an audio stream, and transferring files in the background,
+ for example). The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032">
+<b>ControlChannelTrigger</b></a> class allows a network app that has established a TCP connection to notify the system that an established network connection should be kept operational. Additionally, the system should wake up the suspended app when network
+ data is received for the app or the server keep-alive timer interval expires. </p>
+<p>In this sample, the <a href="http://msdn.microsoft.com/library/windows/apps/hh701032">
+<b>ControlChannelTrigger</b></a> class is used with the <a href="http://msdn.microsoft.com/library/windows/apps/br226882">
+<b>StreamSocket</b></a> class to connect to network service (another app listening for TCP connections). However, the
+<b>ControlChannelTrigger</b> class can also be used with other network transports that establish a TCP connection.</p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032"><b>ControlChannelTrigger</b></a> class can be used with instances of the following classes in the
+<a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a> that establish a TCP connection.
+</p>
+<p></p>
+<ul>
+<li><a href="http://msdn.microsoft.com/library/windows/apps/br226882"><b>StreamSocket</b></a>
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br226842"><b>MessageWebSocket</b></a>
+</li><li><a href="http://msdn.microsoft.com/library/windows/apps/br226923"><b>StreamWebSocket</b></a>
+</li></ul>
+<p></p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032"><b>ControlChannelTrigger</b></a> class can also be used by instances of the following that establish a TCP connection:</p>
+<p></p>
+<ul>
+<li>The <a href="http://go.microsoft.com/fwlink/p/?linkid=241637">HttpClient</a>,
+<a href="http://go.microsoft.com/fwlink/p/?linkid=241638">HttpClientHandler</a>, and related classes in the
+<a href="http://go.microsoft.com/fwlink/p/?linkid=227894">System.Net.Http</a> namespace in the .NET Framework&nbsp;4.5.
+</li><li>The <a href="http://msdn.microsoft.com/library/windows/apps/hh831151"><b>IXMLHTTPRequest2</b></a> interface that extends the
+<b>IXmlHttpRequest</b> interface defined in several working drafts published by the World Wide Web Consortium (W3C)
+</li></ul>
+<p></p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;The <a href="http://msdn.microsoft.com/library/windows/apps/hh701032">
+<b>ControlChannelTrigger</b></a> class is not supported in a Windows Store app built for Windows using JavaScript.
+</p>
+<p></p>
+<p>Versions of this sample are provided in both C# and C&#43;&#43;. This sample requires some experience with network programming.
+</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241655">
+Windows&nbsp;8</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2012, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=241656">
+Visual Studio&nbsp;2012</a>.</p>
+<h3><a id="related_topics"></a>Related topics</h3>
+<dl><dt><b>Other resources</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452752">Adding support for networking</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452976">Connecting to network services (Windows Store apps using C#/VB/C&#43;&#43; and XAML)</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh771189">How to set background connectivity options</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452977">Making network connections with sockets</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh977056">Supporting your app with background tasks</a>
+</dt><dt><b>Reference</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh701032"><b>ControlChannelTrigger</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226882"><b>StreamSocket</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/br226960"><b>Windows.Networking.Sockets</b></a>
+</dt><dt><b>Samples</b> </dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=258323">ControlChannelTrigger HttpClient sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=258538">ControlChannelTrigger IXMLHTTPRequest2 sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=251232">ControlChannelTrigger StreamWebSocket sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=243037">StreamSocket sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt></dl>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<ol>
+<li>Start Microsoft Visual Studio Express&nbsp;2012 for Windows&nbsp;8 and select <b>File</b> &gt;
+<b>Open</b> &gt; <b>Project/Solution</b>. </li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Visual Studio Express&nbsp;2012 for Windows&nbsp;8 Solution (.sln) file.
+</li><li>Press F7 or use <b>Build</b> &gt; <b>Build Solution</b> to build the sample. </li></ol>
+<h3>Run the sample</h3>
+<p>This sample requires two computers that can connect to each other using networking. Both computers need to be running Windows&nbsp;8. One computer will play the role of the client, while the other computer will play the role of the server.
+</p>
+<p>To deploy this sample after building it, select Deploy Solution from the Build menu. A tile for the sample will be available on the Start Screen. To both deploy and run the sample, press F5 (run with debugging enabled) or Ctrl&#43;F5 (run without debugging enabled)
+ from Visual Studio&nbsp;2012 (any SKU). (Or select the corresponding options from the Debug menu.)
+</p>
+<p>The sample must be deployed to both the client and server computers.</p>
+<p>To run the sample, first the start the app on the server computer. </p>
+<dl><dd>1. Select the function as the server. </dd><dd>2. Enter a TCP port number (port 12345, for example) to start listening for a client connection.
+</dd><dd></dd></dl>
+<p></p>
+<p>After the server computer has started, start the app on the client computer. </p>
+<dl><dd>1. Select the function as the client. </dd><dd>2. Enter the hostname and TCP port on the server computer for the client to connect to (TCP port 12345, for example) and click
+<b>Connect.</b> </dd></dl>
+<p></p>
+<p>The server computer should show the client as connected. After the client is connected, the server can send a message to the client. The message is received on the client and displayed as a toast notification.
+</p>
+<p>You should be able to let the client app get suspended and it can still receive an incoming network message from the server and display a toast when a message is received.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;When the app is run under a debugger, it will not be suspended.</p>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Create a Windows Phone app to receive push notifications</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Create a Windows Phone app to receive push notifications</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Mobile
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Create-a-f361dc38">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">Using the Microsoft Push Notification Service (MPNS), Windows Phone apps can receive notifications through the Internet of events triggered by SharePoint Server. The phone app doesn't have to poll the server for changes, for
+ example, to the items in a list on which the phone app is based. The app can be registered to receive notifications from the server, and an event receiver can initiate a notification and send it to the receiving app for handling. The push notification is relayed
+ to Windows Phone devices by MPNS.</span></p>
+<p><span style="font-size:small">An event relevant to a given phone app might occur (such as, for example, a list item being added to a list) when the app isn't running in the foreground on the phone (that is, when the app is tombstoned or closed). You could
+ develop a background service on the phone with a periodic task that might check for changes to the list on the server, but this approach consumes resources (such as network bandwidth and battery power) on the phone. With MPNS and the components that support
+ notifications built into the Windows Phone 7 OS, the phone itself can receive a notification relevant to the context of a given app&mdash;even when that app isn't running&mdash;and the user can be given the opportunity to start the relevant app in response
+ to the notification. (For more information about push notifications, see <a href="http://msdn.microsoft.com/en-us/library/ff402558(VS.92).aspx">
+Push Notifications Overview for Windows Phone</a>.)</span></p>
+<h1>Description</h1>
+<p><span style="font-size:small">In this code sample, you create a Windows Phone app from the Windows Phone SharePoint List Application template, specifying a SharePoint list that has push notification enabled as the target list. You then develop a
+<strong>Notifications</strong> class for subscribing to push notifications, implementing handlers for notification events, and storing information related to notifications on the phone. You also add a XAML page to your app with controls to allow users to register
+ or unregister for push notifications.</span></p>
+<p style="padding-left:30px"><strong><span style="font-size:small">Tip</span></strong><br>
+<span style="font-size:small">A job list and a push-notification list should be created on the server so that, if no errors occur, the developer can manually create the lists and still test the app part of the solution. You create a simple SharePoint list,
+ named Jobs, that contains a job category, a description of a job, and the person to whom the job is assigned. Also, you create an auxiliary list, named Push Notification Results, for storing information related to notification requests sent to subscribing
+ phones. For more information about creating notification lists, see <a href="http://msdn.microsoft.com/en-us/library/jj163784.aspx">
+How to: Configure and use push notifications in SharePoint 2013 apps for Windows Phone</a>.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">Visual Studio 2010 Express with the SharePoint mobile templates</span>
+</li><li><span style="font-size:small">SharePoint 2013, with administrative privileges</span>
+</li><li><span style="font-size:small">A SharePoint list with push notifications enabled</span>
+</li></ul>
+<p style="padding-left:30px"><strong><span style="font-size:small">Tip</span></strong><br>
+<span style="font-size:small">For more information about creating a SharePoint list with notifications, see
+<a href="http://msdn.microsoft.com/en-us/library/jj163784.aspx">How to: Configure and use push notifications in SharePoint 2013 apps for Windows Phone</a>.</span></p>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The sample contains the following:</span></p>
+<ul>
+<li><span style="font-size:small">SPListAppForNotifications project, which contains the Notifications.cs and App.xaml.cs.</span>
+<ul>
+<li><span style="font-size:small">Notifications.cs, which contains the class for managing subscriptions and received notifications.</span>
+</li><li><span style="font-size:small">App.xaml.cs, which contains classes for managing push notifications. The App.xaml.cs file is autogenerated by the Windows Phone SharePoint List Application template. The App.xaml file represents the overall Windows app. The
+ associated code-behind file, App.xaml.cs, includes procedural code to handle life-cycle events for the app. App.xaml.cs contains references to SharePoint Server and the list title.</span>
+</li></ul>
+</li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">Follow these steps to configure the sample.</span></p>
+<ol>
+<li><span style="font-size:small">Update the value of <strong>TargetSiteUrl</strong> in the App.xaml.cs file of the SPListAppNotifications solution with the URL of the home page of your SharePoint website.</span>
+</li><li><span style="font-size:small">Update the value of <strong>TargetListTitle</strong> in the App.xaml.cs file of the SPListAppNotifications solution with the title of the target SharePoint list.</span>
+</li></ol>
+<h1>Run and test the sample</h1>
+<p><span style="font-size:small">1.&nbsp;Choose the F5 key to build and run the app.</span></p>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how to solve them.</span></p>
+<table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:212px">
+<tbody>
+<tr style="background-color:#a9a9a9">
+<th align="left" scope="col"><strong><span style="font-size:small">Problem </span>
+</strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Solution</span></strong></th>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">While running the SharePoint List wizard from Visual Studio 2010 Express, an error may occur if developer does not have sufficient privilege on SharePoint site.</span></td>
+<td><span style="font-size:small">Give sufficient privilege to the user account with which developer is running the wizard.</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">Form-based authentication error. <br>
+<br>
+<img id="60943" src="description/fig1.png" alt="" width="182" height="339"></span></td>
+<td><span style="font-size:small">Form-based authentication is not enabled by default. To enable basic form-based authentication for the web application, follow these steps.</span>
+<ul>
+<li><span style="font-size:small">Navigate to Central Administration and ensure you have administrator rights on the server.</span>
+</li><li><span style="font-size:small">Under <strong>Application Management</strong>, choose
+<strong>Manage Web Applications</strong>.</span> </li><li><span style="font-size:small">Choose your web application (on which you have your SharePoint site, which you are accessing from your mobile app).</span>
+</li><li><span style="font-size:small">From the ribbon, choose <strong>Authentication Providers</strong>.</span>
+</li><li><span style="font-size:small">In the <strong>Authentication Provider </strong>
+dialog box, choose <strong>Default</strong> to edit the authentication.</span> </li><li><span style="font-size:small">In the <strong>Edit Authentication Model </strong>
+window under <strong>Claims Authentication Types</strong>, choose <strong>Basic Authentication</strong>.</span>
+</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+<br>
+<span style="font-size:small">&nbsp;</span><br>
+<br>
+<br>
+</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Change log</h1>
+<p><span style="font-size:small">First version: July 16, 2012</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163784.aspx" >How to: Configure and use push notifications in SharePoint 2013 apps for Windows Phone</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/ff402558(VS.92).aspx" >Push Notifications Overview for Windows Phone</a></span>
+</li><li><span style="font-size:small"><a href="http://create.msdn.com/en-US/education/quickstarts/push_notifications">Push Notifications for Windows Phone development</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163786.aspx">Overview of Windows Phone SharePoint 2013 application templates in Visual Studio</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163259.aspx">How to: Create a Windows Phone SharePoint 2013 list app</a></span>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

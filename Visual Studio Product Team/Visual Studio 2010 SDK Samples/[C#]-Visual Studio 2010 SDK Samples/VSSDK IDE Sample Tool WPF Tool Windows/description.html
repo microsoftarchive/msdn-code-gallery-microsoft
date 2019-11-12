@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1c1e217c-1475-400e-91a7-b2be1bd6efa0Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>VSSDK IDE Sample: Tool WPF Tool Windows</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>VSSDK IDE Sample: Tool WPF Tool Windows</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            VSX, Visual Studio Shell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/3/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VSSDK-IDE-Sample-Tool-WPF-8823e6d1">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2>Summary</h2>
+<p>This sample demonstrates how to create a package that provides tool windows which host Windows Forms controls and WPF controls.
+<br>
+<br>
+</p>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Goals</h2>
+<ul>
+<li>Exposing properties in the Properties window based on the selected item </li><li>Tool window toolbars </li><li>Tool window with visibility controlled by a UI Context (solution loaded) </li><li>Tool window docked to another window as default start position </li><li>Usage of tool window events </li></ul>
+<p><br>
+This sample has a package (PackageToolWindow) and two tool windows (PersistedWindowPane and DynamicWindowPane). Each of the tool windows hosts a UserControl (PersistedWindowControl and DynamicWindowControl).<br>
+<br>
+<br>
+The first window is persisted (its hidden/shown state is preserved when Visual Studio is restarted). It hosts a toolbar and demonstrates how to display properties in the Properties window based on the current selection inside the tool window.<br>
+<br>
+<br>
+The second window has dynamic visibility (based on a UI Context). When a solution exists, the window is displayed. When no solution exists, it is hidden. Note that if one manually shows/hides the tool window, this mechanism would be disabled. To restore it,
+ one can create a solution, show the tool window, close the solution, and finally hide the tool window. The window also provides a view helper which enables it to subscribe to tool window events. These include events such as moved, resized, shown, hidden, and
+ so on.<br>
+<br>
+</p>
+<h2>To start the sample</h2>
+<ol>
+<li>Build the solution </li><li>Open Visual Studio under experimental hive by pressing F5 </li></ol>
+<p>&nbsp;</p>
+<h2>To test the samples functionality</h2>
+<ol>
+<li>On the <strong>View</strong> menu, click <strong>Output</strong> to display the
+<strong>Output</strong> window. </li><li>On the <strong>View</strong> menu, point to <strong>Other Windows</strong>, and then click
+<strong>Persisted Window</strong> to display the tool window with persisted state. The
+<strong>Persisted Tool Window</strong> appears as a tabbed window docked with <strong>
+Solution Explorer</strong>. </li><li>Move the <strong>Persisted Tool Window</strong> to dock on the left side of the Visual Studio integrated development environment (IDE).
+</li><li>Exit Visual Studio. Press F5 again to start Visual Studio from the experimental instance. The
+<strong>Persisted Tool Window</strong> appears where it was when you exited Visual Studio.
+</li><li>On the <strong>View</strong> menu, click <strong>Properties Window</strong> to display the
+<strong>Properties</strong> window. </li><li>Click any of the window titles listed in the <strong>Persisted Tool Window</strong>. Note that the
+<strong>Persisted Tool Window</strong> displays the titles of all tool windows in the IDE and might include some that are not visible. The
+<strong>Properties</strong> window displays data about the selected tool window. </li><li>Close one of the tool windows listed in the <strong>Persisted Tool Window</strong> and click the
+<strong>Refresh</strong> icon in the toolbar. The window titles list is updated to indicate that the window is no longer visible.
+</li><li>On the <strong>View</strong> menu, point to <strong>Other Windows</strong>, and then click
+<strong>Dynamic Visibility Window</strong>. The <strong>Dynamic Visibility Window</strong> appears.
+</li><li>Hide the <strong>Dynamic Visibility Window</strong> by closing it. </li><li>Open or create a new solution. The <strong>Dynamic Tool Window</strong> appears.
+</li><li>On the <strong>File</strong> menu, click <strong>Close Solution</strong>. The
+<strong>Dynamic Tool Window</strong> disappears. </li></ol>
+<p><br>
+<br>
+</p>
+<h3>Additional Resources</h3>
+<h4>Unit Tests:</h4>
+<ul>
+<li>Verify that the package can be created and sited and that it implements IVsPackage.
+</li></ul>
+<ul>
+<li>For each tool window verify that executing the command to show the window completes with no errors.
+</li></ul>
+<ul>
+<li>Verify that when populated with 2 frames, the WindowList class can produce a list of selectable objects.
+</li></ul>
+<ul>
+<li>Verify that when each of the events are called on WindowStatus, the class produces the expected behavior (state change, event generation,...).
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

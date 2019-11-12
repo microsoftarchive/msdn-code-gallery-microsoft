@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/97a00f53-046a-471f-aba4-f9f658bc0e0aCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>UMDF SocketEcho Sample (UMDF Version 1)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/2c72fd48-f2db-4c1e-94a8-c4572a238b2eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>UMDF SocketEcho Sample (UMDF Version 1)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            UMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            general
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/4/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/UMDF-SocketEcho-Sample-626911fe">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The UMDF SocketEcho sample demonstrates how to use the User-Mode Driver Framework (UMDF) to write a driver and demonstrates best practices.
+</p>
+<p>This sample also demonstrates how to use a default parallel dispatch I/O queue, use a Microsoft Win32 dispatcher, and handle a socket handle by using a Win32 file I/O target.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (rofessional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. This sample will not build with Microsoft Visual Studio Express&nbsp;2013 for Windows Desktop, because the sample
+ uses Active Template Library (ATL). You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/UMDF-SocketEcho-Sample-626911fe/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff560456">User-Mode Driver Framework</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<p>If building the solution succeeds, you will find the driver, socketecho.dll, in the %_BuildArch% subdirectory of the %TARGETPATH% directory that is specified in the Sources file. If the build fails, you can find errors and warnings in the build error (.err)
+ and warning (.wrn) log files, respectively (for example, buildfre_wlh_x86.err). </p>
+<h2><a id="Code_Tour"></a><a id="code_tour"></a><a id="CODE_TOUR"></a>Code Tour</h2>
+<p>Parts of this code sample are generated from the ATL Project Wizard in Microsoft Visual Studio 2005. This sample driver is a minimal driver that is intended to demonstrate how to use UMDF. It is not intended for use in a production environment.
+</p>
+<p>CMyDriver::OnInitialize in driver.cpp is called by the framework when the driver loads. This method initiates use of the Winsock Library. CMyDriver::OnDeviceAdd in driver.cpp is called by the framework to install the driver on a device stack. OnDeviceAdd
+ creates a device callback object, and then calls IWDFDriver::CreateDevice to create an framework device object and to associate the device callback object with the framework device object.</p>
+<p>CMyQueue::OnCreateFile in queue.cpp is called by the framework to create a socket connection, create a file i/o target that is associated with the socket handle for this connection, and store the socket handle in the file object context.</p>
+<h2><a id="Installation"></a><a id="installation"></a><a id="INSTALLATION"></a>Installation</h2>
+<p>In Visual Studio, you can press F5 to build the sample and then deploy it to a target machine. For more information, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh454834">Deploying a Driver to a Test Computer</a>. Alternatively, you can install the sample from the command line.</p>
+<p>To test this sample, you must have a test computer that is running Windows&nbsp;Vista or later. This test computer can be a second computer or, if necessary, your development computer.</p>
+<p>To install the UMDF Echo sample driver from the command line, do the following:</p>
+<ol>
+<li>
+<p>Copy the driver binary and the socketecho.inf file to a directory on your test computer (for example, C:\ socketechoSample.)
+</p>
+</li><li>
+<p>Copy the UMDF coinstaller, WUDFUpdate_<i>MMmmmm</i>.dll, from the \redist\wdf\&lt;architecture&gt; directory to the same directory (for example, C:\socketechoSample).
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp; </p>
+<p class="note">You can obtain redistributable framework updates by downloading the
+<i>wdfcoinstaller.msi</i> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>. This package performs a silent install into the directory of your Windows Driver Kit (WDK) installation. You will see no confirmation that the installation has completed. You can verify that the redistributables have been
+ installed on top of the WDK by ensuring there is a redist\wdf directory under the root directory of the WDK, %ProgramFiles(x86)%\Windows Kits\8.0.</p>
+<p></p>
+</li><li>
+<p></p>
+<dl><dt>Navigate to the directory that contains the INF file and binaries (for example, cd /d c:\socketechoSample), and run DevCon.exe as follows:
+</dt><dt><b>devcon.exe install socketecho.inf WUDF\socketecho</b> </dt><dt>You can find DevCon.exe in the \tools directory of the WDK (for example, \tools\devcon\i386\devcon.exe).
+</dt></dl>
+<p></p>
+</li></ol>
+<p>To update the socketecho driver after you make any changes, do the following:</p>
+<ol>
+<li>
+<p>Increment the version number in the INF file. This change is not necessary, but it will help ensure that Plug and Play (PnP) selects your new driver as a better match for the device.
+</p>
+</li><li>
+<p>Copy the updated driver binary and the socketecho.inf file to a directory on your test computer (for example, C:\ socketechoSample.)
+</p>
+</li><li>
+<p>Navigate to the directory that contains the INF file and binaries (for example, cd /d c:\ socketechoSample), and run devcon.exe as follows:
+</p>
+<p>devcon.exe update socketecho.inf WUDF\socketecho</p>
+</li></ol>
+<p>To test this sample drivers on a checked operating system that you have installed (in contrast to the standard retail installations), you must modify the INF file to use the checked version of the UMDF co-installer. That is, you must do the following:</p>
+<ol>
+<li>
+<p>In the INX file, replace all occurrences of WudfUpdate_<i>MMmmmm</i>.dll with WudfUpdate_<i>MMmmmm</i>_chk.dll.</p>
+</li><li>
+<p>Copy the WudfUpdate_<i>MMmmmm</i>_chk.dll file from the \redist\wdf\&lt;architecture&gt; directory to your driver package instead of WudfUpdate_<i>MMmmmm</i>.dll.</p>
+</li><li>
+<p>If WdfCoinstaller<i>MMmmmm</i>.dll or WinUsbCoinstaller.dll is included in your driver package, repeat step 1 and step 2 for them.</p>
+</li></ol>
+<h2><a id="Testing"></a><a id="testing"></a><a id="TESTING"></a>Testing</h2>
+<p>To test the SocketEcho driver, you can run socketechoserver.exe, which is built from the src\general\echo\umdfSocketEcho\Exe directory, and echoapp.exe, which is built from the Kernel-Mode Driver Framework (KMDF) samples in the src\general\echo\kmdf directory.
+</p>
+<p>First, you must install the device as described earlier. Then, run socketechoserver.exe from a Command Prompt window.</p>
+<p></p>
+<dl><dt>D:\&gt;socketechoserver -h </dt><dt>Usage: </dt><dt>------ </dt><dt>socketechoserver Display Usage </dt><dt>socketechoserver -h Display Usage </dt><dt>socketechoserver -p Start the app as server listening on default port </dt><dt>socketechoserver -p [port#] Start the app as server listening on this port </dt><dt>D:\&gt;socketechoserver -p </dt><dt>Listening on socket... </dt><dt>In another Command Prompt window, run echoapp.exe. </dt><dt>D:\&gt;echoapp </dt><dt>DevicePath: \\?\root#sample#0000#{ e5e65b0c-82c8-4689-96d4-f77837971990} </dt><dt>Opened device successfully </dt><dt>512 Pattern Bytes Written successfully </dt><dt>512 Pattern Bytes Read successfully </dt><dt>Pattern Verified successfully </dt></dl>
+<p></p>
+<p>D:\&gt;echoapp -Async</p>
+<p>DevicePath: \\?\root#sample#0000#{cdc35b6e-0be4-4936-bf5f-5537380a7c1a}</p>
+<p>Opened device successfully</p>
+<p>Starting AsyncIo</p>
+<p>Number of bytes written by request number 0 is 1024</p>
+<p>Number of bytes read by request number 0 is 1024</p>
+<p>Number of bytes read by request number 1 is 1024</p>
+<p>Number of bytes written by request number 2 is 1024</p>
+<p>Number of bytes read by request number 2 is 1024</p>
+<p>Number of bytes written by request number 3 is 1024</p>
+<p>Number of bytes read by request number 3 is 1024</p>
+<p>Number of bytes written by request number 4 is 1024</p>
+<p>Number of bytes read by request number 4 is 1024</p>
+<p>Number of bytes written by request number 5 is 1024</p>
+<p>Number of bytes read by request number 5 is 1024</p>
+<p>Number of bytes written by request number 6 is 1024</p>
+<p>Number of bytes read by request number 6 is 1024</p>
+<p>Number of bytes written by request number 7 is 1024</p>
+<p>Number of bytes read by request number 7 is 1024</p>
+<p>Number of bytes written by request number 8 is 1024</p>
+<p>Number of bytes read by request number 8 is 1024</p>
+<p>Number of bytes written by request number 9 is 1024</p>
+<p>Number of bytes read by request number 9 is 1024</p>
+<p>Number of bytes written by request number 10 is 1024</p>
+<p>Number of bytes read by request number 10 is 1024</p>
+<p>Number of bytes written by request number 11 is 1024</p>
+<p>...</p>
+<p>Note that independent threads perform the reads and writes in the echo test application. As a result, the order of the output might not exactly match what you see in the preceding output.</p>
+<h2><a id="_______File_Manifest"></a><a id="_______file_manifest"></a><a id="_______FILE_MANIFEST"></a>File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File </th>
+<th>Description </th>
+</tr>
+<tr>
+<td>
+<p>Socketecho.htm</p>
+</td>
+<td>
+<p>The documentation for this sample.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Dllsup.cpp</p>
+</td>
+<td>
+<p>The DLL support code that provides the DLL's entry point and the single required export (DllGetClassObject).
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>exports.def</p>
+</td>
+<td>
+<p>This file lists the functions that the driver DLL exports.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>makefile</p>
+</td>
+<td>
+<p>Redirects to the real makefile, which is shared by all of the driver components of the WDK.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>internal.h</p>
+</td>
+<td>
+<p>This file is the main header file for the socketecho driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Driver.cpp and Driver.h</p>
+</td>
+<td>
+<p>DriverEntry and events on the driver object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Device.cpp and Device.h</p>
+</td>
+<td>
+<p>The Events on the device object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Queue.cpp and Queue.h</p>
+</td>
+<td>
+<p>Implements the I/O queue interface and performs the read, write, and ioctl operations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Connection.cpp and Connection.h</p>
+</td>
+<td>
+<p>Contains events on the connection object that is created for each file handle. These files contain the code for the socket client.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DeviceContext.h</p>
+</td>
+<td>
+<p>Defines the context associated with the device object. Per device context stores host and Port string for the socket server.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>FileContext.h</p>
+</td>
+<td>
+<p>Defines the context associated with the file object. Per file context stores per connection information and Win32 socket I/O target associated with the connection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Socketecho.rc</p>
+</td>
+<td>
+<p>The resource file for the driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sources</p>
+</td>
+<td>
+<p>A generic file that lists source files and all of the build options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Socketecho.inx</p>
+</td>
+<td>
+<p>The INF file that describes the installation of this driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile.inc</p>
+</td>
+<td>
+<p>A makefile that defines custom build actions. This includes the conversion of the .INX file into a .INF file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

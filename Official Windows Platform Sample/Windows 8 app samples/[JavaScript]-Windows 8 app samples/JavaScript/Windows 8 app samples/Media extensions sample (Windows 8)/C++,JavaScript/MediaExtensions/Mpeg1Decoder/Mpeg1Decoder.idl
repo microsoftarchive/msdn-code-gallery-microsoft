@@ -1,0 +1,12 @@
+import "Windows.Media.idl";
+
+#include <sdkddkver.h>
+
+namespace MPEG1Decoder
+{
+	[version(NTDDI_WIN8)]
+    runtimeclass MPEG1Decoder
+    {
+		[default] interface Windows.Media.IMediaExtension;
+    }
+}

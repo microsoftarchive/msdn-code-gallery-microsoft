@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7d1e078-8570-47da-a87b-ff462dfc958dCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Custom Data Controls Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Custom Data Controls Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Custom Data Controls
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/30/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Custom-Data-Controls-Sample-54e516b6">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Custom Data Controls Sample</h1>
+<div id="mainSection">
+<div id="mainBody">
+<div class="saveHistory" id="allHistory">
+<p>&nbsp;</p>
+</div>
+<div class="introduction">
+<p>To get samples and instructions for installing them, see the following:</p>
+<ul>
+<li>
+<p>Click <span class="ui">Samples</span> on the Visual Studio <span class="ui">
+Help</span> menu.</p>
+<p>For more information, see .</p>
+</li><li>
+<p>The most recent versions and the complete list of samples are available on the Visual Studio 2008 Samples Web site.</p>
+</li><li>
+<p>You can also locate samples on your computer's hard disk. By default, samples and a Readme file are copied to a folder under \Program Files\Visual Studio 9\Samples\. For Visual Studio Express Editions, all samples are located on the Internet.</p>
+<div class="alert">
+<table width="100%">
+</table>
+<p>&nbsp;</p>
+</div>
+</li></ul>
+</div>
+<h3 class="procedureSubHeading">To run this sample</h3>
+<div class="subSection">
+<ul>
+<li>
+<p>Press F5.</p>
+</li></ul>
+</div>
+<h1 class="heading"><span>Requirements</span></h1>
+<div class="section" id="requirementsTitleSection">
+<p>This sample requires the Northwind sample database. For more information, see .</p>
+</div>
+<h1 class="heading"><span>Demonstrates</span></h1>
+<div class="section" id="demonstratesSection">
+<p>The sample solution includes two projects. One is a <span class="ui">Windows Control Library</span> project named
+<span class="code">MyCompanyControls</span>. The second is a <span class="ui">
+Windows Application</span> project named <span class="code">CustomDataControls</span>.</p>
+<p>The control library defines the <span class="code">PhoneBox</span> control. The control simply inherits from control and sets the property to a Phone Number with Area Code. The library project also contains an embedded resource, PhoneBox.bmp, to represent
+ the icon in the <span class="ui">ToolBox</span> and <span class="ui">Data Sources</span> window.</p>
+<p>The <span class="code">PhoneBox</span> control is available in the <span class="code">
+CustomDataControls</span> project. By selecting <span class="ui">Rebuild</span> from the project's shortcut menu, the
+<span class="code">PhoneBox</span> will appear in the <span class="ui">Toolbox</span> in a new section named
+<span class="ui">MyCompanyControls</span>. You need to have <span class="code">
+Form1</span> opened in the designer in order to see the <span class="ui">ToolBox</span> items.</p>
+<p>The <span class="ui">Data Sources</span> window is used to add the <span class="code">
+PhoneBox</span> to the list of controls for <span class="keyword">String</span>. In the
+<span class="ui">Data Sources</span> window, select the <span class="code">HomePhone</span> column under the
+<span class="code">Employee</span> table. Select the drop-down and choose <span class="ui">
+Customize</span>. This opens the dialog box for customizing the list of controls for given types. This list is populated with the list of controls currently in the Visual Studio&nbsp;<span class="ui">ToolBox</span> that implement the . The
+<span class="code">PhoneBox</span> control inherits from , which supports the . Select
+<span class="ui">String</span> under <span class="ui">Data Type</span> and find the
+<span class="code">PhoneBox</span> control in the list. The check by the <span class="code">
+PhoneBox</span> control indicates to Visual Studio that the <span class="code">
+PhoneBox</span> control is one of the available controls for any object that has a string property.</p>
+</div>
+</div>
+<div id="footer">
+<div class="footerLine"></div>
+<a name="feedback"></a><span id="fb" class="feedbackcss">&nbsp;</span></div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF   -->
+<!-- ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO -->
+<!-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A      -->
+<!-- PARTICULAR PURPOSE.                                                 -->
+<!--                                                                     -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved            -->
+
+<Page
+	x:Class="ToastsSampleCPP.ScenarioInput2"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	d:DesignWidth="1366"
+	d:DesignHeight="768">
+
+    <StackPanel>
+        <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap">
+      In this scenario, the app will show a toast notification which includes images from the local machine.
+      <LineBreak/>
+      <LineBreak/>
+      Developers can also add images to their toasts. A simple way to do this is to include images in the application's package.
+        </TextBlock>
+        <TextBlock Style="{StaticResource H4Style}" TextWrapping="Wrap">
+      Press one of the buttons below to see an example of that toast:
+        </TextBlock>
+        <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="Scenario2DisplayToastImage01" Content="ToastImageAndText01" Margin="0,0,10,0"/>
+                <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A large image and a single string wrapped across three lines of text" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="Scenario2DisplayToastImage02" Content="ToastImageAndText02" Margin="0,0,10,0"/>
+                <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A large image, one string of bold text, and one string of regular text wrapped across two lines" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="Scenario2DisplayToastImage03" Content="ToastImageAndText03" Margin="0,0,10,0"/>
+                <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A large image, one string of bold text wrapped across two lines, and a string of regular text on the third line" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="Scenario2DisplayToastImage04" Content="ToastImageAndText04" Margin="0,0,10,0"/>
+                <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A large image, one string of bold text on the first line, and two strings of regular text on the second and third lines" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="Since notifications are just XML, you can create them in many different ways. Above, the NotificationsExtensions library is used. You can also create notifications with strings."/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Scenario2DisplayToastImage01String" Content="ToastImageAndText01"/>
+                <Button x:Name="Scenario2DisplayToastImage02String" Content="ToastImageAndText02"/>
+                <Button x:Name="Scenario2DisplayToastImage03String" Content="ToastImageAndText03"/>
+                <Button x:Name="Scenario2DisplayToastImage04String" Content="ToastImageAndText04"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

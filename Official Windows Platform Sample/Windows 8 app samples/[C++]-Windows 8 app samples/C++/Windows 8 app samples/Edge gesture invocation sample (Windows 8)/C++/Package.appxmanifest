@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="Microsoft.SDKSamples.EdgeGesture.CPP" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>EdgeGesture C++ sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storeLogo-sdk.png</Logo>
+    <Description>EdgeGesture C++ SDK sample</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="EdgeGestureSample.App" Executable="EdgeGestureSample.exe" EntryPoint="EdgeGestureSample.App">
+      <VisualElements DisplayName="EdgeGesture C++ sample" Logo="squareTile-sdk.png" SmallLogo="smallTile-sdk.png" Description="EdgeGesture C++ sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,33 @@
+﻿<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF   -->
+<!-- ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO -->
+<!-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A      -->
+<!-- PARTICULAR PURPOSE.                                                 -->
+<!--                                                                     -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved            -->
+
+<Page
+	x:Class="MediaExtensionsCPP.ScenarioInput4"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	d:DesignWidth="1366"
+	d:DesignHeight="768">
+
+    <StackPanel>
+        <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="A media effect allows an application to process uncompressed audio and video streams before it reaches the rendering engine. The below example demonstrates how to modify a video image before it is rendered by the playback engine." />
+        <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="OpenGrayscale" Content="Play Video (Grayscale)" Margin="0,0,10,0" Click="OpenGrayscale_Click"/>
+                <Button x:Name="OpenFisheye" Content="Play Video (Fisheye)" Margin="0,0,10,0" Click="OpenFisheye_Click"/>
+                <Button x:Name="OpenPinch" Content="Play Video (Pinch)" Margin="0,0,10,0" Click="OpenPinch_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="OpenWarp" Content="Play Video (Warp)" Margin="0,0,10,0" Click="OpenWarp_Click"/>
+                <Button x:Name="OpenInvert" Content="Play Video (Invert)" Margin="0,0,10,0" Click="OpenInvert_Click"/>
+                <Button x:Name="Stop" Content="Stop Video" Margin="0,0,10,0" Click="Stop_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

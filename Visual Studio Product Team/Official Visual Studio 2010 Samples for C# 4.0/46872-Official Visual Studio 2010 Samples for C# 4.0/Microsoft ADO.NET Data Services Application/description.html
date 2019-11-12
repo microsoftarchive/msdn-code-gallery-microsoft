@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/04f9c26e-88fd-4dfd-b715-9733d17420b6Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Microsoft ADO.NET Data Services Application</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Microsoft ADO.NET Data Services Application</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ADO.NET Entity Framework, ADO.NET, WPF, WCF Data Services, OData
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Data Access
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/16/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p>This sample shows a simple ADO.NET Data Service exposing data through the ADO.NET Entity Framework and a WPF application consuming the ADO.NET Data Service.</p>
+<h1 class="heading"><span>Requirements</span></h1>
+<div class="section" id="requirementsTitleSection">
+<p>This sample requires the Adventure Works sample database. For more information, see
+<a href="http://msdn.microsoft.com/en-us/library/5ey0sd99%28VS.80%29.aspx" >
+How to: Install and Troubleshoot Database Components for Samples</a>.</p>
+</div>
+<h1><span>Building the Sample</span></h1>
+<p>Press F5 (Note: you may need to set the UserInterface project to run by default)<em><br>
+</em></p>
+<h1>Description</h1>
+<p>The solution is made up of the following projects:</p>
+<h4>DataServicesWebApp</h4>
+<p>This project contains the Entity Data Model that we will use as the basis of our ADO.NET Data Service, as well as the service itself.</p>
+<h4>UserInterface</h4>
+<p>This project is a user interface implemented in WPF. The entry point for the application is in the code behind file for ProductList.xaml.</p>
+<h1>Screenshots</h1>
+<p><img src="description/Screenshot.png" alt="" width="640" height="480"></p>
+<p><img src="description/Screenshot2.png" alt="" width="330" height="352"></p>
+<h1>Sample Code</h1>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>Visual Basic</span><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">vb</span><span class="hidden">csharp</span>
+<pre class="hidden">Namespace DataServicesWebApp 
+    Public Class AdventureWorks 
+        Inherits DataService(Of AdventureWorksLTEntities) 
+        ''' &lt;summary&gt; 
+        ''' This method is called only once to initialize service-wide policies. 
+        ''' &lt;/summary&gt; 
+        Public Shared Sub InitializeService(ByVal config As IDataServiceConfiguration) 
+            ' TODO: set rules to indicate which entity sets and service operations are visible, updatable, etc. 
+            ' Examples: 
+            ' config.SetEntitySetAccessRule(&quot;MyEntityset&quot;, EntitySetRights.AllRead); 
+            ' config.SetServiceOperationAccessRule(&quot;MyServiceOperation&quot;, ServiceOperationRights.All); 
+ 
+            ' For testing purposes use &quot;*&quot; to indicate all entity sets/service operations. 
+            ' &quot;*&quot; should NOT be used in production systems. 
+            ' This Sample only exposes the entity sets needed by the application we are building. 
+            ' This Sample uses EntitySetRight.All which allows both Read and Write access to the Entity Set. 
+            config.SetEntitySetAccessRule(&quot;Products&quot;, EntitySetRights.All) 
+            config.SetEntitySetAccessRule(&quot;ProductCategories&quot;, EntitySetRights.All) 
+            config.SetEntitySetAccessRule(&quot;ProductDescriptions&quot;, EntitySetRights.All) 
+            config.SetEntitySetAccessRule(&quot;ProductModelProductDescriptions&quot;, EntitySetRights.All) 
+            config.SetEntitySetAccessRule(&quot;ProductModels&quot;, EntitySetRights.All) 
+        End Sub 
+    End Class 
+End Namespace </pre>
+<pre class="hidden">namespace DataServicesWebApp 
+{ 
+    public class AdventureWorks : DataService&lt;AdventureWorksLTEntities&gt; 
+    { 
+        /// &lt;summary&gt; 
+        /// This method is called only once to initialize service-wide policies. 
+        /// &lt;/summary&gt; 
+        public static void InitializeService(IDataServiceConfiguration config) 
+        { 
+            // TODO: set rules to indicate which entity sets and service operations are visible, updatable, etc. 
+            // Examples: 
+            // config.SetEntitySetAccessRule(&quot;MyEntityset&quot;, EntitySetRights.AllRead); 
+            // config.SetServiceOperationAccessRule(&quot;MyServiceOperation&quot;, ServiceOperationRights.All); 
+ 
+            // For testing purposes use &quot;*&quot; to indicate all entity sets/service operations. 
+            // &quot;*&quot; should NOT be used in production systems. 
+            // This Sample only exposes the entity sets needed by the application we are building. 
+            // This Sample uses EntitySetRight.All which allows both Read and Write access to the Entity Set. 
+            config.SetEntitySetAccessRule(&quot;Products&quot;, EntitySetRights.All); 
+            config.SetEntitySetAccessRule(&quot;ProductCategories&quot;, EntitySetRights.All); 
+            config.SetEntitySetAccessRule(&quot;ProductDescriptions&quot;, EntitySetRights.All); 
+            config.SetEntitySetAccessRule(&quot;ProductModelProductDescriptions&quot;, EntitySetRights.All); 
+            config.SetEntitySetAccessRule(&quot;ProductModels&quot;, EntitySetRights.All); 
+        } 
+    } 
+} </pre>
+<div class="preview">
+<pre class="vb"><span class="visualBasic__keyword">Namespace</span>&nbsp;DataServicesWebApp&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Public</span>&nbsp;<span class="visualBasic__keyword">Class</span>&nbsp;AdventureWorks&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Inherits</span>&nbsp;DataService(<span class="visualBasic__keyword">Of</span>&nbsp;AdventureWorksLTEntities)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'''&nbsp;&lt;summary&gt;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'''&nbsp;This&nbsp;method&nbsp;is&nbsp;called&nbsp;only&nbsp;once&nbsp;to&nbsp;initialize&nbsp;service-wide&nbsp;policies.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'''&nbsp;&lt;/summary&gt;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Public</span>&nbsp;<span class="visualBasic__keyword">Shared</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;InitializeService(<span class="visualBasic__keyword">ByVal</span>&nbsp;config&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;IDataServiceConfiguration)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;TODO:&nbsp;set&nbsp;rules&nbsp;to&nbsp;indicate&nbsp;which&nbsp;entity&nbsp;sets&nbsp;and&nbsp;service&nbsp;operations&nbsp;are&nbsp;visible,&nbsp;updatable,&nbsp;etc.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Examples:&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;config.SetEntitySetAccessRule(&quot;MyEntityset&quot;,&nbsp;EntitySetRights.AllRead);&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;config.SetServiceOperationAccessRule(&quot;MyServiceOperation&quot;,&nbsp;ServiceOperationRights.All);&nbsp;</span>&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;For&nbsp;testing&nbsp;purposes&nbsp;use&nbsp;&quot;*&quot;&nbsp;to&nbsp;indicate&nbsp;all&nbsp;entity&nbsp;sets/service&nbsp;operations.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;&quot;*&quot;&nbsp;should&nbsp;NOT&nbsp;be&nbsp;used&nbsp;in&nbsp;production&nbsp;systems.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;This&nbsp;Sample&nbsp;only&nbsp;exposes&nbsp;the&nbsp;entity&nbsp;sets&nbsp;needed&nbsp;by&nbsp;the&nbsp;application&nbsp;we&nbsp;are&nbsp;building.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;This&nbsp;Sample&nbsp;uses&nbsp;EntitySetRight.All&nbsp;which&nbsp;allows&nbsp;both&nbsp;Read&nbsp;and&nbsp;Write&nbsp;access&nbsp;to&nbsp;the&nbsp;Entity&nbsp;Set.&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.SetEntitySetAccessRule(<span class="visualBasic__string">&quot;Products&quot;</span>,&nbsp;EntitySetRights.All)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.SetEntitySetAccessRule(<span class="visualBasic__string">&quot;ProductCategories&quot;</span>,&nbsp;EntitySetRights.All)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.SetEntitySetAccessRule(<span class="visualBasic__string">&quot;ProductDescriptions&quot;</span>,&nbsp;EntitySetRights.All)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.SetEntitySetAccessRule(<span class="visualBasic__string">&quot;ProductModelProductDescriptions&quot;</span>,&nbsp;EntitySetRights.All)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config.SetEntitySetAccessRule(<span class="visualBasic__string">&quot;ProductModels&quot;</span>,&nbsp;EntitySetRights.All)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Class</span>&nbsp;&nbsp;
+<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Namespace</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;
+<div class="endscriptcode">&nbsp;</div>
+</div>
+<h1><span>Source Code Files</span></h1>
+<ul>
+<li>C#
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=157530388">AdventureWorks.svc.cs</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=241167038">Web.config</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=850689570">IProductGateway.cs</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=806403199">ProductGateway.cs</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=309477448">Reference.cs</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=1659779515">ProductList.xaml</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=584680197">ProductList.xaml.cs</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=191147453">ProductView.xaml</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=23478&amp;pathId=729262698">ProductView.xaml.cs</a>
+</li></ul>
+</li><li>VB<br>
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=1555074728">AdventureWorks.svc.vb</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=241167038">Web.config</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=416130164">IProductGateway.vb</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=571450606">ProductGateway.vb</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=873641728">Reference.vb</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=1659779515">ProductList.xaml</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=1507011832">ProductList.xaml.vb</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=191147453">ProductView.xaml</a>
+</li><li><a class="browseFile" href="http://code.msdn.microsoft.com/ADONET-Data-Application-ace746e3/sourcecode?fileId=22532&amp;pathId=1391966629">ProductView.xaml.vb</a>
+</li></ul>
+</li></ul>
+<h1>More Information</h1>
+<p>For more information on Microsoft ADO.NET Data Services:<a href="http://social.msdn.microsoft.com/Search/en-US?query=Microsoft ADO.NET Data Services" >http://social.msdn.microsoft.com/Search/en-US?query=Microsoft ADO.NET Data Services</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

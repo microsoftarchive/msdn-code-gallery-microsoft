@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>USBView sample application</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>USBView sample application</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            usb
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/USBView-sample-application-e3241039">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>Usbview.exe is a Windows GUI application that allows you to browse all USB controllers and connected USB devices on your system. The left pane in the main application window displays a connection-oriented tree view, and the right pane displays the USB data
+ structures pertaining to the selected USB device, such as the Device, Configuration, Interface, and Endpoint Descriptors, as well as the current device configuration.
+</p>
+<p class="note"><b>Important</b>&nbsp;&nbsp;If you need UsbView as a tool, do not download this sample. Instead get UsbView.exe from the
+<a href="http://go.microsoft.com/fwlink/p?linkid=391063">Windows Driver Kit (WDK)</a> in the Windows Kits\<i>&lt;version&gt;</i>\Tools\<i>&lt;arch&gt;</i> folder. If you need to see the source code for UsbView, open the
+<b>Browse code</b> tab.</p>
+<p></p>
+<p>This functional application sample demonstrates how a user-mode application can enumerate USB host controllers, USB hubs, and attached USB devices, and query information about the devices from the registry and through USB requests to the devices.
+</p>
+<p>The IOCTL calls (see the system include file USBIOCTL.H) demonstrated by this sample include:</p>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537236"><b>IOCTL_GET_HCD_DRIVERKEY_NAME</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537310"><b>IOCTL_USB_GET_DESCRIPTOR_FROM_NODE_CONNECTION</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537317"><b>IOCTL_USB_GET_NODE_CONNECTION_DRIVERKEY_NAME</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537319"><b>IOCTL_USB_GET_NODE_CONNECTION_INFORMATION</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537323"><b>IOCTL_USB_GET_NODE_CONNECTION_NAME</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537324"><b>IOCTL_USB_GET_NODE_INFORMATION</b></a>
+</li><li><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff537326"><b>IOCTL_USB_GET_ROOT_HUB_NAME</b></a>
+</li></ul>
+<p></p>
+<p>For information about USB, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff538930">
+Universal Serial Bus (USB) Drivers</a>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/USBView-sample-application-e3241039/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt><dt>Windows&nbsp;8 </dt><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt><dt>Windows Server&nbsp;2012 </dt><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>You can build the sample in two ways: using Visual Studio&nbsp;2013 or the command line (<i>MSBuild</i>).</p>
+<h2><a id="Download_and_extract_the_sample"></a><a id="download_and_extract_the_sample"></a><a id="DOWNLOAD_AND_EXTRACT_THE_SAMPLE"></a>Download and extract the sample</h2>
+<p>Click the download button on this page. Click <b>Save</b>, and then click <b>Open Folder</b>. Right click Usbview sample application.zip, and choose
+<b>Extract All</b>. Specify or browse to a folder for the extracted files. For example, you could extract to c:\Usbview.</p>
+<h2><a id="Open_the_driver_solution_in_Visual_Studio"></a><a id="open_the_driver_solution_in_visual_studio"></a><a id="OPEN_THE_DRIVER_SOLUTION_IN_VISUAL_STUDIO"></a>Open the driver solution in Visual Studio</h2>
+<p>Navigate to the folder that has the extracted sample. Double click the solution file, usbview.sln. In Microsoft Visual Studio, locate Solution Explorer. (If this is not already open, choose
+<b>Solution Explorer</b> from the <b>View</b> menu.) In Solution Explorer, you can see one solution that has one project. There is an application project named
+<b>usbview</b>.</p>
+<h2><a id="Set_the_configuration_and_platform_in_Visual_Studio"></a><a id="set_the_configuration_and_platform_in_visual_studio"></a><a id="SET_THE_CONFIGURATION_AND_PLATFORM_IN_VISUAL_STUDIO"></a>Set the configuration and platform in Visual Studio</h2>
+<p>In Visual Studio, in Solution Explorer, right click <b>Solution ‘usbview’ (1 project)</b>, and choose
+<b>Configuration Manager</b>. Set the configuration and the platform. Do not check the
+<b>Deploy</b> boxes. Here are some examples of configuration and platform settings.</p>
+<table>
+<tbody>
+<tr>
+<th>Configuration</th>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Win8.1 Debug</td>
+<td>x64</td>
+<td>The app will run on an x64 hardware platform that is running Windows&nbsp;8.1. The app will not run on any earlier versions of Windows.</td>
+</tr>
+<tr>
+<td>Win7 Debug</td>
+<td>x64</td>
+<td>The app will run on an x64 hardware platform that is running Windows&nbsp;7 or a later version of Windows.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Build_the_sample_using_Visual_Studio"></a><a id="build_the_sample_using_visual_studio"></a><a id="BUILD_THE_SAMPLE_USING_VISUAL_STUDIO"></a>Build the sample using Visual Studio</h2>
+<p>In Visual Studio, on the <b>Build</b> menu, choose <b>Build Solution</b>.</p>
+<h2><a id="Locate_the_built_application_executable_package"></a><a id="locate_the_built_application_executable_package"></a><a id="LOCATE_THE_BUILT_APPLICATION_EXECUTABLE_PACKAGE"></a>Locate the built application executable package</h2>
+<p>In File Explorer, navigate to the folder that contains your built app (usbview.exe). The location of this folder varies depending on what you set for configuration and platform. For example, if your settings are Win7 Debug and x64, the package is in your
+ solution folder under x64\Win7Debug.</p>
+<h2><a id="Building_a_Driver_Using_the_Command_Line__MSBuild_"></a><a id="building_a_driver_using_the_command_line__msbuild_"></a><a id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></a>Building a Driver Using the Command Line (MSBuild)</h2>
+<p>You can build a driver from the command line using the Visual Studio Command Prompt window and the Microsoft Build Engine (MSBuild.exe) Previous versions of the WDK used the Windows Build utility (Build.exe) and provided separate build environment windows
+ for each of the supported build configurations. You can now use the Visual Studio Command Prompt window for all build configurations.</p>
+<p class="proch"><b>To select a configuration and build a driver</b></p>
+<ol>
+<li>Open a Visual Studio Command Prompt window at the <b>Start</b> screen. From this window you can use MsBuild.exe to build any Visual Studio project by specifying the project (.VcxProj) or solutions (.Sln) file.
+</li><li>Navigate to the project directory and enter the <b>MSbuild</b> command for your target. For example, to perform a clean build of a Visual Studio driver project called
+<i>filtername</i>.vcxproj, navigate to the project directory and enter the following MSBuild command:
+<b>msbuild /t:clean /t:build .\</b><i>filtername</i><b>.vcxproj</b>. </li></ol>
+<h2>Run the sample</h2>
+<h2><a id="Local_debugging"></a><a id="local_debugging"></a><a id="LOCAL_DEBUGGING"></a>Local debugging</h2>
+<ol>
+<li>Change <b>Debugger</b> to launch to <b>Local Windows Debugger</b>. </li><li>On the <b>Debug</b> menu, select <b>Start debugging</b> or hit <b>F5</b>. </li></ol>
+<h2><a id="Manual_deployment_to_a_remote_target_computer"></a><a id="manual_deployment_to_a_remote_target_computer"></a><a id="MANUAL_DEPLOYMENT_TO_A_REMOTE_TARGET_COMPUTER"></a>Manual deployment to a remote target computer</h2>
+<p>If you want to debug the sample app on a remote computer, </p>
+<ol>
+<li>Copy the executable to a folder on the remote computer. </li><li>Specify project properties as per the instructions given in <a href="http://msdn.microsoft.com/en-us/library/8x6by8d2.aspx">
+Set Up Remote Debugging for a Visual Studio Project</a>. </li><li>Change <b>Debugger</b> to launch to <b>Remote Windows Debugger</b>. </li><li>On the <b>Debug</b> menu, select <b>Start debugging</b> or hit <b>F5</b>. </li></ol>
+<p></p>
+<h2><a id="View_a_USB_device_in_Usbview"></a><a id="view_a_usb_device_in_usbview"></a><a id="VIEW_A_USB_DEVICE_IN_USBVIEW"></a>View a USB device in Usbview</h2>
+<p></p>
+<ol>
+<li>Attach a USB device to one of USB ports on the computer that has Usbview running.
+</li><li>In the device tree, locate the device. For example the device might be under the Intel(R) ICH10 Family USB Universal Host Controller - 3A34 &gt; Root Hub node.
+</li><li>View host controller and port properties on the right pane. </li></ol>
+<p></p>
+<h2><a id="Code_tour"></a><a id="code_tour"></a><a id="CODE_TOUR"></a>Code tour</h2>
+<table>
+<tbody>
+<tr>
+<th>File manifest</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Resource.h</td>
+<td>ID definitions for GUI controls</td>
+</tr>
+<tr>
+<td>Usbdesc.h</td>
+<td>USB descriptor type definitions</td>
+</tr>
+<tr>
+<td>Usbview.h</td>
+<td>Main header file for this sample</td>
+</tr>
+<tr>
+<td>Vndrlist.h</td>
+<td>List of USB Vendor IDs and vendor names</td>
+</tr>
+<tr>
+<td>Debug.c</td>
+<td>Assertion routines for the checked build</td>
+</tr>
+<tr>
+<td>Devnode.c</td>
+<td>Routines for accessing DevNode information</td>
+</tr>
+<tr>
+<td>Dispaud.c</td>
+<td>Routines for displaying USB audio class device information</td>
+</tr>
+<tr>
+<td>Enum.c</td>
+<td>Routines for displaying USB device information</td>
+</tr>
+<tr>
+<td>Usbview.c</td>
+<td>Entry point and GUI handling routines</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>The major topics covered in this tour are: </p>
+<ul>
+<li>GUI handling routines </li><li>Device enumeration routines </li><li>Device information display routines </li></ul>
+The file Usbview.c contains the sample application entry point and GUI handling routines. On entry, the main application window is created, which is actually a dialog box as defined in Usbview.rc. The dialog box consists of a split window with a tree view control
+ on the left side and an edit control on the right side.
+<p></p>
+<p>The routine RefreshTree() is called to enumerate USB host controller, hubs, and attached devices and to populate the device tree view control. RefreshTree() calls the routine EnumerateHostControllers() in Enum.c to enumerate USB host controller, hubs, and
+ attached devices. After the device tree view control has been populated, USBView_OnNotify() is called when an item is selected in the device tree view control. This calls UpdateEditControl() in Display.c to display information about the selected item in the
+ edit control. </p>
+<p>The file Enum.c contains the routines that enumerate the USB bus and populate the tree view control. The USB device enumeration and information collection process is the main point of this sample application. The enumeration process starts at EnumerateHostControllers()
+ and goes like this: </p>
+<ol>
+<li>Enumerate Host Controllers and Root Hubs. Host controllers have symbolic link names of the form HCDx, where x starts at 0. Use CreateFile() to open each host controller symbolic link. Create a node in the tree view to represent each host controller. After
+ a host controller has been opened, send the host controller an IOCTL_USB_GET_ROOT_HUB_NAME request to get the symbolic link name of the root hub that is part of the host controller.
+</li><li>Enumerate Hubs (Root Hubs and External Hubs). Given the name of a hub, use CreateFile() to open the hub. Send the hub an IOCTL_USB_GET_NODE_INFORMATION request to get info about the hub, such as the number of downstream ports. Create a node in the tree
+ view to represent each hub. </li><li>Enumerate Downstream Ports. Given a handle to an open hub and the number of downstream ports on the hub, send the hub an IOCTL_USB_GET_NODE_CONNECTION_INFORMATION request for each downstream port of the hub to get info about the device (if any) attached
+ to each port. If there is a device attached to a port, send the hub an IOCTL_USB_GET_NODE_CONNECTION_NAME request to get the symbolic link name of the hub attached to the downstream port. If there is a hub attached to the downstream port, recurse to step (2).
+ Create a node in the tree view to represent each hub port and attached device. USB configuration and string descriptors are retrieved from attached devices in GetConfigDescriptor() and GetStringDescriptor() by sending an IOCTL_USB_GET_DESCRIPTOR_FROM_NODE_CONNECTION()
+ to the hub to which the device is attached. </li></ol>
+The file Display.c contains routines that display information about selected devices in the application edit control. Information about the device was collected during the enumeration of the device tree. This information includes USB device, configuration,
+ and string descriptors and connection and configuration information that is maintained by the USB stack. The routines in this file simply parse and print the data structures for the device that were collected when it was enumerated. The file Dispaud.c parses
+ and prints data structures that are specific to USB audio class devices.
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

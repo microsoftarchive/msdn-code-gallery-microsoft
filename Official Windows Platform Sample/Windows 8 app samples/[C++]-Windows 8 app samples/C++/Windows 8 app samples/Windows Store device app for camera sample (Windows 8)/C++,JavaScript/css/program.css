@@ -1,0 +1,43 @@
+﻿Input[type="range"].autoSlider
+{
+    width: 40px;
+    position: relative;
+    margin: 0px 30px 0px 150px;
+    padding: 0px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.mylabel
+{
+    height: 18px;
+    font: normal normal normal 11pt/15pt "Segoe UI";
+    width: 100px;
+    position: fixed;
+    margin: 0px 0px 0px 20px;
+    color: black;
+}
+
+.myStatuslabel
+{
+    height: 18px;
+    font: normal normal normal 11pt/15pt "Segoe UI";
+    width: 30px;
+    position: fixed;
+    color: black;
+}
+
+Input[type="range"].valueSlider
+{
+    width: 150px;
+    position: relative;
+    margin: 0px 0px 0px 150px;
+    padding: 0px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.myForm
+{
+    background-color: #00b2f0;
+}

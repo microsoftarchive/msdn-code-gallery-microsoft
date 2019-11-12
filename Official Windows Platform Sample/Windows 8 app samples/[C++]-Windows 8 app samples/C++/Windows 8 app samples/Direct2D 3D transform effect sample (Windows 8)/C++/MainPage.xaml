@@ -1,0 +1,147 @@
+﻿<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF 
+ ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+ THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ PARTICULAR PURPOSE.
+
+ Copyright (c) Microsoft Corporation. All rights reserved -->
+
+<SwapChainBackgroundPanel
+    x:Name="DXSwapChainPanel"
+    x:Class="D2D3DTransforms.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="1366"
+    d:DesignHeight="768">
+
+    <UserControl x:Name="LayoutControl" Background="Transparent">
+        <Grid Background="Transparent" x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/> <!-- Row for Sample Overlay -->
+                <RowDefinition Height="*"/> <!-- Row for Transform properties -->
+            </Grid.RowDefinitions>
+
+            <!-- The VisualStateManager hides/shows the UI controls in response to the application being snapped -->
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SnappedStates">
+                    <VisualState x:Name="UnsnappedState">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="EffectControls" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="00:00:00.25" To="1">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="EffectControls">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="Header" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="00:00:00.25" To="1">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="Header">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SnappedState">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="EffectControls" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="00:00:00.25" To="0">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="EffectControls">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Collapsed" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="Header" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="00:00:00.25" To="0">
+                                <DoubleAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="Header">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Collapsed" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <!-- Sample Overlay Title -->
+            <StackPanel x:Name="Header" Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="windows-sdk.png"/>
+                    <TextBlock Text="Windows 8 SDK Samples" VerticalAlignment="Bottom" Style="{StaticResource OverlayTitleStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
+                <TextBlock x:Name="FeatureName" Text="Direct2D 3D transform effect sample" Style="{StaticResource OverlayH1Style}" TextWrapping="Wrap"/>
+            </StackPanel>
+            <!-- End Sample Overlay Title -->
+
+            <Grid Grid.Row="1" Margin="20" x:Name="EffectControls"  HorizontalAlignment="Left"  Width="400" Height="460" VerticalAlignment="Top"  Background="#33FFFFFF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Effect Selector Drop Down -->
+                <ComboBox HorizontalAlignment="Left" x:Name="EffectSelector" SelectionChanged="OnEffectSelectorSelectionChanged"  Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Height="30" Width="380">
+                    <ComboBoxItem>3DTransform (Matrix-based)</ComboBoxItem>
+                    <ComboBoxItem>3DPerspectiveTransform (Property-based)</ComboBoxItem>
+                </ComboBox>
+                <!-- End Effect Selector Drop Down -->
+
+                <!-- Effect Property Sliders -->
+                <Slider x:Name="ScaleX"        Grid.Row="1"  Grid.Column="2" Minimum="0"    Maximum="4"    StepFrequency="0.01" ValueChanged="OnScaleXValueChanged"        Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="ScaleY"        Grid.Row="2"  Grid.Column="2" Minimum="0"    Maximum="4"    StepFrequency="0.01" ValueChanged="OnScaleYValueChanged"        Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="LocalOffsetX"  Grid.Row="3"  Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnLocalOffsetXValueChanged"  Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="LocalOffsetY"  Grid.Row="4"  Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnLocalOffsetYValueChanged"  Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="LocalOffsetZ"  Grid.Row="5"  Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnLocalOffsetZValueChanged"  Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="RotationX"     Grid.Row="6"  Grid.Column="2" Minimum="0"    Maximum="360"  StepFrequency="0.01" ValueChanged="OnRotationXValueChanged"     Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="RotationY"     Grid.Row="7"  Grid.Column="2" Minimum="0"    Maximum="360"  StepFrequency="0.01" ValueChanged="OnRotationYValueChanged"     Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="RotationZ"     Grid.Row="8"  Grid.Column="2" Minimum="0"    Maximum="360"  StepFrequency="0.01" ValueChanged="OnRotationZValueChanged"     Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="GlobalOffsetX" Grid.Row="9"  Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnGlobalOffsetXValueChanged" Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="GlobalOffsetY" Grid.Row="10" Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnGlobalOffsetYValueChanged" Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="GlobalOffsetZ" Grid.Row="11" Grid.Column="2" Minimum="-500" Maximum="500"  StepFrequency="0.01" ValueChanged="OnGlobalOffsetZValueChanged" Style="{StaticResource PropertySliderStyle}" />
+                <Slider x:Name="Perspective"   Grid.Row="12" Grid.Column="2" Minimum="1"    Maximum="3000" StepFrequency="0.01" ValueChanged="OnPerspectiveValueChanged"   Style="{StaticResource PropertySliderStyle}" />
+                <!-- End Effect Property Sliders -->
+
+                <!-- Effect Property Labels -->
+                <TextBlock Grid.Row="1"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Scale (X-Axis)" />
+                <TextBlock Grid.Row="2"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Scale (Y-Axis)" />
+                <TextBlock Grid.Row="3"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Local Offset (X-Axis)" />
+                <TextBlock Grid.Row="4"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Local Offset (Y-Axis)" />
+                <TextBlock Grid.Row="5"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Local Offset (Z-Axis)" />
+                <TextBlock Grid.Row="6"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Rotation (X-Axis)" />
+                <TextBlock Grid.Row="7"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Rotation (Y-Axis)" />
+                <TextBlock Grid.Row="8"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Rotation (Z-Axis)" />
+                <TextBlock Grid.Row="9"  Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Global Offset (X-Axis)" />
+                <TextBlock Grid.Row="10" Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Global Offset (Y-Axis)" />
+                <TextBlock Grid.Row="11" Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Global Offset (Z-Axis)" />
+                <TextBlock Grid.Row="12" Grid.Column="1" Style="{StaticResource EffectPropertyStyle}" Text="Perspective" />
+                <!-- End Effect Property Labels -->
+
+                <Button x:Name="RestoreDefaults" Grid.Row="13" Grid.Column="2" Margin="0,0,-3,0" Click="OnRestoreDefaultsClick" HorizontalAlignment="Right" Content="Restore Defaults" />
+            </Grid>
+        </Grid>
+    </UserControl>
+</SwapChainBackgroundPanel>

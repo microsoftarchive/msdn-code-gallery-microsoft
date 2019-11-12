@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/1c1e217c-1475-400e-91a7-b2be1bd6efa0Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>VSSDK IDE Sample: Combo Box</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>VSSDK IDE Sample: Combo Box</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            VSX, Visual Studio SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Visual Studio Editor, VSX
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">3/3/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/VSSDK-IDE-Sample-Combo-Box-e9f13c01">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h2>Summary</h2>
+<p><span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel">This sample demonstrates how to create combo boxes on Visual Studio&rsquo;s toolbars. Four types of combo boxes that can be created are shown in this sample.
+<br>
+<br>
+</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Goals</h2>
+<ul>
+<li>Adding a Drop Down Combo to Visual Studio and handling it </li><li>Adding an Index Combo to Visual Studio and handling it </li><li>Adding a MRU Combo to Visual Studio and handling it </li><li>Adding a Dynamic Combo to Visual Studio and handling it </li><li>Controling the programmatic name of the combo box commands by placing the commands within a menu (&quot;Tools&quot; in our case) of the main menu bar.
+</li></ul>
+<p><br>
+The main focus of this sample is the VSCT file containing the definition of these combo boxes and the command handling logic for managing these combo boxes. The C# code is minimal. The event handler functions that are called when the user selects or enters
+ items into a combo box simply display a message box.<br>
+<br>
+The interesting aspect of managing a combo box is that in general you need to handle 2 commands. There is the main command for the combo box that can return the current value for the combo as well as accept the new input from the user. In addition there is
+ a second command that is used to retrieve the list of items to be displayed in the list associated with the combo box. This second command is referred to as a &quot;GetList&quot; command. IOleCommandTarget::Exec is called on this second command with a non-null &quot;out&quot;
+ parameter, through which the list of items is returned as an array of strings. Even though Exec is called on this command, it is best to think of this Exec call as an extended IOleCommandTarget::QueryStatus call. This is necessary because IOleCommandTarget::QueryStatus
+ method is only able to return a single &quot;out&quot; parameter, but in the case of the combo box we need two pieces of information: the current value and the list of all choices to fill the list.<br>
+<br>
+There are four styles of Combo Boxes:</p>
+<ol>
+<li>DropDownCombo. A DropDownCombo does not let the user type into the combo box; they can only pick from the list. The string value of the element selected is returned. For example, this type of combo could be used for the &quot;Solution Configurations&quot; on the
+ &quot;Standard&quot; toolbar. </li><li>IndexCombo. An IndexCombo is the same as a DropDownCombo in that it is a &quot;pick from list&quot; only combo. The difference is an IndexCombo returns the selected value as an index into the list (0 based). For example, this type of combo could be used for the &quot;Solution
+ Configurations&quot; on the &quot;Standard&quot; toolbar. </li><li>MRUCombo. An MRUCombo allows the user to type into the edit box. The history of strings entered is automatically persisted by the IDE on a per-user/per-machine basis. For example, this type of combo is used for the &quot;Find&quot; combo on the &quot;Standard&quot; toolbar.
+</li><li>DynamicCombo. A DynamicCombo allows the user to type into the edit box or pick from the list. The list of choices is usually fixed and is managed by the command handler for the command. For example, this type of combo is used for the &quot;Zoom&quot; combo on the
+ &quot;Class Designer&quot; toolbar. </li></ol>
+<p><br>
+Inside the VSCT file of this sample, the command definition section defines a new toolbar, a new toolbar group, and an example of each type of combo.<br>
+<br>
+NOTE: We deliberatly define our toolbar group with a main menu location as its parent (in this case Tools menu -- &quot;guidSHLMainMenu:IDM<em>VS</em>MENU_TOOLS&quot;). Doing this makes sure that our commands have a Programatic name that begins with &quot;Tools.&quot;; also our
+ commands will be organized into this &quot;Tools&quot; group in the command well. Our combo box commands are defined with the CommandWellOnly flag which will make our combo box commands hidden on the main menu by default. If the user customizes our commands onto the
+ main menu, then they will be visible.<br>
+<br>
+Within a VSCT file, combo boxes are defined in a Combos section. The following strings can be supplied with a command:<br>
+<br>
+</p>
+<ol>
+<li>Button Text (required) -- displayed as label of the command on a toolbar if IconAndText flag is specified. If any of the following optional strings are missing then Button Text is used instead.
+</li><li>Menu Text (optional) -- displayed as label of the command on a menu if IconAndText flag is specified.
+</li><li>Tooltip Text (optional) -- displayed when mouse hovers on command </li><li>Command Well Name (optional) -- displayed as name of command in command well.
+</li><li>Canonical Name (optional) -- English programmatic name of command used in Command Window and DTE.ExecuteCommand. In localized command/menu (CTO) resources, always provide the English canonical name so macros can be language independent.
+</li><li>Localized Canonical Name (optional) -- Localized programmatic name of command used in Command Window, DTE.ExecuteCommand, and Tools.Options &quot;Environment/Keyboard&quot; page.
+</li></ol>
+<p><br>
+The second section in the VSCT file, the command placement section, is used to actually place toolbar group with our combo boxes on our Toolbar.<br>
+<br>
+To run this sample you need to turn on the &quot;Combo Box Sample&quot; Toolbar. This can be done via the &quot;Tools.Customize...&quot; dialog. In addition you can use the Command Window (use View.OtherWindows.CommandWindow Ctrl-Alt-A command to display this window) to programmatically
+ execute these Combo box commands. For Example, type the following in the Command Window:<br>
+<br>
+&gt;Tools.DropDownCombo Apples<br>
+&gt;Tools.IndexCombo Tigers<br>
+&gt;Tools.IndexCombo 2<br>
+&gt;Tools.MRUCombo Hello<br>
+&gt;Tools.DynamicCombo 34<br>
+&gt;Tools.DynamicCombo ZoomToFit<br>
+<br>
+Note: This sample uses the &quot;VsIdeHostAdapter&quot; for Integration Tests (Functional Tests). If you want to load the unit test (ComboBox.UnitTest.sln) solution or the integration test (ComboBox.IntegrationTest.sln) solution, then you should install the &quot;VsIdeHostAdapter&quot;.
+ This can be installed by running the &quot;VsIdeTestHost.msi&quot; located in the &quot;VisualStudioTeamSystemIntegration\Test Tool Extensibility\VsIdeHostAdapter&quot; directory of the VS SDK.<br>
+<br>
+<br>
+</p>
+<h2>To start the sample:</h2>
+<ol>
+<li>Open the ComboBox.sln solution. </li><li>Press F5 to build the sample, register it in the experimental instance, and launch Visual Studio from the experimental instance.
+</li></ol>
+
+</div>
+
+
+    </div>
+</body>
+</html>

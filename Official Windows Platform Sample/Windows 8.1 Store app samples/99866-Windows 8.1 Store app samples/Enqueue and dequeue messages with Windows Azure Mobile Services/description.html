@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/a7bd86db-8a7a-43ce-8954-21f8f839f51bCombined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Enqueue and dequeue messages with Windows Azure Mobile Services</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Enqueue and dequeue messages with Windows Azure Mobile Services</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            azure mobile services
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/25/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Enqueue-and-dequeue-4c424289">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample demonstrates how you can enqueue and dequeue messages from your Windows Store apps into a Windows&nbsp;Azure Service Bus Queue by using Windows Azure Mobile Services.
+</p>
+<p>This code sample builds out an ordering scenario with both a Sales and Storeroom app. The idea of the scenario is to showcase a simple internal retail store application that communicates using two different applications by using a Windows&nbsp;Azure Service Bus
+ queue to send and receive product orders:</p>
+<ol>
+<li>The <code>Sales</code> app inserts a new order. </li><li>The <code>Order</code> table's insert script enqueues a Service Bus message including the order info.
+</li><li>A scheduled job dequeues the Service Bus message and sends a push notification to the registered channels.
+</li><li>The <code>Storeroom</code> app receives the push notification and refreshes the orders list.
+</li></ol>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2013, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301697">
+Visual Studio&nbsp;2013</a>. </p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;For Windows&nbsp;8 app samples, download the <a href="http://go.microsoft.com/fwlink/p/?LinkId=301698">
+Windows&nbsp;8 app samples pack</a>. The samples in the Windows&nbsp;8 app samples pack will build and run only on Microsoft Visual Studio&nbsp;2012.</p>
+<p></p>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><a href="http://go.microsoft.com/fwlink/p/?LinkId=308983">Free Windows&nbsp;Azure trial</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkId=306779">Windows Azure management portal</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows app samples</a>
+</dt></dl>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<ol>
+<li>If you do not have a Windows&nbsp;Azure subscription, sign up for a <a href="http://go.microsoft.com/fwlink/p/?LinkId=308983">
+free Windows&nbsp;Azure trial</a>. </li><li>Install the <a href="http://go.microsoft.com/fwlink/p/?LinkID=275464">Windows&nbsp;Azure command line tools</a>.
+</li><li>Open a command prompt to download the required credentials to communicate with Windows&nbsp;Azure as follows. This is a one-time setup for running all subsequent commands to manage Mobile Services:
+<ol>
+<li>Download Windows&nbsp;Azure management credentials with this command: <code>azure account download</code>. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;This will display a web page for you to sign in to the
+<a href="http://go.microsoft.com/fwlink/p/?LinkId=306779">Windows Azure management portal</a>. After you sign in, Windows&nbsp;Azure will prompt you to download a publish settings file for your Windows&nbsp;Azure subscription. Save this file to your local computer.
+</li><li>Import the publish settings file from this location with this command: <code>
+azure account import</code>&nbsp;<i>[SavedLocation]</i>. This will configure your command prompt to manage all of your Windows&nbsp;Azure services from the command line.
+</li></ol>
+</li><li>Create a Windows&nbsp;Azure Mobile Service with this command: <code>azure mobile create</code>&nbsp;<i>[AzureMobileServiceName] [sqlAdminUsername] [sqlAdminPassword]</i>
+</li><li>Create a Windows&nbsp;Azure Service Bus namespace where you will create a queue to store and process orders:
+<ol>
+<li>Get available Windows&nbsp;Azure Service Bus datacenter locations with this command:
+<code>azure sb namspace location list</code>. </li><li>Create the namespace with this command: <code>azure sb namespace create</code>&nbsp;<i>[ServiceBusNamspaceIdentifier] [ServiceBusLocation]</i>. Make a note of the
+<code>ServiceBusNamespaceIdentifier</code> (provided by you) and the default key (generated in output) for your created namespace.
+</li></ol>
+</li><li>Sign in to the <a href="http://go.microsoft.com/fwlink/p/?LinkID=266582">Windows Store&nbsp;Dashboard</a> and register your app to receive push notifications.
+</li><li>In Microsoft Visual Studio, open the sample solution, right-click the <code>Storeroom</code> project, click
+<b>Store</b> &gt; <b>Associate app with the Store</b>, and follow the on-screen directions to sign in and then select the app that you previously registered in the Windows Store&nbsp;Dashboard.
+</li><li>Sign in to the <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039">Live Connect app management site</a> and select your app in the
+<b>My applications</b> list. With your app showing, click <b>Edit settings</b>. Under
+<b>API settings</b>, make a note of the values under <b>Client secret</b> and <b>
+Package security identifier (SID)</b>. </li><li>Configure your Windows&nbsp;Azure Mobile Service with the client secret and package SID values with these commands:
+<ul>
+<li><code>azure mobile config set</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>microsoftAccountClientSecret</code>&nbsp;<i>[ClientSecret]</i>
+</li><li><code>azure mobile config set</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>microsoftAccountPackageSID</code>&nbsp;<i>[PackageSID]</i>
+</li></ul>
+</li><li>Create a <code>Channel</code> table that will be used to route notifications to the corresponding clients, an
+<code>Order</code> table that will be used to keep track of the new orders, and a
+<code>DeliveryOrder </code>table that will be used to keep track of the deliveries, with these commands:
+<ul>
+<li><code>azure mobile table create</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>Channel</code>
+</li><li><code>azure mobile table create</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>Order</code>
+</li><li><code>azure mobile table create</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>DeliveryOrder</code>
+</li></ul>
+</li><li>Upload a script to your Windows&nbsp;Azure Mobile Service that will add the order messages to the Windows&nbsp;Azure Service Bus queues:
+<ol>
+<li>From a command line, change to the <code>Scripts</code> directory in the sample's
+<code>StoreSales</code> project. </li><li>Open <code>order.insert.js</code> in the <code>Table</code> folder and replace &quot;namespace name&quot; and &quot;namespace key&quot; with the
+<code>ServiceBusNamespaceIdentifier</code> and default key from step 5. </li><li>Run this command: <code>azure mobile script upload</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>table/order.insert.js</code>
+</li></ol>
+</li><li>Create a scheduled job in Mobile Services that will dequeue the orders from your Windows&nbsp;Azure Service Bus queue, process the orders, insert the processed order in the
+<code>DeliveryOrder</code> table, and send a notification to the clients that there are new orders, with these commands:
+<ul>
+<li><code>azure mobile job create</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>processOrder</code>
+</li><li><code>azure mobile job update</code>&nbsp;<i>[AzureMobileServiceName]</i>&nbsp;<code>processOrder --status enabled</code>
+</li></ul>
+</li><li>Update the created scheduled job with the script that it needs to run when called:
+<ol>
+<li>From a command line, change to the <code>Scripts</code> directory in the sample's
+<code>StoreSales</code> project. </li><li>Open <code>processOrder.js</code> in the <code>Scheduler</code> folder and replace &quot;namespace name&quot; and &quot;namespace key&quot; with the
+<code>ServiceBusNamespaceIdentifier</code> and default key from step 5. </li><li>Run this command: <code>azure mobile script upload</code>&nbsp; <i>[AzureMobileServiceName]</i>&nbsp;<code>scheduler/processOrder.js</code>
+</li></ol>
+</li><li>Get the <code>ApplicationUrl</code> and <code>ApplicationKey</code> for your Windows&nbsp;Azure Mobile Service with this command:
+<code>azure mobile show</code>&nbsp;<i>[AzureMobileServiceName]</i> </li><li>Install the <a href="http://go.microsoft.com/fwlink/p/?LinkID=320478">Windows&nbsp;Azure Mobile Services NuGet package</a>. Make sure that you are adding NuGet references to both of the projects in the solution. If you are using the
+<b>Library Package Manager Console</b> in Visual Studio, you must run the following commands:
+<ul>
+<li><code>PM&gt; Install-Package WindowsAzure.MobileServices</code> </li><li><code>PM&gt; Install-Package WindowsAzure.MobileServices -Project StoreRoom</code>
+</li></ul>
+</li><li>Open the <code>App.xaml.cs</code> file and replace &quot;mobile-service-url&quot; and &quot;mobile-service-key&quot; with the
+<code>ApplicationUrl</code> and <code>ApplicationKey</code>. Your Windows Store app is now configured to communicate with your created Windows&nbsp;Azure Mobile Service.
+</li><li>Click <b>Build</b> &gt; <b>Build Solution</b>. </li></ol>
+<h2>Run the sample</h2>
+<ol>
+<li>To debug the app and then run it in Visual Studio, press F5 or use <b>Debug</b> &gt;
+<b>Start Debugging</b>. To run the app without debugging, press Ctrl&#43;F5 or use <b>
+Debug</b> &gt; <b>Start Without Debugging</b>. </li><li>Open the <code>StoreSales</code> app and complete the form by adding the customer name, product, and amount, and click
+<b>Purchase</b>. </li><li>Open the <code>StoreRoom</code> app, which will register a channel with your Windows&nbsp;Azure Mobile Service to receive notifications.
+</li></ol>
+<p>You can now wait for your scheduled job to run and process the order (it runs every 15 minutes by default), or you can sign in to the
+<a href="http://go.microsoft.com/fwlink/p/?LinkId=306779">Windows Azure management portal</a>, select the
+<b>Scheduler</b> tab of your Windows&nbsp;Azure Mobile Service, and click <b>Run Once</b>. You should then receive a toast notification informing you that a new order has been placed. When you click on the notification, you will see that the
+<code>Storeroom</code> data has been refreshed to show you the recently-placed order.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

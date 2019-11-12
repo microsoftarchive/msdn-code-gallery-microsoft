@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SessionDB">
+  <DataContextMoniker Name="/SessionDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0d646023-fe1e-448c-9bdd-8944047e340e" absoluteBounds="0.75, 3.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SessionDBDataContext/tblChatRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5df3fbd-2958-4a09-bf0b-370779cda1bb" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e370db59-5621-4c85-b362-cafea764accb" absoluteBounds="3.5, 0.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/SessionDBDataContext/tblTalker" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5eb317b1-47c6-4631-bc6c-2a4c2f5e4e66" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93971764-06b1-4020-a025-a912f36cb151" absoluteBounds="0.75, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/SessionDBDataContext/tblSession" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2f068f5-a120-45d7-bd0c-85bcc8932054" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (4.5 : 4.85659912109375); (4.5 : 2.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SessionDBDataContext/tblChatRoom/tblChatRoom_tblTalker" />
+      <nodes>
+        <classShapeMoniker Id="0d646023-fe1e-448c-9bdd-8944047e340e" />
+        <classShapeMoniker Id="e370db59-5621-4c85-b362-cafea764accb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SessionDBDataContext/tblSession/tblSession_tblTalker" />
+      <nodes>
+        <classShapeMoniker Id="93971764-06b1-4020-a025-a912f36cb151" />
+        <classShapeMoniker Id="e370db59-5621-4c85-b362-cafea764accb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bc3628ea-9307-4cc8-873b-726a1b52a32b" absoluteBounds="6, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SessionDBDataContext/tblMessagePool" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f159aac5-d1fd-4e0a-846f-fd7c5643a7a1" absoluteBounds="6.015, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.0312525 : 2.64589680989583); (5.0312525 : 5.59259724934896); (6 : 5.59259724934896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SessionDBDataContext/tblTalker/tblTalker_tblMessagePool" />
+      <nodes>
+        <classShapeMoniker Id="e370db59-5621-4c85-b362-cafea764accb" />
+        <classShapeMoniker Id="bc3628ea-9307-4cc8-873b-726a1b52a32b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

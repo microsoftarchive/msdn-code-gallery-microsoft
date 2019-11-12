@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>LINQ - Set Operators</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>LINQ - Set Operators</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Set Operators
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/11/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td align="left" valign="middle" style="background-color:#c0c0c0"><span style="color:#ffffff; font-size:x-large">&nbsp;Part of the 101 LINQ SAMPLES</span></td>
+</tr>
+</tbody>
+</table>
+<div class="RoundedBox">
+<div class="boxheader">
+<div class="BostonPostCard"></div>
+</div>
+<div class="boxheader"><span style="font-size:medium; background-color:#ffffff; color:#333333">Learn how to use LINQ in your applications with these code samples, covering the entire range of LINQ functionality and demonstrating LINQ with SQL, DataSets, and
+ XML.</span></div>
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td width="50px" align="left" valign="middle"><a href="http://archive.msdn.microsoft.com/vb2008samples/Release/ProjectReleases.aspx?ReleaseId=1426"><img title="101 Samples for Visual Basic 2005" src="http://i.msdn.microsoft.com/dd183105.download_45(en-us,MSDN.10).jpg" alt="101 Samples for Visual Basic 2005" align="left"></a></td>
+<td align="left" valign="middle"><span style="font-size:medium"><strong><a href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b/viewsamplepack">Browse all 101 LINQ Samples</a>&nbsp;</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+<h1 id="Introduction">Introduction</h1>
+<p>This sample shows different uses of Set Operators:</p>
+<ul class="bulletedlist">
+<li><a title="This sample uses Distinct to remove duplicate elements in a sequence of factors of 300." href="#distinct1">Distinct - 1</a>
+</li><li><a title="This sample uses Distinct to find the unique Category names." href="#distinct2">Distinct - 2</a>
+</li><li><a title="This sample uses Union to create one sequence that contains the unique values from both arrays." href="#union1">Union - 1</a>
+</li><li><a title="This sample uses Union to create one sequence that contains the unique first letter from both product and customer names." href="#union2">Union - 2</a>
+</li><li><a title="This sample uses Intersect to create one sequence that contains the common values shared by both arrays." href="#intersect1">Intersect - 1</a>
+</li><li><a title="This sample uses Intersect to create one sequence that contains the common first letter from both product and customer names." href="#intersect2">Intersect - 2</a>
+</li><li><a title="This sample uses Except to create a sequence that contains the values from numbersAthat are not also in numbersB." href="#except1">Except - 1</a>
+</li><li><a title="This sample uses Except to create one sequence that contains the first letters of product names that are not also first letters of customer names." href="#except2">Except - 2</a>
+</li></ul>
+<h1><span>Building the Sample</span></h1>
+<ol>
+<li>Open the Program.cs </li><li>Comment or uncomment the desired samples </li><li>Press Ctrl &#43; F5 </li></ol>
+<h1>Description</h1>
+<div class="fullwidth">
+<div class="BostonPostCard">
+<h2 id="distinct1">Distinct - 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Distinct to remove duplicate elements in a sequence of factors of 300.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq46()
+{
+    int[] factorsOf300 = { 2, 2, 3, 5, 5 };
+ 
+    var uniqueFactors = factorsOf300.Distinct();
+ 
+    Console.WriteLine(&quot;Prime factors of 300:&quot;);
+    foreach (var f in uniqueFactors)
+    {
+        Console.WriteLine(f);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq46()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;factorsOf300&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">5</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;uniqueFactors&nbsp;=&nbsp;factorsOf300.Distinct();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Prime&nbsp;factors&nbsp;of&nbsp;300:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;f&nbsp;<span class="js__operator">in</span>&nbsp;uniqueFactors)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(f);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p style="padding-left:30px">Prime factors of 300:<br>
+2<br>
+3<br>
+5</p>
+<h2 id="distinct2">Distinct - 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Distinct to find the unique Category names.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq47()
+{
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var categoryNames = (
+        from p in products
+        select p.Category)
+        .Distinct();
+ 
+    Console.WriteLine(&quot;Category names:&quot;);
+    foreach (var n in categoryNames)
+    {
+        Console.WriteLine(n);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq47()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;categoryNames&nbsp;=&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p.Category)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Distinct();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Category&nbsp;names:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;categoryNames)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(n);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p style="padding-left:30px">Category names:<br>
+Beverages<br>
+Condiments<br>
+Produce<br>
+Meat/Poultry<br>
+Seafood<br>
+Dairy Products<br>
+Confections<br>
+Grains/Cereals</p>
+<h2 id="union1">Union - 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Union to create one sequence that contains the unique values from both arrays.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq48()
+{
+    int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+    int[] numbersB = { 1, 3, 5, 7, 8 };
+ 
+    var uniqueNumbers = numbersA.Union(numbersB);
+ 
+    Console.WriteLine(&quot;Unique numbers from both arrays:&quot;);
+    foreach (var n in uniqueNumbers)
+    {
+        Console.WriteLine(n);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq48()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersA&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">0</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">9</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersB&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">8</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;uniqueNumbers&nbsp;=&nbsp;numbersA.Union(numbersB);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Unique&nbsp;numbers&nbsp;from&nbsp;both&nbsp;arrays:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;uniqueNumbers)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(n);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p style="padding-left:30px">Unique numbers from both arrays:<br>
+0<br>
+2<br>
+4<br>
+5<br>
+6<br>
+8<br>
+9<br>
+1<br>
+3<br>
+7</p>
+<h2>Union - 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Union to create one sequence that contains the unique first letter from both product and customer names.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq49()
+{
+    List&lt;Product&gt; products = GetProductList();
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var productFirstChars =
+        from p in products
+        select p.ProductName[0];
+    var customerFirstChars =
+        from c in customers
+        select c.CompanyName[0];
+ 
+    var uniqueFirstChars = productFirstChars.Union(customerFirstChars);
+ 
+    Console.WriteLine(&quot;Unique first letters from Product names and Customer names:&quot;);
+    foreach (var ch in uniqueFirstChars)
+    {
+        Console.WriteLine(ch);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq49()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p.ProductName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;customerFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;c.CompanyName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;uniqueFirstChars&nbsp;=&nbsp;productFirstChars.Union(customerFirstChars);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Unique&nbsp;first&nbsp;letters&nbsp;from&nbsp;Product&nbsp;names&nbsp;and&nbsp;Customer&nbsp;names:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;ch&nbsp;<span class="js__operator">in</span>&nbsp;uniqueFirstChars)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ch);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></p>
+<p style="padding-left:30px">Unique first letters from Product names and Customer names:<br>
+C<br>
+A<br>
+G<br>
+U<br>
+N<br>
+M<br>
+I<br>
+Q<br>
+K<br>
+T<br>
+P<br>
+S<br>
+R<br>
+B<br>
+J<br>
+Z<br>
+V<br>
+F<br>
+E<br>
+W<br>
+L<br>
+O<br>
+D<br>
+H</p>
+<h2>Intersect - 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Intersect to create one sequence that contains the common values shared by both arrays.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq50()
+{
+    int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+    int[] numbersB = { 1, 3, 5, 7, 8 };
+ 
+    var commonNumbers = numbersA.Intersect(numbersB);
+ 
+    Console.WriteLine(&quot;Common numbers shared by both arrays:&quot;);
+    foreach (var n in commonNumbers)
+    {
+        Console.WriteLine(n);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq50()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersA&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">0</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">9</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersB&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">8</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;commonNumbers&nbsp;=&nbsp;numbersA.Intersect(numbersB);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Common&nbsp;numbers&nbsp;shared&nbsp;by&nbsp;both&nbsp;arrays:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;commonNumbers)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(n);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p>&nbsp;</p>
+<p style="padding-left:30px">Common numbers shared by both arrays:<br>
+5<br>
+8</p>
+<h2 id="Intersect">Intersect - 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Intersect to create one sequence that contains the common first letter from both product and customer names.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq51()
+{
+    List&lt;Product&gt; products = GetProductList();
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var productFirstChars =
+        from p in products
+        select p.ProductName[0];
+    var customerFirstChars =
+        from c in customers
+        select c.CompanyName[0];
+ 
+    var commonFirstChars = productFirstChars.Intersect(customerFirstChars);
+ 
+    Console.WriteLine(&quot;Common first letters from Product names and Customer names:&quot;);
+    foreach (var ch in commonFirstChars)
+    {
+        Console.WriteLine(ch);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq51()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p.ProductName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;customerFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;c.CompanyName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;commonFirstChars&nbsp;=&nbsp;productFirstChars.Intersect(customerFirstChars);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Common&nbsp;first&nbsp;letters&nbsp;from&nbsp;Product&nbsp;names&nbsp;and&nbsp;Customer&nbsp;names:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;ch&nbsp;<span class="js__operator">in</span>&nbsp;commonFirstChars)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ch);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p>&nbsp;</p>
+<p style="padding-left:30px">Common first letters from Product names and Customer names:<br>
+C<br>
+A<br>
+G<br>
+N<br>
+M<br>
+I<br>
+Q<br>
+K<br>
+T<br>
+P<br>
+S<br>
+R<br>
+B<br>
+V<br>
+F<br>
+E<br>
+W<br>
+L<br>
+O</p>
+<h2>Except - 1</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Except to create a sequence that contains the values from numbersAthat are not also in numbersB.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq52()
+{
+    int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+    int[] numbersB = { 1, 3, 5, 7, 8 };
+ 
+    IEnumerable&lt;int&gt; aOnlyNumbers = numbersA.Except(numbersB);
+ 
+    Console.WriteLine(&quot;Numbers in first array but not second array:&quot;);
+    foreach (var n in aOnlyNumbers)
+    {
+        Console.WriteLine(n);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq52()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersA&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">0</span>,&nbsp;<span class="js__num">2</span>,&nbsp;<span class="js__num">4</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">6</span>,&nbsp;<span class="js__num">8</span>,&nbsp;<span class="js__num">9</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;int[]&nbsp;numbersB&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__num">1</span>,&nbsp;<span class="js__num">3</span>,&nbsp;<span class="js__num">5</span>,&nbsp;<span class="js__num">7</span>,&nbsp;<span class="js__num">8</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;IEnumerable&lt;int&gt;&nbsp;aOnlyNumbers&nbsp;=&nbsp;numbersA.Except(numbersB);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;Numbers&nbsp;in&nbsp;first&nbsp;array&nbsp;but&nbsp;not&nbsp;second&nbsp;array:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;n&nbsp;<span class="js__operator">in</span>&nbsp;aOnlyNumbers)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(n);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p style="padding-left:30px">Numbers in first array but not second array:<br>
+0<br>
+2<br>
+4<br>
+6<br>
+9</p>
+<h2>Except - 2</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample uses Except to create one sequence that contains the first letters of product names that are not also first letters of customer names.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq53()
+{
+    List&lt;Product&gt; products = GetProductList();
+    List&lt;Customer&gt; customers = GetCustomerList();
+ 
+    var productFirstChars =
+        from p in products
+        select p.ProductName[0];
+    var customerFirstChars =
+        from c in customers
+        select c.CompanyName[0];
+ 
+    var productOnlyFirstChars = productFirstChars.Except(customerFirstChars);
+ 
+    Console.WriteLine(&quot;First letters from Product names, but not from Customer names:&quot;);
+    foreach (var ch in productOnlyFirstChars)
+    {
+        Console.WriteLine(ch);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq53()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Customer&gt;&nbsp;customers&nbsp;=&nbsp;GetCustomerList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;p.ProductName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;customerFirstChars&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;customers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;c.CompanyName[<span class="js__num">0</span>];&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;productOnlyFirstChars&nbsp;=&nbsp;productFirstChars.Except(customerFirstChars);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;First&nbsp;letters&nbsp;from&nbsp;Product&nbsp;names,&nbsp;but&nbsp;not&nbsp;from&nbsp;Customer&nbsp;names:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;ch&nbsp;<span class="js__operator">in</span>&nbsp;productOnlyFirstChars)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ch);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="font-size:12px; font-weight:bold"><strong>Result</strong></span></div>
+<p style="padding-left:30px">First letters from Product names, but not from Customer names:<br>
+U<br>
+J<br>
+Z</p>
+<div></div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size:20px; font-weight:bold">Source Code Files</span></p>
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/sourcecode?fileId=23943&amp;pathId=123325292">Program.cs</a>
+</li></ul>
+<h1><strong>101 LINQ Samples</strong></h1>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Restriction-Operators-b15d29ca">Restriction Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-to-DataSets-09787825">Projection Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Partitioning-Operators-c68aaccc">Partitioning Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../SQL-Ordering-Operators-050af19e">Ordering Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-to-DataSets-Grouping-c62703ea">Grouping Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Set-Operators-374f34fe">Set Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Conversion-Operators-e4e59714">Conversion Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Element-Operators-0f3f12ce">Element Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Element-Operators-0f3f12ce">Generation Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Quantifiers-f00e7e3e">Quantifiers</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Aggregate-Operators-c51b3869">Aggregate Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Miscellaneous-6b72bb2a">Miscellaneous Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-to-DataSets-Custom-41738490">Custom Sequence Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Query-Execution-ce0d3b95">Query Execution</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Set-Operators-374f34fe/../LINQ-Join-Operators-dabef4e9">Join Operators</a> </li></ul>
+<h1>More Information</h1>
+<p>For more information, see:</p>
+<ul>
+<li>LINQ - <a href="http://msdn.microsoft.com/en-us/vcsharp/aa904594" >
+http://msdn.microsoft.com/en-us/vcsharp/aa904594</a> </li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

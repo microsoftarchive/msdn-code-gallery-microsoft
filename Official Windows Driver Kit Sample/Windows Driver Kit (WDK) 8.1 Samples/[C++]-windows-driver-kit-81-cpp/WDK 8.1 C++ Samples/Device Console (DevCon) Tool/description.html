@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Device Console (DevCon) Tool</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Device Console (DevCon) Tool</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WDM, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Setup
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/DevCon-Sample-4e95d71c">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p><a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff544707">DevCon</a> is a command-line tool that displays detailed information about devices, and lets you search for and manipulate devices from the command line. DevCon enables, disables,
+ installs, configures, and removes devices on the local computer and displays detailed information about devices on local and remote computers. DevCon is included in the WDK.
+</p>
+<p>This document explains the DevCon design, and how to use the SetupAPI and device installation functions to enumerate devices and perform device operations in a console application. For a complete description of DevCon features and instructions for using
+ them, see the DevCon help file included with the WDK documentation in Driver Development Tools/Tools for Testing Drivers/DevCon.
+</p>
+<p>DevCon is provided in ready-to-run form in tools\devcon. For usage, refer to the document provided with devcon.exe. DevCon is a command line utility with built-in documentation available by typing &quot;devcon help&quot;.
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/DevCon-Sample-4e95d71c/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2><a id="Download_and_extract_the_sample"></a><a id="download_and_extract_the_sample"></a><a id="DOWNLOAD_AND_EXTRACT_THE_SAMPLE"></a>Download and extract the sample</h2>
+<p>Download the C&#43;&#43; sample from this page, and extract its contents. For example, you could extract to c:\DevConSample.</p>
+<p>Starting in the Visual Studio&nbsp;2013 WDK, you can build the sample in two ways: using the Visual Studio Integrated Development Environment (IDE) or from the command line using the Visual Studio Command Prompt window and the Microsoft Build Engine (MSBuild.exe).</p>
+<p class="proch"><b>Building the sample using Visual Studio</b></p>
+<ol>
+<li>Open Visual Studio. From the <b>File</b> menu, select <b>Open Project/Solution</b>. Within your WDK installation, navigate to the folder where you extracted DevCon. For example c:\DevConSample\C&#43;&#43; and open the devcon.sln project file.
+</li><li>Right-click the solution in the <b>Solution Explorer</b> and select <b>Configuration Manager</b>.
+</li><li>From the <b>Configuration Manager</b>, select the <b>Active Solution Configuration</b> (for example, Windows&nbsp;8.1 Debug or Windows&nbsp;8.1 Release) and the
+<b>Active Solution Platform</b> (for example, Win32) that correspond to the type of build you are interested in.
+</li><li>From the <b>Build</b> menu, click <b>Build Solution</b> (Ctrl&#43;Shift&#43;B). </li></ol>
+<p>Previous versions of the WDK used the Windows Build utility (Build.exe) and provided separate build environment windows for each of the supported build configurations. Starting in the Visual Studio&nbsp;2013 WDK, you can use the Visual Studio Command Prompt window
+ for all build configurations.</p>
+<p class="proch"><b>Building the sample using the command line (MSBuild)</b></p>
+<ol>
+<li>Open a Visual Studio Command Prompt window. Click <b>Start</b> and search for
+<b>Developer Command Prompt</b>. If your project is under %PROGRAMFILES%, you need to open the command prompt window using elevated permissions (<b>Run as administrator</b>). From this window you can use MsBuild.exe to build any Visual Studio project by specifying
+ the project (.VcxProj) or solutions (.Sln) file. </li><li>Navigate to the project directory and enter the <b>MSbuild</b> command for your target. For example, to perform a clean build of a Visual Studio driver project called devcon.vcxproj, navigate to the project directory and enter the following MSBuild command:
+<b>msbuild /t:clean /t:build .\devcon.vcxproj</b>. </li><li>If the build succeeds, you will find the tools (devcon.exe) in the binary output directory corresponding to the target platform, for example samples\setup\devcon\Windows&nbsp;8.1 Debug.
+</li></ol>
+<h2>Run the sample</h2>
+<p>Type &quot;devcon find *&quot; to list device instances of all present devices on the local machine.</p>
+<p>Type &quot;devcon status @root\rdp_mou\0000&quot; to list status of the terminal server mouse driver.</p>
+<p>Type &quot;devcon status *PNP05*&quot; to list status of all COM ports.</p>
+<p>How DevCon works:</p>
+<p>Running &quot;devcon help&quot; will provide a list of commands along with short descriptions of what each command does. &quot;devcon help &lt;command&gt;&quot; will give more detailed help on that command. The interpretation of each command is done via a dispatch table &quot;DispatchTable&quot;
+ that is at the bottom of &quot;cmds.cpp&quot;. Some of the commands make use of a generic device enumerator &quot;EnumerateDevices&quot;. A few of these commands will work when given a remote target computer, and will also work if using the 32-bit devcon on Wow64. A description
+ of some of the more interesting functions and the APIs they use follows:</p>
+<dl><dt><a id="cmdClasses"></a><a id="cmdclasses"></a><a id="CMDCLASSES"></a>cmdClasses
+</dt><dd>
+<p>This command demonstrates the use of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550911">
+<b>SetupDiBuildClassInfoListEx</b></a> to enumerate all device class GUID's. The function
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550950"><b>SetupDiClassNameFromGuidEx</b></a> and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551058"><b>SetupDiGetClassDescriptionEx</b></a> are used to obtain more information about each device class.</p>
+</dd><dt><a id="cmdListClass"></a><a id="cmdlistclass"></a><a id="CMDLISTCLASS"></a>cmdListClass
+</dt><dd>
+<p>This command demonstrates the use of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550941">
+<b>SetupDiClassGuidsFromNameEx</b></a> to enumerate one or more class GUID's that match the class name. This command also demonstrates the use of
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551072"><b>SetupDiGetClassDevsEx</b></a> to list all the devices for each class GUID.</p>
+</dd><dt><a id="cmdFind_cmdFindAll_cmdStatus"></a><a id="cmdfind_cmdfindall_cmdstatus"></a><a id="CMDFIND_CMDFINDALL_CMDSTATUS"></a>cmdFind cmdFindAll cmdStatus
+</dt><dd>
+<p>A simple use of <i>EnumerateDevices</i> (explained below) to list devices and display different levels of information about each device. Note that all but
+<i>cmdFindAll</i> use DIGCF_PRESENT to only list information about devices that are currently present. The main functionality for these and related devices is done inside
+<i>FindCallback.</i></p>
+</dd><dt><a id="cmdEnable_cmdDisable_cmdRestart"></a><a id="cmdenable_cmddisable_cmdrestart"></a><a id="CMDENABLE_CMDDISABLE_CMDRESTART"></a>cmdEnable cmdDisable cmdRestart
+</dt><dd>
+<p>These commands show how to issue DIF_PROPERTYCHANGE to enable a device, disable a device, or restart a device. The main functionality for each of these commands is done inside
+<i>ControlCallback</i>. These operations cannot be done on a remote machine or in the context of Wow64. CFGMGR32 API's should not be used as they skip class and co-installers.</p>
+</dd><dt><a id="cmdUpdate"></a><a id="cmdupdate"></a><a id="CMDUPDATE"></a>cmdUpdate
+</dt><dd>
+<p>This command shows how to use <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff553534">
+<b>UpdateDriverForPlugAndPlayDevices</b></a> to update the driver for all devices to a specific driver. Normally INSTALLFLAG_FORCE would not be specified allowing
+<b>UpdateDriverForPlugAndPlayDevices</b> to determine if there is a better match already known. It's specified in DevCon to allow DevCon to be used more effectively as a debugging/testing tool. This cannot be done on a remote machine or in the context of Wow64.</p>
+</dd><dt><a id="cmdInstall"></a><a id="cmdinstall"></a><a id="CMDINSTALL"></a>cmdInstall
+</dt><dd>
+<p>A variation of <i>cmdUpdate</i> to install a driver when there is no associated hardware. It creates a new root-enumerated device instance and associates it with a made up hardware ID specified on the command line (which should correspond to a hardware ID
+ in the INF). This cannot be done on a remote machine or in the context of Wow64.</p>
+</dd><dt><a id="cmdRemove"></a><a id="cmdremove"></a><a id="CMDREMOVE"></a>cmdRemove
+</dt><dd>
+<p>A command to remove devices. Plug &amp; Play devices that are removed will reappear in response to
+<i>cmdRescan</i>. The main functionality of this command is in <i>RemoveCallback</i> that demonstrates the use of DIF_REMOVE. This cannot be done on a remote machine or in the context of Wow64. CFGMGR32 API's should not be used as they skip class and co-installers.</p>
+</dd><dt><a id="cmdRescan"></a><a id="cmdrescan"></a><a id="CMDRESCAN"></a>cmdRescan
+</dt><dd>
+<p>This command shows the correct way to rescan for all Plug &amp; Play devices that may have previously been removed, or that otherwise require a rescan to detect them.</p>
+</dd><dt><a id="cmdDPAdd"></a><a id="cmddpadd"></a><a id="CMDDPADD"></a>cmdDPAdd
+</dt><dd>
+<p>This command allows you to add a Driver Package to the machine. The main functionality of this command demonstrates the use of
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/"><b>SetupCopyOEMInf</b></a>. Adding a Driver Package to the machine doesn’t mean the drivers are installed on devices, it simply means the drivers are available automatically when a new device
+ is plugged in or a existing device is updated.</p>
+</dd><dt><a id="cmdDPDelete"></a><a id="cmddpdelete"></a><a id="CMDDPDELETE"></a>cmdDPDelete
+</dt><dd>
+<p>This command allows you to uninstall a Driver Package from the machine. The main functionality of this command demonstrates the use of
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/"><b>SetupUninstallOEMInf</b></a>. Removing a Driver Package from the machine does not uninstall the drivers associated with a device. If you want to accomplish both then use
+<i>cmdRemove</i> on all the devices using a given Driver Package and then <i>cmdDPDelete</i> to remove the Driver Package itself from the machine.</p>
+</dd><dt><a id="cmdDPEnum"></a><a id="cmddpenum"></a><a id="CMDDPENUM"></a>cmdDPEnum
+</dt><dd>
+<p>This command allows you to enumerate all of the 3rd party Driver Packages currently installed on the machine and also shows you how to get some common properties from a Driver Package (Provider, Class description, DriverVer date and version).</p>
+</dd><dt><a id="cmdDPEnumLegacy"></a><a id="cmddpenumlegacy"></a><a id="CMDDPENUMLEGACY"></a>cmdDPEnumLegacy
+</dt><dd>
+<p>This command shows you how to enumerate 3rd party Driver Packages on Windows Server&nbsp;2003 and earlier operating systems.</p>
+</dd><dt><a id="Reboot"></a><a id="reboot"></a><a id="REBOOT"></a>Reboot </dt><dd>
+<p>This function shows how to correctly reboot the machine from a hardware install program. In particular it passes flags to
+<b>ExitWindowsEx</b> that cause the reboot to be associated with hardware installation. You should never reboot the machine unnecessarily.</p>
+</dd><dt><a id="EnumerateDevices"></a><a id="enumeratedevices"></a><a id="ENUMERATEDEVICES"></a>EnumerateDevices
+</dt><dd>
+<p>Demonstrates the use of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551072">
+<b>SetupDiGetClassDevsEx</b></a> to enumerate all devices or all present devices, either globally or limited to a specific setup class. Demonstrates the use of
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550958"><b>SetupDiCreateDeviceInfoListEx</b></a> to create a blank list associated with a class or not (for most cases, a blank list need not be associated with a class). Demonstrates the use
+ of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff552071"><b>SetupDiOpenDeviceInfo</b></a> to add a device instance into a device info list. These last two API's are ideal to obtain a
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff552344">SP_DEVINFO_DATA</a> structure from a device instance and machine name when mixing CFGMGR32 API's with SETUPAPI API's.
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551103"><b>SetupDiGetDeviceInfoListDetail</b></a> is called to obtain a remote machine handle that may be passed into CFGMGR32 API's.
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551010"><b>SetupDiEnumDeviceInfo</b></a> is called to enumerate each and every device that is in the device info list (either explicitly added, or determined by the call to
+<b>SetupDiGetClassDevsEx</b>). The instance ID is obtained by calling <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff538411">
+<b>CM_Get_Device_ID_Ex</b></a>, using information in devInfo (obtained from <b>SetupDiEnumerateDeviceInfo</b>) and devInfoListDetail (obtained from
+<b>SetupDiGetDeviceInfoListDetail</b>). <i>GetHwIds</i> is called to obtain a list of hardware and compatible ID's (explained below). Once an interesting device has been determined (typically by checking hardware ID's) then the callback is called to operate
+ on that individual device.</p>
+</dd><dt><a id="GetHwIds"></a><a id="gethwids"></a><a id="GETHWIDS"></a>GetHwIds
+</dt><dd>
+<p>Shows how to get the complete list of hardware ID's or compatible ID's for a device using
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551967"><b>SetupDiGetDeviceRegistryProperty</b></a>.</p>
+</dd><dt><a id="GetDeviceDescription"></a><a id="getdevicedescription"></a><a id="GETDEVICEDESCRIPTION"></a>GetDeviceDescription
+</dt><dd>
+<p>Shows how to obtain descriptive information about a device. The friendly name is used if it exists, otherwise the device description is used.</p>
+</dd><dt><a id="DumpDeviceWithInfo"></a><a id="dumpdevicewithinfo"></a><a id="DUMPDEVICEWITHINFO"></a>DumpDeviceWithInfo
+</dt><dd>
+<p>Shows how to obtain an instance ID (or use any CFGMGR32 API) given HDEVINFO (device info list) and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff552344">PSP_DEVINFO_DATA</a> (device info data).</p>
+</dd><dt><a id="DumpDeviceStatus"></a><a id="dumpdevicestatus"></a><a id="DUMPDEVICESTATUS"></a>DumpDeviceStatus
+</dt><dd>
+<p>Shows how to interpret the information returned by <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff538517">
+<b>CM_Get_DevNode_Status_Ex</b></a>. Refer to <i>cfg.h</i> for information returned by this API.</p>
+</dd><dt><a id="DumpDeviceResources"></a><a id="dumpdeviceresources"></a><a id="DUMPDEVICERESOURCES"></a>DumpDeviceResources
+</dt><dd>
+<p>Shows how to obtain information about resources used by a device.</p>
+</dd><dt><a id="DumpDeviceDriverFiles"></a><a id="dumpdevicedriverfiles"></a><a id="DUMPDEVICEDRIVERFILES"></a>DumpDeviceDriverFiles
+</dt><dd>
+<p>Provided as a debugging aid, obtains information about the files apparently being used for a device. It uses
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550917"><b>SetupDiBuildDriverInfoList</b></a> to obtain information about the driver being used for the specified device. The driver list associated with a device may be enumerated by calling
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff551018"><b>SetupDiEnumDriverInfo</b></a>. In this case, there will be no more than one driver listed. This function proceeds to obtain a list of files that would normally be copied for this
+ driver using DIF_INSTALLDEVICEFILES. <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/">
+<b>SetupScanFileQueue</b></a> is used to enumerate the file queue to display the list of files that are associated with the driver.</p>
+</dd><dt><a id="DumpDeviceDriverNodes"></a><a id="dumpdevicedrivernodes"></a><a id="DUMPDEVICEDRIVERNODES"></a>DumpDeviceDriverNodes
+</dt><dd>
+<p>Provided as a debugging aid, this function determines the list of compatible drivers for a device. It uses
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550917"><b>SetupDiBuildDriverInfoList</b></a> to obtain the list of compatible drivers. In this case, all drivers are enumerated, however typically DIF_SELECTBESTCOMPATDRV and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff552013"><b>SetupDiGetSelectedDriver</b></a> would be used together to find which driver the OS would consider to be the best.</p>
+</dd><dt><a id="DumpDeviceStack"></a><a id="dumpdevicestack"></a><a id="DUMPDEVICESTACK"></a>DumpDeviceStack
+</dt><dd>
+<p>This function determines class and device upper and lower filters. </p>
+</dd></dl>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

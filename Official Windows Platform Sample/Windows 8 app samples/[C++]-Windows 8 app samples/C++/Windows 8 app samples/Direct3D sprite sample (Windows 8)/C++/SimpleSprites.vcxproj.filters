@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BasicLoader.cpp">
+      <Filter>Components\BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicReaderWriter.cpp">
+      <Filter>Components\BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSTextureLoader.cpp">
+      <Filter>Components\BasicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicTimer.cpp">
+      <Filter>Components\BasicTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleOverlay.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoThrottle.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXApp.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXBase.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleSprites.cpp">
+      <Filter>Sample Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicSprites.cpp">
+      <Filter>Components\BasicSprites</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicLoader.h">
+      <Filter>Components\BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicReaderWriter.h">
+      <Filter>Components\BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSTextureLoader.h">
+      <Filter>Components\BasicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicTimer.h">
+      <Filter>Components\BasicTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicMath.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleOverlay.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoThrottle.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXApp.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXBase.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXSample.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSprites.h">
+      <Filter>Sample Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicSprites.h">
+      <Filter>Components\BasicSprites</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="windowsbig-sdk.png">
+      <Filter>Core Appx Files</Filter>
+    </Image>
+    <Image Include="splash-sdk.png">
+      <Filter>Core Appx Files</Filter>
+    </Image>
+    <Image Include="squaretile-sdk.png">
+      <Filter>Core Appx Files</Filter>
+    </Image>
+    <Image Include="storelogo-sdk.png">
+      <Filter>Core Appx Files</Filter>
+    </Image>
+    <Image Include="smalltile-sdk.png">
+      <Filter>Core Appx Files</Filter>
+    </Image>
+    <Image Include="ida.dds">
+      <Filter>Sprite Textures</Filter>
+    </Image>
+    <Image Include="m31.png">
+      <Filter>Sprite Textures</Filter>
+    </Image>
+    <Image Include="particle.dds">
+      <Filter>Sprite Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sample Sources">
+      <UniqueIdentifier>{9d55c27d-f475-4c53-bc83-a469df0cb55c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{8e7d9aeb-df5e-4aba-8658-b79b02ef536d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\BasicLoader">
+      <UniqueIdentifier>{333e5e37-2f84-47f3-9835-a56e9f4c8a3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\BasicTimer">
+      <UniqueIdentifier>{4dc09f46-8c92-4281-bb25-439bae2a68ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core Appx Files">
+      <UniqueIdentifier>{f1db1889-0b43-4868-9d11-6d17dc545da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\BasicSprites">
+      <UniqueIdentifier>{6b98a20d-6eed-495a-90ab-5f1d08516605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite Textures">
+      <UniqueIdentifier>{1659f819-8bf7-4df1-ac79-e07f6e0866df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\BasicSprites\Shaders">
+      <UniqueIdentifier>{997ca786-97fb-400e-beb6-8d50d882496b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <Filter>Core Appx Files</Filter>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="BasicSprites.GeometryShader.gs.hlsl">
+      <Filter>Components\BasicSprites\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicSprites.GeometryShader.vs.hlsl">
+      <Filter>Components\BasicSprites\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicSprites.Instancing.vs.hlsl">
+      <Filter>Components\BasicSprites\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicSprites.ps.hlsl">
+      <Filter>Components\BasicSprites\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicSprites.Replication.vs.hlsl">
+      <Filter>Components\BasicSprites\Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

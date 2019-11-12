@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>C++/CLI wrapper for .NET assembly (CppCLINETAssemblyWrapper)</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>C++/CLI wrapper for .NET assembly (CppCLINETAssemblyWrapper)</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Library
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">5/5/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/CppCLINETAssemblyWrapper-5485fae2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p style="font-family:Courier New"></p>
+<h2>DYNAMIC LINK LIBRARY : CppCLINETAssemblyWrapper Project Overview</h2>
+<p style="font-family:Courier New"></p>
+<h3>Summary:</h3>
+<p style="font-family:Courier New"><br>
+The code in this file declares the C&#43;&#43; wrapper class CSSimpleObjectWrapper for <br>
+the .NET class CSSimpleObject defined in the .NET class library <br>
+CSClassLibrary. Your native C&#43;&#43; application can include this wrapper class <br>
+and link to the DLL to indirectly call the .NET class.<br>
+<br>
+&nbsp;CppCallNETAssemblyWrapper (a native C&#43;&#43; application)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--&gt;<br>
+&nbsp; &nbsp; &nbsp;CppCLINETAssemblyWrapper (this C&#43;&#43;/CLI wrapper)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CSClassLibrary (a .NET assembly)<br>
+<br>
+</p>
+<h3>Sample Relation:</h3>
+<p style="font-family:Courier New">(The relationship between the current sample and the rest samples in
+<br>
+Microsoft All-In-One Code Framework <a  href="http://1code.codeplex.com)">
+http://1code.codeplex.com)</a><br>
+<br>
+CppCLINETAssemblyWrapper -&gt; CSClassLibrary<br>
+The C&#43;&#43;/CLI sample module CppCLINETAssemblyWrapper wraps the .NET class <br>
+defined in the C# class library CSClassLibrary. The wrapper class can be <br>
+called by any native C&#43;&#43; applications to indirectly interoperate with the <br>
+.NET class.<br>
+<br>
+</p>
+<h3>Implementation:</h3>
+<p style="font-family:Courier New"><br>
+Step1. Create a Visual C&#43;&#43; / CLR / Class Library project named <br>
+CppCLINETAssemblyWrapper in Visual Studio 2008. The project wizard generates <br>
+a default empty C&#43;&#43;/CLI class:<br>
+<br>
+&nbsp; &nbsp;namespace CppCLINativeDllWrapper {<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;public ref class Class1<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;// TODO: Add your methods for this class here.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;};<br>
+&nbsp; &nbsp;}<br>
+<br>
+Step2. Reference the C# class library CSClassLibrary in the C&#43;&#43;/CLI class <br>
+library project.<br>
+<br>
+Step3. Configure the C&#43;&#43;/CLI class library to export symbols. The symbols <br>
+can be imported and called by native C&#43;&#43; applications.<br>
+<br>
+Add CPPCLINETASSEMBLYWRAPPER_EXPORTS to the preprocessor definitions of the <br>
+project (see the C/C&#43;&#43; / Preprocessor page in the project Properties dialog). <br>
+All files within this DLL are compiled with the symbol <br>
+CPPCLINETASSEMBLYWRAPPER_EXPORTS. This symbol should not be defined on any <br>
+project that uses this DLL. <br>
+<br>
+In the header file CppCLINETAssemblyWrapper.h, add the following definitions:<br>
+<br>
+&nbsp; &nbsp;#ifdef CPPCLINETASSEMBLYWRAPPER_EXPORTS<br>
+&nbsp; &nbsp;#define SYMBOL_DECLSPEC __declspec(dllexport)<br>
+&nbsp; &nbsp;#else<br>
+&nbsp; &nbsp;#define SYMBOL_DECLSPEC&nbsp;&nbsp;&nbsp;&nbsp;__declspec(dllimport)<br>
+&nbsp; &nbsp;#endif<br>
+<br>
+Any other project whose source files include this header file see <br>
+SYMBOL_DECLSPEC classes and functions as being imported from a DLL, whereas <br>
+this DLL sees symbols defined with this macro as being exported.<br>
+<br>
+Because the header file may be included by any other native C&#43;&#43; project, the <br>
+file should only contain native C&#43;&#43; types, includes and keywords.<br>
+<br>
+Step4. Design the C&#43;&#43; wrapper class CSSimpleObjectWrapper for the .NET class <br>
+CSimpleObject defined in the C# class library CSClassLibrary.<br>
+<br>
+In the header file CppCLINETAssemblyWrapper.h, declare the class.<br>
+<br>
+&nbsp; &nbsp;class SYMBOL_DECLSPEC CSSimpleObjectWrapper<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp;public:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;CSSimpleObjectWrapper(void);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;virtual ~CSSimpleObjectWrapper(void);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Property<br>
+&nbsp; &nbsp; &nbsp; &nbsp;float get_FloatProperty(void);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;void set_FloatProperty(float fVal);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Method<br>
+&nbsp; &nbsp; &nbsp; &nbsp;HRESULT ToString(PWSTR pszBuffer, DWORD dwSize);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Static method<br>
+&nbsp; &nbsp; &nbsp; &nbsp;static int GetStringLength(PCWSTR pszString);<br>
+<br>
+&nbsp; &nbsp;private:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;void *m_impl;<br>
+&nbsp; &nbsp;};<br>
+<br>
+The class contains a native C&#43;&#43; generic pointer (void *m_impl;) to the <br>
+wrapped .NET object. It is initialized in the constructor <br>
+CSSimpleObjectWrapper(void);, and the wrapped object is freed in the <br>
+desctructor (virtual ~CSSimpleObjectWrapper(void);).<br>
+<br>
+&nbsp; &nbsp;CSSimpleObjectWrapper::CSSimpleObjectWrapper(void)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Instantiate the C# class CSSimpleObject.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;CSSimpleObject ^ obj = gcnew CSSimpleObject();<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Pin the CSSimpleObject .NET object, and record the address of the
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// pinned object in m_impl. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;m_impl = GCHandle::ToIntPtr(GCHandle::Alloc(obj)).ToPointer();
+<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;CSSimpleObjectWrapper::~CSSimpleObjectWrapper(void)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Get the GCHandle associated with the pinned object based on its
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// address, and free the GCHandle. At this point, the CSSimpleObject
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// object is eligible for GC.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;GCHandle h = GCHandle::FromIntPtr(IntPtr(m_impl));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;h.Free();<br>
+&nbsp; &nbsp;}<br>
+<br>
+The public member methods of CSSimpleObjectWrapper wraps those of the C# class <br>
+CSSimpleObject. They redirects the calls to CSSimpleObject through the <br>
+CSSimpleObject object pointed by m_impl. Type marshaling takes place between <br>
+the managed and native code.<br>
+<br>
+&nbsp; &nbsp;float CSSimpleObjectWrapper::get_FloatProperty(void)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Get the pinned CSSimpleObject object from its memory address.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;GCHandle h = GCHandle::FromIntPtr(IntPtr(m_impl));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;CSSimpleObject ^ obj = safe_cast&lt;CSSimpleObject^&gt;(h.Target);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Redirect the call to the corresponding property of the wrapped
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// CSSimpleObject object.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;return obj-&gt;FloatProperty;<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;void CSSimpleObjectWrapper::set_FloatProperty(float fVal)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Get the pinned CSSimpleObject object from its memory address.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;GCHandle h = GCHandle::FromIntPtr(IntPtr(m_impl));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;CSSimpleObject ^ obj = safe_cast&lt;CSSimpleObject^&gt;(h.Target);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Redirect the call to the corresponding property of the wrapped
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// CSSimpleObject object.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;obj-&gt;FloatProperty = fVal;<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;HRESULT CSSimpleObjectWrapper::ToString(PWSTR pszBuffer, DWORD dwSize)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;// Get the pinned CSSimpleObject object from its memory address.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;GCHandle h = GCHandle::FromIntPtr(IntPtr(m_impl));<br>
+&nbsp; &nbsp; &nbsp; &nbsp;CSSimpleObject ^ obj = safe_cast&lt;CSSimpleObject^&gt;(h.Target);<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;String ^ str;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;HRESULT hr;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;try<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Redirect the call to the corresponding method of the wrapped
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// CSSimpleObject object.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;str = obj-&gt;ToString();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;catch (Exception ^ e)<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hr = Marshal::GetHRForException(e);<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;if (SUCCEEDED(hr))<br>
+&nbsp; &nbsp; &nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Convert System::String to PCWSTR.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;marshal_context ^ context = gcnew marshal_context();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PCWSTR pszStr = context-&gt;marshal_as&lt;const wchar_t*&gt;(str);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hr = StringCchCopy(pszBuffer, dwSize, pszStr == NULL ? L&quot;&quot; : pszStr);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delete context; // This will also free the memory pointed by pszStr<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp;return hr;<br>
+&nbsp; &nbsp;}<br>
+<br>
+&nbsp; &nbsp;int CSSimpleObjectWrapper::GetStringLength(PCWSTR pszString)<br>
+&nbsp; &nbsp;{<br>
+&nbsp; &nbsp; &nbsp; &nbsp;return CSSimpleObject::GetStringLength(gcnew String(pszString));<br>
+&nbsp; &nbsp;}<br>
+<br>
+</p>
+<h3>References:</h3>
+<p style="font-family:Courier New"><br>
+Using C&#43;&#43; Interop (Implicit PInvoke)<br>
+<a  href="http://msdn.microsoft.com/en-us/library/2x8kf7zx.aspx">http://msdn.microsoft.com/en-us/library/2x8kf7zx.aspx</a><br>
+<br>
+<br>
+</p>
+<hr>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="description/3384444c-0fce-4538-886c-126c04fccfb7image.png">
+</a></div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

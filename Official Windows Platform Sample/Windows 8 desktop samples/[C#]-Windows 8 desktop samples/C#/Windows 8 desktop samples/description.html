@@ -1,0 +1,1844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,1:ImageSprite;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Content/Css:1&amp;amp;hashKey=E7560C71640616C5057FAEACB58DCB00" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/2f95808e-ca34-4249-88ff-44fabe33cdc0Combined.css,1:LinkList,2:ImageSprite,2:SiteFeedbackLink;/Areas/Epx/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Epx/Content/Css:2&amp;amp;hashKey=EEE39C2D6B93379FDAF50337BE99AF8C" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows 8 desktop samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows 8 desktop samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            COM, Win32
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Security, Graphics and 3D, input, Mobility, Automation, Accessibility, 3D, devices, multimedia, Networking, Packaging, Crypto, File Management, 2D, Shell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">8/15/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Windows-8-Desktop-Samples">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="longDesc">
+<h1>Introduction</h1>
+<span style="font-size:small">
+<p><span style="font-size:small; font-weight:normal">This sample pack includes all the desktop samples code examples developed for Windows 8. The sample pack provides a convenient way to download all the samples at once.</span></p>
+</span>
+<h2>Description</h2>
+<p><span style="font-size:small; font-weight:normal">The Windows Samples Gallery contains a variety of code samples that exercise the various new programming models, platforms, features, and components available in Windows 8 and/or Windows Server 2012. These
+ downloadable samples are provided as compressed ZIP files that contain a Visual Studio solution (SLN) file for the sample, along with the source files, assets, resources, and metadata necessary to successfully compile and run the sample. For more information
+ about the programming models, platforms, languages, and APIs demonstrated in this sample, please refer to the guidance, tutorials, and reference topics provided in the Windows 8 documentation available in the Windows Developer Center. This sample is provided
+ as-is in order to indicate or demonstrate the functionality of the programming models and feature APIs for Windows 8 and/or Windows Server 2012. Please provide feedback on this sample!</span></p>
+-----------------------------------------------------------------------------------------------------------------------------------</div>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample Index</h2>
+                <div id="SampleIndexList">
+                        <!--ps15580-->
+                        <div id="item">
+                                <div><a href="ODBC database sample/description.html">ODBC database sample</a></div>
+                            <div>This sample demonstrates how to use the ODBC APIs to connect to and access a database.</div>
+                        </div>
+                        <!--pe15580-->
+                        <!--ps15490-->
+                        <div id="item">
+                                <div><a href="Sending toast notifications from desktop apps sample/description.html">Sending toast notifications from desktop apps sample</a></div>
+                            <div>This sample demonstrates how a desktop app can display a toast notification and respond to events generated by the user&#39;s interaction (or lack of interaction) with the toast.</div>
+                        </div>
+                        <!--pe15490-->
+                        <!--ps15653-->
+                        <div id="item">
+                                <div><a href="XmlLite XML node writer sample/description.html">XmlLite XML node writer sample</a></div>
+                            <div>This sample shows how to implement a basic XML document reader and writer app with XmlLite app. It includes an XML file that the example can read.</div>
+                        </div>
+                        <!--pe15653-->
+                        <!--ps15616-->
+                        <div id="item">
+                                <div><a href="Virtual hard disk management sample/description.html">Virtual hard disk management sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs and Virtual Hard Disk APIs to manage virtual hard disks.</div>
+                        </div>
+                        <!--pe15616-->
+                        <!--ps13117-->
+                        <div id="item">
+                                <div><a href="CaptureEngine video capture sample/description.html">CaptureEngine video capture sample</a></div>
+                            <div>This sample demonstrates how to use the Media Foundation CaptureEngine to capture video from a capture device, such as a webcam.</div>
+                        </div>
+                        <!--pe13117-->
+                        <!--ps13131-->
+                        <div id="item">
+                                <div><a href="DirectX video rendering sample/description.html">DirectX video rendering sample</a></div>
+                            <div>This sample shows how to create a media sink that renders video output to a window using DirectX 11.</div>
+                        </div>
+                        <!--pe13131-->
+                        <!--ps13116-->
+                        <div id="item">
+                                <div><a href="Bluetooth connection sample/description.html">Bluetooth connection sample</a></div>
+                            <div>This sample demonstrates how to make a Bluetooth connection over RFCOMM using Winsock version 2.2.</div>
+                        </div>
+                        <!--pe13116-->
+                        <!--ps15641-->
+                        <div id="item">
+                                <div><a href="WinHTTP WebSocket sample/description.html">WinHTTP WebSocket sample</a></div>
+                            <div>This sample demonstrates how to use the WinHTTP API to send and receive messages between a client and a server by using the WebSocket protocol.</div>
+                        </div>
+                        <!--pe15641-->
+                        <!--ps15654-->
+                        <div id="item">
+                                <div><a href="XmlLite XML readerwriter sample/description.html">XmlLite XML readerwriter sample</a></div>
+                            <div>This sample shows how to use XmlLite to read an XML document, process its nodes, and then output the XML to another file. The sample includes an XML file from which it reads.</div>
+                        </div>
+                        <!--pe15654-->
+                        <!--ps13124-->
+                        <div id="item">
+                                <div><a href="DXGI desktop duplication sample/description.html">DXGI desktop duplication sample</a></div>
+                            <div>This sample demonstrates how to use the desktop duplication behaviors exposed by DXGI in DirectX.</div>
+                        </div>
+                        <!--pe13124-->
+                        <!--ps13173-->
+                        <div id="item">
+                                <div><a href="UI Automation simple provider sample/description.html">UI Automation simple provider sample</a></div>
+                            <div>This sample application creates a simple custom control that implements Microsoft UI Automation provider interfaces. By implementing these interfaces, assistive technologies such as screen readers can programmatically access information about the con...</div>
+                        </div>
+                        <!--pe13173-->
+                        <!--ps13168-->
+                        <div id="item">
+                                <div><a href="Input Touch injection sample/description.html">Input Touch injection sample</a></div>
+                            <div>This sample shows how to inject touch pointer input into the Windows message queue. Specifically, this sample covers using the Touch Input APIs to inject touch-down messages and touch-up messages.</div>
+                        </div>
+                        <!--pe13168-->
+                        <!--ps13170-->
+                        <div id="item">
+                                <div><a href="UI Automation document content client sample/description.html">UI Automation document content client sample</a></div>
+                            <div>This sample demonstrates how an application can use Microsoft UI Automation control patterns to access the content of a document that is being displayed in another application&#39;s window. </div>
+                        </div>
+                        <!--pe13170-->
+                        <!--ps13147-->
+                        <div id="item">
+                                <div><a href="Magnification API sample/description.html">Magnification API sample</a></div>
+                            <div>This sample demonstrates how to use the Magnification API to create a full-screen magnifier that magnifies the entire screen, and a windowed magnifier that magnifies and displays a portion of the screen in a window.</div>
+                        </div>
+                        <!--pe13147-->
+                        <!--ps13175-->
+                        <div id="item">
+                                <div><a href="Portable Devices COM API Sample/description.html">Portable Devices COM API Sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Portable Device COM API (IPortableDevice).</div>
+                        </div>
+                        <!--pe13175-->
+                        <!--ps13119-->
+                        <div id="item">
+                                <div><a href="Cipher encryption and decryption sample/description.html">Cipher encryption and decryption sample</a></div>
+                            <div>This sample shows how to encrypt and decrypt a message given a password using 128 bit AES in CBC mode. An AES 128 bit key is derived from the password using PBKDF2. IV for the encrypt and decrypt operations is generated randomly. </div>
+                        </div>
+                        <!--pe13119-->
+                        <!--ps15658-->
+                        <div id="item">
+                                <div><a href="XmlLite XML writer sample/description.html">XmlLite XML writer sample</a></div>
+                            <div>This sample shows how to make an XML document writer app using XmlLite.</div>
+                        </div>
+                        <!--pe15658-->
+                        <!--ps13165-->
+                        <div id="item">
+                                <div><a href="DirectX 11 texture converter tool sample/description.html">DirectX 11 texture converter tool sample</a></div>
+                            <div>This sample implements a tool for DirectX 11 texture conversion in C++. It also includes the &quot;DirectXTex&quot; texture content processing library implementation.</div>
+                        </div>
+                        <!--pe13165-->
+                        <!--ps15502-->
+                        <div id="item">
+                                <div><a href="XML HTTP request  GET sample/description.html">XML HTTP request  GET sample</a></div>
+                            <div>This sample demonstrates how to use the IXMLHTTPRequest2 interface to asynchronously send HTTP GET requests and receive HTTP responses.</div>
+                        </div>
+                        <!--pe15502-->
+                        <!--ps13127-->
+                        <div id="item">
+                                <div><a href="Direct2D desktop app printing sample/description.html">Direct2D desktop app printing sample</a></div>
+                            <div>This sample shows how to print Direct2D content.</div>
+                        </div>
+                        <!--pe13127-->
+                        <!--ps13141-->
+                        <div id="item">
+                                <div><a href="SHA-256 hash computation sample/description.html">SHA-256 hash computation sample</a></div>
+                            <div>This sample shows how to compute the SHA-256 hash of a message(s) using CNG.</div>
+                        </div>
+                        <!--pe13141-->
+                        <!--ps13114-->
+                        <div id="item">
+                                <div><a href="Add app package sample/description.html">Add app package sample</a></div>
+                            <div>This sample shows you how to install a package on the system using the package manager API.</div>
+                        </div>
+                        <!--pe13114-->
+                        <!--ps15640-->
+                        <div id="item">
+                                <div><a href="WinHTTP proxy sample/description.html">WinHTTP proxy sample</a></div>
+                            <div>This sample demonstrates how to use the WinHTTP API to determine the proxy for a particular URL. It uses the core functionality provided in WinHTTP for querying the proxy settings.</div>
+                        </div>
+                        <!--pe15640-->
+                        <!--ps13130-->
+                        <div id="item">
+                                <div><a href="Managing DirectComposition animation with Windows Animation Manager v2 sample/description.html">Managing DirectComposition animation with Windows Animation Manager v2 sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Animation Manager APIs to create animated transitions in a desktop application. Specifically, this sample shows how to generate animation curves (functions) that can be consumed by DirectComposition.</div>
+                        </div>
+                        <!--pe13130-->
+                        <!--ps13135-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages sample/description.html">Enumerate app packages sample</a></div>
+                            <div>This sample shows how to enumerate all app packages installed on the system, and enumerate every user that installed each package.</div>
+                        </div>
+                        <!--pe13135-->
+                        <!--ps15554-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP raw client sample/description.html">Windows Web Services HTTP raw client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a client that sends raw (non-SOAP) HTTP requests.</div>
+                        </div>
+                        <!--pe15554-->
+                        <!--ps15579-->
+                        <div id="item">
+                                <div><a href="XmlLite RSS feed reader sample/description.html">XmlLite RSS feed reader sample</a></div>
+                            <div>The sample shows the performance benefit of using a non-blocking parser in XmlLite to read an RSS feed, as opposed to using synchronous download stream parsing.</div>
+                        </div>
+                        <!--pe15579-->
+                        <!--ps13160-->
+                        <div id="item">
+                                <div><a href="Input Touch hit testing sample/description.html">Input Touch hit testing sample</a></div>
+                            <div>This sample uses a puzzle to show how to process pointer input and perform hit testing using C++. Specifically, this sample covers using the Touch Hit Testing APIs to: Listen for and handle pointer input events, Identify the input target </div>
+                        </div>
+                        <!--pe13160-->
+                        <!--ps17032-->
+                        <div id="item">
+                                <div><a href="Start screen visibility sample/description.html">Start screen visibility sample</a></div>
+                            <div>This sample shows how to get information about monitors that are displaying Windows Store apps or the Start screen. It also demonstrates how to receive notifications when the state of a monitor changes or when the visibility of the Start screen chang...</div>
+                        </div>
+                        <!--pe17032-->
+                        <!--ps17053-->
+                        <div id="item">
+                                <div><a href="VShadow Volume Shadow Copy Service sample/description.html">VShadow Volume Shadow Copy Service sample</a></div>
+                            <div>VShadow is a command-line tool that you can use to create and manage volume shadow copies. It is also a sample that demonstrates the use of the Volume Shadow Copy Service (VSS) COM API.</div>
+                        </div>
+                        <!--pe17053-->
+                        <!--ps17036-->
+                        <div id="item">
+                                <div><a href="Asynchronous DNS query API sample/description.html">Asynchronous DNS query API sample</a></div>
+                            <div>This sample demonstrates how to asynchronously query DNS records and parse the results.</div>
+                        </div>
+                        <!--pe17036-->
+                        <!--ps17038-->
+                        <div id="item">
+                                <div><a href="Effective access rights for files sample/description.html">Effective access rights for files sample</a></div>
+                            <div>Demonstrates the use of Authorization APIs to compute a user&#39;s effective access rights on a file or folder.</div>
+                        </div>
+                        <!--pe17038-->
+                        <!--ps15572-->
+                        <div id="item">
+                                <div><a href="Windows Web Services multicast UDP client sample/description.html">Windows Web Services multicast UDP client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP client that multicasts a request and then waits for reply messages from servers. </div>
+                        </div>
+                        <!--pe15572-->
+                        <!--ps15586-->
+                        <div id="item">
+                                <div><a href="XML HTTP request POST sample/description.html">XML HTTP request POST sample</a></div>
+                            <div>This sample demonstrates how to use the IXMLHTTPRequest2 interface to asynchronously send HTTP POST requests and receive HTTP responses.</div>
+                        </div>
+                        <!--pe15586-->
+                        <!--ps15615-->
+                        <div id="item">
+                                <div><a href="HTTP SSL configuration sample/description.html">HTTP SSL configuration sample</a></div>
+                            <div>The sample demonstrates how to set, query, and delete a SSL configuration for Hostname:Port based SSL endpoint bindings (SNI) or universal port based bindings using central certificate storage (CCS).</div>
+                        </div>
+                        <!--pe15615-->
+                        <!--ps15656-->
+                        <div id="item">
+                                <div><a href="XmlLite encoded XML document reader sample/description.html">XmlLite encoded XML document reader sample</a></div>
+                            <div>This sample shows how to make an XmlLite app that reads an encoded XML document. </div>
+                        </div>
+                        <!--pe15656-->
+                        <!--ps13128-->
+                        <div id="item">
+                                <div><a href="DirectComposition effects with Direct2D bitmap content sample/description.html">DirectComposition effects with Direct2D bitmap content sample</a></div>
+                            <div>This sample shows how to use Microsoft DirectComposition to apply animations and effects to visuals that have Direct2D bitmap content. </div>
+                        </div>
+                        <!--pe13128-->
+                        <!--ps13178-->
+                        <div id="item">
+                                <div><a href="Web service discovery (WS-Discovery) sample/description.html">Web service discovery (WS-Discovery) sample</a></div>
+                            <div> This sample shows how to use the Web Service Discovery API to perform WS-Discovery routines by using the IWSDiscoveryProvider , IWSDiscoveryProviderNotify , IWSDiscoveryPublisher and IWSDiscoveryPublisherNotify interfaces. This sample implements the...</div>
+                        </div>
+                        <!--pe13178-->
+                        <!--ps15504-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetClientInfo API sample/description.html">DhcpV4FailoverGetClientInfo API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetClientInfo API.</div>
+                        </div>
+                        <!--pe15504-->
+                        <!--ps13129-->
+                        <div id="item">
+                                <div><a href="DirectComposition layered child window sample/description.html">DirectComposition layered child window sample</a></div>
+                            <div>This sample demonstrates how to use the Microsoft DirectComposition&#160;API to animate the bitmap of a layered child window.</div>
+                        </div>
+                        <!--pe13129-->
+                        <!--ps17031-->
+                        <div id="item">
+                                <div><a href="Ambient light sensor sample/description.html">Ambient light sensor sample</a></div>
+                            <div>This sample demonstrates how to optimize a label&#39;s font size, based on light conditions reported by an Ambient Light sensor.</div>
+                        </div>
+                        <!--pe17031-->
+                        <!--ps15568-->
+                        <div id="item">
+                                <div><a href="Hyper-V metrics sample/description.html">Hyper-V metrics sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V metrics WMI APIs to manage metrics for a virtual machine.</div>
+                        </div>
+                        <!--pe15568-->
+                        <!--ps15574-->
+                        <div id="item">
+                                <div><a href="Windows Web Services multicast UDP server sample/description.html">Windows Web Services multicast UDP server sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP server that listens on a multicast address and replies to requests sent to that address. </div>
+                        </div>
+                        <!--pe15574-->
+                        <!--ps13166-->
+                        <div id="item">
+                                <div><a href="Coalescing timers sample/description.html">Coalescing timers sample</a></div>
+                            <div>This sample shows how to coalesce low priority WM_TIMER messages. Specifically, this sample covers using the SetCoalescableTimer function to identify the WM_TIMER messages to coalesce.</div>
+                        </div>
+                        <!--pe13166-->
+                        <!--ps13157-->
+                        <div id="item">
+                                <div><a href="RSA CAPI and CNG interop sample/description.html">RSA CAPI and CNG interop sample</a></div>
+                            <div>This sample demonstrates how to perform RSA PKCS#1 v1.5 signing and encryption using CNG and CAPI.</div>
+                        </div>
+                        <!--pe13157-->
+                        <!--ps15657-->
+                        <div id="item">
+                                <div><a href="XmlLite XML DOCTYPE writer sample/description.html">XmlLite XML DOCTYPE writer sample</a></div>
+                            <div>This sample shows how to use a DOCTYPE declaration to write a document with a specified name and attributes.</div>
+                        </div>
+                        <!--pe15657-->
+                        <!--ps15540-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP client with SSL sample/description.html">Windows Web Services HTTP client with SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that sends request-reply messages with SSL transport security. </div>
+                        </div>
+                        <!--pe15540-->
+                        <!--ps15655-->
+                        <div id="item">
+                                <div><a href="XmlLite XML external entity reader sample/description.html">XmlLite XML external entity reader sample</a></div>
+                            <div>This sample shows how to use XmlLite to read an XML document with external entities.</div>
+                        </div>
+                        <!--pe15655-->
+                        <!--ps15647-->
+                        <div id="item">
+                                <div><a href="XmlLite XML reader memory allocation sample/description.html">XmlLite XML reader memory allocation sample</a></div>
+                            <div>This sample shows how to implement an XmlLite app that controls the reader memory allocation. You must control the reader memory allocation to reduce the threat of the denial of service attack. </div>
+                        </div>
+                        <!--pe15647-->
+                        <!--ps15638-->
+                        <div id="item">
+                                <div><a href="Windows Web Services WCF public service sample/description.html">Windows Web Services WCF public service sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a service proxy talking to a public service using the Windows Communication Foundation (WCF) framework.</div>
+                        </div>
+                        <!--pe15638-->
+                        <!--ps15594-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read and write XML buffer sample/description.html">Windows Web Services read and write XML buffer sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to write XML to an XML buffer and then read it back out.</div>
+                        </div>
+                        <!--pe15594-->
+                        <!--ps15578-->
+                        <div id="item">
+                                <div><a href="XmlLite mixed-content file reader sample/description.html">XmlLite mixed-content file reader sample</a></div>
+                            <div>This sample shows how to use XmlLite to read an interleaved file that contains mixed XML and text content.</div>
+                        </div>
+                        <!--pe15578-->
+                        <!--ps15646-->
+                        <div id="item">
+                                <div><a href="XmlLite XML fragment reader sample/description.html">XmlLite XML fragment reader sample</a></div>
+                            <div>This sample shows how to read large XML documents as fragments with XmlLite, using a method called chunking.</div>
+                        </div>
+                        <!--pe15646-->
+                        <!--ps13115-->
+                        <div id="item">
+                                <div><a href="Windows Powershell  basic OData Web Service sample/description.html">Windows Powershell  basic OData Web Service sample</a></div>
+                            <div> This sample is an implementation of the two interfaces that authorize all incoming users and provides everyone default Windows PowerShell session configuration. Using the Management OData Web Service requires a third party to implement the Microsoft...</div>
+                        </div>
+                        <!--pe13115-->
+                        <!--ps15610-->
+                        <div id="item">
+                                <div><a href="Windows Web Services TCP calculator service sample/description.html">Windows Web Services TCP calculator service sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a calculator service using the Service Host over TCP.</div>
+                        </div>
+                        <!--pe15610-->
+                        <!--ps13177-->
+                        <div id="item">
+                                <div><a href="Windows Security Center API sample/description.html">Windows Security Center API sample</a></div>
+                            <div> Demonstrates how to query the Windows Security Center for product information for any products registered with the Security Center that are antivirus, antispyware, or firewall products. </div>
+                        </div>
+                        <!--pe13177-->
+                        <!--ps15617-->
+                        <div id="item">
+                                <div><a href="Storage management application sample/description.html">Storage management application sample</a></div>
+                            <div>This sample is an end-to-end application that uses the Windows Storage Management API to create a formatted volume on a storage subsystem.</div>
+                        </div>
+                        <!--pe15617-->
+                        <!--ps15584-->
+                        <div id="item">
+                                <div><a href="Windows Web Services one-way UDP server sample/description.html">Windows Web Services one-way UDP server sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP server that accepts a channel and receives one-way messages. </div>
+                        </div>
+                        <!--pe15584-->
+                        <!--ps17041-->
+                        <div id="item">
+                                <div><a href="Asynchronous Winsock network name resolution sample/description.html">Asynchronous Winsock network name resolution sample</a></div>
+                            <div> This sample demonstrates how to Winsock to use asynchronously resolve network names using the GetAddrInfoEx API.</div>
+                        </div>
+                        <!--pe17041-->
+                        <!--ps15551-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with SSL service sample/description.html">Windows Web Services HTTP purchase order with SSL service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a PurchaseOrder service over HTTP, with SSL transport security. </div>
+                        </div>
+                        <!--pe15551-->
+                        <!--ps15583-->
+                        <div id="item">
+                                <div><a href="Windows Web Services one-way UDP client sample/description.html">Windows Web Services one-way UDP client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP client that sends a one-way message. </div>
+                        </div>
+                        <!--pe15583-->
+                        <!--ps15639-->
+                        <div id="item">
+                                <div><a href="Web Socket Protocol Component API sample/description.html">Web Socket Protocol Component API sample</a></div>
+                            <div> This sample demonstrates how to use Web Socket Protocol Component APIs.</div>
+                        </div>
+                        <!--pe15639-->
+                        <!--ps13139-->
+                        <div id="item">
+                                <div><a href="UPnP control point sample/description.html">UPnP control point sample</a></div>
+                            <div>This sample shows device discovery and subscription modes for Universal Plug and Play (UPnP), along with querying variables, events, and invoking actions.</div>
+                        </div>
+                        <!--pe13139-->
+                        <!--ps15489-->
+                        <div id="item">
+                                <div><a href="Desktop Automation sample/description.html">Desktop Automation sample</a></div>
+                            <div>Automating desktop applications may require programmatic dismissal of the Start menu. This sample shows how to create a program that can be used as part of automation to dismiss the Start menu and apps. This binary should be run only for automated te...</div>
+                        </div>
+                        <!--pe15489-->
+                        <!--ps15652-->
+                        <div id="item">
+                                <div><a href="XmlLite XML nested namespace writer sample/description.html">XmlLite XML nested namespace writer sample</a></div>
+                            <div>This sample shows how to use XmlLite for writing XML documents that incorporate nested namespaces.</div>
+                        </div>
+                        <!--pe15652-->
+                        <!--ps15541-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP client with SSL and a client certificate sample/description.html">Windows Web Services HTTP client with SSL and a client certificate sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that sends request-reply messages with SSL transport security using a client certificate.</div>
+                        </div>
+                        <!--pe15541-->
+                        <!--ps15528-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service host mixed-mode authentication sample/description.html">Windows Web Services HTTP service host mixed-mode authentication sample</a></div>
+                            <div>This sample shows how to use a service host with the Windows Web Services API to host a calculator service over HTTP with Kerberos authentication over SSL mixed-mode transport security.</div>
+                        </div>
+                        <!--pe15528-->
+                        <!--ps13154-->
+                        <div id="item">
+                                <div><a href="UPnP device registration sample/description.html">UPnP device registration sample</a></div>
+                            <div>This sample implements the UPnP Dimmer device sample functionality as a COM server object and demonstrates how to register and unregister the device with the Microsoft UPnP framework device host. </div>
+                        </div>
+                        <!--pe13154-->
+                        <!--ps17035-->
+                        <div id="item">
+                                <div><a href="Data dedupulication backup and restore sample/description.html">Data dedupulication backup and restore sample</a></div>
+                            <div>This sample demonstrates the use of the Data Deduplication Backup/Restore API to perform optimized backup and optimized restore that is not optimized.</div>
+                        </div>
+                        <!--pe17035-->
+                        <!--ps15562-->
+                        <div id="item">
+                                <div><a href="Windows Web Services insert element sample/description.html">Windows Web Services insert element sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to insert an element into an XML buffer. </div>
+                        </div>
+                        <!--pe15562-->
+                        <!--ps15599-->
+                        <div id="item">
+                                <div><a href="Windows Web Services request-reply named pipe client sample/description.html">Windows Web Services request-reply named pipe client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a named pipe client that sends request-reply messages.</div>
+                        </div>
+                        <!--pe15599-->
+                        <!--ps13169-->
+                        <div id="item">
+                                <div><a href="UI Automation clean shutdown sample/description.html">UI Automation clean shutdown sample</a></div>
+                            <div>This sample has two pieces that work together to show the correct way to clean up and shut down a Microsoft UI Automation control that is hosted in a DLL. The first piece is a DLL that contains a simple control with a basic UI Automation provider. Th...</div>
+                        </div>
+                        <!--pe13169-->
+                        <!--ps15534-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator with SSL service sample/description.html">Windows Web Services HTTP calculator with SSL service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a calculator service over HTTP, with SSL transport security.</div>
+                        </div>
+                        <!--pe15534-->
+                        <!--ps15478-->
+                        <div id="item">
+                                <div><a href="Windows Web Services abandoned call sample/description.html">Windows Web Services abandoned call sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a client app that shows how to abandon a call.</div>
+                        </div>
+                        <!--pe15478-->
+                        <!--ps13171-->
+                        <div id="item">
+                                <div><a href="UI Automation document content provider sample/description.html">UI Automation document content provider sample</a></div>
+                            <div>This sample demonstrates how to use Microsoft UI Automation to expose an application&#39;s textual content so that it is accessible to assistive technology applications such as screen readers. The sample displays a text document with headings, text, and ...</div>
+                        </div>
+                        <!--pe13171-->
+                        <!--ps15555-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP raw service sample/description.html">Windows Web Services HTTP raw service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host to handle raw (non-SOAP) HTTP requests.</div>
+                        </div>
+                        <!--pe15555-->
+                        <!--ps15649-->
+                        <div id="item">
+                                <div><a href="XmlLite XML namespace prefix and URI writer sample/description.html">XmlLite XML namespace prefix and URI writer sample</a></div>
+                            <div>This sample shows how to write namespace-qualified XML. It outputs an XML file with a namespace prefix and an associated URI.</div>
+                        </div>
+                        <!--pe15649-->
+                        <!--ps15622-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming TCP client sample/description.html">Windows Web Services streaming TCP client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP client that sends one-way messages in a stream. This sample performs streaming only on the application layer and data on the transport layer are buffered before they...</div>
+                        </div>
+                        <!--pe15622-->
+                        <!--ps15556-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP server sample/description.html">Windows Web Services HTTP server sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to create a TCP server that accepts a channel, and receives and replies to messages.</div>
+                        </div>
+                        <!--pe15556-->
+                        <!--ps15650-->
+                        <div id="item">
+                                <div><a href="XmlLite XML default namespace writer sample/description.html">XmlLite XML default namespace writer sample</a></div>
+                            <div>This sample shows how to write namespace-qualified XML documents using XmlLite. Specifically, it shows how to output an XML document with a default namespace.</div>
+                        </div>
+                        <!--pe15650-->
+                        <!--ps13163-->
+                        <div id="item">
+                                <div><a href="WSD stock quote sample/description.html">WSD stock quote sample</a></div>
+                            <div>This sample demonstrates the basic use of the Web Services for Devices API through a simple stock quote application. This sample implements the functionality described by StockQuote.wsdl and StockQuoteService.wsdl.</div>
+                        </div>
+                        <!--pe13163-->
+                        <!--ps15476-->
+                        <div id="item">
+                                <div><a href="Background Intelligent Transfer Service IBackgroundCopyFile5 API sample/description.html">Background Intelligent Transfer Service IBackgroundCopyFile5 API sample</a></div>
+                            <div>This sample demonstrates how to use the new IBackgroundCopyFile5 interface&#39;s GetProperty method to obtain the last set of HTTP headers received for each file in a Background Intelligent Transfer Service (BITS) download job. The information in the HTT...</div>
+                        </div>
+                        <!--pe15476-->
+                        <!--ps17044-->
+                        <div id="item">
+                                <div><a href="XML DOM load sample/description.html">XML DOM load sample</a></div>
+                            <div> Demonstrates how to create an XML DOM instance and load its content from an external XML data file. </div>
+                        </div>
+                        <!--pe17044-->
+                        <!--ps13142-->
+                        <div id="item">
+                                <div><a href="SHA1-HMAC computation sample/description.html">SHA1-HMAC computation sample</a></div>
+                            <div>This sample shows how to compute the SHA1-HMAC of a message(s) using CNG.</div>
+                        </div>
+                        <!--pe13142-->
+                        <!--ps13121-->
+                        <div id="item">
+                                <div><a href="NCrypt data protection sample/description.html">NCrypt data protection sample</a></div>
+                            <div>This sample demonstrates how to use the data protection API (DPAPI).</div>
+                        </div>
+                        <!--pe13121-->
+                        <!--ps13174-->
+                        <div id="item">
+                                <div><a href="Windows Connection Manager WLAN cost sample/description.html">Windows Connection Manager WLAN cost sample</a></div>
+                            <div>The sample demonstrates how to set and get cost for WLAN profiles using Windows Connection Manager (WCM) Cost APIs.</div>
+                        </div>
+                        <!--pe13174-->
+                        <!--ps15500-->
+                        <div id="item">
+                                <div><a href="Windows Web Services file replace client sample/description.html">Windows Web Services file replace client sample</a></div>
+                            <div>This command line tool drives the Windows Web Services file replace service sample.</div>
+                        </div>
+                        <!--pe15500-->
+                        <!--ps15627-->
+                        <div id="item">
+                                <div><a href="Windows Web Services untyped service sample/description.html">Windows Web Services untyped service sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an untyped service with the Service Model. The Service Model provides the boilerplate infrastructure in this case.</div>
+                        </div>
+                        <!--pe15627-->
+                        <!--ps15558-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP server over SSL sample/description.html">Windows Web Services HTTP server over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to create an HTTP server that accepts a channel, and receives and replies to messages, with SSL transport security.</div>
+                        </div>
+                        <!--pe15558-->
+                        <!--ps15595-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read XML node by node sample/description.html">Windows Web Services read XML node by node sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read XML node by node. </div>
+                        </div>
+                        <!--pe15595-->
+                        <!--ps15608-->
+                        <div id="item">
+                                <div><a href="Windows Web Services service cancellation sample/description.html">Windows Web Services service cancellation sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a client app that cancels a service.</div>
+                        </div>
+                        <!--pe15608-->
+                        <!--ps15604-->
+                        <div id="item">
+                                <div><a href="Windows Web Services secured request-reply TCP client sample/description.html">Windows Web Services secured request-reply TCP client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP client that sends request-reply messages with security provided by Windows SSPI transport security and uses security token properties to modify the allowed impersona...</div>
+                        </div>
+                        <!--pe15604-->
+                        <!--ps17054-->
+                        <div id="item">
+                                <div><a href="Volume Shadow Copy Service hardware provider sample/description.html">Volume Shadow Copy Service hardware provider sample</a></div>
+                            <div>This sample demonstrates the use of the Volume Shadow Copy Service (VSS) COM interfaces to create a VSS hardware provider.</div>
+                        </div>
+                        <!--pe17054-->
+                        <!--ps15484-->
+                        <div id="item">
+                                <div><a href="Windows Web Services custom header sample/description.html">Windows Web Services custom header sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to add and retrieve a custom header. </div>
+                        </div>
+                        <!--pe15484-->
+                        <!--ps13172-->
+                        <div id="item">
+                                <div><a href="UI Automation fragment provider sample/description.html">UI Automation fragment provider sample</a></div>
+                            <div>This sample shows how an application can use Microsoft UI Automation to provide programmatic access to the elements in a UI fragment (in this case, a custom list box control) that is hosted in a window (HWND).</div>
+                        </div>
+                        <!--pe13172-->
+                        <!--ps13146-->
+                        <div id="item">
+                                <div><a href="NCrypt key derivation sample/description.html">NCrypt key derivation sample</a></div>
+                            <div>This sample demonstrates how to create a key by using a key derivation function (KDF) and how to derive ephemeral symmetric keys from the persisted KDF key. The sample uses the NCryptKeyDerivation function.</div>
+                        </div>
+                        <!--pe13146-->
+                        <!--ps15571-->
+                        <div id="item">
+                                <div><a href="Routing and Remote Access Service (RRAS) MPR API sample/description.html">Routing and Remote Access Service (RRAS) MPR API sample</a></div>
+                            <div>Demonstrates how to use Windows&#160;8 MPR APIs to set and retrieve configuration info from Routing and Remote Access Service (RRAS).</div>
+                        </div>
+                        <!--pe15571-->
+                        <!--ps13148-->
+                        <div id="item">
+                                <div><a href="MediaFoundation transform decoder as hardware MF transcoder sample/description.html">MediaFoundation transform decoder as hardware MF transcoder sample</a></div>
+                            <div>This sample demonstrates how to create an asynchronous Microsoft Media Foundation Transform (MFT) decoder for use as a hardware MFT.</div>
+                        </div>
+                        <!--pe13148-->
+                        <!--ps13156-->
+                        <div id="item">
+                                <div><a href="Windows Powershell  role-based OData Web Service sample/description.html">Windows Powershell  role-based OData Web Service sample</a></div>
+                            <div> Using the Management OData Web Service requires a third party to implement the Microsoft.Management.OData.CustomAuthorization and System.Management.Automation.Remoting.PSSessionConfiguration interfaces to expose Windows PowerShell cmdlets. These int...</div>
+                        </div>
+                        <!--pe13156-->
+                        <!--ps15577-->
+                        <div id="item">
+                                <div><a href="Hyper-V networking sample/description.html">Hyper-V networking sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI networking APIs to create, configure, and remove networking related objects such as switches and ports.</div>
+                        </div>
+                        <!--pe15577-->
+                        <!--ps17045-->
+                        <div id="item">
+                                <div><a href="Handling Location API events sample/description.html">Handling Location API events sample</a></div>
+                            <div>The sample demonstrates the use of the Location API to handle location awareness events.</div>
+                        </div>
+                        <!--pe17045-->
+                        <!--ps17052-->
+                        <div id="item">
+                                <div><a href="Server manager deployment CIM sample/description.html">Server manager deployment CIM sample</a></div>
+                            <div>This sample demonstrates how to use Microsoft&#39;s CIM APIs</div>
+                        </div>
+                        <!--pe17052-->
+                        <!--ps15581-->
+                        <div id="item">
+                                <div><a href="Windows Web Services one-way TCP client sample/description.html">Windows Web Services one-way TCP client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a TCP client that sends a one-way message. </div>
+                        </div>
+                        <!--pe15581-->
+                        <!--ps15620-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming named pipe client sample/description.html">Windows Web Services streaming named pipe client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a TCP client that sends one-way messages in a stream.</div>
+                        </div>
+                        <!--pe15620-->
+                        <!--ps15472-->
+                        <div id="item">
+                                <div><a href="Windows Web Services implicit asynchronous function sample/description.html">Windows Web Services implicit asynchronous function sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a complex asynchronous function using WsAsyncExecute. This is done by creating an asynchronous function that adds three integers by building upon an existing Add function,...</div>
+                        </div>
+                        <!--pe15472-->
+                        <!--ps15474-->
+                        <div id="item">
+                                <div><a href="Windows Web Services asynchronous streaming client example/description.html">Windows Web Services asynchronous streaming client example</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a basic TCP client that sends one-way messages in an asynchronous streaming fashion. This sample performs streaming only on the application layer. On the transport layer, d...</div>
+                        </div>
+                        <!--pe15474-->
+                        <!--ps13137-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages by user SID sample/description.html">Enumerate app packages by user SID sample</a></div>
+                            <div>This sample demonstrates how to enumerate app packages installed on the system by the specified user.</div>
+                        </div>
+                        <!--pe13137-->
+                        <!--ps15471-->
+                        <div id="item">
+                                <div><a href="Windows Web Services explicit asynchronous function sample/description.html">Windows Web Services explicit asynchronous function sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a complex asynchronous function without using the WsAsyncExecute function. Instead, an asynchronous function &#39;AddThree&#39; is created, which adds three integers by building up...</div>
+                        </div>
+                        <!--pe15471-->
+                        <!--ps15483-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverCreateRelationship API sample/description.html">DhcpV4FailoverCreateRelationship API sample</a></div>
+                            <div> This sample shows how to use the DhcpV4FailoverCreateRelationship API.</div>
+                        </div>
+                        <!--pe15483-->
+                        <!--ps15533-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator with SSL policy service sample/description.html">Windows Web Services HTTP calculator with SSL policy service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a calculator service over HTTP, with SSL transport security and HTTP header basic authentication. In this setup, the transport connection is protected (sig...</div>
+                        </div>
+                        <!--pe15533-->
+                        <!--ps15552-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with username over SSL client sample/description.html">Windows Web Services HTTP purchase order with username over SSL client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that uses service proxy to talk to a PurchaseOrder service, with username over SSL mixed-mode security. In this setup, the transport connection is protected ...</div>
+                        </div>
+                        <!--pe15552-->
+                        <!--ps17034-->
+                        <div id="item">
+                                <div><a href="Windows Deployment Services multicast consumer sample/description.html">Windows Deployment Services multicast consumer sample</a></div>
+                            <div>Demonstrates how to use the Windows Deployment Services (WDS) Multicast Client library to implement a multicast consumer.</div>
+                        </div>
+                        <!--pe17034-->
+                        <!--ps15648-->
+                        <div id="item">
+                                <div><a href="XmlLite XML namespace and node writer sample/description.html">XmlLite XML namespace and node writer sample</a></div>
+                            <div>This sample shows how to parse and handle namespaces when reading an XML document. It reads an XML file, and then prints the XML nodes and their namespaces to the console. An XML file that contains a namespace definition is included.</div>
+                        </div>
+                        <!--pe15648-->
+                        <!--ps15643-->
+                        <div id="item">
+                                <div><a href="WSMan Shell Client sample/description.html">WSMan Shell Client sample</a></div>
+                            <div>This sample demonstrates how to use the WSMan Shell Client APIs by supplying a wrapper for these APIs. Users can refer to this sample to gain a better understanding of the APIs and callback contracts to help them implement WSMan Shell Client applicat...</div>
+                        </div>
+                        <!--pe15643-->
+                        <!--ps15629-->
+                        <div id="item">
+                                <div><a href="DhcpV4GetAllOptionValues API sample/description.html">DhcpV4GetAllOptionValues API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4GetAllOptionValues API.</div>
+                        </div>
+                        <!--pe15629-->
+                        <!--ps17037-->
+                        <div id="item">
+                                <div><a href="XML DOM object dynamic creation sample/description.html">XML DOM object dynamic creation sample</a></div>
+                            <div> This sample demonstrates how to dynamically create an XML document in an application. Specifically, it demonstrates how to add processing instructions, comments, elements, and text nodes. it also shows how to use extra white space text nodes to prov...</div>
+                        </div>
+                        <!--pe17037-->
+                        <!--ps15536-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator with username over SSL service sample/description.html">Windows Web Services HTTP calculator with username over SSL service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a calculator service over HTTP, with username over SSL mixed-mode security. In this setup, the transport connection is protected (signed, encrypted) by SSL...</div>
+                        </div>
+                        <!--pe15536-->
+                        <!--ps13153-->
+                        <div id="item">
+                                <div><a href="CNG random number generation sample/description.html">CNG random number generation sample</a></div>
+                            <div>This sample demonstrates how to generate pseudorandom numbers by using CNG.</div>
+                        </div>
+                        <!--pe13153-->
+                        <!--ps13133-->
+                        <div id="item">
+                                <div><a href="WSD file services sample/description.html">WSD file services sample</a></div>
+                            <div>This sample demonstrates the basic use of the Web Services for Devices API and implements functionality described by FileService.wsdl.</div>
+                        </div>
+                        <!--pe13133-->
+                        <!--ps17047-->
+                        <div id="item">
+                                <div><a href="Windows Deployment Services provider sample/description.html">Windows Deployment Services provider sample</a></div>
+                            <div>Demonstrates how to create a custom PXE provider DLL that can replace or run in conjunction with the standard WDSDCPXE PXE provider on a Windows Deployment Services (WDS) server. </div>
+                        </div>
+                        <!--pe17047-->
+                        <!--ps15605-->
+                        <div id="item">
+                                <div><a href="Windows Web Services request-reply TCP server sample/description.html">Windows Web Services request-reply TCP server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP server that accepts a channel, and receives/replies to messages.</div>
+                        </div>
+                        <!--pe15605-->
+                        <!--ps15546-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order client sample/description.html">Windows Web Services HTTP purchase order client sample</a></div>
+                            <div>This sample demonstrates how to get the Windows Web Services API to use the service proxy to talk to an HTTP based PurchaseOrder service. We also demonstrate how to configure the wsutil tool to generate the stub files with WS_STRING type instead of W...</div>
+                        </div>
+                        <!--pe15546-->
+                        <!--ps15524-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service host with SSL and basic authentication sample/description.html">Windows Web Services HTTP service host with SSL and basic authentication sample</a></div>
+                            <div>This sample shows how to use a service host with the Windows Web Services API to host a calculator service over HTTP with SSL transport security and HTTP header basic authentication.</div>
+                        </div>
+                        <!--pe15524-->
+                        <!--ps17056-->
+                        <div id="item">
+                                <div><a href="Windows Deployment Services transport manager sample/description.html">Windows Deployment Services transport manager sample</a></div>
+                            <div>Demonstrates how to use the Windows Deployment Services (WDS) Transport Management API, sometimes referred to as &quot;WdsTptMgmt&quot;, to manage a WDS Transport Server. </div>
+                        </div>
+                        <!--pe17056-->
+                        <!--ps17051-->
+                        <div id="item">
+                                <div><a href="Location platform synchronous access sample/description.html">Location platform synchronous access sample</a></div>
+                            <div>This sample demonstrates how to access the Location platform in a synchronous manner.</div>
+                        </div>
+                        <!--pe17051-->
+                        <!--ps15632-->
+                        <div id="item">
+                                <div><a href="DhcpV4GetOptionValue API sample/description.html">DhcpV4GetOptionValue API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4GetOptionValue API.</div>
+                        </div>
+                        <!--pe15632-->
+                        <!--ps15609-->
+                        <div id="item">
+                                <div><a href="Windows Web Services TCP calculator client sample/description.html">Windows Web Services TCP calculator client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a client application to talk to a calculator service over TCP.</div>
+                        </div>
+                        <!--pe15609-->
+                        <!--ps15618-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming HTTP client sample/description.html">Windows Web Services streaming HTTP client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that performs request-reply processing in a stream.</div>
+                        </div>
+                        <!--pe15618-->
+                        <!--ps17046-->
+                        <div id="item">
+                                <div><a href="XML DOM query sample/description.html">XML DOM query sample</a></div>
+                            <div> Demonstrates how to query a DOM node or node-set using XPath expressions. </div>
+                        </div>
+                        <!--pe17046-->
+                        <!--ps15488-->
+                        <div id="item">
+                                <div><a href="Windows Web Services derived type sample/description.html">Windows Web Services derived type sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read and write derived types using WsUtil generated C++ helper functions.</div>
+                        </div>
+                        <!--pe15488-->
+                        <!--ps15492-->
+                        <div id="item">
+                                <div><a href="EAPHost client method sample/description.html">EAPHost client method sample</a></div>
+                            <div>This sample shows how to implement an EAPHost based EAP method on the peer.</div>
+                        </div>
+                        <!--pe15492-->
+                        <!--ps15517-->
+                        <div id="item">
+                                <div><a href="DhcpHlprIsV4PolicyValid API sample/description.html">DhcpHlprIsV4PolicyValid API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprIsV4PolicyValid API.</div>
+                        </div>
+                        <!--pe15517-->
+                        <!--ps15469-->
+                        <div id="item">
+                                <div><a href="Hyper-V application health monitoring sample/description.html">Hyper-V application health monitoring sample</a></div>
+                            <div>This sample demonstrates how to monitor the health of guest applications running in a virtual machine of a Hyper-V server.</div>
+                        </div>
+                        <!--pe15469-->
+                        <!--ps15625-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverTriggerAddrAllocation API sample/description.html">DhcpV4FailoverTriggerAddrAllocation API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverTriggerAddrAllocation API.</div>
+                        </div>
+                        <!--pe15625-->
+                        <!--ps15614-->
+                        <div id="item">
+                                <div><a href="DhcpV6SetStatelessStoreParams API sample/description.html">DhcpV6SetStatelessStoreParams API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV6SetStatelessStoreParams API.</div>
+                        </div>
+                        <!--pe15614-->
+                        <!--ps15600-->
+                        <div id="item">
+                                <div><a href="Windows Web Services secured request-reply named pipe client sample/description.html">Windows Web Services secured request-reply named pipe client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a named pipe client that sends request-reply messages with security provided by Windows SSPI transport security and uses the security token properties to modify the allowed...</div>
+                        </div>
+                        <!--pe15600-->
+                        <!--ps15573-->
+                        <div id="item">
+                                <div><a href="Windows Web Services multicast UDP client IPv6 sample/description.html">Windows Web Services multicast UDP client IPv6 sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP client that multicasts a request and then waits for reply messages from servers using IPv6. </div>
+                        </div>
+                        <!--pe15573-->
+                        <!--ps15549-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with Kerberos over SSL client sample/description.html">Windows Web Services HTTP purchase order with Kerberos over SSL client sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a PurchaseOrder service over HTTP, with the Kerberos protocol over SSL mixed-mode security. In this setup, the transport connection is protected (signed an...</div>
+                        </div>
+                        <!--pe15549-->
+                        <!--ps15626-->
+                        <div id="item">
+                                <div><a href="Windows Web Services untyped client sample/description.html">Windows Web Services untyped client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a HTTP client that sends request-reply messages. </div>
+                        </div>
+                        <!--pe15626-->
+                        <!--ps15514-->
+                        <div id="item">
+                                <div><a href="DhcpHlprAddV4PolicyRange API sample/description.html">DhcpHlprAddV4PolicyRange API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprAddV4PolicyRange API.</div>
+                        </div>
+                        <!--pe15514-->
+                        <!--ps15520-->
+                        <div id="item">
+                                <div><a href="DhcpHlprResetV4PolicyExpr API sample/description.html">DhcpHlprResetV4PolicyExpr API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprResetV4PolicyExpr API.</div>
+                        </div>
+                        <!--pe15520-->
+                        <!--ps15505-->
+                        <div id="item">
+                                <div><a href="DhcpV4GetPolicy API sample/description.html">DhcpV4GetPolicy API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4GetPolicy API.</div>
+                        </div>
+                        <!--pe15505-->
+                        <!--ps15503-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetAddressStatus API sample/description.html">DhcpV4FailoverGetAddressStatus API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetAddressStatus API.</div>
+                        </div>
+                        <!--pe15503-->
+                        <!--ps13118-->
+                        <div id="item">
+                                <div><a href="Cluster Aware Updating plug-in sample/description.html">Cluster Aware Updating plug-in sample</a></div>
+                            <div>This sample demonstrates a Cluster Aware Updating (CAU) plug-in that runs an arbitrary, administrator-specified, command on each cluster node.</div>
+                        </div>
+                        <!--pe13118-->
+                        <!--ps17039-->
+                        <div id="item">
+                                <div><a href="Volume shadow copy service express writer  sample/description.html">Volume shadow copy service express writer  sample</a></div>
+                            <div>This sample demonstrates the use of the Volume Shadow Copy Service (VSS) API&#39;s express writer COM interfaces.</div>
+                        </div>
+                        <!--pe17039-->
+                        <!--ps15545-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP GET sample/description.html">Windows Web Services HTTP GET sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a PurchaseOrder service over HTTP. The service exposes metadata over HTTP GET and WS-Metadata Exchange v1.1. The service also shows how to implement a cove...</div>
+                        </div>
+                        <!--pe15545-->
+                        <!--ps15588-->
+                        <div id="item">
+                                <div><a href="Hyper-V planned virtual machines sample/description.html">Hyper-V planned virtual machines sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage planned virtual machines.</div>
+                        </div>
+                        <!--pe15588-->
+                        <!--ps13120-->
+                        <div id="item">
+                                <div><a href="Create app package sample/description.html">Create app package sample</a></div>
+                            <div> This sample shows you how to create an app package using the app packaging API.</div>
+                        </div>
+                        <!--pe13120-->
+                        <!--ps13159-->
+                        <div id="item">
+                                <div><a href="ECDH 256 secret agreement with persisted keys sample/description.html">ECDH 256 secret agreement with persisted keys sample</a></div>
+                            <div> This sample demonstrates how to use the ECDH 256 secret agreement algorithm. The sample also shows how to derive a key from an agreed secret by using BCRYPT_KDF_HMAC. Warning&#160;&#160;This sample requires Microsoft Visual Studio Ultimate&#160;2012 and doesn&#39;t co...</div>
+                        </div>
+                        <!--pe13159-->
+                        <!--ps15501-->
+                        <div id="item">
+                                <div><a href="Windows Web Services message forwarding sample/description.html">Windows Web Services message forwarding sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to forward a message. </div>
+                        </div>
+                        <!--pe15501-->
+                        <!--ps15539-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP client with Kerberos over SSL sample/description.html">Windows Web Services HTTP client with Kerberos over SSL sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that sends request-reply messages with Kerberos over an SSL mixed-mode security connection.</div>
+                        </div>
+                        <!--pe15539-->
+                        <!--ps15659-->
+                        <div id="item">
+                                <div><a href="XmlLite encoded XML writer sample/description.html">XmlLite encoded XML writer sample</a></div>
+                            <div>This sample shows how to make an XmlLite app that writes an encoded XML document.</div>
+                        </div>
+                        <!--pe15659-->
+                        <!--ps17048-->
+                        <div id="item">
+                                <div><a href="Volume Shadow Copy Service writer sample/description.html">Volume Shadow Copy Service writer sample</a></div>
+                            <div>This sample demonstrates the use of the Volume Shadow Copy Service (VSS) COM interfaces to create a VSS writer.</div>
+                        </div>
+                        <!--pe17048-->
+                        <!--ps15628-->
+                        <div id="item">
+                                <div><a href="DhcpV4CreateClientInfo API sample/description.html">DhcpV4CreateClientInfo API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4CreateClientInfo API.</div>
+                        </div>
+                        <!--pe15628-->
+                        <!--ps15491-->
+                        <div id="item">
+                                <div><a href="Hyper-V dynamic memory sample/description.html">Hyper-V dynamic memory sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to obtain information about, and modify, dynamic memory in a virtual machine.</div>
+                        </div>
+                        <!--pe15491-->
+                        <!--ps15481-->
+                        <div id="item">
+                                <div><a href="Background Intelligent Transfer Service COM notification sample/description.html">Background Intelligent Transfer Service COM notification sample</a></div>
+                            <div>This sample demonstrates how to use COM notifications to launch your application when the BITS job is finished downloading. There are multiple ways to wait for a BITS transfer to complete: synchronously poll for status, register a program that BITS w...</div>
+                        </div>
+                        <!--pe15481-->
+                        <!--ps15526-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service host with custom channel and encoder sample/description.html">Windows Web Services HTTP service host with custom channel and encoder sample</a></div>
+                            <div>This sample shows how to use a service host with the Windows Web Services API to host an HTTP-based calculator service with a custom channel and listener implementation. The channel uses a custom encoder.</div>
+                        </div>
+                        <!--pe15526-->
+                        <!--ps15475-->
+                        <div id="item">
+                                <div><a href="Windows Web Services asynchronous streaming server example/description.html">Windows Web Services asynchronous streaming server example</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a basic TCP server that sends one-way messages in an asynchronous streaming fashion. This sample performs streaming only on the application layer. On the transport layer, d...</div>
+                        </div>
+                        <!--pe15475-->
+                        <!--ps15624-->
+                        <div id="item">
+                                <div><a href="Background Intelligent Transfer Service transfer policy sample/description.html">Background Intelligent Transfer Service transfer policy sample</a></div>
+                            <div>This sample demonstrates how to block a Background Intelligent Transfer Service (BITS) job from downloading over expensive connections such as a roaming cellular link. BITS provides a COM interface for asynchronous downloads and uploads over HTTP or ...</div>
+                        </div>
+                        <!--pe15624-->
+                        <!--ps15607-->
+                        <div id="item">
+                                <div><a href="Hyper-V resource pool management sample/description.html">Hyper-V resource pool management sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage Hyper-V resource pools.</div>
+                        </div>
+                        <!--pe15607-->
+                        <!--ps15560-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP server with username over SSL sample/description.html">Windows Web Services HTTP server with username over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to create a TCP server that accepts a channel, and receives and replies to messages, with username over SSL mixed-mode security. In this scenario, the transport connection is protected ...</div>
+                        </div>
+                        <!--pe15560-->
+                        <!--ps15575-->
+                        <div id="item">
+                                <div><a href="Windows Web Services multicast UDP server IPv6 sample/description.html">Windows Web Services multicast UDP server IPv6 sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a UDP server that listens on a multicast address and replies to requests sent to that address using IPv6.</div>
+                        </div>
+                        <!--pe15575-->
+                        <!--ps15582-->
+                        <div id="item">
+                                <div><a href="Windows Web Services one-way TCP server sample/description.html">Windows Web Services one-way TCP server sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a TCP server that accepts a channel and receives one-way messages. </div>
+                        </div>
+                        <!--pe15582-->
+                        <!--ps17042-->
+                        <div id="item">
+                                <div><a href="Central access policy ID lookup sample/description.html">Central access policy ID lookup sample</a></div>
+                            <div>Sample program for retrieving the Central Access Policy IDs on a machine, then look up the details of those policies from Active Directory.</div>
+                        </div>
+                        <!--pe17042-->
+                        <!--ps15547-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order service sample/description.html">Windows Web Services HTTP purchase order service sample</a></div>
+                            <div>This sample demonstrates how to get the Windows Web Services API to use service host for hosting a PurchaseOrder service over HTTP. This example also demonstrates how to configure the wsutil tool to generate the stub files with WS_STRING type instead...</div>
+                        </div>
+                        <!--pe15547-->
+                        <!--ps15518-->
+                        <div id="item">
+                                <div><a href="DhcpHlprIsV4PolicyWellFormed API sample/description.html">DhcpHlprIsV4PolicyWellFormed API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprIsV4PolicyWellFormed API.</div>
+                        </div>
+                        <!--pe15518-->
+                        <!--ps15603-->
+                        <div id="item">
+                                <div><a href="Windows Web Services request-reply TCP client sample/description.html">Windows Web Services request-reply TCP client sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP client that sends request-reply messages.</div>
+                        </div>
+                        <!--pe15603-->
+                        <!--ps15612-->
+                        <div id="item">
+                                <div><a href="DhcpV4SetPolicyEnforcement API sample/description.html">DhcpV4SetPolicyEnforcement API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4SetPolicyEnforcement API.</div>
+                        </div>
+                        <!--pe15612-->
+                        <!--ps15525-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service proxy client with custom channel sample/description.html">Windows Web Services HTTP service proxy client with custom channel sample</a></div>
+                            <div>This sample shows how to use a service proxy client with the Windows Web Services API to talk to an HTTP-based calculator service using a custom channel. The channel uses a custom encoder.</div>
+                        </div>
+                        <!--pe15525-->
+                        <!--ps13126-->
+                        <div id="item">
+                                <div><a href="Diffie-Hellman-Oakley Group 1 sample/description.html">Diffie-Hellman-Oakley Group 1 sample</a></div>
+                            <div>This sample demonstrates how to use the Diffie-Hellman algorithm to generate a secret shared between two parties.</div>
+                        </div>
+                        <!--pe13126-->
+                        <!--ps15636-->
+                        <div id="item">
+                                <div><a href="DhcpV6CreateClientInfo API sample/description.html">DhcpV6CreateClientInfo API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV6CreateClientInfo API.</div>
+                        </div>
+                        <!--pe15636-->
+                        <!--ps15642-->
+                        <div id="item">
+                                <div><a href="Windows Web Services XML write sample/description.html">Windows Web Services XML write sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to write a simple XML document.</div>
+                        </div>
+                        <!--pe15642-->
+                        <!--ps17043-->
+                        <div id="item">
+                                <div><a href="Windows Deployment Services image enumeration sample/description.html">Windows Deployment Services image enumeration sample</a></div>
+                            <div>Demonstrates how to use the Windows Deployment Services (WDS) Client API to enumerate images that are stored on a WDS server.</div>
+                        </div>
+                        <!--pe17043-->
+                        <!--ps15570-->
+                        <div id="item">
+                                <div><a href="Hyper-V virtual machine migration sample/description.html">Hyper-V virtual machine migration sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI APIs to manage virtual machine migration.</div>
+                        </div>
+                        <!--pe15570-->
+                        <!--ps13144-->
+                        <div id="item">
+                                <div><a href="Input Source identification sample/description.html">Input Source identification sample</a></div>
+                            <div>This sample demonstrates using the Input Source Identification APIs to identify the source of an input message. Specifically, this sample shows how to process hardware, system, or injected input messages.</div>
+                        </div>
+                        <!--pe13144-->
+                        <!--ps15598-->
+                        <div id="item">
+                                <div><a href="Hyper-V replication sample/description.html">Hyper-V replication sample</a></div>
+                            <div>This sample demonstrates how to use the Hyper-V WMI replication APIs to configure and control virtual machine replication.</div>
+                        </div>
+                        <!--pe15598-->
+                        <!--ps15651-->
+                        <div id="item">
+                                <div><a href="XmlLite XML attribute namespace writer sample/description.html">XmlLite XML attribute namespace writer sample</a></div>
+                            <div>This sample shows how to use XmlLite to write an XML attribute without namespace qualification in an XML document that uses a schema-specific namespace.</div>
+                        </div>
+                        <!--pe15651-->
+                        <!--ps15645-->
+                        <div id="item">
+                                <div><a href="Windows Web Services XML dictionary sample/description.html">Windows Web Services XML dictionary sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to write an XML document using a WS_XML_DICTIONARY structure. </div>
+                        </div>
+                        <!--pe15645-->
+                        <!--ps17033-->
+                        <div id="item">
+                                <div><a href="WinVerifyTrust signature verification sample/description.html">WinVerifyTrust signature verification sample</a></div>
+                            <div>This sample shows how to use the new WinVerifyTrust API to verify multiple signatures on a file and how to call the new CryptCATAdmin* APIs.</div>
+                        </div>
+                        <!--pe17033-->
+                        <!--ps15567-->
+                        <div id="item">
+                                <div><a href="Windows Web Services metadata import with X509 over SSL sample/description.html">Windows Web Services metadata import with X509 over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to import metadata from an endpoint that supports using an X509 token using WS_XML_TOKEN_MESSAGE_SECURITY_BINDING with WS_SSL_TRANSPORT_SECURITY_BINDING . </div>
+                        </div>
+                        <!--pe15567-->
+                        <!--ps15563-->
+                        <div id="item">
+                                <div><a href="Windows Web Services message encoding sample/description.html">Windows Web Services message encoding sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to encode and decode a message. </div>
+                        </div>
+                        <!--pe15563-->
+                        <!--ps15470-->
+                        <div id="item">
+                                <div><a href="Windows Web Services custom proxy sample/description.html">Windows Web Services custom proxy sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement a custom service proxy talking to a web service using the WS_HTTP_PROXY_SETTING_MODE_CUSTOM channel property.</div>
+                        </div>
+                        <!--pe15470-->
+                        <!--ps15468-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverAddScopeToRelationship API sample/description.html">DhcpV4FailoverAddScopeToRelationship API sample</a></div>
+                            <div> This sample explains how to use the DhcpV4FailoverAddScopeToRelationship API.</div>
+                        </div>
+                        <!--pe15468-->
+                        <!--ps13176-->
+                        <div id="item">
+                                <div><a href="Portable Devices Services COM API sample/description.html">Portable Devices Services COM API sample</a></div>
+                            <div>This sample shows how to use the Windows Portable Device Services COM API (IPortableDeviceService).</div>
+                        </div>
+                        <!--pe13176-->
+                        <!--ps13164-->
+                        <div id="item">
+                                <div><a href="Strong key protection sample/description.html">Strong key protection sample</a></div>
+                            <div> This sample demonstrates how to set the UX properties for a strong key. The key is used to sign a hash value. Warning&#160;&#160;This sample requires Microsoft Visual Studio Ultimate&#160;2012 and will not compile in Microsoft Visual Studio Express&#160;2012 for Window...</div>
+                        </div>
+                        <!--pe13164-->
+                        <!--ps15473-->
+                        <div id="item">
+                                <div><a href="Windows Web Services asynchronous model sample/description.html">Windows Web Services asynchronous model sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement and call asynchronous functions. The example consists of the following parts: The Add function, which adds two numbers synchronously or asynchronously. It creates a thread ...</div>
+                        </div>
+                        <!--pe15473-->
+                        <!--ps13136-->
+                        <div id="item">
+                                <div><a href="Enumerate app packages by name and publisher sample/description.html">Enumerate app packages by name and publisher sample</a></div>
+                            <div>This sample shows how to enumerate app packages installed on the system by name and publisher.</div>
+                        </div>
+                        <!--pe13136-->
+                        <!--ps13140-->
+                        <div id="item">
+                                <div><a href="Hangul Decomposition transliteration sample/description.html">Hangul Decomposition transliteration sample</a></div>
+                            <div>This sample demonstrates characteristics of the Hangul Decomposition transliteration service.</div>
+                        </div>
+                        <!--pe13140-->
+                        <!--ps15521-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator client sample/description.html">Windows Web Services HTTP calculator client sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service proxy to talk to an HTTP based calculator service.</div>
+                        </div>
+                        <!--pe15521-->
+                        <!--ps15499-->
+                        <div id="item">
+                                <div><a href="Windows Web Services file replace service sample/description.html">Windows Web Services file replace service sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to retrieve files from a server and copy them to a client. It employs three components - the server service running on the machine with the source file, the client service running on th...</div>
+                        </div>
+                        <!--pe15499-->
+                        <!--ps15591-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read and write array sample/description.html">Windows Web Services read and write array sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read and write an array of elements. </div>
+                        </div>
+                        <!--pe15591-->
+                        <!--ps15644-->
+                        <div id="item">
+                                <div><a href="Windows Web Services XML buffer sample/description.html">Windows Web Services XML buffer sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an XML buffer.</div>
+                        </div>
+                        <!--pe15644-->
+                        <!--ps17055-->
+                        <div id="item">
+                                <div><a href="Windows Deployment Services multicast provider sample/description.html">Windows Deployment Services multicast provider sample</a></div>
+                            <div>Demonstrates how to use the Windows Deployment Services (WDS) Multicast Client library to implement a multicast provider.</div>
+                        </div>
+                        <!--pe17055-->
+                        <!--ps15479-->
+                        <div id="item">
+                                <div><a href="Windows Web Services blocked service cancellation sample/description.html">Windows Web Services blocked service cancellation sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a service application that shows server-side call cancellation. </div>
+                        </div>
+                        <!--pe15479-->
+                        <!--ps13158-->
+                        <div id="item">
+                                <div><a href="FMAPI scan restorable files sample/description.html">FMAPI scan restorable files sample</a></div>
+                            <div>This sample shows how to use the FMAPI ScanRestorableFiles , CreateFileRestoreContext , and CloseFileRestoreContext functions to scan for restorable files.</div>
+                        </div>
+                        <!--pe13158-->
+                        <!--ps13134-->
+                        <div id="item">
+                                <div><a href="WSD secure file services sample/description.html">WSD secure file services sample</a></div>
+                            <div> This sample demonstrates how to use a selected set of security features in the Web Services for Devices API. </div>
+                        </div>
+                        <!--pe13134-->
+                        <!--ps15497-->
+                        <div id="item">
+                                <div><a href="DhcpV4EnumSubnetClients  API sample/description.html">DhcpV4EnumSubnetClients  API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4EnumSubnetClients API.</div>
+                        </div>
+                        <!--pe15497-->
+                        <!--ps15630-->
+                        <div id="item">
+                                <div><a href="DhcpV4GetClientInfo API sample/description.html">DhcpV4GetClientInfo API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4GetClientInfo API.</div>
+                        </div>
+                        <!--pe15630-->
+                        <!--ps15613-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverSetRelationship API sample/description.html">DhcpV4FailoverSetRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverSetRelationship API.</div>
+                        </div>
+                        <!--pe15613-->
+                        <!--ps15550-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with SSL client sample/description.html">Windows Web Services HTTP purchase order with SSL client sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service proxy to talk to a PurchaseOrder service, with SSL transport security.</div>
+                        </div>
+                        <!--pe15550-->
+                        <!--ps15635-->
+                        <div id="item">
+                                <div><a href="DhcpV4SetOptionValues API sample/description.html">DhcpV4SetOptionValues API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4SetOptionValues API.</div>
+                        </div>
+                        <!--pe15635-->
+                        <!--ps15576-->
+                        <div id="item">
+                                <div><a href="Windows web services XML buffer writing and reading sample/description.html">Windows web services XML buffer writing and reading sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to write XML to an XML buffer and then read it back out.</div>
+                        </div>
+                        <!--pe15576-->
+                        <!--ps15559-->
+                        <div id="item">
+                                <div><a href="HTTP server with an SSL and client cert sample/description.html">HTTP server with an SSL and client cert sample</a></div>
+                            <div> This example demonstrates an HTTP server that accepts a channel and receives and replies to messages with SSL transport security using a client certificate. </div>
+                        </div>
+                        <!--pe15559-->
+                        <!--ps15592-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read and write bytes sample/description.html">Windows Web Services read and write bytes sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to write binary data using the MTOM encoding and read it back out. </div>
+                        </div>
+                        <!--pe15592-->
+                        <!--ps15522-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator service sample/description.html">Windows Web Services HTTP calculator service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host to host a calculator service over HTTP.</div>
+                        </div>
+                        <!--pe15522-->
+                        <!--ps15523-->
+                        <div id="item">
+                                <div><a href="WWS HTTP service proxy client authentication sample/description.html">WWS HTTP service proxy client authentication sample</a></div>
+                            <div>This sample shows how to use a service proxy client with the Windows Web Services API to talk to a calculator service with SSL transport security and HTTP header basic authentication.</div>
+                        </div>
+                        <!--pe15523-->
+                        <!--ps15530-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service host with custom channel sample/description.html">Windows Web Services HTTP service host with custom channel sample</a></div>
+                            <div>This sample show how to use a service host with the Windows Web Services API to host an HTTP-based calculator service with a custom channel and listener implementation.</div>
+                        </div>
+                        <!--pe15530-->
+                        <!--ps13155-->
+                        <div id="item">
+                                <div><a href="App package removal sample/description.html">App package removal sample</a></div>
+                            <div>This sample shows how to remove an app package from the system using the package manager API.</div>
+                        </div>
+                        <!--pe13155-->
+                        <!--ps15596-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read simple XML document sample/description.html">Windows Web Services read simple XML document sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read a simple XML document.</div>
+                        </div>
+                        <!--pe15596-->
+                        <!--ps17057-->
+                        <div id="item">
+                                <div><a href="XSLT transformation sample/description.html">XSLT transformation sample</a></div>
+                            <div> This sample demonstrates how to perform XSL transformations. </div>
+                        </div>
+                        <!--pe17057-->
+                        <!--ps15633-->
+                        <div id="item">
+                                <div><a href="DhcpV4RemoveOptionValue API sample/description.html">DhcpV4RemoveOptionValue API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4RemoveOptionValue API.</div>
+                        </div>
+                        <!--pe15633-->
+                        <!--ps15634-->
+                        <div id="item">
+                                <div><a href="DhcpV4SetOptionValue API sample/description.html">DhcpV4SetOptionValue API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4SetOptionValue API.</div>
+                        </div>
+                        <!--pe15634-->
+                        <!--ps15602-->
+                        <div id="item">
+                                <div><a href="Windows Web Services secured request-reply named pipe server sample/description.html">Windows Web Services secured request-reply named pipe server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a named pipe server that accepts a channel, and receives/replies to messages with security provided by Windows SSPI-based transport security.</div>
+                        </div>
+                        <!--pe15602-->
+                        <!--ps13151-->
+                        <div id="item">
+                                <div><a href="DUSM network cost sample/description.html">DUSM network cost sample</a></div>
+                            <div>The network cost sample allows the application developer to play with the features of the DUSM (Data Usage and Subscription Management).</div>
+                        </div>
+                        <!--pe13151-->
+                        <!--ps13138-->
+                        <div id="item">
+                                <div><a href="FMAPI version check sample/description.html">FMAPI version check sample</a></div>
+                            <div>This sample shows how to use the FMAPI CreateFileRestoreContext and CloseFileRestoreContext functions to check for a specific FMAPI version.</div>
+                        </div>
+                        <!--pe13138-->
+                        <!--ps15511-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetSystemTime API sample/description.html">DhcpV4FailoverGetSystemTime API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetSystemTime API.</div>
+                        </div>
+                        <!--pe15511-->
+                        <!--ps15506-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetRelationship API sample/description.html">DhcpV4FailoverGetRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetRelationship API.</div>
+                        </div>
+                        <!--pe15506-->
+                        <!--ps15495-->
+                        <div id="item">
+                                <div><a href="DhcpV4EnumPolicies API sample/description.html">DhcpV4EnumPolicies API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4EnumPolicies API.</div>
+                        </div>
+                        <!--pe15495-->
+                        <!--ps15548-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with Kerberos over SSL client sample/description.html">Windows Web Services HTTP purchase order with Kerberos over SSL client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that uses service proxy to talk to a PurchaseOrder service, with the Kerberos protocol over SSL mixed-mode security. In this setup, the transport connection ...</div>
+                        </div>
+                        <!--pe15548-->
+                        <!--ps15542-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP client with username over SSL sample/description.html">Windows Web Services HTTP client with username over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that sends request-reply messages with username over SSL mixed-mode security. The transport connection is protected (signed and encrypted) by SSL, which also...</div>
+                        </div>
+                        <!--pe15542-->
+                        <!--ps15597-->
+                        <div id="item">
+                                <div><a href="DhcpV4RemovePolicyRange API sample/description.html">DhcpV4RemovePolicyRange API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4RemovePolicyRange API.</div>
+                        </div>
+                        <!--pe15597-->
+                        <!--ps15621-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming named pipe server sample/description.html">Windows Web Services streaming named pipe server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a named pipe server that accepts a channel, and reads one-way messages in a stream.</div>
+                        </div>
+                        <!--pe15621-->
+                        <!--ps15601-->
+                        <div id="item">
+                                <div><a href="Windows Web Services request-reply named pipe server sample/description.html">Windows Web Services request-reply named pipe server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a named pipe server that accepts a channel, and receives/replies to messages.</div>
+                        </div>
+                        <!--pe15601-->
+                        <!--ps15544-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP custom header purchase order service sample/description.html">Windows Web Services HTTP custom header purchase order service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a PurchaseOrder service over HTTP. </div>
+                        </div>
+                        <!--pe15544-->
+                        <!--ps15532-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service host with SSL sample/description.html">Windows Web Services HTTP service host with SSL sample</a></div>
+                            <div>This sample shows how to use a service host with the Windows Web Services API to host a calculator service over HTTP with SSL transport security.</div>
+                        </div>
+                        <!--pe15532-->
+                        <!--ps13161-->
+                        <div id="item">
+                                <div><a href="DSA 1024 hash and signature sample/description.html">DSA 1024 hash and signature sample</a></div>
+                            <div> This sample shows how to use the DSA 1024 algorithm to sign a hash value and verify the signature. Warning&#160;&#160;This sample requires Microsoft Visual Studio Ultimate&#160;2012 and will not compile in Microsoft Visual Studio Express&#160;2012 for Windows&#160;8. Note&#160;&#160;...</div>
+                        </div>
+                        <!--pe13161-->
+                        <!--ps13125-->
+                        <div id="item">
+                                <div><a href="FMAPI detect boot sector sample/description.html">FMAPI detect boot sector sample</a></div>
+                            <div>This sample shows how to use the FMAPI DetectBootSector function to detect whether the first sector on a volume is a valid boot sector.</div>
+                        </div>
+                        <!--pe13125-->
+                        <!--ps15531-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service proxy client with SSL sample/description.html">Windows Web Services HTTP service proxy client with SSL sample</a></div>
+                            <div>This sample shows how to use a service proxy client with the Windows Web Services API to talk to a calculator service with SSL transport security.</div>
+                        </div>
+                        <!--pe15531-->
+                        <!--ps15493-->
+                        <div id="item">
+                                <div><a href="EAPHost server method sample/description.html">EAPHost server method sample</a></div>
+                            <div>This sample shows how to implement an EAPHost based EAP method on the server.</div>
+                        </div>
+                        <!--pe15493-->
+                        <!--ps15619-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming HTTP server sample/description.html">Windows Web Services streaming HTTP server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement an HTTP server that accepts a channel, and performs request-reply processing in a stream.</div>
+                        </div>
+                        <!--pe15619-->
+                        <!--ps15606-->
+                        <div id="item">
+                                <div><a href="Windows Web Services secured request-reply TCP server sample/description.html">Windows Web Services secured request-reply TCP server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP server that accepts a channel, and receives/replies to messages with security provided by Windows SSPI transport security.</div>
+                        </div>
+                        <!--pe15606-->
+                        <!--ps15623-->
+                        <div id="item">
+                                <div><a href="Windows Web Services streaming TCP server sample/description.html">Windows Web Services streaming TCP server sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to implement a TCP server that accepts a channel, and reads one-way messages in a stream. This sample performs streaming only on the application layer and data on the transport layer a...</div>
+                        </div>
+                        <!--pe15623-->
+                        <!--ps15566-->
+                        <div id="item">
+                                <div><a href="Windows Web Services metadata import with username over SSL sample/description.html">Windows Web Services metadata import with username over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to import metadata from an endpoint that supports WS_USERNAME_MESSAGE_SECURITY_BINDING with WS_SSL_TRANSPORT_SECURITY_BINDING . </div>
+                        </div>
+                        <!--pe15566-->
+                        <!--ps15557-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP server with Kerberos over SSL sample/description.html">Windows Web Services HTTP server with Kerberos over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to create a TCP server that accepts a channel, and receives and replies to messages, with Kerberos over SSL mixed-mode security. In this scenario, the transport connection is protected ...</div>
+                        </div>
+                        <!--pe15557-->
+                        <!--ps15494-->
+                        <div id="item">
+                                <div><a href="EAPHost supplicant sample/description.html">EAPHost supplicant sample</a></div>
+                            <div>Demonstrates how a supplicant can use EAPHost framework for EAP authentication.</div>
+                        </div>
+                        <!--pe15494-->
+                        <!--ps15487-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverDeleteScopeFromRelationship API sample/description.html">DhcpV4FailoverDeleteScopeFromRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverDeleteScopeFromRelationship API.</div>
+                        </div>
+                        <!--pe15487-->
+                        <!--ps15485-->
+                        <div id="item">
+                                <div><a href="DhcpV4DeletePolicy API sample/description.html">DhcpV4DeletePolicy API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4DeletePolicy API.</div>
+                        </div>
+                        <!--pe15485-->
+                        <!--ps15529-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service proxy client with custom channel  sample/description.html">Windows Web Services HTTP service proxy client with custom channel  sample</a></div>
+                            <div>This sample shows how to use a service proxy client with the Windows Web Services API to talk to an HTTP-based calculator service using a custom channel.</div>
+                        </div>
+                        <!--pe15529-->
+                        <!--ps15515-->
+                        <div id="item">
+                                <div><a href="DhcpHlprCreateV4Policy API sample/description.html">DhcpHlprCreateV4Policy API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprCreateV4Policy API.</div>
+                        </div>
+                        <!--pe15515-->
+                        <!--ps13122-->
+                        <div id="item">
+                                <div><a href="UPnP dimmer device sample/description.html">UPnP dimmer device sample</a></div>
+                            <div> This sample implements the dimmer device and the dimmer service functionality required by the UPnP device registration sample.</div>
+                        </div>
+                        <!--pe13122-->
+                        <!--ps13162-->
+                        <div id="item">
+                                <div><a href="ECDSA 256 hash and signature with persisted keys sample/description.html">ECDSA 256 hash and signature with persisted keys sample</a></div>
+                            <div> This sample shows how to use the ECDSA 256 algorithm to sign content. A persisted key is used for signing and an ephemeral key is used for verification. Warning&#160;&#160;This sample requires Microsoft Visual Studio Ultimate&#160;2012 and doesn&#39;t compile in Micro...</div>
+                        </div>
+                        <!--pe13162-->
+                        <!--ps15516-->
+                        <div id="item">
+                                <div><a href="DhcpHlprIsV4PolicySingleUC API sample/description.html">DhcpHlprIsV4PolicySingleUC API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprIsV4PolicySingleUC API.</div>
+                        </div>
+                        <!--pe15516-->
+                        <!--ps15535-->
+                        <div id="item">
+                                <div><a href="WWS HTTP calculator with username over SSL client sample/description.html">WWS HTTP calculator with username over SSL client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that uses the service proxy to talk to a calculator service with username over SSL mixed-mode security. In this setup, the transport connection is protected ...</div>
+                        </div>
+                        <!--pe15535-->
+                        <!--ps15486-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverDeleteRelationship API sample/description.html">DhcpV4FailoverDeleteRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverDeleteRelationship API.</div>
+                        </div>
+                        <!--pe15486-->
+                        <!--ps15507-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetScopeRelationship API sample/description.html">DhcpV4FailoverGetScopeRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetScopeRelationship API.</div>
+                        </div>
+                        <!--pe15507-->
+                        <!--ps15508-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverGetScopeStatistics API sample/description.html">DhcpV4FailoverGetScopeStatistics API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverGetScopeStatistics API.</div>
+                        </div>
+                        <!--pe15508-->
+                        <!--ps15496-->
+                        <div id="item">
+                                <div><a href="DhcpV4FailoverEnumRelationship API sample/description.html">DhcpV4FailoverEnumRelationship API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4FailoverEnumRelationship API.</div>
+                        </div>
+                        <!--pe15496-->
+                        <!--ps15513-->
+                        <div id="item">
+                                <div><a href="DhcpHlprAddV4PolicyExpr API sample/description.html">DhcpHlprAddV4PolicyExpr API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprAddV4PolicyExpr API.</div>
+                        </div>
+                        <!--pe15513-->
+                        <!--ps15519-->
+                        <div id="item">
+                                <div><a href="DhcpHlprModifyV4PolicyExpr API sample/description.html">DhcpHlprModifyV4PolicyExpr API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprModifyV4PolicyExpr API.</div>
+                        </div>
+                        <!--pe15519-->
+                        <!--ps13123-->
+                        <div id="item">
+                                <div><a href="Query app package and app manifest sample/description.html">Query app package and app manifest sample</a></div>
+                            <div>This sample shows how to query info about an app package using the app packaging API.</div>
+                        </div>
+                        <!--pe13123-->
+                        <!--ps15538-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP client sample/description.html">Windows Web Services HTTP client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to create an HTTP client that sends request-reply messages.</div>
+                        </div>
+                        <!--pe15538-->
+                        <!--ps15593-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read and write raw XML sample/description.html">Windows Web Services read and write raw XML sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read and write raw XML. </div>
+                        </div>
+                        <!--pe15593-->
+                        <!--ps13145-->
+                        <div id="item">
+                                <div><a href="BCrypt key derivation sample/description.html">BCrypt key derivation sample</a></div>
+                            <div>This sample shows how to derive key material from a shared secret by using the BCryptKeyDerivation API.</div>
+                        </div>
+                        <!--pe13145-->
+                        <!--ps15509-->
+                        <div id="item">
+                                <div><a href="DhcpV6GetStatelessStatistics API sample/description.html">DhcpV6GetStatelessStatistics API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV6GetStatelessStatistics API.</div>
+                        </div>
+                        <!--pe15509-->
+                        <!--ps15611-->
+                        <div id="item">
+                                <div><a href="DhcpV4SetPolicy API sample/description.html">DhcpV4SetPolicy API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4SetPolicy API.</div>
+                        </div>
+                        <!--pe15611-->
+                        <!--ps15553-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP purchase order with username over SSL service sample/description.html">Windows Web Services HTTP purchase order with username over SSL service sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use the service host for hosting a PurchaseOrder service over HTTP, with username over SSL mixed-mode security. In this setup, the transport connection is protected (signed and encrypted) ...</div>
+                        </div>
+                        <!--pe15553-->
+                        <!--ps15565-->
+                        <div id="item">
+                                <div><a href="Windows Web Services metadata import with issued token over SSL sample/description.html">Windows Web Services metadata import with issued token over SSL sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to import metadata from an endpoint that supports using an issued token that is obtained from the issuing security token service (STS) using WsRequestSecurityToken , and presented to th...</div>
+                        </div>
+                        <!--pe15565-->
+                        <!--ps15631-->
+                        <div id="item">
+                                <div><a href="DhcpV4GetFreeIPAddress API sample/description.html">DhcpV4GetFreeIPAddress API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4GetFreeIPAddress API.</div>
+                        </div>
+                        <!--pe15631-->
+                        <!--ps15637-->
+                        <div id="item">
+                                <div><a href="DhcpV6GetFreeIPAddress API sample/description.html">DhcpV6GetFreeIPAddress API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV6GetFreeIPAddress API.</div>
+                        </div>
+                        <!--pe15637-->
+                        <!--ps15590-->
+                        <div id="item">
+                                <div><a href="Windows Web Services read attribute sample/description.html">Windows Web Services read attribute sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to read an attribute.</div>
+                        </div>
+                        <!--pe15590-->
+                        <!--ps15512-->
+                        <div id="item">
+                                <div><a href="DhcpHlprAddV4PolicyCondition API sample/description.html">DhcpHlprAddV4PolicyCondition API sample</a></div>
+                            <div> This sample explains the usage of the DhcpHlprAddV4PolicyCondition API.</div>
+                        </div>
+                        <!--pe15512-->
+                        <!--ps15527-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP service proxy client mixed-mode authentication sample/description.html">Windows Web Services HTTP service proxy client mixed-mode authentication sample</a></div>
+                            <div>This sample shows how to use an HTTP service proxy client with the Windows Web Services API to talk to a calculator service with Kerberos authentication and SSL mixed-mode transport security.</div>
+                        </div>
+                        <!--pe15527-->
+                        <!--ps15585-->
+                        <div id="item">
+                                <div><a href="Windows Web Services policy template sample/description.html">Windows Web Services policy template sample</a></div>
+                            <div> This sample demonstrates how to use the Windows Web Services API to manually create a policy description and use it to create the service proxy. </div>
+                        </div>
+                        <!--pe15585-->
+                        <!--ps15561-->
+                        <div id="item">
+                                <div><a href="HTTP International Domain Name (IDN) sample/description.html">HTTP International Domain Name (IDN) sample</a></div>
+                            <div>The sample demonstrates how to use HttpPrepareUrl to normalize an international domain name and retrieve a new URL which is safe and valid to use in other HTTP APIs.</div>
+                        </div>
+                        <!--pe15561-->
+                        <!--ps15589-->
+                        <div id="item">
+                                <div><a href="DhcpV4QueryPolicyEnforcement API sample/description.html">DhcpV4QueryPolicyEnforcement API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4QueryPolicyEnforcement API.</div>
+                        </div>
+                        <!--pe15589-->
+                        <!--ps15537-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP calculator with XML token over SSL client sample/description.html">Windows Web Services HTTP calculator with XML token over SSL client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Web Services API to implement an HTTP client that uses the service proxy to talk to a calculator service with an XML security token over SSL mixed-mode security. In this setup, the transport connection ...</div>
+                        </div>
+                        <!--pe15537-->
+                        <!--ps15477-->
+                        <div id="item">
+                                <div><a href="Hyper-V recovery snapshot sample/description.html">Hyper-V recovery snapshot sample</a></div>
+                            <div>This sample demonstrates how to set up and use the Hyper-V backup WMI APIs.</div>
+                        </div>
+                        <!--pe15477-->
+                        <!--ps15482-->
+                        <div id="item">
+                                <div><a href="DhcpV4CreatePolicy API sample/description.html">DhcpV4CreatePolicy API sample</a></div>
+                            <div> This sample shows how to use the DhcpV4CreatePolicy API.</div>
+                        </div>
+                        <!--pe15482-->
+                        <!--ps15498-->
+                        <div id="item">
+                                <div><a href="DhcpV4EnumSubnetReservations API sample/description.html">DhcpV4EnumSubnetReservations API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV4EnumSubnetReservations API.</div>
+                        </div>
+                        <!--pe15498-->
+                        <!--ps15467-->
+                        <div id="item">
+                                <div><a href="DhcpV4AddPolicyRange API sample/description.html">DhcpV4AddPolicyRange API sample</a></div>
+                            <div> This sample explains how to use the DhcpV4AddPolicyRange API.</div>
+                        </div>
+                        <!--pe15467-->
+                        <!--ps13150-->
+                        <div id="item">
+                                <div><a href="Network Access Protection SHA-SHV-QEC sample/description.html">Network Access Protection SHA-SHV-QEC sample</a></div>
+                            <div>This sample shows how to create a Quarantine Enforcement Client (QEC), System Health Agent (SHA), and System Health Validator (SHV), for the Network Access Protection (NAP) system.</div>
+                        </div>
+                        <!--pe13150-->
+                        <!--ps13132-->
+                        <div id="item">
+                                <div><a href="Extract app package contents sample/description.html">Extract app package contents sample</a></div>
+                            <div>This sample demonstrates how to read an app package and extract its contents to disk using the app packaging API.</div>
+                        </div>
+                        <!--pe13132-->
+                        <!--ps15543-->
+                        <div id="item">
+                                <div><a href="Windows Web Services HTTP custom header purchase order client sample/description.html">Windows Web Services HTTP custom header purchase order client sample</a></div>
+                            <div>This sample demonstrates how the Windows Web Services API can use custom headers with a service proxy. </div>
+                        </div>
+                        <!--pe15543-->
+                        <!--ps15510-->
+                        <div id="item">
+                                <div><a href="DhcpV6GetStatelessStoreParams API sample/description.html">DhcpV6GetStatelessStoreParams API sample</a></div>
+                            <div> This sample explains the usage of the DhcpV6GetStatelessStoreParams API.</div>
+                        </div>
+                        <!--pe15510-->
+                        <!--ps15480-->
+                        <div id="item">
+                                <div><a href="Spell checking client sample/description.html">Spell checking client sample</a></div>
+                            <div>This sample demonstrates how to use the Windows Spell Checker API as a client.</div>
+                        </div>
+                        <!--pe15480-->
+                        <!--ps15587-->
+                        <div id="item">
+                                <div><a href="Spell checking provider sample/description.html">Spell checking provider sample</a></div>
+                            <div>This sample demonstrates how to create a sample spell checking provider conforming to the Windows Spell Checker API. It will be installed into the system and used in text controls, if selected by the user in the Language Control Panel.</div>
+                        </div>
+                        <!--pe15587-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

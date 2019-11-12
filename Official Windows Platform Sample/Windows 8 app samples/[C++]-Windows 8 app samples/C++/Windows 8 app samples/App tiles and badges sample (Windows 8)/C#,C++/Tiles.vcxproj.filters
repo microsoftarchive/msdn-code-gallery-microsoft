@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Image Include="Assets\microsoft-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\placeholder-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\smallTile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\splash-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\squareTile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\storeLogo-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\tile-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\windows-sdk.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-black_scale-80.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-black_scale-100.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-black_scale-140.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-white_scale-80.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-white_scale-100.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.contrast-white_scale-140.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="blueWide.scale-80.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="blueWide.scale-100.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="blueWide.scale-140.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.scale-80.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.scale-100.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="graySquare.scale-140.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="redWide.scale-80.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="redWide.scale-100.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="redWide.scale-140.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="Assets\Logo.contrast-black_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.contrast-white_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-80.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-140.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-180.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.contrast-black_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.contrast-white_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-80.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-140.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-180.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.contrast-black_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.contrast-white_scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-140.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-180.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="Common\StandardStyles.xaml">
+      <Filter>Common</Filter>
+    </Page>
+    <Page Include="Sample-Utils\SampleTemplateStyles.xaml">
+      <Filter>Sample-Utils</Filter>
+    </Page>
+    <Page Include="SendTextTile.xaml" />
+    <Page Include="SendWebImageTile.xaml" />
+    <Page Include="SendLocalImageTile.xaml" />
+    <Page Include="SendBadge.xaml" />
+    <Page Include="EnableNotificationQueue.xaml" />
+    <Page Include="NotificationExpiration.xaml" />
+    <Page Include="ImageProtocols.xaml" />
+    <Page Include="Globalization.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="Common\SuspensionManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\LayoutAwarePage.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="EnableNotificationQueue.xaml.h" />
+    <ClInclude Include="Globalization.xaml.h" />
+    <ClInclude Include="ImageProtocols.xaml.h" />
+    <ClInclude Include="NotificationExpiration.xaml.h" />
+    <ClInclude Include="SendBadge.xaml.h" />
+    <ClInclude Include="SendLocalImageTile.xaml.h" />
+    <ClInclude Include="SendTextTile.xaml.h" />
+    <ClInclude Include="SendWebImageTile.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Common\LayoutAwarePage.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\SuspensionManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Constants.cpp" />
+    <ClCompile Include="EnableNotificationQueue.xaml.cpp" />
+    <ClCompile Include="Globalization.xaml.cpp" />
+    <ClCompile Include="ImageProtocols.xaml.cpp" />
+    <ClCompile Include="NotificationExpiration.xaml.cpp" />
+    <ClCompile Include="SendBadge.xaml.cpp" />
+    <ClCompile Include="SendLocalImageTile.xaml.cpp" />
+    <ClCompile Include="SendTextTile.xaml.cpp" />
+    <ClCompile Include="SendWebImageTile.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{132eec18-b164-4b15-a746-643880e9c5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{476b4177-f316-4458-8e13-cab3dc2381c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sample-Utils">
+      <UniqueIdentifier>{54f287f8-e4cb-4f47-97d0-4c469de6992e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{bdc2cd9c-4e76-4aab-9c0e-87b60ece21c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="en-US">
+      <UniqueIdentifier>{1a05de9d-42af-421a-9edc-7764b73ee4fb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="en-US\Resources.resw">
+      <Filter>en-US</Filter>
+    </PRIResource>
+  </ItemGroup>
+</Project>

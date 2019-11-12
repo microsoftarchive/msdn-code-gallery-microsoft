@@ -1,0 +1,41 @@
+<Page
+    x:Class="SDKSample.WebViewControl.PageWithAppBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKSample.WebViewControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomBar">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Home" Style="{StaticResource HomeAppBarButtonStyle}" Click="Home_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <Page.Resources>
+        <Storyboard x:Name="OpenAppBar">
+            <DoubleAnimation x:Name="TranslateYOpen" Storyboard.TargetName="WebView8" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Duration="00:00:00.367">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="CloseAppBar">
+            <DoubleAnimation x:Name="TranslateYClose" Storyboard.TargetName="WebView8" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Duration="00:00:00.367">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid Background="Transparent">
+        <WebView x:Name="WebView8">
+            <WebView.RenderTransform>
+                <CompositeTransform/>
+            </WebView.RenderTransform>
+        </WebView>
+    </Grid>
+</Page>

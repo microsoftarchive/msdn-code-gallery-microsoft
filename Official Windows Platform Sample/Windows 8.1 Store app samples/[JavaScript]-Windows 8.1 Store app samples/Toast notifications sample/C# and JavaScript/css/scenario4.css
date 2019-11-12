@@ -1,0 +1,10 @@
+﻿div.toastColumn
+{
+    display: -ms-box;
+    -ms-box-orient: vertical;
+    width:  200px;
+}
+
+div.toastColumn > * {
+    margin:  3px;        
+}

@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/0aac1760-b513-488a-ba57-e31d9413a075Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>LINQ - Join Operators</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>LINQ - Join Operators</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            LINQ
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Join Operators
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">8/12/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Custom</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td align="left" valign="middle" style="background-color:#c0c0c0"><span style="color:#ffffff; font-size:x-large">&nbsp;Part of the 101 LINQ SAMPLES</span></td>
+</tr>
+</tbody>
+</table>
+<div class="RoundedBox">
+<div class="boxheader">
+<div class="BostonPostCard"></div>
+</div>
+<div class="boxheader"><span style="font-size:medium; background-color:#ffffff; color:#333333">Learn how to use LINQ in your applications with these code samples, covering the entire range of LINQ functionality and demonstrating LINQ with SQL, DataSets, and
+ XML.</span></div>
+<div class="boxcontent">
+<table border="0" cellspacing="2" cellpadding="1" width="100%">
+<tbody>
+<tr align="left" valign="top">
+<td width="50px" align="left" valign="middle"><a href="http://archive.msdn.microsoft.com/vb2008samples/Release/ProjectReleases.aspx?ReleaseId=1426"><img title="101 Samples for Visual Basic 2005" src="http://i.msdn.microsoft.com/dd183105.download_45(en-us,MSDN.10).jpg" alt="101 Samples for Visual Basic 2005" align="left"></a></td>
+<td align="left" valign="middle"><span style="font-size:medium"><strong><a href="http://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b/viewsamplepack">Browse all 101 LINQ Samples</a>&nbsp;</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h1 id="Introduction">Introduction</h1>
+<p>This sample shows different uses of Join Operators:</p>
+<ul class="bulletedlist">
+<li><a title="New Link" href="#crossjoin">Cross Join</a> </li><li><a title="New Link" href="#groupjoin">Group Join</a> </li><li><a title="New Link" href="#crossgroup">Cross Join with Group Join</a> </li><li><a title="New Link" href="#leftouterjoin">Left Outer Join</a> </li></ul>
+<h1><span>Building the Sample</span></h1>
+<ol>
+<li>Open the Program.cs </li><li>Comment or uncomment the desired samples </li><li>Press Ctrl &#43; F5 </li></ol>
+<h1>Description</h1>
+<h2 id="crossjoin">Cross Join</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>This sample shows how to efficiently join elements of two sequences based on equality between key expressions over the two.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq102()
+{
+ 
+    string[] categories = new string[]{ 
+        &quot;Beverages&quot;,  
+        &quot;Condiments&quot;,  
+        &quot;Vegetables&quot;,  
+        &quot;Dairy Products&quot;,  
+        &quot;Seafood&quot; }; 
+ 
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var q =
+        from c in categories
+        join p in products on c equals p.Category
+        select new { Category = c, p.ProductName };
+
+    foreach (var v in q)
+    {
+        Console.WriteLine(v.ProductName &#43; &quot;: &quot; &#43; v.Category); 
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Linq102()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>[]&nbsp;categories&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;<span class="cs__keyword">string</span>[]{&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Beverages&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Condiments&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Vegetables&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Dairy&nbsp;Products&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Seafood&quot;</span>&nbsp;};&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;q&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="cs__keyword">in</span>&nbsp;categories&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;join&nbsp;p&nbsp;<span class="cs__keyword">in</span>&nbsp;products&nbsp;on&nbsp;c&nbsp;equals&nbsp;p.Category&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="cs__keyword">new</span>&nbsp;{&nbsp;Category&nbsp;=&nbsp;c,&nbsp;p.ProductName&nbsp;};&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;v&nbsp;<span class="cs__keyword">in</span>&nbsp;q)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(v.ProductName&nbsp;&#43;&nbsp;<span class="cs__string">&quot;:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;v.Category);&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Chai: Beverages<br>
+Chang: Beverages<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica: Beverages<br>
+Sasquatch Ale: Beverages<br>
+Steeleye Stout: Beverages<br>
+C&Atilde;&acute;te de Blaye: Beverages<br>
+Chartreuse verte: Beverages<br>
+Ipoh Coffee: Beverages<br>
+Laughing Lumberjack Lager: Beverages<br>
+Outback Lager: Beverages<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier: Beverages<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri: Beverages<br>
+Aniseed Syrup: Condiments<br>
+Chef Anton's Cajun Seasoning: Condiments<br>
+Chef Anton's Gumbo Mix: Condiments<br>
+Grandma's Boysenberry Spread: Condiments<br>
+Northwoods Cranberry Sauce: Condiments<br>
+Genen Shouyu: Condiments<br>
+Gula Malacca: Condiments<br>
+Sirop d'&Atilde;&copy;rable: Condiments<br>
+Vegie-spread: Condiments<br>
+Louisiana Fiery Hot Pepper Sauce: Condiments<br>
+Louisiana Hot Spiced Okra: Condiments<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e: Condiments<br>
+Queso Cabrales: Dairy Products<br>
+Queso Manchego La Pastora: Dairy Products<br>
+Gorgonzola Telino: Dairy Products<br>
+Mascarpone Fabioli: Dairy Products<br>
+Geitost: Dairy Products<br>
+Raclette Courdavault: Dairy Products<br>
+Camembert Pierrot: Dairy Products<br>
+Gudbrandsdalsost: Dairy Products<br>
+Flotemysost: Dairy Products<br>
+Mozzarella di Giovanni: Dairy Products<br>
+Ikura: Seafood<br>
+Konbu: Seafood<br>
+Carnarvon Tigers: Seafood<br>
+Nord-Ost Matjeshering: Seafood<br>
+Inlagd Sill: Seafood<br>
+Gravad lax: Seafood<br>
+Boston Crab Meat: Seafood<br>
+Jack's New England Clam Chowder: Seafood<br>
+Rogede sild: Seafood<br>
+Spegesild: Seafood<br>
+Escargots de Bourgogne: Seafood<br>
+R&Atilde;&para;d Kaviar: Seafood</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="groupjoin">Group Join</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>Using a group join you can get all the products that match a given category bundled as a sequence.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq103()
+{
+    string[] categories = new string[]{ 
+        &quot;Beverages&quot;, 
+        &quot;Condiments&quot;, 
+        &quot;Vegetables&quot;, 
+        &quot;Dairy Products&quot;, 
+        &quot;Seafood&quot; };
+ 
+    List&lt;Product&gt; products = GetProductList();
+ 
+    var q =
+        from c in categories
+        join p in products on c equals p.Category into ps
+        select new { Category = c, Products = ps };
+ 
+    foreach (var v in q)
+    {
+        Console.WriteLine(v.Category &#43; &quot;:&quot;);
+        foreach (var p in v.Products)
+        {
+            Console.WriteLine(&quot;   &quot; &#43; p.ProductName);
+        }
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq103()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;categories&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;string[]<span class="js__brace">{</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Beverages&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Condiments&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Vegetables&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Dairy&nbsp;Products&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Seafood&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;q&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;categories&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;join&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;on&nbsp;c&nbsp;equals&nbsp;p.Category&nbsp;into&nbsp;ps&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;Category&nbsp;=&nbsp;c,&nbsp;Products&nbsp;=&nbsp;ps&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;v&nbsp;<span class="js__operator">in</span>&nbsp;q)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(v.Category&nbsp;&#43;&nbsp;<span class="js__string">&quot;:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;v.Products)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&quot;</span>&nbsp;&#43;&nbsp;p.ProductName);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Beverages:<br>
+Chai<br>
+Chang<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica<br>
+Sasquatch Ale<br>
+Steeleye Stout<br>
+C&Atilde;&acute;te de Blaye<br>
+Chartreuse verte<br>
+Ipoh Coffee<br>
+Laughing Lumberjack Lager<br>
+Outback Lager<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri<br>
+Condiments:<br>
+Aniseed Syrup<br>
+Chef Anton's Cajun Seasoning<br>
+Chef Anton's Gumbo Mix<br>
+Grandma's Boysenberry Spread<br>
+Northwoods Cranberry Sauce<br>
+Genen Shouyu<br>
+Gula Malacca<br>
+Sirop d'&Atilde;&copy;rable<br>
+Vegie-spread<br>
+Louisiana Fiery Hot Pepper Sauce<br>
+Louisiana Hot Spiced Okra<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e<br>
+Vegetables:<br>
+Dairy Products:<br>
+Queso Cabrales<br>
+Queso Manchego La Pastora<br>
+Gorgonzola Telino<br>
+Mascarpone Fabioli<br>
+Geitost<br>
+Raclette Courdavault<br>
+Camembert Pierrot<br>
+Gudbrandsdalsost<br>
+Flotemysost<br>
+Mozzarella di Giovanni<br>
+Seafood:<br>
+Ikura<br>
+Konbu<br>
+Carnarvon Tigers<br>
+Nord-Ost Matjeshering<br>
+Inlagd Sill<br>
+Gravad lax<br>
+Boston Crab Meat<br>
+Jack's New England Clam Chowder<br>
+Rogede sild<br>
+Spegesild<br>
+Escargots de Bourgogne<br>
+R&Atilde;&para;d Kaviar</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="crossgroup">Cross Join with Group Join</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>The group join operator is more general than join, as this slightly more verbose version of the cross join sample shows.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq104()
+{
+    string[] categories = new string[]{  
+        &quot;Beverages&quot;, 
+        &quot;Condiments&quot;, 
+        &quot;Vegetables&quot;,
+        &quot;Dairy Products&quot;,  
+        &quot;Seafood&quot; };
+ 
+    List&lt;Product&gt; products = GetProductList();
+ 
+ 
+ 
+    var q =
+        from c in categories
+        join p in products on c equals p.Category into ps
+        from p in ps
+        select new { Category = c, p.ProductName };
+ 
+    foreach (var v in q)
+    {
+        Console.WriteLine(v.ProductName &#43; &quot;: &quot; &#43; v.Category);
+    }
+}</pre>
+<div class="preview">
+<pre class="js">public&nbsp;<span class="js__operator">void</span>&nbsp;Linq104()&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;string[]&nbsp;categories&nbsp;=&nbsp;<span class="js__operator">new</span>&nbsp;string[]<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Beverages&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Condiments&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Vegetables&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Dairy&nbsp;Products&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Seafood&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;q&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="js__operator">in</span>&nbsp;categories&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;join&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;products&nbsp;on&nbsp;c&nbsp;equals&nbsp;p.Category&nbsp;into&nbsp;ps&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="js__operator">in</span>&nbsp;ps&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="js__operator">new</span>&nbsp;<span class="js__brace">{</span>&nbsp;Category&nbsp;=&nbsp;c,&nbsp;p.ProductName&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(<span class="js__statement">var</span>&nbsp;v&nbsp;<span class="js__operator">in</span>&nbsp;q)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(v.ProductName&nbsp;&#43;&nbsp;<span class="js__string">&quot;:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;v.Category);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Chai: Beverages<br>
+Chang: Beverages<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica: Beverages<br>
+Sasquatch Ale: Beverages<br>
+Steeleye Stout: Beverages<br>
+C&Atilde;&acute;te de Blaye: Beverages<br>
+Chartreuse verte: Beverages<br>
+Ipoh Coffee: Beverages<br>
+Laughing Lumberjack Lager: Beverages<br>
+Outback Lager: Beverages<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier: Beverages<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri: Beverages<br>
+Aniseed Syrup: Condiments<br>
+Chef Anton's Cajun Seasoning: Condiments<br>
+Chef Anton's Gumbo Mix: Condiments<br>
+Grandma's Boysenberry Spread: Condiments<br>
+Northwoods Cranberry Sauce: Condiments<br>
+Genen Shouyu: Condiments<br>
+Gula Malacca: Condiments<br>
+Sirop d'&Atilde;&copy;rable: Condiments<br>
+Vegie-spread: Condiments<br>
+Louisiana Fiery Hot Pepper Sauce: Condiments<br>
+Louisiana Hot Spiced Okra: Condiments<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e: Condiments<br>
+Queso Cabrales: Dairy Products<br>
+Queso Manchego La Pastora: Dairy Products<br>
+Gorgonzola Telino: Dairy Products<br>
+Mascarpone Fabioli: Dairy Products<br>
+Geitost: Dairy Products<br>
+Raclette Courdavault: Dairy Products<br>
+Camembert Pierrot: Dairy Products<br>
+Gudbrandsdalsost: Dairy Products<br>
+Flotemysost: Dairy Products<br>
+Mozzarella di Giovanni: Dairy Products<br>
+Ikura: Seafood<br>
+Konbu: Seafood<br>
+Carnarvon Tigers: Seafood<br>
+Nord-Ost Matjeshering: Seafood<br>
+Inlagd Sill: Seafood<br>
+Gravad lax: Seafood<br>
+Boston Crab Meat: Seafood<br>
+Jack's New England Clam Chowder: Seafood<br>
+Rogede sild: Seafood<br>
+Spegesild: Seafood<br>
+Escargots de Bourgogne: Seafood<br>
+R&Atilde;&para;d Kaviar: Seafood</p>
+<p style="padding-left:30px">&nbsp;</p>
+<h2 id="leftouterjoin">Left Outer Join</h2>
+<p><span style="font-size:x-small">(<a href="#Introduction">back to top</a>)</span></p>
+<p>A so-called outer join can be expressed with a group join. A left outer joinis like a cross join, except that all the left hand side elements get included at least once, even if they don't match any right hand side elements. Note how Vegetablesshows up in
+ the output even though it has no matching products.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">public void Linq105() 
+{
+    string[] categories = new string[]{  
+        &quot;Beverages&quot;, 
+        &quot;Condiments&quot;,  
+        &quot;Vegetables&quot;,  
+        &quot;Dairy Products&quot;, 
+        &quot;Seafood&quot; };
+ 
+    List&lt;Product&gt; products = GetProductList();
+ 
+ 
+ 
+    var q =
+        from c in categories
+        join p in products on c equals p.Category into ps
+        from p in ps.DefaultIfEmpty()
+        select new { Category = c, ProductName = p == null ? &quot;(No products)&quot; : p.ProductName };
+ 
+    foreach (var v in q)
+    {
+        Console.WriteLine(v.ProductName &#43; &quot;: &quot; &#43; v.Category);
+    }
+}</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Linq105()&nbsp;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>[]&nbsp;categories&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;<span class="cs__keyword">string</span>[]{&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Beverages&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Condiments&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Vegetables&quot;</span>,&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Dairy&nbsp;Products&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">&quot;Seafood&quot;</span>&nbsp;};&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Product&gt;&nbsp;products&nbsp;=&nbsp;GetProductList();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;q&nbsp;=&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;c&nbsp;<span class="cs__keyword">in</span>&nbsp;categories&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;join&nbsp;p&nbsp;<span class="cs__keyword">in</span>&nbsp;products&nbsp;on&nbsp;c&nbsp;equals&nbsp;p.Category&nbsp;into&nbsp;ps&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;p&nbsp;<span class="cs__keyword">in</span>&nbsp;ps.DefaultIfEmpty()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;<span class="cs__keyword">new</span>&nbsp;{&nbsp;Category&nbsp;=&nbsp;c,&nbsp;ProductName&nbsp;=&nbsp;p&nbsp;==&nbsp;<span class="cs__keyword">null</span>&nbsp;?&nbsp;<span class="cs__string">&quot;(No&nbsp;products)&quot;</span>&nbsp;:&nbsp;p.ProductName&nbsp;};&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;v&nbsp;<span class="cs__keyword">in</span>&nbsp;q)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(v.ProductName&nbsp;&#43;&nbsp;<span class="cs__string">&quot;:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;v.Category);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3><strong>Result</strong></h3>
+<p style="padding-left:30px">Chai: Beverages<br>
+Chang: Beverages<br>
+Guaran&Atilde;&iexcl; Fant&Atilde;&iexcl;stica: Beverages<br>
+Sasquatch Ale: Beverages<br>
+Steeleye Stout: Beverages<br>
+C&Atilde;&acute;te de Blaye: Beverages<br>
+Chartreuse verte: Beverages<br>
+Ipoh Coffee: Beverages<br>
+Laughing Lumberjack Lager: Beverages<br>
+Outback Lager: Beverages<br>
+Rh&Atilde;&para;nbr&Atilde;&curren;u Klosterbier: Beverages<br>
+Lakkalik&Atilde;&para;&Atilde;&para;ri: Beverages<br>
+Aniseed Syrup: Condiments<br>
+Chef Anton's Cajun Seasoning: Condiments<br>
+Chef Anton's Gumbo Mix: Condiments<br>
+Grandma's Boysenberry Spread: Condiments<br>
+Northwoods Cranberry Sauce: Condiments<br>
+Genen Shouyu: Condiments<br>
+Gula Malacca: Condiments<br>
+Sirop d'&Atilde;&copy;rable: Condiments<br>
+Vegie-spread: Condiments<br>
+Louisiana Fiery Hot Pepper Sauce: Condiments<br>
+Louisiana Hot Spiced Okra: Condiments<br>
+Original Frankfurter gr&Atilde;&frac14;ne So&Atilde;&Yuml;e: Condiments<br>
+(No products): Vegetables<br>
+Queso Cabrales: Dairy Products<br>
+Queso Manchego La Pastora: Dairy Products<br>
+Gorgonzola Telino: Dairy Products<br>
+Mascarpone Fabioli: Dairy Products<br>
+Geitost: Dairy Products<br>
+Raclette Courdavault: Dairy Products<br>
+Camembert Pierrot: Dairy Products<br>
+Gudbrandsdalsost: Dairy Products<br>
+Flotemysost: Dairy Products<br>
+Mozzarella di Giovanni: Dairy Products<br>
+Ikura: Seafood<br>
+Konbu: Seafood<br>
+Carnarvon Tigers: Seafood<br>
+Nord-Ost Matjeshering: Seafood<br>
+Inlagd Sill: Seafood<br>
+Gravad lax: Seafood<br>
+Boston Crab Meat: Seafood<br>
+Jack's New England Clam Chowder: Seafood<br>
+Rogede sild: Seafood<br>
+Spegesild: Seafood<br>
+Escargots de Bourgogne: Seafood<br>
+R&Atilde;&para;d Kaviar: Seafood</p>
+<p>&nbsp;</p>
+<p><span style="font-size:20px; font-weight:bold">Source Code Files</span></p>
+<ul>
+<li><a class="browseFile" href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/sourcecode?fileId=23900&amp;pathId=1791866665">Program.cs</a>
+</li></ul>
+<h1><strong>101 LINQ Samples</strong></h1>
+<ul>
+<li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Restriction-Operators-b15d29ca">Restriction Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-to-DataSets-09787825">Projection Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Partitioning-Operators-c68aaccc">Partitioning Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../SQL-Ordering-Operators-050af19e">Ordering Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-to-DataSets-Grouping-c62703ea">Grouping Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Set-Operators-374f34fe">Set Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Conversion-Operators-e4e59714">Conversion Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Element-Operators-0f3f12ce">Element Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Element-Operators-0f3f12ce">Generation Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Quantifiers-f00e7e3e">Quantifiers</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Aggregate-Operators-c51b3869">Aggregate Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Miscellaneous-6b72bb2a">Miscellaneous Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-to-DataSets-Custom-41738490">Custom Sequence Operators</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Query-Execution-ce0d3b95">Query Execution</a> </li><li><a href="http://code.msdn.microsoft.com/LINQ-Join-Operators-dabef4e9/../LINQ-Join-Operators-dabef4e9">Join Operators</a> </li></ul>
+<h1>More Information</h1>
+<p>For more information, see:</p>
+<ul>
+<li>Join Operations - <a href="http://msdn.microsoft.com/en-us/library/bb397908.aspx" >
+http://msdn.microsoft.com/en-us/library/bb397908.aspx</a> </li></ul>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

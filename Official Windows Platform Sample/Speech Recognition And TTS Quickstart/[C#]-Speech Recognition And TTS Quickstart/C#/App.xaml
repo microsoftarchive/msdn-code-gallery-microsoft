@@ -1,0 +1,17 @@
+﻿<Application
+    x:Class="SpeechRecognitionAndTTSQuickstart.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpeechRecognitionAndTTSQuickstart">
+
+	<Application.Resources>
+		<Style x:Key="SeparatorStyle" TargetType="TextBlock">
+			<Setter Property="Foreground" Value="Gray"/>
+		</Style>
+
+		<Style x:Key="HyperlinkStyle" TargetType="HyperlinkButton">
+			<Setter Property="Padding" Value="2"/>
+			<Setter Property="Foreground" Value="Gray"/>
+		</Style>
+	</Application.Resources>
+</Application>

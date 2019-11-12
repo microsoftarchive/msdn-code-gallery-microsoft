@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>NDIS 6.0 Filter Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>NDIS 6.0 Filter Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ndis, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking, ndis
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/NDISLWFSYS-Sample-NDIS-60-42b76875">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The Ndislwf sample is a do-nothing pass-through NDIS 6 filter driver that demonstrates the basic principles underlying an NDIS 6.0 Filter driver. The sample replaces the NDIS 5 Sample Intermediate Driver (Passthru driver).
+</p>
+<p>Although this sample filter driver is installed as a modifying filter driver, it doesn't modify any packets; it only repackages and sends down all OID requests. You can modify this filter driver to change packets before passing them along. Or you can use
+ the filter to originate new packets to send or receive. For example, the filter could encrypt/compress outgoing and decrypt/decompress incoming data.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/NDISLWFSYS-Sample-NDIS-60-42b76875/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<h2><a id="Step_1__Download_and_extract_the_sample"></a><a id="step_1__download_and_extract_the_sample"></a><a id="STEP_1__DOWNLOAD_AND_EXTRACT_THE_SAMPLE"></a>Step 1: Download and extract the sample</h2>
+<p>Click the download button on this page. Click <b>Save</b>, and then click <b>Open Folder</b>. Right click
+<b>NDIS 6.0 Filter Driver.zip</b>, and choose <b>Extract All</b>. Specify or browse to a folder for the extracted files. For example, you could extract to
+<b>c:\ndislwf</b>.</p>
+<h2><a id="Step_2__Open_the_driver_solution_in_Visual_Studio"></a><a id="step_2__open_the_driver_solution_in_visual_studio"></a><a id="STEP_2__OPEN_THE_DRIVER_SOLUTION_IN_VISUAL_STUDIO"></a>Step 2: Open the driver solution in Visual Studio</h2>
+<p>Navigate to the folder that has the extracted sample. Double click the solution file,
+<b>filter.sln</b>. In <b>Visual Studio</b>, locate <b>Solution Explorer</b>. (If this is not already open, choose
+<b>Solution Explorer</b> from the <b>View</b> menu.) In <b>Solution Explorer</b>, you can see one solution that has two projects: a package project named
+<b>Package</b> and a driver project named <b>ndislwf</b>.</p>
+<h2><a id="Step_3__Edit_the_debugging_level_setting"></a><a id="step_3__edit_the_debugging_level_setting"></a><a id="STEP_3__EDIT_THE_DEBUGGING_LEVEL_SETTING"></a>Step 3: Edit the debugging level setting</h2>
+<p>In <b>Solution Explorer</b>, under <b>ndislwf &gt; Source Files</b>, open the file
+<b>flt_dbg.c</b>.</p>
+<p>Change this line:</p>
+<div class="code"><span>
+<table>
+<tbody>
+<tr>
+<th></th>
+</tr>
+<tr>
+<td>
+<pre>INT                 filterDebugLevel = DL_WARN;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<p>to this:</p>
+<div class="code"><span>
+<table>
+<tbody>
+<tr>
+<th></th>
+</tr>
+<tr>
+<td>
+<pre>INT                 filterDebugLevel = DL_TRACE;</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<h2><a id="Step_4__Set_the_configuration_and_platform_in_Visual_Studio"></a><a id="step_4__set_the_configuration_and_platform_in_visual_studio"></a><a id="STEP_4__SET_THE_CONFIGURATION_AND_PLATFORM_IN_VISUAL_STUDIO"></a>Step 4: Set the configuration and
+ platform in Visual Studio</h2>
+<p>In <b>Visual Studio</b>, in <b>Solution Explorer</b>, right-click <b>Solution 'filter' (2 projects)</b>, and choose
+<b>Configuration Manager</b>. Set the <b>Active solution configuration</b> to the desired configuration and the
+<b>Active solution platform</b> to x64 or Win32. Make sure that the configuration and platform are the same for both projects. Here are some examples of configuration and platform settings.</p>
+<table>
+<tbody>
+<tr>
+<th>Configuration</th>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Win8.1 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;8.1. The driver will not run on any earlier versions of Windows.</td>
+</tr>
+<tr>
+<td>Win7 Debug</td>
+<td>x64</td>
+<td>The driver will run on an x64 hardware platform that is running Windows&nbsp;7 or a later version of Windows.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="Step_5__Build_the_sample"></a><a id="step_5__build_the_sample"></a><a id="STEP_5__BUILD_THE_SAMPLE"></a>Step 5: Build the sample</h2>
+<p>In <b>Visual Studio</b>, in the <b>Build</b> menu, choose <b>Build Solution</b>.</p>
+<p>For more information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h2><a id="Step_6__Locate_the_built_driver_package"></a><a id="step_6__locate_the_built_driver_package"></a><a id="STEP_6__LOCATE_THE_BUILT_DRIVER_PACKAGE"></a>Step 6: Locate the built driver package</h2>
+<p>In <b>File Explorer</b>, navigate to the folder that contains your built driver package. The location of this folder varies depending on what you set for configuration and platform. For example, if your settings are Win7 Debug and x64, the package is your
+ solution folder under x64\Win7Debug\Package.</p>
+<p>The package contains these files:</p>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>netlwf.cat</td>
+<td>A signed catalog file, which serves as the signature for the entire package.</td>
+</tr>
+<tr>
+<td>netlwf.inf</td>
+<td>An information (INF) file that contains information needed to install the driver.</td>
+</tr>
+<tr>
+<td>ndislwf.sys</td>
+<td>The driver file.</td>
+</tr>
+</tbody>
+</table>
+<h2>Run the sample</h2>
+<h2><a id="Automatic_deployment"></a><a id="automatic_deployment"></a><a id="AUTOMATIC_DEPLOYMENT"></a>Automatic deployment</h2>
+<p>Before you automatically deploy a driver, you must provision the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh698272">Configuring a Computer for Driver Deployment, Testing, and Debugging</a>. After you have provisioned the target computer, continue with these steps:</p>
+<ol>
+<li>On the host computer, in <b>Visual Studio</b>, in <b>Solution Explorer</b>, right click
+<b>package</b> (lower case), and choose <b>Properties</b>. Navigate to <b>Configuration Properties &gt; Driver Install &gt; Deployment</b>.
+</li><li>Check <b>Enable deployment</b>, and check <b>Remove previous driver versions before deployment</b>. For
+<b>Target Computer Name</b>, select the name of a target computer that you provisioned previously. Select
+<b>Do not install</b>. Click <b>OK</b>. </li><li>On the <b>Build</b> menu, choose <b>Build Solution</b>. </li><li>On the target computer, open <b>Control Panel</b>. Click <b>Network and Internet</b> and then open
+<b>Network and Sharing Center</b>. </li><li>Under <b>View your active networks</b>, click the connection listed under <b>
+Connections:</b> and click <b>Properties</b>. If you have previously installed this sample, highlight it in the list.
+</li><li>Click <b>Install</b>, then <b>Service</b>, then <b>Add</b>.
+<p class="note"><b>Note</b>&nbsp;&nbsp;You may see multiple instances of the <b>NDIS Sample LightWeight Filter</b> service. If so, highlight the newest one.</p>
+</li><li>Click <b>Have Disk</b>. </li><li>In the <b>Install from Disk</b> dialog, browse to the DriverTest\Drivers directory. Highlight the netlwf.inf file and click
+<b>Open</b>, then click OK. This should show <b>NDIS Sample LightWeight Filter</b> in a list of
+<b>Network Services</b>. Highlight <b>NDIS Sample LightWeight Filter</b> and click
+<b>OK</b>. Click <b>OK</b>. Click <b>Close</b>. Click <b>Close</b>. This installs the Ndislwf filter driver service.
+</li></ol>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">If you've installed the Ndislwf sample on the target computer before, you can use the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550419">PnPUtil</a> tool to delete the older versions from the driver store.</p>
+<p></p>
+<h2><a id="Manual_deployment"></a><a id="manual_deployment"></a><a id="MANUAL_DEPLOYMENT"></a>Manual deployment</h2>
+<p>Before you manually deploy a driver, you must turn on test signing and install a certificate on the target computer. You also need to copy the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff544707">DevCon</a> tool to the target computer. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/dn265571">Preparing a Computer for Manual Driver Deployment</a>.</p>
+<p>Ndislwf is installed as a service (called <b>NDIS Sample LightWeight Filter</b> in the supplied INF). To install it, do the following:</p>
+<ol>
+<li>Prepare an installation directory on the target computer and copy these files from the host computer into the directory:
+<dl><dd>netlwf.cat </dd><dd>netlwf.inf </dd><dd>ndislwf.sys </dd></dl>
+</li><li>Open <b>Control Panel</b>. </li><li>Click <b>Network and Internet</b> and then open <b>Network and Sharing Center</b>. Under
+<b>View your active networks</b>, click the connection listed under <b>Connections</b>: and click
+<b>Properties</b>. </li><li>If you have previously installed this sample, highlight it in the list. </li><li>Click <b>Install</b>, then <b>Service</b>, then <b>Add</b>, then <b>Have Disk</b>.
+</li><li>Browse to the installation directory. Highlight the netlwf.inf file and click
+<b>Open</b>, then click OK. This should show <b>NDIS Sample LightWeight Filter</b> in a list of Network Services. Highlight this and click OK. Click OK. This installs the Ndislwf filter driver.
+</li></ol>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">If you've installed the Ndislwf sample on the target computer before, you can use the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff550419">PnPUtil</a> tool to delete the older versions from the driver store.</p>
+<p></p>
+<h2><a id="_Viewing_sample_output_in_the_debugger"></a><a id="_viewing_sample_output_in_the_debugger"></a><a id="_VIEWING_SAMPLE_OUTPUT_IN_THE_DEBUGGER"></a>Viewing sample output in the debugger</h2>
+<h3><a id="Setting_up_kernel-mode_debugging_automatically"></a><a id="setting_up_kernel-mode_debugging_automatically"></a><a id="SETTING_UP_KERNEL-MODE_DEBUGGING_AUTOMATICALLY"></a>Setting up kernel-mode debugging automatically</h3>
+<p>If you chose to deploy your driver automatically, then kernel debugging is already set up for you.</p>
+<p>On the host computer, in <b>Visual Studio</b>, in the <b>Debug</b> menu, choose
+<b>Attach to Process</b>. For <b>Transport</b>, choose <b>Windows Kernel Mode Debugger</b>. For
+<b>Qualifier</b>, choose the name of your target computer. Click <b>Attach</b>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;If you see a dialog box that asks you to allow the debugger to communicate through the firewall, click the boxes for all types of networks. Click
+<b>Allow Access</b>.</p>
+<p></p>
+<p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439376">
+Setting Up Kernel-Mode Debugging in Visual Studio</a>.</p>
+<h3><a id="Setting_up_kernel-mode_debugging_manually"></a><a id="setting_up_kernel-mode_debugging_manually"></a><a id="SETTING_UP_KERNEL-MODE_DEBUGGING_MANUALLY"></a>Setting up kernel-mode debugging manually</h3>
+<p>If you chose to deploy your driver manually, then you need to set up kernel debugging manually. For instructions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439378">Setting Up Kernel-Mode Debugging Manually</a>.</p>
+<p>The kernel-mode debuggers (WinDbg.exe and Kd.exe) are included in the WDK.</p>
+<p>On the host computer, locate and open a kernel-mode debugger (example: c:\Program Files (x86)\Windows Kits\8.1\Debuggers\x64\windbg.exe). Establish a kernel-mode debugging session between the host and target computers. The details of how to do this depend
+ on the type of debug cable you are using. For information about how to start a debugging session, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh439378">Setting Up Kernel-Mode Debugging Manually</a>.</p>
+<h2><a id="Setting_kd_default_mask"></a><a id="setting_kd_default_mask"></a><a id="SETTING_KD_DEFAULT_MASK"></a>Setting kd_default_mask</h2>
+<p>This sample calls <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff543632">
+<b>DbgPrint</b></a> to send trace messages to the kernel-mode debugger. To see the trace messages, you must set the value of the
+<b>kd_default_mask</b> variable.</p>
+<p>On the host computer, break in to the debugger if you are not already broken in. (In the
+<b>Debug</b> menu, choose <b>Break</b> or <b>Break All</b>, or press <b>CTRL-Break</b>). At the debugger command line, enter this command:
+<b>ed kd_default_mask 0x8</b>.</p>
+<p>To resume execution of the target computer, enter the <b>g</b> command in the debugger. (In the
+<b>Debug</b> menu, choose <b>Continue</b>.)</p>
+<h2><a id="Viewing_trace_messages"></a><a id="viewing_trace_messages"></a><a id="VIEWING_TRACE_MESSAGES"></a>Viewing trace messages</h2>
+<p>On the host computer, in the kernel-mode debugger, verify that you see trace messages similar to these:</p>
+<div class="code"><span>
+<table>
+<tbody>
+<tr>
+<th></th>
+</tr>
+<tr>
+<td>
+<pre>NDISLWF: ===&gt;DriverEntry...
+NDISLWF: ===&gt;FilterRegisterOptions
+NDISLWF: &lt;===FilterRegisterOptions
+NDISLWF: ==&gt;FilterRegisterDevice
+NDISLWF: &lt;==FilterRegisterDevice: 0
+NDISLWF: &lt;===DriverEntry, Status =        0
+NDISLWF: ===&gt;FilterAttach: NdisFilterHandle FFFFE00000F73650
+NDISLWF: &lt;===FilterAttach:    Status 0
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<h2><a id="What_the__Ndislwf_sample_driver_does_"></a><a id="what_the__ndislwf_sample_driver_does_"></a><a id="WHAT_THE__NDISLWF_SAMPLE_DRIVER_DOES_"></a>What the Ndislwf sample driver does:</h2>
+<ol>
+<li>During <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff544113">
+<i>DriverEntry</i></a>, the ndislwf driver registers as an NDIS 6 filter driver. </li><li>Later on, NDIS calls Ndislwf's <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549905">
+<i>FilterAttach</i></a> handler, for each underlying NDIS adapter on which it is configured to attach.
+</li><li>In the context of <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549905">
+<i>FilterAttach</i></a> Handler, the filter driver calls <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff562619">
+<b>NdisFSetAttributes</b></a> to register its filter module context with NDIS. After that, the filter driver can read its own setting in registry by calling
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff563717"><b>NdisOpenConfigurationEx</b></a>, and call other
+<code>Ndis<i>Xxx</i></code> functions. </li><li>After <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549905">
+<i>FilterAttach</i></a> successfully returns, NDIS restarts the filter later by calling its
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549962"><i>FilterRestart</i></a> handler.
+<i>FilterRestart</i> should prepare to handle send/receive data. After restart return successfully, filter driver should be able to process send/receive.
+</li><li>All requests and sends coming from overlying drivers for the Ndislwf filter driver are repackaged if necessary and sent down to NDIS, to be passed to the underlying NDIS driver.
+</li><li>All indications arriving from an underlying NDIS driver are forwarded up by Ndislwf filter driver.
+</li><li>NDIS calls the filter's <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549957">
+<i>FilterPause</i></a> handler when NDIS needs to detach the filter from the stack or there is some configuration changes in the stack. In processing the pause request from NDIS, the Ndislwf driver waits for all its own outstanding requests to be completed
+ before it completes the pause request. </li><li>NDIS calls the Ndislwf driver’s <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549918">
+<i>FilterDetach</i></a> entry point when NDIS needs to detach a filter module from NDIS stack. The
+<i>FilterDetach</i> handler should free all the memory allocation done in <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff549905">
+<i>FilterAttach</i></a>, and undo the operations it did in <i>FilterAttach</i> Handler.
+</li></ol>
+<h2><a id="File_Manifest"></a><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>makefile</td>
+<td>Used during compilation to create the object and sys files</td>
+</tr>
+<tr>
+<td>filter.c</td>
+<td>Filter driver entry points and related functions in the Ndislwf filter driver</td>
+</tr>
+<tr>
+<td>netlwf.inf</td>
+<td>Installation INF for the service</td>
+</tr>
+<tr>
+<td>device.c</td>
+<td>Virtual device related routines such as registering a device and handling IOCTLs</td>
+</tr>
+<tr>
+<td>filter.h</td>
+<td>Prototypes of all functions and data structures used by the Ndislwf driver</td>
+</tr>
+<tr>
+<td>filter.htm</td>
+<td>Documentation for the filter driver (this file)</td>
+</tr>
+<tr>
+<td>filter.rc</td>
+<td>Resource file for the Ndislwf driver</td>
+</tr>
+<tr>
+<td>precomp.h</td>
+<td>Precompiled header file</td>
+</tr>
+<tr>
+<td>flt_dbg.c</td>
+<td>Debug-related code</td>
+</tr>
+<tr>
+<td>flt_dbg.h</td>
+<td>Debug code definitions and structures</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>List of source files that are compiled and linked to create the ndislwf driver.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff565492">
+NDIS Filter Drivers</a> in the network devices design guide.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

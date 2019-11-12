@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Eventdrv</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Eventdrv</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            WDM, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            general
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Eventdrv-42894135">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p></p>
+<p>Eventdrv is a sample kernel-mode trace provider and driver. The driver does not control any hardware; it simply generates trace events. It is designed to demonstrate the use of the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff545699">Event Tracing for Windows (ETW)</a> API in a driver.
+</p>
+<p>Evntdrv registers as a provider by calling the <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff545603">
+<b>EtwRegister</b></a> API. If the registration is successful, it logs a StartEvent with the device's name, the length of the name, and the status code. Then, when the sample receives a DeviceIOControl call, it logs a SampleEventA event. Finally, when the driver
+ gets unloaded, it logs an UnloadEvent event with a pointer to the device object</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;The Windows Pre-Processor (WPP) Tracing tools such as TraceView.exe cannot be used to start, stop, or view traces.
+</p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/Eventdrv-42894135/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<ol>
+<li>Start Visual Studio. </li><li>In the <b>File</b> menu, select <b>Open</b> and chose <b>Project/Solution...</b>
+</li><li>Navigate to the directory that contains the sample driver source code and select the solution file (Eventdrv.sln).
+</li><li>Build the sample from the <b>Build</b> menu by selecting <b>Build Solution</b>. For more about building sample solutions, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/">Building a Driver</a> in the WDK documentation.
+</li></ol>
+<p>When you build the solution, it builds the two projects, Eventdrv.sys and Evntctrl.exe. Evntctrl.exe sends IOCTLs to Eventdrv.sys, which then generates trace messages when it receives the IOCTLs.
+</p>
+<h2>Run the sample</h2>
+<ol>
+<li>
+<p>Install the manifest (Evntdrv.xml), which is located in the Evntdrv\Eventdrv folder. Open a Visual Studio Command window (Run as administrator) and use the following command:
+</p>
+<pre class="syntax"><code>wevtutil im evntdrv.xml</code></pre>
+<p>Installing the manifest creates registry keys that enable tools to find the resource and message files that contain event provider information. For further details about the WevtUtil.exe tool, see the MSDN Library.
+</p>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;Using a Visual Studio Command windows sets up the environment variables you need to run the tracing tools for this sample.
+</p>
+<p></p>
+</li><li>
+<p>Make a folder in the system directory called ETWDriverSample (for example, C:\ETWDriverSample).
+</p>
+<p>Copy Eventdrv.sys and Evntctrl.exe to the ETWDriverSample folder.</p>
+<p>The ETWDriverSample directory must be created because the path to the resource file that is specified in the evntdrv.xml manifest points to the %SystemRoot%\ETWDriverSample folder. If this folder is not created and the Eventdrv.sys binary is not copied,
+ decoding tools cannot find the event information to decode the trace file.</p>
+</li><li>
+<p>Use Tracelog to start a trace session that is called &quot;TestEventdrv.&quot; The following command starts the trace session and creates a trace log file, Eventdrv.etl, in the local directory.</p>
+<pre class="syntax"><code>Tracelog -start TestEventdrv -guid #b5a0bda9-50fe-4d0e-a83d-bae3f58c94d6 -f Eventdrv.etl</code></pre>
+</li><li>
+<p>To generate trace messages, run Evntctrl.exe. Each time you type a character other than
+<b>Q</b> or <b>q</b>, Evntctrl sends an IOCTL to the driver that signals it to generate trace messages. To stop Evntctrl, type
+<b>Q</b> or <b>q</b>.</p>
+</li><li>
+<p>To stop the trace session, run the following command:</p>
+<pre class="syntax"><code>tracelog -stop TestEventdrv</code></pre>
+</li><li>
+<p>To display the traces collected in the Tracedrv.etl file, run the following command:
+</p>
+<pre class="syntax"><code>tracerpt Eventdrv.etl</code></pre>
+<p>This command creates two files: Summary.txt and Dumpfile.xml. Dumpfile.xml will contain the event information in an XML format.</p>
+</li><li>
+<p>To uninstall the manifest, run the following command: </p>
+<pre class="syntax"><code>wevtutil um evntdrv.xml</code></pre>
+</li></ol>
+<h2><a id="Notes"></a><a id="notes"></a><a id="NOTES"></a>Notes</h2>
+<p>If you are building the Eventdrv sample to test on a 64-bit version of Windows, you need to sign the driver. Starting with Windows Vista, all 64-bit versions of Windows require driver code to have a digital signature for the driver to load. See
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554809">Signing a Driver</a> and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh967733">Signing a Driver During Development and Testing</a>. You might also need to configure the test computer so that it can load test-signed kernel mode code, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff553484">The TESTSIGNING Boot Configuration Option</a> and
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff542202"><b>BCDEdit /set</b></a>.
+</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

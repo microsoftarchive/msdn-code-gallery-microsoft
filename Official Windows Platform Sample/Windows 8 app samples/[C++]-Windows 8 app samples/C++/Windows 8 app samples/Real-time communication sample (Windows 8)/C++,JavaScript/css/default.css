@@ -1,0 +1,146 @@
+﻿/*
+ *  Scenario 2: Video Chat 
+ */
+.threeColumnGridContainer {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+}
+
+    .threeColumnGridContainer > div {
+        margin: 5px 10px 5px 0;
+    }
+
+    .threeColumnGridContainer button {
+        -ms-flex: 1 auto;
+        font-size: 12pt;
+    }
+
+.previewButton {
+    -ms-grid-column: 1;
+    display: -ms-flexbox;
+}
+
+.clientButton {
+    -ms-grid-column: 2;
+    display: -ms-flexbox;
+}
+
+.latencyModeToggle {
+    -ms-grid-column: 3;
+}
+
+#scenario1Grid {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+}
+
+#scenario1Grid h2 {
+    font: 20pt/24pt "Segoe UI Semilight";
+    margin:0;
+    padding:5px 0 10px 0;
+    font-weight: normal;    
+}
+
+#webcampreviewtitle {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+#localclienttitle {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    padding-bottom: 2px;
+    margin-left: 10px!important;
+}
+
+#webcampreview {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    margin-right: 10px;
+}
+
+#localclient {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    margin-left: 10px;
+}
+
+#scenario1Grid div:nth-last-of-type(-n+2) {
+    height: calc(3/8 * (100vw - 220px) - 80px);
+    width: calc(50vw - 217px);
+}
+
+.contentHolder {
+    border: 1px solid #707070;
+    box-shadow: 4px 4px 8px #707070;
+}
+
+    .contentHolder > img, .contentHolder > video {
+        width: 100%;
+        height: 100%;
+    }
+
+img.item, video.item {
+    display: none;
+}
+
+    img.item.shown, video.item.shown {
+        display: block;
+    }
+
+h2#outputLabel, h2#inputLabel {
+    margin-top: 5px!important;
+    margin-bottom: 5px!important;
+}
+
+/*
+ *  Scenario 2: Video Chat 
+ */
+
+#scenario2OuputWindow {
+    width: calc(1/2 * (100vw - 200px));
+    margin: 0 auto;
+}
+
+.inputsContainer {
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr auto auto;
+}
+
+    .inputsContainer * {
+        margin: 4px 4px 4px 0;
+    }
+
+.pcName {
+    -ms-grid-column: 1;
+    font: 11pt/15pt "Segoe UI";
+    padding:15% 0 0;
+}
+
+.pcNameTextbox {
+    -ms-grid-column: 2;
+    display: -ms-flexbox;
+}
+
+    .pcNameTextbox input {
+        -ms-flex: 1 auto;
+    }
+
+.callButton {
+    -ms-grid-column: 3;
+    display: -ms-flexbox;
+}
+
+    .callButton button {
+        -ms-flex: 1 auto;
+    }
+
+.endCallButton {
+    -ms-grid-column: 4;
+    display: -ms-flexbox;
+}
+
+    .endCallButton button {
+         -ms-flex: 1 auto;
+    }

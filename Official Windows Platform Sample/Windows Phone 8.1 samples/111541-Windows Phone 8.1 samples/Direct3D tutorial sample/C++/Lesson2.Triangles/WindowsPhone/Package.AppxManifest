@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="Microsoft.SDKSamples.Direct3DTutorialLesson2.CPP"
+            Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+            Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="0d40fc30-7249-4f5b-8643-a4feee57640b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Direct3D tutorial lesson 2: triangles C++ sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>storelogo-sdk.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="Direct3DTutorial.Lesson2.Triangles.App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="Direct3DTutorial.App">
+      <m3:VisualElements
+        DisplayName="Direct3D tutorial lesson 2: triangles C++ sample"
+        Square150x150Logo="squaretile-sdk.png"
+        Square44x44Logo="smallTile-phone-sdk.png"
+        Description="Direct3D tutorial lesson 2: triangles C++ sample"
+        ForegroundText="light"
+        BackgroundColor="#00b2f0">
+        <m3:DefaultTile Wide310x150Logo="tile-sdk.png" Square71x71Logo="mediumTile-sdk.png"/>
+        <m3:SplashScreen Image="splash-phone-sdk.png"/>
+        <m3:ApplicationView MinWidth="width320"/>
+        <!--Used in XAML Designer. DO NOT REMOVE-->
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=B5E5F4F4AE5278BDA2ADB3607072DA9C" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/dc96e5d0-205a-4f07-963c-0adecf31d9c1Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=3985696AFC623BD5CCF8BE823D027701" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sample KMDF Driver Implementing a WMI Data Provider</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/19eccd10-9a4c-4ebc-a240-2680a581332eBrand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Sample KMDF Driver Implementing a WMI Data Provider</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Windows Management Interface (WMI)
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">4/2/2014</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/WmiSamp-9b9bf7fc">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>WmiSamp WMI Provider is a sample KMDF driver that implements a WMI data provider.
+</p>
+<p>The sample demonstrates how to register the WMI providers and create provider instances for the Framework device object. It also illustrates how to handle the WMI queries sent to the device.</p>
+<p>The <a href="gallery_samples.48_gallery#1">Firefly</a>, <a href="gallery_samples.32_gallery#1">
+PCIDRV</a>, and <a href="gallery_samples.37_gallery#1">Toaster</a> sample drivers also implement WMI data providers.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;</p>
+<p class="note">To build this sample, you can use Microsoft Visual Studio&nbsp;2013 (Express, Professional, or Ultimate) and Windows Driver Kit (WDK)&nbsp;8.1 Update. You can get Visual Studio&nbsp;2013 and WDK&nbsp;8.1 Update
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=239721">here</a>.</p>
+<p class="note">You can also build this sample with Visual Studio&nbsp;2013 (Professional or Ultimate) and
+<a href="http://go.microsoft.com/fwlink/p/?LInkID=391348">Windows Driver Kit (WDK)&nbsp;8.1</a>.</p>
+<p class="note">For Windows Driver Kit (WDK)&nbsp;8 samples, download the <a href="http://code.msdn.microsoft.com/windowshardware/WmiSamp-9b9bf7fc/ http://go.microsoft.com/fwlink/?LinkId=317090">
+WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only with Microsoft Visual Studio Professional&nbsp;2012 (Professional or Ultimate) and WDK&nbsp;8.</p>
+<p></p>
+<h2>Related technologies</h2>
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff557565">Kernel-Mode Driver Framework</a>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;Starting in Windows&nbsp;8, the WDK no longer contains the co-installers by default. You can obtain the co-installers by downloading the
+<i>wdfcoinstaller.msi</i> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>.</p>
+<h2><a id="installation"></a><a id="INSTALLATION"></a>Installation</h2>
+<p>In Visual Studio, you can press F5 to build the sample and then deploy it to a target machine. For more information, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/hh454834">Deploying a Driver to a Test Computer</a>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp; </p>
+<p class="note">You can obtain redistributable framework updates by downloading the
+<i>wdfcoinstaller.msi</i> package from <a href="http://go.microsoft.com/fwlink/p/?LinkID=226396">
+WDK 8 Redistributable Components</a>. This package performs a silent install into the directory of your Windows Driver Kit (WDK) installation. You will see no confirmation that the installation has completed. You can verify that the redistributables have been
+ installed on top of the WDK by ensuring there is a redist\wdf directory under the root directory of the WDK, %ProgramFiles(x86)%\Windows Kits\8.0.</p>
+<p></p>
+<h2><a id="testing"></a><a id="TESTING"></a>Testing </h2>
+<p>To test the WmiSamp driver, run the generated WmiSamp.vbs script file. This will cause WMI to query all data blocks and properties, and put the result in a .log file. For more sophisticated testing, the VBScript can be extended by hand. The WBEMTest tool
+ (located in %windir%\system32\wbem\) can also be used.</p>
+<h2><a id="_______File_Manifest"></a><a id="_______file_manifest"></a><a id="_______FILE_MANIFEST"></a>File Manifest</h2>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<p>Makefile</p>
+</td>
+<td>
+<p>Standard Windows NT makefile.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Makefile.inc </p>
+</td>
+<td>
+<p>Includes instructions for generating the inf file and generating the header file from the mof file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sources</p>
+</td>
+<td>
+<p>Lists the files that need to be compiled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiHandler.c</p>
+</td>
+<td>
+<p>Handles the WMI queries for the classes defined in the mof file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiSamp.c </p>
+</td>
+<td>
+<p>Registers the WMI providers and creates provider instances for the Framework device object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiSamp.h</p>
+</td>
+<td>
+<p>Header file containing the structure and method declarations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiSamp.inx </p>
+</td>
+<td>
+<p>Used for generating the inf file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiSamp.mof</p>
+</td>
+<td>
+<p>Managed Object Format file that contains descriptions of the data blocks events and methods implemented by the driver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WmiSamp.rc </p>
+</td>
+<td>
+<p>Resource file containing version information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="wmi_mof_check_tool"></a><a id="WMI_MOF_CHECK_TOOL"></a>WMI Mof Check Tool</h2>
+<p>WmiMofCk validates that the classes, properties, methods and events specified in a binary mof file (.bmf) are valid for use with WMI. It also generates useful output files needed to build and test the WMI data provider.</p>
+<ul>
+<li>
+<p>If the -h parameter is specified, a C language header file is created that defines the GUIDs, data structures, and method indices specified in the MOF file.</p>
+</li><li>
+<p>If the -t parameter is specified, a VBScript applet is created that will query all data blocks and properties specified in the .mof file. This can be useful for testing WMI data providers.</p>
+</li><li>
+<p>If the -x parameter is specified, a text file is created that contains the text representation of the binary .mof data. This can be included in the source of the driver if the driver supports reporting the binary .mof via a WMI query rather than a resource
+ on the driver image file.</p>
+</li><li>
+<p>Usage: wmimofck -h&lt;C Header output file&gt; -x&lt;Hexdump output file&gt; -t&lt;VBScript test output file&gt; &lt;binary mof input file&gt;</p>
+</li></ul>
+<p></p>
+<p class="note"><b>Note</b>&nbsp;&nbsp; A byproduct of compiling the .mof file is a .vbs file. This is a VBScript file that is run from the command line on the target machine running the new device driver. It will cause WMI to query all data blocks and properties,
+ and put the results into a .log file. This can be very useful for testing WMI support in your driver. For more sophisticated testing, the VBScript can be extended by hand.</p>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

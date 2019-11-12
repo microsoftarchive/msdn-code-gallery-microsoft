@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Programmatically create a map view with Geolocation field type</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Programmatically create a map view with Geolocation field type</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            sites and content
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Programmati-a9fa95db">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">SharePoint 2013 introduces a new field type named
+<strong>Geolocation</strong> that enables you to annotate SharePoint lists with location information. For example, you can now make lists &quot;location-aware&quot; and display latitude and longitude coordinates through Bing Maps. An entry is typically seen as a pushpin
+ on a map view. Together, the Geolocation field and the Map View enable you to give spatial context to any information by integrating data from SharePoint into a mapping experience, and let your users engage in new ways in your web and mobile apps and solutions,
+ as shown in Figure 1.</span></p>
+<p><strong><span style="font-size:small">Figure 1. A map view with different pushpin colors</span></strong></p>
+<p><strong><span style="font-size:small">&nbsp;</span></strong><strong><span style="font-size:small"><img id="66062" src="description/fig1.png" alt="" width="706" height="511"></span></strong></p>
+<h1>Description of the sample</h1>
+<p><span style="font-size:small">This sample demonstrates how to programmatically create a map view to a SharePoint 2013 list. The SharePoint 2013 list displays the location on a map powered by Bing Maps. In addition, a new view named
+<strong>Map View </strong>displays the list items as pushpins on Bing Maps, and a
+<strong>Silverlight</strong> control with the list items as cards on the left pane.</span><br>
+<span style="font-size:small">This sample is a console application that programmatically creates a map view of a SharePoint list.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">Visual Studio 2012</span> </li><li><span style="font-size:small">SharePoint 2013, with administrative privileges</span>
+</li><li><span style="font-size:small">A valid Bing Maps key added at the farm or web level</span>
+</li><li><span style="font-size:small">A SharePoint list, with a Geolocation field type column added</span>
+</li></ul>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The CreateMapView code sample contains the Program.cs file. Program.cs contains the logic of the console application, which creates a map view of the SharePoint 2013 list with the
+<strong>Geolocation</strong> field type. For more information about the new <strong>
+Geolocation</strong> field type, see <a href="http://msdn.microsoft.com/en-us/library/jj163135(v=office.15).aspx" >
+Integrating location and map functionality in SharePoint 2013</a>.</span></p>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">To configure the sample, make the following changes to Program.cs.</span></p>
+<ol>
+<li><span style="font-size:small">Replace the placeholder &quot;&lt;Site Url&gt;&quot; with the URL of your SharePoint server.</span>
+</li><li><span style="font-size:small">Update the placeholder &quot;&lt;List Title&gt;&quot; with the name of the list where you want to create a map view.</span>
+</li></ol>
+<h1>Run and test the sample</h1>
+<p><span style="font-size:small">&bull; Choose the F5 key to build and deploy the console application.</span></p>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">The following table lists one common configuration and environment error that might prevent the sample from running or deploying properly and how to solve it.</span></p>
+<table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:135px">
+<tbody>
+<tr style="background-color:#a9a9a9">
+<th align="left" scope="col"><strong><span style="font-size:small">Problem </span>
+</strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Solution</span></strong></th>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">Error message appears when you open a map view page:</span>
+<p><strong><span style="font-size:small">This view no longer has a geolocation field, so it cannot be displayed in a map view.
+</span></strong></p>
+</td>
+<td><span style="font-size:small">Add a Geolocation column to the list where you want to create a map view. To learn more how to add a Geolocation column to the SharePoint list, see
+<a href="http://msdn.microsoft.com/en-us/library/jj164050.aspx" >How to: Add a Geolocation column to a list programmatically in SharePoint 2013</a>.</span></td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+<br>
+<span style="font-size:small">&nbsp;</span></h1>
+<h1><span style="font-size:small">&nbsp;</span></h1>
+<p><span style="font-size:small">&nbsp;</span></p>
+<h1><br>
+<br>
+</h1>
+<h1>Change log</h1>
+<p><span style="font-size:small">First version: September 10, 2012</span></p>
+<h1>Related content</h1>
+<ul>
+<li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj656773.aspx">Create a map view for the Geolocation field in SharePoint 2013</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj164050.aspx">How to: Add a Geolocation column to a list programmatically in SharePoint 2013</a></span>
+</li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163283.aspx">How to: Set the Bing Maps key at the web and farm level in SharePoint 2013</a></span>
+</li></ul>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

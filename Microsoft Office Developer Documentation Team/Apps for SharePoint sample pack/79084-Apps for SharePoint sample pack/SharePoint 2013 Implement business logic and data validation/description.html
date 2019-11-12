@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9bf1b74c-1640-46af-84d3-e440c8f95162Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>SharePoint 2013: Implement business logic and data validation</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>SharePoint 2013: Implement business logic and data validation</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, SharePoint Server 2013, SharePoint Foundation 2013, apps for SharePoint
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Mobile
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">2/6/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/SharePoint-2013-Implementin-ffdabd8e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p><span style="font-size:small">Some data types for fields in SharePoint lists are associated by default with simple formatting or data validation. If you enter an invalid URL for a field based on the Hyperlink or Picture field type in a SharePoint list and
+ attempt to save your changes, you see a message indicating that the address you entered is invalid. If you enter a customer name as a value for a field based on the Date and Time field type, you receive a message directing you to enter a date within a valid
+ range for the field. Some of these basic validation rules are also enforced by default in a Windows Phone app created from the Windows Phone SharePoint List Application template. If you enter anything other than a date value in a field that is bound to a SharePoint
+ field of Date and Time type in the Edit form of a Windows Phone app based on a SharePoint list, you see a validation error message when the focus shifts from the
+<strong>TextBox</strong> control associated with the field.</span></p>
+<p><span style="font-size:small">You can validate data entered by users of your Windows Phone app in several ways. A project created by using the Windows Phone SharePoint List Application template includes classes that serve as intermediaries between the forms
+ (that is, the views) of the data in the Windows Phone app (for example, the EditForm.xaml file) and the data itself in the SharePoint list on which the app is based. These classes can be considered implementations of the ViewModel component of the
+<a href="http://blogs.msdn.com/b/johngossman/archive/2005/10/08/478683.aspx">Model-View-ViewModel design pattern</a>. (For more information about how the Windows Phone SharePoint List Application template conforms to the MVVM software design pattern, see
+<a href="http://msdn.microsoft.com/en-us/library/jj163209.aspx" >Architecture of the Windows Phone SharePoint List Application template</a>.) In applications designed based on the MVVM pattern, data validation is often handled in the data layer
+ (that is, in the Model component). In projects created from the Windows Phone SharePoint List Application template, an extensible mechanism for data validation has been &quot;pushed up&quot; a layer and implemented in the ViewModel component, to make it easier for developers
+ to manage data validation. In projects based on the template, therefore, the most suitable place for custom code that validates user input or otherwise manages data is in these ViewModel classes. In terms of data validation, the
+<strong>EditItemViewModel</strong> class and the <strong>NewItemViewModel</strong> class (the classes associated with the forms most likely to involve editing and updating list data) both provide an open implementation of a validation method (named Validate)
+ that overrides the base validation method in the class from which these two classes are derived.</span></p>
+<h1>Prerequisites</h1>
+<p><span style="font-size:small">This sample requires the following:</span></p>
+<ul>
+<li><span style="font-size:small">Visual Studio 2010 Express with the new SharePoint templates</span>
+</li><li><span style="font-size:small">An installation of SharePoint 2013 with administrative privileges.</span>
+</li></ul>
+<h1>Key components of the sample</h1>
+<p><span style="font-size:small">The sample contains the following:</span></p>
+<ul>
+<li><span style="font-size:small">SPListAppDataValidation project, which contains the App.xaml.cs file and the CreateProductOrdersList.ps1 Windows PowerShell script.</span>
+<ul>
+<li><span style="font-size:small"><strong>App.xaml.cs&nbsp;&nbsp;</strong> This file is autogenerated by the Windows Phone SharePoint List Application template .The App.xaml file represents the overall Windows app. The associated code-behind file, App.xaml.cs,
+ includes procedural code to handle life-cycle events for the app. App.xaml.cs file contains references to SharePoint Server and the list title</span>
+</li><li><span style="font-size:small"><strong>CreateProductOrdersList.ps1</strong>&nbsp;&nbsp; You can run this Windows PowerShell script from the SharePoint Management Shell to create the SharePoint list on which this project is based.</span>
+</li></ul>
+</li><li><span style="font-size:small">The data validation rules implemented in this sample are as follows.</span>
+<ul>
+<li><span style="font-size:small">The fulfillment date of an order must be later than the date on which the order was placed.</span>
+</li><li><span style="font-size:small">Phone numbers must be in one of the common phone number formats; for example, &quot;(555) 555-5555&quot;. (This rule is necessary because the field type for phone numbers is &quot;Single line of text&quot; (that is, Text), which can be any text
+ up to 255 characters.)</span> </li></ul>
+</li></ul>
+<h1>Configure the sample</h1>
+<p><span style="font-size:small">This sample assumes that you are working in the context of a Windows Phone app project that was created from the Windows Phone SharePoint List Application template and that your app is based on a Product Orders list created
+ from the Custom List template on the server and containing the columns and field types shown in Table 1.</span></p>
+<p><strong><span style="font-size:small">Table 1. Sample Product Orders list</span></strong></p>
+<table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:212px">
+<tbody>
+<tr style="background-color:#a9a9a9">
+<th align="left" scope="col"><strong><span style="font-size:small">Column</span></strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Type</span></strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Required&nbsp;</span></strong></th>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">Product (i.e., Title)</span></td>
+<td><span style="font-size:small">Single line of text (Text)</span></td>
+<td><span style="font-size:small">Yes</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small"><span style="font-size:small">Description </span>
+</span></td>
+<td><span style="font-size:small">Single line of text (Text)</span></td>
+<td><span style="font-size:small">No&nbsp;</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small"><span style="font-size:small"><span style="font-size:small"><span style="font-size:small">Quantity&nbsp;</span>
+</span></span></span></td>
+<td><span style="font-size:small">Number</span></td>
+<td><span style="font-size:small">Yes&nbsp;</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small"><span style="font-size:small">Order Date </span>
+</span></td>
+<td><span style="font-size:small">Date and Time (DateTime)&nbsp;</span></td>
+<td><span style="font-size:small">No&nbsp;</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small"><span style="font-size:small">Fulfillment Date</span>&nbsp;</span></td>
+<td><span style="font-size:small">Date and Time (DateTime)&nbsp;</span></td>
+<td><span style="font-size:small">No&nbsp;</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small"><span style="font-size:small">Contact Number </span>
+&nbsp;</span></td>
+<td><span style="font-size:small">Single line of text (Text)</span></td>
+<td><span style="font-size:small">No&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><span style="font-size:small">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size:small"><br>
+<br>
+Follow these steps to configure the sample.</span>&nbsp;</p>
+<ol>
+<li><span style="font-size:small">Update the value of <strong>TargetSiteUrl</strong> in the App.xaml.cs file of the SPListAppDataValidation solution with the URL of the home page of your SharePoint website.</span>
+</li><li><span style="font-size:small">Update the value of <strong>TargetListTitle</strong> in the App.xaml.cs file of the SPListAppDataValidation solution with the title of the targeted SharePoint list.</span>
+</li></ol>
+<h1>Run and test the sample</h1>
+<ol>
+<li><span style="font-size:small">Press the F5 key to build and run the app.</span>
+</li></ol>
+<h1>Troubleshooting</h1>
+<p><span style="font-size:small">The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how to solve them.</span></p>
+<table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:212px">
+<tbody>
+<tr style="background-color:#a9a9a9">
+<th align="left" scope="col"><strong><span style="font-size:small">Problem </span>
+</strong></th>
+<th align="left" scope="col"><strong><span style="font-size:small">Solution</span></strong></th>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">While running the SharePoint List wizard from Visual Studio 2010 Express, an error may occur if developer does not have sufficient privilege on SharePoint site.</span></td>
+<td><span style="font-size:small">Give sufficient privilege to the user account with which developer is running the wizard.</span></td>
+</tr>
+<tr valign="top">
+<td><span style="font-size:small">Form-based authentication error. <br>
+<br>
+<img id="60943" src="description/fig1.png" alt="" width="182" height="339"></span></td>
+<td><span style="font-size:small">Form-based authentication is not enabled by default. To enable basic form-based authentication for the web application, follow these steps.</span>
+<ul>
+<li><span style="font-size:small">Navigate to Central Administration and ensure you have administrator rights on the server.</span>
+</li><li><span style="font-size:small">Under <strong>Application Management</strong>, choose
+<strong>Manage Web Applications</strong>.</span> </li><li><span style="font-size:small">Choose your web application (on which you have your SharePoint site, which you are accessing from your mobile app).</span>
+</li><li><span style="font-size:small">From the ribbon, choose <strong>Authentication Providers</strong>.</span>
+</li><li><span style="font-size:small">In the <strong>Authentication Provider </strong>
+dialog box, choose <strong>Default</strong> to edit the authentication.</span> </li><li><span style="font-size:small">In the <strong>Edit Authentication Model </strong>
+window under <strong>Claims Authentication Types</strong>, choose <strong>Basic Authentication</strong>.</span>
+</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><br>
+<br>
+<span style="font-size:small">&nbsp;</span><br>
+<br>
+<br>
+</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Change log</h1>
+<p><span style="font-size:small">First version: July 16, 2012</span></p>
+<h1>Related content</h1>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/jj163259.aspx" ><span style="font-size:small">How to: Create a Windows Phone SharePoint 2013 list app</span>
+</a></li><li><span style="font-size:small"><a href="http://msdn.microsoft.com/en-us/library/jj163786.aspx" >Overview of Windows Phone SharePoint 2013 application templates in Visual Studio</a></span>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>

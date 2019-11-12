@@ -1,0 +1,24 @@
+﻿<!-- THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF   -->
+<!-- ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO -->
+<!-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A      -->
+<!-- PARTICULAR PURPOSE.                                                 -->
+<!--                                                                     -->
+<!-- Copyright (c) Microsoft Corporation. All rights reserved            -->
+
+<Page
+x:Class="MediaExtensionsCPP.ScenarioOutput1"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+d:DesignWidth="300"
+d:DesignHeight="400">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Style="{StaticResource DescriptionTextStyle}" TextWrapping="Wrap" Text="Video will be playing that is being decoded by the local decoder that was installed using the Windows 8 Media Plugin feature." />
+            <MediaElement x:Name="Video" Width="320" Height="240" HorizontalAlignment="Left" />
+        </StackPanel>
+    </Grid>
+</Page>

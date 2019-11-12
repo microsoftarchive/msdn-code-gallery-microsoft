@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="SpeechRecognitionAndTTSQuickstart.ListConstraintPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpeechRecognitionAndTTSQuickstart"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Grid x:Name="LayoutRoot">
+
+		<Grid.ChildrenTransitions>
+			<TransitionCollection>
+				<EntranceThemeTransition/>
+			</TransitionCollection>
+		</Grid.ChildrenTransitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Title panel -->
+		<StackPanel Margin="19,0,0,0">
+			<StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+				<Image Source="Assets/toolbox-icon.png" Stretch="None" VerticalAlignment="Bottom"/>
+				<TextBlock Text="Windows platform sample" Margin="6,0" Style="{StaticResource TitleTextBlockStyle}" />
+			</StackPanel>
+			<TextBlock Text="SPEECH RECOGNITION AND TTS QUICKSTART" Style="{ThemeResource TitleTextBlockStyle}"/>
+			<TextBlock Text="list constraint" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+		</StackPanel>
+
+		<!-- Page content -->
+		<Grid Grid.Row="1" Margin="19,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel Margin="0,0,19,0">
+				<Button Click="RecognizeWithListConstraint_Click">
+					<StackPanel Orientation="Horizontal">
+						<SymbolIcon Symbol="Microphone"/>
+						<TextBlock Text=" with UI"/>
+					</StackPanel>
+				</Button>
+				<TextBlock Margin="0,14.5,0,0" Text="Tap the microphone, and speak. This example uses a list constraint and the list of strings to listen for contains &quot;Yes&quot; and &quot;No&quot;. A privacy statement prompt may be shown." TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}"/>
+				<TextBlock x:Name="heardYouSayTextBlock" Margin="0,14.5,0,0" Text="Heard you say" Visibility="Collapsed" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}"/>
+				<TextBlock x:Name="resultTextBlock" Margin="0,14.5,0,0" Visibility="Collapsed" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}"/>
+			</StackPanel>
+
+			<!-- Footer panel -->
+			<Grid Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Text="&#xA9; 2014 Microsoft. All rights reserved." Margin="0,9,0,0" FontSize="12" HorizontalAlignment="Right"/>
+				<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+					<HyperlinkButton Content="Terms of use" Tag="http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Copyright/default.aspx"
+                Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+					<TextBlock Text="|" Style="{StaticResource SeparatorStyle}" VerticalAlignment="Center" Margin="2,1,2,0"/>
+					<HyperlinkButton Content="Trademarks" Tag="http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Trademarks/EN-US.aspx"
+                Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+					<TextBlock Text="|" Style="{StaticResource SeparatorStyle}" VerticalAlignment="Center" Margin="2,1,2,0"/>
+					<HyperlinkButton Content="Privacy Statement" Tag="http://privacy.microsoft.com" Click="Footer_Click" FontSize="12" Style="{StaticResource HyperlinkStyle}"/>
+				</StackPanel>
+				<Image Source="Assets/105x25microsoft-logo.png" Width="105" Height="25" HorizontalAlignment="Left" Grid.Column="1" Margin="6,6,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+			</Grid>
+		</Grid>
+	</Grid>
+</Page>

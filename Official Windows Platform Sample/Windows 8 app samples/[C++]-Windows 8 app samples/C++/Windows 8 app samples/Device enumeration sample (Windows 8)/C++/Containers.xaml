@@ -1,0 +1,58 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<common:LayoutAwarePage
+    x:Class="SDKSample.DeviceEnumeration.Containers"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKSample.DeviceEnumeration"    
+    xmlns:common="using:SDKSample.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>                        
+        <DataTemplate x:Key="ContainerItemTemplate">
+            <StackPanel>
+                <TextBlock FontWeight="Bold" Style="{StaticResource H2Style}" Text="{Binding Path=Name}" />
+                <TextBlock Style="{StaticResource BasicTextStyle}" Text="{Binding Path=Id}" />
+                <TextBlock Style="{StaticResource BasicTextStyle}" Text="{Binding Path=Properties}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0">
+            <StackPanel x:Name="DeviceContainersInput">
+                <TextBlock TextWrapping="Wrap" Text="This scenario demonstrates using the device enumeration interface to query for device containers. A device container is an object which represents the visible aspects of a device hardware product, such as manufacturer or model name. These properties are localized and are displayed to identify a particular device." Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left"/>
+                <Button Name="EnumerateContainersButton" Content="Enumerate" Margin="0,10,10,0" Click="EnumerateDeviceContainers" />
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <ListBox x:Name="DeviceContainersOutputList" IsEnabled="False" ItemTemplate="{StaticResource ContainerItemTemplate}" BorderThickness="0" />
+        </Grid>
+        
+        <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+                <VisualState x:Name="FullScreenPortrait"/>
+                <VisualState x:Name="Snapped"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>

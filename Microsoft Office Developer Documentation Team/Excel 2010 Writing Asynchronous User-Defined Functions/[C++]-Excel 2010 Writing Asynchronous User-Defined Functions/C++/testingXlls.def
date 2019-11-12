@@ -1,0 +1,17 @@
+LIBRARY	"TestingXlls2008"
+
+EXPORTS
+	xlAddInManagerInfo
+	xlAddInManagerInfo12
+	xlAutoAdd
+	xlAutoClose
+	xlAutoFree
+	xlAutoFree12
+	xlAutoOpen
+	xlAutoRegister
+	xlAutoRegister12
+	xlAutoRemove
+	
+	XllEcho
+	XllEchoA
+	

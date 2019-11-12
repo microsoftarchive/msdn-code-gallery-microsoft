@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=C9973DA951AE6202C9B348379A1BE49D" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/04f9c26e-88fd-4dfd-b715-9733d17420b6Combined.css,0:HeaderFooterSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=F576C687BC536B84D6E5B3246EE39B49" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Alpha Blend Toolbar</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Alpha Blend Toolbar</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Visual Studio 2010 SDK
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            VSX, Visual Studio Shell
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">9/11/2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Alpha-Blend-Toolbar-3601e8b0">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1><span style="font-size:large">Introduction</span></h1>
+<p>A Visual Studio Addin which adds a new toolbar that contains commands with alpha-blended command icons.</p>
+<p>&nbsp;</p>
+<h1><span style="font-size:large">Getting Started</span></h1>
+<p>To build and run this sample, you must have Visual Studio 2010 installed. Unzip the AlphaBlendToolbar.zip file into your Visual Studio Projects directory (My Documents\Visual Studio 2010\Projects) and open the AlphaBlendToolbar.sln solution.</p>
+<h1><span style="font-size:large">Building the Sample</span></h1>
+<p>To build the sample, make sure the AlphaBlendToolbar solution is open and use the Build | Build Solution menu command.</p>
+<h1><span style="font-size:large">Running the Sample</span></h1>
+<p>To run this sample, copy both the AlphaBlendToolbar.Addin file and the newly-built AlphaBlendToolbar.dll file into your Visual Studio Addins directory (My Documents\Visual Studio 2010\Addins) and then open a new instance of Visual Studio 2010. Next, run
+ the Tools | Add-in Manager menu command. Check the checkbox next to AlphaBlendToolbar and hit OK. You should see a new toolbar with two command buttons on it. The interesting thing about this sample is that the command button icons have alpha-transparency.</p>
+<h1><span style="font-size:large">Source Code Overview</span></h1>
+<p>The Connect class's OnConnection method performs a number of steps:</p>
+<ul>
+<li>Creates a toolbar called &quot;AlphaToolbar&quot; if one does not already exist </li><li>Retrieves or creates the &quot;AlphaButton&quot; command if it does not exist </li><li>Retrieves or creates the &quot;OmegaButton&quot; command if it does not exist </li><li>Adds the two commands to the toolbar </li></ul>
+<p>We create the new toolbar by calling the Microsoft.VisualStudio.CommandBars.CommandsBars.Add() method, specifying the name, position, and permanence. Next we either find or create the alpha command. When we call EnvDTE80.Commands2.AddNamedCommand2() method,
+ it creates a new command which persists between sessions of Visual Studio, which is why we try to retrieve the existing command before creating a new one. If we do need to create the command, we first create a bitmap from the embedded resource &quot;alpha.png&quot;.
+ This bitmap can be passed directly to the AddNamedCommand2 method to specify the icon image. In this case, the file is a 32-bit ARGB image, meaning that it has an alpha channel to support pixel transparency. In previous versions of Visual Studio, we would
+ have had to load a separate transparency mask image in order to support transparency, but in Visual Studio 2010 this transparency is supported by default.</p>
+<h1><span style="font-size:large">Project Files</span></h1>
+<ul>
+<li>alpha.png - A Portable Network Graphic (PNG) file which is used for the alpha button icon.&nbsp;
+</li><li>AlphaBlendToolbar.AddIn - An XML file which defines the load behavior of the addin.
+</li><li>Connect.cs - Contains the code for the addin, especially the OnConnection method and implementation of the IDTCommandTarget interface to respond to the toolbar commands.
+</li><li>omega.png - A Portable Network Graphic (PNG) file which is used for the omega button icon.
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>
