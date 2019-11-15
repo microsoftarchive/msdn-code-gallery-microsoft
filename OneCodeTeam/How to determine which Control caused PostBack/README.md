@@ -173,5 +173,5 @@ protected void Page_Load(object sender, EventArgs e)
 <p class="MsoNormal"><a href="http://msdn.microsoft.com/en-us/library/system.web.ui.page.ispostback.aspx">Page.IsPostBack Property</a></p>
 <p class="MsoNormal"></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

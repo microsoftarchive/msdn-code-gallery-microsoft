@@ -26,7 +26,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em>
 </div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">How to Import/Export Azure Excel file to/from Azure SQL Server in ASP.NET</span></span></p>
@@ -118,7 +118,7 @@ CloudBlobContainer&nbsp;container&nbsp;=&nbsp;<span class="cs__keyword">new</spa
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>You will see this page:</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span>&nbsp;<img id="157773" src="157773-empty.png" alt="" width="802" height="633"></span></p>
+<span>&nbsp;<img id="157773" src="https://i1.code.msdn.s-msft.com/how-to-importexport-azure-0c858df9/image/file/157773/1/empty.png" alt="" width="802" height="633"></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -127,7 +127,7 @@ CloudBlobContainer&nbsp;container&nbsp;=&nbsp;<span class="cs__keyword">new</spa
 <span><span><br>
 </span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><img id="157774" src="157774-export.png" alt="" width="802" height="633"></span></p>
+<span><img id="157774" src="https://i1.code.msdn.s-msft.com/how-to-importexport-azure-0c858df9/image/file/157774/1/export.png" alt="" width="802" height="633"></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 &nbsp;</p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -136,7 +136,7 @@ CloudBlobContainer&nbsp;container&nbsp;=&nbsp;<span class="cs__keyword">new</spa
 <span><span><br>
 </span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><span><img id="157775" src="157775-import.png" alt="" width="802" height="633"><br>
+<span><span><img id="157775" src="https://i1.code.msdn.s-msft.com/how-to-importexport-azure-0c858df9/image/file/157775/1/import.png" alt="" width="802" height="633"><br>
 </span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 &nbsp;</p>
@@ -409,5 +409,5 @@ CloudBlobContainer&nbsp;container&nbsp;=&nbsp;<span class="cs__keyword">new</spa
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

@@ -160,5 +160,5 @@ IEnumerable&lt;Course&gt; courseList =
 <p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.columnattribute%28v=VS.103%29.aspx"><span class="SpellE">ColumnAttribute</span> Class</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

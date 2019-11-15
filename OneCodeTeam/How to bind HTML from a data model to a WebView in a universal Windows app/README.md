@@ -116,5 +116,5 @@ wv.NavigateToString((string)e.NewValue);
 </a><a title="Custom attached properties" href="http://msdn.microsoft.com/en-us/library/windows/apps/hh965327.aspx">Custom attached properties</a></span><span>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

@@ -131,5 +131,5 @@ application,</span> and the user tries to start another instance, the MainForm w
 <p class="MsoListParagraph" style="text-indent:5.0pt"><span style="font-family:Symbol"><span style="">&bull;<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><a href="http://msdn.microsoft.com/en-us/magazine/cc163741.aspx">NET MATTERS: Single-Instance apps</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

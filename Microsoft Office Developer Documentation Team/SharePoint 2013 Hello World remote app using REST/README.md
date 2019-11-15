@@ -56,7 +56,7 @@
 <strong>
 <div class="caption">Figure 1. Home.aspx page in the Hello World remote app for SharePoint using REST</div>
 </strong><br>
-<img id="116799" src="116799-sp15_basicself-hostedapp.gif" alt="Basic self-hosted app launch page" width="197" height="320">
+<img id="116799" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-hello-25f8c6f1/image/file/116799/1/sp15_basicself-hostedapp.gif" alt="Basic self-hosted app launch page" width="197" height="320">
 <p>For more information about the SharePoint REST APIs, see <a href="http://msdn.microsoft.com/library/d4b5c277-ed50-420c-8a9b-860342284b72.aspx" target="_blank">
 Programming using the SharePoint 2013 REST service</a>. For more information about working with JSON, Atom, and OData, see
 <a href="http://www.odata.org/developers/protocols/json-format" target="_blank">OData: JavaScript Object Notation (JSON) Format</a> and
@@ -116,7 +116,7 @@ SiteUrl</strong> property of the solution with the URL of the home page of your 
 <strong>
 <div class="caption">Figure 2. View populated data about the parent web</div>
 </strong><br>
-<img id="116800" src="116800-sp15_basicselfhostedpopulated.gif" alt="Basic self-hosted app with data populated" width="735" height="746"></div>
+<img id="116800" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-hello-25f8c6f1/image/file/116800/1/sp15_basicselfhostedpopulated.gif" alt="Basic self-hosted app with data populated" width="735" height="746"></div>
 </div>
 <h2>Troubleshooting</h2>
 <div id="sectionSection6">

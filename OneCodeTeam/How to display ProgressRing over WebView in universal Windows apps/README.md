@@ -31,13 +31,13 @@ What&rsquo;s new in WebView in Windows 8.1</a></p>
 <ol>
 <li>Press F5 to run it. </li></ol>
 <p>&nbsp; &nbsp; &nbsp;2. &nbsp;After the sample is launched, the screen will display as below in Windows 8.1.</p>
-<p><img id="131151" src="131151-dsf.png" alt="" width="600" height="338" style="border:1px solid black"></p>
+<p><img id="131151" src="https://i1.code.msdn.s-msft.com/how-to-put-a-progressring-0ecc7c2b/image/file/131151/1/dsf.png" alt="" width="600" height="338" style="border:1px solid black"></p>
 <p>The Windows Phone 8.1 will display as below:</p>
-<p><img id="131152" src="131152-er'te'r't.png" alt="" width="355" height="592" style="display:block; margin-left:auto; margin-right:auto"></p>
+<p><img id="131152" src="https://i1.code.msdn.s-msft.com/how-to-put-a-progressring-0ecc7c2b/image/file/131152/1/er'te'r't.png" alt="" width="355" height="592" style="display:block; margin-left:auto; margin-right:auto"></p>
 <p>&nbsp; &nbsp; &nbsp;3. &nbsp;Please enter a valid url and click the &lsquo;Load&rsquo; button to load the page, then enter another url and click the &lsquo;Load&rsquo; button again. You will see a ProgressRing over the first page before the second page is
  loading.</p>
-<p><img id="131154" src="131154-121212121.png" alt="" width="600" height="338" style="border:1px solid black"></p>
-<p><img id="131155" src="131155-er'te'r't.png" alt="" width="355" height="592" style="display:block; margin-left:auto; margin-right:auto"></p>
+<p><img id="131154" src="https://i1.code.msdn.s-msft.com/how-to-put-a-progressring-0ecc7c2b/image/file/131154/1/121212121.png" alt="" width="600" height="338" style="border:1px solid black"></p>
+<p><img id="131155" src="https://i1.code.msdn.s-msft.com/how-to-put-a-progressring-0ecc7c2b/image/file/131155/1/er'te'r't.png" alt="" width="355" height="592" style="display:block; margin-left:auto; margin-right:auto"></p>
 <p><strong>PS:</strong> When the page is loading, a JavaScript exception may be thrown. This is not caused by the sample but by the web page&mdash;many web pages have JavaScript problems, even some famous websites. This issue only occurs during debugging. You
  can get rid of those annoying JavaScript exceptions in the way mentioned in this blog:</p>
 <p><a href="http://blogs.msdn.com/b/wsdevsol/archive/2012/10/18/nine-things-you-need-to-know-about-webview.aspx#AN10">http://blogs.msdn.com/b/wsdevsol/archive/2012/10/18/nine-things-you-need-to-know-about-webview.aspx#AN10</a></p>

@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src=":-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="https://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">Windows Forms 응용 프로그램에서 WebBrowser 컨트롤에 JavaScript 코드를 삽입하는 방법
@@ -107,5 +107,5 @@
 <p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework는 개발자들의 실제 문제와 요구에 따라 구성된 중앙 집중식 무료 코드 샘플 라이브러리입니다. 모든 Microsoft 개발 기술에 대한 고객 중심 코드 샘플을 제공하고 일반 프로그래밍 작업 진행에서 개발자의 수고를 더는 것을 목표로 삼고 있습니다. Microsoft 팀은 MSDN 포럼, 소셜 미디어 및 다양한 DEV 커뮤니티에서
  개발자들이 겪는 문제를 확인합니다. 개발자들이 자주 문의하는 프로그래밍 작업을 기반&#51004;로 코드 샘플을 작성하며 개발자들이 짧은 샘플 게시 주기로 이러한 샘플을 다운로드할 수 있습니다. 또한 무료 코드 샘플 요청 서비스를 제공합니다. 이는 Microsoft 개발자 커뮤니티가 Microsoft에서 코드 샘플을 직접 구할 수 있는 사전 대응적인 방식입니다.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

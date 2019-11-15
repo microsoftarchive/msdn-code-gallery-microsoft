@@ -42,7 +42,7 @@ http://msdn.microsoft.com/en-us/library/system.security.principal.securityidenti
 <p class="MsoNormal"><span><br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt=""></a></div>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt=""></a></div>
 &nbsp;</span>
 <p></p>
 <p class="MsoNormal">&nbsp;</p>

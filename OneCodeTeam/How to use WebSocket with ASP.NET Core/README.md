@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span>How to use WebSocket with ASP.NET Core</span></span></p>
@@ -47,31 +47,31 @@ Use Visual studio to open sample solution, then press F6 Key to build sample pro
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>When the web application is running, you can see the below page in
 </span><span>browser</span><span>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172051" src="172051-ttt.png" alt="" width="392" height="514"></p>
+<img id="172051" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172051/1/ttt.png" alt="" width="392" height="514"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Duplicate this tab.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172052" src="172052-ttt.png" alt="" width="632" height="513"></p>
+<img id="172052" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172052/1/ttt.png" alt="" width="632" height="513"></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Type a user name, and click
 </span><span style="font-weight:bold">Login.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172054" src="172054-ttt.png" alt="" width="632" height="514"></p>
+<img id="172054" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172054/1/ttt.png" alt="" width="632" height="514"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
-<span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;</span></span><img id="172055" src="172055-ttt.png" alt="" width="632" height="513" style="font-size:10pt"></p>
+<span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;</span></span><img id="172055" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172055/1/ttt.png" alt="" width="632" height="513" style="font-size:10pt"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;Fill the fields as the below screen and click
 <strong>Send</strong> button.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172056" src="172056-ttt.png" alt="" width="633" height="515"></p>
+<img id="172056" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172056/1/ttt.png" alt="" width="633" height="515"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><img id="172057" src="172057-ttt.png" alt="" width="633" height="514"></span></p>
+<span><img id="172057" src="https://i1.code.msdn.s-msft.com/how-to-use-websocket-with-2c6d8b6e/image/file/172057/1/ttt.png" alt="" width="633" height="514"></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -240,5 +240,5 @@ Introduction SignalR</p>
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

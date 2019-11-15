@@ -12,7 +12,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://bit.ly/onecodesampletopbanner" alt="">
 </a></div>
 <h1 class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
 <strong><span style="color:#000000"><span lang="EN-US" style="font-size:14.0pt; font-family:&quot;Calibri Light&quot;,&quot;sans-serif&quot;">Create HttpWebRequest in ASP.NET (CSASPNETHttpWebRequest)
@@ -180,5 +180,5 @@
 <h2><strong>More Information</strong></h2>
 <p class="MsoNormal"><span lang="EN-US"><a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx</a></span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

@@ -14,7 +14,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://bit.ly/onecodesampletopbanner" alt="">
 </a></div>
 <h1 class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
 <span>This sample demonstrates how to <span id="ms-rterangepaste-start">&nbsp;</span>create chart in word document using Open XML API.
@@ -347,5 +347,5 @@ private void btnCreateChart_Click(object sender, EventArgs e)
 </span></p>
 <p class="MsoNormal">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

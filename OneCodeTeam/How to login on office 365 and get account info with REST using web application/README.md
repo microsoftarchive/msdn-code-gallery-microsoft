@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">How to log in office 365 and get account info with REST API using web application</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -40,33 +40,33 @@
 </span><span style="font-weight:bold">My applications </span><span>and click </span>
 <span style="font-weight:bold">Add an app</span><span>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="170932" src="170932-untitled.png" alt="" width="594" height="428"></p>
+<img id="170932" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/170932/1/untitled.png" alt="" width="594" height="428"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Enter your app&rsquo;s name and click
 </span><span style="font-weight:bold">Create application</span><span>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157891" src="157891-2.png" alt="" width="803" height="260"></p>
+<img id="157891" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157891/1/2.png" alt="" width="803" height="260"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157892" src="157892-3.png" alt="" width="501" height="280"></p>
+<img id="157892" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157892/1/3.png" alt="" width="501" height="280"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Scroll to the page bottom and tick in the
 </span><span style="font-weight:bold">Live ADK support </span><span>box.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157893" src="157893-4.png" alt="" width="501" height="280"></p>
+<img id="157893" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157893/1/4.png" alt="" width="501" height="280"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Generate the new password below the
 </span><span style="font-weight:bold">Application Secrets</span><span>, and save it for later use.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157894" src="157894-5.png" alt="" width="395" height="121"></p>
+<img id="157894" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157894/1/5.png" alt="" width="395" height="121"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="170933" src="170933-untitled.png" alt="" width="456" height="254"></p>
+<img id="170933" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/170933/1/untitled.png" alt="" width="456" height="254"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Create a web app below the Platforms header, and then set the Redirect URIs to you web app callback address such as
 </span><a href="http://localhost:1438/Home/OnAuthComplate" style="text-decoration:none"><span style="color:#0563c1; text-decoration:underline">http://localhost:1438/Home/OnAuthComplate</span></a><span>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157897" src="157897-7.png" alt="" width="596" height="292"></p>
+<img id="157897" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157897/1/7.png" alt="" width="596" height="292"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Click
 </span><span style="font-weight:bold">Save</span><span> at the very bottom of the page.</span></span></p>
@@ -78,25 +78,25 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Set project LoginOnOffice365AndGetAccountInfo as startup project.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157898" src="157898-8.png" alt="" width="466" height="512"></p>
+<img id="157898" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157898/1/8.png" alt="" width="466" height="512"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Config the following parameter in:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span style="font-weight:bold">&nbsp;</span><span>Project: </span><span style="font-weight:bold">LoginOnOffice365AndGetAccountInfo/Controllers/HomeController.cs</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157899" src="157899-9.png" alt="" width="511" height="117"></p>
+<img id="157899" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157899/1/9.png" alt="" width="511" height="117"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>About the ClientId you can find it here:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="170935" src="170935-untitled.png" alt="" width="534" height="444"></p>
+<img id="170935" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/170935/1/untitled.png" alt="" width="534" height="444"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>Secret is the key for the application where you can set password only once after it shows up.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157901" src="157901-11.png" alt="" width="625" height="176"></p>
+<img id="157901" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157901/1/11.png" alt="" width="625" height="176"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>For CallbackUri, you can find it here:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="157902" src="157902-12.png" alt="" width="579" height="298"></p>
+<img id="157902" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/157902/1/12.png" alt="" width="579" height="298"></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Running the sample</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
@@ -105,11 +105,11 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>When the site is started, you can see this:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="170936" src="170936-untitled.png" alt="" width="409" height="413"></p>
+<img id="170936" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/170936/1/untitled.png" alt="" width="409" height="413"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>After you have filled all the fields and clicked the Sign in button, you can see this:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><span>&nbsp;<img id="170937" src="170937-untitled.png" alt="" width="539" height="345"></span></span></p>
+<span><span>&nbsp;<img id="170937" src="https://i1.code.msdn.s-msft.com/how-to-login-on-office-365-4d619710/image/file/170937/1/untitled.png" alt="" width="539" height="345"></span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -364,5 +364,5 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

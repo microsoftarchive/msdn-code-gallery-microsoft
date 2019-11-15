@@ -30,7 +30,7 @@
 <p>Figure 1 shows the implementation of the live tiles, showing the number of list items and the name for each list, reflecting the live, dynamic data for each.</p>
 <p class="caption"><strong>Figure 1. Live tiles implemented on SharePoint lists</strong></p>
 <br>
-<img id="76943" src="76943-5-1.png" alt="Figure 1" width="556" height="361"></div>
+<img id="76943" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-implement-4dc68bf1/image/file/76943/1/5-1.png" alt="Figure 1" width="556" height="361"></div>
 <h1 class="heading">Prerequisites</h1>
 <div class="section" id="sectionSection1">
 <p>This sample requires the following:</p>

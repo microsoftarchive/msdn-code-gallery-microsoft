@@ -194,5 +194,5 @@ You can play the output audio file to check if the audio clip is correct.</p>
 <p class="MsoNormal">Microsoft Expression Encoder 3 FAQ</p>
 <p class="MsoNormal"><a href="http://social.expression.microsoft.com/Forums/en-US/encoder/thread/b7f76ae5-8c58-4c65-994c-45052f7a5cb3/">http://social.expression.microsoft.com/Forums/en-US/encoder/thread/b7f76ae5-8c58-4c65-994c-45052f7a5cb3/</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

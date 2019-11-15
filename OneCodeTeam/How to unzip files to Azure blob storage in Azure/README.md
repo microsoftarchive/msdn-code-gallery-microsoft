@@ -16,7 +16,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 </h1>
 <p><strong>How to unzip files to Azure blob storage in Azure</strong><strong>&nbsp;</strong></p>
 <h2>Introduction</h2>

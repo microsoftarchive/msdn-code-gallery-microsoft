@@ -13,7 +13,7 @@
 - 09/21/2016
 ## Description
 
-<h1><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em><a href="http://blogs.msdn.com/b/onecode"></a></h1>
+<h1><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em><a href="http://blogs.msdn.com/b/onecode"></a></h1>
 <h1>The project illustrates how to compare two Word document and show the difference&nbsp;</h1>
 <h2>Introduction</h2>
 <p>The project illustrates how we can compare two Word documents and show the difference between them.</p>
@@ -50,17 +50,17 @@ doc&nbsp;=&nbsp;wordApp.CompareDocuments(doc1,&nbsp;doc2,&nbsp;MsWord.WdCompareD
 </h1>
 <h2>Running the Sample</h2>
 <p>&nbsp; &nbsp; 1. Run the application</p>
-<p><img id="124488" src="124488-1.png" alt="" width="347" height="227"></p>
+<p><img id="124488" src="http://code.msdn.microsoft.com/site/view/file/124488/1/1.png" alt="" width="347" height="227"></p>
 <p>&nbsp; &nbsp; 2. Click #1 button</p>
 <p>Select your 1<sup>st</sup>&nbsp;document via the dialog box</p>
 <p>&nbsp; &nbsp; 3. Click #2 button</p>
 <p>Select your 2<sup>nd</sup>&nbsp;document via the dialog box</p>
-<p><img id="124489" src="124489-2.png" alt="" width="350" height="227"></p>
+<p><img id="124489" src="http://code.msdn.microsoft.com/site/view/file/124489/1/2.png" alt="" width="350" height="227"></p>
 <p>&nbsp; &nbsp; 4. Click Compare! Button</p>
 <p>&nbsp; &nbsp; 5. Application will vanish</p>
 <p>&nbsp; &nbsp; 6. You can see the compared version opened now</p>
-<p><img id="124490" src="124490-3.png" alt="" width="957" height="725"></p>
+<p><img id="124490" src="http://code.msdn.microsoft.com/site/view/file/124490/1/3.png" alt="" width="957" height="725"></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640"><img src="-onecodelogo" alt=""></a></div>
+<div><a href="http://go.microsoft.com/?linkid=9759640"><img src="http://bit.ly/onecodelogo" alt=""></a></div>

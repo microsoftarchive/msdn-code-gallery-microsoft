@@ -19,7 +19,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How</span><span style="font-weight:bold; font-size:14pt"> to access data from SQL Server database in Win10 UWP</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -64,7 +64,7 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>Then insert some data to this table.</span></span></p>
 <ul>
-<li><span style="font-size:10pt">Config Under sql connect string in Project: AccessSQLService -&gt; Service.svc.cs as your new database. &nbsp;<img id="158480" src="158480-1111.png" alt="" width="897" height="313"></span>
+<li><span style="font-size:10pt">Config Under sql connect string in Project: AccessSQLService -&gt; Service.svc.cs as your new database. &nbsp;<img id="158480" src="https://i1.code.msdn.s-msft.com/how-to-access-data-from-935e360c/image/file/158480/1/1111.png" alt="" width="897" height="313"></span>
 </li></ul>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Running the sample</span></span></p>
@@ -225,5 +225,5 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

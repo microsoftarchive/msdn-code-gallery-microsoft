@@ -194,6 +194,6 @@ Alternately, you can select the check box - &quot;Use Coordinates&quot;Enter the
  control (CSWinformCropImage) by Visual Studio 2010</div>
 <div class="endscriptcode">
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt=""></a></div>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt=""></a></div>
 <div></div>
 </div>

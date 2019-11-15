@@ -40,8 +40,8 @@ IronPython mailing list</a>.<br>
 <p>&nbsp;</p>
 <h2>Screenshots</h2>
 <p><br>
-<img src="-filedownload.aspx?projectname=ipyintegration&downloadid=10768" alt="IPy-00.png"><br>
+<img src="http://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=IPyIntegration&DownloadId=10768" alt="IPy-00.png"><br>
 <br>
-<img src="-filedownload.aspx?projectname=ipyintegration&downloadid=10766" alt="IPy01.png"><br>
+<img src="http://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=IPyIntegration&DownloadId=10766" alt="IPy01.png"><br>
 <br>
-<img src="-filedownload.aspx?projectname=ipyintegration&downloadid=10769" alt="IPy-02.png"></p>
+<img src="http://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=IPyIntegration&DownloadId=10769" alt="IPy-02.png"></p>

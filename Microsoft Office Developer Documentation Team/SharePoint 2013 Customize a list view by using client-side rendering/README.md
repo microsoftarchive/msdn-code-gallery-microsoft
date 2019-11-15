@@ -19,7 +19,7 @@
 <p><span style="font-size:small">The JavaScript code that controls the rendering process is in the CSRListView.js file.</span></p>
 <p><span style="font-size:small">Figure 1 shows the announcements list rendered in the custom view.</span></p>
 <p><strong><span style="font-size:small">Figure 1. Custom client-side rendered view of an announcements list</span></strong></p>
-<p><span style="font-size:small"><img id="60488" src="60488-fig2.png" alt="" width="535" height="342"></span></p>
+<p><span style="font-size:small"><img id="60488" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-customize-61761017/image/file/60488/1/fig2.png" alt="" width="535" height="342"></span></p>
 <h1>Prerequisites</h1>
 <p><span style="font-size:small">This sample requires the following:</span></p>
 <ul>

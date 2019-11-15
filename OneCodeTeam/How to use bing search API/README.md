@@ -125,5 +125,5 @@ Bing search API</a>, and choose the suitable subscription you prefer. </span></p
 <h2><span lang="EN-US">More Information</span><span lang="EN-US"> </span></h2>
 <p class="MsoNormal"><span lang="EN-US" style="font-family:&quot;Segoe UI&quot;,&quot;sans-serif&quot;; color:#333333"><a href="http://datamarket.azure.com/dataset/bing/search">Bing Search API</a></span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

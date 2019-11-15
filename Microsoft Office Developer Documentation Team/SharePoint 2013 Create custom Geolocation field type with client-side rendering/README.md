@@ -27,7 +27,7 @@
 <div></div>
 <div><strong>Figure 1. New custom field type column</strong></div>
 <br>
-<img id="68576" src="68576-fig1.png" alt="" width="565" height="328"></div>
+<img id="68576" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-create-eb30a620/image/file/68576/1/fig1.png" alt="" width="565" height="328"></div>
 </div>
 </div>
 </div>

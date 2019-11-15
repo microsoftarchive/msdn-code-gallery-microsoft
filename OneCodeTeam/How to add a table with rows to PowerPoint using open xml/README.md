@@ -20,7 +20,7 @@
 <a href="http://msdn.microsoft.com/en-us/library/office/documentformat.openxml.presentation(v=office.14).aspx">
 DocumentFormat.OpenXml.Presentation</a> namespace.</p>
 <h2 class="MsoNormal">Video</h2>
-<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-add-a-table-with-rows-to-PowerPoint-using-OpenXML" target="_blank"><img id="139002" src="139002-how%20to%20add%20a%20table%20with%20rows%20to%20powerpoint%20using%20openxml%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
+<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-add-a-table-with-rows-to-PowerPoint-using-OpenXML" target="_blank"><img id="139002" src="https://i1.code.msdn.s-msft.com/how-to-add-a-table-with-03578dde/image/file/139002/1/how%20to%20add%20a%20table%20with%20rows%20to%20powerpoint%20using%20openxml%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
 <h2>Building the Sample</h2>
 <p class="MsoNormal">Before building the sample, please make sure you have installed
 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5124">Open XML SDK 2.0 for Microsoft Office.</a></p>
@@ -238,5 +238,5 @@ using P14 = DocumentFormat.OpenXml.Office2010.PowerPoint;
 <p class="MsoNormal">&nbsp;</p>
 <p class="MsoNormal">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

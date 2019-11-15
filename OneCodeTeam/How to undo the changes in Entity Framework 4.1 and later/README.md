@@ -281,5 +281,5 @@ if (entry.State != EntityState.Added && entry.State != EntityState.Detached)
 <p class="MsoNormal"><a href="http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&l=EN-US&k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.DATA.OBJECTS.OBJECTCONTEXT.OBJECTSTATEMANAGER.aspx" target="_blank" title="Auto generated link to SYSTEM.DATA.OBJECTS.OBJECTCONTEXT.OBJECTSTATEMANAGER">SYSTEM.DATA.OBJECTS.OBJECTCONTEXT.OBJECTSTATEMANAGER</a>);k(TargetFrameworkMoniker-%22.NETFRAMEWORK%2cVERSION%3dV4.0%22);k(DevLang-CSHARP)&rd=true"><span class="SpellE">ObjectContext.ObjectStateManager</span>
  Property</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

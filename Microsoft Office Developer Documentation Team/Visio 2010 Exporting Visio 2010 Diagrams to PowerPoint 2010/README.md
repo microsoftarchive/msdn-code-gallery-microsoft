@@ -21,9 +21,9 @@
 <strong>Export to PowerPoint</strong> group includes two buttons: <strong>Export Page</strong> and
 <strong>Export Diagram</strong>. The markup for the <strong>Export</strong> tab is contained in the Ribbon1.xml file. All of the ribbon callback methods are included in the Ribbon1.vb file.</span></p>
 <h2>Figure 1. Export tab with a basic flowchart</h2>
-<h2><img id="59829" src="59829-visio2010sample1.png" alt="" width="647" height="466"></h2>
+<h2><img id="59829" src="http://i1.code.msdn.s-msft.com/visio-2010-exporting-visio-dd07f270/image/file/59829/1/visio2010sample1.png" alt="" width="647" height="466"></h2>
 <h2>Figure 2: Results of export operation</h2>
-<p><img id="59830" src="59830-visio2010sample2.png" alt="" width="645" height="467"></p>
+<p><img id="59830" src="http://i1.code.msdn.s-msft.com/visio-2010-exporting-visio-dd07f270/image/file/59830/1/visio2010sample2.png" alt="" width="645" height="467"></p>
 <p><span style="font-size:small">The code that translates Visio shape data to values that PowerPoint can read is included in the ShapeConversion.vb class file. The add-in consumes
 <strong>ShapeConversion</strong> objects when creating new PowerPoint shapes. Static conversion data, like the mapping of Visio shape types to PowerPoint shape types, is contained in the ShapeConversion.xml file (which the
 <strong>ShapeConversion</strong> class reads).</span></p>

@@ -23,7 +23,7 @@ Critical Path Training</a></span></p>
 <p><span style="font-size:small">This sample demonstrates how to return search results in an app for SharePoint.&nbsp; The SearchApp sample accepts a query using the keyword query language (KQL) syntax as an input. It subsequently makes a call to the search
  engine using the search Representational State Transfer (REST) service. The results are then displayed in a table, which is built dynamically using JQuery and JavaScript. The following screen shot shows search results displayed on the home page of the sample.</span></p>
 <p><strong><span style="font-size:small">Figure 1. Home.aspx page in the app, displaying the search results</span></strong></p>
-<p><span style="font-size:small"><img id="60652" src="60652-fig1.jpg" alt="" width="645" height="261"></span></p>
+<p><span style="font-size:small"><img id="60652" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-a-1bf3e87d/image/file/60652/1/fig1.jpg" alt="" width="645" height="261"></span></p>
 <h1>Prerequisites</h1>
 <p><span style="font-size:small">This sample requires the following:</span></p>
 <ul>

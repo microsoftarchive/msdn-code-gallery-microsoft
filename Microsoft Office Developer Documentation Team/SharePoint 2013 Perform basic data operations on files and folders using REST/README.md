@@ -25,7 +25,7 @@
 <div>&nbsp;</div>
 <div><strong>Figure 1. Files.html page in the app, which displays the controls for viewing and creating document library folders and files</strong></div>
 <div><strong>&nbsp;</strong></div>
-<img id="70112" src="70112-sp15_filesoperationslaunch.gif" alt="" width="543" height="385"><br>
+<img id="70112" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-ab9c4ae5/image/file/70112/1/sp15_filesoperationslaunch.gif" alt="" width="543" height="385"><br>
 <div>The sample demonstrates the following:</div>
 <ul>
 <li>
@@ -97,7 +97,7 @@
 <div class="caption"></div>
 <div class="caption"><strong>Figure 2. Add a file to a folder</strong></div>
 <br>
-<img id="70113" src="70113-sp15_filesoperationsaddfile.gif" alt="" width="506" height="380"></div>
+<img id="70113" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-ab9c4ae5/image/file/70113/1/sp15_filesoperationsaddfile.gif" alt="" width="506" height="380"></div>
 </div>
 <h1 class="heading">Troubleshooting</h1>
 <div class="section" id="sectionSection5">

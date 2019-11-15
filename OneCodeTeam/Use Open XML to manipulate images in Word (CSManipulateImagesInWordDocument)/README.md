@@ -177,5 +177,5 @@ ImagePart Class<br>
 <a target="_blank" href="http://msdn.microsoft.com/en-us/library/documentformat.openxml.packaging.imagepart.aspx">http://msdn.microsoft.com/en-us/library/documentformat.openxml.packaging.imagepart.aspx</a><br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo">
 </a></div>

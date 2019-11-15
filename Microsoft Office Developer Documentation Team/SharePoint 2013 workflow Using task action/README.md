@@ -118,7 +118,7 @@ tile, in the right-hand <strong>Value</strong> selector link, enter &quot;1000&q
 </li><li><span style="font-size:small">Do the same for the block after the <strong>Else</strong> block, and again for the remaining block. The tile should now look like this:</span>
 </li></ol>
 <p><strong><span style="font-size:small">Figure 7. Transition to stage tile</span></strong></p>
-<p><img id="60574" src="60574-fig7.png" alt="" width="340" height="289">&nbsp;</p>
+<p><img id="60574" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-workflow-942a5441/image/file/60574/1/fig7.png" alt="" width="340" height="289">&nbsp;</p>
 <p><span style="font-size:small">Before we can set values for the three <strong>Go to a stage
 </strong>value links in the <strong>Transition to stage </strong>tile, we must add three more stages to the diagram.</span></p>
 <h2>Adding additional stages</h2>
@@ -139,7 +139,7 @@ value link to &quot;Expense Rejected&quot;. This covers the case where the manag
 <p><span style="font-size:small">Your Transition to stage tile should now appear like Figure 8.</span></p>
 </blockquote>
 <p><strong><span style="font-size:small">Figure 8. Completed transition stage.</span></strong></p>
-<img id="60575" src="60575-fig8.png" alt="" width="464" height="296">&nbsp;
+<img id="60575" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-workflow-942a5441/image/file/60575/1/fig8.png" alt="" width="464" height="296">&nbsp;
 </li><li>
 <p><span style="font-size:small">Complete the &quot;Get Group Manager&quot; stage by clicking inside of the stage. Go to the
 <strong>Actions</strong> dropdown and add the <strong>Start a Task Process </strong>
@@ -169,7 +169,7 @@ field directs how the final outcome of the task is determined. Every task action
 </strong>dialog box should appear as in Figure 9.</span></p>
 </blockquote>
 <p><strong><span style="font-size:small">Figure 9. Completed Task Participants dialog box.&nbsp;<br>
-<img id="60576" src="60576-fig9.png" alt="" width="492" height="538"></span></strong></p>
+<img id="60576" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-workflow-942a5441/image/file/60576/1/fig9.png" alt="" width="492" height="538"></span></strong></p>
 </li><li><span style="font-size:small">Click <strong>OK </strong>to close the dialog box.</span>
 </li><li><span style="font-size:small">Click inside of the <strong>Transition to stage
 </strong>section of the <strong>Get Group Manager Approval </strong>stage tile.</span>
@@ -185,7 +185,7 @@ Lookup</strong> dialog box. This selects the outcome of the task action that you
 <strong>Stage: Get Group Manager Approval</strong> tile should appear as in Figure 10:</span><br>
 <span style="font-size:small"><br>
 <strong>Figure 10. Condition sentence.<br>
-<img id="60577" src="60577-fig10.png" alt="" width="475" height="131"></strong></span>
+<img id="60577" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-workflow-942a5441/image/file/60577/1/fig10.png" alt="" width="475" height="131"></strong></span>
 </li><li><span style="font-size:small">Add a <strong>Go to stage </strong>action to both the
 <strong>If</strong> and <strong>Else</strong> blocks in the <strong>Transition to stage
 </strong>section of the tile.</span> </li><li><span style="font-size:small">Set the <strong>Go to </strong>value in the <strong>
@@ -193,7 +193,7 @@ If</strong> block to &quot;Expense Approved&quot;. This outcome occurs if 50% or
 </li><li><span style="font-size:small">Set the <strong>Go to </strong>in the <strong>Else</strong> block to &quot;Expense Rejected&quot;. This outcome occurs if fewer than 50% of the Group Managers approve. The stage should appear as in Figure 11.<br>
 </span><br>
 <strong><span style="font-size:small">Figure 11. Completed stage tile<br>
-<img id="60579" src="60579-fig11.png" alt="" width="627" height="251"></span>
+<img id="60579" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-workflow-942a5441/image/file/60579/1/fig11.png" alt="" width="627" height="251"></span>
 </strong></li><li><span style="font-size:small">Finally, add the <strong>Go to stage </strong>action to the end of the remaining stages, and for each of these set the action to
 <strong>End of workflow</strong>.</span> </li></ol>
 <h1>Additional options for Select Task Participant</h1>

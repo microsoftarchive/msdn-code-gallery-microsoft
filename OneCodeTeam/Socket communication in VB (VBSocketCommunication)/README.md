@@ -102,5 +102,5 @@ VB<span class="SpellE">SocketServer</span></p>
 <p class="MsoListParagraphCxSpLast" style="margin-bottom:.0001pt; line-height:normal; text-autospace:none">
 &nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

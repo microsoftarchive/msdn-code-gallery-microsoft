@@ -14,7 +14,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em><a href="http://blogs.msdn.com/b/onecode"></a></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em><a href="http://blogs.msdn.com/b/onecode"></a></div>
 </h1>
 <h1>How to clear session when the web browser is closed in ASP.NET</h1>
 <h2>Introduction</h2>
@@ -83,4 +83,4 @@ The&nbsp;following&nbsp;Service&nbsp;is&nbsp;triggered&nbsp;from&nbsp;the&nbsp;A
 <p>In a enterprise level application the Ajax call to the web service can be written in Master Page or a user control that is inherited across all the aspx pages</p>
 <p>&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640"><img src="-onecodelogo" alt=""></a></div>
+<div><a href="http://go.microsoft.com/?linkid=9759640"><img src="http://bit.ly/onecodelogo" alt=""></a></div>

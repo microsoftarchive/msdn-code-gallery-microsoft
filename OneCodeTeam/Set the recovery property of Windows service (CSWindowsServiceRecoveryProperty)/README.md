@@ -134,5 +134,5 @@ Set up Recovery Actions to Take Place When a Service Fails<br>
 <br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo">
 </a></div>

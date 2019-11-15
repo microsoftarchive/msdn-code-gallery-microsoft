@@ -145,5 +145,5 @@ Next
 <p class="MsoNormal"><span style=""><a href="http://social.msdn.microsoft.com/Forums/en-AU/csharpgeneral/thread/faa70c95-6191-4f64-bb5a-5b67b8453237">How to call Powershell Script function from C# ?</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

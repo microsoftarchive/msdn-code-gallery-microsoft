@@ -151,5 +151,5 @@ End Sub
 <p class="MsoListParagraph"><span style="font-family:Symbol"><span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><a href="http://msdn.microsoft.com/ja-jp/library/y817hyb6.aspx">MSDN: Windows サービス アプリケーション</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

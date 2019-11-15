@@ -23,7 +23,7 @@
 <p>Users can bulk export data from table storage to excel.</p>
 <p>&nbsp;</p>
 <h2>Video</h2>
-<p><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-bulk-import-or-export-data-to-or-from-Azure-table-storage-with-Excel-VS2013"><img id="147465" src="147465-azureblob.jpg" alt="" width="686" height="359"></a></p>
+<p><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-bulk-import-or-export-data-to-or-from-Azure-table-storage-with-Excel-VS2013"><img id="147465" src="https://i1.code.msdn.s-msft.com/how-to-bulk-importexport-f1396df1/image/file/147465/1/azureblob.jpg" alt="" width="686" height="359"></a></p>
 <p>&nbsp;</p>
 <h2>Running the Sample</h2>
 <p>You should do the steps below before running the code sample.&nbsp;</p>

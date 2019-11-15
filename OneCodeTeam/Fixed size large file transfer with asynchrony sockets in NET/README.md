@@ -420,5 +420,5 @@ using (FileStream stream = new FileStream(FileToSend, FileMode.Open))
 </span></span></span><a href="http://www.albahari.com/threading">Threading in C#</a></p>
 <p class="MsoNormal" style=""><span style=""></span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

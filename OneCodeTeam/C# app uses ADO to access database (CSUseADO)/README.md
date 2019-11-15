@@ -244,5 +244,5 @@ if (conn != null && conn.State == (int)ADODB.ObjectStateEnum.adStateOpen)
 <p class="MsoNormal"><span style=""><a href="http://support.microsoft.com/kb/308611">HOW TO: Open ADO Connection and
 <span class="SpellE">RecordSet</span> Objects in Visual C# .NET</a> </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

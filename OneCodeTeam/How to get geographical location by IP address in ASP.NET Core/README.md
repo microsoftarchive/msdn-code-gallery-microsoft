@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to get geographical location by IP address in ASP.NET Core</span></span></p>
@@ -45,7 +45,7 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>When the project is running, you will see the below page in browser.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172108" src="172108-ttt.png" alt="" width="355" height="435"></p>
+<img id="172108" src="https://i1.code.msdn.s-msft.com/how-to-get-geographical-c600a03f/image/file/172108/1/ttt.png" alt="" width="355" height="435"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 Debug environment client IP address is always 0.0.0.1, so we need an Internet IP address.</p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -54,7 +54,7 @@ Debug environment client IP address is always 0.0.0.1, so we need an Internet IP
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;Type an IP address to
 <strong>input</strong> control, like 167.220.255.6, then click <strong>submit</strong>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172109" src="172109-ttt.png" alt="" width="382" height="472"></p>
+<img id="172109" src="https://i1.code.msdn.s-msft.com/how-to-get-geographical-c600a03f/image/file/172109/1/ttt.png" alt="" width="382" height="472"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span>&nbsp;</span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -252,5 +252,5 @@ Debug environment client IP address is always 0.0.0.1, so we need an Internet IP
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

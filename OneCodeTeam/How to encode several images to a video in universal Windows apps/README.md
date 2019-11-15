@@ -23,9 +23,9 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong></strong><em></em></div>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong></strong><em></em></div>
 <p><span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">Video</span></span></p>
-<p><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-encode-several-images-to-a-video-in-universal-Windows-apps" target="_blank"><img id="147315" src="147315-how%20to%20encode%20several%20images%20to%20a%20video%20in%20universal%20windows%20apps.png" alt="" width="640" height="350"></a></p>
+<p><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-encode-several-images-to-a-video-in-universal-Windows-apps" target="_blank"><img id="147315" src="https://i1.code.msdn.s-msft.com/how-to-encode-several-to-a-053953d1/image/file/147315/1/how%20to%20encode%20several%20images%20to%20a%20video%20in%20universal%20windows%20apps.png" alt="" width="640" height="350"></a></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to encode several images to a video in universal Windows apps using Media Foundation</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
@@ -174,5 +174,5 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

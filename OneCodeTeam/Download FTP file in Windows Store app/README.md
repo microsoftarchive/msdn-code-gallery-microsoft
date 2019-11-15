@@ -11,7 +11,7 @@
 - 04/16/2013
 ## Description
 
-<h1><span><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144425" target="_blank"><img id="79968" src="79968-dpe_w8_728x90_1022_v2.jpg" alt="" width="728" height="90" style="width:100%"></a></span></h1>
+<h1><span><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144425" target="_blank"><img id="79968" src="http://i1.code.msdn.s-msft.com/cswindowsstoreappadditem-a5d7fbcc/image/file/79968/1/dpe_w8_728x90_1022_v2.jpg" alt="" width="728" height="90" style="width:100%"></a></span></h1>
 <h1><span>Download a file from FTP server in </span><span>a Windows Store</span><span> app (VBWindowsStoreAppFTPDownloader)
 </span></h1>
 <h2><span>Introduction </span></h2>
@@ -543,5 +543,5 @@ Await download.StartAsync().AsTask(progressCallback)
 <p class="MsoListParagraph"><a href="http://msdn.microsoft.com/en-us/library/5t9y35bd.aspx">http://msdn.microsoft.com/en-us/library/5t9y35bd.aspx</a></p>
 <p class="MsoListParagraph">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

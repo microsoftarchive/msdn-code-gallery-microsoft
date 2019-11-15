@@ -72,7 +72,7 @@ SharePoint-Add-in-Localization</a>.</span></p>
 <p>Figure 1 shows the bookstore custom actions in English and Spanish.</p>
 <div class="caption"><strong>Figure 1. Bookstore custom actions in English and Spanish</strong></div>
 <br>
-<img id="114765" src="114765-image.png" alt="" width="663" height="515"></div>
+<img id="114765" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-bookstore-328060fc/image/file/114765/1/image.png" alt="" width="663" height="515"></div>
 <a name="O15Readme_Prereq"></a><a name="sectionSection1"></a>
 <h2 class="heading">Prerequisites</h2>
 <div class="section" id="sectionSection1">
@@ -158,7 +158,7 @@ Trust It</span>.</p>
 <p>Figure 2 shows the bookstore app start page.</p>
 <div class="caption"><strong>Figure 2. Bookstore app start page</strong></div>
 <br>
-<img id="114766" src="114766-image2.png" alt="" width="584" height="369">
+<img id="114766" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-bookstore-328060fc/image/file/114766/1/image2.png" alt="" width="584" height="369">
 </li><li>
 <p>Create a Spanish (es-ES) site collection using the Developer Site template.</p>
 </li><li>

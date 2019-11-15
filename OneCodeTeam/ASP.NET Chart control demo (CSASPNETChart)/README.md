@@ -11,7 +11,7 @@
 - 11/21/2016
 ## Description
 
-<p><a href="http://blogs.msdn.com/b/onecode"><img src="-onecodesampletopbanner1" alt=""></a></p>
+<p><a href="http://blogs.msdn.com/b/onecode"><img src="http://aka.ms/onecodesampletopbanner1" alt=""></a></p>
 <h1>ASP.NET Chart control demo (CSASPNETChart)</h1>
 <h2><span>Introduction</span></h2>
 <p><span style="font-size:small">The project illustrates how to use the new Chart control to create an chart&nbsp;in the web page.</span></p>

@@ -20,7 +20,7 @@
 <p><span>The JavaScript code that reads data from the parent web and the app web is located in the Home.aspx file in the BasicSharePoint-hosted directory of the BasicSharePoint-hosted project. The following screen shot shows how the Home.aspx page of the app
  appears after you install and launch the app.</span></p>
 <p><strong><span>Figure 1. Home.aspx page in the app, displaying the user, the Bing home page and a button for getting information about the appweb</span></strong></p>
-<p><img id="133148" src="133148-fig1.gif" alt="" width="645" height="208"></p>
+<p><img id="133148" src="https://i1.code.msdn.s-msft.com/sharepoint/sharepoint-2013-hello-b3ca20f3/image/file/133148/1/fig1.gif" alt="" width="645" height="208"></p>
 <h1>Prerequisites</h1>
 <p><span>This sample requires the following:</span></p>
 <ul>

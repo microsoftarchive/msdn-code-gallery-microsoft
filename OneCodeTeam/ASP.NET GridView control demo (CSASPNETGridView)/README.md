@@ -596,5 +596,5 @@ private void BindGridView()
 </span></span></span><span style="font-size:9.5pt; font-family:NSimSun"><a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.webcontrol.attributes.aspx"><span class="SpellE">WebControl.Attributes</span> Property</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

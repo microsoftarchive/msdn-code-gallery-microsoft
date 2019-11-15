@@ -35,7 +35,7 @@
 <p><a href="http://tjhvm.cloudapp.net:8080/"><span style="color:#0563c1; font-family:Calibri; font-size:small">http://tjhvm.cloudapp.net:8080</span></a></p>
 <p><a href="http://tjhvm.cloudapp.net:8081/"><span style="color:#0563c1; font-family:Calibri; font-size:small">http://tjhvm.cloudapp.net:8081</span></a></p>
 <p><span style="font-family:Calibri; font-size:small">The picture bellow is the sending messages module.</span></p>
-<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141737" src="141737-image002.png" width="576" height="327"></div>
+<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141737" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141737/1/image002.png" width="576" height="327"></div>
 <div></div>
 <h2><strong>Objectives in this chapter</strong></h2>
 <div></div>
@@ -105,7 +105,7 @@
 <div></div>
 <div><strong>&nbsp;</strong><em>&nbsp;</em></div>
 <div></div>
-<div><img alt="" id="141738" src="141738-image002.jpg" width="576" height="200"></div>
+<div><img alt="" id="141738" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141738/1/image002.jpg" width="576" height="200"></div>
 <div></div>
 <ol>
 </ol>
@@ -128,8 +128,8 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and then select the &ldquo;Add the New Table to create a new table. There are five tables in the</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;ContosoSales&rdquo; database.</p>
 <div></div>
-<div><strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141739" src="141739-image004.jpg" width="575" height="200"></div>
-<div><img alt="" id="141740" src="141740-image006.jpg" width="491" height="231"></div>
+<div><strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141739" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141739/1/image004.jpg" width="575" height="200"></div>
+<div><img alt="" id="141740" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141740/1/image006.jpg" width="491" height="231"></div>
 <div>
 <ul>
 <li>
@@ -137,9 +137,9 @@
 </li></ul>
 <strong>&nbsp;</strong><em>&nbsp;</em></div>
 <div></div>
-<div><img alt="" id="141741" src="141741-image008.jpg" width="576" height="191"></div>
-<div><img alt="" id="141742" src="141742-image010.jpg"></div>
-<div><img alt="" id="141743" src="141743-image012.jpg" width="534" height="229"></div>
+<div><img alt="" id="141741" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141741/1/image008.jpg" width="576" height="191"></div>
+<div><img alt="" id="141742" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141742/1/image010.jpg"></div>
+<div><img alt="" id="141743" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141743/1/image012.jpg" width="534" height="229"></div>
 <div>
 <h2><strong>Step 3:</strong> Open the&rdquo; CSAzureSalesSendMessagesViaTopic&rdquo; project with Visual Studio 2013.</h2>
 <ul>
@@ -260,17 +260,17 @@
 <p>Rebuild the project.</p>
 </li></ul>
 <h2><strong>Step 5:</strong> Run the&rdquo; CSAzureSalesSendMessagesViaTopic&rdquo; project and the picture below shows when the project is ran.</h2>
-<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141745" src="141745-image014.jpg"></div>
+<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141745" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141745/1/image014.jpg"></div>
 <div>
 <h2><strong>Step 6:</strong> Run the&rdquo; CSAzureReceiveSalesMessageViaTopic&rdquo; project and the picture below shows when the project is ran.</h2>
-<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141746" src="141746-image016.jpg" width="551" height="309"></div>
+<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141746" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141746/1/image016.jpg" width="551" height="309"></div>
 <div>
 <h2><strong>Step 7: </strong>Send messages via the Azure Service Bus Topic.</h2>
 <ul>
 <li>
 <p>Input the sales order information. For example, product information.</p>
 </li></ul>
-<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141747" src="141747-image018.png"></div>
+<strong>&nbsp;</strong><em>&nbsp;</em><img alt="" id="141747" src="https://i1.code.msdn.s-msft.com/scenarioexchange-messages-42fe7e60/image/file/141747/1/image018.png"></div>
 <div>
 <ul>
 <li>

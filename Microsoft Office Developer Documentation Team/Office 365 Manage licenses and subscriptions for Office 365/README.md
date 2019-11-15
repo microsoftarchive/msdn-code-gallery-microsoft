@@ -98,7 +98,7 @@
 O365_ManageLicense_cs.sln</span>, and click <span class="ui">OK</span>.</p>
 </li></ol>
 <p>The sample builds and Solution Explorer opens, as shown in the following figure.</p>
-<img id="76558" src="76558-o365psmanagelicenses-001a.png" alt="O365 Manage Licenses in VS2013 solution explorer" width="367" height="295"></div>
+<img id="76558" src="http://i1.code.msdn.s-msft.com/office-365-manage-licenses-fb2c6413/image/file/76558/1/o365psmanagelicenses-001a.png" alt="O365 Manage Licenses in VS2013 solution explorer" width="367" height="295"></div>
 <h1 class="heading">Run and test the sample</h1>
 <div class="section" id="sectionSection4">
 <ol>
@@ -107,23 +107,23 @@ O365_ManageLicense_cs.sln</span>, and click <span class="ui">OK</span>.</p>
 </li><li>
 <p>In the <span class="ui">Enter Credentials</span> dialog box, shown in the following figure, enter the user name and password for the administrator account, and click
 <span class="ui">Login</span>.</p>
-<p><img id="76559" src="76559-o365psmanagelicenses-002.png" alt="O365 Manage Licenses Enter Credentials dialog" width="323" height="158"></p>
+<p><img id="76559" src="http://i1.code.msdn.s-msft.com/office-365-manage-licenses-fb2c6413/image/file/76559/1/o365psmanagelicenses-002.png" alt="O365 Manage Licenses Enter Credentials dialog" width="323" height="158"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>The main window opens in full-screen mode after you enter the credentials, as shown in the following figure. (License assignments are obscured in the figure.)</p>
-<p><img id="76560" src="76560-o365psmanagelicenses-003.png" alt="O365 Manage Licenses main window" width="798" height="356"></p>
+<p><img id="76560" src="http://i1.code.msdn.s-msft.com/office-365-manage-licenses-fb2c6413/image/file/76560/1/o365psmanagelicenses-003.png" alt="O365 Manage Licenses main window" width="798" height="356"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>To assign a license to a user, click <span class="ui">Assign License</span>. The
 <span class="ui">Assign License</span> dialog box opens, as shown in the following figure. Select a user and a license to apply, and click
 <span class="ui">Assign License</span>.</p>
-<p><img id="76561" src="76561-o365psmanagelicenses-004.png" alt="O365 Managed Licenses Assign license dialog" width="395" height="174"></p>
+<p><img id="76561" src="http://i1.code.msdn.s-msft.com/office-365-manage-licenses-fb2c6413/image/file/76561/1/o365psmanagelicenses-004.png" alt="O365 Managed Licenses Assign license dialog" width="395" height="174"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>To remove a license from a user, click <span class="ui">Remove License</span>. The
 <span class="ui">Remove License</span> dialog box opens, as shown in the following figure. Select a user and a license to remove, and click
 <span class="ui">Remove License.</span></p>
-<p><img id="76562" src="76562-o365psmanagelicenses-005.png" alt="O365 Manage Licenses Remove License dialog" width="395" height="174"></p>
+<p><img id="76562" src="http://i1.code.msdn.s-msft.com/office-365-manage-licenses-fb2c6413/image/file/76562/1/o365psmanagelicenses-005.png" alt="O365 Manage Licenses Remove License dialog" width="395" height="174"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>To close the sample, click the <span class="ui">Close</span> button in the upper-right corner of the window.</p>

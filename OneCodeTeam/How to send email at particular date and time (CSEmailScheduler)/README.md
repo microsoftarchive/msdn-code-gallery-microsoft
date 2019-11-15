@@ -242,5 +242,5 @@ http://technet.microsoft.com/en-us/library/cc748993.aspx</a></p>
 <a href="http://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient.aspx">
 http://msdn.microsoft.com/en-us/library/system.net.mail.smtpclient.aspx</a> </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

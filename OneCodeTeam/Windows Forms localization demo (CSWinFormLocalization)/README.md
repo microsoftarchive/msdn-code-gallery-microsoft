@@ -81,5 +81,5 @@ http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/77a66f05-804e-4d58
 <br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo">
 </a></div>

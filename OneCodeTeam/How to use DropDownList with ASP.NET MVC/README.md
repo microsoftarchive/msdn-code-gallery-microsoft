@@ -13,7 +13,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img alt="" src="-onecodesampletopbanner">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodesampletopbanner">
 </a></div>
 <h1>Cascading DropDown List with ASP.NET MVC 4</h1>
 <h2>Introduction</h2>
@@ -1798,5 +1798,5 @@ color' }));
 </span>}; </span></p>
 <p class="MsoNormal"></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

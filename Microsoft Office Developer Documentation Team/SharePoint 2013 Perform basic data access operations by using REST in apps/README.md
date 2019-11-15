@@ -21,7 +21,7 @@ SharePoint Add-in REST\OData Basic Data Operations</a>. The description below ma
 <div>
 <p><span style="font-size:small">The code that uses the REST APIs is located in the Home.aspx.cs file of the BasicDataOperationsRESTWeb project. The following screen shot shows how the Home.aspx page of the app appears after you install and launch the app.</span></p>
 <p><strong><span style="font-size:small">Figure 1. Home.aspx page in the app, which displays the controls for viewing and creating lists and list items</span></strong></p>
-<p>&nbsp;<img id="60514" src="60514-fig1.gif" alt="" width="735" height="472"></p>
+<p>&nbsp;<img id="60514" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-335d925b/image/file/60514/1/fig1.gif" alt="" width="735" height="472"></p>
 <p><span style="font-size:small">The sample demonstrates the following:</span></p>
 <ul>
 <li><span style="font-size:small">How to read and write data to and from a parent web. This data conforms with the OData protocol to the REST endpoints where the list and list item entities are exposed.
@@ -65,10 +65,10 @@ Programming using the SharePoint 2013 REST service</a>. For more information abo
 <h1>Examples</h1>
 <p><span style="font-size:small">The following figure shows an example of how to use this app for SharePoint to view list items.</span></p>
 <p><strong><span style="font-size:small">Figure 2. View list items from a list on the parent web</span></strong></p>
-<p><span style="font-size:small"><img id="60515" src="60515-fig1.gif" alt="" width="735" height="780"></span></p>
+<p><span style="font-size:small"><img id="60515" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-335d925b/image/file/60515/1/fig1.gif" alt="" width="735" height="780"></span></p>
 <p><span style="font-size:small">The following figure shows an example of how to use this app for SharePoint to add list items.</span></p>
 <p><strong><span style="font-size:small">Figure 3. Add list items to a list on the parent web</span></strong></p>
-<p><span style="font-size:small"><img id="60516" src="60516-fig1.gif" alt="" width="644" height="321"></span></p>
+<p><span style="font-size:small"><img id="60516" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-perform-335d925b/image/file/60516/1/fig1.gif" alt="" width="644" height="321"></span></p>
 <h1>Troubleshooting</h1>
 <p><span style="font-size:small">The following table lists common configuration and environment errors that prevent the sample from running or deploying properly and how to solve them.</span></p>
 <table border="0" cellspacing="5" cellpadding="5" frame="void" align="left" style="width:601px; height:212px">

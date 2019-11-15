@@ -18,14 +18,14 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 </h1>
 <h1>How to operate Azure blob storage in universal Windows apps</h1>
 <h2>Introduction</h2>
 <p>Windows Azure storage class library now supports Windows Store/Phone app.</p>
 <p>This sample will show you how to operate Azure blob storage in universal Windows apps, including uploading/downloading/deleting files from blob storage.</p>
 <h2>Video</h2>
-<p><a href="http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-operate-Azure-Blob-and-Table-Storage-in-Windows-Store-apps" target="_blank"><img id="135124" src="135124-how%20to%20operate%20azure%20blob%20and%20table%20storage%20in%20universal%20windows%20apps%20%20%20channel%209.png" alt="" width="640" height="360" style="border:1px solid black"></a></p>
+<p><a href="http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-operate-Azure-Blob-and-Table-Storage-in-Windows-Store-apps" target="_blank"><img id="135124" src="https://i1.code.msdn.s-msft.com/how-to-operate-azure-blob-f0210e2e/image/file/135124/1/how%20to%20operate%20azure%20blob%20and%20table%20storage%20in%20universal%20windows%20apps%20%20%20channel%209.png" alt="" width="640" height="360" style="border:1px solid black"></a></p>
 <h2>Building the Sample</h2>
 <p>To install Windows Azure Storage, run the following command in the Package Manager Console</p>
 <p>PM&gt; Install-Package WindowsAzure.Storage</p>

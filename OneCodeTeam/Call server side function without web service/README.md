@@ -259,5 +259,5 @@ Public Class TestUser
 </span><span style=""><a href="http://blogs.microsoft.co.il/blogs/gilf/archive/2008/10/04/asp-net-ajax-pagemethods.aspx">http://blogs.microsoft.co.il/blogs/gilf/archive/2008/10/04/asp-net-ajax-pagemethods.aspx</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

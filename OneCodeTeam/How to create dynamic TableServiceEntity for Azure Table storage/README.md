@@ -14,7 +14,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 </h1>
 <h1>How to create dynamic TableServiceEntity for Azure Table storage</h1>
 <h2>Introduction</h2>

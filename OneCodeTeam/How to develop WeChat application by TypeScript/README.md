@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to develop WeChat application by
@@ -55,14 +55,14 @@
 <span><span><img src="163099-image.png" alt="" width="575" height="461" align="middle">
 </span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
-<span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Select the local application project</span></span><span style="font-size:10pt; text-indent:-18pt">&nbsp;</span><img id="163773" src="163773-6.png" alt="" width="614" height="494" style="font-size:10pt; text-indent:-18pt"></p>
+<span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Select the local application project</span></span><span style="font-size:10pt; text-indent:-18pt">&nbsp;</span><img id="163773" src="https://i1.code.msdn.s-msft.com/how-to-develop-wechat-1105555e/image/file/163773/1/6.png" alt="" width="614" height="494" style="font-size:10pt; text-indent:-18pt"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Add a new project and fill necessary information about project</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>If you have no
 </span><span>AppID</span><span>, please click &ldquo;No </span><span>AppID</span><span>&rdquo;</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="163774" src="163774-5.png" alt="" width="614" height="494"></p>
+<img id="163774" src="https://i1.code.msdn.s-msft.com/how-to-develop-wechat-1105555e/image/file/163774/1/5.png" alt="" width="614" height="494"></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Then you will see the application demo content in the dev tool</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -160,5 +160,5 @@ App(<span class="js__brace">{</span>&nbsp;
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

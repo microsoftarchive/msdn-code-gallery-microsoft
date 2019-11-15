@@ -242,5 +242,5 @@ static void Main(string[] args)
 <span class="SpellE">Database.SetInitializer</span>&lt;<span class="SpellE">TContext</span>&gt; Method<br>
 <a href="http://msdn.microsoft.com/en-us/library/gg679461(v=VS.103).aspx">http://msdn.microsoft.com/en-us/library/gg679461(v=VS.103).aspx</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

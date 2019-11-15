@@ -28,7 +28,7 @@ LINQ to Xml
 <h1>Description</h1>
 <p>Run the project, and select the type of LINQ sample that you want to examine. Examine the options, and run each query that interests you. The output from the query and the source code is displayed on the interface of the application.</p>
 <h1>Screenshot</h1>
-<p><img src="22790-screenshot.png" alt="" width="707" height="503"></p>
+<p><img src="http://i1.code.msdn.s-msft.com/linq-sample-queries-13a42a54/image/file/22790/3/screenshot.png" alt="" width="707" height="503"></p>
 </div>
 <h1><span>Source Code Files</span></h1>
 <p><strong>C# </strong></p>

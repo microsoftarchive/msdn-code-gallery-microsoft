@@ -13,7 +13,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to run Hello World using Universal Windows
 </span><span style="font-weight:bold; font-size:14pt">Platform</span></span></p>
@@ -54,7 +54,7 @@
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-size:11pt"><span style="color:#333333">The splash screen disappears, and then your app appears. It looks like this.</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
-<span style="font-size:11pt">&nbsp;<img id="150357" src="150357-helloworld-1-cs.png" alt="" width="543" height="399"></span></p>
+<span style="font-size:11pt">&nbsp;<img id="150357" src="https://i1.code.msdn.s-msft.com/how-to-run-hello-world-bd5d79ec/image/file/150357/1/helloworld-1-cs.png" alt="" width="543" height="399"></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-size:11pt"><span style="color:#333333">Press the Windows key to open the
 </span><span style="font-weight:bold; color:#333333">Start</span><span style="color:#333333"> menu, then show all apps. Notice that deploying the app locally adds its tile to the
@@ -100,7 +100,7 @@
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-size:11pt"><span style="color:#333333">Visual Studio starts the selected emulator and then deploys and starts your app. On the mobile device emulator, the app looks like this.</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
-<span style="font-size:11pt">&nbsp;<img id="150358" src="150358-helloworld-2-cs-phone.png" alt="" width="242" height="430"></span></p>
+<span style="font-size:11pt">&nbsp;<img id="150358" src="https://i1.code.msdn.s-msft.com/how-to-run-hello-world-bd5d79ec/image/file/150358/1/helloworld-2-cs-phone.png" alt="" width="242" height="430"></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Using the Code</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:26.6pt; direction:ltr; unicode-bidi:normal">
@@ -350,7 +350,7 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>
 <div class="mcePaste" id="_mcePaste" style="left:-10000px; top:3200px; width:1px; height:1px; overflow:hidden">
 <h3>C#</h3>

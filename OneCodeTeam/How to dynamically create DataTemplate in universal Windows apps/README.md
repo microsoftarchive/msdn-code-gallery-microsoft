@@ -21,7 +21,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 </h1>
 <h1>How to create DataTemplate dynamically in universal Windows apps</h1>
 <h2>Introduction</h2>

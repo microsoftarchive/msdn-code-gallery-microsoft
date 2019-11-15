@@ -16,7 +16,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src=":-onecodesampletopbanner1" alt=""></a><span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to create and access session
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to create and access session
  variables in ASP.NET MVC</span><span style="font-weight:bold; font-size:14pt"> (</span><span style="font-weight:bold; font-size:14pt">ASPNETMVCSession</span><span style="font-weight:bold; font-size:14pt">)</span></span></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Introduction</span></span></p>
@@ -303,5 +303,5 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

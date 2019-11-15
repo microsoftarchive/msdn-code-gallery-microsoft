@@ -12,7 +12,7 @@
 - 01/17/2016
 ## Description
 
-<p style="font-family:Courier New">&nbsp;<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420" target="_blank"><img id="79969" src="79969-120x90_azure_web_en_us.jpg" alt="" width="360" height="90"></a></p>
+<p style="font-family:Courier New">&nbsp;<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420" target="_blank"><img id="79969" src="http://i1.code.msdn.s-msft.com/csazurebingmaps-bab92df1/image/file/79969/1/120x90_azure_web_en_us.jpg" alt="" width="360" height="90"></a></p>
 <h2><span style="font-family:courier new,courier; font-size:x-large">CSAzureWCFServices Overview</span></h2>
 <h3><span style="font-family:courier new,courier"><span style="font-size:large">Summary</span>:</span></h3>
 <p><span style="font-family:courier new,courier">This project shows how to host WCF in Windows Azure, and how to consume it.&nbsp;
@@ -36,12 +36,12 @@
 </span><br>
 <span style="font-family:courier new,courier">service.</span></p>
 <div align="right">
-<p><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420"><span style="color:windowtext; text-decoration:none"><span><img src="67654-image.png" alt="" width="120" height="90" align="middle">
+<p><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420"><span style="color:windowtext; text-decoration:none"><span><img src="http://code.msdn.microsoft.com/site/view/file/67654/1/image.png" alt="" width="120" height="90" align="middle">
 </span></span></a><br>
 <a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420">Try Windows Azure for free for 90 Days!</a></p>
 </div>
 <h3><span style="font-family:'courier new',courier; font-size:medium">Video:</span></h3>
-<p><span style="font-family:'courier new',courier; font-size:medium"><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-create-and-host-WCF-services-in-Azure"><img id="147469" src="147469-azureblob.jpg" alt="" width="588" height="308"></a><br>
+<p><span style="font-family:'courier new',courier; font-size:medium"><a href="https://channel9.msdn.com/Blogs/OneCode/How-to-create-and-host-WCF-services-in-Azure"><img id="147469" src="https://i1.code.msdn.s-msft.com/csazurewcfservices-20c7d9c5/image/file/147469/1/azureblob.jpg" alt="" width="588" height="308"></a><br>
 </span></p>
 <h3><span style="font-family:'courier new',courier; font-size:large">Demo:</span></h3>
 <p><span style="font-family:courier new,courier">To use the Sample, please follow the steps below.</span></p>

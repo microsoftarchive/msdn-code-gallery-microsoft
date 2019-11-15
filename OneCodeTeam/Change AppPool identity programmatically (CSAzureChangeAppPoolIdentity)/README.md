@@ -11,7 +11,7 @@
 - 04/16/2013
 ## Description
 
-<p style="font-family:Courier New">&nbsp;<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420" target="_blank"><img id="79969" src="79969-120x90_azure_web_en_us.jpg" alt="" width="360" height="90"></a></p>
+<p style="font-family:Courier New">&nbsp;<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144420" target="_blank"><img id="79969" src="http://i1.code.msdn.s-msft.com/csazurebingmaps-bab92df1/image/file/79969/1/120x90_azure_web_en_us.jpg" alt="" width="360" height="90"></a></p>
 <h1>Change <span class="SpellE">AppPool</span> identity programmatically (<span class="SpellE">CSAzureChangeAppPoolIdentity</span>)</h1>
 <h2>Introduction</h2>
 <p class="MsoNormal"><span style="font-size:8.0pt; line-height:115%; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; color:#384b38">​</span>Most of customers test their applications to connect to cloud entities like storage, SQL Azure,
@@ -211,5 +211,5 @@ using (DirectoryEntry appPools = new DirectoryEntry(metabasePath))
 <span style="font-size:9.5pt; font-family:Consolas; color:green">&nbsp;</span></p>
 <p class="MsoNormal">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

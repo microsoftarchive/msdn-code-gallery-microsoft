@@ -19,7 +19,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
 </h1>
 <h1>How to dynamically set the font size of a TextBlock to fit its content in universal Windows apps.</h1>
 <h2>Introduction</h2>

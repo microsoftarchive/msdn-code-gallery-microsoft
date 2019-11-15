@@ -54,7 +54,7 @@
 <p>The code that uses the SharePoint CSOM is located in the Home.aspx.cs file of the BasicSelfHostedAppWeb project. The following screen shot shows how the Home.aspx page of the app appears after you install and launch the app.</p>
 <div class="caption"><strong>Figure 1. Home.aspx page in the Hello World remote app for SharePoint using CSOM</strong></div>
 <br>
-<img id="116784" src="116784-sp15_basicself-hostedapp.gif" alt="Basic self-hosted app launch page" width="197" height="320"></div>
+<img id="116784" src="http://i1.code.msdn.s-msft.com/sharepoint/sharepoint-2013-hello-0fd15fbf/image/file/116784/1/sp15_basicself-hostedapp.gif" alt="Basic self-hosted app launch page" width="197" height="320"></div>
 <a name="O15Readme_Prereq"></a><a name="sectionSection1"></a>
 <h2 class="heading">Prerequisites</h2>
 <div class="section" id="sectionSection1">
@@ -111,7 +111,7 @@ SiteUrl</strong> property of the solution with the URL of the home page of your 
 <p>The following figure shows an example of the kinds of information that this sample app can read and display.</p>
 <div class="caption"><strong>Figure 2. View populated data about the parent web</strong></div>
 <br>
-<img id="116785" src="116785-sp15_basicselfhostedpopulated.gif" alt="Basic self-hosted app with data populated" width="735" height="746"></div>
+<img id="116785" src="http://i1.code.msdn.s-msft.com/sharepoint/sharepoint-2013-hello-0fd15fbf/image/file/116785/1/sp15_basicselfhostedpopulated.gif" alt="Basic self-hosted app with data populated" width="735" height="746"></div>
 </div>
 <a name="O15Readme_Troubleshoot"></a><a name="sectionSection6"></a>
 <h2 class="heading">Troubleshooting</h2>

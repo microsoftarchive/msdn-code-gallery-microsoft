@@ -216,5 +216,5 @@ GC.WaitForPendingFinalizers();
 <p class="MsoNormal"><a href="http://blogs.msdn.com/geoffda/archive/2007/09/07/the-designer-process-that-would-not-terminate-part-2.aspx">The Designer Process That Would Not Terminate (Part 2)</a>
 <b></b></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

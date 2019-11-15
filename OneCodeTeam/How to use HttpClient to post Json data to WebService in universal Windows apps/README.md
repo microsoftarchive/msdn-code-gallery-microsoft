@@ -20,7 +20,7 @@
 
 <h1>
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 </h1>
 <h1>How to use HttpClient to post Json data to WebService in universal Windows apps</h1>
 <h2>Introduction</h2>
@@ -29,7 +29,7 @@
 <p>For Win10 UWP sample, please download from the link below:</p>
 <p><a href="https://code.msdn.microsoft.com/How-to-post-json-data-2c86fe51">https://code.msdn.microsoft.com/How-to-post-json-data-2c86fe51</a></p>
 <h2>Video</h2>
-<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-use-HttpClient-to-post-Json-data-to-WebService-in-universal-Windows-apps" target="_blank"><img id="138071" src="138071-how%20to%20use%20httpclient%20to%20post%20json%20data%20to%20webservice%20in%20universal%20windows%20apps%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
+<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-use-HttpClient-to-post-Json-data-to-WebService-in-universal-Windows-apps" target="_blank"><img id="138071" src="https://i1.code.msdn.s-msft.com/how-to-use-httpclient-to-7623bd01/image/file/138071/1/how%20to%20use%20httpclient%20to%20post%20json%20data%20to%20webservice%20in%20universal%20windows%20apps%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
 <h2>Building the Sample</h2>
 <p>Open the solution file with Visual Studio 2013. Then right click the JSONWCFService project, select &ldquo;View&rdquo; and &ldquo;View in browser&rdquo; to start the web service. Then you can run the Windows Store or Phone app project.</p>
 <h2>Running the Sample</h2>

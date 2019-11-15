@@ -172,5 +172,5 @@ CoUninitialize</span>. </p>
 <p class="MsoNormal"><a href="http://support.microsoft.com/kb/216686">How to automate Excel from C&#43;&#43; without using MFC or #import</a>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

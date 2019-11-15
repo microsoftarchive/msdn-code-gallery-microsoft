@@ -436,5 +436,5 @@ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
 <p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/bb530410.aspx">MSDN: Windows Vista Application Development Requirements for User Account Control Compatibility</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

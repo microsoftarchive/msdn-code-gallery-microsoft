@@ -11,7 +11,7 @@
 - 04/16/2013
 ## Description
 
-<h1><span><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144425" target="_blank"><img id="79968" src="79968-dpe_w8_728x90_1022_v2.jpg" alt="" width="728" height="90" style="width:100%"></a></span></h1>
+<h1><span><a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200144425" target="_blank"><img id="79968" src="http://i1.code.msdn.s-msft.com/cswindowsstoreappadditem-a5d7fbcc/image/file/79968/1/dpe_w8_728x90_1022_v2.jpg" alt="" width="728" height="90" style="width:100%"></a></span></h1>
 <h1><span>Crop bitmap in </span><span>a Windows Store</span><span> app (CSWindowsStoreAppCropBitmap)
 </span></h1>
 <h2><span>Introduction </span></h2>
@@ -25,7 +25,7 @@ BitmapDecoder</a>.</p>
 <h2>Demo</h2>
 <p><object width="540" height="330" data="data:application/x-silverlight-2," type="application/x-silverlight-2"> <param name="source" value="/scriptcenter/Content/Common/videoplayer.xap" /> <param name="initParams" value="deferredLoad=false,duration=0,m=http://media.ch9.ms/ch9/836e/5a36836c-f87f-41a0-b53e-ad242f2b836e/CropImageWinStoreApp_Source.wmv,autostart=true,autohide=true,showembed=true"
  /> <param name="background" value="#00FFFFFF" /> <param name="minRuntimeVersion" value="3.0.40624.0" /> <param name="enableHtmlAccess" value="true" /> <param name="src" value="http://media.ch9.ms/ch9/836e/5a36836c-f87f-41a0-b53e-ad242f2b836e/CropImageWinStoreApp_Source.wmv"
- /> <param name="id" value="68000" /> <param name="name" value="CropImageWinStoreApp_Source.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="-?linkid=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
+ /> <param name="id" value="68000" /> <param name="name" value="CropImageWinStoreApp_Source.wmv" /><span><a href="http://go.microsoft.com/fwlink/?LinkID=149156" style="text-decoration:none"><img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"></a></span>
  </object> </p>
 <h2><span>Running the Sample </span></h2>
 <p class="MsoListParagraph">1.<span style="font-size:7.0pt; line-height:115%; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,7 +35,7 @@ BitmapDecoder</a>.</p>
 <p class="MsoListParagraph"><img src="73763-image.png" alt="" width="595" height="342" align="middle">&nbsp;</p>
 <p class="MsoListParagraph">3.<span style="font-size:7.0pt; line-height:115%; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Press the &quot;Open an Image&quot; button, and then choose an image file (*.jpg, *.png or *.bmp).&nbsp;</p>
-<p class="MsoListParagraph"><img id="75615" src="75615-temppic.png" alt="" width="605" height="348"></p>
+<p class="MsoListParagraph"><img id="75615" src="http://i1.code.msdn.s-msft.com/cswin8appcropbitmap-52fa1ad7/image/file/75615/1/temppic.png" alt="" width="605" height="348"></p>
 <p class="MsoListParagraph">4.<span style="font-size:7.0pt; line-height:115%; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Select the region to crop.</p>
 <p class="MsoListParagraph">5.<span style="font-size:7.0pt; line-height:115%; font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -298,5 +298,5 @@ async public static Task SaveCroppedBitmapAsync(StorageFile originalImgFile, Sto
 </span>BitmapEncoder<br>
 <a href="http://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.imaging.bitmapencoder">http://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.imaging.bitmapencoder</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

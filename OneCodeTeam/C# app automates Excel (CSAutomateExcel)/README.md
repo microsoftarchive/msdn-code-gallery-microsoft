@@ -198,5 +198,5 @@ oRng2.Formula = &quot;=A2 & \&quot; \&quot; & B2&quot;;
 <h2><span style="font-size:11.0pt; line-height:115%; font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-weight:normal"><a href="http://support.microsoft.com/kb/303296">How To Use Automation to Get and to Set Office Document Properties with Visual C# .NET</a>
 </span></h2>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

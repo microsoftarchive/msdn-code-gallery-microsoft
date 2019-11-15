@@ -93,7 +93,7 @@
 O365_SingleSignOn_cs.sln,</span> and click <span class="ui">OK</span>.</p>
 </li></ol>
 <p>The sample builds and Solution Explorer opens, as shown in the following figure.</p>
-<img id="76586" src="76586-o365psmanagesinglesignon-001.png" alt="O365_SingleSignOn_cs in VS2012 Solution Explorer" width="281" height="285"></div>
+<img id="76586" src="http://i1.code.msdn.s-msft.com/office-365-manage-single-9cd8b579/image/file/76586/1/o365psmanagesinglesignon-001.png" alt="O365_SingleSignOn_cs in VS2012 Solution Explorer" width="281" height="285"></div>
 <h1 class="heading">Run and test the sample</h1>
 <div class="section" id="sectionSection4">
 <ol>
@@ -102,18 +102,18 @@ O365_SingleSignOn_cs.sln,</span> and click <span class="ui">OK</span>.</p>
 </li><li>
 <p>In the <span class="ui">Enter Credentials</span> dialog box, shown in the following figure, enter the user name and password for the administrator account, and click
 <span class="ui">Login</span>.</p>
-<p><img id="76587" src="76587-o365psmanagesinglesignon-002.png" alt="O365 Manage Single SignOn credentials dialog box" width="323" height="158"></p>
+<p><img id="76587" src="http://i1.code.msdn.s-msft.com/office-365-manage-single-9cd8b579/image/file/76587/1/o365psmanagesinglesignon-002.png" alt="O365 Manage Single SignOn credentials dialog box" width="323" height="158"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>The main window opens in full-screen mode after you enter the credentials, as shown in the following figure. (Domain names are obscured in the figure.)</p>
-<p><img id="76588" src="76588-o365psmanagesinglesignon-003.png" alt="O365 Manage Single SignOn main window" width="800" height="353"></p>
+<p><img id="76588" src="http://i1.code.msdn.s-msft.com/office-365-manage-single-9cd8b579/image/file/76588/1/o365psmanagesinglesignon-003.png" alt="O365 Manage Single SignOn main window" width="800" height="353"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>To create a new single sign-on domain, click <span class="ui">Create Domain</span>. The
 <span class="ui">Add Domain</span> dialog box opens, as shown in the following figure. Fill in the
 <span class="ui">Domain Name</span> field, select the appropriate <span class="ui">
 Domain Type</span>, and then click <span class="ui">Add Domain</span>.</p>
-<p><img id="76589" src="76589-o365psmanagesinglesignon-004.png" alt="O365 Manage Single SignOn New Domain dialog" width="376" height="183"></p>
+<p><img id="76589" src="http://i1.code.msdn.s-msft.com/office-365-manage-single-9cd8b579/image/file/76589/1/o365psmanagesinglesignon-004.png" alt="O365 Manage Single SignOn New Domain dialog" width="376" height="183"></p>
 <p>&nbsp;</p>
 </li><li>
 <p>To close the sample, click the <span class="ui">Close</span> button in the upper-right corner of the window.</p>

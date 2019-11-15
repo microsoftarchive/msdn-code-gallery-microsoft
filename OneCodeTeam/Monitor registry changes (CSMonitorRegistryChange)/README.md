@@ -64,5 +64,5 @@ At last, when an registry-change event arrived, displays the notification in a l
 <a target="_blank" href="http://www.codeproject.com/KB/system/WMI_RegistryMonitor.aspx">http://www.codeproject.com/KB/system/WMI_RegistryMonitor.aspx</a><br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo">
 </a></div>

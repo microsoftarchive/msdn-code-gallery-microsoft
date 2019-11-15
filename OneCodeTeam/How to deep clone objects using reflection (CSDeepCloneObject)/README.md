@@ -238,5 +238,5 @@ public static void CloneCustomer()
 <p class="MsoNormal"><a href="http://msdn.microsoft.com/query/dev10.query?appId=Dev10IDEF1&l=EN-US&k=k(<a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/SYSTEM.REFLECTION.FIELDINFO.aspx" target="_blank" title="Auto generated link to SYSTEM.REFLECTION.FIELDINFO">SYSTEM.REFLECTION.FIELDINFO</a>);k(TargetFrameworkMoniker-%22.NETFRAMEWORK%2cVERSION%3dV4.0%22);k(DevLang-CSHARP)&rd=true"><span class="SpellE">FieldInfo</span>
  Class</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

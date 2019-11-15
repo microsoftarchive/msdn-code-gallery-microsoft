@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em>&nbsp;</em></div>
 <h1>How to Create DataTable Manually with Specific Schema Definitions (CSDataTableCreateManually)</h1>
 <h2>Introduction</h2>
 <p class="MsoNormal">Sometimes we may need to create the DataTable manually and some specific schema definitions, such as Foreign Key constraints, expression columns and so on.</p>
@@ -231,5 +231,5 @@ orderTable.Rows.Add(row);
 <p class="MsoNormal"><span class="MsoHyperlink"><a href="http://msdn.microsoft.com/en-us/library/zwxk25bd(v=vs.100).aspx">Creating Expression Columns (ADO.NET)</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

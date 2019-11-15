@@ -17,7 +17,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong></strong><em></em>
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"></a><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong></strong><em></em>
 </div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:24pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to zoom in/out the content in WebView in universal Windows apps</span></span></p>
@@ -29,7 +29,7 @@
 <span style="font-size:11pt"><span style="font-size:11pt">To resize the content of the WebView, we can manipulate the content by using JS/CSS that are fully supported by WebView.</span></span></p>
 <h2 style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:10pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-size:11pt"><span style="font-size:11pt">Video</span></span></h2>
-<p><span style="font-size:11pt"><span style="font-size:11pt"><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-zoom-inout-the-content-in-WebView-in-Univeral-Windows-apps" target="_blank"><img id="133570" src="133570-how%20to%20zoom%20in%20or%20out%20the%20content%20in%20webview%20in%20univeral%20apps%20%20%20channel%209.png" alt="" width="640" height="360" style="border:1px solid black"></a><br>
+<p><span style="font-size:11pt"><span style="font-size:11pt"><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-zoom-inout-the-content-in-WebView-in-Univeral-Windows-apps" target="_blank"><img id="133570" src="https://i1.code.msdn.s-msft.com/how-to-zoom-inout-the-5a42229b/image/file/133570/1/how%20to%20zoom%20in%20or%20out%20the%20content%20in%20webview%20in%20univeral%20apps%20%20%20channel%209.png" alt="" width="640" height="360" style="border:1px solid black"></a><br>
 </span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:0pt; font-size:10.0pt; line-height:27.6pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:13pt"><span style="font-weight:bold; font-size:13pt">Building the Sample</span></span></p>
@@ -190,5 +190,5 @@
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

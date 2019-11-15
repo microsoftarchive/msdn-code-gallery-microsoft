@@ -99,5 +99,5 @@
 <p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/bb250462(VS.85).aspx">MSDN: Understanding and Working in Protected Mode Internet Explorer</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

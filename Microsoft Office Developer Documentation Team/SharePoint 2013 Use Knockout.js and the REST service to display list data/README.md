@@ -113,7 +113,7 @@ Canviz Consulting </a></p>
 <strong>
 <div class="caption">Figure 3. Add the sample App Part</div>
 </strong><br>
-<img id="108520" src="108520-sp15_knockoutapppart.png" alt="" width="516" height="229">
+<img id="108520" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-use-65c59e34/image/file/108520/1/sp15_knockoutapppart.png" alt="" width="516" height="229">
 </li></ol>
 </div>
 <h1>Change log</h1>

@@ -18,7 +18,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><a name="OLE_LINK1"></a><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">How</span><span style="background-color:#fcfcfc; color:#000000; font-size:13.5pt">
@@ -57,7 +57,7 @@
 </span><span style="font-size:10pt">then press F5 Key or select <strong>Debug -&gt; Start Debugging
 </strong>from the menu.</span></span></p>
 <p style="margin:0pt 0pt 0pt 36pt; font-size:10pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt; padding-left:30px">
-<span style="font-size:12pt"><span style="font-size:10pt"><img id="174225" src="174225-0.png" alt="" width="682" height="230"></span></span></p>
+<span style="font-size:12pt"><span style="font-size:10pt"><img id="174225" src="https://i1.code.msdn.s-msft.com/how-to-get-information-of-62e921b8/image/file/174225/1/0.png" alt="" width="682" height="230"></span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:0pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span style="font-size:12pt"><span style="font-size:10pt"><span>&bull;&nbsp;</span><span>Click Yes to allow app to access diagnostic information.</span></span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -207,5 +207,5 @@ Package.appxmainifest</p>
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

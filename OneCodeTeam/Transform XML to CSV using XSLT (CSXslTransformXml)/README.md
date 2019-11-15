@@ -91,5 +91,5 @@ xsl<span class="GramE">:for</span>-each</span> to loop all child nodes. &lt;<spa
 <span style="font-family:新宋体"><a href="http://msdn.microsoft.com/en-us/library/ms256069.aspx">http://msdn.microsoft.com/en-us/library/ms256069.aspx</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

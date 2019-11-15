@@ -113,7 +113,7 @@ Following are the steps to add and register an app for Office 365 accounts:</div
 <p>Click the <strong>Active Directory</strong> icon from the left menu, as shown in the following Figure 1.<br>
 <br>
 Figure 1. Windows Azure active directory&nbsp;</p>
-<img id="133097" width="417" src="133097-platform365_how_to_use_platform_365_dscovery_servce_fig1.png" alt="Microsoft Azure Active directory" height="372">
+<img id="133097" width="417" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133097/1/platform365_how_to_use_platform_365_dscovery_servce_fig1.png" alt="Microsoft Azure Active directory" height="372">
 </li><li>
 <p>Click the desired directory, which in this case is Office 365 tenant.</p>
 <div class="alert">
@@ -135,7 +135,7 @@ Figure 1. Windows Azure active directory&nbsp;</p>
 <p>Select <strong>Applications</strong> tab, as shown below in Figure 2.<br>
 <br>
 Figure 2. Applications tab</p>
-<img id="133099" width="523" src="133099-office365apisgetdocumentsmailscaledarinwin8appfig2.png" alt="Microsoft Azure applications" height="495">
+<img id="133099" width="523" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133099/1/office365apisgetdocumentsmailscaledarinwin8appfig2.png" alt="Microsoft Azure applications" height="495">
 </li><li>Click the <span class="ui">Add</span> button at the bottom of the page to add a new native application.
 </li><li>
 <p>On the <strong>What do you want to do</strong> page, click on the link to <span class="ui">
@@ -145,7 +145,7 @@ Add an application my organization is developing</span> option.</p>
 <span class="ui">Native Client Application</span> from <strong>Type</strong> option, as shown below in Figure 3.<br>
 <br>
 Figure 3. Add application dialog box</p>
-</li><li><img id="133100" width="417" src="133100-platform365_how_to_use_platform_365_dscovery_servce_fig3.png" alt="Microsoft Azure Active directory add application" height="253">
+</li><li><img id="133100" width="417" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133100/1/platform365_how_to_use_platform_365_dscovery_servce_fig3.png" alt="Microsoft Azure Active directory add application" height="253">
 <p>Once finished, click the arrow icon on the bottom-right corner of the page.</p>
 </li><li>
 <p>On the <strong>App information</strong> page, provide a redirect URI, for example, http://contoso.com. Then click the checkbox in the bottom-right hand corner of the page.</p>
@@ -168,7 +168,7 @@ Adding, Updating, and Removing an Application</a>.</p>
 <p>You should now see the app you just added listed in the <strong>Applications</strong> tab page of your Office 365 tenant in the directory as shown in Figure 4.</p>
 <div class="caption">Figure 4. Adding an app to Azure AD</div>
 <br>
-<img id="133101" width="686" src="133101-5f8359c2-5168-43ac-8852-a8f6d05243a8_fig4.gif" alt="Add App To Azure AD" height="349"></div>
+<img id="133101" width="686" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133101/1/5f8359c2-5168-43ac-8852-a8f6d05243a8_fig4.gif" alt="Add App To Azure AD" height="349"></div>
 <a name="sectionSection6"></a>
 <h2 class="heading">To get a client ID for Organizational accounts</h2>
 <p>Following are the steps to get client ID for Office 365 accounts:</p>
@@ -296,7 +296,7 @@ Adding, Updating, and Removing an Application</a>.</p>
 </li><li>
 <div class="caption">Figure 8. Setting permissions to applications in Azure AD</div>
 <br>
-<img id="133103" width="697" src="133103-9f2f3cc9-b147-4976-99ab-2db5cad4f6c1_fig5.gif" alt="Delegate Permissions in Azure AD" height="356">
+<img id="133103" width="697" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133103/1/9f2f3cc9-b147-4976-99ab-2db5cad4f6c1_fig5.gif" alt="Delegate Permissions in Azure AD" height="356">
 <p>Once the applications are selected and permissions are set, click the <span class="ui">
 Save</span> button on the command bar.</p>
 <div class="alert">
@@ -328,11 +328,11 @@ Adding, Updating, and Removing an Application</a>.</p>
 <p>First Sign-in: When a user clicks &quot;First Sign-In&quot;, the email of the user is requested. The app contacts the Discovery service and passes in the email address and the set of scopes that the app wants to access, as shown in the following Figure 9 and 10.</p>
 <div class="caption">Figure 9: Log-in window with Organization ID</div>
 <br>
-<img id="133105" width="369" src="133105-discoveryservicereadme_fig12.png" alt="Log-in window with Organization ID" height="203">
+<img id="133105" width="369" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133105/1/discoveryservicereadme_fig12.png" alt="Log-in window with Organization ID" height="203">
 <p>&nbsp;</p>
 <div class="caption">Figure 10: First Sign-in return values with Organization ID</div>
 <br>
-<img id="133106" width="483" src="133106-discoveryservicereadme_fig13.png" alt="First Sign-in return values with Organization ID" height="243">
+<img id="133106" width="483" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133106/1/discoveryservicereadme_fig13.png" alt="First Sign-in return values with Organization ID" height="243">
 </li></ol>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -362,7 +362,7 @@ Adding, Updating, and Removing an Application</a>.</p>
  in the following Figure 11.</p>
 <div class="caption">Figure 11: Get Authorize return values with Organization ID</div>
 <br>
-<img id="133107" width="791" src="133107-discoveryservicereadme_fig14.png" alt="Get Authorize return values with Organization ID" height="497">
+<img id="133107" width="791" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133107/1/discoveryservicereadme_fig14.png" alt="Get Authorize return values with Organization ID" height="497">
 </li><li>
 <p>Discover: The app contacts the Discovery service, presenting an access token to talk to this service, which includes the user on whose behalf it is acting and a list of resources it wants to access, as shown in the following Figure 12.</p>
 </li></ol>
@@ -384,17 +384,17 @@ Adding, Updating, and Removing an Application</a>.</p>
 <li>
 <div class="caption">Figure 12: Discovery service return values with Organization ID</div>
 <br>
-<img id="133109" width="706" src="133109-discoveryservicereadme_fig15.png" alt="Discovery service return values with Org ID" height="531">
+<img id="133109" width="706" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133109/1/discoveryservicereadme_fig15.png" alt="Discovery service return values with Org ID" height="531">
 </li><li>
 <p>Get token: The app contacts the service endpoints with the access tokens and is authorized for the discovered services, as shown in the following Figure 13.</p>
 <div class="caption">Figure 13: Get Token values with Organization ID</div>
 <br>
-<img id="133110" width="750" src="133110-discoveryservicereadme_fig16.png" alt="GetToken values with Organization ID" height="560">
+<img id="133110" width="750" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133110/1/discoveryservicereadme_fig16.png" alt="GetToken values with Organization ID" height="560">
 </li><li>
 <p>Get Files: The app contacts the resource server using the access token to access the desired resource or files, as shown in the Figure 14.</p>
 <div class="caption">Figure 14: File return with Organization ID</div>
 <br>
-<img id="133111" width="737" src="133111-discoveryservicereadme_fig17.png" alt="File return with Organization ID" height="549">
+<img id="133111" width="737" src="https://i1.code.msdn.s-msft.com/office-365-apis-how-to-use-609102ea/image/file/133111/1/discoveryservicereadme_fig17.png" alt="File return with Organization ID" height="549">
 <p><a name="O15Readme_ChangeLog"></a></p>
 <h2 class="heading">Change log</h2>
 <ul>

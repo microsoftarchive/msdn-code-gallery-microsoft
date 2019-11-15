@@ -53,7 +53,7 @@
 <p>The markup that declares the chrome control and issues the cross-domain call is in the ChromeCrossDomain.aspx file in the ChromeCrossDomainWeb project. Figure 1 shows the chrome control.</p>
 <div class="caption">Figure 1. Chrome control and cross-domain library</div>
 <br>
-<img id="117524" src="117524-chromecrossdomain_result.jpg" alt="Chrome control and cross-domain library" width="689" height="682"></div>
+<img id="117524" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-use-the-a759e9f8/image/file/117524/1/chromecrossdomain_result.jpg" alt="Chrome control and cross-domain library" width="689" height="682"></div>
 <a name="O15Readme_Prereq"></a>
 <h2 class="heading">Prerequisites</h2>
 <div class="section" id="sectionSection1">

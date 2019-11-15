@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode"><img src=":-onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
+<div><a href="http://blogs.msdn.com/b/onecode"><img src="https://aka.ms/onecodesampletopbanner1" alt=""></a><strong>&nbsp;</strong><em></em></div>
 <h1><span style="font-size:16.0pt; line-height:115%">How to Export Contacts in Office 365 Exchange Online</span> (CSO365ExportContacts)</h1>
 <h2>Introduction</h2>
 <p class="MsoNormal">Outlook Web App (OWA) allows us to import multiple contacts in a very simple way. However, it does not allow to export contacts. In this application, we will demonstrate how to export contacts from Office 365 Exchange Online.</p>
@@ -155,5 +155,5 @@ The name of property is different with the column title of the file, so we store
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

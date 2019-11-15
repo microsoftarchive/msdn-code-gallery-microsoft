@@ -32,7 +32,7 @@
 <p>Here's how to get started with the WDC DirectX simple game template:</p>
 <ul>
 <li>Download and extract the ZIP file. Then install by double-clicking on the VSIX.
-</li><li>Verify the installation by launching Microsoft Visual Studio&nbsp;2013. Go to FILE &gt; New &gt; Project and select &quot;DirectX game&quot; from under Templates &gt; Visual C&#43;&#43; in the New Project dialog.<img id="102630" src="102630-new_wdc_game_template_project.png" alt="" width="694" height="494">
+</li><li>Verify the installation by launching Microsoft Visual Studio&nbsp;2013. Go to FILE &gt; New &gt; Project and select &quot;DirectX game&quot; from under Templates &gt; Visual C&#43;&#43; in the New Project dialog.<img id="102630" src="http://i1.code.msdn.s-msft.com/windowsapps/wdc-directx-game-learning-7cf9bdce/image/file/102630/1/new_wdc_game_template_project.png" alt="" width="694" height="494">
 </li><li>Create a project, then build and run the solution. Use BUILD &gt; Build Solution and, after the build completes, DEBUG &gt; Start Debugging. Or press F7 to build, then F5 after the build completes.
 </li><li>Test input one of several ways: run the project on a touch-capable device, plug in an Xbox controller, or use the arrow keys and left mouse button.
 </li></ul>

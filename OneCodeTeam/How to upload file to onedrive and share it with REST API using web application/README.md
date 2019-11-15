@@ -19,7 +19,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://bit.ly/onecodesampletopbanner" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to upload file to
@@ -60,7 +60,7 @@
 </span><span style="font-weight:bold">My applications</span><span> and click </span>
 <span style="font-weight:bold">Add an app</span><span>.</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<img id="172111" src="172111-ttt.png" alt="" width="594" height="428"><span><span>
+<img id="172111" src="https://i1.code.msdn.s-msft.com/how-to-upload-file-to-21125137/image/file/172111/1/ttt.png" alt="" width="594" height="428"><span><span>
 </span><span>&nbsp;</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>Enter you app&rsquo;s name and click
@@ -84,7 +84,7 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span><img src="158949-image.png" alt="" width="394" height="119" align="middle"></span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><span><img id="172112" src="172112-ttt.png" alt="" width="456" height="254"><br>
+<span><span><img id="172112" src="https://i1.code.msdn.s-msft.com/how-to-upload-file-to-21125137/image/file/172112/1/ttt.png" alt="" width="456" height="254"><br>
 </span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>B</span><span>elow the Platform's</span><span>
@@ -119,7 +119,7 @@
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span><span>You can find the Clirntld here:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
-<span><span><img id="172113" src="172113-image.png" alt="" width="534" height="444"><br>
+<span><span><img id="172113" src="https://i1.code.msdn.s-msft.com/how-to-upload-file-to-21125137/image/file/172113/1/image.png" alt="" width="534" height="444"><br>
 </span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; line-height:25.9pt; direction:ltr; unicode-bidi:normal">
 <span><span>Secret is the key for the application whose password has been shown </span>
@@ -141,7 +141,7 @@
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>After</span><span> the site
 </span><span>has been started</span><span>, you will see th</span><span>is</span><span>:</span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
-<span><span><img id="172114" src="172114-image%20(1).png" alt="" width="409" height="413"><br>
+<span><span><img id="172114" src="https://i1.code.msdn.s-msft.com/how-to-upload-file-to-21125137/image/file/172114/1/image%20(1).png" alt="" width="409" height="413"><br>
 </span></span></p>
 <p style="margin-left:36pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal; text-indent:-18pt">
 <span><span style="font-style:normal; text-decoration:none; font-weight:normal">&bull;&nbsp;</span><span>When you have filled all the field</span><span>s</span><span>, click Sign in. Then it will go back to our web application,
@@ -307,5 +307,5 @@ public&nbsp;async&nbsp;Task&lt;string&gt;&nbsp;GetShareLinkAsync(string&nbsp;fil
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

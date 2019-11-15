@@ -41,7 +41,7 @@
 <p>The code that uses the cross-domain library is in the CrossDomainExec.js file of the CrossDomainApp project. The ReadTitle.aspx page provides the user interface. Figure 1 shows the ReadTitle page after you install and run the app.</p>
 <div class="caption">Figure 1. Browser window after running the solution</div>
 <br>
-<img id="101489" src="101489-crossdomaintenantscope_result.png" alt="" width="555" height="485"></div>
+<img id="101489" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-use-the-00c37814/image/file/101489/1/crossdomaintenantscope_result.png" alt="" width="555" height="485"></div>
 <h1 class="heading">Prerequisites</h1>
 <div class="section" id="sectionSection1">
 <p>This sample requires the following:</p>

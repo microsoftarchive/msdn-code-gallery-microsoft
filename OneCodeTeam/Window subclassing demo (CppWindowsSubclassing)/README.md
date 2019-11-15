@@ -309,5 +309,5 @@ void OnUnsubclass(HWND hWnd)
 </span></span></span><span style="font-family:������"><a href="http://www.codeproject.com/KB/DLL/subhook.aspx.">Cross Process Subclassing</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

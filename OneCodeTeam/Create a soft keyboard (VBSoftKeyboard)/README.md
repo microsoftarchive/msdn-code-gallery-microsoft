@@ -258,5 +258,5 @@ GetForegroundWindow Function<br>
 SetForegroundWindow Function<br>
 <a href="http://msdn.microsoft.com/en-us/library/ms633539(VS.85).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/ms633539(VS.85).aspx</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

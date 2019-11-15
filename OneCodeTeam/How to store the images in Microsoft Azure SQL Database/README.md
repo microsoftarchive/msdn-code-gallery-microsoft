@@ -383,5 +383,5 @@ if (copiedImage != null)
 <p><a href="http://www.windowsazure.com/en-us/develop/net/tutorials/cloud-service-with-sql-database/">向 Windows Azure 云服务和 SQL 数据库部署 ASP.NET Web 应用程序</a></p>
 <h2></h2>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

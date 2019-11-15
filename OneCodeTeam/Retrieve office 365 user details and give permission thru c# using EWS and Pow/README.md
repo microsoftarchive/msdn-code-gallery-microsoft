@@ -205,5 +205,5 @@ if (!File.Exists(psPath))
 <p class="MsoNormal" style=""><a href="http://msdn.microsoft.com/en-us/library/exchange/dd633709(v=exchg.80).aspx">http://msdn.microsoft.com/en-us/library/exchange/dd633709(v=exchg.80).aspx</a></p>
 <p class="MsoNormal"></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

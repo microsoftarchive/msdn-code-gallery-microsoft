@@ -18,7 +18,7 @@
 <h2>Introduction</h2>
 <p class="MsoNormal">The sample demonstrates how to convert excel file to xml format using Open XML SDK.</p>
 <h2 class="MsoNormal">Video</h2>
-<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-convert-an-Excel-file-to-XML-format" target="_blank"><img id="136308" src="136308-how%20to%20convert%20an%20excel%20file%20to%20xml%20format%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
+<p><a href="http://channel9.msdn.com/Blogs/OneCode/How-to-convert-an-Excel-file-to-XML-format" target="_blank"><img id="136308" src="https://i1.code.msdn.s-msft.com/how-to-convert-excel-file-7a9bb404/image/file/136308/1/how%20to%20convert%20an%20excel%20file%20to%20xml%20format%20%20%20channel%209.png" alt="" width="640" height="350" style="border:1px solid black"></a></p>
 <h2>Building the Sample</h2>
 <p class="MsoNormal">Before building the sample, please make sure you have installed
 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5124">Open XML SDK 2.0 for Microsoft Office</a>.</p>
@@ -334,5 +334,5 @@ using DocumentFormat.OpenXml.Spreadsheet;
 </span></p>
 <p class="MsoNormal">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

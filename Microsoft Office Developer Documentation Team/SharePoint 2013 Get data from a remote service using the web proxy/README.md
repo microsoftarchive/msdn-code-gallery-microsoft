@@ -17,7 +17,7 @@
 <p><span style="font-size:small">This sample SharePoint-hosted app demonstrates how to use the web proxy in SharePoint 2013 to read data from a remote service. The app displays RSS data from the Microsoft News Center in a SharePoint-hosted page.</span></p>
 <p><span style="font-size:small">The code that uses the web proxy is in the ReadRSS.aspx file of the WebProxyApp project. Figure 1 shows the ReadRSS.aspx page of the app after you install and run the app.</span></p>
 <p><strong><span style="font-size:small">Figure 1. SharePoint-hosted page with data from a remote service</span></strong></p>
-<p><span style="font-size:small"><img id="67633" src="67633-fig1.png" alt="" width="557" height="398"></span></p>
+<p><span style="font-size:small"><img id="67633" src="http://i1.code.msdn.s-msft.com/sharepoint-2013-get-data-705bdcd5/image/file/67633/1/fig1.png" alt="" width="557" height="398"></span></p>
 <h1>Prerequisites</h1>
 <p><span style="font-size:small">This sample requires the following:</span></p>
 <ul>

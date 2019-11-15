@@ -536,5 +536,5 @@ ThreadingModel</span> = s 'Apartment' </span></p>
 <p class="MsoNormal"><span class="MsoHyperlink"><a href="http://www.codeproject.com/KB/shell/shellextguide4.aspx">http://www.codeproject.com/KB/shell/shellextguide4.aspx</a></span><u><span style="color:blue">
 </span></u></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

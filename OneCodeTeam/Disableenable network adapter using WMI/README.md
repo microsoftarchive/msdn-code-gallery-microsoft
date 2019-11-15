@@ -236,5 +236,5 @@ currentMObject.InvokeMethod(&quot;Enable&quot;, null);
 http://msdn.microsoft.com/en-us/library/windows/desktop/aa394216(v=vs.85).aspx</a><span style="">
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

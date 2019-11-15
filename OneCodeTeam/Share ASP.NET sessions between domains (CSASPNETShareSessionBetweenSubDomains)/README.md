@@ -133,5 +133,5 @@ Application Pool Identities<br>
 <a target="_blank" href="http://learn.iis.net/page.aspx/624/application-pool-identities/">http://learn.iis.net/page.aspx/624/application-pool-identities/</a><br>
 </p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo">
 </a></div>

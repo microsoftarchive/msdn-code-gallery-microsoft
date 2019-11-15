@@ -15,7 +15,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">How to return Javascript from ASP.NET Core</span></span></p>
@@ -44,8 +44,8 @@ Build -&gt; Build Solution</strong> from the menu to build the sample.<br>
 <li>Open the sample solution using Visual Studio, then press <strong>F5 Key</strong> or
 <strong>select Debug -&gt; Start Debugging</strong> in the menu. </li><li>When the web application is running, you will see two alert dialogs in your browser.
 </li></ul>
-<p><span style="white-space:pre"><img id="170959" src="170959-1.png" alt="" width="452" height="293"></span></p>
-<p><span style="white-space:pre"><span style="white-space:pre"><img id="170960" src="170960-2.png" alt="" width="452" height="292"></span></span></p>
+<p><span style="white-space:pre"><img id="170959" src="https://i1.code.msdn.s-msft.com/how-to-returning-81ddba9d/image/file/170959/1/1.png" alt="" width="452" height="293"></span></p>
+<p><span style="white-space:pre"><span style="white-space:pre"><img id="170960" src="https://i1.code.msdn.s-msft.com/how-to-returning-81ddba9d/image/file/170960/1/2.png" alt="" width="452" height="292"></span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:10pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:12pt"><span style="font-weight:bold; font-size:12pt">Using the code</span></span></p>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
@@ -156,5 +156,5 @@ The view</p>
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

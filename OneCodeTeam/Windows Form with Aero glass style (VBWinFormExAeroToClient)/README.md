@@ -127,5 +127,5 @@ Create Special Effects With The Desktop Window Manager<br>
 DWM Functions<br>
 <a href="http://msdn.microsoft.com/en-us/library/aa969527(v=VS.85).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/aa969527(v=VS.85).aspx</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

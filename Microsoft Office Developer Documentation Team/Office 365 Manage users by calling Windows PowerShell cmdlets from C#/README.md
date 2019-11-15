@@ -99,7 +99,7 @@ Restricted</strong>), run the command <strong>Set-ExecutionPolicy RemoteSigned</
 <p>After the sample opens, the Visual Studio Solution Explorer should look like the following screen shot:</p>
 <div class="caption">Figure 1. Solution Explorer.</div>
 <br>
-<img id="76590" src="76590-o365.png" alt="Visual Studio 2012 Solution Explorer" width="295" height="273"></div>
+<img id="76590" src="http://i1.code.msdn.s-msft.com/office-365-manage-users-by-cfc96d5e/image/file/76590/1/o365.png" alt="Visual Studio 2012 Solution Explorer" width="295" height="273"></div>
 <h1 class="heading">Run and test the sample</h1>
 <div class="section" id="sectionSection4">
 <div class="subSection">
@@ -111,18 +111,18 @@ Restricted</strong>), run the command <strong>Set-ExecutionPolicy RemoteSigned</
 <strong>Login</strong>.</p>
 <div class="caption">Figure 2. Enter Credentials Dialog Box.</div>
 <br>
-<img id="76591" src="76591-o365psmanageusers-001.png" alt="Enter Credentials dialog" width="323" height="158">
+<img id="76591" src="http://i1.code.msdn.s-msft.com/office-365-manage-users-by-cfc96d5e/image/file/76591/1/o365psmanageusers-001.png" alt="Enter Credentials dialog" width="323" height="158">
 </li><li>
 <p>The main window is displayed in full-screen mode after you enter the credentials, as shown in the following screen shot. (User information is hidden in the image.)</p>
 <div class="caption">Figure 3. Manage Users Dialog Box.</div>
 <br>
-<img id="76592" src="76592-o365psmanageusers-003.png" alt="Sample main window with users obfuscated" width="878" height="463">
+<img id="76592" src="http://i1.code.msdn.s-msft.com/office-365-manage-users-by-cfc96d5e/image/file/76592/1/o365psmanageusers-003.png" alt="Sample main window with users obfuscated" width="878" height="463">
 </li><li>
 <p>To add a new user, click <strong>Add User</strong>. The <span class="ui">Add User</span> dialog box will appear, as shown in the following screen shot. Fill in the form fields and click the
 <strong>Add User</strong> button.</p>
 <div class="caption">Figure 4. Add User Dialog Box.</div>
 <br>
-<img id="76593" src="76593-o365psmanageuser-004.png" alt="Code sample empty Add User dialog" width="407" height="297">
+<img id="76593" src="http://i1.code.msdn.s-msft.com/office-365-manage-users-by-cfc96d5e/image/file/76593/1/o365psmanageuser-004.png" alt="Code sample empty Add User dialog" width="407" height="297">
 </li><li>
 <p>To edit a user's settings. click the <strong>Edit</strong> button on the main window at the right of the row showing the user you want to edit. The
 <span class="ui">Update User</span> dialog box has the same fields as the <span class="ui">

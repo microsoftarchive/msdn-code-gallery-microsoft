@@ -640,5 +640,5 @@ using DocumentFormat.OpenXml.Spreadsheet;
 <p class="MsoNormal"><span style=""><a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.aspx">FileUpload Class</a>
 </span></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="-onecodelogo">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img alt="" src="http://bit.ly/onecodelogo">
 </a></div>

@@ -232,7 +232,7 @@
 <p><a href="http://msdn.microsoft.com/zh-cn/library/system.xml.linq.xelement.parse.aspx">XElement.Parse&nbsp;方法</a></p>
 <p><a href="http://msdn.microsoft.com/zh-cn/library/bb387098.aspx">Linq&nbsp;to Xml</a></p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>
 <p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,

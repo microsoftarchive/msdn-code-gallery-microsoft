@@ -17,7 +17,7 @@
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="-onecodesampletopbanner1" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://aka.ms/onecodesampletopbanner1" alt="">
 </a></div>
 <p style="margin-left:0pt; margin-right:0pt; margin-top:0pt; margin-bottom:.0001pt; font-size:10.0pt; direction:ltr; unicode-bidi:normal">
 <span style="font-weight:bold; font-size:14pt"><span style="font-weight:bold; font-size:14pt">如何使用 ASP.NET Core Web API 授權 Angular 2 應用程式</span></span></p>
@@ -358,5 +358,5 @@ authGet(url):&nbsp;Promise&lt;RequestResult&gt;&nbsp;<span class="js__brace">{</
 <p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework 是個免費的集中式程式碼範例程式庫，能解決開發人員在真實世界遇到的困境，並滿足他們的需要。目標在於提供所有 Microsoft 開發技術的客戶導向程式碼範例，並減輕開發人員解決一般程式設計工作的負擔。我們的團隊會在 MSDN 論壇、社交媒體與多個開發人員社群上，傾聽開發人員的困難之處。我們會根據開發人員常問的程式設計工作，撰寫程式碼範例，並快速發佈範例供開發人員下載。此外，我們也提供免費的程式碼範例要求服務，此舉能積極地為我們的開發人員社群直接從
  Microsoft 獲取程式碼範例。</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

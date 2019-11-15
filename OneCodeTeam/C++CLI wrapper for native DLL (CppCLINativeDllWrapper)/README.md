@@ -97,5 +97,5 @@ CSimpleObject</span>. </span></h2>
 </span></span></span><a href="http://msdn.microsoft.com/en-us/library/ms235281.aspx">How to: Wrap Native Class for Use by C#</a></p>
 <p class="MsoNormal">&nbsp;</p>
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="-onecodelogo" alt="">
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
 </a></div>

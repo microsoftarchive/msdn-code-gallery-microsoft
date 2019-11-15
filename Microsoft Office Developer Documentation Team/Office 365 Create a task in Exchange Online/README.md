@@ -84,13 +84,13 @@ Microsoft Exchange Web Services Managed API 2.0</a>.</div>
 <div>Click the <span class="ui">Create and Display Task</span> button to create a new task for the Office 365 user.</div>
 </li><li>
 <div>After several minutes, the complete list of tasks for the user entered is shown appended to the web page, as shown in the following figure.</div>
-<div><img id="76630" src="76630-o365_aspnet_manage_tasks_entry.jpg" alt="O365_ASPNet_Manage_Tasks_Entry" width="615" height="421"></div>
+<div><img id="76630" src="http://i1.code.msdn.s-msft.com/sharepoint-online-set-up-a-d5207541/image/file/76630/1/o365_aspnet_manage_tasks_entry.jpg" alt="O365_ASPNet_Manage_Tasks_Entry" width="615" height="421"></div>
 <div>&nbsp;</div>
 </li><li>
 <div>The new task can also be verified by logging in to the Office 365 site. Click the
 <span class="ui">Outlook</span> section, and then click the <span class="ui">
 Tasks</span> section to display all tasks, as shown in the following figure.</div>
-<div><img id="110259" src="110259-o365_aspnet_o365_task_list.jpg" alt="O365_ASPNet_O365_Task_List" width="670" height="324"></div>
+<div><img id="110259" src="http://i1.code.msdn.s-msft.com/office/sharepoint-online-set-up-a-d5207541/image/file/110259/1/o365_aspnet_o365_task_list.jpg" alt="O365_ASPNet_O365_Task_List" width="670" height="324"></div>
 </li></ol>
 </div>
 <h1 class="heading">Troubleshooting</h1>
