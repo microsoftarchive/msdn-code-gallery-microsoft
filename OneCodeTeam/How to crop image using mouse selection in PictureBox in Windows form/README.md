@@ -1,6 +1,6 @@
 # How to crop image using mouse selection in PictureBox in Windows form
 ## Requires
-- Visual Studio 2010
+- Visual Studio 2012
 ## License
 - Apache License, Version 2.0
 ## Technologies
@@ -9,191 +9,276 @@
 - Windows
 - Windows Desktop App Development
 ## Topics
-- Image
+- Visual Studio
+- Crop image
+- Mouse Selection
 ## Updated
-- 04/06/2016
+- 03/31/2016
 ## Description
 
-<p>&nbsp;</p>
-<h1>Crop the image from Windows Forms PictureBox control (<span class="SpellE">CSWinformCropImage</span>) by Visual Studio 2010</h1>
-<h2>Requirement</h2>
-<p>Crop an image using Windows Forms PictureBox control</p>
-<h2>Technology</h2>
-<p>Windows Forms Application, VB.NET, Visual Studio 2010.<br>
-The sample demonstrates how to crop the image from a specific Picturebox control into another Picturebox control using mouse selection or specified coordinates.This code shows how to crop the image from Windown Forms PictureBox control (CSWinformCropImage)
- by Visual Studio 2010</p>
-<h2>To Run the sample</h2>
+<div class="WordSection1">
+<h1>Crop the image from Windows Forms PictureBox control (<span class="SpellE">CSWinformCropImage</span>) by Visual Studio 2012</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal">The sample demonstrates how to crop the image from specific
+<span class="SpellE">Picturebox</span> control into destination <span class="SpellE">
+Picturebox</span> control using mouse selection or specified coordinates.</p>
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in; text-indent:-.5in">
+<span><span>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>How to use mouse to select an area (rectangle) in a <span class="SpellE">
+Picturebox</span> control.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+<span><span>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>How to crop the image by the rectangle.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+<strong>&nbsp;</strong></p>
+<h2>Building the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in; text-indent:-.5in">
+<span><span>1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>The main aim of the sample is to have a focused rectangle for selection of area on the source image.<span>&nbsp;
+</span>The code in the KB - <a href="http://support.microsoft.com/kb/314945">http://support.microsoft.com/kb/314945</a> - explains it well how it can be achieved with some modifications.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>We change the mouse cursor style to &ldquo;Cross&rdquo; when on source picture box.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>After a user selects the area on the image to be cropped, we create a Rectangle that is used to draw the new cropped image (Zoomed) on the target picture box.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>4)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>We achieve this drawing using the Graphics object and overload of the
+<span class="SpellE"><span class="GramE">Graphics.DrawImage</span></span><span class="GramE">(</span>) method.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>5)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>The image in the source picture box can also be cropped by specifying coordinates in the form of X1, Y1, X2, Y2 in a text box.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+<span><span>6)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>In both cropping approaches, we modify the <span class="SpellE">
+RectCropArea</span> variable.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+&nbsp;</p>
+<h2>Running the Sample</h2>
+<p class="MsoListParagraphCxSpFirst" style="margin-left:.75in; text-indent:-.5in">
+<span><span>1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Open the &ldquo;CSWinformsCropImageSample.sln&rdquo; <span class="GramE">
+file</span> in Visual Studio 2010.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Run the sample.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Select the area to be cropped on the source image picture box using mouse.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>4)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>When selected, click the crop button.</p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:.75in; text-indent:-.5in">
+<span><span>5)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>The resulting cropped image appears in the target picture box in zoomed view.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+<span><span>6)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span>Alternative, if you can specify the coordinates in a text for the area to be cropped.</p>
+<p class="MsoListParagraphCxSpLast" style="margin-left:.75in; text-indent:-.5in">
+<strong>&nbsp;</strong></p>
+<h2>Using the Code</h2>
+<p class="MsoNormal">The following code snippet handles the mouse down event.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;SrcPicBox_MouseDown(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;MouseEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Make&nbsp;a&nbsp;note&nbsp;that&nbsp;we&nbsp;&quot;have&nbsp;the&nbsp;mouse&quot;.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;bHaveMouse&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Store&nbsp;the&nbsp;&quot;starting&nbsp;point&quot;&nbsp;for&nbsp;this&nbsp;rubber-band&nbsp;rectangle.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.X&nbsp;=&nbsp;e.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.Y&nbsp;=&nbsp;e.Y;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Special&nbsp;value&nbsp;lets&nbsp;us&nbsp;know&nbsp;that&nbsp;no&nbsp;previous</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;rectangle&nbsp;needs&nbsp;to&nbsp;be&nbsp;erased.</span>&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Display&nbsp;coordinates</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;lbCordinates.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Coordinates&nbsp;&nbsp;:&nbsp;&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.X.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.Y.ToString();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptLast.X&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptLast.Y&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(<span class="cs__keyword">new</span>&nbsp;Point(e.X,&nbsp;e.Y),&nbsp;<span class="cs__keyword">new</span>&nbsp;Size());&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">The following code snippet handles the mouse up event.</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;SrcPicBox_MouseUp(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;MouseEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Set&nbsp;internal&nbsp;flag&nbsp;to&nbsp;know&nbsp;we&nbsp;no&nbsp;longer&nbsp;&quot;have&nbsp;the&nbsp;mouse&quot;.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;bHaveMouse&nbsp;=&nbsp;<span class="cs__keyword">false</span>;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;If&nbsp;we&nbsp;have&nbsp;drawn&nbsp;previously,&nbsp;draw&nbsp;again&nbsp;in&nbsp;that&nbsp;spot</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;to&nbsp;remove&nbsp;the&nbsp;lines.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(ptLast.X&nbsp;!=&nbsp;-<span class="cs__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point&nbsp;ptCurrent&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Point(e.X,&nbsp;e.Y);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Display&nbsp;coordinates</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbCordinates.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Coordinates&nbsp;&nbsp;:&nbsp;&nbsp;&quot;</span>&nbsp;&#43;&nbsp;ptOriginal.X.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.Y.ToString()&#43;&nbsp;<span class="cs__string">&quot;&nbsp;And&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.X.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.Y.ToString();&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Set&nbsp;flags&nbsp;to&nbsp;know&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;&quot;previous&quot;&nbsp;line&nbsp;to&nbsp;reverse.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptLast.X&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptLast.Y&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.X&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.Y&nbsp;=&nbsp;-<span class="cs__number">1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;The following code snippet handles the mouse move event.&nbsp;</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;SrcPicBox_MouseMove(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;MouseEventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Point&nbsp;ptCurrent&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Point(e.X,&nbsp;e.Y);&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;If&nbsp;we&nbsp;&quot;have&nbsp;the&nbsp;mouse&quot;,&nbsp;then&nbsp;we&nbsp;draw&nbsp;our&nbsp;lines.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(bHaveMouse)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;If&nbsp;we&nbsp;have&nbsp;drawn&nbsp;previously,&nbsp;draw&nbsp;again&nbsp;in</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;that&nbsp;spot&nbsp;to&nbsp;remove&nbsp;the&nbsp;lines.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(ptLast.X&nbsp;!=&nbsp;-<span class="cs__number">1</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Display&nbsp;Coordinates</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbCordinates.Text&nbsp;=&nbsp;<span class="cs__string">&quot;Coordinates&nbsp;&nbsp;:&nbsp;&nbsp;&quot;</span>&nbsp;&#43;&nbsp;ptOriginal.X.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptOriginal.Y.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;&nbsp;And&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.X.ToString()&nbsp;&#43;&nbsp;<span class="cs__string">&quot;,&nbsp;&quot;</span>&nbsp;&#43;&nbsp;e.Y.ToString();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Update&nbsp;last&nbsp;point.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptLast&nbsp;=&nbsp;ptCurrent;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Draw&nbsp;new&nbsp;lines.</span>&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;e.X&nbsp;-&nbsp;rectCropArea.X;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;normal</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(e.X&nbsp;&gt;&nbsp;ptOriginal.X&nbsp;&amp;&amp;&nbsp;e.Y&nbsp;&gt;&nbsp;ptOriginal.Y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;e.X&nbsp;-&nbsp;ptOriginal.X;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;e.Y&nbsp;-&nbsp;rectCropArea.Height;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;e.Y&nbsp;-&nbsp;ptOriginal.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;<span class="cs__keyword">if</span>&nbsp;(e.X&nbsp;&lt;&nbsp;ptOriginal.X&nbsp;&amp;&amp;&nbsp;e.Y&nbsp;&gt;&nbsp;ptOriginal.Y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;ptOriginal.X&nbsp;-&nbsp;e.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;e.Y&nbsp;-&nbsp;ptOriginal.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;e.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;ptOriginal.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;<span class="cs__keyword">if</span>&nbsp;(e.X&nbsp;&gt;&nbsp;ptOriginal.X&nbsp;&amp;&amp;&nbsp;e.Y&nbsp;&lt;&nbsp;ptOriginal.Y)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;e.X&nbsp;-&nbsp;ptOriginal.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;ptOriginal.Y&nbsp;-&nbsp;e.Y;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;ptOriginal.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;e.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;ptOriginal.X&nbsp;-&nbsp;e.X;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;e.Y&nbsp;-&nbsp;rectCropArea.Height;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;ptOriginal.Y&nbsp;-&nbsp;e.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;e.X;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;e.Y;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SrcPicBox.Refresh();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">The following code snippet handles the <span class="SpellE">
+BtnCrop</span> click event.</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;BtnCrop_Click(<span class="cs__keyword">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;TargetPicBox.Refresh();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Bitmap&nbsp;sourceBitmap&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Bitmap(SrcPicBox.Image,&nbsp;SrcPicBox.Width,&nbsp;SrcPicBox.Height);&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Graphics&nbsp;g&nbsp;=&nbsp;TargetPicBox.CreateGraphics();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(chkCropCordinates.Checked)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbCordinates.Text&nbsp;=&nbsp;<span class="cs__string">&quot;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>[]&nbsp;cordinates&nbsp;=&nbsp;tbCordinates.Text.ToString().Split(<span class="cs__string">','</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">int</span>&nbsp;cord0,&nbsp;cord1,&nbsp;cord2,&nbsp;cord3;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cord0&nbsp;=&nbsp;Convert.ToInt32(cordinates[<span class="cs__number">0</span>]);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cord1&nbsp;=&nbsp;Convert.ToInt32(cordinates[<span class="cs__number">1</span>]);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cord2&nbsp;=&nbsp;Convert.ToInt32(cordinates[<span class="cs__number">2</span>]);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cord3&nbsp;=&nbsp;Convert.ToInt32(cordinates[<span class="cs__number">3</span>]);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbCordinates.Text&nbsp;=&nbsp;ex.Message;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>((cord0&nbsp;&lt;&nbsp;cord2&nbsp;&amp;&amp;&nbsp;cord1&nbsp;&lt;cord3))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(cord0,&nbsp;cord1,&nbsp;cord2&nbsp;-&nbsp;cord0,&nbsp;cord3&nbsp;-&nbsp;cord1);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;<span class="cs__keyword">if</span>&nbsp;(cord2&nbsp;&lt;&nbsp;cord0&nbsp;&amp;&amp;&nbsp;cord3&nbsp;&gt;&nbsp;cord1)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(cord2,&nbsp;cord1,&nbsp;cord0&nbsp;-&nbsp;cord2,&nbsp;cord3&nbsp;-&nbsp;cord1);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;<span class="cs__keyword">if</span>&nbsp;(cord2&nbsp;&gt;&nbsp;cord0&nbsp;&amp;&amp;&nbsp;cord3&nbsp;&lt;&nbsp;cord1)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(cord0,&nbsp;cord3,&nbsp;cord2&nbsp;-&nbsp;cord0,&nbsp;cord1&nbsp;-&nbsp;cord3);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(cord2,&nbsp;cord3,&nbsp;cord0&nbsp;-&nbsp;cord2,&nbsp;cord1&nbsp;-&nbsp;cord3);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;g.DrawImage(sourceBitmap,&nbsp;<span class="cs__keyword">new</span>&nbsp;Rectangle(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">0</span>,&nbsp;TargetPicBox.Width,&nbsp;TargetPicBox.Height),&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea,&nbsp;GraphicsUnit.Pixel);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;sourceBitmap.Dispose();&nbsp;&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
 <div class="endscriptcode"></div>
-<p>Open the project - CropPicture.sln in Visual Studio 2010Run the application (CTRL&#43;F5).Select the area to crop using mouse. View the coordinates selected.Click on &quot;Crop&quot; button.<br>
-Alternately, you can select the check box - &quot;Use Coordinates&quot;Enter the coordinates for X1,Y1,X2 and Y2Click on &quot;Crop&quot; buttonThe area will be highlighted using dashes in the original picture and that area will be cropped as well.</p>
-<h2>Code Used</h2>
-<p>PictureBox1 is the source image box.</p>
-<p>PictureBox2 is the destination image box.</p>
-<p>CheckBox1 is the &quot;Use Coordinates checkbox&quot;</p>
-<h2>For Mouse Up event</h2>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vbs">&nbsp;&nbsp;&nbsp;&nbsp;<span class="vbScript__keyword">Private</span>&nbsp;<span class="vbScript__keyword">Sub</span>&nbsp;PicBox_MouseUp(<span class="vbScript__keyword">ByVal</span>&nbsp;sender&nbsp;<span class="vbScript__keyword">As</span>&nbsp;System.<span class="vbScript__keyword">Object</span>,&nbsp;<span class="vbScript__keyword">ByVal</span>&nbsp;e&nbsp;<span class="vbScript__keyword">As</span>&nbsp;<a class="libraryLink" href="https://msdn.microsoft.com/en-US/library/System.Windows.Forms.MouseEventArgs.aspx" target="_blank" title="Auto generated link to System.Windows.Forms.MouseEventArgs">System.Windows.Forms.MouseEventArgs</a>)&nbsp;<span class="vbScript__keyword">Handles</span>&nbsp;PictureBox1.MouseUp&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouseClicked&nbsp;=&nbsp;<span class="vbScript__keyword">False</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vbScript__keyword">If</span>&nbsp;(endPoint.X&nbsp;&lt;&gt;&nbsp;-<span class="vbScript__number">1</span>)&nbsp;<span class="vbScript__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vbScript__keyword">Dim</span>&nbsp;currentPoint&nbsp;<span class="vbScript__keyword">As</span>&nbsp;<span class="vbScript__keyword">New</span>&nbsp;Point(e.X,&nbsp;e.Y)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y1.Text&nbsp;=&nbsp;e.X.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y2.Text&nbsp;=&nbsp;e.Y.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vbScript__keyword">End</span>&nbsp;<span class="vbScript__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPoint.X&nbsp;=&nbsp;-<span class="vbScript__number">1</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPoint.Y&nbsp;=&nbsp;-<span class="vbScript__number">1</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPoint.X&nbsp;=&nbsp;-<span class="vbScript__number">1</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPoint.Y&nbsp;=&nbsp;-<span class="vbScript__number">1</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="vbScript__keyword">End</span>&nbsp;<span class="vbScript__keyword">Sub</span></pre>
-</div>
-</div>
-</div>
-<h2>For mouse down event</h2>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vb">&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;PicBox_MouseDown(<span class="visualBasic__keyword">ByVal</span>&nbsp;sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;System.<span class="visualBasic__keyword">Object</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<a class="libraryLink" href="https://msdn.microsoft.com/en-US/library/System.Windows.Forms.MouseEventArgs.aspx" target="_blank" title="Auto generated link to System.Windows.Forms.MouseEventArgs">System.Windows.Forms.MouseEventArgs</a>)&nbsp;<span class="visualBasic__keyword">Handles</span>&nbsp;PictureBox1.MouseDown&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouseClicked&nbsp;=&nbsp;<span class="visualBasic__keyword">True</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPoint.X&nbsp;=&nbsp;e.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPoint.Y&nbsp;=&nbsp;e.Y&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Display&nbsp;coordinates</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X1.Text&nbsp;=&nbsp;startPoint.X.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y1.Text&nbsp;=&nbsp;startPoint.Y.ToString()&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPoint.X&nbsp;=&nbsp;-<span class="visualBasic__number">1</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPoint.Y&nbsp;=&nbsp;-<span class="visualBasic__number">1</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(<span class="visualBasic__keyword">New</span>&nbsp;Point(e.X,&nbsp;e.Y),&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Size())&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span></pre>
-</div>
-</div>
-</div>
-<h2>For Mouse move event</h2>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vb"><span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;PicBox_MouseMove(<span class="visualBasic__keyword">ByVal</span>&nbsp;sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;System.<span class="visualBasic__keyword">Object</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<a class="libraryLink" href="https://msdn.microsoft.com/en-US/library/System.Windows.Forms.MouseEventArgs.aspx" target="_blank" title="Auto generated link to System.Windows.Forms.MouseEventArgs">System.Windows.Forms.MouseEventArgs</a>)&nbsp;<span class="visualBasic__keyword">Handles</span>&nbsp;PictureBox1.MouseMove&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;ptCurrent&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Point(e.X,&nbsp;e.Y)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;(mouseClicked)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;(endPoint.X&nbsp;&lt;&gt;&nbsp;-<span class="visualBasic__number">1</span>)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Display&nbsp;Coordinates</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X1.Text&nbsp;=&nbsp;startPoint.X.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y1.Text&nbsp;=&nbsp;startPoint.Y.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X2.Text&nbsp;=&nbsp;e.X.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y2.Text&nbsp;=&nbsp;e.Y.ToString()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPoint&nbsp;=&nbsp;ptCurrent&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;(e.X&nbsp;&gt;&nbsp;startPoint.X&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;e.Y&nbsp;&gt;&nbsp;startPoint.Y)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;e.X&nbsp;-&nbsp;startPoint.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;e.Y&nbsp;-&nbsp;startPoint.Y&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">ElseIf</span>&nbsp;(e.X&nbsp;&lt;&nbsp;startPoint.X&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;e.Y&nbsp;&gt;&nbsp;startPoint.Y)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;startPoint.X&nbsp;-&nbsp;e.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;e.Y&nbsp;-&nbsp;startPoint.Y&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;e.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;startPoint.Y&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">ElseIf</span>&nbsp;(e.X&nbsp;&gt;&nbsp;startPoint.X&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;e.Y&nbsp;&lt;&nbsp;startPoint.Y)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;e.X&nbsp;-&nbsp;startPoint.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;startPoint.Y&nbsp;-&nbsp;e.Y&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;startPoint.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;e.Y&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Else</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Width&nbsp;=&nbsp;startPoint.X&nbsp;-&nbsp;e.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Height&nbsp;=&nbsp;startPoint.Y&nbsp;-&nbsp;e.Y&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.X&nbsp;=&nbsp;e.X&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea.Y&nbsp;=&nbsp;e.Y&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PictureBox1.Refresh()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span></pre>
-</div>
-</div>
-</div>
-<h2>To display the dashes</h2>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vb">&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;PicBox_Paint(<span class="visualBasic__keyword">ByVal</span>&nbsp;sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;System.<span class="visualBasic__keyword">Object</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<a class="libraryLink" href="https://msdn.microsoft.com/en-US/library/System.Windows.Forms.PaintEventArgs.aspx" target="_blank" title="Auto generated link to System.Windows.Forms.PaintEventArgs">System.Windows.Forms.PaintEventArgs</a>)&nbsp;<span class="visualBasic__keyword">Handles</span>&nbsp;PictureBox1.Paint&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;drawLine&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Pen(Color.Red)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawLine.DashStyle&nbsp;=&nbsp;DashStyle.Dash&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(drawLine,&nbsp;rectCropArea)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span></pre>
-</div>
-</div>
-</div>
-<h2>For &quot;CROP&quot; button click event</h2>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vb">&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;btnCrop_Click(<span class="visualBasic__keyword">ByVal</span>&nbsp;sender&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;System.<span class="visualBasic__keyword">Object</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;e&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<a class="libraryLink" href="https://msdn.microsoft.com/en-US/library/System.EventArgs.aspx" target="_blank" title="Auto generated link to System.EventArgs">System.EventArgs</a>)&nbsp;<span class="visualBasic__keyword">Handles</span>&nbsp;Button1.Click&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PictureBox2.Refresh()&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;sourceBitmap&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Bitmap(PictureBox1.Image,&nbsp;PictureBox1.Width,&nbsp;PictureBox1.Height)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;g&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Graphics&nbsp;=&nbsp;PictureBox2.CreateGraphics()&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;<span class="visualBasic__keyword">Not</span>&nbsp;(CheckBox1.Checked)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.DrawImage(sourceBitmap,&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(<span class="visualBasic__number">0</span>,&nbsp;<span class="visualBasic__number">0</span>,&nbsp;PictureBox2.Width,&nbsp;PictureBox2.Height),&nbsp;rectCropArea,&nbsp;GraphicsUnit.Pixel)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceBitmap.Dispose()&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Else</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;x1,&nbsp;x2,&nbsp;y1,&nbsp;y2&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Integer</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Try</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x1&nbsp;=&nbsp;Convert.ToInt32(CX1.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2&nbsp;=&nbsp;Convert.ToInt32(CX2.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y1&nbsp;=&nbsp;Convert.ToInt32(CY1.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y2&nbsp;=&nbsp;Convert.ToInt32(CY2.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Catch</span>&nbsp;ex&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Exception&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="visualBasic__string">&quot;Enter&nbsp;valid&nbsp;Coordinates&nbsp;(only&nbsp;Integer&nbsp;values)&quot;</span>)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Try</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;((x1&nbsp;&lt;&nbsp;x2&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;y1&nbsp;&lt;&nbsp;y2))&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(x1,&nbsp;y1,&nbsp;x2&nbsp;-&nbsp;x1,&nbsp;y2&nbsp;-&nbsp;y1)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">ElseIf</span>&nbsp;(x2&nbsp;&lt;&nbsp;x1&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;y2&nbsp;&gt;&nbsp;y1)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(x2,&nbsp;y1,&nbsp;x1&nbsp;-&nbsp;x2,&nbsp;y2&nbsp;-&nbsp;y1)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">ElseIf</span>&nbsp;(x2&nbsp;&gt;&nbsp;x1&nbsp;<span class="visualBasic__keyword">And</span>&nbsp;y2&nbsp;&lt;&nbsp;y1)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(x1,&nbsp;y2,&nbsp;x2&nbsp;-&nbsp;x1,&nbsp;y1&nbsp;-&nbsp;y2)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Else</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectCropArea&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(x2,&nbsp;y2,&nbsp;x1&nbsp;-&nbsp;x2,&nbsp;y1&nbsp;-&nbsp;y2)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PictureBox1.Refresh()&nbsp;<span class="visualBasic__com">'This&nbsp;repositions&nbsp;the&nbsp;dashed&nbsp;box&nbsp;to&nbsp;new&nbsp;location&nbsp;as&nbsp;per&nbsp;coordinates&nbsp;entered.</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.DrawImage(sourceBitmap,&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;Rectangle(<span class="visualBasic__number">0</span>,&nbsp;<span class="visualBasic__number">0</span>,&nbsp;PictureBox2.Width,&nbsp;PictureBox2.Height),&nbsp;rectCropArea,&nbsp;GraphicsUnit.Pixel)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceBitmap.Dispose()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Sub</span>&nbsp;&nbsp;&nbsp;&nbsp;</pre>
-</div>
-</div>
-</div>
-<div class="endscriptcode">The sample demonstrates how to crop the image from a specific Picturebox control into another Picturebox control using mouse selection or specified coordinates.This code shows how to crop the image from Windown Forms PictureBox
- control (CSWinformCropImage) by Visual Studio 2010</div>
 <div class="endscriptcode">
 <hr>
-<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt=""></a></div>
-<div></div>
+<div><a href="http://go.microsoft.com/?linkid=9759640" style="margin-top:3px"><img src="http://bit.ly/onecodelogo" alt="">
+</a></div>
+</div>
+<p>&nbsp;</p>
 </div>

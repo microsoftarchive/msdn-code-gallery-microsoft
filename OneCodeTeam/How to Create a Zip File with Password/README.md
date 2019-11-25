@@ -2,141 +2,93 @@
 ## Requires
 - Visual Studio 2010
 ## License
-- MIT
+- Apache License, Version 2.0
 ## Technologies
 - .NET
 ## Topics
 - password
 - zip
 ## Updated
-- 04/19/2016
+- 09/21/2016
 ## Description
 
 <hr>
-<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img src="http://bit.ly/onecodesampletopbanner" alt="">
+<div><a href="http://blogs.msdn.com/b/onecode" style="margin-top:3px"><img id="160002" src="https://i1.code.msdn.s-msft.com/how-to-create-a-zip-file-3aa15f9d/image/file/160002/1/8171.onecodesampletopbanner.png" alt="">
 </a></div>
-<p class="MsoNormal" style="text-align:center"><strong>Encrypt and compress(ZIP) a text file.
-</strong></p>
-<p class="MsoNormal" style="text-align:center"><strong>&nbsp;</strong></p>
-<p class="MsoNormal"><strong>Requirement</strong>: Encrypt a text file and then compress it by adding it to a ZIP file.</p>
-<p class="MsoNormal"><strong>Technology:</strong> Windows Forms, Visual Studio 2010, VB.NET</p>
-<p class="MsoNormal">The sample demonstrates how to encrypt the contents of a text file and then compress it.</p>
-<p class="MsoNormal" style="line-height:106%"><strong><span>To Run the sample</span></strong><span>:
-</span></p>
-<ol>
-<li><span style="text-indent:-0.25in">Open project 2010VBEncryptCompress.sln in Visual Studio 2010.</span>
-</li><li><span style="text-indent:-0.25in">Run the application</span> </li><li><span style="text-indent:-0.25in">Click Browse and select a text file.</span>
-</li><li><span style="text-indent:-0.25in">Click compress. The ZIP file will be created in the same location as the original text file.</span>
-</li></ol>
-<p class="MsoNormal"><strong>&nbsp;</strong></p>
-<p class="MsoNormal"><strong>Code Used: </strong></p>
-<p class="MsoListParagraph" style="text-indent:-.25in"><span><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-</span></span>On Compress Button click event</p>
-<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.25in; line-height:normal; text-autospace:none">
+<h1>C# sample that demonstrates how to encrypt and compress files</h1>
+<h2>Introduction</h2>
+<p class="MsoNormal" style="text-align:justify; text-justify:inter-ideograph">The C# sample code developed in .NET Framework 4.0 would demonstrate how to create an encrypted and zipped file using
+<strong>AesCryptoServiceProvider</strong> and <strong>ZipPackage</strong> class. The output encrypted and zipped file will be created in the same location where the source file is located.<br>
+<br>
 </p>
+<h2>Running the Sample</h2>
+<p class="MsoNormal">Step 1: Open the &quot;EncryptCompress.sln&quot; file using VS 2010 using alleviated mode.<br>
+Step 2: Build the code by pressing &quot;Ctrl&#43; Shift&#43; B&quot; key combination. <br>
+Step 3: Execute the code either by clicking the F5 button or Ctrl &#43; F5.</p>
+<p class="MsoNormal"><span><img src="149574-image.png" alt="" width="578" height="79" align="middle">
+</span></p>
+<h2><br>
+Using the Code</h2>
+<h3>Below is the code snippet that encrypts the input text to an array of byte.</h3>
+<p>&nbsp;</p>
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
+<div class="title"><span>C#</span></div>
 <div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
+<span class="hidden">csharp</span>
 
 <div class="preview">
-<pre class="vb"><span class="visualBasic__keyword">Try</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Reading&nbsp;all&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;source&nbsp;file.</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;originalData&nbsp;=&nbsp;File.ReadAllText(tbFilePath.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Creating&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;the&nbsp;AesCryptoServiceProvider&nbsp;class.</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;This&nbsp;generates&nbsp;a&nbsp;new&nbsp;key&nbsp;and&nbsp;initialization&nbsp;vector&nbsp;(IV).</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;myAes&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;AesCryptoServiceProvider&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;AesCryptoServiceProvider&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Encrypt&nbsp;the&nbsp;string&nbsp;to&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes.</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encryptedData&nbsp;=&nbsp;EncryptStringToBytes_Aes(originalData,&nbsp;myAes.Key,&nbsp;myAes.IV)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceFileDirectory&nbsp;=&nbsp;Path.GetDirectoryName(tbFilePath.Text)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceFileName&nbsp;=&nbsp;Path.GetFileNameWithoutExtension(tbFilePath.Text)&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File.WriteAllText((sourceFileDirectory&nbsp;&#43;&nbsp;(<span class="visualBasic__string">&quot;\&quot;&nbsp;&#43;&nbsp;(sourceFileName&nbsp;&#43;&nbsp;&quot;</span>_encrypted.txt&quot;))),&nbsp;Convert.ToBase64String(encryptedData))&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;File.Exists((sourceFileDirectory&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;\Output.zip&quot;</span>))&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File.Delete((sourceFileDirectory&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;\Output.zip&quot;</span>))&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;zipPackage&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Package&nbsp;=&nbsp;Package.Open(((sourceFileDirectory&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;\Output.zip&quot;</span>)),&nbsp;IO.FileMode.OpenOrCreate,&nbsp;IO.FileAccess.ReadWrite)&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encryptedFileName&nbsp;=&nbsp;Path.GetFileName((sourceFileDirectory&nbsp;&#43;&nbsp;(<span class="visualBasic__string">&quot;\&quot;</span>&nbsp;_&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#43;&nbsp;(sourceFileName&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;_encrypted.txt&quot;</span>))))&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;zipPartUri&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Uri&nbsp;=&nbsp;PackUriHelper.CreatePartUri(<span class="visualBasic__keyword">New</span>&nbsp;Uri(encryptedFileName,&nbsp;UriKind.Relative))&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;zipPackagePart&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;PackagePart&nbsp;=&nbsp;zipPackage.CreatePart(zipPartUri,&nbsp;<span class="visualBasic__string">&quot;&quot;</span>,&nbsp;CompressionOption.Normal)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;sourceFileStream&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;FileStream&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;FileStream((sourceFileDirectory&nbsp;&#43;&nbsp;(<span class="visualBasic__string">&quot;\&quot;</span>&nbsp;_&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#43;&nbsp;(sourceFileName&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;_encrypted.txt&quot;</span>))),&nbsp;FileMode.Open,&nbsp;FileAccess.Read)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;destinationFileStream&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Stream&nbsp;=&nbsp;zipPackagePart.GetStream&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'Dim&nbsp;contentType&nbsp;As&nbsp;String&nbsp;=&nbsp;Net.Mime.MediaTypeNames.Application.Zip</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;zipContent&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Byte</span>()&nbsp;=&nbsp;File.ReadAllBytes((sourceFileDirectory&nbsp;&#43;&nbsp;(<span class="visualBasic__string">&quot;\&quot;&nbsp;&#43;&nbsp;(sourceFileName&nbsp;&#43;&nbsp;&quot;</span>_encrypted.txt&quot;))))&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipPackagePart.GetStream().Write(zipContent,&nbsp;<span class="visualBasic__number">0</span>,&nbsp;zipContent.Length)&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zipPackage.Close()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceFileStream.Close()&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show((sourceFileName&nbsp;&#43;&nbsp;<span class="visualBasic__string">&quot;.txt&nbsp;is&nbsp;encrypted&nbsp;and&nbsp;zipped&nbsp;successfully.&quot;</span>),&nbsp;<span class="visualBasic__string">&quot;Encrypt&nbsp;Compress&quot;</span>,&nbsp;MessageBoxButtons.OK,&nbsp;MessageBoxIcon.Information)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File.Delete((sourceFileDirectory&nbsp;&#43;&nbsp;(<span class="visualBasic__string">&quot;\&quot;&nbsp;&#43;&nbsp;(sourceFileName&nbsp;&#43;&nbsp;&quot;</span>_encrypted.txt&quot;))))&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process.Start(sourceFileDirectory)&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Catch</span>&nbsp;exception&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;Exception&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(exception.Message,&nbsp;<span class="visualBasic__string">&quot;Encrypt&nbsp;Compress&quot;</span>,&nbsp;MessageBoxButtons.OK,&nbsp;MessageBoxIcon.<span class="visualBasic__keyword">Error</span>)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Try</span></pre>
+<pre class="csharp">EncryptStringToBytes_Aes()&nbsp;function&nbsp;
+-&nbsp;C#&nbsp;code&nbsp;snippet&nbsp;-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;This&nbsp;function&nbsp;encrypts&nbsp;the&nbsp;input&nbsp;text&nbsp;to&nbsp;an&nbsp;array&nbsp;of&nbsp;bytes.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;plainText&quot;&gt;Human&nbsp;readable&nbsp;input&nbsp;text&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;key&quot;&gt;The&nbsp;symmetric&nbsp;key&nbsp;that&nbsp;is&nbsp;used&nbsp;for&nbsp;encryption&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;IV&quot;&gt;A&nbsp;random&nbsp;initialization&nbsp;vector&lt;/param&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;EncryptStringToBytes_Aes(<span class="cs__keyword">string</span>&nbsp;plainText,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;key,&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;IV)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Checking&nbsp;the&nbsp;arguments.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(plainText.Length&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>&nbsp;<span class="cs__keyword">new</span>&nbsp;ArgumentNullException(<span class="cs__string">&quot;Source&nbsp;file&nbsp;size&nbsp;is&nbsp;zero.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(key&nbsp;==&nbsp;<span class="cs__keyword">null</span>&nbsp;||&nbsp;key.Length&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>&nbsp;<span class="cs__keyword">new</span>&nbsp;ArgumentNullException(<span class="cs__string">&quot;Symmetric&nbsp;key&nbsp;is&nbsp;null.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(IV&nbsp;==&nbsp;<span class="cs__keyword">null</span>&nbsp;||&nbsp;IV.Length&nbsp;==&nbsp;<span class="cs__number">0</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>&nbsp;<span class="cs__keyword">new</span>&nbsp;ArgumentNullException(<span class="cs__string">&quot;Initilization&nbsp;Vector&nbsp;is&nbsp;null.&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">byte</span>[]&nbsp;encrypted;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Creating&nbsp;an&nbsp;AesCryptoServiceProvider&nbsp;object&nbsp;with&nbsp;the&nbsp;specified&nbsp;key&nbsp;and&nbsp;IV.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(AesCryptoServiceProvider&nbsp;aesAlg&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;AesCryptoServiceProvider())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aesAlg.Key&nbsp;=&nbsp;key;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aesAlg.IV&nbsp;=&nbsp;IV;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;a&nbsp;decrytor&nbsp;to&nbsp;perform&nbsp;the&nbsp;stream&nbsp;transform.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICryptoTransform&nbsp;encryptor&nbsp;=&nbsp;aesAlg.CreateEncryptor(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aesAlg.Key,&nbsp;aesAlg.IV);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;the&nbsp;streams&nbsp;used&nbsp;for&nbsp;encryption.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(MemoryStream&nbsp;msEncrypt&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MemoryStream())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(CryptoStream&nbsp;csEncrypt&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;CryptoStream(msEncrypt,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encryptor,&nbsp;CryptoStreamMode.Write))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(StreamWriter&nbsp;swEncrypt&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;StreamWriter(csEncrypt))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Write&nbsp;all&nbsp;data&nbsp;to&nbsp;the&nbsp;stream.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swEncrypt.Write(plainText);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted&nbsp;=&nbsp;msEncrypt.ToArray();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Return&nbsp;the&nbsp;encrypted&nbsp;bytes&nbsp;from&nbsp;the&nbsp;memory&nbsp;stream.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;encrypted;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+-&nbsp;end&nbsp;-&nbsp;</pre>
 </div>
 </div>
 </div>
-<div class="endscriptcode">&nbsp;</div>
-<p></p>
-<p class="MsoNormal" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:.25in; line-height:normal; text-autospace:none">
-Encrypt method.</p>
-<p class="MsoListParagraph"></p>
-<div class="scriptcode">
-<div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>Visual Basic</span></div>
-<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
-<span class="hidden">vb</span>
-
-<div class="preview">
-<pre class="vb"><span class="visualBasic__keyword">Private</span>&nbsp;<span class="visualBasic__keyword">Shared</span>&nbsp;<span class="visualBasic__keyword">Function</span>&nbsp;EncryptStringToBytes_Aes(<span class="visualBasic__keyword">ByVal</span>&nbsp;plainText&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">String</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;key()&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Byte</span>,&nbsp;<span class="visualBasic__keyword">ByVal</span>&nbsp;IV()&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Byte</span>)&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Byte</span>()&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Checking&nbsp;the&nbsp;arguments.</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;(plainText.Length&nbsp;=&nbsp;<span class="visualBasic__number">0</span>)&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Throw</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;ArgumentNullException(<span class="visualBasic__string">&quot;Source&nbsp;file&nbsp;size&nbsp;is&nbsp;ZERO.&quot;</span>)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;((key&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>)&nbsp;_&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">OrElse</span>&nbsp;(key.Length&nbsp;=&nbsp;<span class="visualBasic__number">0</span>))&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Throw</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;ArgumentNullException(<span class="visualBasic__string">&quot;Symmetric&nbsp;key&nbsp;is&nbsp;null.&quot;</span>)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;((IV&nbsp;<span class="visualBasic__keyword">Is</span>&nbsp;<span class="visualBasic__keyword">Nothing</span>)&nbsp;_&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">OrElse</span>&nbsp;(IV.Length&nbsp;=&nbsp;<span class="visualBasic__number">0</span>))&nbsp;<span class="visualBasic__keyword">Then</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Throw</span>&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;ArgumentNullException(<span class="visualBasic__string">&quot;Initilization&nbsp;Vector&nbsp;is&nbsp;null.&quot;</span>)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">If</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;encrypted()&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;<span class="visualBasic__keyword">Byte</span>&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;aesAlg&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;AesCryptoServiceProvider&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;AesCryptoServiceProvider&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aesAlg.Key&nbsp;=&nbsp;key&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aesAlg.IV&nbsp;=&nbsp;IV&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;encryptor&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;ICryptoTransform&nbsp;=&nbsp;aesAlg.CreateEncryptor(aesAlg.Key,&nbsp;aesAlg.IV)&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;msEncrypt&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;MemoryStream&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;MemoryStream&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;csEncrypt&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;CryptoStream&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;CryptoStream(msEncrypt,&nbsp;encryptor,&nbsp;CryptoStreamMode.Write)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Dim</span>&nbsp;swEncrypt&nbsp;<span class="visualBasic__keyword">As</span>&nbsp;StreamWriter&nbsp;=&nbsp;<span class="visualBasic__keyword">New</span>&nbsp;StreamWriter(csEncrypt)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__com">'&nbsp;Write&nbsp;all&nbsp;data&nbsp;to&nbsp;the&nbsp;stream.</span>&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swEncrypt.Write(plainText)&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted&nbsp;=&nbsp;msEncrypt.ToArray&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">Return</span>&nbsp;encrypted&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="visualBasic__keyword">End</span>&nbsp;<span class="visualBasic__keyword">Function</span></pre>
-</div>
-</div>
-</div>
-<div class="endscriptcode">&nbsp;</div>
-<p></p>
-<p class="MsoListParagraph">&nbsp;</p>
+<p>&nbsp;</p>
 <p style="line-height:0.6pt; color:white">Microsoft All-In-One Code Framework is a free, centralized code sample library driven by developers' real-world pains and needs. The goal is to provide customer-driven code samples for all Microsoft development technologies,
  and reduce developers' efforts in solving typical programming tasks. Our team listens to developers&rsquo; pains in the MSDN forums, social media and various DEV communities. We write code samples based on developers&rsquo; frequently asked programming tasks,
  and allow developers to download them with a short sample publishing cycle. Additionally, we offer a free code sample request service. It is a proactive way for our developer community to obtain code samples directly from Microsoft.</p>

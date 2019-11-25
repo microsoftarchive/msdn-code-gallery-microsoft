@@ -8,18 +8,15 @@
 * shows how to display a list of current online users' information without 
 * using membership provider.
 
-* This class is used to add JavaScript code to the page.The JavaScript function
+* This class used to add JavaScript code to the page.The JavaScript function
 * can check the user's active time and post a request to the CheckUserOnlinePage.aspx 
-* page.The project will automatically delete the off line users'record from user's 
-* table by checking the last active time.
-*
+* page.The project will auto delete the off line users'record from user's table by 
+* checking the last active time.
+
 * This source is subject to the Microsoft Public License.
-* See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL.
+* See http://www.microsoft.com/opensource/licenses.mspx#Ms-PL.
 * All other rights reserved.
 *
-* THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-* EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-* WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 \***************************************************************************/
 
 using System;

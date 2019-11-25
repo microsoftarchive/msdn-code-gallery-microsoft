@@ -22,17 +22,17 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Shiva N Shankar (DS)</o:Author>
   <o:Template>Normal</o:Template>
-  <o:LastAuthor>Bo Song (Wicresoft)</o:LastAuthor>
-  <o:Revision>6</o:Revision>
-  <o:TotalTime>43</o:TotalTime>
+  <o:LastAuthor>Mincy Li (Wicresoft)</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>42</o:TotalTime>
   <o:Created>2014-03-11T08:30:00Z</o:Created>
-  <o:LastSaved>2014-04-24T10:19:00Z</o:LastSaved>
+  <o:LastSaved>2014-04-08T09:18:00Z</o:LastSaved>
   <o:Pages>11</o:Pages>
   <o:Words>2774</o:Words>
-  <o:Characters>15815</o:Characters>
+  <o:Characters>15816</o:Characters>
   <o:Lines>131</o:Lines>
   <o:Paragraphs>37</o:Paragraphs>
-  <o:CharactersWithSpaces>18552</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>18553</o:CharactersWithSpaces>
   <o:Version>15.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -44,6 +44,7 @@ w\:* {behavior:url(#default#VML);}
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Print</w:View>
+  <w:Zoom>120</w:Zoom>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
@@ -659,11 +660,10 @@ w\:* {behavior:url(#default#VML);}
  @font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:1;
+	mso-font-charset:0;
 	mso-generic-font-family:roman;
-	mso-font-format:other;
 	mso-font-pitch:variable;
-	mso-font-signature:0 0 0 0 0 0;}
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;
@@ -905,6 +905,12 @@ span.HTMLPreformattedChar
 	mso-hansi-font-family:"Courier New";
 	mso-bidi-font-family:"Courier New";
 	mso-fareast-language:EN-IN;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -971,9 +977,9 @@ div.WordSection1
 
 <p class=MsoNormal><span lang=EN-IN style='mso-ansi-language:EN-IN'>An XPS
 document is a paginated set of related pages. The pages have a fixed layout,
-are organized into one or more fixed documents, and stored according to the
-Open Packaging Conventions. This document and the attached code sample
-demonstrate how we can edit the text in XPS document programmatically.<o:p></o:p></span></p>
+are organized into one or more fixed documents, and stored according to the Open
+Packaging Conventions. This document and the attached code sample demonstrate
+how we can edit the text in XPS document programmatically.<o:p></o:p></span></p>
 
 <h2>Running the Sample</h2>
 
@@ -988,10 +994,12 @@ Paper Specification” on “Save” click.<span style='mso-spacerun:yes'> 
 </span>Enter any other text in the text box to replace “XPS” with a desired
 text.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:13.0pt;line-height:115%;mso-fareast-language:
-ZH-CN;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
- coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
- filled="f" stroked="f">
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;mso-outline-level:2'><span
+style='font-size:13.0pt;line-height:115%;mso-fareast-language:ZH-CN;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
  <v:stroke joinstyle="miter"/>
  <v:formulas>
   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
@@ -1017,15 +1025,22 @@ src="ReadMe_files/image002.jpg" v:shapes="Picture_x0020_2"><![endif]></span><spa
 style='font-size:13.0pt;line-height:115%;mso-fareast-font-family:"Times New Roman";
 mso-fareast-theme-font:minor-fareast;mso-fareast-language:EN-IN'><o:p></o:p></span></p>
 
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;mso-outline-level:2'><span
+style='font-size:13.0pt;line-height:115%;mso-fareast-font-family:"Times New Roman";
+mso-fareast-theme-font:minor-fareast;mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></span></p>
+
 <p class=MsoNormal><span style='mso-fareast-language:EN-IN'>Once we click on
 “Save” button, we will get the modified XPS below. Also a copy is saved to the
 location where the original XPS is available. In the screen shot, the text from
 original file and modified file is highlighted.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:13.0pt;line-height:115%;mso-fareast-language:
-ZH-CN;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3"
- o:spid="_x0000_i1025" type="#_x0000_t75" style='width:451.5pt;height:402pt;
- visibility:visible;mso-wrap-style:square'>
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt;mso-outline-level:2'><span
+style='font-size:13.0pt;line-height:115%;mso-fareast-language:ZH-CN;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_3" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:451.5pt;height:402pt;visibility:visible;
+ mso-wrap-style:square'>
  <v:imagedata src="ReadMe_files/image003.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img width=602 height=536
 src="ReadMe_files/image004.jpg" v:shapes="Picture_x0020_3"><![endif]></span><span
@@ -1060,7 +1075,7 @@ style='color:green'>// Delete the old file generated by our code.</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:blue'>if</span><span style='color:black'> (File.Exists(destinationXpsPath))<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>                </span>File.Delete(destinationXpsPath);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>File.Delete(destinationXpsPath);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:green'>// Creating the output XPS file.</span><span
@@ -1079,18 +1094,19 @@ style='color:black'><span style='mso-spacerun:yes'>                </span>List&l
 style='color:blue'>string</span><span style='color:black'>&gt; sourceFiles = </span><span
 style='color:blue'>new</span><span style='color:black'> List&lt;</span><span
 style='color:blue'>string</span><span style='color:black'>&gt;();<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>sourceFiles.Add(sourceXPS);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'>        </span>sourceFiles.Add(sourceXPS);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
-style='color:green'>// Looping each source file.</span><span style='color:black'><o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
+style='color:green'>// <span class=GramE>Looping</span> each source file.</span><span
+style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
+style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:blue'>foreach</span><span style='color:black'> (</span><span
 style='color:blue'>string</span><span style='color:black'> sourceFile </span><span
 style='color:blue'>in</span><span style='color:black'> sourceFiles)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>XpsDocument docToRead = </span><span
 style='color:blue'>new</span><span style='color:black'> XpsDocument(sourceFile, FileAccess.ReadWrite);<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>IXpsFixedDocumentSequenceReader docSequenceToRead = <o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'> <span style='mso-spacerun:yes'>                   </span>IXpsFixedDocumentSequenceReader docSequenceToRead = <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>docToRead.FixedDocumentSequenceReader;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span></span><span
@@ -1104,7 +1120,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>AddStructure(fixedDocumentReader, fixedDocumentWriter);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>                    </span></span><span
 style='color:blue'>foreach</span><span style='color:black'> (IXpsFixedPageReader fixedPageReader </span><span
 style='color:blue'>in</span><span style='color:black'> <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>fixedDocumentReader.FixedPages)<o:p></o:p></span></pre><pre
@@ -1118,7 +1134,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>AddContent(fixedPageReader, pageWriter);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span><span style='mso-spacerun:yes'>                </span></span><span
 style='color:green'>// Commmit all changes.</span><span style='color:black'><o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>pageWriter.Commit();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
@@ -1137,7 +1153,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:green'>// Show the modified content in a DocumentViewer.</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>                </span>dvModifiedXPS.Document = document.GetFixedDocumentSequence();<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>ModifiedGrid.Visibility = System.Windows.Visibility.Visible;<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>            </span>ModifiedGrid.Visibility = System.Windows.Visibility.Visible;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:green'>// Close newly created XPS documents.</span><span
@@ -1146,7 +1162,7 @@ style='color:black'><span style='mso-spacerun:yes'>                </span>docume
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>blnResult = </span><span
 style='color:blue'>true</span><span style='color:black'>;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>   </span><span style='mso-spacerun:yes'>         </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>catch</span><span style='color:black'> (Exception ex)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>MessageBox.Show(ex.Message);<o:p></o:p></span></pre><pre
@@ -1198,7 +1214,7 @@ style='color:black'><span style='mso-spacerun:yes'>            </span>XmlReader 
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>XmlDocument xmlDoc = </span><span
 style='color:blue'>new</span><span style='color:black'> XmlDocument();<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>          </span><span style='mso-spacerun:yes'>  </span>xmlDoc.Load(fixedPageReader.XmlReader);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>xmlDoc.Load(fixedPageReader.XmlReader);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:green'>//Find and replace text to edit the XPS.</span><span
@@ -1221,7 +1237,7 @@ style='color:green'>/// &lt;/summary&gt;</span><span style='color:black'><o:p></
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
 style='color:green'>/// &lt;param name=&quot;fixedPageReader&quot;&gt;&lt;/param&gt;</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
-style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
+style='color:black'><span style='mso-spacerun:yes'>   </span><span style='mso-spacerun:yes'>     </span></span><span
 style='color:green'>/// &lt;param name=&quot;pageWriter&quot;&gt;&lt;/param&gt;</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
@@ -1231,7 +1247,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>IXpsFixedPageWriter pageWriter)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
-style='color:green'>// Adding fonts from source to resources.</span><span
+style='color:green'>// <span class=GramE>Adding</span> fonts from source to resources.</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>foreach</span><span style='color:black'> (XpsFont font </span><span
@@ -1266,7 +1282,7 @@ style='color:blue'>new</span><span style='color:black'> XpsDetails();<o:p></o:p>
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsFont.resource = newFont;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsFont.sourceURI = font.Uri;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsFont.destURI = newFont.Uri;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'>                    </span>xpsFonts.Add(xpsFont);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsFonts.Add(xpsFont);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
@@ -1276,7 +1292,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
 style='color:green'>/// &lt;summary&gt;</span><span style='color:black'><o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>      </span><span style='mso-spacerun:yes'>  </span></span><span
 style='color:green'>/// Add images from source to new XPS.</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
@@ -1296,7 +1312,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:green'>//Adding images to resources.</span><span style='color:
 black'><o:p></o:p></span></pre><pre style='background:white'><span
-style='color:black'><span style='mso-spacerun:yes'>          </span><span style='mso-spacerun:yes'>  </span></span><span
+style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>foreach</span><span style='color:black'> (XpsImage image </span><span
 style='color:blue'>in</span><span style='color:black'> fixedPageReader.Images)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>{<o:p></o:p></span></pre><pre
@@ -1310,12 +1326,12 @@ style='color:black'><span style='mso-spacerun:yes'>                </span></span
 style='color:blue'>string</span><span style='color:black'> sourceExt = image.Uri.ToString().ToLower();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>             </span><span style='mso-spacerun:yes'>   </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:blue'>if</span><span style='color:black'> (sourceExt.Contains(ImageType.PNG))<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>newImage = pageWriter.AddImage(XpsImageType.PngImageType);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>           </span></span><span
 style='color:blue'>else</span><span style='color:black'> </span><span
 style='color:blue'>if</span><span style='color:black'> (sourceExt.Contains(ImageType.JPG) || <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>sourceExt.Contains(ImageType.JPEG))<o:p></o:p></span></pre><pre
@@ -1326,7 +1342,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:blue'>else</span><span style='color:black'> </span><span
 style='color:blue'>if</span><span style='color:black'> (sourceExt.Contains(ImageType.TIF) || <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>sourceExt.Contains(ImageType.TIFF))<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'> <span style='mso-spacerun:yes'>               </span>{<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>newImage = pageWriter.AddImage(XpsImageType.TiffImageType);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
@@ -1342,7 +1358,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:blue'>null</span><span style='color:black'>;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>          </span><span style='mso-spacerun:yes'>      </span></span><span
 style='color:blue'>if</span><span style='color:black'> (</span><span
 style='color:blue'>null</span><span style='color:black'> != newImage)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
@@ -1352,14 +1368,14 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span></span><span
 style='color:blue'>using</span><span style='color:black'> (Stream srcImageStream = image.GetStream())<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>{<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>CopyStream(srcImageStream, dstImageStream);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>               </span><span style='mso-spacerun:yes'>             </span>CopyStream(srcImageStream, dstImageStream);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>newImage.Commit();<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>             </span><span style='mso-spacerun:yes'>               </span>XpsDetails xpsImage = </span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>XpsDetails xpsImage = </span><span
 style='color:blue'>new</span><span style='color:black'> XpsDetails();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsImage.resource = newImage;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsImage.sourceURI = image.Uri;<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                          </span><span style='mso-spacerun:yes'>  </span>xpsImage.sourceURI = image.Uri;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsImage.destURI = newImage.Uri;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                      </span><span style='mso-spacerun:yes'>      </span>xpsImages.Add(xpsImage);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>xpsImages.Add(xpsImage);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
@@ -1400,7 +1416,7 @@ style='color:blue'>using</span><span style='color:black'> (Stream destStream = m
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span></span><span
 style='color:blue'>using</span><span style='color:black'> (Stream sourceStream = Structure.GetStream())<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>{<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span><span style='mso-spacerun:yes'>        </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>CopyStream(sourceStream, destStream);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>myStructure.Commit();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>}<o:p></o:p></span></pre><pre
@@ -1430,7 +1446,7 @@ style='color:blue'>void</span><span style='color:black'> WriteToStream(<o:p></o:
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>Stream destStream, <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>Stream sourceStream)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>{<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>      </span><span style='mso-spacerun:yes'>      </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>const</span><span style='color:black'> </span><span
 style='color:blue'>int</span><span style='color:black'> bufSize = 0x1000;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
@@ -1440,11 +1456,11 @@ style='color:blue'>byte</span><span style='color:black'>[bufSize];<o:p></o:p></s
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>int</span><span style='color:black'> bytesRead = 0;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>   </span><span style='mso-spacerun:yes'>         </span></span><span
 style='color:blue'>while</span><span style='color:black'> ((bytesRead = sourceStream.Read(buf, 0, bufSize)) &gt; 0)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>destStream.Write(buf, 0, bytesRead);<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>      </span><span style='mso-spacerun:yes'>      </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
@@ -1470,14 +1486,14 @@ style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
 style='color:blue'>private</span><span style='color:black'> </span><span
 style='color:blue'>void</span><span style='color:black'> WriteObfuscatedStream(<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>  </span><span style='mso-spacerun:yes'>          </span></span><span
 style='color:blue'>string</span><span style='color:black'> resourceName, <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>Stream destStream, <o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>Stream sourceStream)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>int</span><span style='color:black'> bufSize = 0x1000;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>  </span><span style='mso-spacerun:yes'>          </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>int</span><span style='color:black'> guidByteSize = 16;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>int</span><span style='color:black'> obfuscatedByte = 32;<o:p></o:p></span></pre><pre
@@ -1504,7 +1520,7 @@ style='color:blue'>string</span><span style='color:black'> guidString = guid.ToS
 style='color:#A31515'>&quot;N&quot;</span><span style='color:black'>);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
-style='color:green'>// Parsing the guid string and converting into byte value</span><span
+style='color:green'>// <span class=GramE>Parsing</span> the <span class=SpellE>guid</span> string and converting into byte value</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>byte</span><span style='color:black'>[] guidBytes = </span><span
@@ -1538,12 +1554,12 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:blue'>int</span><span style='color:black'> guidBytesPos = guidBytes.Length - (i % guidBytes.Length) - 1;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>buf[i] ^= guidBytes[guidBytesPos];<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>         </span><span style='mso-spacerun:yes'>   </span>destStream.Write(buf, 0, obfuscatedByte);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>destStream.Write(buf, 0, obfuscatedByte);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:green'>// copy remaining stream from source without obfuscation</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
-style='color:black'><span style='mso-spacerun:yes'>            </span>buf = </span><span
+style='color:black'><span style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>       </span>buf = </span><span
 style='color:blue'>new</span><span style='color:black'> </span><span
 style='color:blue'>byte</span><span style='color:black'>[bufSize];<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
@@ -1584,7 +1600,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:blue'>if</span><span style='color:black'> (node.HasChildNodes)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>EditXPSContent(node.ChildNodes);<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span></span><span
 style='color:blue'>if</span><span style='color:black'> (node.NodeType == XmlNodeType.Element)<o:p></o:p></span></pre><pre
@@ -1593,7 +1609,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='color:blue'>if</span><span style='color:black'> (node.Name == </span><span
 style='color:#A31515'>&quot;Glyphs&quot;</span><span style='color:black'>)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>{<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>                    </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span></span><span
 style='color:blue'>foreach</span><span style='color:black'> (XmlAttribute attribute </span><span
 style='color:blue'>in</span><span style='color:black'> node.Attributes)<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>{<o:p></o:p></span></pre><pre
@@ -1607,20 +1623,20 @@ black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>                                </span></span><span
 style='color:blue'>if</span><span style='color:black'> (attribute.Value.Contains(</span><span
 style='color:#A31515'>&quot;XPS&quot;</span><span style='color:black'>))<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                </span>{<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                          </span><span style='mso-spacerun:yes'>      </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                    </span>node.Attributes[</span><span
 style='color:#A31515'>&quot;UnicodeString&quot;</span><span style='color:black'>].Value =<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                    </span>node.Attributes[</span><span
 style='color:#A31515'>&quot;UnicodeString&quot;</span><span style='color:black'>].Value.Replace(<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                    </span></span><span
 style='color:#A31515'>&quot;XPS&quot;</span><span style='color:black'>, newStringToReplace);<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                        </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                       </span><span style='mso-spacerun:yes'>                 </span></span><span
 style='color:green'>//= newStringToReplace;</span><span style='color:black'><o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                    </span>node.Attributes[</span><span
 style='color:#A31515'>&quot;Indices&quot;</span><span style='color:black'>].Value = </span><span
 style='color:#A31515'>&quot;&quot;</span><span style='color:black'>;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                </span>}<span style='mso-spacerun:yes'>          </span><span style='mso-spacerun:yes'>                     </span><o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                </span>}<span style='mso-spacerun:yes'>                               </span><o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span></span><span
@@ -1629,10 +1645,10 @@ style='color:#A31515'>&quot;FontUri&quot;</span><span style='color:black'>)<o:p>
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                </span>node.Attributes[</span><span
 style='color:#A31515'>&quot;FontUri&quot;</span><span style='color:black'>].Value = GetNewFontUri(<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                              </span><span style='mso-spacerun:yes'>      </span>attribute.Value);<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                                    </span>attribute.Value);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span></span><span
 style='color:blue'>else</span><span style='color:black'> </span><span
 style='color:blue'>if</span><span style='color:black'> (node.Name == </span><span
@@ -1652,7 +1668,7 @@ style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>                                </span>attribute.Value = GetNewImageUri(attribute.Value);<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                            </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                        </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>               </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
@@ -1671,7 +1687,7 @@ style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
 style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
 style='color:green'>/// URI of the font from where this font stream was generated.</span><span
 style='color:black'><o:p></o:p></span></pre><pre style='background:white'><span
-style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
+style='color:black'> <span style='mso-spacerun:yes'>       </span></span><span
 style='color:green'>/// &lt;/param&gt;</span><span style='color:black'><o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span></span><span
 style='color:green'>/// &lt;returns&gt;FontURI&lt;/returns&gt;</span><span
@@ -1694,7 +1710,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>result = data.destURI.ToString();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'> <span style='mso-spacerun:yes'>           </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>return</span><span style='color:black'> result;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><o:p>&nbsp;</o:p></span></pre><pre
@@ -1733,7 +1749,7 @@ style='color:blue'>if</span><span style='color:black'> (data.sourceURI.ToString(
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>{<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>result = data.destURI.ToString();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>return</span><span style='color:black'> result;<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></pre><pre
@@ -1765,7 +1781,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span>uri = dat.destURI.ToString();<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                    </span></span><span
 style='color:blue'>break</span><span style='color:black'>;<o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>                </span>}<o:p></o:p></span></pre><pre
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>               </span><span style='mso-spacerun:yes'> </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span>}<o:p></o:p></span></pre><pre
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>return</span><span style='color:black'> uri;<o:p></o:p></span></pre><pre
@@ -1818,7 +1834,7 @@ style='background:white'><span style='color:black'><span style='mso-spacerun:yes
 style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
 style='color:blue'>const</span><span style='color:black'> </span><span
 style='color:blue'>int</span><span style='color:black'> size = 64 * 1024; <o:p></o:p></span></pre><pre
-style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>            </span></span><span
+style='background:white'><span style='color:black'><span style='mso-spacerun:yes'>     </span><span style='mso-spacerun:yes'>       </span></span><span
 style='color:blue'>byte</span><span style='color:black'>[] localBuffer = </span><span
 style='color:blue'>new</span><span style='color:black'> </span><span
 style='color:blue'>byte</span><span style='color:black'>[size];<o:p></o:p></span></pre><pre

@@ -1,6 +1,8 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EditXPS", "VBWPFEditXPS\EditXPS.vbproj", "{6C376B20-361B-4233-B5A4-2C66F436E814}"
 EndProject
 Global

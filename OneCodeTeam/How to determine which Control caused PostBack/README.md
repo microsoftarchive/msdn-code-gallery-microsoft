@@ -11,32 +11,33 @@
 - 07/05/2013
 ## Description
 
-<h1>Determine which control causes the PostBack event on an ASP.NET page (CSASPNETControlCausePostback)</h1>
+<h1>Determine which control causes PostBack event on an ASP.NET page (VBASPNETControlCausePostback)</h1>
 <h2>Introduction</h2>
 <p class="MsoNormal">The sample code demonstrates how to create a web application that can determine which control causes the postback event on an Asp.net page. Sometimes, we need to perform some specific actions based on the specific control which causes
- the postback. For example, we can get controls' id property that and do some operations, such as set TextBox's text with ViewState variable. In this sample, we can also transfer some data through postbacks.</p>
-<h2>Running the Sample</h2>
+ the postback. For example, we can get controls' id property that and do some operations, such as set TextBox's text with ViewState variable. In this sample, we can also transfer some data through postbacks.
+</p>
+<h2>Running the Sample </h2>
 <p class="MsoNormal">Please follow these demonstration steps below. </p>
-<p class="MsoNormal">Step 1:&nbsp;Open the CSASPNETControlCausePostback.sln. Expand the
-<a name="OLE_LINK2"></a><a name="OLE_LINK1"><span style="">CSASPNETControlCausePostback
+<p class="MsoNormal">Step 1:&nbsp;Open the VBASPNETControlCausePostback.sln. Expand the
+<a name="OLE_LINK1"></a><a name="OLE_LINK2"><span style="">VBASPNETControlCausePostback
 </span></a>web application and press Ctrl &#43; F5 to show the Default.aspx. </p>
 <p class="MsoNormal">Step 2: We will see only some html controls on the page, two buttons, a checkbox and a Dropdownlist. In this page, we have added JavaScript functions that can cause postback event, so just click them (or select an item in the Dropdownlist
  control) for a try.</p>
-<p class="MsoNormal"><span style=""><img src="91827-image.png" alt="" width="533" height="484" align="middle">
+<p class="MsoNormal"><span style=""><img src="91856-image.png" alt="" width="533" height="484" align="middle">
 </span></p>
 <p class="MsoNormal">Step 3:<span style="">&nbsp; </span>When you click the Button A, you can find the page is refreshed and some information has been added at the bottom of the page.</p>
-<p class="MsoNormal"><span style=""><img src="91828-image.png" alt="" width="533" height="484" align="middle">
+<p class="MsoNormal"><span style=""><img src="91857-image.png" alt="" width="533" height="484" align="middle">
 </span></p>
 <p class="MsoNormal">Step 4: You can click other controls, the application can find which control causes the postback event and then display transfer data, for example, if you click CheckBox C:<span style="">
 </span></p>
-<p class="MsoNormal"><span style=""><img src="91829-image.png" alt="" width="533" height="484" align="middle">
+<p class="MsoNormal"><span style=""><img src="91858-image.png" alt="" width="533" height="484" align="middle">
 </span></p>
-<p class="MsoNormal">Step 5: View the Default2.aspx page with above steps, too. The Default2 web page shows how to make this function working with Server controls (Asp.net controls).</p>
+<p class="MsoNormal">Step 5: View the Default2.aspx page with above steps, too. The Default2 web page shows how to make this functions working with Server controls (Asp.net controls).</p>
 <p class="MsoNormal">Step 6: Validation finished.</p>
 <h2>Using the Code</h2>
 <p class="MsoNormal">Code Logical: </p>
-<p class="MsoNormal">Step 1. Create a C# &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2008 or Visual Web Developer 2008. Name it as &quot;CSASPNETControlCausePostback &quot;. Add two webform pages and name them as &quot;Default.aspx&quot; and
- &quot;Default2.aspx.</p>
+<p class="MsoNormal">Step 1. Create a VB.NET &quot;ASP.NET Empty Web Application&quot; in Visual Studio 2008 or Visual Web Developer 2008. Name it as &quot;VBASPNETControlCausePostback &quot;. Add two webform pages and name them as &quot;Default.aspx&quot;
+ and &quot;Default2.aspx. </p>
 <p class="MsoNormal">Step 2. We need to use JavaScript functions to cause postback function with two parameters, __EVENTTARGET and __EVENTARGUMENT, the former one is controls' id property, and the latter one is postback data, you can add the message as you
  like when you try to call this function. The Default page and Default2 page are different, Default page includes some HTML controls that we have to add __doPostBack function by ourselves, and we also need to manager the control's state. HTML control will lost
  their states while crossing postback events, for example, the CheckBox's checked property will recover to initial state if you do not handle their state.</p>
@@ -126,46 +127,42 @@
 </b></p>
 <p class="MsoNormal"><b style="">The latter part of JavaScript functions must be added after the &lt;form&gt; tag because the JavaScript function will get form and invoke form.submit() function, if you add these JavaScript code in the &lt;Head&gt; tag, the
  theForm variable will be null value. </b></p>
-<p class="MsoNormal">Step 3. Then you can add HTML controls on the page like sample's Default.aspx, after that, we can write some C# code in code-behind file for retrieving control id and postback data.</p>
+<p class="MsoNormal">Step 3. Then you can add HTML controls on the page like sample's Default.aspx, after that, we can write some VB.NET code in code-behind file for retrieving control id and postback data.</p>
 <h3>The following code is use to get JavaScript arguments across postback event. </h3>
 <div class="scriptcode">
 <div class="pluginEditHolder" pluginCommand="mceScriptCode">
-<div class="title"><span>C#</span></div>
+<div class="title"><span>VB</span></div>
 <div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span>
 </div>
-<span class="hidden">csharp</span>
+<span class="hidden">vb</span>
 
-<pre id="codePreview" class="csharp">
-protected void Page_Load(object sender, EventArgs e)
-{
-    if (Page.IsPostBack)
-    {
-        StringBuilder builder = new StringBuilder();
-        if (!String.IsNullOrEmpty(Request[&quot;__EVENTTARGET&quot;]) && !String.IsNullOrEmpty(Request[&quot;__EVENTARGUMENT&quot;]))
-        {
-            string target = Request[&quot;__EVENTTARGET&quot;] as string;
-            string argument = Request[&quot;__EVENTARGUMENT&quot;] as string;
-            builder.Append(&quot;Cause postback control:&quot;);
-            builder.Append(&quot;<br>&quot;);
-            builder.Append(target);
-            builder.Append(&quot;<br>&quot;);
-            builder.Append(&quot;<br>&quot;);
-            builder.Append(&quot;Postback data:&quot;);
-            builder.Append(&quot;<br>&quot;);
-            builder.Append(argument);
-            lbMessage.Text = builder.ToString();
-        }
+<pre id="codePreview" class="vb">
+Protected Sub Page_Load(ByVal sender As Object, ByVal e As <a class="libraryLink" href="http://msdn.microsoft.com/en-US/library/System.EventArgs.aspx" target="_blank" title="Auto generated link to System.EventArgs">System.EventArgs</a>) Handles Me.Load
+    If Page.IsPostBack Then
+        Dim builder As New StringBuilder()
+        If Not [String].IsNullOrEmpty(Request(&quot;__EVENTTARGET&quot;)) AndAlso Not [String].IsNullOrEmpty(Request(&quot;__EVENTARGUMENT&quot;)) Then
+            Dim target As String = TryCast(Request(&quot;__EVENTTARGET&quot;), String)
+            Dim argument As String = TryCast(Request(&quot;__EVENTARGUMENT&quot;), String)
+            builder.Append(&quot;Cause postback control:&quot;)
+            builder.Append(&quot;<br>&quot;)
+            builder.Append(target)
+            builder.Append(&quot;<br>&quot;)
+            builder.Append(&quot;<br>&quot;)
+            builder.Append(&quot;Postback data:&quot;)
+            builder.Append(&quot;<br>&quot;)
+            builder.Append(argument)
+            lbMessage.Text = builder.ToString()
 
 
-    }
-}
+        End If
+    End If
+End Sub
 
 </pre>
 </div>
 </div>
 <div class="endscriptcode">&nbsp;</div>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></p>
+<p class="MsoNormal"></p>
 <p class="MsoNormal">Step 4: In Default2 web page, we use Server buttons instead of HTML controls, the page will generate __doPostBack function automatically, so you can use __doPostBack directly and needn't to maintain the control's state.</p>
 <p class="MsoNormal">Step 5. Build the application and you can debug it.</p>
 <p class="MsoNormal"></p>

@@ -20,15 +20,15 @@
 <p class="MsoNormal">Before you run the sample, you should make sure Microsoft Office 2010 installed on your computer.</p>
 <h2>Running the Sample</h2>
 <p class="MsoNormal">Step1. Open <span style="">&quot;</span>CSExcelCompareCells.sln&quot; to open the project and then press F5 on the keyboard to run the sample. The form resembles the following:</p>
-<p class="MsoNormal"><span style=""><img src="84350-image.png" alt="" width="576" height="188" align="middle">
+<p class="MsoNormal"><span style=""><img src="84386-image.png" alt="" width="576" height="188" align="middle">
 </span></p>
 <p class="MsoNormal">Step2.<span style="">&nbsp; </span>Click &quot;Select&quot; button to choose an existing excel file which need to compare cells. Then you should input valid source column and target column. At last, you can click &quot;Compare Columns&quot;
  to compare cells in different columns of the same sheet<span style="">.</span> If the manipulation is successful, you will receive &quot;Compare Columns successfully, Please check in the excel file&quot; message.</p>
-<p class="MsoNormal"><span style=""><img src="84351-image.png" alt="" width="576" height="272" align="middle">
+<p class="MsoNormal"><span style=""><img src="84387-image.png" alt="" width="576" height="272" align="middle">
 </span></p>
 <p class="MsoNormal">Step3. If you want to compare cells in different sheets of the excel file, you should input valid source sheet and target sheet, then Click &quot;Compare Sheets&quot; button to compare cells in different sheets. You also can receive the
  &quot;Compare Sheets successfully, Please check in the excel file&quot; message when the manipulation is successful.</p>
-<p class="MsoNormal"><span style=""><img src="84352-image.png" alt="" width="576" height="299" align="middle">
+<p class="MsoNormal"><span style=""><img src="84388-image.png" alt="" width="576" height="299" align="middle">
 </span></p>
 <h2>Using the Code</h2>
 <p class="MsoNormal">Step1. Create Windows Forms Application from template of Visual Studio.</p>
@@ -282,7 +282,6 @@
 </div>
 </div>
 <div class="endscriptcode">&nbsp;</div>
-<p class="MsoNormal"></p>
 <h2>More Information</h2>
 <p class="MsoNormal"><span style=""><span style="">&nbsp;</span>Office Dev Center
 </span></p>

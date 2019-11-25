@@ -1,6 +1,6 @@
 # A basic Windows service in C++ (CppWindowsService)
 ## Requires
-- Visual Studio 2010
+- Visual Studio 2008
 ## License
 - MS-LPL
 ## Technologies
@@ -18,28 +18,28 @@
  to meet your own business requirement.</p>
 <h2>Running the Sample</h2>
 <p class="MsoNormal">The following steps walk through a demonstration of the Windows Service sample.</p>
-<p class="MsoNormal">Step1. After you successfully build the sample project in Visual Studio 2010, you will get a service application: CppWindowsService.exe.
+<p class="MsoNormal">Step1. After you successfully build the sample project in Visual Studio 2008, you will get a service application: CppWindowsService.exe.
 </p>
 <p class="MsoNormal">Step2. Run a command prompt as administrator, navigate to the output folder of the sample project, and enter the following command to install the service.
 </p>
 <p class="MsoNormal"><span style="">&nbsp; </span>CppWindowsService.exe -install
 </p>
 <p class="MsoNormal">The service is successfully installed if the process outputs:</p>
-<p class="MsoNormal"><span style=""><img src="53101-image.png" alt="" width="576" height="299" align="middle">
+<p class="MsoNormal"><span style=""><img src="53107-image.png" alt="" width="576" height="299" align="middle">
 </span></p>
 <p class="MsoNormal">If you do not see this output, please look for error codes in the
 <span class="SpellE">ouput</span>, and investigate the cause of failure. For example, the error code 0x431 means that the service already exists, and you need to uninstall it first.
 </p>
 <p class="MsoNormal">Step3. Open Service Management Console (services.msc). You should be able to find &quot;<span class="SpellE">CppWindowsService</span> Sample Service&quot; in the service list.</p>
-<p class="MsoNormal"><span style=""><img src="53102-image.png" alt="" width="576" height="412" align="middle">
+<p class="MsoNormal"><span style=""><img src="53108-image.png" alt="" width="576" height="412" align="middle">
 </span></p>
 <p class="MsoNormal">Step4. <span class="GramE">Right-click the CppWindowsService service in Service Management Console and select Start to start the service.</span> Open Event Viewer, and navigate to Windows Logs / Application. You should be able to see
  this event from <span class="SpellE">CppWindowsService</span> with the information:</p>
-<p class="MsoNormal"><span style=""><img src="53103-image.png" alt="" width="576" height="443" align="middle">
+<p class="MsoNormal"><span style=""><img src="53109-image.png" alt="" width="576" height="443" align="middle">
 </span></p>
 <p class="MsoNormal">Step5. <span class="GramE">Right-click the service in Service Management Console and select Stop to stop the service.</span> You will see this new event from
 <span class="SpellE">CppWindowsService</span> in Event Viewer / Windows Logs / Application with the information:</p>
-<p class="MsoNormal"><span style=""><img src="53104-image.png" alt="" width="576" height="443" align="middle">
+<p class="MsoNormal"><span style=""><img src="53110-image.png" alt="" width="576" height="443" align="middle">
 </span></p>
 <p class="MsoNormal">Step6. To uninstall the service, enter the following command in the command prompt running as administrator.
 </p>
@@ -48,11 +48,11 @@
 </p>
 <p class="MsoNormal"></p>
 <p class="MsoNormal">If the service is successfully removed, you would see this output:</p>
-<p class="MsoNormal"><span style=""><img src="53105-image.png" alt="" width="576" height="299" align="middle">
+<p class="MsoNormal"><span style=""><img src="53111-image.png" alt="" width="576" height="299" align="middle">
 </span></p>
 <h2></h2>
 <h2>Using the Code</h2>
-<h3><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-weight:normal">Step1. In Visual Studio 2010, add a new Visual C&#43;&#43; / Win32 / Win32 Console Application project named
+<h3><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-weight:normal">Step1. In Visual Studio 2008, add a new Visual C&#43;&#43; / Win32 / Win32 Console Application project named
 <span class="SpellE">CppWindowsService</span>. Unselect the &quot;Precompiled header&quot; option in Application Settings of the Win32 Application Wizard, and delete stdafx.h, stdafx.cpp, targetver.h files after the project is created.
 </span></h3>
 <h3><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;; font-weight:normal">Step2. Define the settings of the service in CppWindowsService.cpp.</span></h3>

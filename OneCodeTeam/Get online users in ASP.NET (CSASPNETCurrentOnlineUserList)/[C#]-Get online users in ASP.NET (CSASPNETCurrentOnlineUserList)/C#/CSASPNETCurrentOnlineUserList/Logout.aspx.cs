@@ -8,15 +8,12 @@
 * shows how to display a list of current online users' information without 
 * using membership provider.
 
-* This page is for signing out.  
+* This page is used to let user sign out.  
 
 * This source is subject to the Microsoft Public License.
-* See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL.
+* See http://www.microsoft.com/opensource/licenses.mspx#Ms-PL.
 * All other rights reserved.
 *
-* THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-* EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-* WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 \***************************************************************************/
 
 using System;

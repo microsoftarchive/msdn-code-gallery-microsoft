@@ -7,16 +7,14 @@
 * users,however many asp.net projects are not using membership.This project
 * shows how to display a list of current online users' information without 
 * using membership provider.
+
+* This class is used as user's entity. 
 *
-* User entity class. 
-*
+
 * This source is subject to the Microsoft Public License.
-* See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL.
+* See http://www.microsoft.com/opensource/licenses.mspx#Ms-PL.
 * All other rights reserved.
 *
-* THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-* EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-* WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 \***************************************************************************/
 
 using System;

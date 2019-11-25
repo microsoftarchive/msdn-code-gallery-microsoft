@@ -1,19 +1,18 @@
-
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSASPNETCurrentOnlineUserList", "CSASPNETCurrentOnlineUserList\CSASPNETCurrentOnlineUserList.csproj", "{E4D868DA-ED8B-4F23-9F51-F00CF2B8D69F}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSASPNETCurrentOnlineUserList", "CSASPNETCurrentOnlineUserList\CSASPNETCurrentOnlineUserList.csproj", "{431E4A9F-F522-4435-9D7F-E0571D17AE2F}"
 EndProject
 Global
-	
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E4D868DA-ED8B-4F23-9F51-F00CF2B8D69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4D868DA-ED8B-4F23-9F51-F00CF2B8D69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4D868DA-ED8B-4F23-9F51-F00CF2B8D69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4D868DA-ED8B-4F23-9F51-F00CF2B8D69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{431E4A9F-F522-4435-9D7F-E0571D17AE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431E4A9F-F522-4435-9D7F-E0571D17AE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431E4A9F-F522-4435-9D7F-E0571D17AE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431E4A9F-F522-4435-9D7F-E0571D17AE2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

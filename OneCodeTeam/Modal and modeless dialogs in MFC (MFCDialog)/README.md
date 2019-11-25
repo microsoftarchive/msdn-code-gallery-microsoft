@@ -1,6 +1,6 @@
 # Modal and modeless dialogs in MFC (MFCDialog)
 ## Requires
-- Visual Studio 2008
+- Visual Studio 2010
 ## License
 - MS-LPL
 ## Technologies
@@ -16,11 +16,11 @@
 <p class="MsoNormal">The MFCDialog example demonstrates the creation of modal and modeless dialog boxes in MFC.<span style="">
 </span></p>
 <h2>Running the Sample</h2>
-<p class="MsoNormal"><span style=""><img src="53705-image.png" alt="" width="420" height="287" align="middle">
+<p class="MsoNormal"><span style=""><img src="53702-image.png" alt="" width="420" height="287" align="middle">
 </span><span style=""></span></p>
 <p class="MsoNormal"><span style="">If you click the ��Show Modal Dialog��, a dialog pops up. You can��t manipulate the main form unless you close the modal dialog.
 </span></p>
-<p class="MsoNormal"><span style=""><img src="53706-image.png" alt="" width="576" height="355" align="middle">
+<p class="MsoNormal"><span style=""><img src="53703-image.png" alt="" width="576" height="355" align="middle">
 </span><span style=""></span></p>
 <p class="MsoNormal"><span style="">If you click the ��Show Modeless Dialog�� button, a modeless dialog pops up. You can manipulate the main dialog without having to close the modeless dialog.
 </span></p>
