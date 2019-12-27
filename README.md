@@ -24,7 +24,7 @@ We have archived the most actively engaged code samples to public archive reposi
 
 ## Extract Sample Zip and/or Git Clone
 
-**Win32 Long Paths** must be enabled to extract the sample zip and/or git clone. This setting can be enabled in the Local Group Policy Editor within Computer Configuration\Administrative Templates\Symstem\Filesystem. Alternatively, you could download the zip file and use WinRAR to extract the file.
+If you are experiencing issues extracting and/or using Git Clone for samples, you may need to enable **Win32 Long Paths**. This setting can be enabled in the Local Group Policy Editor within Computer Configuration\Administrative Templates\Symstem\Filesystem. Alternatively, you could download the zip file and use WinRAR to extract the file.
 
 ## Contributing
 
