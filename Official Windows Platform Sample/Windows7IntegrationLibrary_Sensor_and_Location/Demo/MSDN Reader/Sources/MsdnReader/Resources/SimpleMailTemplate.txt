@@ -1,0 +1,10 @@
+Emailing: Story from SceReader sample application
+
+Story title:
+%ArticleTitle%
+
+Story abstract:
+%ArticleDesc%
+
+Link to web content:
+%WebLink%

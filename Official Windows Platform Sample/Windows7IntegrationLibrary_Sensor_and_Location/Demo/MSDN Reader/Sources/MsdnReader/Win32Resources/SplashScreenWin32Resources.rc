@@ -1,0 +1,17 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+//
+// Application Icon
+//
+
+IDI_APPICON                  ICON                    "msdnreader.ico" 
+
+//
+// Splashscreen
+//
+
+IDB_SPLASHSCREEN             PNG                     "SplashScreen.png"
+
+

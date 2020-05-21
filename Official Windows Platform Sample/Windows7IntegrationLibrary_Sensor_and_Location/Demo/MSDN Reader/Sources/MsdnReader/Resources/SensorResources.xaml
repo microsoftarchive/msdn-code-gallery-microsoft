@@ -1,0 +1,11 @@
+﻿<ResourceDictionary 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:MsdnReader"
+  >
+  
+  <ObjectDataProvider x:Key="LightSensorProvider" ObjectType="{x:Type local:LightSensorProvider}"/>
+
+  <local:LightLevelToFontSizeConverter x:Key="LightLevelToFontSizeConverter"/>
+
+</ResourceDictionary>

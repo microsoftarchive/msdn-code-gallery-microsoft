@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{F3911DB8-3A49-4578-A8DE-0AF4169E43CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wrappers", "Wrappers", "{7C1D48FF-FD68-4EB0-BBBE-65231B8D065C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows7.SensorAndLocation", "Windows7.SensorAndLocation\Windows7.SensorAndLocation.csproj", "{9055C6EF-F83B-4AE0-8041-F9731124A55E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SensorAndLocation", "SensorAndLocation", "{48C2C098-273A-4EA0-9228-4E6136ECAA78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarbleSample", "Demo\SensorAndLocation\MarbleSample\MarbleSample\MarbleSample.csproj", "{96F653ED-0E44-4378-92CE-E864013DE6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsdnReader", "Demo\SensorAndLocation\MSDN Reader\Sources\MsdnReader\MsdnReader.csproj", "{91B065E4-F3CC-4421-AFE0-85405EF73D94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|x64.ActiveCfg = Debug|x64
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|x64.Build.0 = Debug|x64
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|x86.ActiveCfg = Debug|x86
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Debug|x86.Build.0 = Debug|x86
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|x64.ActiveCfg = Release|x64
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|x64.Build.0 = Release|x64
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|x86.ActiveCfg = Release|x86
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E}.Release|x86.Build.0 = Release|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Debug|x64.ActiveCfg = Debug|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Debug|x86.ActiveCfg = Debug|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Debug|x86.Build.0 = Debug|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Release|Any CPU.ActiveCfg = Release|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Release|x64.ActiveCfg = Release|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Release|x86.ActiveCfg = Release|x86
+		{96F653ED-0E44-4378-92CE-E864013DE6E3}.Release|x86.Build.0 = Release|x86
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|x64.ActiveCfg = Debug|x64
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|x64.Build.0 = Debug|x64
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|x86.ActiveCfg = Debug|x86
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Debug|x86.Build.0 = Debug|x86
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|x64.ActiveCfg = Release|x64
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|x64.Build.0 = Release|x64
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|x86.ActiveCfg = Release|x86
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48C2C098-273A-4EA0-9228-4E6136ECAA78} = {F3911DB8-3A49-4578-A8DE-0AF4169E43CA}
+		{9055C6EF-F83B-4AE0-8041-F9731124A55E} = {7C1D48FF-FD68-4EB0-BBBE-65231B8D065C}
+		{96F653ED-0E44-4378-92CE-E864013DE6E3} = {48C2C098-273A-4EA0-9228-4E6136ECAA78}
+		{91B065E4-F3CC-4421-AFE0-85405EF73D94} = {48C2C098-273A-4EA0-9228-4E6136ECAA78}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,208 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"    
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:MsdnReader="clr-namespace:MsdnReader">
+
+  <Style x:Key="ArticleTitleStyle" TargetType="{x:Type Figure}">
+      <Setter Property="Width" Value="Content" />
+      <Setter Property="VerticalAnchor" Value="ContentTop" />
+      <Setter Property="HorizontalAnchor" Value="ContentLeft" />
+      <Setter Property="FontFamily" Value="Georgia" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=28pt}" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Margin" Value="0,0,0,10" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+  </Style>
+
+  <Style x:Key="ImageFigureStyle" TargetType="{x:Type Figure}">
+    <Setter Property="Width" Value="Column" />
+    <Setter Property="VerticalAnchor" Value="ContentTop" />
+    <Setter Property="HorizontalAnchor" Value="ContentRight" />
+  </Style>
+
+  <!-- Style for paragraph containers for all stand alone figures must set LineHeight to 0.01 -->
+    <Style x:Key="FigureContainerStyle" TargetType="{x:Type Paragraph}">
+      <Setter Property="LineHeight" Value="0.01" />
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style x:Key="ArticleBylineStyle" TargetType="{x:Type Run}">
+      <Setter Property="FontFamily" Value="Calibri" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Typography.Capitals" Value="SmallCaps" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="ArticleDateStyle" TargetType="{x:Type Run}">
+      <Setter Property="FontFamily" Value="Arial" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=12pt}" />
+      <Setter Property="Foreground" Value="Gray" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+
+    <Style x:Key="ArticleBodyTextStyle" TargetType="{x:Type Paragraph}">
+      <Setter Property="FontFamily" Value="Calibri" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=16pt}" />
+      <Setter Property="LineHeight" Value="20" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="TextIndent" Value="20" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="ArticleCodeStyle" TargetType="{x:Type Paragraph}">
+      <Setter Property="FontFamily" Value="Consolas, Courier" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=11pt}" />
+      <Setter Property="LineHeight" Value="14" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Padding" Value="10,0,0,0" />
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="TextAlignment" Value="Left" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+      <Setter Property="Background" Value="#FFDDF8F5" />
+    </Style>
+
+    <Style x:Key="ArticleSectionTitleParagraphStyle" TargetType="{x:Type Paragraph}">
+      <Setter Property="FontFamily" Value="Candara" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}" />
+      <Setter Property="LineHeight" Value="20" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="FontStyle" Value="Normal" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="TextIndent" Value="0" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="ArticlePullQuoteFigureStyle" TargetType="{x:Type Figure}">
+      <Setter Property="BorderThickness" Value="0,1,0,1" />
+      <Setter Property="BorderBrush" Value="Black" />
+      <Setter Property="FontFamily" Value="Georgia" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=20pt}" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="FontStyle" Value="Italic" />
+      <Setter Property="FontStretch" Value="Normal" />
+      <Setter Property="Margin" Value="0,10,0,10" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Width" Value="Column" />
+      <Setter Property="HorizontalAnchor" Value="ColumnCenter" />
+      <Setter Property="VerticalAnchor" Value="ParagraphTop" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="ArticleFlowDocumentStyle" TargetType="{x:Type FlowDocument}">
+      <Setter Property="ColumnWidth" Value="300" />
+      <Setter Property="IsHyphenationEnabled" Value="True" />
+      <Setter Property="IsOptimalParagraphEnabled" Value="True" />
+      <Setter Property="PagePadding" Value="15,15,15,0"/>
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="ArticleBylineDatelineFigureStyle" TargetType="{x:Type Figure}">
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+      <Setter Property="BorderBrush" Value="Black" />
+      <Setter Property="Margin" Value="0" />
+      <Setter Property="Width" Value="Column" />
+      <Setter Property="HorizontalAnchor" Value="ColumnCenter" />
+      <Setter Property="VerticalAnchor" Value="ParagraphTop" />
+    </Style>
+
+  <Style x:Key="ArticleHyperlinkStyle" TargetType="{x:Type Hyperlink}">
+    <Setter Property="Foreground" Value="#FF1E3BBB" />
+ </Style>
+
+  <Style x:Key="ArticleBoldSpanStyle" TargetType="{x:Type Span}">
+    <Setter Property="FontWeight" Value="Bold" />
+  </Style>
+
+  <Style x:Key="ArticleItalicSpanStyle" TargetType="{x:Type Span}">
+    <Setter Property="FontStyle" Value="Italic" />
+  </Style>
+    
+  <Style x:Key="ArticleUnderlineSpanStyle" TargetType="{x:Type Span}">
+    <Setter Property="TextDecorations" Value="Underline" />
+  </Style>
+
+  <Style x:Key="StoryPhotoCredit" TargetType="{x:Type TextBlock}">
+    <Setter Property="FontFamily" Value="Arial" />
+    <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=8pt}" />
+    <Setter Property="TextAlignment" Value="Right" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+  </Style>
+
+  <Style x:Key="StoryPhotoCaption" TargetType="{x:Type TextBlock}">
+    <Setter Property="FontFamily" Value="Georgia" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=10pt}" />
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="IsHyphenationEnabled" Value="True" />
+    <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+  </Style>
+
+  <Style x:Key="HorizontalRule" TargetType="{x:Type Rectangle}">
+    <Setter Property="Fill" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    <Setter Property="Height" Value="1" />
+    <Setter Property="Margin" Value="3" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+  </Style>
+
+  <Style x:Key="ArticleImagePrintStyle" TargetType="{x:Type SceReaderControls:PrintableStoryImageControl}">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="DataContext" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=ImageReference}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type SceReaderControls:PrintableStoryImageControl}">
+          <StackPanel>
+            <StackPanel>
+              <Image Source="{TemplateBinding ImageSource}" />
+              <TextBlock x:Name="Caption" Text="{Binding Credit}" Style="{StaticResource StoryPhotoCredit}" />
+              <TextBlock x:Name="Credit" Text="{Binding Caption}" Style="{StaticResource StoryPhotoCaption}" />
+            </StackPanel>
+            <Rectangle Style="{StaticResource HorizontalRule}" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ArticlePrintDocumentStyle" TargetType="{x:Type FlowDocument}" BasedOn="{StaticResource ArticleFlowDocumentStyle}">
+    <Setter Property="PagePadding" Value="40,30"/>
+  </Style>
+
+  <!-- FlowDocumentStyleProvider -->
+  <MsdnReader:MsdnFlowDocumentStyleProvider x:Key="StoryFlowDocumentStyleProvider"
+    ArticleTitleFigureStyle="{StaticResource ArticleTitleStyle}" 
+    ArticleImageFigureStyle="{StaticResource ImageFigureStyle}"
+    ArticleFigureContainerParagraphStyle="{StaticResource FigureContainerStyle}"
+    ArticleBylineRunStyle="{StaticResource ArticleBylineStyle}"
+    ArticleDateRunStyle="{StaticResource ArticleDateStyle}"
+    ArticleBodyTextParagraphStyle="{StaticResource ArticleBodyTextStyle}"
+    ArticlePullQuoteFigureStyle="{StaticResource ArticlePullQuoteFigureStyle}"
+    ArticleFlowDocumentStyle="{StaticResource ArticleFlowDocumentStyle}"
+    ArticleBylineDateFigureStyle="{StaticResource ArticleBylineDatelineFigureStyle}"    
+    ArticleHyperlinkStyle="{StaticResource ArticleHyperlinkStyle}"       
+    ArticleBoldSpanStyle="{StaticResource ArticleBoldSpanStyle}"       
+    ArticleItalicSpanStyle="{StaticResource ArticleItalicSpanStyle}"       
+    ArticleUnderlineSpanStyle="{StaticResource ArticleUnderlineSpanStyle}"
+    ArticleImagePrintStyle="{StaticResource ArticleImagePrintStyle}"
+    ArticlePrintDocumentStyle="{StaticResource ArticlePrintDocumentStyle}"
+                                           
+    ArticleCodeStyle="{StaticResource ArticleCodeStyle}"
+    ArticleSectionTitleParagraphStyle="{StaticResource ArticleSectionTitleParagraphStyle}"
+    />
+</ResourceDictionary>

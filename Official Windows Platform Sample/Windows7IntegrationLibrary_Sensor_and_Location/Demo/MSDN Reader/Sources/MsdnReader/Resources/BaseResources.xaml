@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:SceReaderView="clr-namespace:Microsoft.SceReader.View;assembly=SceReader"
+    xmlns:Annotations="clr-namespace:System.Windows.Annotations;assembly=PresentationFramework"
+    >
+  <DataTemplate DataType="{x:Type SceReaderData:Section}">
+    <Grid Focusable="False">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <SceReaderControls:SectionFrontControl x:Name="SectionFront" Section="{Binding Path=.}" FocusVisualStyle="{x:Null}" KeyboardNavigation.IsTabStop="True">
+      </SceReaderControls:SectionFrontControl>
+
+      <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,-2,10,0">
+        <!-- Story navigation UI -->
+        <Button 
+          Style="{DynamicResource BlueArrowButtonLeftNoShadow}" 
+          Width="33" Height="25.3"
+          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.PreviousStoryCommand}" 
+          ToolTip="Previous story (Left arrow)"
+          AutomationProperties.AutomationId="PreviousStory"
+          AutomationProperties.Name="PreviousStory"
+        />
+        <Label x:Name="StoryNavTextBlock" Content="Article" VerticalAlignment="Center" Margin="5,0,5,0"/>
+        <Button
+          Style="{DynamicResource BlueArrowButtonRightNoShadow}"
+          Width="33" Height="25.3"
+          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.NextStoryCommand}"
+          ToolTip="Next Story"
+          AutomationProperties.AutomationId="NextStory"
+          AutomationProperties.Name="NextStory"
+        />
+
+        <!--Divider Panel-->
+        <Grid Width="15" />
+
+        <!-- Section navigation UI -->
+        <Button
+          Style="{DynamicResource BlueArrowButtonUpNoShadow}"
+          Width="23" Height="35.3"
+          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.PreviousSectionCommand}"
+          ToolTip="Previous section"
+          AutomationProperties.AutomationId="PreviousSection"
+          AutomationProperties.Name="PreviousSection"
+       />
+        <Label Content="Section" VerticalAlignment="Center" Margin="5,0,5,0" />
+        <Button 
+          Style="{DynamicResource BlueArrowButtonDownNoShadow}" 
+          Width="23" Height="35.3" 
+          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.NextSectionCommand}" 
+          ToolTip="Next section" 
+          AutomationProperties.AutomationId="NextSection"
+          AutomationProperties.Name="NextSection"
+       />
+      </StackPanel>
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type SceReaderView:ViewStory}">
+    <SceReaderControls:StoryViewer 
+      Name="StoryViewer" 
+      Document="{Binding Path=AsyncStoryFlowDocument}" 
+      Story="{Binding Path=Story}"
+      AutomationProperties.AutomationId="StoryContent" 
+      AnnotationStream="{Binding Path=AsyncStoryAnnotationStream}">
+      <!-- NOTE: StoryViewer's ContextMenu's DataContext is set to be the StoryViewer itself on opening. This is done so that
+      menu commands on the context menu can have access to the viewer. But when adding options to the context menu, bindings should be
+      used assuming DataContext as the viewer itself, not ViewStory  object -->
+      <SceReaderControls:StoryViewer.ContextMenu>
+        <ContextMenu>
+          <MenuItem Name="SelectAllMenuItem"
+                    Header="Select _All"
+                    Command="ApplicationCommands.SelectAll"
+                    CommandParameter="Binding Path=Story"/>
+          <MenuItem Name="CopyMenuItem"
+                    Header="_Copy"
+                    Command="ApplicationCommands.Copy"
+                    CommandParameter="{Binding Path=Story}"/>
+          <MenuItem Name="AddStoryMenuItem" 
+                    Header="Send Story to _Reading List"
+                    Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.AddStoryToReadingListCommand}"
+                    CommandParameter="{Binding Path=Story}"/>
+          <MenuItem Name="PrintStoryMenuItem"
+                    Header="_Print Story"
+                    Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.PrintStoryCommand}"
+                    CommandParameter="{Binding Path=Story}"/>
+          <MenuItem Header="Sharing _Options"
+                    Name="SharingOptionsMenuItem">
+            <MenuItem Name="EmailStoryMenuItem"
+                      Header="_Email Story using Outlook"
+                      Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.EmailStoryCommand}" 
+                      CommandParameter="{Binding Path=.}"/>
+            <MenuItem Name="SaveStoryToDesktopMenuItem"
+                      Header="_Save Story to Desktop"
+                      Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.SaveStoryToDesktopCommand}"
+                      CommandParameter="{Binding Path=.}"/>
+            <MenuItem Name="CopySummaryMenuItem"
+                      Header="Copy Story Su_mmary"
+                      Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.CopyStoryHtmlEmailSummaryCommand}"
+                      CommandParameter="{Binding Path=Story}"/>
+          </MenuItem>
+          <MenuItem Header="Notes">
+            <MenuItem Name="CreateInkNoteMenuItem" 
+                      Header="Create _Ink Note"
+                      Command="Annotations:AnnotationService.CreateInkStickyNoteCommand" />
+            <MenuItem Name="CreateTextNoteMenuItem"
+                      Header="Create _Text Note" 
+                      Command="Annotations:AnnotationService.CreateTextStickyNoteCommand" />
+            <MenuItem Name="CreateHighlightMenuItem"
+                      Header="Create _Highlight" 
+                      Command="Annotations:AnnotationService.CreateHighlightCommand" />
+            <MenuItem Name="DeleteAnnotationMenuItem"
+                      Header="_Delete Annotation" 
+                      Command="Annotations:AnnotationService.DeleteAnnotationsCommand" />
+          </MenuItem>
+        </ContextMenu>
+      </SceReaderControls:StoryViewer.ContextMenu>
+    </SceReaderControls:StoryViewer>
+  </DataTemplate>
+  <DataTemplate DataType="{x:Type SceReaderData:MissingItemError}">
+    <Grid>
+      <Image Source="pack://application:,,,/Resources/Images/dailyplanet.png" Opacity=".05"/>
+      <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Margin="20,5,10,5" VerticalAlignment="Center" TextAlignment="Center" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}" Text="Oops! We can't find the item you were looking for." TextWrapping="Wrap" />
+        <TextBlock Margin="0,5,0,5" VerticalAlignment="Center" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}" Text="{Binding Path=Message}" />
+        <Button HorizontalAlignment="Center" Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.NavigateToFirstEditionCommand}">Return Home</Button>
+      </StackPanel>
+    </Grid>
+  </DataTemplate>
+  <Style x:Key="ValidEditionItemButtonStyle" TargetType="{x:Type Button}">
+    <Setter Property="Command" Value="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncCommands.SelectArchiveCommand}" />
+    <Setter Property="CommandParameter" Value="{Binding Path=.}" />
+  </Style>
+  <DataTemplate x:Key="EditionItemTemplate" DataType="{x:Type SceReaderData:DataFeedContent}">
+    <Button Style="{StaticResource ValidEditionItemButtonStyle}" Width="200">
+      <TextBlock TextWrapping="Wrap" Text="{Binding Path=Description}" />
+    </Button>
+  </DataTemplate>
+  <DataTemplate DataType="{x:Type SceReaderData:NoDataAvailableError}">
+    <Grid>
+      <Image Source="pack://application:,,,/Resources/Images/dailyplanet.png" Opacity=".05"/>
+      <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Margin="20,5,10,5" VerticalAlignment="Center" TextAlignment="Center" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}"
+                   Text="Oops! There is an error in the edition you're looking at. Would you like to look at one of these editions instead?"
+                   TextWrapping="Wrap" />
+        <TextBlock Margin="0,5,0,5" VerticalAlignment="Center" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=18pt}" Text="{Binding Path=Message}" />
+        <ItemsControl Background="Transparent" ItemsSource="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=Editions}"
+              ItemTemplate="{StaticResource EditionItemTemplate}" HorizontalAlignment="Center">
+        </ItemsControl>
+
+      </StackPanel>
+    </Grid>
+  </DataTemplate>
+</ResourceDictionary>

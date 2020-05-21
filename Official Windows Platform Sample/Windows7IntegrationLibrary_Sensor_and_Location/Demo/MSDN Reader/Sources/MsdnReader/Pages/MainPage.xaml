@@ -1,0 +1,276 @@
+﻿<!--
+  Resource dictionary that defines the look and behavior of the applications chrome
+-->
+<NavigationWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"    
+    xmlns:aero="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"  
+    xmlns:scer="http://schemas.microsoft.com/winfx/2007/scereader"
+    xmlns:Local="clr-namespace:MsdnReader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    x:Class="MsdnReader.MainWindow"
+    x:Name="RootMain"  
+    Title="MSDN Reader"
+    ShowsNavigationUI="False"
+    Background="{StaticResource Background_ChromeDefault}"
+    AutomationProperties.AutomationId="Chrome"
+    MinWidth="460" MinHeight="360"
+  >
+  
+  <NavigationWindow.ContentTemplate>
+    <DataTemplate>
+      <DataTemplate.Resources>
+        <Local:LightValueToDesaturationFactorConverter x:Key="LightValueToDesaturationFactorConverter"/>
+        <Local:LightValueToBrightnessFactorConverter x:Key="LightValueToBrightnessFactorConverter"/>
+        <Local:LightValueToContrastFactorConverter x:Key="LightValueToContrastFactorConverter"/>
+        
+        <Local:GrayscaleEffect x:Key="LightGrayscaleEffect">
+          <Local:GrayscaleEffect.DesaturationFactor>
+            <Binding
+              Source="{StaticResource LightSensorProvider}"
+              Path="LuxValue"
+              Converter="{StaticResource LightValueToDesaturationFactorConverter}"
+              />
+          </Local:GrayscaleEffect.DesaturationFactor>
+        </Local:GrayscaleEffect>
+        
+        <Local:BrightnessContrastEffect x:Key="LightBrightnessContrastEffect">
+          <Local:BrightnessContrastEffect.Brightness>
+            <Binding
+              Source="{StaticResource LightSensorProvider}"
+              Path="LuxValue"
+              Converter="{StaticResource LightValueToBrightnessFactorConverter}"
+              />
+          </Local:BrightnessContrastEffect.Brightness>
+          <Local:BrightnessContrastEffect.Contrast>
+            <Binding
+              Source="{StaticResource LightSensorProvider}"
+              Path="LuxValue"
+              Converter="{StaticResource LightValueToContrastFactorConverter}"
+              />
+          </Local:BrightnessContrastEffect.Contrast>
+        </Local:BrightnessContrastEffect>
+      </DataTemplate.Resources>
+      
+      <Border Effect="{StaticResource LightGrayscaleEffect}">
+        <ContentPresenter Effect="{StaticResource LightBrightnessContrastEffect}" Content="{Binding}"/>
+      </Border>
+    </DataTemplate>
+  </NavigationWindow.ContentTemplate>
+  
+ 
+  <NavigationWindow.Content>
+    <Grid x:Name="Grid">
+      <Grid.LayoutTransform>
+        <RotateTransform Angle="0"/>
+      </Grid.LayoutTransform>
+      
+      <Grid.Resources>
+        <Local:DateTimeToStringConverter x:Key="DateTimeConverter" />
+        <Local:NavigatorToPathConverter x:Key="NavToPathConverter" />
+
+        <Storyboard x:Key="ArrowMouseOver">
+          <ColorAnimation Storyboard.TargetName="TopArrowFillColor" Storyboard.TargetProperty="Color" To="#FFFBB847" Duration="0:0:.05"/>
+        </Storyboard>
+        <Storyboard x:Key="ArrowMouseNotOver">
+          <ColorAnimation Storyboard.TargetName="TopArrowFillColor" Storyboard.TargetProperty="Color" To="#FFFFFFFF" Duration="0:0:.05"/>
+        </Storyboard>
+        
+        <ControlTemplate x:Key="ArrowDrawing">
+          <Viewbox RenderTransformOrigin="0.5,0.5" x:Name="back_button_Copy">
+            <Viewbox.RenderTransform>
+              <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                <SkewTransform AngleX="0" AngleY="0"/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform X="0" Y="0"/>
+              </TransformGroup>
+            </Viewbox.RenderTransform>
+            <Canvas Width="27.1293" Height="30.3003">
+              <Path x:Name="Path1" Width="28" Height="24" Canvas.Left="7.68602e-005" Canvas.Top="1.5825e-005" Stretch="Fill" Data="M 0.333374,15.1501L 26.7958,0.333313C 23.3505,4.68127 21.3751,9.74487 21.3751,15.1501C 21.3751,20.5553 23.3505,25.619 26.796,29.967L 0.333374,15.1501 Z "
+                    StrokeThickness="0.666594" StrokeLineJoin="Round" Stroke="{DynamicResource Stroke_ChromeUIDefault}">
+                <Path.Fill>
+                  <SolidColorBrush x:Name="TopArrowFillColor" Color="#FFFFFF"></SolidColorBrush>
+                </Path.Fill>
+              </Path>
+
+              <Path x:Name="Path_1" Width="26.4625" Height="16.0705" Canvas.Left="0.333374" Canvas.Top="0.333313" Stretch="Fill"
+                    Data="M 0.333374,15.1501L 26.7958,0.333313C 24.0136,3.84436 22.1899,7.82214 21.5911,12.0696C 13.9504,13.2494 7.47437,14.7217 2.57239,16.4038L 0.333374,15.1501 Z "
+                    StrokeThickness="1" StrokeLineJoin="Round" Stroke="{DynamicResource Stroke_ChromeUIBevel}"
+                    Fill="{DynamicResource Fill_ChromeUIBevel}"/>
+            </Canvas>
+          </Viewbox>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Trigger.EnterActions>
+                <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{StaticResource ArrowMouseOver}"/>
+              </Trigger.EnterActions>
+              <Trigger.ExitActions>
+                <BeginStoryboard x:Name="MouseNotOver_BeginStoryboard" Storyboard="{StaticResource ArrowMouseNotOver}"/>
+              </Trigger.ExitActions>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+        <Style x:Key="ArrowButtonLeftNoShadow" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type Button}" >
+                <Grid>
+                  <Viewbox RenderTransformOrigin="0.5,0.5" x:Name="back_button_Copy">
+                    <Viewbox.RenderTransform>
+                      <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                      </TransformGroup>
+                    </Viewbox.RenderTransform>
+                    <Control Width="27.129" Height="30.3" Template="{StaticResource ArrowDrawing}"/>
+                  </Viewbox>
+                </Grid>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+
+      </Grid.Resources>
+      
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+     
+      <!--This border houses the main title bar-->
+      <Border Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,0" Background="{StaticResource Background_Masthead}" x:Name="MastheadBorder" >
+        <Grid Margin="0,0,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Column="0" Stretch="Uniform" StretchDirection="DownOnly" Source="pack://application:,,,/Resources/Images/msdnreader.png"/>
+          <!--SectionLabel set to transparent-->
+          <Label Grid.Column="0" x:Name="SectionLabel" Grid.ColumnSpan="3" HorizontalAlignment="Center"  
+            Content="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=CurrentNavigator, Converter={StaticResource NavToPathConverter}}"
+            VerticalAlignment="Bottom" 
+            FontWeight="Bold" FontFamily="Candara" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=24pt}"
+            Foreground="White" 
+            AutomationProperties.AutomationId="CurrentSection"/>
+          
+          <StackPanel x:Name="SyncSearchStackPanel" Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,0,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="{StaticResource Background_MSDNLogo}">
+              <Control Style="{StaticResource SyncControlStyle}" HorizontalAlignment="Right" Margin="0,10,5,2" VerticalAlignment="Center"/>
+              <Image Source="pack://application:,,,/Resources/Images/msdn_logo.png" Margin="10,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Center">
+              <StackPanel Orientation="Horizontal" Margin="0,5,5,0" HorizontalAlignment="Center">
+                <Button
+                  x:Name="BrowseBackButton"
+                  Content=""
+                  Style="{DynamicResource ArrowButtonLeftNoShadow}"
+                  Width="28" Height="24"
+                  Command="NavigationCommands.BrowseBack"
+                  AutomationProperties.AutomationId="BrowseBack"/>
+                <Button
+                  x:Name="BrowseForwardButton"
+                  Content=""
+                  Style="{DynamicResource ArrowButtonLeftNoShadow}"
+                  Width="28" Height="24" RenderTransformOrigin="0.5,0.5" Margin="15,0,0,0"
+                  Command="NavigationCommands.BrowseForward"
+                  AutomationProperties.AutomationId="BrowseForward">
+                  <Button.RenderTransform>
+                    <ScaleTransform ScaleX="-1"/>
+                  </Button.RenderTransform>
+                </Button>
+              </StackPanel>
+              <Local:SearchControl 
+                x:Name="SearchControl" 
+                HorizontalAlignment="Left"  VerticalAlignment="Center"
+                Style="{StaticResource SearchControlStyle}" ToolTip="Enter your search here" />
+            </StackPanel>
+          </StackPanel>
+        </Grid>
+      </Border>
+    
+      <Border Grid.Row="1" x:Name="NavigationBorder">
+        <Grid Margin="0,0,0,15" x:Name="NavigationGrid">
+          <scer:NavPanel Margin="0,10,0,0"
+                         Height="{Binding ElementName='NavigationGrid',Path='ActualHeight'}"
+                         ToolTip="Navigation Menu" AutomationProperties.AutomationId="NavigationMenu"
+                         AutomationProperties.Name="NavigationMenu"
+                         Orientation="Vertical" ItemWidth="160" PopupMenuWidth="250"  DisplaySubSections="False" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=14pt}"
+                                       FontWeight="Bold" FontFamily="Candara" 
+                         TopLevelItems="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationItems}"
+                                       Foreground="#FF000000" />
+        </Grid>
+      </Border>
+
+              <!--Main Content Container-->
+      <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <scer:MainContentContainer Name="MainContentContainer" Background="{DynamicResource Background_MainContentContainer}" BorderBrush="Black" Margin="0,0,0,0"/>
+      </Grid>
+
+              <Control x:Name="ReadingListControl"
+                Template="{StaticResource ReadingListControlTemplate}"
+                Grid.Row="1" Grid.Column="2"
+              />
+              
+              <ContentControl
+                  Content="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=Dialog}"
+                  Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="2"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                  FocusManager.IsFocusScope="True"
+                  KeyboardNavigation.TabNavigation="Cycle"
+                  KeyboardNavigation.ControlTabNavigation="Cycle"
+                  KeyboardNavigation.DirectionalNavigation="Contained">
+                <ContentControl.Style>
+                  <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ContentControl}">
+                          <Border
+                              Background="{TemplateBinding Background}"
+                              HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <ContentPresenter
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Content="{TemplateBinding Content}"/>
+                          </Border>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Setter Property="IsEnabled" Value="True"/>
+                    <Setter Property="Background">
+                      <Setter.Value>
+                        <SolidColorBrush Color="#CC000000" />
+                      </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                      <Trigger Property="Content" Value="{x:Null}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                      </Trigger>
+                    </Style.Triggers>
+                  </Style>
+                </ContentControl.Style>
+              </ContentControl>
+
+    </Grid>
+  </NavigationWindow.Content>
+</NavigationWindow>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MsdnReader.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataFeedUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://windowsclient.net/appfeeds/masterfeed.xml</Value>
+    </Setting>
+    <Setting Name="StoryViewerZoom" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="TransitionsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseDesignFeedInDebug" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubscriptionServiceUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ipc://SubscriptionCenter/SubscriptionService</Value>
+    </Setting>
+    <Setting Name="FetchLocalDataSynchronously" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MSDN Reader</Value>
+    </Setting>
+    <Setting Name="SubscriptionServiceSignalPrefix" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">SubscriptionCenter</Value>
+    </Setting>
+    <Setting Name="EnableJournalNavigationOnInput" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MainWindowBounds" Type="System.Windows.Rect" Scope="User">
+      <Value Profile="(Default)">Empty</Value>
+    </Setting>
+    <Setting Name="SaveMainWindowBounds" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MainWindowState" Type="System.Windows.WindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="ApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MsdnReader</Value>
+    </Setting>
+    <Setting Name="SavedDataExtension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.msdn-story</Value>
+    </Setting>
+    <Setting Name="ChannelPortName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MsdnReaderChannel</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

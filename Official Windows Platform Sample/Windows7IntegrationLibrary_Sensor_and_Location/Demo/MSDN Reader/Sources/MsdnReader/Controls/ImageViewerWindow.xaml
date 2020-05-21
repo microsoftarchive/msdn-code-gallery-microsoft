@@ -1,0 +1,92 @@
+﻿<MsdnReader:ViewerWindowBase x:Class="MsdnReader.ImageViewerWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    WindowStyle="None"
+    Focusable="True"
+    Icon="pack://application:,,,/Resources/msdnreader.ico" 
+    xmlns:sys="clr-namespace:System;assembly=Mscorlib" 
+    Height="500" Width="700" ResizeMode="CanResizeWithGrip"
+    xmlns:MsdnReader="clr-namespace:MsdnReader"
+    Title="{Binding Path=Story.Title}"
+    ShowInTaskbar="False" MinWidth="480" MinHeight="360">
+  <Window.Resources>
+    <Style x:Key="StoryPhotoCredit" TargetType="{x:Type TextBlock}">
+      <Setter Property="FontFamily" Value="Arial" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=8pt}" />
+      <Setter Property="TextAlignment" Value="Right" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+
+    <Style x:Key="StoryPhotoCaption" TargetType="{x:Type TextBlock}">
+      <Setter Property="FontFamily" Value="Georgia" />
+      <Setter Property="FontSize" Value="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=10pt}" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="IsHyphenationEnabled" Value="True" />
+      <Setter Property="Foreground" Value="{DynamicResource Brush_ChromeSolidColor}" />
+    </Style>
+  </Window.Resources>
+  <Grid Background="#FFFFFFFF" x:Name="mainGrid" Width="Auto" Height="Auto">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Background="{StaticResource Background_ChromeUIDefault}" x:Name="titleGrid" Width="Auto" Height="20" Grid.Row="0" VerticalAlignment="Top" MouseLeftButtonDown="OnMouseDownOverTitleGrid" Margin="4,4,4,0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock x:Name="titleTextBlock" Style="{StaticResource TitleTextBlockStyle}" 
+             Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Path=Story.Title}" Margin="5,3,0,0"/>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Center" Margin="0,3,4,3">
+        <Button Style="{StaticResource RestoreButtonStyle}" x:Name="restoreButton" Visibility="Collapsed" Command="MsdnReader:ViewerWindowBase.Restore" Height="14" Width="13"  Margin="0,0,5,0" />
+        <Button Style="{StaticResource MaximizeButtonStyle}" x:Name="maximizeButton" Visibility="Visible" Command="MsdnReader:ViewerWindowBase.Maximize" Height="14" Width="18" Margin="0,0,5,0" />
+        <Button Style="{StaticResource CloseButtonStyle}" IsCancel="True" Height="14" Width="13" x:Name="closeButton" Command="MsdnReader:ViewerWindowBase.CloseWindow" />
+      </StackPanel>
+    </Grid>
+    <Grid Background="#FFFFFFFF" x:Name="imageGrid" Width="Auto" Height="Auto" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <ScrollViewer Focusable="False" Margin="5,20,5,3" x:Name="imageScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="0" >
+        <ContentControl Focusable="False" x:Name="contentControl">
+          <Image Focusable="False" x:Name="image" SnapsToDevicePixels="True" Source="{Binding Path=ImageSource}"/>
+        </ContentControl>
+      </ScrollViewer>
+      <TextBlock x:Name="creditTextBlock" HorizontalAlignment="Right" Grid.Row="1" Style="{StaticResource StoryPhotoCredit}" Text="{Binding Path=ImageReference.Credit}"/>
+      <TextBlock Background="#FFFFFFFF" x:Name="captionTextBlock" Grid.Row="2" Style="{StaticResource StoryPhotoCaption}" Text="{Binding Path=ImageReference.Caption}" HorizontalAlignment="Center"/>
+    </Grid>
+    <Grid Background="#FFFFFFFF" Grid.Row="2" x:Name="controlsGrid" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Margin="20,4,20,10">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <StackPanel Background="#FFFFFFFF" Orientation="Horizontal" Margin="0"  Grid.Column="0" x:Name="sliderStackPanel">
+        <Label Focusable="False" HorizontalAlignment="Left" FontFamily="Segoe UI" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=9pt}" Opacity="0.5" Margin="0,0,5,0" VerticalAlignment="Center" x:Name="zoomLabel" xml:space="preserve">ZOOM</Label>
+        <Slider ValueChanged="OnZoomChanged" Margin="0,0,0,2" Width="100" LargeChange="25" HorizontalAlignment="Left"
+                VerticalAlignment="Center" Height="Auto" x:Name="zoomSlider" Slider.Value="100" Minimum="25" Maximum="200"
+                ToolTip="Change Image Zoom"
+                >
+        </Slider>
+      </StackPanel>
+      <StackPanel Background="#FFFFFFFF" Orientation="Horizontal" Margin="0"  Grid.Column="1" x:Name="navigationStackPanel" HorizontalAlignment="Right">
+        <Button Style="{DynamicResource BlueArrowButtonLeftNoShadow}" Width="15" Height="15" Margin="0" Command="MsdnReader:ImageViewerWindow.PreviousImage" x:Name="previousButton" ToolTip="Previous Image"/>
+        <Label Focusable="False" FontFamily="Segoe UI" Foreground="Black" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=9pt}" Padding="3,0,0,0" Margin="0,4,5,0" Opacity="0.5" x:Name="previousLabel" xml:space="preserve">PREVIOUS</Label>
+        <Rectangle Fill="Black" x:Name="divider" Opacity="0.5" Height="12" Width="1"/>
+        <Label Focusable="False" Foreground="Black" FontFamily="Segoe UI" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=9pt}" Padding="0,0,3,0" Margin="5,4,0,0"  x:Name="nextLabel" Opacity="0.5" xml:space="preserve">NEXT</Label>
+        <Button Style="{DynamicResource BlueArrowButtonRightNoShadow}" x:Name="nextButton" Width="15" Height="15" Margin="0" Command="MsdnReader:ImageViewerWindow.NextImage" ToolTip="Next Image"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+  </MsdnReader:ViewerWindowBase>

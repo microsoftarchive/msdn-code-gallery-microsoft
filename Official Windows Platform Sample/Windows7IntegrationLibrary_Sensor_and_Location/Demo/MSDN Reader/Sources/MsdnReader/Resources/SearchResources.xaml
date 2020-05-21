@@ -1,0 +1,171 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:SceReaderView="clr-namespace:Microsoft.SceReader.View;assembly=SceReader"
+    xmlns:MsdnReader="clr-namespace:MsdnReader"
+    xmlns:aero="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"                
+    >
+
+  <!-- Style for button in Search Control -->
+  <DrawingBrush x:Key="SearchButtonDrawingBrush" Viewbox="0,0,35.165,24.176" ViewboxUnits="Absolute">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="{StaticResource Fill_ChromeUIDefault}" Geometry="M3.0517571E-06,2.2201611E-08 L29.670996,2.2201611E-08 C32.705995,2.2201611E-08 35.164995,2.4597181 35.164995,5.4939081 L35.164995,18.682082 C35.164995,21.716292 32.705995,24.176 29.670996,24.176 L3.0517571E-06,24.176 3.0517571E-06,2.2201611E-08 z"/>
+        <GeometryDrawing Brush="{StaticResource Fill_ChromeUIBevel}" Geometry="M3.0517571E-06,2.2201215E-08 L29.670996,2.2201215E-08 C32.705995,2.2201215E-08 35.164995,2.4596743 35.164995,5.4938101 L35.164995,15.154 C28.651996,8.4651969 16.310999,3.9517226 2.1600025,3.9517226 1.4350027,3.9517226 0.71500288,3.9635624 3.0517571E-06,3.9869421 L3.0517571E-06,2.2201215E-08 z" />
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="1,0,0,1,14.821,6.583"/>
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="{StaticResource Background_ChromeUIContrast}" Geometry="M3.9068479E-06,-2.2429005E-07 L6.5460057,4.3315265 3.9068479E-06,7.9249999 3.9068479E-06,-2.2429005E-07 z"/>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+
+  <Style x:Key="SearchButtonStyle" TargetType="{x:Type Button}" >
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{StaticResource SearchButtonDrawingBrush}" Width="{TemplateBinding Width}" Margin="0,0,0,0"  CornerRadius="0,6,6,0" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <!-- Style for search control on main page -->
+  <Style x:Key="SearchControlStyle" TargetType="{x:Type Control}" >
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Control}">
+          <aero:SystemDropShadowChrome CornerRadius="3" Color="#FF000000" Width="155">
+              <Border BorderThickness="1" BorderBrush="#FF211D49" CornerRadius="4">
+                <StackPanel Width="155" Orientation="Horizontal">
+                  <Border CornerRadius="4,0,0,4" Width="129" Background="{StaticResource Background_ChromeUIContrast}" >
+                    <Grid>
+                      <MsdnReader:CommandTextBox
+                          Name="PART_SearchTextBox"
+                          MaxLength="1024"
+                          Width="132" Margin="0,3,0,0" BorderThickness="0"
+                          FontFamily="Arial" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=13pt}"
+                          Background="Transparent" Foreground="{StaticResource Foreground_ChromeTextDefault}"
+                          CommitCommand="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.SearchCommand}"
+                          CommitCommandParameter="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Text}"
+                          ToolTip="Enter search terms"
+                          AutomationProperties.AutomationId="SearchText"
+                        >
+                      </MsdnReader:CommandTextBox>
+                      <Label
+                        Name="SearchTextLabel"
+                        Margin="4,3,0,0" Padding="0" VerticalAlignment="Top"
+                        FontFamily="Arial" FontStyle="Italic" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=14pt}"
+                        Background="Transparent" Foreground="{StaticResource Foreground_ChromeTextDefault}"
+                        IsHitTestVisible="False" IsEnabled="False"
+                        Opacity="0.7" Visibility="Collapsed"
+                    >Search: </Label>
+                    </Grid>
+                  </Border>
+                  <DockPanel>
+                    <Button Cursor="Hand" Background="Transparent"
+                            Width="28" Margin="-2,0,0,0" Panel.ZIndex="0"
+                            Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=NavigationCommands.SearchCommand}"
+                            CommandParameter="{Binding ElementName=PART_SearchTextBox,Path=Text}"
+                            IsDefault="{Binding ElementName=PART_SearchTextBox,Path=IsKeyboardFocusWithin}"
+                            ToolTip="Start a search"
+                            AutomationProperties.AutomationId="Search"
+                            AutomationProperties.Name="Search"
+                            Style="{StaticResource SearchButtonStyle}">
+                    </Button>
+                  </DockPanel>
+                </StackPanel>
+              </Border>
+          </aero:SystemDropShadowChrome>
+          <ControlTemplate.Triggers>
+            <Trigger SourceName="PART_SearchTextBox" Property="Text" Value="">
+              <Setter TargetName="SearchTextLabel" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger SourceName="PART_SearchTextBox" Property="IsKeyboardFocusWithin" Value="True">
+              <Setter TargetName="SearchTextLabel" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Style for the ListViewItems hosting the search results-->
+  <Style x:Key="StoryStyle_Search" TargetType="{x:Type ListViewItem}"  >
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListViewItem}">
+          <SceReaderControls:CommandButton Style="{StaticResource Button_MainStory}" DataContext="{Binding Path=Story}" ClickMode="Press">
+            <Button.ContextMenu>
+              <ContextMenu>
+                <MenuItem Name="AddStoryMenuItem" 
+                          Header="Send Story to _Reading List"
+                          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.AddStoryToReadingListCommand}"
+                          CommandParameter="{Binding Path=.}"/>
+                <MenuItem Name="PrintStoryMenuItem"
+                          Header="_Print Story"
+                          Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.PrintStoryCommand}"
+                          CommandParameter="{Binding Path=.}"/>
+              </ContextMenu>
+            </Button.ContextMenu>
+            <StackPanel x:Name="Content">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Relevance: " />
+                <ProgressBar Height="10" Width="50"  
+                             Minimum="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=MinSearchRelevance}"
+                             Maximum="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=MaxSearchRelevance}"
+                             Value="{Binding Relevance}" 
+                             DataContext="{TemplateBinding DataContext}" />
+                <TextBlock Text="{Binding Relevance}" Margin="10,0,0,0" DataContext="{TemplateBinding DataContext}"/>
+                <TextBlock Text="%" />
+              </StackPanel>
+              <TextBlock Text="{Binding Title}" Margin="0,0,0,2" Style="{StaticResource Text_Headline}" />
+              <TextBlock x:Name="Byline" Text="{Binding Byline}" Margin="0,0,0,2" Style="{StaticResource Text_Byline}" />
+              <SceReaderControls:StoryAbstractControl Style="{StaticResource StoryAbstract_ThumbnailEnabled}"/>
+            </StackPanel>
+          </SceReaderControls:CommandButton>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Style for the ListBox lookin as RadioButton list -->
+  <Style x:Key="RadioButtonList_Search" TargetType="{x:Type ListBox}"  >
+    <Setter Property="Background" Value="{x:Null}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListBoxItem}"  >
+          <Setter Property="Focusable" Value="False" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                <RadioButton Focusable="True" IsTabStop="True" Content="{TemplateBinding Content}" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}" Margin="0,0,30,0"/>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Default data template for SearchSection type-->
+  <DataTemplate DataType="{x:Type SceReaderData:SearchSection}">
+    <MsdnReader:SearchViewControl AutomationProperties.AutomationId="SearchContent">
+    </MsdnReader:SearchViewControl>
+  </DataTemplate>
+
+
+</ResourceDictionary>

@@ -1,0 +1,14 @@
+Version:1.0
+StartHTML:000000
+EndHTML:000000
+<html>
+<body>
+Emailing: Story from MSDN Reader<br /><br />
+Story title: <br/>
+<b>%ArticleTitle%</b><br/>
+Story description: <br />
+<i>%ArticleDesc%</i><br/>
+Link to web content: <br/>
+<a href="%WebLink%">%WebLink%</a><br/><br/>
+</body>
+</html>

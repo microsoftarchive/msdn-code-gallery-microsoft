@@ -1,0 +1,700 @@
+<!--
+  Resource dictionary that defines the look and behavior of the NavigationPanel
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:SceReader;assembly=SceReader"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:SceReaderView="clr-namespace:Microsoft.SceReader.View;assembly=SceReader"
+    xmlns:aero="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    >
+
+  <Geometry x:Key="DownArrow"> M0,0 L20,0 10.5,20 z</Geometry>
+  <Geometry x:Key="UpArrow">   M 0,4 L 3.5,0 L 7,4 Z</Geometry>
+  <Geometry x:Key="RightArrow">M 0,0 L 4,3.5 L 0,7 Z</Geometry>
+  <!-- Background brush for NavPanelItem's popup menu -->
+  <LinearGradientBrush x:Key="Background_NavPanelItemPopup">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFDEEFFF" Offset="1"/>
+      <GradientStop Color="#FFDEEFFF" Offset="1"/>
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+
+  <!-- Brush creating bevel effect at the bottom of NavPanelItem's popup menu -->
+  <LinearGradientBrush x:Key="Fill_NavPanelItemPopupBevel" StartPoint="0.5,1" EndPoint="0.5,0">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFDEEFFF" Offset="0"/>
+      <GradientStop Color="#FFDEEFFF" Offset="1"/>
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+
+  <!-- ControlTemplate for NavPanel of Vertical Orientation -->
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanel}, ResourceId=VerticalNavPanelTemplateKey}"
+                   TargetType="{x:Type SceReaderControls:NavPanel}">
+    <Border Background="Transparent"
+            BorderThickness="0"
+            BorderBrush="Gray"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="0,0,0,1">
+      <StackPanel ClipToBounds="False" Name="VerticalNavPanelStackPanel" Orientation="Vertical" IsItemsHost="True"  HorizontalAlignment="Left"/>
+    </Border>
+  </ControlTemplate>
+
+  <!-- ControlTemplate for NavPanel of Horizontal Orientation -->
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanel}, ResourceId=HorizontalNavPanelTemplateKey}"
+                   TargetType="{x:Type SceReaderControls:NavPanel}">
+    <Border Background="Transparent"
+            BorderThickness="2"
+            BorderBrush="Gray"
+            Padding="{TemplateBinding Padding}"
+            SnapsToDevicePixels="true"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+      <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+    </Border>
+  </ControlTemplate>
+
+  <!-- Default style for NavPanel. Sets Template on NavPanel, based on the Orientation-->
+  <Style x:Key="{x:Type SceReaderControls:NavPanel}"
+         TargetType="{x:Type SceReaderControls:NavPanel}">
+    <Style.Triggers>
+      <Trigger Property="Orientation"
+               Value="Vertical">
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanel}, ResourceId=VerticalNavPanelTemplateKey}}"/>
+      </Trigger>
+      <Trigger Property="Orientation"
+               Value="Horizontal">
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanel}, ResourceId=HorizontalNavPanelTemplateKey}}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <!-- ControlTemplate for NavPanelItems with no subsections -->
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=NoSubItemsTemplateKey}"
+                   TargetType="{x:Type SceReaderControls:NavPanelItem}">
+    <StackPanel  Margin="0,0,0,0">
+      <Border Name="Bd"
+              Background="Transparent"
+              BorderThickness="0"
+              BorderBrush="White"
+              Margin="0,1,0,0"
+              CornerRadius="3"
+      >
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="17"
+                              Width="Auto"
+                              SharedSizeGroup="MenuItemIconColumnGroup"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"
+                              SharedSizeGroup="MenuItemIGTColumnGroup"/>
+            <ColumnDefinition Width="14"/>
+          </Grid.ColumnDefinitions>
+          <!-- Glyph -->
+          <ContentPresenter x:Name="Icon"
+                            Margin="4,0,6,0"
+                            VerticalAlignment="Center"
+                            ContentSource="Icon"/>
+          <Path x:Name="GlyphPanel"
+                Margin="4,0,6,0"
+                Visibility="Hidden"
+                VerticalAlignment="Center"
+                Fill="{TemplateBinding Foreground}"
+                FlowDirection="LeftToRight"
+            >
+            <Path.Data>
+              <PathGeometry>
+                <PathGeometry.Figures>
+                  <PathFigureCollection>
+                    <PathFigure StartPoint="0 2"
+                                IsClosed="True"
+                                IsFilled="True">
+                      <PathFigure.Segments>
+                        <PathSegmentCollection>
+                          <LineSegment Point="0 4.8"/>
+                          <LineSegment Point="2.5 7.4"/>
+                          <LineSegment Point="7.1 2.8"/>
+                          <LineSegment Point="7.1 0"/>
+                          <LineSegment Point="2.5 4.6"/>
+                        </PathSegmentCollection>
+                      </PathFigure.Segments>
+                    </PathFigure>
+                  </PathFigureCollection>
+                </PathGeometry.Figures>
+              </PathGeometry>
+            </Path.Data>
+          </Path>
+          <ContentPresenter Grid.Column="0"
+                            ContentSource="Header"
+                            Margin="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"/>
+        </Grid>
+      </Border>
+      <Rectangle Name="Separator1" Height="1" Fill="#FFDEEFFF"/>
+      <Rectangle Name="Separator2" Height="1" Fill="#FFDEEFFF"/>
+    </StackPanel>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsChecked"
+               Value="true">
+        <Setter TargetName="GlyphPanel"
+                Property="Visibility"
+                Value="Visible"/>
+        <Setter TargetName="Icon"
+                Property="Visibility"
+                Value="Collapsed"/>
+      </Trigger>
+      <Trigger Property="Role"
+          Value="SubmenuHeader">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+
+      <Trigger Property="Role"
+               Value="SubmenuItem">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="IsHighlighted"
+               Value="true">
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+        <Setter Property="Foreground"
+                Value="{StaticResource Foreground_NavItemOver}"/>
+      </Trigger>
+
+      <Trigger Property="IsMouseOver"
+               Value="True">
+        <Setter Property="Cursor"
+                Value="Hand"/>
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+      </Trigger>
+      <Trigger Property="IsEnabled"
+               Value="false">
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- ControlTemplate for NavPanelItems with subsections -->
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=HasSubItemsTemplateKey}"
+                   TargetType="{x:Type SceReaderControls:NavPanelItem}">
+    <StackPanel  Margin="0,0,0,0">
+      <Border Name="Bd"
+              Background="Transparent"
+              BorderThickness="0"
+              BorderBrush="White"
+              Margin="0,1,0,0"
+              CornerRadius="3" >
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="17"
+                              Width="{TemplateBinding ActualWidth}"
+                              SharedSizeGroup="MenuItemIconColumnGroup"/>
+            <ColumnDefinition Width="14"/>
+          </Grid.ColumnDefinitions>
+          <!-- Glyph -->
+          <ContentPresenter x:Name="Icon"
+                            Margin="4,0,6,0"
+                            VerticalAlignment="Center"
+                            ContentSource="Icon"/>
+          <Path x:Name="GlyphPanel"
+                Margin="4,0,6,0"
+                Visibility="Hidden"
+                VerticalAlignment="Center"
+                Fill="{TemplateBinding Foreground}"
+                FlowDirection="LeftToRight"
+            >
+            <Path.Data>
+              <PathGeometry>
+                <PathGeometry.Figures>
+                  <PathFigureCollection>
+                    <PathFigure StartPoint="0 2"
+                                IsClosed="True"
+                                IsFilled="True">
+                      <PathFigure.Segments>
+                        <PathSegmentCollection>
+                          <LineSegment Point="0 4.8"/>
+                          <LineSegment Point="2.5 7.4"/>
+                          <LineSegment Point="7.1 2.8"/>
+                          <LineSegment Point="7.1 0"/>
+                          <LineSegment Point="2.5 4.6"/>
+                        </PathSegmentCollection>
+                      </PathFigure.Segments>
+                    </PathFigure>
+                  </PathFigureCollection>
+                </PathGeometry.Figures>
+              </PathGeometry>
+            </Path.Data>
+          </Path>
+          <ContentPresenter Grid.Column="0"
+                            ContentSource="Header"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Left"
+                            RecognizesAccessKey="True">
+          </ContentPresenter>
+          <!-- Submenu arrow -->
+
+          <Path x:Name="ArrowPanel"
+             Fill="{TemplateBinding Foreground}"
+             VerticalAlignment="Center"
+             HorizontalAlignment="Right"
+             Data="{StaticResource RightArrow}"
+             Grid.Column="1"
+             DockPanel.Dock="Right"
+             Margin="4,0,6,0"/>
+
+          <Rectangle Name="SubMenuButtonSeparator" Grid.Column="1" HorizontalAlignment="Left"  Width="1" Fill="Transparent"/>
+
+          <SceReaderControls:CommandButton Name="PART_OpenSubMenu" Grid.Column="1">
+            <SceReaderControls:CommandButton.Style>
+              <Style TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate>
+                      <Border BorderBrush="Transparent" BorderThickness="1" Margin="0,-1,-1,-1">
+                        <Canvas Background="Transparent"/>
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="IsTabStop" Value="False"/>
+              </Style>
+            </SceReaderControls:CommandButton.Style>
+          </SceReaderControls:CommandButton>
+
+          <Popup x:Name="PART_Popup"
+               AllowsTransparency="true"
+               Placement="Right"
+               StaysOpen="False"
+               VerticalOffset="0"
+               IsOpen="{Binding Path=IsSubmenuOpen,RelativeSource={RelativeSource TemplatedParent}}"
+               Focusable="false"
+               PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}"
+         >
+            <aero:SystemDropShadowChrome Name="Shdw"
+                            Color="#71000000">
+              <Border Name="SubMenuBorder"
+                                          Background="{StaticResource Background_NavPanelItemPopup}"
+                                          Margin="2,0,0,0">
+                <ScrollViewer CanContentScroll="true"
+                              Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=MenuScrollViewer}}">
+                  <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle"
+                                  KeyboardNavigation.TabNavigation="Cycle"
+                                  Grid.IsSharedSizeScope="true"/>
+                </ScrollViewer>
+              </Border>
+            </aero:SystemDropShadowChrome>
+          </Popup>
+        </Grid>
+      </Border>
+      <Rectangle Name="Separator1" Height="1" Fill="#FFDEEFFF"/>
+      <Rectangle Name="Separator2" Height="1" Fill="#FFDEEFFF"/>
+    </StackPanel>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsSuspendingPopupAnimation"
+               Value="true">
+        <Setter TargetName="PART_Popup"
+                Property="PopupAnimation"
+                Value="None"/>
+      </Trigger>
+      <Trigger Property="Icon"
+               Value="{x:Null}">
+        <Setter TargetName="Icon"
+                Property="Visibility"
+                Value="Collapsed"/>
+      </Trigger>
+      <Trigger Property="Role"
+               Value="SubmenuHeader">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="Role"
+         Value="SubmenuItem">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="ParentOrientation"
+               Value="Vertical">
+        <Setter TargetName="ArrowPanel"
+                Property="Data"
+                Value="{StaticResource RightArrow}"/>
+        <Setter TargetName="PART_Popup"
+                Property="Placement"
+                Value="Right"/>
+      </Trigger>
+      <Trigger Property="IsMouseOver"
+               Value="True">
+        <Setter TargetName="SubMenuButtonSeparator"
+                Property="Fill"
+                Value="Gray"/>
+        <Setter Property="Cursor"
+                Value="Hand"/>
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+      </Trigger>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="Role" Value="TopLevelItem" />
+          <Condition Property="ParentOrientation" Value="Horizontal" />
+        </MultiTrigger.Conditions>
+        <Setter TargetName="ArrowPanel"
+                Property="Data"
+                Value="{StaticResource DownArrow}"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Margin"
+                Value="4,2,4,2"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Stretch"
+                Value="UniformToFill"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Height"
+                Value="5"/>
+        <Setter TargetName="PART_Popup"
+                Property="Placement"
+                Value="Bottom"/>
+        <Setter TargetName="PART_Popup"
+                Property="VerticalOffset"
+                Value="5"/>
+        <Setter TargetName="PART_Popup"
+                Property="HorizontalOffset"
+                Value="-2"/>
+      </MultiTrigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="Role" Value="TopLevelHeader" />
+          <Condition Property="ParentOrientation" Value="Horizontal" />
+        </MultiTrigger.Conditions>
+        <Setter TargetName="ArrowPanel"
+                Property="Data"
+                Value="{StaticResource DownArrow}"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Margin"
+                Value="4,2,4,2"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Stretch"
+                Value="UniformToFill"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Height"
+                Value="5"/>
+        <Setter TargetName="PART_Popup"
+                Property="Placement"
+                Value="Bottom"/>
+        <Setter TargetName="PART_Popup"
+                Property="VerticalOffset"
+                Value="5"/>
+        <Setter TargetName="PART_Popup"
+                Property="HorizontalOffset"
+                Value="-2"/>
+      </MultiTrigger>
+
+      <Trigger Property="IsChecked"
+               Value="true">
+        <Setter TargetName="GlyphPanel"
+                Property="Visibility"
+                Value="Visible"/>
+        <Setter TargetName="Icon"
+                Property="Visibility"
+                Value="Collapsed"/>
+      </Trigger>
+      <Trigger Property="IsHighlighted"
+               Value="true">
+        <Setter TargetName="SubMenuButtonSeparator"
+                Property="Fill"
+                Value="#FFDEEFFF"/>
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+        <Setter Property="Foreground"
+                Value="{StaticResource Foreground_NavItemOver}"/>
+      </Trigger>
+      <Trigger SourceName="PART_Popup"
+               Property="Popup.HasDropShadow"
+               Value="true">
+        <Setter TargetName="Shdw"
+                Property="Margin"
+                Value="0,0,5,5"/>
+        <Setter TargetName="Shdw"
+                Property="Color"
+                Value="#71000000"/>
+      </Trigger>
+      <Trigger Property="DisplayedWithinSubSection"
+               Value="True">
+        <Setter TargetName="ArrowPanel"
+                Property="Grid.Column"
+                Value="0"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Margin"
+                Value="0,0,6,0"/>
+        <Setter TargetName="PART_OpenSubMenu"
+                Property="Margin"
+                Value="-14,-1,-1,-1"/>
+        <Setter TargetName="Bd"
+                Property="BorderBrush"
+                Value="Transparent"/>
+        <Setter TargetName="PART_Popup"
+                Property="HorizontalOffset"
+                Value="-10"/>
+      </Trigger>
+      <Trigger Property="IsEnabled"
+               Value="false">
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- ControlTemplate for NavPanelItems with subsections, and that have DisplaySubsections set to true -->
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=DisplaySubItemsTemplateKey}"
+                   TargetType="{x:Type SceReaderControls:NavPanelItem}">
+    <StackPanel  Margin="0,0,0,0">
+
+      <Border Name="Bd"
+            Background="Transparent"
+            BorderThickness="0"
+            BorderBrush="White"
+            Margin="0,1,0,0"
+            CornerRadius="3">
+
+        <Grid >
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="17"
+                              Width="{TemplateBinding ActualWidth}"
+                              SharedSizeGroup="MenuItemIconColumnGroup"/>
+            <ColumnDefinition Width="14"/>
+          </Grid.ColumnDefinitions>
+          <!-- Glyph -->
+          <ContentPresenter x:Name="Icon"
+                            Margin="4,0,6,0"
+                            VerticalAlignment="Center"
+                            ContentSource="Icon"/>
+          <Path x:Name="GlyphPanel"
+                Margin="4,0,6,0"
+                Visibility="Collapsed"
+                VerticalAlignment="Center"
+                Fill="{TemplateBinding Foreground}"
+                FlowDirection="LeftToRight"
+              >
+            <Path.Data>
+              <PathGeometry>
+                <PathGeometry.Figures>
+                  <PathFigureCollection>
+                    <PathFigure StartPoint="0 2"
+                                IsClosed="True"
+                                IsFilled="True">
+                      <PathFigure.Segments>
+                        <PathSegmentCollection>
+                          <LineSegment Point="0 4.8"/>
+                          <LineSegment Point="2.5 7.4"/>
+                          <LineSegment Point="7.1 2.8"/>
+                          <LineSegment Point="7.1 0"/>
+                          <LineSegment Point="2.5 4.6"/>
+                        </PathSegmentCollection>
+                      </PathFigure.Segments>
+                    </PathFigure>
+                  </PathFigureCollection>
+                </PathGeometry.Figures>
+              </PathGeometry>
+            </Path.Data>
+          </Path>
+          <!--Header Content-->
+          <ContentPresenter DockPanel.Dock="Top"
+                            ContentSource="Header"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Left"
+                            RecognizesAccessKey="True"/>
+
+          <!--Submenu arrow-->
+
+          <Path x:Name="ArrowPanel"
+             Fill="{TemplateBinding Foreground}"
+             VerticalAlignment="Center"
+             HorizontalAlignment="Right"
+             Data="{StaticResource RightArrow}"
+             Grid.Column="1"
+             DockPanel.Dock="Right"
+             Margin="4,0,6,0"/>
+
+          <SceReaderControls:CommandButton Name="PART_OpenSubMenu" Grid.Column="1">
+            <SceReaderControls:CommandButton.Style>
+              <Style TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate>
+                      <Border BorderBrush="Transparent" BorderThickness="1" Margin="0,-1,-1,-1">
+                        <Canvas Background="Transparent"/>
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="IsTabStop" Value="False"/>
+              </Style>
+            </SceReaderControls:CommandButton.Style>
+          </SceReaderControls:CommandButton>
+
+          <Border Name="SubMenuBorder"
+                  Background="Transparent"
+                  BorderThickness="2" Visibility="Collapsed">
+            <ScrollViewer CanContentScroll="true"
+                          Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=MenuScrollViewer}}">
+              <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle"
+                              KeyboardNavigation.TabNavigation="Cycle"
+                              Grid.IsSharedSizeScope="true"/>
+            </ScrollViewer>
+          </Border>
+        </Grid>
+      </Border>
+      <Rectangle Name="Separator1" Height="1" Fill="Black"/>
+      <Rectangle Name="Separator2" Height="1" Fill="Gray"/>
+    </StackPanel>
+
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsSubmenuOpen"
+               Value="true">
+        <Setter TargetName="SubMenuBorder"
+                Property="Visibility"
+                Value="Visible"/>
+        <Setter TargetName="ArrowPanel"
+                Property="VerticalAlignment"
+                Value="Top"/>
+        <Setter TargetName="ArrowPanel"
+                Property="HorizontalAlignment"
+                Value="Center"/>
+        <Setter TargetName="ArrowPanel"
+                Property="Margin"
+                Value="4,7,4,0"/>
+
+      </Trigger>
+      <Trigger Property="Role"
+               Value="SubmenuHeader">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="Role"
+         Value="SubmenuItem">
+        <Setter TargetName="Separator1" Property="Fill" Value="Transparent"/>
+        <Setter TargetName="Separator2" Property="Fill" Value="Transparent"/>
+      </Trigger>
+      <Trigger Property="Icon"
+               Value="{x:Null}">
+        <Setter TargetName="Icon"
+                Property="Visibility"
+                Value="Collapsed"/>
+      </Trigger>
+      <Trigger Property="IsMouseOver"
+               Value="True">
+        <Setter Property="Cursor"
+                Value="Hand"/>
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+      </Trigger>
+
+      <Trigger Property="IsHighlighted"
+               Value="true">
+        <Setter TargetName="Bd"
+                Property="Background"
+                Value="{StaticResource Background_ChromeUIDefault}"/>
+      </Trigger>
+      <Trigger Property="IsEnabled"
+               Value="false">
+        <Setter Property="Foreground"
+                Value="{StaticResource Foreground_NavItemNormal}"/>
+      </Trigger>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="DisplaySubSections" Value="true"/>
+          <Condition Property="ParentOrientation" Value="Vertical"/>
+        </MultiTrigger.Conditions>
+        <Setter TargetName="SubMenuBorder"
+                Property="Margin"
+                Value="10,20,-10,0"/>
+      </MultiTrigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="DisplayedWithinSubSection" Value="true"/>
+          <Condition Property="ParentOrientation" Value="Vertical"/>
+        </MultiTrigger.Conditions>
+        <Setter TargetName="SubMenuBorder"
+                Property="Margin"
+                Value="10,20,-10,0"/>
+        <Setter TargetName="Bd"
+                Property="BorderBrush"
+                Value="Transparent"/>
+      </MultiTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- Style for Separators that separate NavPanelItems in a NavPanel -->
+  <Style x:Key="SeparatorStyle" TargetType="{x:Type Separator}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Separator}">
+          <Rectangle Height="1" Fill="Black"/>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!-- Default Style for NavPanelItems. Sets Template property on NavPanelItems based on various properties -->
+  <Style x:Key="{x:Type SceReaderControls:NavPanelItem}"
+       TargetType="{x:Type SceReaderControls:NavPanelItem}">
+    <Setter Property="Foreground" Value="{StaticResource Foreground_NavItemNormal}"/>
+    <Setter Property="SeparatorStyle" Value="{StaticResource SeparatorStyle}"/>
+    <Setter Property="CommandParameter" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=NavigationItem.NavigationContext}" />
+    <Setter Property="Command" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=NavigationItem.Command}" />
+    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=NavigationItem.Name}" />
+    <Setter Property="Padding" Value="3,8,0,8" />
+    <Setter Property="Margin" Value="3,0" />
+    <Style.Triggers>
+
+      <!-- Set appropriate Template for NavPanelItem -->
+      <Trigger Property="HasSubItems"
+               Value="False">
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=NoSubItemsTemplateKey}}"/>
+      </Trigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="HasSubItems" Value="True"/>
+          <Condition Property="DisplaySubSections" Value="False"/>
+        </MultiTrigger.Conditions>
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=HasSubItemsTemplateKey}}"/>
+      </MultiTrigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="HasSubItems" Value="True"/>
+          <Condition Property="DisplaySubSections" Value="True"/>
+        </MultiTrigger.Conditions>
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=DisplaySubItemsTemplateKey}}"/>
+      </MultiTrigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="HasSubItems" Value="True"/>
+          <Condition Property="DisplayedWithinSubSection" Value="True"/>
+        </MultiTrigger.Conditions>
+        <Setter Property="Template"
+                Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type SceReaderControls:NavPanelItem}, ResourceId=DisplaySubItemsTemplateKey}}"/>
+      </MultiTrigger>
+    </Style.Triggers>
+  </Style>
+  
+</ResourceDictionary>

@@ -1,0 +1,71 @@
+<UserControl x:Class="MsdnReader.SearchViewControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:SceReaderView="clr-namespace:Microsoft.SceReader.View;assembly=SceReader"
+    xmlns:MsdnReader="clr-namespace:MsdnReader">
+  <UserControl.Resources>
+    <!-- Style for the ListViewItems hosting the search results-->
+    <Style x:Key="StoryStyle_Search" TargetType="{x:Type ListViewItem}"  >
+      <Setter Property="Focusable" Value="False" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListViewItem}">
+            <SceReaderControls:CommandButton Style="{StaticResource Button_MainStory}" DataContext="{Binding Path=Story}" ClickMode="Press">
+              <Button.ContextMenu>
+                <ContextMenu>
+                  <MenuItem Name="AddStoryMenuItem"
+                            Header="Send Story to _Reading List"
+                            Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.AddStoryToReadingListCommand}"
+                            CommandParameter="{Binding Path=.}"/>
+                  <MenuItem Name="PrintStoryMenuItem"
+                            Header="_Print Story"
+                            Command="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=PersistenceCommands.PrintStoryCommand}"
+                            CommandParameter="{Binding Path=.}"/>
+                </ContextMenu>
+              </Button.ContextMenu>
+              <StackPanel x:Name="Content">
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Text="Relevance: " />
+                  <ProgressBar Height="10" Width="50"
+                               Minimum="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=MinSearchRelevance}"
+                               Maximum="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=MaxSearchRelevance}"
+                               Value="{Binding Relevance}"
+                               DataContext="{TemplateBinding DataContext}" />
+                  <TextBlock Text="{Binding Relevance}" Margin="10,0,0,0" DataContext="{TemplateBinding DataContext}"/>
+                  <TextBlock Text="%" />
+                </StackPanel>
+                <TextBlock Text="{Binding Title}" Margin="0,0,0,2" Style="{StaticResource Text_Headline}" />
+                <TextBlock x:Name="Byline" Text="{Binding Byline}" Margin="0,0,0,2" Style="{StaticResource Text_Byline}" />
+                <SceReaderControls:StoryAbstractControl Style="{StaticResource StoryAbstract_ThumbnailEnabled}"/>
+              </StackPanel>
+            </SceReaderControls:CommandButton>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Border Margin="5" Background="LightGray" Padding="5" BorderBrush="DarkGray" BorderThickness="1">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="3">
+          <Label Focusable="False"  Content="Articles found: "/>
+          <Label Focusable="False" Content="{Binding Path=Stories.Count}"/>
+        </StackPanel>
+    </Border>
+    <ListView Name="listView"
+              Grid.Row="1"
+              ItemsSource="{Binding Path=SearchResults}"
+              ItemContainerStyle="{StaticResource StoryStyle_Search}"
+              KeyboardNavigation.TabNavigation = "Continue"
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+              ScrollViewer.VerticalScrollBarVisibility="Visible"
+              AutomationProperties.AutomationId="ListView"/>
+  </Grid>
+</UserControl>
