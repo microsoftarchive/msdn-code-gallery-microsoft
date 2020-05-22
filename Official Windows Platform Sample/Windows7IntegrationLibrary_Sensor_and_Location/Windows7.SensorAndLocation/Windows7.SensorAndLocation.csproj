@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9055C6EF-F83B-4AE0-8041-F9731124A55E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Windows7.SensorAndLocation</RootNamespace>
+    <AssemblyName>Windows7.SensorAndLocation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRules>-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1714;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1717;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1701;-Microsoft.Naming#CA1703;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726</CodeAnalysisRules>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>bin\x86\Release\Windows7.SensorAndLocation.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Location\DesiredAccuracy.cs" />
+    <Compile Include="Location\EventHandlerDelegates.cs" />
+    <Compile Include="Location\Internal\DefaultCivicAddressReport.cs" />
+    <Compile Include="Location\Internal\DefaultLocationInternal.cs" />
+    <Compile Include="Location\Providers\Civic\CivicAddressLocationProvider.cs" />
+    <Compile Include="Location\Providers\Civic\CivicAddressLocationReport.cs" />
+    <Compile Include="Location\Providers\Civic\DefaultCivicAddressLocationProvider.cs" />
+    <Compile Include="Location\DefaultLocationProvider.cs" />
+    <Compile Include="Location\Providers\LatLong\DefaultLatLongLocationProvider.cs" />
+    <Compile Include="Location\Internal\DefaultLatLongReport.cs" />
+    <Compile Include="Location\Providers\LatLong\LatLongLocationProvider.cs" />
+    <Compile Include="Location\ReportState.cs" />
+    <Compile Include="Sensors\Sensors\Motion\Accelerometer3D\Accelerometer3D.cs" />
+    <Compile Include="Sensors\Sensors\Motion\Accelerometer3D\Accelerometer3DReport.cs" />
+    <Compile Include="Sensors\Sensors\Light\AmbientLight\AmbientLightSensor.cs" />
+    <Compile Include="Sensors\Sensors\Light\AmbientLight\AmbientLightSensorDataReport.cs" />
+    <Compile Include="Sensors\Sensors\Mechanical\BooleanSwitchArray\BooleanSwitchArray.cs" />
+    <Compile Include="Sensors\Sensors\Mechanical\BooleanSwitchArray\BooleanSwitchArrayDataReport.cs" />
+    <Compile Include="Sensors\EventHandlerDelegates.cs" />
+    <Compile Include="Location\Providers\LatLong\LatLongLocationReport.cs" />
+    <Compile Include="Location\LocationProvider.cs" />
+    <Compile Include="Location\Internal\LocationEvents.cs" />
+    <Compile Include="Location\Internal\LocationInternal.cs" />
+    <Compile Include="Location\LocationReport.cs" />
+    <Compile Include="Location\LocationProviderDescriptionAttribute.cs" />
+    <Compile Include="Location\Internal\LocationReport.cs" />
+    <Compile Include="Sensors\Internal\PortableDevice.cs" />
+    <Compile Include="Common\PropertyKey.cs" />
+    <Compile Include="Common\PropVariant.cs" />
+    <Compile Include="Sensors\Sensor.cs" />
+    <Compile Include="Sensors\Internal\SensorCollection.cs" />
+    <Compile Include="Sensors\SensorConstants.cs" />
+    <Compile Include="Sensors\SensorDataReport.cs" />
+    <Compile Include="Sensors\SensorDescriptionAttribute.cs" />
+    <Compile Include="Sensors\Internal\SensorInternal.cs" />
+    <Compile Include="Sensors\Internal\SensorEvents.cs" />
+    <Compile Include="Sensors\SensorManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensors\Internal\SensorManagerInternal.cs" />
+    <Compile Include="Sensors\SensorState.cs" />
+    <Compile Include="Common\SYSTEMTIME.cs" />
+    <Compile Include="Sensors\Sensors\UnknownSensor.cs" />
+    <Compile Include="Sensors\Sensors\UnknownSensorDataReport.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,99 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!--custom-->
+  <SolidColorBrush x:Key="Foreground_LastUpdatedText" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="Foreground_ActiveSectionText" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="Foreground_NavItemNormal" Color="#FF1C88C6" />
+  <SolidColorBrush x:Key="Foreground_NavItemOver" Color="#FFFFAA00"/>
+
+  <LinearGradientBrush x:Key="Background_MSDNLogo" StartPoint="0,.5" EndPoint="1,.5">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF1C88C6" Offset=".1"/>
+      <GradientStop Color="#FFffffff" Offset=".78"/>
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  
+  <!-- Background color for main application chrome - this is the background used for MainPage, etc -->
+  <!--Smooth Fusion changed color-->
+  <LinearGradientBrush x:Key="Background_ChromeDefault" StartPoint="0.559161,0.00171168" EndPoint="0.559161,0.102573">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFDEEFFF" Offset="0"/>
+      <GradientStop Color="#FFffffff" Offset="0.377119"/>
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+
+  <!-- SolidColorBrush for main application chrome - used for smaller UI pieces to mmatch the main application background -->
+  <!--  Smooth Fusion - Changed to black for font color in articles-->
+  <SolidColorBrush x:Key="Brush_ChromeSolidColor" Color="#FF000000" />
+
+  <!--  Background for masthead with main app title and top part of main page chrome -->
+  <!--<LinearGradientBrush x:Key="Background_Masthead" StartPoint="0.559161,0.00171168" EndPoint="0.559161,0.402573">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF3D7890" Offset="0"/>
+      <GradientStop Color="#FF1D4758" Offset="0.377119"/>
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>-->
+  <SolidColorBrush x:Key="Background_Masthead" Color="#1C88C6" />
+  
+  <!-- Main chrome navigation button path stroke -->
+  <LinearGradientBrush x:Key="Stroke_ChromeUIDefault" StartPoint="0.993379,0.0147525" EndPoint="0.993379,0.990664">
+    <GradientStop Color="#FF171717" Offset="0"/>
+    <GradientStop Color="#FF818181" Offset="1"/>
+  </LinearGradientBrush>
+
+  <!-- Main chrome navigation button path fill -->
+  <!--Smooth Fusion Change colors of arrows and elements at top-->
+  <SolidColorBrush x:Key="Fill_ChromeUIDefault" Color="#FF1B89C8" />
+
+  <!-- Main chrome navigation button path bevel stroke -->
+  <LinearGradientBrush x:Key="Stroke_ChromeUIBevel" StartPoint="0.99473,-0.0133688" EndPoint="0.99473,1.09066">
+    <GradientStop Color="#34FFFFFF" Offset="0"/>
+    <GradientStop Color="#0BFFFFFF" Offset="0.987288"/>
+  </LinearGradientBrush>
+
+  <!-- Main chrome navigation button path bevel stroke -->
+  <LinearGradientBrush x:Key="Fill_ChromeUIBevel" StartPoint="0.99473,-0.0133688" EndPoint="0.99473,1.09066">
+    <GradientStop Color="#34FFFFFF" Offset="0"/>
+    <GradientStop Color="#0BFFFFFF" Offset="0.987288"/>
+  </LinearGradientBrush>
+
+  <!-- Foreground brush for contrasting text in  chrome for controls -->
+  <SolidColorBrush x:Key="Foreground_ChromeTextContrast" Color="#FFE5E5E5" />
+
+  <!-- Default foreground brush for text in chrome -->
+  <!--Smooth Fusion Color of text in drop down menu items at top-->
+  <SolidColorBrush x:Key="Foreground_ChromeTextDefault" Color="#FF000000" />
+
+  <!-- Default forefround color for all main text in content (not chrome, but content for stories, section front buttons, etc) -->
+  <SolidColorBrush x:Key="Foreground_ContentTextDefault" Color="Black" />
+
+  <!-- Default brush for UI background -->
+  <!-- Smooth Fusion Nav Hover Color-->
+  <SolidColorBrush x:Key="Background_ChromeUIDefault" Color="#FFDEEFFF" />
+
+  <!-- Contrast brush for UI background -->
+  <!-- Smooth Fusion Gradient for Search drop down-->
+  <LinearGradientBrush x:Key="Background_ChromeUIContrast" EndPoint="0.55036,0.00696403" StartPoint="0.55036,1.00068">
+    <GradientStop Color="#FFE6E6E6" Offset="0.394068"/>
+    <GradientStop Color="#FFF0F0F0" Offset="1"/>
+  </LinearGradientBrush>
+
+  <!-- Brush resources for faking bevel effect - horizontal and vertical and radial gradients -->
+  <LinearGradientBrush x:Key="Brush_HorizontalBevelGradient" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Color="#01000000" Offset="0" />
+    <GradientStop Color="#66000000" Offset=".5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="Brush_VerticalBevelGradient" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Color="#01000000" Offset="0" />
+    <GradientStop Color="#66000000" Offset=".5" />
+  </LinearGradientBrush>
+  <RadialGradientBrush x:Key="Brush_RadialBevelGradient" >
+    <GradientStop Color="#88000000" Offset="0"/>
+    <GradientStop Color="#01000000" Offset="1"/>
+  </RadialGradientBrush>
+
+  <!-- Background brush  for main content container -->
+  <SolidColorBrush x:Key="Background_MainContentContainer" Color="#FFFFFFFF"/>
+
+</ResourceDictionary>

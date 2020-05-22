@@ -1,0 +1,288 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader" 
+	  xmlns:Local="clr-namespace:MsdnReader" 
+    xmlns:scer="http://schemas.microsoft.com/winfx/2007/scereader" 
+    >
+	<!--This SolidColorBrush is not used - instead see Foreground_LastUpdatedText in Resources/ColorResources.xaml-->
+  <SolidColorBrush x:Key="Foreground_LastUpdated" Color="#D8E5E5E5"/>
+
+  <DrawingBrush x:Key="Sync">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Brush="{StaticResource Fill_ChromeUIDefault}" Geometry="F1 M 415.612,156.234C 425.102,156.234 432.795,163.927 432.795,173.417C 432.795,182.906 425.102,190.599 415.612,190.599C 406.123,190.599 398.43,182.906 398.43,173.417C 398.43,163.927 406.123,156.234 415.612,156.234 Z ">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.33319" LineJoin="Round" Brush="{StaticResource Background_ChromeUIContrast}">
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#B3FFFFFF" Geometry="F1 M 415.689,164.063C 418.38,164.063 420.822,165.131 422.614,166.866L 425.754,163.329L 426.148,172.224L 417.718,172.382L 420.116,169.68C 418.991,168.532 417.423,167.819 415.689,167.819C 412.268,167.819 409.494,170.593 409.494,174.014C 409.494,177.436 412.268,180.21 415.689,180.21C 417.804,180.21 419.671,179.15 420.789,177.533L 423.473,180.216C 421.649,182.502 418.84,183.966 415.689,183.966C 410.193,183.966 405.737,179.511 405.737,174.014C 405.737,168.518 410.193,164.063 415.689,164.063 Z "/>
+          <GeometryDrawing Geometry="F1 M 415.612,156.234C 425.038,156.234 432.691,163.824 432.794,173.226C 427.447,171.224 421.657,170.13 415.612,170.13C 409.567,170.13 403.777,171.224 398.431,173.226C 398.533,163.824 406.186,156.234 415.612,156.234 Z ">
+            <GeometryDrawing.Brush>
+              <LinearGradientBrush StartPoint="0.47826,-0.114309" EndPoint="0.47826,1.04639">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#34FFFFFF" Offset="0"/>
+                  <GradientStop Color="#0BFFFFFF" Offset="0.987288"/>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+  <DrawingBrush x:Key="Sync_Error">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Brush="{StaticResource Fill_ChromeUIDefault}" Geometry="F1 M 365.163,155.197C 374.652,155.197 382.345,162.89 382.345,172.379C 382.345,181.869 374.652,189.562 365.163,189.562C 355.673,189.562 347.98,181.869 347.98,172.379C 347.98,162.89 355.673,155.197 365.163,155.197 Z ">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.33319" LineJoin="Round" Brush="{StaticResource Background_ChromeUIContrast}">
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#B3FFFFFF" Geometry="F1 M 365.24,163.025C 367.931,163.025 370.373,164.093 372.164,165.829L 375.305,162.291L 375.699,171.187L 367.268,171.344L 369.666,168.643C 368.542,167.494 366.974,166.782 365.24,166.782C 361.818,166.782 359.045,169.555 359.045,172.977C 359.045,176.398 361.818,179.172 365.24,179.172C 367.355,179.172 369.222,178.112 370.34,176.495L 373.024,179.179C 371.2,181.464 368.391,182.929 365.24,182.929C 359.744,182.929 355.288,178.473 355.288,172.977C 355.288,167.48 359.744,163.025 365.24,163.025 Z "/>
+          <GeometryDrawing Geometry="F1 M 365.163,155.197C 374.589,155.197 382.242,162.787 382.344,172.189C 376.998,170.187 371.208,169.092 365.163,169.092C 359.117,169.092 353.328,170.187 347.981,172.188C 348.084,162.787 355.737,155.197 365.163,155.197 Z ">
+            <GeometryDrawing.Brush>
+              <LinearGradientBrush StartPoint="0.47826,-0.11431" EndPoint="0.47826,1.04639">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#34FFFFFF" Offset="0"/>
+                  <GradientStop Color="#0BFFFFFF" Offset="0.987288"/>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#D9FFFF68" Geometry="F1 M 371.126,191.637L 385.466,191.62L 378.281,179.21L 371.126,191.637 Z ">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.33319" LineJoin="Round">
+                <Pen.Brush>
+                  <LinearGradientBrush StartPoint="0.0244892,0.500001" EndPoint="0.975513,0.500001">
+                    <LinearGradientBrush.GradientStops>
+                      <GradientStop Color="#D9171717" Offset="0"/>
+                      <GradientStop Color="#D9818181" Offset="0.987288"/>
+                    </LinearGradientBrush.GradientStops>
+                  </LinearGradientBrush>
+                </Pen.Brush>
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#D9000000" Geometry="F1 M 379.182,182.402L 379.069,187.833L 377.598,187.833L 377.372,182.402L 379.182,182.402 Z M 378.339,190.435C 378.027,190.435 377.769,190.346 377.565,190.169C 377.361,189.991 377.259,189.777 377.259,189.524C 377.259,189.26 377.362,189.044 377.567,188.876C 377.773,188.709 378.03,188.625 378.339,188.625C 378.652,188.625 378.909,188.71 379.109,188.88C 379.309,189.05 379.408,189.265 379.408,189.524C 379.408,189.787 379.309,190.005 379.111,190.177C 378.913,190.349 378.656,190.435 378.339,190.435 Z "/>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+  <DrawingBrush x:Key="Cancel">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Children>
+          <GeometryDrawing Brush="{StaticResource Fill_ChromeUIDefault}" Geometry="F1 M 317.834,156.234C 327.324,156.234 335.017,163.927 335.017,173.417C 335.017,182.906 327.324,190.599 317.834,190.599C 308.345,190.599 300.652,182.906 300.652,173.417C 300.652,163.927 308.345,156.234 317.834,156.234 Z ">
+            <GeometryDrawing.Pen>
+              <Pen Thickness="1.33319" LineJoin="Round" Brush="{StaticResource Background_ChromeUIContrast}">
+              </Pen>
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+          <GeometryDrawing Geometry="F1 M 317.834,156.234C 327.26,156.234 334.914,163.824 335.016,173.226C 329.669,171.224 323.879,170.13 317.834,170.13C 311.789,170.13 306,171.224 300.653,173.226C 300.755,163.824 308.409,156.234 317.834,156.234 Z ">
+            <GeometryDrawing.Brush>
+              <LinearGradientBrush StartPoint="0.47826,-0.114309" EndPoint="0.47826,1.04639">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#34FFFFFF" Offset="0"/>
+                  <GradientStop Color="#0BFFFFFF" Offset="0.987288"/>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#B3FFFFFF" Geometry="F1 M 326.474,165.23L 321.249,172.98L 326.474,181.23L 320.714,181.23L 318.489,176.915C 318.309,176.572 318.094,176.088 317.844,175.465L 317.784,175.465C 317.634,175.902 317.431,176.37 317.174,176.87L 314.954,181.23L 309.194,181.23L 314.564,173.26L 309.514,165.23L 315.274,165.23L 317.489,169.715C 317.783,170.308 317.989,170.808 318.109,171.215L 318.169,171.215C 318.333,170.725 318.551,170.215 318.824,169.685L 321.099,165.23L 326.474,165.23 Z "/>
+        </DrawingGroup.Children>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+
+  <!-- Style for the button when a sync is not in progress -->
+  <Style x:Key="StartButtonStyle" 
+     BasedOn="{x:Null}" 
+     TargetType="{x:Type Button}">
+    <Setter Property="Command"
+            Value="{Binding Source={x:Static Local:MsdnServiceProvider.ViewManager}, Path=MsdnCommands.MsdnStartSyncCommand}"/>
+    <Setter Property="Background" Value="{StaticResource Sync}" />
+	<Setter Property="ToolTip" Value="Sync the latest news" />
+  </Style>
+
+  <!-- Style for the button when a sync is in progress -->
+  <Style x:Key="StopButtonStyle" 
+       BasedOn="{x:Null}" 
+       TargetType="{x:Type Button}">
+    <Setter Property="Command" 
+            Value="{Binding Source={x:Static Local:MsdnServiceProvider.ViewManager}, Path=MsdnCommands.MsdnStartSyncCommand}"/>
+    <Setter Property="Background" Value="{StaticResource Cancel}" />
+	<Setter Property="ToolTip" Value="Stop the current download" />
+  </Style>
+
+  <!-- Style for the button when an error has occured in a sync -->
+  <Style x:Key="ErrorButtonStyle" 
+       BasedOn="{x:Null}" 
+       TargetType="{x:Type Button}">
+    <Setter Property="Command"
+        Value="{Binding Source={x:Static Local:MsdnServiceProvider.ViewManager}, Path=MsdnCommands.MsdnStartSyncCommand}"/>
+    <Setter Property="Background" Value="{StaticResource Sync_Error}" />
+    <Setter Property="ToolTip" Value="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncErrorMessage}" />
+  </Style>
+
+
+  <!-- ControlTemplate for the sync control  -->
+  <ControlTemplate x:Key="SyncControlTemplate"
+                   TargetType="{x:Type Control}">
+    <Grid HorizontalAlignment="Right">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Name="LeftColumn" Width="Auto"/>
+        <ColumnDefinition Name="RightColumn" Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Bind the left column to the LastUpdated property on the SyncControl initially -->
+      <ContentPresenter Name="LastUpdatedPresenter" 
+                        Grid.Column="0" 
+                        Visibility="Visible" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+        <ContentPresenter.Content>
+          <!-- Grid that displays the last updated date -->
+          <Grid Margin="0,0,0,0">
+            <Grid.Resources>
+              <Local:DateTimeToStringConverter x:Key="DateTimeConverter" />
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock FontFamily="HelveticaNeue Condensed" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=14pt}" Foreground="{StaticResource Foreground_LastUpdatedText}"
+                   VerticalAlignment="Bottom" 
+                   Grid.Row="0" 
+                   Text="Last Updated:"/>
+
+            <TextBlock VerticalAlignment="Center" 
+                       FontFamily="HelveticaNeue Condensed" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=14pt}" Foreground="{StaticResource Foreground_LastUpdatedText}"
+                       Grid.Row="1" 
+                       Text="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=LastUpdated, Converter={StaticResource DateTimeConverter}}"
+                       AutomationProperties.AutomationId="LastUpdate"
+                       />
+
+          </Grid>
+        </ContentPresenter.Content>
+      </ContentPresenter>
+
+      <ContentPresenter Name="SyncProgressPresenter" 
+                  Grid.Column="0" 
+                  Visibility="Collapsed" 
+                  Width="120" 
+                  VerticalAlignment="Center">
+        <ContentPresenter.Content>
+          <!-- Progress bar displayed when a sync is in progress -->
+          <ProgressBar Height="15" AutomationProperties.AutomationId="SyncProgress">
+            <ProgressBar.Value>
+              <Binding Mode="OneWay" Source="{x:Static SceReader:ServiceProvider.ViewManager}" Path="SyncProgress"/>
+            </ProgressBar.Value>
+          </ProgressBar>
+        </ContentPresenter.Content>
+      </ContentPresenter>
+
+      <ContentPresenter Name="ErrorMessagePresenter" 
+            Grid.Column="0" 
+            Visibility="Collapsed" 
+            VerticalAlignment="Center">
+        <ContentPresenter.Content>
+          <!-- Grid that displays the error message if a sync failed -->
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock VerticalAlignment="Center"
+                       Grid.Row="0"
+                       TextWrapping="Wrap"
+                       Text="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncErrorMessage}"
+                       AutomationProperties.AutomationId="SyncError" />
+          </Grid>
+        </ContentPresenter.Content>
+      </ContentPresenter>
+      
+      <!-- Create a button in the Right column that initially has the "Start Sync" style -->
+      <scer:CommandButton Name="SyncButton"
+              Content="{x:Null}"
+              Style="{DynamicResource StartButtonStyle}"
+              Grid.Column="1"
+              Width="33" Height="33" Margin="5,0,0,0"
+              HorizontalAlignment="Left" VerticalAlignment="Center"
+              Cursor="Hand"
+              AutomationProperties.AutomationId="Sync"
+              AutomationProperties.Name="Sync">
+        <SceReaderControls:CommandButton.Template>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border Background="{TemplateBinding Background}" />
+          </ControlTemplate>
+        </SceReaderControls:CommandButton.Template>
+      </scer:CommandButton>
+    </Grid>
+
+    <ControlTemplate.Triggers>
+      <DataTrigger Binding="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncState}"
+               Value="NoSyncInProgress">
+        <Setter TargetName="SyncButton"
+                Property="Style"
+                Value="{StaticResource StartButtonStyle}"/>
+      </DataTrigger>
+
+      <DataTrigger Binding="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncState}"
+               Value="SyncInProgress">
+        <Setter TargetName="SyncButton"
+                Property="Style"
+                Value="{StaticResource StopButtonStyle}"/>
+        <Setter TargetName="SyncProgressPresenter"
+                Property="Visibility"
+                Value="Visible"/>
+        <Setter TargetName="LastUpdatedPresenter"
+                Property="Visibility"
+                Value="Collapsed"/>
+        <Setter TargetName="ErrorMessagePresenter"
+                Property="Visibility"
+                Value="Collapsed"/>
+        <Setter TargetName="SyncButton"
+                Property="Command"
+                Value="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncCommands.StopSyncCommand}"/>
+      </DataTrigger>
+
+      <DataTrigger Binding="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncState}"
+               Value="SyncFailed">
+        <Setter TargetName="SyncButton"
+                Property="Style"
+                Value="{StaticResource ErrorButtonStyle}"/>
+        <Setter TargetName="LastUpdatedPresenter"
+                Property="Visibility"
+                Value="Visible"/>
+        <Setter TargetName="SyncProgressPresenter"
+                Property="Visibility"
+                Value="Collapsed"/>
+      </DataTrigger>
+
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition SourceName="SyncButton" Property="Style" Value="{StaticResource ErrorButtonStyle}"/>
+          <Condition SourceName="SyncButton" Property="IsPressed" Value="True"/>
+        </MultiTrigger.Conditions>
+          <Setter TargetName="SyncButton"
+                  Property="Style"
+                  Value="{StaticResource StartButtonStyle}"/>
+        
+      </MultiTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- Style for the sync control. Sync control sets it's width and height because there is relayout when the template is updated after sync and it should not
+  affect other UI components -->
+  <Style x:Key="SyncControlStyle" TargetType="{x:Type Control}">
+    <Setter Property="IsTabStop" Value="False"/>
+    <Setter Property="Template" Value="{StaticResource SyncControlTemplate}"/>
+  </Style>
+
+</ResourceDictionary>

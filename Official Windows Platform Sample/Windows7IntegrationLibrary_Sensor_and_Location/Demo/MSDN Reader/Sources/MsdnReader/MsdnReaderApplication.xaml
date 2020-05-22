@@ -1,0 +1,30 @@
+﻿<?Mapping XmlNamespace="MsdnReader" ClrNamespace="MsdnReader" ?>
+<Application x:Class="MsdnReader.MsdnReaderApplication"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:Local="clr-namespace:MsdnReader"
+    StartupUri="pack://application:,,,/Pages/MainPage.xaml">
+   <Application.Resources>
+    <ResourceDictionary>     
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/SensorResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/ColorResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/NavPanelResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/AnnotationResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/ArrowButtonResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/ArticleResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/BaseResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/DefaultSectionFrontResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/StoryViewerResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/ViewerWindowResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/SyncControlResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/MainContentFrameResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/SelectEditionResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/ReadingListResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/msdnreader;component/Resources/SearchResources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

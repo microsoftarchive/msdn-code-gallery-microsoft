@@ -1,0 +1,198 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:SceReader="clr-namespace:Microsoft.SceReader;assembly=SceReader" 
+    xmlns:SceReaderData="clr-namespace:Microsoft.SceReader.Data;assembly=SceReader"
+    xmlns:SceReaderControls="clr-namespace:Microsoft.SceReader.Controls;assembly=SceReader"
+    xmlns:aero="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+  
+  <Style x:Key="ComboBoxFocusVisual">
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Rectangle Margin="4,4,21,4"
+                     StrokeThickness="1"
+                     Stroke="Black"
+                     StrokeDashArray="1 2"
+                     SnapsToDevicePixels="true"/>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <DrawingBrush x:Key="ButtonDrawingBrush" Viewbox="0,0,36.839,25.326" ViewboxUnits="Absolute">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="{StaticResource Fill_ChromeUIDefault}" Geometry="M2.0751387E-06,-9.2925698E-08 L31.082155,-9.2925698E-08 C34.261068,-9.2925698E-08 36.837998,2.5767708 36.837998,5.7552896 L36.837998,19.570721 C36.837998,22.74931 34.261068,25.326001 31.082155,25.326001 L2.0751387E-06,25.326001 2.0751387E-06,-9.2925698E-08 z"/>
+        <GeometryDrawing Brush="{StaticResource Fill_ChromeUIBevel}"  Geometry="M2.0751387E-06,-9.2924331E-08 L31.082155,-9.2924331E-08 C34.261068,-9.2924331E-08 36.837998,2.5767929 36.837998,5.755205 L36.837998,15.875 C30.015184,8.8679282 17.087536,4.1397544 2.2629404,4.1397544 1.5029611,4.1397544 0.74898165,4.1521442 2.0751387E-06,4.1766238 L2.0751387E-06,-9.2924331E-08 z">
+        </GeometryDrawing>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="1,0,0,1,13.43,8.273"/>
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="{StaticResource Background_ChromeUIContrast}" Geometry="M-5.8600921E-06,-3.8910463E-07 L8.22,0.21470265 4.4005326,7.0409994 -5.8600921E-06,-3.8910463E-07 z"/>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+
+  <Style x:Key="ComboBoxReadonlyToggleButton"
+         TargetType="{x:Type ToggleButton}">
+    <Setter Property="OverridesDefaultStyle"
+            Value="true"/>
+    <Setter Property="IsTabStop"
+            Value="false"/>
+    <Setter Property="Focusable"
+            Value="false"/>
+    <Setter Property="ClickMode"
+            Value="Press"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ToggleButton}">
+            <Border CornerRadius="4" Name="Chrome"
+                              Background="{TemplateBinding Background}" 
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              SnapsToDevicePixels="true">
+              <Grid Width="26" HorizontalAlignment="Right">
+                <Border Background="{StaticResource ButtonDrawingBrush}" CornerRadius="0,4,4,0" />
+              </Grid>
+            </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ComboBoxStyle" TargetType="{x:Type ComboBox}">
+    <Setter Property="FocusVisualStyle" Value="{StaticResource ComboBoxFocusVisual}"/>
+    <Setter Property="Foreground"       Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+    <Setter Property="Background"       Value="{DynamicResource Background_ChromeUIContrast}"/>
+    <Setter Property="BorderThickness"  Value="1"/>
+    <Setter Property="BorderBrush"      Value="Black"/>
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Auto"/>
+    <Setter Property="Padding"          Value="4,3"/>
+    <Setter Property="IsEditable"       Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ComboBox}">
+          <Border BorderThickness="1" BorderBrush="#FF211D49" CornerRadius="4" >
+            <Grid Name="MainGrid" SnapsToDevicePixels="true">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                                  Width="0"/>
+              </Grid.ColumnDefinitions>
+              <Popup Name="PART_Popup"
+                     AllowsTransparency="true"
+                     Grid.ColumnSpan="2"
+                     Placement="Bottom"
+                     Margin="1"
+                     IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                     PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
+                <aero:SystemDropShadowChrome Name="Shdw"
+                                              Color="Transparent"
+                                              MinWidth="{Binding ElementName=MainGrid,Path=ActualWidth}"
+                                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                  <Border x:Name="DropDownBorder"
+                          BorderThickness="1"
+                          BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"
+                          Background="{DynamicResource Background_ChromeUIContrast}">
+                    <ScrollViewer CanContentScroll="true">
+                      <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </ScrollViewer>
+                  </Border>
+                </aero:SystemDropShadowChrome>
+              </Popup>
+              <ToggleButton Grid.ColumnSpan="2"
+                            Background="{TemplateBinding Background}"
+                            Style="{StaticResource ComboBoxReadonlyToggleButton}"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" />
+              <ContentPresenter IsHitTestVisible="false"
+                                Margin="{TemplateBinding Padding}"
+                                Content="{TemplateBinding SelectionBoxItem}"
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <!-- Empty ComboBox Triggers -->
+            <Trigger SourceName="PART_Popup" Property="Popup.HasDropShadow" Value="true">
+              <Setter TargetName="Shdw"      Property="Margin"              Value="0,0,5,5"/>
+              <Setter TargetName="Shdw"      Property="Color"               Value="#71000000"/>
+            </Trigger>
+            <Trigger Property="HasItems" Value="false">
+              <Setter TargetName="DropDownBorder" Property="Height" Value="95"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+              <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+              <Setter Property="Background" Value="#FFF4F4F4"/>
+            </Trigger>
+            <Trigger Property="IsGrouping" Value="true">
+              <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <DataTemplate x:Key="EditionItemTemplate" DataType="{x:Type SceReaderData:DataFeedContent}">
+    <TextBlock IsHitTestVisible="True" FontFamily="Arial" FontStyle="Italic" Foreground="{DynamicResource Foreground_ChromeTextDefault}" 
+               Text="{Binding Path=Title}" FontSize="{Binding Source={StaticResource LightSensorProvider}, Path=LuxValue, Converter={StaticResource LightLevelToFontSizeConverter}, ConverterParameter=14pt}" Margin="0,0,5,0"/>
+  </DataTemplate>
+ 
+	<LinearGradientBrush x:Key="ComboBoxBackgroundBrush" EndPoint="0.55036,0.00696403" StartPoint="0.55036,1.00068">
+		<GradientStop Color="#FFE6E6E6" Offset="0.394068"/>
+		<GradientStop Color="#FFF0F0F0" Offset="1"/>
+	</LinearGradientBrush>
+ 
+   <ControlTemplate x:Key="SelectEditionTemplate">
+    <!-- Grid that displays the date to sync to -->
+    <aero:SystemDropShadowChrome CornerRadius="3" Color="#FF000000" Width="{TemplateBinding ActualWidth}">
+      <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+        <ComboBox 
+                Name="SelectEditionComboBox"
+                Margin="0,0,0,0"
+                Width="{TemplateBinding Width}"
+                SelectedItem="{Binding Path=SelectedEdition, RelativeSource={RelativeSource TemplatedParent}}"
+                ItemsSource="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=Editions}"
+                ItemTemplate="{StaticResource EditionItemTemplate}"                
+                Style="{StaticResource ComboBoxStyle}" 
+                Background="{DynamicResource ComboBoxBackgroundBrush}"
+                AutomationProperties.AutomationId="Editions"
+                AutomationProperties.Name="{Binding Path=SelectedEdition.Title, RelativeSource={RelativeSource TemplatedParent}}">
+          <ComboBox.Resources>
+            <ResourceDictionary>
+              <Style TargetType="{x:Type ComboBoxItem}">
+                <Setter Property="AutomationProperties.Name" Value="{Binding Path=Title}"/>
+              </Style>
+            </ResourceDictionary>
+          </ComboBox.Resources>
+        </ComboBox>
+    </Grid>
+    </aero:SystemDropShadowChrome>
+    <ControlTemplate.Triggers>
+      <Trigger SourceName="SelectEditionComboBox" Property="HasItems" Value="False">
+        <Setter TargetName="SelectEditionComboBox" Property="Visibility" Value="Collapsed"/>
+        <Setter TargetName="SelectEditionComboBox" Property="IsEnabled" Value="False"/>
+      </Trigger>
+      <DataTrigger Binding="{Binding Source={x:Static SceReader:ServiceProvider.ViewManager}, Path=SyncState}"
+                   Value="SyncInProgress">
+        <Setter Property="IsEnabled"
+                Value="False"/>
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <!-- Style for the 'sync to date' control  -->
+  <Style x:Key="SelectEditionStyle" TargetType="{x:Type SceReaderControls:ArchiveSelectionControl}">
+    <Setter Property="IsTabStop" Value="False"/>
+    <Setter Property="Template" Value="{StaticResource SelectEditionTemplate}"/>
+  </Style>
+</ResourceDictionary>

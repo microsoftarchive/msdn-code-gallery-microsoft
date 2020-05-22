@@ -1,0 +1,10 @@
+Emailing: Story from MSDN Reader
+
+Story title:
+%ArticleTitle%
+
+Story abstract:
+%ArticleDesc%
+
+Link to web content:
+%WebLink%
